@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  25 JUN 2025 22:18
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  26 JUN 2025 17:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -669,10 +669,44 @@ Package: l3keys2e 2024-02-18 LaTeX2e option processing using LaTeX3 keys
 \g__um_primekern_muskip=\muskip19
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/unicode-math/unicode-math-table.t
-ex)))
-\c@theorem=\count349
+ex))) (/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count349
+\calc@Bcount=\count350
+\calc@Adimen=\dimen285
+\calc@Bdimen=\dimen286
+\calc@Askip=\skip79
+\calc@Bskip=\skip80
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count351
+\calc@Cskip=\skip81
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+
+Package mathtools Warning: For best results, please load mathtools *before* 
+(mathtools)                unicode-math on input line 127.
+
+\g_MT_multlinerow_int=\count352
+\l_MT_multwidth_dim=\dimen287
+\origjot=\skip82
+\l_MT_shortvdotswithinadjustabove_dim=\dimen288
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen289
+\l_MT_above_intertext_sep=\dimen290
+\l_MT_below_intertext_sep=\dimen291
+\l_MT_above_shortintertext_sep=\dimen292
+\l_MT_below_shortintertext_sep=\dimen293
+\xmathstrut@box=\box71
+\xmathstrut@dim=\dimen294
+)
+\c@theorem=\count353
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 41.
+h' as default language. on input line 42.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
 
@@ -685,26 +719,26 @@ Package color Info: Driver file: xetex.def on input line 149.
 (./Quantum Chemistry.aux)
 \openout1 = `"Quantum Chemistry.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -740,7 +774,7 @@ LaTeX Font Info:    ... okay on input line 41.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 41.
+Package hyperref Info: Link coloring ON on input line 42.
 (./Quantum Chemistry.out) (./Quantum Chemistry.out)
 \@outlinefile=\write3
 \openout3 = `"Quantum Chemistry.out"'.
@@ -766,21 +800,21 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 41.
+or `english'. on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 41.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 41.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 41.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 41.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 41.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 41.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 41.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 42.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -822,15 +856,15 @@ sty=1;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 41.
+(Font)              `operators' in the math version `normal' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 41.
+ line 42.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 41.
+(Font)              `operators' in the math version `bold' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 41.
+t line 42.
 
 Package fontspec Info: latinmodern-math scale = 1.0001.
 
@@ -902,15 +936,15 @@ uage=dflt;"
 (fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 41.
+(Font)              `symbols' in the math version `normal' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 41.
+t line 42.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 41.
+(Font)              `symbols' in the math version `bold' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 41.
+t line 42.
 
 Package fontspec Info: latinmodern-math scale = 0.9999.
 
@@ -965,35 +999,53 @@ uage=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 4
-1.
+2.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 41.
+t line 42.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 41.
+(Font)              `largesymbols' in the math version `bold' on input line 42.
 
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 41.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.04628pt on input line 44.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 44.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 44.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 12.0437pt on input line 44.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 44.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 44.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
+t line 42.
 
+
+Package unicode-math Warning: Using \overbracket and \underbracket from
+(unicode-math)                `mathtools' package.
+(unicode-math)                 
+(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
+(unicode-math)                original `unicode-math' definition.
+
+
+Package unicode-math Warning: I'm going to overwrite the following commands
+(unicode-math)                from the `mathtools' package: 
+(unicode-math)                 
+(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+(unicode-math)                
+(unicode-math)                 
+(unicode-math)                 Note that since I won't overwrite the other
+(unicode-math)                colon-like commands, using them will lead to
+(unicode-math)                inconsistencies.
+
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 12.04628pt on input line 45.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.00085pt on input line 45.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.00064pt on input line 45.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 12.0437pt on input line 45.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.99915pt on input line 45.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1026,6 +1078,7 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
  [5] [6
 
 ]
+(/users/administrator/desktop/quantum chemistry/chapters/01.tex
 Chapter 1.
 
 Underfull \vbox (badness 1997) has occurred while \output is active []
@@ -1034,7 +1087,7 @@ Underfull \vbox (badness 1997) has occurred while \output is active []
 
 ]
 [2]
-Overfull \hbox (5.18254pt too wide) in paragraph at lines 86--97
+Overfull \hbox (5.18254pt too wide) in paragraph at lines 39--50
 []\TU/lmr/m/n/10.53937 1907 \TU/STSong(0)/m/n/10.53937 年，|  爱 因 斯 坦 将 能 量 量 子 化
  应 用 于 固 体 元 素 中 原 子 的 振 动。|  假 设 每 个 原 子 在 每 个 方 向 $[]$
  []
@@ -1046,185 +1099,189 @@ le (type bmp)
 File: /users/administrator/desktop/quantum chemistry/Figures/1.2.png Graphic fi
 le (type bmp)
 </users/administrator/desktop/quantum chemistry/Figures/1.2.png>
+ [5] [6] [7] [8])
+(/users/administrator/desktop/quantum chemistry/chapters/02.tex [9] [10
 
-Missing character: There is no 和 (U+548C) in font [latinmodern-math.otf]/OT:scr
-ipt=math;language=dflt;!
-[5] [6]
+]
 Chapter 2.
-[7
-
-] [8
+) (/users/administrator/desktop/quantum chemistry/chapters/03.tex [11] [12
 
 ]
 Chapter 3.
-
+) (/users/administrator/desktop/quantum chemistry/chapters/04.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9]
-[10]
+ [13]
+[14]
 Chapter 4.
-[11
+) (/users/administrator/desktop/quantum chemistry/chapters/05.tex [15
 
-] [12
+] [16
 
 ]
 Chapter 5.
-[13] [14
+) (/users/administrator/desktop/quantum chemistry/chapters/06.tex [17] [18
 
 ]
 Chapter 6.
-[15] [16
+) (/users/administrator/desktop/quantum chemistry/chapters/07.tex [19] [20
 
 ]
 Chapter 7.
-[17] [18
+) (/users/administrator/desktop/quantum chemistry/chapters/08.tex [21] [22
 
 ]
 Chapter 8.
-[19] [20
+) (/users/administrator/desktop/quantum chemistry/chapters/09.tex [23] [24
 
 ]
 Chapter 9.
-[21] [22
+) (/users/administrator/desktop/quantum chemistry/chapters/10.tex [25] [26
 
 ]
 Chapter 10.
-[23] [24
+) (/users/administrator/desktop/quantum chemistry/chapters/11.tex [27] [28
 
 ]
 Chapter 11.
-[25] [26
+) (/users/administrator/desktop/quantum chemistry/chapters/12.tex [29] [30
 
 ]
 Chapter 12.
-[27] [28
+) (/users/administrator/desktop/quantum chemistry/chapters/13.tex [31] [32
 
 ]
 Chapter 13.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 15.05785pt on input line 406.
+(Font)              scaled to size 15.05785pt on input line 11.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.0347pt on input line 406.
+(Font)              scaled to size 9.0347pt on input line 11.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 15.05463pt on input line 406.
+(Font)              scaled to size 15.05463pt on input line 11.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.03276pt on input line 406.
+(Font)              scaled to size 9.03276pt on input line 11.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 406.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 406.
+(hyperref)                removing `math shift' on input line 11.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 406.
+(hyperref)                removing `subscript' on input line 11.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 406.
+(hyperref)                removing `superscript' on input line 11.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 408.
+(hyperref)                removing `math shift' on input line 11.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 408.
+(hyperref)                removing `math shift' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 408.
+(hyperref)                removing `subscript' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 408.
+(hyperref)                removing `superscript' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 416.
+(hyperref)                removing `math shift' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 416.
+(hyperref)                removing `math shift' on input line 21.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 416.
+(hyperref)                removing `subscript' on input line 21.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 422.
+(hyperref)                removing `math shift' on input line 21.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 422.
+(hyperref)                removing `math shift' on input line 27.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 422.
+(hyperref)                removing `subscript' on input line 27.
 
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 27.
+
+) (/users/administrator/desktop/quantum chemistry/chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
+ [33]
 Overfull \vbox (69.2806pt too high) has occurred while \output is active []
 
 
-[30]
+[34]
 Chapter 14.
-[31
+) (/users/administrator/desktop/quantum chemistry/chapters/15.tex [35
 
-] [32
+] [36
 
 ]
 Chapter 15.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 462.
+(hyperref)                removing `math shift' on input line 11.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 462.
+(hyperref)                removing `subscript' on input line 11.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 462.
+(hyperref)                removing `math shift' on input line 11.
 
-
+) (/users/administrator/desktop/quantum chemistry/chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
+ [37]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
-[34]
+[38]
 Chapter 16.
-
+) (/users/administrator/desktop/quantum chemistry/chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35
+ [39
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
-[36]
+[40]
 Chapter 17.
-[37
+) (/users/administrator/desktop/quantum chemistry/chapters/appendix.tex
+[41
 
-] [38
+] [42
 
-] [39] [40
-
-] [41] [42
-
-] [43] [44
+])
+(/users/administrator/desktop/quantum chemistry/chapters/bibliography.tex
+[43] [44
 
 ] [45] [46
 
-] [47] (./Quantum Chemistry.aux)
+])
+(/users/administrator/desktop/quantum chemistry/chapters/answers.tex [47]
+[48
+
+]) (/users/administrator/desktop/quantum chemistry/chapters/index.tex
+[49] [50
+
+]) [51] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -1233,12 +1290,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 25972 strings out of 474773
- 569314 string characters out of 5757723
- 1959839 words of memory out of 5000000
- 47767 multiletter control sequences out of 15000+600000
- 575646 words of font info for 152 fonts, out of 8000000 for 9000
+ 26887 strings out of 474773
+ 598777 string characters out of 5757723
+ 1961839 words of memory out of 5000000
+ 48610 multiletter control sequences out of 15000+600000
+ 575654 words of font info for 153 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,12n,114p,666b,854s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,114p,792b,856s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (55 pages).
+Output written on Quantum Chemistry.pdf (59 pages).
