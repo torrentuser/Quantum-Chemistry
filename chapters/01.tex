@@ -74,13 +74,13 @@
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{/users/administrator/desktop/quantum chemistry/Figures/1.1.png}  % 图片路径
+		\includegraphics[width=0.8\textwidth]{/users/administrator/desktop/repo/quantumchemistry/Figures/1.1.png}  % 图片路径
 		\caption{\text{狭缝的电子衍射}}
 		\label{fig:1.1}
 	\end{figure}
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.6\textwidth]{/users/administrator/desktop/quantum chemistry/Figures/1.2.png}
+		\includegraphics[width=0.6\textwidth]{/users/administrator/desktop/repo/quantumchemistry/Figures/1.2.png}
 		\caption{\text{计算一级衍射的最小值}}
 		\label{fig:1.2}
 	\end{figure}
@@ -130,7 +130,7 @@
 	 	\label{eq:1.12 Potential energy in classical mechanics}
 	 \end{equation}
 	 例如，对于一个在地球重力场中运动的粒子，有$\partial V / \partial x = -F = mg$，积分一次，有$V = mgx+c$，其中$c$为积分常量。我们可以任意选择我们想要的零势能面。令$c=0$，我们有势能函数$V=mgx$。\\
-	 \indent 经典力学中的 “\textbf{状态} ”一词是指系统中每个粒子在某一时刻的位置和速度，以及作用在粒子上的力。根据牛顿第二定律，给定一个系统在任何时候的状态，它的未来状态和未来运动都是完全确定的，如式(\ref{eq:1.9 function of the x-coordinate})-(\ref{eq:1.11 v_0's equation})所示。牛顿定律在解释行星运动方面取得的巨大成功让许多哲学家将牛顿定律作为哲学决定论的论据。数学家和天文学家拉普拉斯（Laplace）（1749-1827 ）假定宇宙是由服从牛顿定律的粒子组成的。因此，给定宇宙在某一时刻的状态，宇宙万物未来的运动是完全确定的。原则上，一个能知道宇宙任何瞬间状态的超级星体可以计算出所有未来的运动。
+	 \indent 经典力学中的 “\textbf{状态} ”一词是指系统中每个粒子在某一时刻的位置和速度，以及作用在粒子上的力。根据牛顿第二定律，给定一个系统在任何时候的状态，它的未来状态和未来运动都是完全确定的，如式(\ref{eq:1.9 function of the x-coordinate})-(\ref{eq:1.11 v_0's equation})所示。牛顿定律在解释行星运动方面取得的巨大成功让许多哲学家将牛顿定律作为哲学决定论的论据。数学家和天文学家拉普拉斯（Laplace）（1749-1827）假定宇宙是由服从牛顿定律的粒子组成的。因此，给定宇宙在某一时刻的状态，宇宙万物未来的运动是完全确定的。原则上，一个能知道宇宙任何瞬间状态的超级星体可以计算出所有未来的运动。
 	% 小字号且缩进的段落
 	\begin{quote}
 		\small % 字号小一号（可选 \footnotesize 更小）
@@ -171,8 +171,83 @@
 	\indent 狭义相对论与经典力学的关系也存在类似的情况。在以$c$为光速的极限$v/c \rightarrow 0$中，狭义相对论可还原为经典力学。我们将要发展的量子力学形式将是非相对论的。相对论与量子力学的完全融合尚未实现。\\
 	\indent 从历史上看，量子力学是由海森堡、玻恩和乔丹（Jordan）于 1925 年首次使用矩阵提出的，比薛定谔于 1926 年使用微分方程提出的量子力学早几个月。薛定谔证明：海森堡公式（称为\textbf{矩阵力学}）等同于薛定谔公式（称为\textbf{波动力学}）。1926 年，狄拉克和乔丹分别独立地用一种称为\textit{变换理论}的抽象版本提出了量子力学，它是矩阵力学和波动力学的概括（见《狄拉克》）。1948 年，费曼设计出了量子力学的\textit{路径积分}公式 [R. P. Feynman, Rev. Mod. Phys., 20, 367 (1948); R. P. Feynman，Rev. Mod. Phys., 20, 367(1948); R. P. Feynman and A. R. Hibbs, Quantum Mechanics and Path Integrals, McGraw-Hill, 1965]。
 	
-	
 	\section{定态薛定谔方程}
+	含时薛定谔方程(\ref{eq:1.13 Time-dependent Schödinger equation}) 看上去很可怕。幸运的是，量子力学在化学中的许多应用都不使用这个方程。取而代之的是更简单的定态薛定谔方程。现在，我们从一维单粒子的含时薛定谔方程导出定态薛定谔方程。\\
+	\indent 首先，我们只讨论一种特殊情况，即势能$V$不是时间的函数，而只取决于$x$。系统没有受到与时间相关的外力作用会导致此情况。此时，含时薛定谔方程为
+	\begin{equation}
+		-\frac{\hbar}{\mathrm{i}}\frac{\partial \Psi \left(x,t\right)}{\partial t}= -\frac{\hbar^2}{2m}\frac{\partial^2 \Psi \left(x,t\right)}{\partial x^2}+ V\left(x,t\right)\Psi\left(x,t\right)
+		\label{eq:1.16 Time-dependent Schödinger equation}
+	\end{equation}
+	将式(\ref{eq:1.16 Time-dependent Schödinger equation})的解假设为时间函数和坐标$x$函数的乘积：
+	\begin{equation}
+		\boxed{\Psi\left(x,t\right)=f\left(t\right)\psi\left(x\right)}
+		\label{eq:1.17 product of x and t}
+	\end{equation}
+	大写的$\Psi$用来表示含时的波函数，而小写的$\psi$表示只与$x$坐标有关的因子。与 (\ref{eq:1.17 product of x and t})) 形式的波函数相对应的状态具有某些特性（稍后讨论），这些特性使它们极具吸引力。[并非 (\ref{eq:1.16 Time-dependent Schödinger equation}) 的所有解都具有 (\ref{eq:1.17 product of x and t}) 的形式；见证明 3.51。]取 (\ref{eq:1.17 product of x and t}) 的偏导数，我们有
+	\begin{equation*}
+		\frac{\partial \Psi\left(x,t\right)}{\partial t} = \frac{\mathrm{d} f\left(t\right)}{\mathrm{d}t} \psi\left(x\right), \quad \frac{\partial^2 \Psi \left(x,t\right)}{\partial x^2}= f\left(t\right) \frac{\mathrm{d}^2\psi\left(x\right)}{\mathrm{d}x^2}
+	\end{equation*}
+	带入(\ref{eq:1.16 Time-dependent Schödinger equation})，有
+	\begin{equation*}
+		-\frac{\hbar}{\mathrm{i}}\frac{\mathrm{d}f\left(t\right)}{\mathrm{d}t}\psi\left(x\right)=-\frac{\hbar^2}{2m}f\left(t\right)\frac{\mathrm{d}^2\psi\left(x\right)}{\mathrm{d}x^2}+V\left(x\right)f\left(t\right)\psi\left(x\right)
+	\end{equation*}
+	\begin{equation}
+			-\frac{\hbar}{\mathrm{i}}\frac{1}{f\left(t\right)}\frac{\mathrm{d}f\left(t\right)}{\mathrm{d}t}=-\frac{\hbar^2}{2m}\frac{1}{\psi\left(x\right)}\frac{\mathrm{d}^\psi\left(x\right)}{\mathrm{d}x^2}+V\left(x\right)
+			\label{eq:1.18}
+	\end{equation}
+	此时方程左右两边同除$f\psi$。一般来说，我们希望 (\ref{eq:1.18}) 两边各相等的量是$x$和$t$的某个函数。然而，(\ref{eq:1.18}) 的右边不依赖于$t$，所以 (\ref{eq:1.18}) 两边相等的函数必须与$t$无关。我们称这个常数为$E$。\\
+	\indent 令式(\ref{eq:1.18})的左边等于$E$，我们有
+	\begin{equation*}
+		\frac{\mathrm{d}f\left(t\right)}{\mathrm{d}t}=-\frac{\mathrm{i}E}{\hbar}\mathrm{d}t
+	\end{equation*}
+	左右对时间求积分，有
+	\begin{equation*}
+		\ln f\left(t\right)= - \mathrm{i}Et/\hbar+C
+	\end{equation*}
+	其中$C$是任意常数。因此，
+	\begin{equation*}
+		f\left(t\right)=\mathrm{e}^C\mathrm{e}^{-\mathrm{i}Et/\hbar}=A\mathrm{e}^{-\mathrm{i}Et/\hbar}
+	\end{equation*}
+	其中$A$是代替了$\mathrm{e}^C$的任意常数。由于$A$可以作为因子包含在与$f\left(t\right)$相乘的函数$\psi\left(x\right)$中，因此$A$可以从$f\left(t\right)$中略去。所以，
+	\begin{equation*}
+		f\left(t\right)=\mathrm{e}^{-\mathrm{i}Et/\hbar}
+	\end{equation*}
+	\indent 令(\ref{eq:1.18})的右边等于$E$，我们有
+	\begin{equation}
+		\boxed{-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2\psi\left(x\right)}{\mathrm{d}x^2}+V\left(x\right)\psi\left(x\right)=E\psi\left(x\right)}
+		\label{eq:1.19 time-independent Schrödinger Equation}
+	\end{equation}
+	方程(\ref{eq:1.19 time-independent Schrödinger Equation})就是质量为$m$的单粒子一维运动的\textbf{定态薛定谔方程}。	常数$E$有什么意义？由于$E$在（\ref{eq:1.19 time-independent Schrödinger Equation}）中作为$\left[E-V\left(x\right)\right]$出现，$E$的维数与$V$相同，因此$E$具有能量的量纲。事实上，我们假设$E$就是系统的能量。(这是后一章将讨论的一个更普遍假设的特例）因此，在势能仅是$x$的函数的情况下，存在如下形式的波函数
+	\begin{equation}
+		\Psi\left(x,t\right)=\mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)
+		\label{eq:1.20}
+	\end{equation}
+	这些波函数对应于恒定能量$E$的状态。在接下来的几章中，我们将主要关注如何找到各种系统的方程(\ref{eq:1.19 time-independent Schrödinger Equation})的解。\\
+	\indent 式(\ref{eq:1.20}) 中的波函数是复数函数，但在实验中可观测到的量是概率密度$\left|\Psi\left(x,t\right)\right|^2$。复数绝对值的平方由复数与其复共轭的乘积给出，复共轭则是在出现i的地方用 -i 代替 i （见第 1.7 节）。因此，
+	\begin{equation}
+		\boxed{\left|\Psi\right|^2=\Psi^{\ast}\Psi}
+		\label{eq:1.21 square of Psi}
+	\end{equation}
+	其中，$\ast$号表示复共轭。对于波函数(\ref{eq:1.20})，有
+	\begin{equation*}
+		\begin{aligned}
+			\left|\Psi\left(x,t\right)\right|^2 &=\left[\mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)\right]^{\ast}\mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)\\
+			& = \mathrm{e}^{\mathrm{i}Et/\hbar}\psi^{\ast}\left(x\right)\mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)\\
+			& = \mathrm{e}^0\psi^{\ast}\left(x\right)\psi\left(x\right)=\psi^\ast\left(x\right)\psi\left(x\right)
+		\end{aligned}
+	\end{equation*}
+	\begin{equation}
+		\left|\Psi\left(x,t\right)\right|^2=\left|\psi\left(x\right)\right|^2
+		\label{eq:1.22 Psi and psi}
+	\end{equation}
+	在推导(\ref{eq:1.22 Psi and psi})时，我们假设$E$是实数，即$E=E^{\ast}$。这将会在第7.2节给出证明。\\
+	\indent 因此，对于 (\ref{eq:1.20}) 形式的状态，概率密度由$\left|\Psi\left(x\right)\right|^2$给出，且不随时间变化。这种状态称为\textbf{定态}。由于具有物理意义的量是$\left|\Psi\left(x,t\right)\right|^2$，而且对于定态有$\left|\Psi\left(x,t\right)\right|^2=\left|\psi\left(x\right)\right|^2$，函数$\psi\left(x\right)$通常被称为\textbf{波函数}，尽管定态的完整波函数是$\psi\left(x\right)$与$\mathrm{e}^{-\mathrm{i}Et/\hbar}$的乘积。\textit{定态}一词不应误导读者，让他们以为处于定态的粒子就是静止的。确定的是概率密度$\left|\Psi\right|^2$，而不是粒子本身。\\
+	\indent 我们将主要关注能量恒定的状态（定态），因此通常会处理定态薛定谔方程（\ref{eq:1.19 time-independent Schrödinger Equation}）。为简单起见，我们将此方程称为 “薛定谔方程”。请注意，薛定谔方程包含两个未知数：允许的能量$E$和允许的波函数$ \psi$。为了求解这两个未知数，我们除了要求它满足 (\ref{eq:1.19 time-independent Schrödinger Equation}) 以外，还需要有额外的条件（称为边界条件）。边界条件决定了允许的能量，因为只有特定的$E$值才能满足边界条件。这一点在后面章节讨论具体例子时会更加清楚。
+	
+	
+	
+	
+	
 	
 	\section{概率}
 	
