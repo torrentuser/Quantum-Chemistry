@@ -360,8 +360,10 @@
 	\end{equation}
 	同样地，
 	\begin{equation}
-		\boxed{\left(z_1/z_2\right) = z_1^{\ast} / z_2^{\ast}, \quad \left(z_1+z_2\right)^{\ast} = z_1^{\ast} + z_2^{\ast} , \quad \left(z_1-z_2\right)^{\ast} = z_1^{\ast} - z_2^{\ast}}
-		\label{eq:1.33 linear properties of complex conjugate}
+		\boxed{
+				\left(z_1/z_2\right) = z_1^{\ast} / z_2^{\ast}, \quad \left(z_1+z_2\right)^{\ast} = z_1^{\ast} + z_2^{\ast} , \quad \left(z_1-z_2\right)^{\ast} = z_1^{\ast} - z_2^{\ast}}
+		\label{eq:1.33 linear properties of complex conjugate
+		}
 	\end{equation}
 	对于积和商的绝对值，由(\ref{eq:1.31 product and quotient of two complex numbers})可知
 	\begin{equation}
@@ -380,13 +382,60 @@
 	\end{equation}
 	除了 (\ref{eq:1.36 n different complex nth roots of unity}) 中的 $k$ 值之外，任何其他 $k$ 值所得到的数的相位都与 (\ref{eq:1.36 n different complex nth roots of unity}) 中的一个数相差 $2$ 的整数倍，因此不是不同的根。对于 (\ref{eq:1.36 n different complex nth roots of unity}) 中的 $n=2$，我们得到 1 的两个平方根；对于 $n=3$，得到 1 的三个立方根；以此类推。
 	
-	
-	
-
-	
 	\section{单位}
+	本书使用国际单位制。在国际单位制(SI)中，长度、质量、时间的单位分别是米(m)、千克(kg)和秒(s)。力的单位是牛顿（N），能量的单位是焦耳（J）。描述真空中相距 $r$ 的两个电荷 $Q_1$ 和 $Q_2$ 之间作用力大小的库仑定律，用国际单位制单位表示为
+	\begin{equation}
+		\boxed{F = \frac{Q_1Q_2}{4\pi \varepsilon_0r^2}}
+		\label{eq:1.37 coulomb's law}
+	\end{equation}
+	其中电荷量$Q_1$和$Q_2$的单位是库伦(C)，$\varepsilon_0$是常数（真空介电常数），其值为$8.854 \times 10^{-12} \mathrm{C}^2\mathrm{N}^{-1}\mathrm{m}^{-2}$。（物理常数的精确值见附录）
 	
 	\section{微积分学}
+	量子化学中大量使用微积分，因此应牢记以下公式。其中 $c$、$n$ 和 $b$ 为常数，$f$ 和 $g$ 为 $x$ 的函数。
+	\begin{equation*}
+		\boxed{
+			\frac{\mathrm{d}c}{\mathrm{d}x} = 0, \quad \frac{\mathrm{d}\left(cf\right)}{\mathrm{d}x} = c\frac{\mathrm{d}f}{\mathrm{d}x}, \quad \frac{\mathrm{d}x^n}{\mathrm{d}x} = nx^{n-1}, \quad \cfrac{\mathrm{d}\mathrm{e}^{cx}}{\mathrm{d}x} = c\mathrm{e}^{cx}
+		}
+	\end{equation*}
+	\begin{equation*}
+		\boxed{
+			\frac{\mathrm{d}\left(\sin cx\right)}{\mathrm{d}x} = c \cos cx, \quad \frac{\mathrm{d} \left(\cos cx\right)}{\mathrm{d}x} = -c \sin cx, \quad \frac{\mathrm{d} \ln cx}{\mathrm{d} x } = \frac{1}{x}
+		}
+	\end{equation*}
+	\begin{equation*}
+		\boxed{
+			\frac{\mathrm{d}\left(f+g\right)}{\mathrm{d}x} = \frac{\mathrm{d}f}{\mathrm{d}x}+\frac{\mathrm{d}g}{\mathrm{d}x}, \quad \frac{\mathrm{d}\left(fg\right)}{\mathrm{d}x} = f\frac{\mathrm{d}g}{\mathrm{d}x}+g\frac{\mathrm{d}f}{\mathrm{d}x}
+		}
+	\end{equation*}
+	\begin{equation*}
+		\boxed{
+			\frac{\mathrm{d}\left(f/g\right)}{\mathrm{d}x} = \frac{\mathrm{d}\left(fg^{-1}\right)}{\mathrm{d}x} = -fg^{-2}\frac{\mathrm{d}g}{\mathrm{d}x}+g^{-1}\frac{\mathrm{d}f}{\mathrm{d}x}
+		}
+	\end{equation*}
+	\begin{equation*}
+		\boxed{
+			\frac{\mathrm{d}}{\mathrm{d}x}f\left(g\left(x\right)\right) = \frac{\mathrm{d}f}{\mathrm{d}g}\frac{\mathrm{d}g}{\mathrm{d}x}
+		}
+	\end{equation*}
+	最后一个公式有一个例子：$\mathrm{d}\left[\sin\left(cx^2\right)\right]/\mathrm{d}x = 2cx\cos\left(cx^2\right)$。这里$g\left(x\right) = cx^2$而$f=\sin$。
+	\begin{equation*}
+		\boxed{
+			\int cf\left(x\right)\mathrm{d}x = c \int f\left(x\right)\mathrm{d}x, \quad \int \left[f\left(x\right)+g\left(x\right)\right]\mathrm{d}x = \int f\left(x\right)\mathrm{d}x+\int g\left(x\right)\mathrm{d}x
+		}
+	\end{equation*}
+	\begin{equation*}
+		\boxed{
+			\int \mathrm{d}x = x, \quad \int x^n\mathrm{d}x = \frac{x^{n+1}}{n+1} \: \text{其中} \: n \neq -1, \quad \int \frac{1}{x}\mathrm{d}x = \ln x
+		}
+	\end{equation*}
+	\begin{equation*}
+		\boxed{
+			\int \mathrm{e}^{cx}\mathrm{d}x = \frac{\mathrm{e}^{cx}}{c}, \quad \int \sin cx\mathrm{d}x = -\frac{\cos cx}{c}, \quad \int \cos cx\mathrm{d}x = \frac{\sin cx}{c}
+		}
+	\end{equation*}
+	
+	
+	
 	
 	\section*{总结}
 
