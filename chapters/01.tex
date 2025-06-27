@@ -299,16 +299,90 @@
 	\\
 	
 	 \noindent \textbf{练习：}\\
-	对于一个测量时态函数为$\Psi = \left(32 a^3 /\pi \right)^{1/4} x \mathrm{e}^{-ax^2}$的系统（其中 $a = 1.0000 \: \text{nm}^{-2}$），求测量值在 $x = 1.2000$ nm 和 $1.2001$ nm 之间的概率。\\
+	对于一个测量时态函数为$\Psi = \left(32 a^3 /\pi \right)^{1/4} x \mathrm{e}^{-ax^2}$的系统（其中 $a = 1.0000 \: \text{nm}^{-2}$），求测量值在 $x = 1.2000$ nm 和 $1.2001$ nm 之间的概率。将区间视为无穷小区间。\\
 	(\textit{答案：}0.0000258。)
 	
-	
-	
-	
-	
-	
-	
 	\section{复数}
+	我们已经知道波函数可以是复数，所以我们来回顾一下复数的一些性质。\\
+	\indent \textbf{复数}$z$具有如下的形式：
+	\begin{equation}
+		z = x+\mathrm{i}y, \quad \text{其中} \: \mathrm{i}  \equiv \sqrt{-1}
+		\label{eq:1.25 definition of complex number}
+	\end{equation}
+	且$x$和$y$是\textbf{实数}（不涉及负数平方根的数），如果在(\ref{eq:1.25 definition of complex number})中$y=0$，则$z$是实数。如果$y \neq 0$，则$z$是\textbf{虚数}。如果$x=0$且$y \neq 0$，则$z$是\textbf{纯虚数}。例如：6.83是实数，$5.4-3\mathrm{i}$是虚数，而$0.60\mathrm{i}$是纯虚数。实数和纯虚数是复数的特例，在(\ref{eq:1.25 definition of complex number})中，$x$和$y$分别是$z$的实部和虚部，即$x = \mathrm{Re} \left(z\right)$；$y = \mathrm{Im}\left(z\right)$。\\
+	\indent 复数可以代表\textbf{复平面}(图 \ref{fig:1.3})上的一个点，其中，$z$ 的实部绘制在横轴上，虚部绘制在纵轴上。这幅图显然提示我们定义两个表征复数 $z$ 的量：点 $z$ 与原点的距离 $r$ 称为 $z$ 的\textbf{绝对值}或模;由点 $z$ 的半径矢量与正横轴所成的角度 $\theta$ 表示，则称为 $z$ 的\textbf{相位}或辐角。我们有
+	\begin{equation}
+		\left|z\right| = r = \left(x^2+y^2\right)^{1/2}, \qquad \tan \theta = y/x
+		\label{eq:1.26 definition of phase and absolute value}
+	\end{equation}
+	\begin{equation*}
+		x = r \cos \theta, \qquad y = r \sin \theta
+	\end{equation*}
+	所以我们可以把$z = x+ \mathrm{i}y$写作
+	\begin{equation}
+		z = r \cos \theta + \mathrm{i} \sin \theta = r \mathrm{e}^{\mathrm{i} \theta}
+		\label{eq:1.27 Triangular forms of complex numbers}
+	\end{equation}	
+	因为欧拉公式。(见证明 4.3)
+	\begin{equation}
+		\boxed{\mathrm{e}^{\mathrm{i}\theta} = \cos \theta + \mathrm{i} \sin\theta}
+		\label{eq:1.28 Euler's equation}
+	\end{equation}
+	以上方程中的$\theta$角均为弧度制。\\
+	\indent 如果$z = x + \mathrm{i}y$，则它的\textbf{复共轭}$z^{\ast}$定义为
+	\begin{equation}
+		z^{\ast} \equiv x - \mathrm{i}y = r \mathrm{e} ^{-\mathrm{i}\theta}
+		\label{eq:1.29 definition of complexconjugate}
+	\end{equation}
+		\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\textwidth]{/users/administrator/desktop/repo/quantumchemistry/Figures/1.3.png}  % 图片路径
+		\caption{(a)\text{复数}$z = x + \mathrm{i}y$\text{的图象；}  (b)\text{复数}$-2+\mathrm{i}$\text{的图象}}
+		\label{fig:1.3}
+	\end{figure}\\
+	\indent 如果$z$是实数，那么它的虚部为0。因此，当且仅当$z = z^{\ast}$时有$z$是实数。对复数$z$作两次复共轭，我们再次得到了$z$，所以$\left(z^{\ast}\right)^{\ast}=z$。将$z$与其复共轭$z^{\ast}$作乘积，我们有
+	\begin{equation*}
+		zz^{\ast} = \left(x + \mathrm{i}y\right)\left(x= \mathrm{i}y\right) = x^2+\mathrm{i}yx+\mathrm{i}xy-\mathrm{i}^2y^2
+	\end{equation*}
+	\begin{equation}
+		\boxed{zz^{\ast} = x^2+y^2=r^2=\left|z\right|^2}
+		\label{eq:1.30 product of z and its complex conjugate}
+	\end{equation}
+	对于两个复数$z_1=r_1\mathrm{e}^{\mathrm{i}\theta_1}$与$z_2 = r_2\mathrm{e}^{\mathrm{i}\theta_2}$的积和商，我们有
+	\begin{equation}
+		z_1z_2 = r_1r_2\mathrm{e}^{\mathrm{i}\left(\theta_1+\theta_2\right)}, \quad \frac{z_1}{z_2} = \frac{r_1}{r_2}\mathrm{e}^{\mathrm{i} \left(\theta_1 - \theta_2\right)}
+		\label{eq:1.31 product and quotient of two complex numbers}
+	\end{equation}
+	\indent 根据复共轭的定义或 (\ref{eq:1.31 product and quotient of two complex numbers})，我们很容易证明
+	\begin{equation}
+		\boxed{\left(z_1z_2\right)^{\ast} = z_1^{\ast} z_2^{\ast}}
+		\label{eq:1.32 properties of complex conjugate}
+	\end{equation}
+	同样地，
+	\begin{equation}
+		\boxed{\left(z_1/z_2\right) = z_1^{\ast} / z_2^{\ast}, \quad \left(z_1+z_2\right)^{\ast} = z_1^{\ast} + z_2^{\ast} , \quad \left(z_1-z_2\right)^{\ast} = z_1^{\ast} - z_2^{\ast}}
+		\label{eq:1.33 linear properties of complex conjugate}
+	\end{equation}
+	对于积和商的绝对值，由(\ref{eq:1.31 product and quotient of two complex numbers})可知
+	\begin{equation}
+		\left|z_1z_2\right|=\left|z_1\right|\left|z_2\right|, \quad \left|\frac{z_1}{z_2}\right| = \frac{\left|z_1\right|}{\left|z_2\right|}
+		\label{eq:1.34 properties of product and quotient absolute values}
+	\end{equation}
+	因此，如果$\psi$是复波函数，我们有
+	\begin{equation}
+		\left|\psi^2\right| = \left|\psi\right|^2 = \psi^{\ast} \psi
+		\label{eq:1.35 properties of psi wave function}
+	\end{equation}
+	\indent 现在我们得到了数字 1 的 $n$ 次根式。我们可以将数字 1 的相位取为 0 或 $2\pi$ 或 $4\pi$，以此类推。因此 $1 = \mathrm{e}^{\mathrm{i}2\pi k}$，其中 $k$ 是任何整数，0、负数或正数。现在考虑数字 $\omega$，其中 $\omega \equiv \mathrm{e}^{\mathrm{i} 2\pi k /n}$，$n$ 为正整数。使用式(\ref{eq:1.31 product and quotient of two complex numbers}) $\:$$n$次，我们有$\omega^n = \mathrm{e}^{\mathrm{i}2\pi k} = 1$。因此，$\omega$是$n$次单位根。有 $n$ 个不同的复数 $n$ 次单位根，连续取 $n$ 个整数 $k$ 的值，就可以得到所有这些根：
+	\begin{equation}
+		\omega = \mathrm{e}^{\mathrm{i} 2\pi k /n}, \quad k = 0,1,2,\cdots , n-1
+		\label{eq:1.36 n different complex nth roots of unity}
+	\end{equation}
+	除了 (\ref{eq:1.36 n different complex nth roots of unity}) 中的 $k$ 值之外，任何其他 $k$ 值所得到的数的相位都与 (\ref{eq:1.36 n different complex nth roots of unity}) 中的一个数相差 $2$ 的整数倍，因此不是不同的根。对于 (\ref{eq:1.36 n different complex nth roots of unity}) 中的 $n=2$，我们得到 1 的两个平方根；对于 $n=3$，得到 1 的三个立方根；以此类推。
+	
+	
+	
+
 	
 	\section{单位}
 	
