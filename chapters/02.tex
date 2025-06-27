@@ -1,19 +1,68 @@
 % ===== CHAPTER 2 =====
 \chapter{箱中粒子}
+	单粒子一维系统的定态波函数和能级是通过求解定态薛定谔方程 (\ref{eq:1.19 time-independent Schrödinger Equation}) 得到的。在本章中，我们将求解一个简单系统的定态薛定谔方程，即一维盒子中的粒子（第 2.2 节）。由于薛定谔方程是微分方程，我们首先讨论微分方程。
 \section{微分方程}
-The general solution to the linear homogeneous second-order differential equation:
-\begin{equation}
-	y'' + py' + qy = 0
-\end{equation}
-is $y = c_1 e^{s_1 x} + c_2 e^{s_2 x}$ where $s_1$ and $s_2$ are roots of the auxiliary equation $s^2 + ps + q = 0$.
+	本节只讨论常微分方程，即只有一个自变量的方程。[偏微分方程有不止一个自变量。含时薛定谔方程 (\ref{eq:1.16 Time-dependent Schödinger equation}) 就是一个例子，其中 $t$ 和 $x$ 都是自变量。］ 
+	常微分方程是自变量 $x$、因变量$y\left(x\right)$和$y$的1、2、$\cdots$、$n$阶导数$y\left(y^{\prime},y^{\prime\prime}, \cdots, y^{\left(n\right)}\right)$之间的关系式。例如
+	\begin{equation}
+		y^{\prime\prime\prime}+2x\left(y^{\prime}\right)^2+y^2\sin x = 3\mathrm{e}^x
+		\label{eq:2.1 an example of differential equation}
+	\end{equation}
+	微分方程的阶数与方程中最高阶导数的阶数相同。因此，方程 (\ref{eq:2.1 an example of differential equation}) 为三阶微分方程。\\
+	\indent \textbf{线性微分方程}是一种特殊的微分方程，其形式为
+	\begin{equation}
+		A_n\left(x\right)y^{\left(n\right)}+A_{n-1}\left(x\right)y^{\left(n-1\right)}+A_{n-2}\left(x\right)y^{\left(n-2\right)}+\cdots+A_1\left(x\right)y^{\prime}+A_0\left(x\right)y=g\left(x\right)
+		\label{eq:2.2 linear differential equation}
+	\end{equation}
+	其中所有的$A_i$和$g$ （有些可能为零）只是$x$的函数。在$n$阶线性微分方程(\ref{eq:2.2 linear differential equation})中，$y$及其各阶导数的次幂均为一次。不满足式(\ref{eq:2.2 linear differential equation})的微分方程为\textbf{非线性}微分方程。如果(\ref{eq:2.2 linear differential equation})中的$g\left(x\right)=0$，则线性微分方程是\textbf{齐次}的，否则是\textbf{非齐次}的。一维定态薛定谔方程(\ref{eq:1.19 time-independent Schrödinger Equation})就是二阶线性齐次微分方程。\\
+	\indent 通过除以 $y^{\prime \prime}$ 的系数，我们可以将每一个线性齐次二阶微分方程化为以下形式
+	\begin{equation}
+		y^{\prime\prime}+P\left(x\right)y^{\prime}+Q\left(x\right)y=0
+		\label{eq:2.3 linear homogeneous differential equation}
+	\end{equation}
+	设$y_1$和$y_2$是两个满足方程(\ref{eq:2.3 linear homogeneous differential equation})的独立函数。“独立”的意思是$y_2$并不是$y_1$的简单倍数。因此，线性齐次微分方程(\ref{eq:2.3 linear homogeneous differential equation})的通解为
+	\begin{equation}
+		y = c_1y_1+c_2y_2
+		\label{eq:2.4 general solution of the li_{}near homogeneous differential equation}
+	\end{equation}
+	其中$c_1$和$c_2$是任意常数。将式(\ref{eq:2.4 general solution of the li_{}near homogeneous differential equation})带入(\ref{eq:2.3 linear homogeneous differential equation})的左边即可轻松证明：
+	\begin{equation}
+		\begin{aligned}
+			c_1 & y_1^{\prime\prime}+c_2y_2^{\prime\prime}+P\left(x\right)c_1y_1^{\prime}+P\left(x\right)c_2y_2^{\prime}+Q\left(x\right)c_1y_1+Q\left(x\right)c_2y_2\\
+			& = c_1\left[	y_1^{\prime\prime}+P\left(x\right)y_1^{\prime}+Q\left(x\right)y_1\right]+c_2\left[	y_2^{\prime\prime}+P\left(x\right)y_2^{\prime}+Q\left(x\right)y_2\right]\\
+			& = c_1 \cdot 0 + c_2 \cdot 0 = 0
+		\end{aligned}
+		\label{eq:2.5}
+	\end{equation}
+	其中我们用到了$y_1$和$y_2$是方程(\ref{eq:2.3 linear homogeneous differential equation})的解。\\
+	\indent $n$ 次微分方程的通解通常有 $n$ 个任意常数。为了确定这些常数，我们可能需要\textbf{定解条件}，即规定 $y$ 或其各阶导数在某一点或多点的值的条件。例如：如果 $y$ 是固定在两点上的振动弦的位移，我们就知道 $y$ 在这两点上必须为零。\\
+	\indent 一个重要的特例是\textbf{常系数}线性齐次二阶微分方程：
+	\begin{equation}
+		y^{\prime\prime}+py^{\prime}+qy=0
+		\label{eq:2.6 constant coefficients in linear homogeneous second-order differential equation}
+	\end{equation}
+	其中$p$与$q$是常数。为了解这个方程(\ref{eq:2.6 constant coefficients in linear homogeneous second-order differential equation})，我们暂且假定解的形式是$y = \mathrm{e}^{sx}$。我们正在寻找一个导数与常数相乘会与原函数相互抵消的函数。指数函数在微分时会重复，因此是正确的选择。将其代入 (\ref{eq:2.6 constant coefficients in linear homogeneous second-order differential equation}) 即可得出
+	\begin{equation*}
+		s^2\mathrm{e}^{sx}+ps\mathrm{e}^{sx}+q\mathrm{e}^{sx}=0
+	\end{equation*}
+	\begin{equation}
+		\boxed{
+			s^2+ps+q=0
+		}
+		\label{eq:2.7 auxiliary equation}
+	\end{equation}
+	方程 (\ref{eq:2.7 auxiliary equation}) 称为\textbf{特征方程}。它是一个有两个根 $s_1$ 和 $s_2$ 的一元二次方程，只要 $s_1$ 和 $s_2$ 不相等，就能给出 (\ref{eq:2.6 constant coefficients in linear homogeneous second-order differential equation}) 的两个独立解。因此，（\ref{eq:2.6 constant coefficients in linear homogeneous second-order differential equation}）的通解为
+	\begin{equation}
+		\boxed{
+			y = c_1\mathrm{e}^{s_1x}+c_2\mathrm{e}^{s_2x}
+		}
+		\label{eq:2.8 general solution for 2.6}
+	\end{equation}
+	例如，对于方程$y^{\prime\prime}+6y^{\prime}-7y=0$，其特征方程为$s^2+6s-7=0$。解这个特征方程，有$s_1=1$，$s_2=-7$，所以通解为$y = c_1\mathrm{e}^{x}+c_2\mathrm{e}^{-7x}$。
+	
 
 \section{一维盒子中的粒子}
-The wavefunctions and energies are:
-\begin{align}
-	\psi_n(x) &= \sqrt{\frac{2}{l}} \sin\left(\frac{n\pi x}{l}\right) \\
-	E_n &= \frac{n^2 h^2}{8ml^2}, \quad n = 1,2,3,\ldots
-\end{align}
-
+	
 
 \section{一维自由粒子}
 

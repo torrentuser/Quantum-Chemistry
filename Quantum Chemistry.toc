@@ -10,10 +10,10 @@
 \contentsline {section}{\numberline {1.9}微积分学}{14}{section.1.9}%
 \contentsline {chapter}{\numberline {2}箱中粒子}{17}{chapter.2}%
 \contentsline {section}{\numberline {2.1}微分方程}{17}{section.2.1}%
-\contentsline {section}{\numberline {2.2}一维盒子中的粒子}{17}{section.2.2}%
-\contentsline {section}{\numberline {2.3}一维自由粒子}{17}{section.2.3}%
-\contentsline {section}{\numberline {2.4}矩形势井中的粒子}{17}{section.2.4}%
-\contentsline {section}{\numberline {2.5}隧穿}{17}{section.2.5}%
+\contentsline {section}{\numberline {2.2}一维盒子中的粒子}{18}{section.2.2}%
+\contentsline {section}{\numberline {2.3}一维自由粒子}{18}{section.2.3}%
+\contentsline {section}{\numberline {2.4}矩形势井中的粒子}{18}{section.2.4}%
+\contentsline {section}{\numberline {2.5}隧穿}{18}{section.2.5}%
 \contentsline {chapter}{\numberline {3}算符}{19}{chapter.3}%
 \contentsline {section}{\numberline {3.1}算符}{19}{section.3.1}%
 \contentsline {section}{\numberline {3.2}本征函数和本征值}{19}{section.3.2}%
