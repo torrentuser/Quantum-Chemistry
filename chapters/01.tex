@@ -244,12 +244,69 @@
 	\indent 因此，对于 (\ref{eq:1.20}) 形式的状态，概率密度由$\left|\Psi\left(x\right)\right|^2$给出，且不随时间变化。这种状态称为\textbf{定态}。由于具有物理意义的量是$\left|\Psi\left(x,t\right)\right|^2$，而且对于定态有$\left|\Psi\left(x,t\right)\right|^2=\left|\psi\left(x\right)\right|^2$，函数$\psi\left(x\right)$通常被称为\textbf{波函数}，尽管定态的完整波函数是$\psi\left(x\right)$与$\mathrm{e}^{-\mathrm{i}Et/\hbar}$的乘积。\textit{定态}一词不应误导读者，让他们以为处于定态的粒子就是静止的。确定的是概率密度$\left|\Psi\right|^2$，而不是粒子本身。\\
 	\indent 我们将主要关注能量恒定的状态（定态），因此通常会处理定态薛定谔方程（\ref{eq:1.19 time-independent Schrödinger Equation}）。为简单起见，我们将此方程称为 “薛定谔方程”。请注意，薛定谔方程包含两个未知数：允许的能量$E$和允许的波函数$ \psi$。为了求解这两个未知数，我们除了要求它满足 (\ref{eq:1.19 time-independent Schrödinger Equation}) 以外，还需要有额外的条件（称为边界条件）。边界条件决定了允许的能量，因为只有特定的$E$值才能满足边界条件。这一点在后面章节讨论具体例子时会更加清楚。
 	
-	
-	
-	
-	
-	
 	\section{概率}
+	概率在量子力学中起着基础性的作用。本节主要回顾数学中的概率。\\
+	\indent 关于概率的正确定义，一直存在很多争议。其中一个定义如下： 如果一个实验有$n$个同样可能的结果，其中$m$个结果有利于某个事件$A$的发生，那么$A$发生的概率就是$m/n$。请注意，这个定义是循环论证，因为它指定了同样可能的结果，而概率才是我们要定义的。它只是假设我们能够识别同样可能发生的结果。另一个定义是基于多次实际操作实验。假设我们进行了$N$次实验，在其中的$M$次实验中，事件$A$发生了。那么$A$发生的概率定义为
+	\begin{equation*}
+		\lim\limits_{N \to \infty}\frac{M}{N}
+	\end{equation*}
+	因此，如果我们重复抛一枚硬币，随着次数的增加，正面的比例会逐渐接近$1/2$。\\
+	\indent 例如，假设我们想知道从一副包含 13 张红心的 52 张标准牌中随机抽取一张牌时，抽到红心的概率。有 52 张牌，因此有 52 种同样可能的结果。有 13 张红心，因此有 13 种可能的结果。因此，$m/n = 13/52 = 1/4 $。即抽到红心的概率为 $1/4$。\\
+	\indent 有时我们会关心两个相关事件同时发生的概率。例如，我们可能会问从一副 52 张牌中抽出两张红心的概率，假设抽出第一张牌后我们不放回去。第一次抽牌有 52 种可能的结果，而每一种可能都有 51 种可能的第二次抽牌。我们有 52 $\cdot$ 51种可能的结果。因为有 13 张红心，所以有 13$\cdot$12 种不同的方法抽出两张红心。期望概率为 $\left(13\cdot12\right)/\left(52\cdot51\right)=1/17$。这个计算说明了定理： 两个事件$A$和 $B$ 同时发生的概率是 $A$ 发生的概率乘以 $B$ 随后发生的条件概率（计算时假设 $A$ 发生）。因此，如果 $A$ 是第一次抽中红心的概率，那么 $A$ 的概率就是 $13/52$。如果第一次抽到红心，那么第二次抽到红心的概率是 $12/51$，因为牌中还有 12 张红心。那么抽到两张红心的概率是 $\left(13/52\right)\left(12/51\right)=1/17$，如前所述。\\
+	\indent 在量子力学中，我们必须处理涉及连续变量（例如 $x$ 坐标）的概率。谈论在 $x=0.5000...$这样一个特定点上发现粒子的概率是没有多大意义的，因为 $x$ 轴上有无数个点，而对于我们进行的任何有限次数的测量来说，精确得到 $0.5000...$的概率都是微乎其微的。相反，我们谈论的是在 $x$ 轴上位于 $x$ 和 $x+\mathrm{d}x$ 之间的微小区间内找到粒子的概率，$\mathrm{d}x$ 是长度的一个无穷小量。这个概率自然与区间的长度 $\mathrm{d}x$ 成正比，并且会随着 $x$ 轴的不同区域而变化。因此，粒子在 $x$ 和 $x+\mathrm{d}x$ 之间被发现的概率等于 $g\left(x\right)\mathrm{d}x$，其中 $g\left(x\right)$ 是某个函数，表示概率在 $x$ 轴上的变化情况。函数 $g\left(x\right)$ 称为\textbf{概率密度}，因为它是单位长度上的概率。由于概率是实数、非负数，因此 $g\left(x\right)$ 必须是一个处处非负的实函数。波函数 $\Psi$ 可以取负值和复值，不是概率密度。 因此，量子力学假设概率密度为 $\left|\Psi\right|^2$ [公式 (\ref{exp:1.15 probability of a particle}) ]。\\
+	\indent 粒子位于空间的某个有限区域$a \le x \le b$的概率是多少？为了求出这个概率，我们将在位于$a$和 $b$ 之间的所有无限小区域中找到粒子的概率 $\left|\Psi\right|^2\mathrm{d}x$ 相加，这就是如下定积分的定义：
+	\begin{equation}
+		\boxed{\int_{a}^{b}\left|\Psi\right|^2 \mathrm{d}x = \text{Pr}\left(a \le x \le b\right)}
+		\label{eq:1.23 int of probability}
+	\end{equation}
+	其中，Pr 表示概率。概率为1则代表必然性。由于粒子肯定位于 $x$ 轴上的某处，因此我们要求
+	\begin{equation}
+		\boxed{\int_{-\infty}^{\infty} \left|\Psi\right|^2 \mathrm{d}x = 1}
+		\label{eq:1.24 the definition of nomalization}
+	\end{equation}
+	若波函数$\Psi$满足式(\ref{eq:1.24 the definition of nomalization})，则我们说$\Psi$是\textbf{归一化的}。对于定态波函数，有$\left|\Psi\right|^2 = \left|\psi\right|^2$且$\int_{-\infty}^{\infty} \left|\psi\right|^2 \mathrm{d}x = 1$。
+	\\
+	\\
+\textbf{例题：}\\
+	一个单粒子一维系统在$t=0$时刻满足$\Psi = a^{-1/2}\mathrm{e}^{-\left|x\right|/a}$，其中$a = 1.0000$ nm。在$t=0$时对粒子的位置进行一次测量。\\
+	(a)求测量值介于 $x = 1.5000$ nm 和 $x = 1.5001$ nm 之间的概率；\\
+	(b)求测量值介于 $x = 0$ nm 和 $x = 2$ nm之间的概率；\\
+	(c)求证：$\Psi$是归一化的。\\
+	\\
+	(a)在这个极小的区间内，$x$只变化了$0.0001$ nm，而$\Psi$从$\mathrm{e}^{-1.5000}$ nm $^{-1/2} = 0.22313$ nm $^{-1/2}$到$\mathrm{e}^{-1.5001}$ nm $^{-1/2} = 0.22311$ nm $^{-1/2}$，所以$\Psi$在这个区间可以近似为常数，将这一区间视为无穷小区间是一个很好的近似方法。带入(\ref{exp:1.15 probability of a particle})给出的期望概率公式，有
+	\begin{equation*}
+		\begin{aligned}
+			\left|\Psi\right|^2 \mathrm{d}x = a^{-1/2} \mathrm{e}^{-2\left|x\right|/a}\mathrm{d}x & = \left(1 \: \text{nm}\right)^{-1} \mathrm{e}^{-2\left(1.5 \: \text{nm}\right)/\left(1 \:\text{nm}\right)}\left(0.0001 \:\text{nm}\right)\\
+			& = 4.979 \times 10^{-6}
+		\end{aligned}
+	\end{equation*}	
+	（也可见证明1.14）\\
+	(b)使用式(\ref{eq:1.23 int of probability})以及$x \ge 0$时$\left|x\right| = x$，有
+	\begin{equation*}
+		\begin{aligned}
+			\text{Pr} \left(0 \le x \le 2 \: \text{nm}\right) & = \int_{0}^{2 \: \text{nm}}\left|\Psi\right|^2 \mathrm{d}x  = a^{-1} \int_{0}^{2 \: \text{nm}} \mathrm{e}^{-2x/a}\mathrm{d}x\\
+			& = \eval{-\frac{1}{2}\mathrm{e}^{-2x/a}}_{0}^{2 \: \text{nm}} = -\frac{1}{2}\left(\mathrm{e}^{-4}-1\right) = 0.4908
+		\end{aligned}
+	\end{equation*}
+	(c)使用$\int_{-\infty}^{\infty} f\left(x\right) \mathrm{d}x = \int_{-\infty}^{0} f \left(x\right) \mathrm{d}x+\int_{0}^{\infty} f\left(x\right) \mathrm{d}x$，以及$x \ge 0$时$\left|x\right| = x$和$x < 0$时$\left|x\right| = -x$，有
+	\begin{equation*}
+		\begin{aligned}
+			\int_{-\infty}^{\infty} \left|\Psi\right|^2 \mathrm{d}x  & = a ^{-1}\int_{-\infty}^{0} \mathrm{e}^{2x/a}\mathrm{d}x + a^{-1}\int_{0}^{\infty} \mathrm{e}^{-2x/a}\mathrm{d}x\\
+			& = a^{-1}\left(\eval{\frac{1}{2}a\mathrm{e}^{2x/a}}_{-\infty}^{0}\right) + a^{-1}\left(\eval{-\frac{1}{2}a\mathrm{e}^{-2x/a}}_{0}^{\infty}\right) = \frac{1}{2} + \frac{1}{2} = 1 
+		\end{aligned}
+	\end{equation*}
+	得证。\\
+	\\
+	
+	 \noindent \textbf{练习：}\\
+	对于一个测量时态函数为$\Psi = \left(32 a^3 /\pi \right)^{1/4} x \mathrm{e}^{-ax^2}$的系统（其中 $a = 1.0000 \: \text{nm}^{-2}$），求测量值在 $x = 1.2000$ nm 和 $1.2001$ nm 之间的概率。\\
+	(\textit{答案：}0.0000258。)
+	
+	
+	
+	
+	
+	
 	
 	\section{复数}
 	
