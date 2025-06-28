@@ -291,14 +291,35 @@
 	\indent 我们只考虑了粒子在一维盒子中的定态。该系统的非稳态示例，请参见第 7.8 节末尾的示例。\\
 	\indent 关于粒子在盒子中的在线计算机模拟，请访问 www.chem.uci.edu/undergraduate/applets/dwell/\\dwell.htm（显示了在盒子中间引入高度和宽度可变的屏障时对波函数和能级的影响）；web. williams.\\edu/wpetc/chemistry/dbingemann/Chem153/particle.html（通过绘制薛定谔方程在能量变化和盒子长度变化时的解来显示量子化）；以及 falstad.com/qm1d/（同时显示含时薛定谔方程和定态薛定谔方程；见 7.47）。
 
-
-
-
-
-
 \section{一维自由粒子}
+	我们所说的自由粒子是指不受任何力作用的粒子。对于自由粒子，对（\ref{eq:1.12 Potential energy in classical mechanics}）的积分表明，无论 $x$ 的值是多少，势能都保持不变。由于基态能量的选择是任意的，我们可以设定 $V(x) = 0$。则薛定谔方程 (\ref{eq:1.19 time-independent Schrödinger Equation}) 变为
+	\begin{equation}
+		\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2}+\frac{2m}{\hbar}E\psi = 0
+		\label{eq:2.29 schrödinger equation for free particle}
+	\end{equation}
+	式 (\ref{eq:2.29 schrödinger equation for free particle}) 与式 (\ref{eq:2.10 schrödinger equation for particle between 0 and l}) 相同（定解条件除外）。因此， (\ref{eq:2.29 schrödinger equation for free particle}) 的通解为 (\ref{eq:2.13 general solution for particle between zero and l}) ：
+	\begin{equation}
+		\psi = c_1\mathrm{e}^{\mathrm{i} \left(2mE\right)^{1/2} x /\hbar}+c_2\mathrm{e}^{-\mathrm{i} \left(2mE\right)^{1/2} x /\hbar}
+		\label{eq:2.30}
+	\end{equation}
+	\indent 我们可以使用什么边界条件呢？似乎可以合理地假设（因为 $\psi^{\ast}\psi\mathrm{d}x$ 代表一种概率），当 $x$ 趋于 $\pm \infty$ 时，$\psi$ 将保持有限值。那么如果能量 $E$ 小于零，那么就违反了这个边界条件，因为对于 $E<0$，我们有
+	\begin{equation*}
+		\mathrm{i} \left(2mE\right)^{1/2} = \mathrm{i}\left(-2m \left|E\right|\right)^{1/2} = \mathrm{i} \cdot \mathrm{i} \cdot \left(2m \left|E\right|\right)^{1/2} = -\left(2m \left|E\right|\right)^{1/2}
+	\end{equation*}
+	因此，当 $x$ 接近负无穷大时，（\ref{eq:2.30}）中的第一项将变为无穷大。同样，如果 $E$ 为负值，当 $x$ 接近正无穷大时，(\ref{eq:2.30}) 中的第二项也将变为无穷大。因此，对于一维自由粒子，定解条件要求
+	\begin{equation}
+		E \ge 0
+		\label{neq: boundary condition of free particle}
+	\end{equation}
+	波函数是振荡的，是一个正弦项和一个余弦项的线性组合[公式 (\ref{eq:2.15 complete wave function of psi ii}) ]。对于自由粒子，能量没有量子化，所有非负能量都是允许的。在这种情况下，由于我们规定$V=0$，能量 $E$ 全为动能。如果我们想通过归一化的方式求出常数$c_1$和$c_2$，会发现积分$\int_{- \infty}^{\infty} \psi^{\ast}\left(x\right)\psi\left(x\right) \mathrm{d}x$的值为无穷大。换句话说，自由粒子的波函数在通常意义上是不可归一化的。这在物理上是意料之中的，因为当 $x$ 变为 $\pm \infty$  时，找到自由粒子的概率没有理由趋近于零。\\
+	\indent 自由粒子问题是一种不真实的情况，因为我们实际上不可能有一种粒子与宇宙中的任何其他粒子没有相互作用。
+	
+	
+	
+	
+	
 
-\section{矩形势井中的粒子}
+\section{矩形势阱中的粒子}
 
 \section{隧穿}
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  28 JUN 2025 19:59
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  28 JUN 2025 20:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1162,14 +1162,17 @@ Overfull \hbox (3.25002pt too wide) in paragraph at lines 287--293
  []
 
 [22]) (/users/administrator/desktop/repo/quantumchemistry/chapters/03.tex
-[23] [24
+Underfull \vbox (badness 1137) has occurred while \output is active []
 
-]
+ [23]
+[24]
 Chapter 3.
 ) (/users/administrator/desktop/repo/quantumchemistry/chapters/04.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
+ [25
+
+]
 [26]
 Chapter 4.
 ) (/users/administrator/desktop/repo/quantumchemistry/chapters/05.tex [27
@@ -1365,10 +1368,10 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 27043 strings out of 474773
- 607360 string characters out of 5757723
+ 27046 strings out of 474773
+ 607459 string characters out of 5757723
  1962839 words of memory out of 5000000
- 48759 multiletter control sequences out of 15000+600000
+ 48762 multiletter control sequences out of 15000+600000
  575670 words of font info for 155 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,12n,114p,796b,856s stack positions out of 10000i,1000n,20000p,200000b,200000s
