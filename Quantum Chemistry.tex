@@ -18,6 +18,29 @@
 \usepackage{unicode-math}
 \usepackage{siunitx}
 \usepackage{mathtools}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\usepackage{xcolor}
+
+% 定义自定义框体样式
+\newtcolorbox{examplebox}{
+	colback = white,     % 背景色
+	colframe = black,    % 边框色
+	sharp corners,       % 直角边框
+	boxrule = 0.8pt,     % 边框粗细
+	% enhanced,            % 启用高级特性
+	breakable,           % 允许跨页
+	before skip = 10pt,  % 上方间距
+	after skip = 10pt,   % 下方间距
+	left = 5pt,          % 左侧内边距
+	right = 5pt,         % 右侧内边距
+	top = 5pt,           % 顶部内边距
+	bottom = 5pt,        % 底部内边距
+	fontupper = \normalsize, % 内容字号
+	% title = 例题与练习,   % 框体标题
+	coltitle = black,    % 标题颜色
+	attach title to upper, % 标题与内容连接
+}
 
 % 设置页面布局
 \geometry{a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm}
