@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  28 JUN 2025 20:44
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  29 JUN 2025 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1161,64 +1161,72 @@ Overfull \hbox (3.25002pt too wide) in paragraph at lines 287--293
 /n/10.53937 www.chem.uci.edu/undergraduate/applets/dwell/ 
  []
 
-[22]) (/users/administrator/desktop/repo/quantumchemistry/chapters/03.tex
-Underfull \vbox (badness 1137) has occurred while \output is active []
+[22]
+File: /users/administrator/desktop/repo/quantumchemistry/Figures/2.5.png Graphi
+c file (type bmp)
+</users/administrator/desktop/repo/quantumchemistry/Figures/2.5.png>
 
- [23]
-[24]
+Overfull \hbox (6.82019pt too wide) in paragraph at lines 318--327
+[]\TU/STSong(0)/m/n/10.53937 我 们 首 先 考 虑 $[] [] [][]$ 的 情 况。|  区 域 \TU/lmr/m/n/
+10.53937 I \TU/STSong(0)/m/n/10.53937 和 区 域 \TU/lmr/m/n/10.53937 III \TU/STSong
+(0)/m/n/10.53937 的 薛 定 谔 方 程 为 $[][][][][][][] [] [] [] [] []
+ []
+
+[23] [24]) (/users/administrator/desktop/repo/quantumchemistry/chapters/03.tex
+[25] [26
+
+]
 Chapter 3.
 ) (/users/administrator/desktop/repo/quantumchemistry/chapters/04.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25
-
-]
-[26]
+ [27]
+[28]
 Chapter 4.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/05.tex [27
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/05.tex [29
 
 ]
-[28
-
-]
-Chapter 5.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/06.tex [29]
 [30
 
 ]
-Chapter 6.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/07.tex [31]
+Chapter 5.
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/06.tex [31]
 [32
 
 ]
-Chapter 7.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/08.tex [33]
+Chapter 6.
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/07.tex [33]
 [34
 
 ]
-Chapter 8.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/09.tex [35]
+Chapter 7.
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/08.tex [35]
 [36
 
 ]
-Chapter 9.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/10.tex [37]
+Chapter 8.
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/09.tex [37]
 [38
 
 ]
-Chapter 10.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/11.tex [39]
+Chapter 9.
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/10.tex [39]
 [40
 
 ]
-Chapter 11.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/12.tex [41]
+Chapter 10.
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/11.tex [41]
 [42
 
 ]
-Chapter 12.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/13.tex [43]
+Chapter 11.
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/12.tex [43]
 [44
+
+]
+Chapter 12.
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/13.tex [45]
+[46
 
 ]
 Chapter 13.
@@ -1289,16 +1297,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (/users/administrator/desktop/repo/quantumchemistry/chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45]
+ [47]
 Overfull \vbox (69.2806pt too high) has occurred while \output is active []
 
 
-[46]
+[48]
 Chapter 14.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/15.tex [47
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/15.tex [49
 
 ]
-[48
+[50
 
 ]
 Chapter 15.
@@ -1317,49 +1325,49 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (/users/administrator/desktop/repo/quantumchemistry/chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49]
+ [51]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
-[50]
+[52]
 Chapter 16.
 ) (/users/administrator/desktop/repo/quantumchemistry/chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51
+ [53
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
-[52]
+[54]
 Chapter 17.
-[53
-
-]) (/users/administrator/desktop/repo/quantumchemistry/chapters/appendix.tex [5
-4]
-附录 A.
-) (/users/administrator/desktop/repo/quantumchemistry/chapters/bibliography.tex
 [55
 
-] [56
+]) (/users/administrator/desktop/repo/quantumchemistry/chapters/appendix.tex [5
+6]
+附录 A.
+) (/users/administrator/desktop/repo/quantumchemistry/chapters/bibliography.tex
+[57
+
+] [58
 
 ]
 附录 B.
-[57] [58
+[59] [60
 
 ])
 (/users/administrator/desktop/repo/quantumchemistry/chapters/answers.tex
-[59] [60
+[61] [62
 
 ]
 附录 C.
 ) (/users/administrator/desktop/repo/quantumchemistry/chapters/index.tex
-[61] [62
+[63] [64
 
 ]
 附录 D.
-) [63] (./Quantum Chemistry.aux)
+) [65] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -1368,12 +1376,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 27064 strings out of 474773
- 608693 string characters out of 5757723
+ 27088 strings out of 474773
+ 610111 string characters out of 5757723
  1962839 words of memory out of 5000000
- 48780 multiletter control sequences out of 15000+600000
+ 48803 multiletter control sequences out of 15000+600000
  575670 words of font info for 155 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,12n,114p,796b,856s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (71 pages).
+Output written on Quantum Chemistry.pdf (73 pages).

@@ -61,7 +61,7 @@
 	例如，对于方程$y^{\prime\prime}+6y^{\prime}-7y=0$，其特征方程为$s^2+6s-7=0$。解这个特征方程，有$s_1=1$，$s_2=-7$，所以通解为$y = c_1\mathrm{e}^{x}+c_2\mathrm{e}^{-7x}$。
 
 \section{一维盒子中的粒子}
-	本节求解一维盒子中粒子的定态薛定谔方程。我们所说的粒子是指受到势能函数作用的粒子，该势能函数沿 $x$ 轴的任何位置都为无穷大，只有长度为 $l$ 的线段除外，在该线段上势能为零。这样的系统在物理上似乎是不真实的，但这种模型可以成功地应用于某些共轭分子；见问题 2.17。我们把原点放在线段的左端（图 2.1）。
+	本节求解一维盒子中粒子的定态薛定谔方程。我们所说的粒子是指受到特定势能函数作用的粒子，该势能函数沿 $x$ 轴的任何位置都为无穷大，只有长度为 $l$ 的线段除外，在该线段上势能为零。这样的系统在物理上似乎是不真实的，但这种模型可以成功地应用于某些共轭分子；见问题 2.17。我们把原点放在线段的左端（图 2.1）。
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.6\textwidth]{/users/administrator/desktop/repo/quantumchemistry/Figures/2.1.png}  % 图片路径
@@ -314,13 +314,64 @@
 	波函数是振荡的，是一个正弦项和一个余弦项的线性组合[公式 (\ref{eq:2.15 complete wave function of psi ii}) ]。对于自由粒子，能量没有量子化，所有非负能量都是允许的。在这种情况下，由于我们规定$V=0$，能量 $E$ 全为动能。如果我们想通过归一化的方式求出常数$c_1$和$c_2$，会发现积分$\int_{- \infty}^{\infty} \psi^{\ast}\left(x\right)\psi\left(x\right) \mathrm{d}x$的值为无穷大。换句话说，自由粒子的波函数在通常意义上是不可归一化的。这在物理上是意料之中的，因为当 $x$ 变为 $\pm \infty$  时，找到自由粒子的概率没有理由趋近于零。\\
 	\indent 自由粒子问题是一种不真实的情况，因为我们实际上不可能有一种粒子与宇宙中的任何其他粒子没有相互作用。
 	
-	
-	
-	
-	
-
 \section{矩形势阱中的粒子}
-
+	考虑在一个具有有限势垒的一维盒子中的粒子（图 \ref{fig:2.5} a）。势能函数为当$x<0$和$x>l$时$V=V_0$，而$0 \le x \le l$时有$V_0=0$。需要考虑两种情况，即粒子的能量高于或低于$V_0$。\\
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.9\textwidth]{/users/administrator/desktop/repo/quantumchemistry/Figures/2.5.png}  % 图片路径
+		\caption{\text{(a) 一维矩形势阱中粒子的势能。(b) 该势能的基态波函数。(c) 第一激发态的波函数。}}
+		\label{fig:2.5}
+	\end{figure}
+	\\
+	\indent 我们首先考虑$E < V_0$的情况。区域I和区域III的薛定谔方程为$\mathrm{d}^2\psi/\mathrm{d}x^2+\left(2m/\hbar^2\right)\left(E-V_0\right)\psi=0$。这是一个常系数齐次线性微分方程，其特征方程(\ref{eq:2.7 auxiliary equation})为$s^2+\left(2m/\hbar^2\right)\left(E-V_0\right)=0$，特征根为$s = \pm \left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}$。因此，
+	\begin{equation*}
+		\begin{aligned}
+			\psi_I & = C \exp \left[\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] + D \exp \left[-\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] \\
+			\psi_{III} & = F \exp \left[\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] + G \exp \left[-\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] 
+		\end{aligned}
+	\end{equation*}
+	其中$C$、$D$、$F$和$G$都是常数。\\
+	\indent 如第2.3节所述，当$x \to -\infty$时，我们必须阻止$\psi_I$趋于无穷。由于我们假设$E<V_0$，则$\left(V_0-E\right)^{1/2}$是正实数，当$x \to -\infty$时，为了满足$\psi_I$的值为有限值，我们必须有$D=0$。同样地，当$x \to +\infty$时，为了满足$\psi_{III}$的值为有限值，我们有$F=0$。因此，
+	\begin{equation*}
+		\psi_I  = C \exp \left[\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] , \quad \psi_{III}  = G \exp \left[-\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right]
+	\end{equation*}
+	\indent 在区域II中，$V=0$，薛定谔方程与(\ref{eq:2.10 schrödinger equation for particle between 0 and l})一致，其通解为(\ref{eq:2.15 complete wave function of psi ii})
+	\begin{equation}
+		\psi_{II} = A \cos\left[\left(2m\hbar^2\right)^{1/2}E^{1/2}x\right]+B\sin \left[\left(2m\hbar^2\right)^{1/2}E^{1/2}x\right]
+		\label{eq:2.32}
+	\end{equation}
+	\indent 为了完整解决这个问题，我们需要用到定解条件。与无限深势阱中粒子的情况类似，我们需要波函数在$x=0$和$x=l$处连续，则$\psi_I\left(0\right) = \psi_{II}\left(0\right)$，$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$
+	波函数有四个任意常数，因此需要的定解条件不止这两个。除了需要$\psi$连续以外，我们还需要其一阶导数$\mathrm{d}\psi/\mathrm{d}x$处处连续。为了证明这一要求的合理性，我们假设如果$\mathrm{d}\psi/\mathrm{d}x$在某点处不连续，则其导数（$\psi$的二阶导数的瞬时变化率）在该点处会趋于无穷。然而，对于矩形势阱中的粒子，其薛定谔方程$\mathrm{d}^2\psi/\mathrm{d}x^2=\left(2m/\hbar^2\right)\left(V-E\right)\psi$
+	的右侧不包含任何趋于无穷的因子。所以$\mathrm{d}^2\psi/\mathrm{d}x^2$不可能趋于无穷[更严谨的论证，见 D. Branson, Am. J. Phys.，47，1000（1979 ）]。因此，我们在$x=0$时有$\mathrm{d}\psi_I/\mathrm{d}x=\mathrm{d}\psi_{II}/\mathrm{d}x$，在$x=l$时有$\mathrm{d}\psi_{II}/\mathrm{d}x=\mathrm{d}\psi_{III}/\mathrm{d}x$。\\
+	\indent 由$\psi_I\left(0\right) = \psi_{II}\left(0\right)$，我们有$C=A$。由$\psi_I^{\prime}\left(0\right) = \psi_{II}^{\prime}\left(0\right)$，我们有$B=\left(V_0-E\right)^{1/2}A/E^{1/2}$。由$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$，我们得到了一个复杂的等式，可以根据 $A$ 求出 $G$。常数$A$由归一化计算求出。\\
+	\indent 用 $\psi^{\prime}_{II}\left(l\right) = \psi^{\prime}_{III}\left(l\right)$除以$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$，再用 $A$ 表示 $B$，就得到下面的能级方程（问题 2.21b）：
+	\begin{equation}
+		\left(2E-V_0\right)\sin\left[\left(2mE\right)^{1/2}/\hbar\right] = 2\left(V_0E-E^2\right)^{1/2}\cos \left[\left(2mE\right)^{1/2}l/\hbar\right]
+		\label{eq:2.33 equation for the energy levels}
+	\end{equation}
+	[虽然$E=0$也满足(\ref{eq:2.33 equation for the energy levels})，但会导致$\psi=0$，所以它不是允许的能量。（见问题2.21 b]定义无量纲的常数$\varepsilon$和$b$满足
+	\begin{equation}
+		\varepsilon \equiv E/V_0\:, \quad b \equiv \left(2mV_0\right)^{1/2}l/\hbar
+		\label{eq: 2.34 definition of varepsilon and b}
+	\end{equation}
+	用$V_0$除以(\ref{eq:2.33 equation for the energy levels})，我们有
+	\begin{equation}
+		\left(2\varepsilon-1\right)\sin\left(b\varepsilon^{1/2}\right) - 2\left(\varepsilon - \varepsilon^2 \right)^{1/2}\cos\left(b\varepsilon^{1/2}\right) = 0
+		\label{eq:2.35 equation for the energy levels with varepsilon and b}
+	\end{equation}
+	只有满足(\ref{eq:2.33 equation for the energy levels})的粒子的能量才有连续和连续导数的波函数，所以能级量子化的条件为$E<V_0$，为了找到允许的能级，我们可以在 $0<\varepsilon<1$ 的条件下绘制 (\ref{eq:2.35 equation for the energy levels with varepsilon and b}) 左侧表达式与 $\varepsilon$ 的关系图，并找出曲线与横轴交叉的点（另见问题 4.31c）。详细研究（Merzbacher，第 6.8 节）表明：$E<V_0$ 的允许能级数为 $N$，其中 $N$ 满足以下条件
+	\begin{equation}
+		N-1 < b/\pi \le N, \quad \text{其中}\: b \equiv \left(2mV_0\right)^{1/2}l /\hbar
+		\label{eq:2.36 requirement for allowed energy levels' number N}
+	\end{equation}
+	例如，如果$V_0 = h^2/ml^2$，那么$b/\pi = 2\left(2^{1/2}\right) = 2.83$，即$N=3$。图 (\ref{fig:2.5})显示了最低两个能级的 $\psi$。波函数在盒内是振荡的，而在盒外则呈指数衰减。事实证明：每提高一个能级，节点数就增加一个。\\
+	\indent 到目前为止，我们只考虑了$E<V_0$的状态。对于$V_0<E$，$\left(V_0-E\right)^{1/2}$是虚数，并且波函数$\psi_I$和$\psi_{III}$在$x \to \pm \infty$时不会趋于零，而是会振荡（类似于自由粒子）。我们也再也没有理由将$\psi_I$中的$D$和$\psi_{III}$中的 $F$设为零了，这些额外的常数可以满足 $\psi$ 和 $\psi^{\prime}$ 的定解条件，
+	我们会发现不需要限制 $E$ 就可以得到符合条件的波函数。因此，上述所有能量都是允许的。\\
+	\indent $x \to \pm \infty$时$\psi \to 0$的状态称为\textbf{束缚态}。对于束缚态，只有在有限的空间区域内才有可能找到粒子。对于\textbf{非束缚态}，当$x \to \pm \infty$时$\psi$不会趋于零，且无法归一化。对于在有限深矩形势阱中的粒子，$E<V_0$的状态是束缚态，而$E>V_0$的状态是非束缚态。而在无限深势阱中的粒子则所有的状态都为束缚态，自由粒子则全为非束缚态。\\
+	\indent 要在线模拟粒子在势阱中的情况，请访问 www.falstad.com/qm1d ，并在 “设置 ”框中选择 “有限势阱”。您可以改变势阱的宽度和深度，查看对能级和波函数的影响。
+	
+	
+	
 \section{隧穿}
 
 \section*{总结}
