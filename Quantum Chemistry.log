@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  29 JUN 2025 15:54
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  29 JUN 2025 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1172,15 +1172,23 @@ Overfull \hbox (6.82019pt too wide) in paragraph at lines 318--327
 (0)/m/n/10.53937 的 薛 定 谔 方 程 为 $[][][][][][][] [] [] [] [] []
  []
 
-[23] [24]) (/users/administrator/desktop/repo/quantumchemistry/chapters/03.tex
-[25] [26
+[23] [24]
+File: /users/administrator/desktop/repo/quantumchemistry/Figures/2.6.png Graphi
+c file (type bmp)
+</users/administrator/desktop/repo/quantumchemistry/Figures/2.6.png>
 
-]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[25]) (/users/administrator/desktop/repo/quantumchemistry/chapters/03.tex
+[26]
 Chapter 3.
 ) (/users/administrator/desktop/repo/quantumchemistry/chapters/04.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
+ [27
+
+]
 [28]
 Chapter 4.
 ) (/users/administrator/desktop/repo/quantumchemistry/chapters/05.tex [29
@@ -1376,10 +1384,10 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 27088 strings out of 474773
- 610111 string characters out of 5757723
- 1962839 words of memory out of 5000000
- 48803 multiletter control sequences out of 15000+600000
+ 27122 strings out of 474773
+ 612321 string characters out of 5757723
+ 1963839 words of memory out of 5000000
+ 48836 multiletter control sequences out of 15000+600000
  575670 words of font info for 155 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,12n,114p,796b,856s stack positions out of 10000i,1000n,20000p,200000b,200000s
