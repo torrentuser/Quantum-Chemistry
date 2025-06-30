@@ -265,42 +265,41 @@
 		\label{eq:1.24 the definition of nomalization}
 	\end{equation}
 	若波函数$\Psi$满足式(\ref{eq:1.24 the definition of nomalization})，则我们说$\Psi$是\textbf{归一化的}。对于定态波函数，有$\left|\Psi\right|^2 = \left|\psi\right|^2$且$\int_{-\infty}^{\infty} \left|\psi\right|^2 \mathrm{d}x = 1$。
-	\\
-	\\
-\textbf{例题：}\\
-	一个单粒子一维系统在$t=0$时刻满足$\Psi = a^{-1/2}\mathrm{e}^{-\left|x\right|/a}$，其中$a = 1.0000$ nm。在$t=0$时对粒子的位置进行一次测量。\\
-	(a)求测量值介于 $x = 1.5000$ nm 和 $x = 1.5001$ nm 之间的概率；\\
-	(b)求测量值介于 $x = 0$ nm 和 $x = 2$ nm之间的概率；\\
-	(c)求证：$\Psi$是归一化的。\\
-	\\
-	(a)在这个极小的区间内，$x$只变化了$0.0001$ nm，而$\Psi$从$\mathrm{e}^{-1.5000}$ nm $^{-1/2} = 0.22313$ nm $^{-1/2}$到$\mathrm{e}^{-1.5001}$ nm $^{-1/2} = 0.22311$ nm $^{-1/2}$，所以$\Psi$在这个区间可以近似为常数，将这一区间视为无穷小区间是一个很好的近似方法。带入(\ref{exp:1.15 probability of a particle})给出的期望概率公式，有
-	\begin{equation*}
-		\begin{aligned}
-			\left|\Psi\right|^2 \mathrm{d}x = a^{-1/2} \mathrm{e}^{-2\left|x\right|/a}\mathrm{d}x & = \left(1 \: \text{nm}\right)^{-1} \mathrm{e}^{-2\left(1.5 \: \text{nm}\right)/\left(1 \:\text{nm}\right)}\left(0.0001 \:\text{nm}\right)\\
-			& = 4.979 \times 10^{-6}
-		\end{aligned}
-	\end{equation*}	
-	（也可见证明1.14）\\
-	(b)使用式(\ref{eq:1.23 int of probability})以及$x \ge 0$时$\left|x\right| = x$，有
-	\begin{equation*}
-		\begin{aligned}
-			\text{Pr} \left(0 \le x \le 2 \: \text{nm}\right) & = \int_{0}^{2 \: \text{nm}}\left|\Psi\right|^2 \mathrm{d}x  = a^{-1} \int_{0}^{2 \: \text{nm}} \mathrm{e}^{-2x/a}\mathrm{d}x\\
-			& = \eval{-\frac{1}{2}\mathrm{e}^{-2x/a}}_{0}^{2 \: \text{nm}} = -\frac{1}{2}\left(\mathrm{e}^{-4}-1\right) = 0.4908
-		\end{aligned}
-	\end{equation*}
-	(c)使用$\int_{-\infty}^{\infty} f\left(x\right) \mathrm{d}x = \int_{-\infty}^{0} f \left(x\right) \mathrm{d}x+\int_{0}^{\infty} f\left(x\right) \mathrm{d}x$，以及$x \ge 0$时$\left|x\right| = x$和$x < 0$时$\left|x\right| = -x$，有
-	\begin{equation*}
-		\begin{aligned}
-			\int_{-\infty}^{\infty} \left|\Psi\right|^2 \mathrm{d}x  & = a ^{-1}\int_{-\infty}^{0} \mathrm{e}^{2x/a}\mathrm{d}x + a^{-1}\int_{0}^{\infty} \mathrm{e}^{-2x/a}\mathrm{d}x\\
-			& = a^{-1}\left(\eval{\frac{1}{2}a\mathrm{e}^{2x/a}}_{-\infty}^{0}\right) + a^{-1}\left(\eval{-\frac{1}{2}a\mathrm{e}^{-2x/a}}_{0}^{\infty}\right) = \frac{1}{2} + \frac{1}{2} = 1 
-		\end{aligned}
-	\end{equation*}
-	得证。\\
-	\\
-	
-	 \noindent \textbf{练习：}\\
-	对于一个测量时态函数为$\Psi = \left(32 a^3 /\pi \right)^{1/4} x \mathrm{e}^{-ax^2}$的系统（其中 $a = 1.0000 \: \text{nm}^{-2}$），求测量值在 $x = 1.2000$ nm 和 $1.2001$ nm 之间的概率。将区间视为无穷小区间。\\
-	(\textit{答案：}0.0000258。)
+	\begin{examplebox}
+		\textbf{例题：}\\
+		一个单粒子一维系统在$t=0$时刻满足$\Psi = a^{-1/2}\mathrm{e}^{-\left|x\right|/a}$，其中$a = 1.0000$ nm。在$t=0$时对粒子的位置进行一次测量。\\
+		(a)求测量值介于 $x = 1.5000$ nm 和 $x = 1.5001$ nm 之间的概率；\\
+		(b)求测量值介于 $x = 0$ nm 和 $x = 2$ nm之间的概率；\\
+		(c)求证：$\Psi$是归一化的。\\
+		\\
+		(a)在这个极小的区间内，$x$只变化了$0.0001$ nm，而$\Psi$从$\mathrm{e}^{-1.5000}$ nm $^{-1/2} = 0.22313$ nm $^{-1/2}$到$\mathrm{e}^{-1.5001}$ nm $^{-1/2} = 0.22311$ nm $^{-1/2}$，所以$\Psi$在这个区间可以近似为常数，将这一区间视为无穷小区间是一个很好的近似方法。带入(\ref{exp:1.15 probability of a particle})给出的期望概率公式，有
+		\begin{equation*}
+			\begin{aligned}
+				\left|\Psi\right|^2 \mathrm{d}x = a^{-1/2} \mathrm{e}^{-2\left|x\right|/a}\mathrm{d}x & = \left(1 \: \text{nm}\right)^{-1} \mathrm{e}^{-2\left(1.5 \: \text{nm}\right)/\left(1 \:\text{nm}\right)}\left(0.0001 \:\text{nm}\right)\\
+				& = 4.979 \times 10^{-6}
+			\end{aligned}
+		\end{equation*}	
+		（也可见证明1.14）\\
+		(b)使用式(\ref{eq:1.23 int of probability})以及$x \ge 0$时$\left|x\right| = x$，有
+		\begin{equation*}
+			\begin{aligned}
+				\text{Pr} \left(0 \le x \le 2 \: \text{nm}\right) & = \int_{0}^{2 \: \text{nm}}\left|\Psi\right|^2 \mathrm{d}x  = a^{-1} \int_{0}^{2 \: \text{nm}} \mathrm{e}^{-2x/a}\mathrm{d}x\\
+				& = \eval{-\frac{1}{2}\mathrm{e}^{-2x/a}}_{0}^{2 \: \text{nm}} = -\frac{1}{2}\left(\mathrm{e}^{-4}-1\right) = 0.4908
+			\end{aligned}
+		\end{equation*}
+		(c)使用$\int_{-\infty}^{\infty} f\left(x\right) \mathrm{d}x = \int_{-\infty}^{0} f \left(x\right) \mathrm{d}x+\int_{0}^{\infty} f\left(x\right) \mathrm{d}x$，以及$x \ge 0$时$\left|x\right| = x$和$x < 0$时$\left|x\right| = -x$，有
+		\begin{equation*}
+			\begin{aligned}
+				\int_{-\infty}^{\infty} \left|\Psi\right|^2 \mathrm{d}x  & = a ^{-1}\int_{-\infty}^{0} \mathrm{e}^{2x/a}\mathrm{d}x + a^{-1}\int_{0}^{\infty} \mathrm{e}^{-2x/a}\mathrm{d}x\\
+				& = a^{-1}\left(\eval{\frac{1}{2}a\mathrm{e}^{2x/a}}_{-\infty}^{0}\right) + a^{-1}\left(\eval{-\frac{1}{2}a\mathrm{e}^{-2x/a}}_{0}^{\infty}\right) = \frac{1}{2} + \frac{1}{2} = 1 
+			\end{aligned}
+		\end{equation*}
+		得证。\\
+		\\
+		\noindent \textbf{练习：}\\
+		对于一个测量时态函数为$\Psi = \left(32 a^3 /\pi \right)^{1/4} x \mathrm{e}^{-ax^2}$的系统（其中 $a = 1.0000 \: \text{nm}^{-2}$），求测量值在 $x = 1.2000$ nm 和 $1.2001$ nm 之间的概率。将区间视为无穷小区间。\\
+		(\textit{答案：}0.0000258。)
+	\end{examplebox}
 	
 	\section{复数}
 	我们已经知道波函数可以是复数，所以我们来回顾一下复数的一些性质。\\
