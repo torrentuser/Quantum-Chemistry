@@ -193,18 +193,90 @@
 				& = \hat{D}^2+2\hat{x}\hat{D}+\hat{x}^2+1
 			\end{aligned}
 		\end{equation*}
-		其中用到了式(\ref{eq:3.11})、(\ref{eq:3.12})和(\ref{eq:3.5})，并省略了 “乘以 $x$ ”算符上的小尖号。\textit{在彻底掌握算符之前，最安全的做法是在进行算符操作时，始终保持算符对任意函数 $f$ 进行操作，然后在最后删除 $f$。}
-		
-		
-		
+		其中用到了式(\ref{eq:3.11})、(\ref{eq:3.12})和(\ref{eq:3.5})，并省略了 “乘以 $x$ ”算符上的小尖号。\textit{在彻底掌握算符之前，最安全的做法是在进行算符操作时，始终保持算符对任意函数 $f$ 进行操作，然后在最后删除 $f$。}\\
+		\\
+		\textbf{练习：}\\
+		求$\left(\mathrm{d}^2/\mathrm{d}x^2\right)^2$。（\textit{答案：}$\mathrm{d}^4/\mathrm{d}x^4+2x\mathrm{d}^2/\mathrm{d}x^2+2\mathrm{d}/\mathrm{d}x+x^2$）
 	\end{examplebox}
 	
 \section{本征函数和本征值}
-An operator $\hat{A}$ satisfies:
-\begin{equation}
-	\hat{A} \psi = a \psi
-\end{equation}
-where $a$ is the eigenvalue.
+	假设某线性算符$\hat{A}$作用在某个函数$f\left(x\right)$上的结果是对$f\left(x\right)$乘上一个常数$k$。我们说$f\left(x\right)$是$\hat{A}$的一个\textbf{本征函数}，$k$是\textbf{本征值}。作为定义的一部分，我们将要求本征函数$f\left(x\right)$不等于零。我们的意思是说，尽管 $f\left(x\right)$ 可能在不同点上消失，但它并非处处为零。我们有
+	\begin{equation}
+		\boxed{
+			\hat{A}f\left(x\right) = kf\left(x\right)
+		}
+		\label{eq:3.14 definition of eigenfunctions and eigenvalues}
+	\end{equation}
+	例如，函数$\mathrm{e}^{2x}$是算符$\mathrm{d}/\mathrm{d}x$的一个本征函数，其本征值为2：
+	\begin{equation*}
+		\left(\mathrm{d}/\mathrm{d}x\right)\mathrm{e}^{2x} = 2 \mathrm{e}^{2x}
+	\end{equation*}
+	然而$\sin 2x$不是$\mathrm{d}/\mathrm{d}x$的本征函数，因为$\left(\mathrm{d}/\mathrm{d}x\right)\left(\sin 2x\right) = 2 \cos 2x$，不等于一个常数乘以$\sin 2x$。
+	\begin{examplebox}
+		\textbf{例题：}如果函数$f\left(x\right)$是线性算符$\hat{A}$的一个本征函数，$c$是任意常数。求证：$cf\left(x\right)$也是算符$\hat{A}$的本征函数，并与$f\left(x\right)$有相同的本征值。\\
+		\\
+		了解如何进行证明的一个好方法是按以下步骤进行：\\
+		1. 写下给定的信息，并将这些信息从文字转化为等式。\\
+		2. 用一个或多个方程的形式写下要证明的内容。\\
+		3. (a) 处理步骤 1 中的给定方程，将其转化为步骤 2 中的所需方程。 (b) 或者，从我们要证明的方程的一边开始，使用步骤 1 中的给定方程来处理这一边，直到它转化为要证明的方程的另一边。\\
+		\\
+		我们有三个条件：$f\left(x\right)$是算符$\hat{A}$的本征函数；$\hat{A}$是线性算符；$c$是常数。将这些表述转化为方程 [见方程(\ref{eq:3.14 definition of eigenfunctions and eigenvalues})、(\ref{eq:3.9})和(\ref{eq:3.10})]，我们有
+		\begin{equation}
+			\hat{A} f = kf
+			\label{eq:3.15}
+		\end{equation}
+		\begin{equation}
+			\hat{A}\left(f+g\right) = \hat{A}f+\hat{A}g,\quad \text{及}\: \hat{A}\left(bf\right) = b\hat{A}f
+			\label{eq:3.16}
+		\end{equation}
+		\begin{equation*}
+			c = a \: \left(\text{常数}\right)
+		\end{equation*}
+		其中$k$和$b$是常数，$f$和$g$是函数。\\
+		我们想要证明$cf\left(x\right)$也是算符$\hat{A}$的本征函数且有相同的本征值，将其写成方程，即
+		\begin{equation*}
+			\hat{A}\left(cf\right) = k\left(cf\right)
+		\end{equation*}
+		使用策略(3)的(b)，我们从待证明方程的左侧$\hat{A}\left(cf\right)$出发，尝试证明它等于$k\left(cf\right)$。由线性算符定义(\ref{eq:3.16})的第二个方程，我们有$\hat{A}\left(cf\right) = c\hat{A}f$。使用本征方程(\ref{eq:3.15})，有$c\hat{A}f = ckf$。因此，
+		\begin{equation*}
+			\hat{A}\left(cf\right) = c\hat{A}f = ckf= k\left(cf\right)
+		\end{equation*}
+		得证。
+	\end{examplebox}
+	\begin{examplebox}
+		\textbf{例题：}(a) 求算符$\mathrm{d}/\mathrm{d}x$的本征函数及对应的本征值；(b)如果我们假设定解条件为本征函数在$x \to \pm \infty$时为有限值，求对应的本征值。\\
+		\\
+		(a)将算符$\hat{A} = \mathrm{d}/\mathrm{d}x$带入方程(\ref{eq:3.14 definition of eigenfunctions and eigenvalues})，有
+		\begin{equation}
+			\frac{\mathrm{d}f\left(x\right)}{\mathrm{d}x} = kf\left(x\right)
+			\label{eq:3.17}
+		\end{equation}
+		\begin{equation*}
+			\frac{1}{f}\mathrm{d}f = k \mathrm{d}x
+		\end{equation*}
+		求积分，有
+		\begin{equation*}
+			\begin{aligned}
+				\ln f & = kx + \text{常数} \\
+				f & = \mathrm{e}^{\text{常数}}\mathrm{e}^{kx} \\
+			\end{aligned}
+		\end{equation*}
+		\begin{equation}
+			f  = c\mathrm{e}^{kx}
+			\label{eq:3.18}
+		\end{equation}
+		算符$\mathrm{d}/\mathrm{d}x$的本征函数由(\ref{eq:3.18})，本征值为$k$，它可以是任何数字，而 (\ref{eq:3.17}) 仍然成立。本征函数包含一个任意的常数 $c$。这对每个线性算符的特征函数都是正确的，正如前面的例子所证明的。(\ref{eq:3.18}) 中 $k$ 的每个不同值都会产生不同的特征函数。然而，$k$ 值相同而 $c$ 值不同的特征函数并不是相互独立的。\\
+		(b)由于$k$可以是复数，我们可以写作$k = a+\mathrm{i}b$，其中$a$和$b$是实数。我们有$f\left(x\right) = c\mathrm{e}^{ax}\mathrm{e}^{\mathrm{i}bx}$。若$a>0$，则当$x$趋于无穷时因子$\mathrm{e}^{ax}$也趋于无穷。若$a<0$，则$x \to - \infty$时$\mathrm{e}^{ax} \to \infty$。因此，这两个定解条件要求$a=0$，所以本征值$k=\mathrm{i}b$，其中$b$是实数。
+	\end{examplebox}
+	\indent 在第3.1节的第一个例题中，我们知道对任意的函数$g$，有$\left[z^3,\mathrm{d}/\mathrm{d}z\right]g\left(z\right) = -3z^2g\left(z\right)$，所以$\left[z^3,\mathrm{d}/\mathrm{d}z\right] = -3z^2$。相反地，本征方程$\hat{A}f\left(x\right) = kf\left(x\right)$[式(\ref{eq:3.14 definition of eigenfunctions and eigenvalues})]却不一定对任意函数$f\left(x\right)$成立，从这个方程中我们并不能得出$\hat{A}=k$。因此，结论$\left(\mathrm{d}/\mathrm{d}x\right)\mathrm{e}^{2x} = 2\mathrm{e}^{2x}$并不意味着$\mathrm{d}/\mathrm{d}x$与乘以2相等。
+	
+	
+	
+	
+	
+	
+	
+	
 
 \section{算符和量子力学}
 Key operators in quantum mechanics:
