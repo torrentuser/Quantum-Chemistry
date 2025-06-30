@@ -1,7 +1,204 @@
 % ===== CHAPTER 3 =====
 \chapter{算符}
 \section{算符}
-
+	现在，我们以一种比以前更一般的方式来发展量子力学理论。首先，我们将单粒子一维定态薛定谔方程 (\ref{eq:1.19 time-independent Schrödinger Equation}) 写成以下形式
+	\begin{equation}
+		\left[-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2}+V\left(x\right)\right]\psi\left(x\right) = E\psi\left(x\right)
+		\label{eq:3.1}
+	\end{equation}
+	(\ref{eq:3.1}) 中括号内的实体是一个\textit{算符}。方程（\ref{eq:3.1}）表明我们有一个能量算符，它对波函数起作用后，波函数又回来了，不过是乘以一个允许的能量值。因此，接下来我们讨论算符。\\
+	\indent \textbf{算符}是一种将给定函数转换为另一个函数的规则。例如，让 $\hat{D}$ 算符来表示对关于$x$的函数求导。我们用一个字母上的小尖号来表示算符。给定一个可导函数$f\left(x\right)$，则将$\hat{D}$作用到$f\left(x\right)$上即可表示为$\hat{D}f\left(x\right) = f^{\prime}\left(x\right)$。例如，$\hat{D}\left(x^2+3\mathrm{e}^{2x}\right) = 2x+6\mathrm{e}^{2x}$。如果$\hat{3}$是将函数乘以 3 的算符，那么$\hat{3}\left(x^2+3\mathrm{e}^x\right) = 3x^2+9\mathrm{e}^x$。如果 tan 是取函数正切值的算符，那么将 tan 应用于函数$x^2+1$，我们得到了$\tan\left(x^2+1\right)$。如果算符$\hat{A}$将函数$f\left(x\right)$转换为另一个函数$g\left(x\right)$，我们将其写作$\hat{A}f\left(x\right) = g\left(x\right)$。\\
+	\indent 我们将两个算符$\hat{A}$和$\hat{B}$的\textbf{和}与\textbf{差}定义为
+	\begin{equation}
+		\boxed{
+			\left(\hat{A}+\hat{B}\right)f\left(x\right) \equiv \hat{A}f\left(x\right)+\hat{B}f\left(x\right)
+		}
+		\label{eq:3.2 definition of operators' sum and differenct}
+	\end{equation}
+	\begin{equation*}
+		\left(\hat{A}-\hat{B}\right)f\left(x\right) \equiv \hat{A}f\left(x\right)-\hat{B}f\left(x\right)
+	\end{equation*}
+	例如，若$\hat{D} \equiv \mathrm{d}/\mathrm{d}x$，那么
+	\begin{equation*}
+		\left(\hat{D}+\hat{3}\right)\left(x^3-5\right) = \hat{D}\left(x^3-5\right)+ \hat{3}\left(x^3-5\right) = 3x^2+\left(3x^3-15\right) = 3x^3+3x^2-15
+	\end{equation*}
+	\indent 一个算符也可以涉及多个变量。例如，算符$\partial^2/\partial x^2+\partial^2/\partial y^2$具有如下性质：
+	\begin{equation*}
+		\left(\partial^2/\partial x^2+\partial^2/\partial y^2\right)g\left(x,y\right)= \partial^2 g/\partial x^2 + \partial^2 g/\partial y^2
+	\end{equation*}
+	\indent 两个算符的\textbf{积}定义为
+	\begin{equation}
+		\boxed{
+			\hat{A}\hat{B}f\left(x\right) = \hat{A}\left[\hat{B}f\left(x\right)\right]
+		}
+		\label{eq:3.3 definition of operators' product}
+	\end{equation}
+	换句话说，我们先将乘积右边的算符作用到函数$f\left(x\right)$上，然后将左边的算符作用到得到的函数上。例如，$\hat{3}\hat{D}f\left(x\right) = \hat{3}\left[\hat{D}f\left(x\right)\right] = \hat{3}f^{\prime}\left(x\right) = 3f^{\prime}\left(x\right)$\\
+	\indent 算符$\hat{A}\hat{B}$和$\hat{B}\hat{A}$可能不会有同样的效果。例如，考虑算符$\mathrm{d}/\mathrm{d}x$和$\hat{x}$（$\hat{x}$表示将函数乘以$x$）：
+	\begin{equation}
+		\hat{D}\hat{x}f\left(x\right)=\frac{\mathrm{d}}{\mathrm{d}x}\left[xf\left(x\right)\right] = f\left(x\right) + f^{\prime}\left(x\right) = \left(\hat{1}+\hat{x}\hat{D}\right)f\left(x\right)
+		\label{eq:3.4}
+	\end{equation}
+	\begin{equation*}
+		\hat{x}\hat{D}f\left(x\right) = \hat{x}\left[\frac{\mathrm{d}}{\mathrm{d}x}f\left(x\right)\right] = xf^{\prime}\left(x\right)
+	\end{equation*}
+	在这个例子中，$\hat{A}\hat{B}$和$\hat{B}\hat{A}$是不同的算符。\\
+	\indent 我们可以建立如下的\textbf{算符代数}。若对任意的函数$f$，有$\hat{A}f = \hat{B}f$，则我们说算符$\hat{A}$和算符$\hat{B}$是\textbf{相等的}。相等的算符作用到给定的函数上时，会有相同的结果。例如，式(\ref{eq:3.4})表明
+	\begin{equation}
+		\hat{D}\hat{x} = 1 + \hat{x}\hat{D}
+		\label{eq:3.5}
+	\end{equation}
+	算符$\hat{1}$（乘以1）称作\textbf{单位算符}。算符$\hat{0}$（乘以0）称作\textbf{空算符}。我们通常省略简单常数算符顶上的小尖号。我们还可以将算符从算符方程的一边转移到另一边（问题 3.7 ）。因此，式(\ref{eq:3.5})与$\hat{D}\hat{x}-\hat{x}\hat{D}-1 = 0$等价，其中省略了空算符和单位算符上的小尖号。\\
+	\indent 算符运算遵循结合律：
+	\begin{equation}
+		\hat{A}\left(\hat{B}\hat{C}\right) = \left(\hat{A}\hat{B}\right)\hat{C}
+		\label{eq:3.6 law of multiplication for operators}
+	\end{equation}
+	式(\ref{eq:3.6 law of multiplication for operators})的证明见问题3.10。例如，令$\hat{A} = \mathrm{d}/\mathrm{d}x$，$\hat{B} = \hat{x}$，而$\hat{C} = 3$。使用式(\ref{eq:3.5})，我们有
+	\begin{equation*}
+		\begin{aligned}
+			\left(\hat{A}\hat{B}\right) = \hat{D}\hat{x} = 1+ \hat{x}\hat{D}, \quad & \left[\left(\hat{A}\hat{B}\right)\hat{C}\right]f = \left(1+\hat{x}\hat{D}\right)3f = 3f+3xf^{\prime}\\
+			\left(\hat{B}\hat{C}\right) = 3\hat{x},  \qquad \quad \qquad & \left[\hat{A}\left(\hat{B}\hat{C}\right)\right]f = \hat{D}\left(3xf\right) = 3f+3xf^{\prime}
+		\end{aligned}
+	\end{equation*}
+	\indent 算符代数与普通代数的一个主要区别是：数的运算遵守乘法的交换律，但算符不一定。例如：若$a$和$b$都是数，那么有$ab=ba$；但是$\hat{A}\hat{B}$和$\hat{B}\hat{A}$不一定相等。我们定义算符$\hat{A}$和$\hat{B}$的\textbf{交换子}$\left[\hat{A},\hat{B}\right]$为$\hat{A}\hat{B}-\hat{B}\hat{A}$：
+	\begin{equation}
+		\boxed{
+			\left[\hat{A},\hat{B}\right] \equiv \hat{A}\hat{B} - \hat{B}\hat{A}
+		}
+		\label{eq:3.7 definition of commutator for two operators}
+	\end{equation}
+	如果有$\hat{A}\hat{B} = \hat{B}\hat{A}$，那么$\left[\hat{A},\hat{B}\right] = 0$，则我们说算符$\hat{A}$和$\hat{B}$是\textbf{可对易的}。如果$\hat{A}\hat{B} \neq \hat{B}\hat{A}$，那么$\hat{A}$和$\hat{B}$是不可对易的。注意$\left[\hat{A}, \hat{B}\right]f = \hat{A}\hat{B}f - \hat{B}\hat{A}f$。由于我们作用算符 3 和 $\mathrm{d}/\mathrm{d}x$ 的顺序没有区别，因此我们有
+	\begin{equation*}
+		\left[\hat{3},\frac{\mathrm{d}}{\mathrm{d}x}\right] = \hat{3}\frac{\mathrm{d}}{\mathrm{d}x} - \frac{\mathrm{d}}{\mathrm{d}x}\hat{3} = 0
+	\end{equation*}
+	\indent 从式(\ref{eq:3.5})，我们有
+	\begin{equation}
+		\left[\frac{\mathrm{d}}{\mathrm{d}x}, \hat{x}\right] = \hat{D}\hat{x}-\hat{x}\hat{D} = 1
+		\label{eq:3.8}
+	\end{equation}
+	那么算符$\mathrm{d}/\mathrm{d}x$和$\hat{x}$是不可对易的。\\
+	\begin{examplebox}
+		\textbf{例题：}\\
+		求$\left[z^3,\mathrm{d}/\mathrm{d}z\right]$。\\
+		\\
+		\indent 为了求出$\left[z^3,\mathrm{d}/\mathrm{d}z\right]$，我们需要将其作用到任意一个函数$g\left(x\right)$上。由式(\ref{eq:3.7 definition of commutator for two operators})交换子的定义及算符差和乘积的定义，我们有
+		\begin{equation*}
+			\begin{aligned}
+				\left[z^3,\mathrm{d}/\mathrm{d}z\right]g = \left[z^3\left(\mathrm{d}/\mathrm{d}z\right) - \left(\mathrm{d}/\mathrm{d}z\right)z^3\right]g & = z^3\left(\mathrm{d}/\mathrm{d}z\right)g - \left(\mathrm{d}/\mathrm{d}z\right)\left(z^3g\right) \\
+				& = z^3g^{\prime} - 3z^2g-z^3g^{\prime} = -3z^2g
+			\end{aligned}
+		\end{equation*}
+		删去任意的函数$g$，我们有算符方程$\left[z^3,\mathrm{d}/\mathrm{d}z\right] = -3z^2$。\\
+		\\
+		\textbf{练习：}\\
+		求$\left[\mathrm{d}/\mathrm{d}x, 5x^2+3x+4\right]$。（\textit{答案：}$10x+3$）
+	\end{examplebox}
+	\indent 算符的\textbf{平方}定义为算符和它本身的乘积：$\hat{B}^2 = \hat{B}\hat{B}$。我们来求求导算符的平方：
+	\begin{equation*}
+		\begin{aligned}
+			\hat{D}^2f\left(x\right) & = \hat{D}\left(\hat{D}f\right) = \hat{D}f^{\prime} = f^{\prime \prime} \\
+			\hat{D}^2& = \mathrm{d}^2/\mathrm{d}x^2
+		\end{aligned}
+	\end{equation*}
+	再比如：取函数复共轭的算符的平方等于单位算符，因为取两次复共轭可以得到原始函数。算符$\hat{B}^n \: \left(n = 1,2,3\cdots\right)$定义为连续应用$n$次算符$\hat{B}$。\\
+	\indent 事实表明，量子力学中出现的算符都是线性的。当且仅当算符$\hat{A}$具有以下两个性质时，它是\textbf{线性算符}：
+	\begin{equation}
+		\boxed{
+			\hat{A}\left[f\left(x\right)+g\left(x\right)\right] = \hat{A}f\left(x\right)+\hat{A}g\left(x\right)
+		}
+		\label{eq:3.9}
+	\end{equation}
+	\begin{equation}
+		\boxed{
+			\hat{A}\left[cf\left(x\right)\right] = c\hat{A}f\left(x\right)
+		}
+		\label{eq:3.10}
+	\end{equation}
+	其中$f$和$g$是任意函数，$c$是任意常数（可以不必是实数）。线性算符的例子有$\hat{x}^2$、$\mathrm{d}/\mathrm{d}x$和$\mathrm{d}^2/\mathrm{d}x^2$。非线性算符有$\cos$和$\left(\quad\right)^2$，其中$\left(\quad\right)^2$是对作用的函数求平方。\\
+	\begin{examplebox}
+		\textbf{例题：}\\
+		$\mathrm{d}/\mathrm{d}x$是线性算符吗？$\sqrt{\quad}$是线性算符吗？\\
+		\\
+		\indent 我们有
+		\begin{equation*}
+			\left(\mathrm{d}/\mathrm{d}x\right) \left[f\left(x\right)+g\left(x\right)\right] = \mathrm{d}f\mathrm{d}x+\mathrm{d}g+\mathrm{d}x=\left(\mathrm{d}/\mathrm{d}x\right)f\left(x\right)+\left(\mathrm{d}/\mathrm{d}x\right)g\left(x\right)
+		\end{equation*}
+		\begin{equation*}
+			\left(\mathrm{d}/\mathrm{d}x\right)\left[cf\left(x\right)\right] = c \mathrm{d}f\left(x\right) /\mathrm{d}x
+		\end{equation*}
+		$\mathrm{d}/\mathrm{d}x$符合式(\ref{eq:3.9})和(\ref{eq:3.10})，是线性算符。然而，
+		\begin{equation*}
+			\sqrt{f\left(x\right)+g\left(x\right)} \neq \sqrt{f\left(x\right)} +\sqrt{g\left(x\right)}
+		\end{equation*}
+		所以$\sqrt{\quad}$不是线性算符。\\
+		\\
+		\textbf{练习：}算符$x^2\times$（乘以$x^2$）是线性算符吗？（\textit{答案：}是）
+	\end{examplebox}
+	\indent 线性算符运算中有用的算符有
+	\begin{equation}
+		\boxed{
+			\left(\hat{A}+\hat{B}\right)\hat{C} = \hat{A}\hat{C}+\hat{B}\hat{C}
+		}
+		\label{eq:3.11}
+	\end{equation}
+	\begin{equation}
+		\boxed{
+			\hat{A}\left(\hat{B}+\hat{C}\right) = \hat{A}\hat{B}+\hat{A}\hat{C}
+		}
+		\label{eq:3.12}
+	\end{equation}
+	\begin{examplebox}
+		\textbf{例题：}证明线性算符满足分配律(\ref{eq:3.11})。\\
+		\\
+		\indent 开始证明的好方法是先写下给出的内容和要证明的内容。已知$\hat{A}$、$\hat{B}$和$\hat{C}$是线性算符，求证$\left(\hat{A}+\hat{B}\right)\hat{C} = \hat{A}\hat{C}+\hat{B}\hat{C}$。\\
+		为了证明算符$\left(\hat{A}+\hat{B}\right)\hat{C}$等于算符$\hat{A}\hat{C}+\hat{B}\hat{C}$，我们必须证明这两个算符作用到任意函数$f$上的结果是相等的。即
+		\begin{equation*}
+			\left[\left(\hat{A}+\hat{B}\right)\hat{C}\right]f = \left(\hat{A}\hat{C}+\hat{B}\hat{C}\right)f
+		\end{equation*}
+		我们从左边$\left[\left(\hat{A}+\hat{B}\right)\hat{C}\right]f$开始。这个表达式包含了算符$\hat{A}$与$\hat{B}$的乘积及算符$\hat{C}$。将算符乘积的定义(\ref{eq:3.3 definition of operators' product})中的$\hat{A}$用$\hat{A}+\hat{B}$替代，$\hat{B}$用$\hat{C}$替代，得出$\left[\left(\hat{A}+\hat{B}\right)\hat{C}\right]f = \left(\hat{A}+\hat{B}\right)\left(\hat{C}f\right)$。将$\hat{C}f$整体视为一个函数，使用式(\ref{eq:3.2 definition of operators' sum and differenct})关于两个算符$\hat{A}$与$\hat{B}$的和$\hat{A}+\hat{B}$的定义，得出$\left(\hat{A}+\hat{B}\right)\left(\hat{C}f\right) = \hat{A}\left(\hat{C}f\right)+\hat{B}\left(\hat{C}f\right)$。因此，
+		\begin{equation*}
+			\left[\left(\hat{A}+\hat{B}\right)\hat{C}\right]f = \left(\hat{A}+\hat{B}\right)\left(\hat{C}f\right) = \hat{A}\left(\hat{C}f\right)+\hat{B}\left(\hat{C}f\right)
+		\end{equation*}
+		使用式(\ref{eq:3.3 definition of operators' product})给出的算符积的定义，有$\hat{A}\left(\hat{C}f\right) = \hat{a}\hat{C}f$及$\hat{B}\left(\hat{C}f\right) = \hat{B}\hat{C}f$。则
+		\begin{equation}
+			\left[\left(\hat{A}+\hat{B}\right)\hat{C}\right]f = \hat{A}\hat{C}f+\hat{B}\hat{C}f
+			\label{eq:3.13}
+		\end{equation}
+		将算符和的定义(\ref{eq:3.2 definition of operators' sum and differenct})中的$\hat{A}$用$\hat{A}\hat{C}$替代，$\hat{B}$用$\hat{B}\hat{C}$替代，得出$\left(\hat{A}\hat{C}+\hat{B}\hat{C}\right)f = \hat{A}\hat{C}f+\hat{B}\hat{C}f$，则式(\ref{eq:3.13})变成了
+		\begin{equation*}
+			\left[\left(\hat{A}+\hat{B}\right) \hat{C}\right]f = \left(\hat{A}\hat{C}+\hat{B}\hat{C}\right)f
+		\end{equation*}
+		这就是我们要证明的。因此，$\left(\hat{A}+\hat{B}\right)\hat{C} = \hat{A}\hat{C}+\hat{B}\hat{C}$。\\
+		注意我们没有用到$\hat{A}$、$\hat{B}$和$\hat{C}$是线性算符这一条件，事实上，式(\ref{eq:3.11})对任意算符都成立。但式(\ref{eq:3.12})只在$\hat{A}$是线性算符时成立。（问题 3.17）
+	\end{examplebox}
+	\begin{examplebox}
+		\textbf{例题：}求算符$\mathrm{d}/\mathrm{d}x+\hat{x}$的平方。\\
+		\\
+		为了求$\left(\mathrm{d}/\mathrm{d}x+\hat{x}\right)^2$，我们将其作用到任意一个函数$f\left(x\right)$上。令$\hat{D} \equiv \mathrm{d}/\mathrm{d}x$，我们有
+		\begin{equation*}
+			\begin{aligned}
+				\left(\hat{D}+\hat{x}\right)^2f\left(x\right) & = \left(\hat{D}+\hat{x}\right)\left[\left(\hat{D}+\hat{x}\right)f\right] = \left(\hat{D}+\hat{x}\right)\left(f^{\prime}+xf\right) \\
+				& = f^{\prime \prime}+f+xf^{\prime}+xf^{\prime}+x^2f=\left(\hat{D}^2+2\hat{x}\hat{D}+\hat{x}^2+1\right)f\left(x\right)
+			\end{aligned}
+		\end{equation*}
+		\begin{equation*}
+			\left(\hat{D}+\hat{x}\right)^2 = \hat{D}^2+2\hat{x}\hat{D}+\hat{x}^2+1
+		\end{equation*}
+		让我们只使用算符方程重复这一计算：
+		\begin{equation*}
+			\begin{aligned}
+				\left(\hat{D}+\hat{x}\right)^2 & = \left(\hat{D}+\hat{x}\right)\left(\hat{D}+\hat{x}\right) = \hat{D}\left(\hat{D}+\hat{x}\right)+\hat{x}\left(\hat{D}+\hat{x}\right) \\
+				& = \hat{D}^2+\hat{D}\hat{x}+\hat{x}\hat{D}+\hat{x}^2 = \hat{D}^2+\hat{x}\hat{D}+1+\hat{x}\hat{D}+\hat{x} \\
+				& = \hat{D}^2+2\hat{x}\hat{D}+\hat{x}^2+1
+			\end{aligned}
+		\end{equation*}
+		其中用到了式(\ref{eq:3.11})、(\ref{eq:3.12})和(\ref{eq:3.5})，并省略了 “乘以 $x$ ”算符上的小尖号。\textit{在彻底掌握算符之前，最安全的做法是在进行算符操作时，始终保持算符对任意函数 $f$ 进行操作，然后在最后删除 $f$。}
+		
+		
+		
+	\end{examplebox}
+	
 \section{本征函数和本征值}
 An operator $\hat{A}$ satisfies:
 \begin{equation}
