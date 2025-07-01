@@ -6,7 +6,7 @@
 		\left[-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2}+V\left(x\right)\right]\psi\left(x\right) = E\psi\left(x\right)
 		\label{eq:3.1}
 	\end{equation}
-	(\ref{eq:3.1}) 中括号内的实体是一个\textit{算符}。方程（\ref{eq:3.1}）表明我们有一个能量算符，它对波函数起作用后，波函数又回来了，不过是乘以一个允许的能量值。因此，接下来我们讨论算符。\\
+	(\ref{eq:3.1}) 中括号内的实体是一个\textit{算符}（operator）。方程（\ref{eq:3.1}）表明我们有一个能量算符，它对波函数起作用后，波函数又回来了，不过是乘以一个允许的能量值。因此，接下来我们讨论算符。\\
 	\indent \textbf{算符}是一种将给定函数转换为另一个函数的规则。例如，让 $\hat{D}$ 算符来表示对关于$x$的函数求导。我们用一个字母上的小尖号来表示算符。给定一个可导函数$f\left(x\right)$，则将$\hat{D}$作用到$f\left(x\right)$上即可表示为$\hat{D}f\left(x\right) = f^{\prime}\left(x\right)$。例如，$\hat{D}\left(x^2+3\mathrm{e}^{2x}\right) = 2x+6\mathrm{e}^{2x}$。如果$\hat{3}$是将函数乘以 3 的算符，那么$\hat{3}\left(x^2+3\mathrm{e}^x\right) = 3x^2+9\mathrm{e}^x$。如果 tan 是取函数正切值的算符，那么将 tan 应用于函数$x^2+1$，我们得到了$\tan\left(x^2+1\right)$。如果算符$\hat{A}$将函数$f\left(x\right)$转换为另一个函数$g\left(x\right)$，我们将其写作$\hat{A}f\left(x\right) = g\left(x\right)$。\\
 	\indent 我们将两个算符$\hat{A}$和$\hat{B}$的\textbf{和}与\textbf{差}定义为
 	\begin{equation}
@@ -61,7 +61,7 @@
 			\left(\hat{B}\hat{C}\right) = 3\hat{x},  \qquad \quad \qquad & \left[\hat{A}\left(\hat{B}\hat{C}\right)\right]f = \hat{D}\left(3xf\right) = 3f+3xf^{\prime}
 		\end{aligned}
 	\end{equation*}
-	\indent 算符代数与普通代数的一个主要区别是：数的运算遵守乘法的交换律，但算符不一定。例如：若$a$和$b$都是数，那么有$ab=ba$；但是$\hat{A}\hat{B}$和$\hat{B}\hat{A}$不一定相等。我们定义算符$\hat{A}$和$\hat{B}$的\textbf{交换子}$\left[\hat{A},\hat{B}\right]$为$\hat{A}\hat{B}-\hat{B}\hat{A}$：
+	\indent 算符代数与普通代数的一个主要区别是：数的运算遵守乘法的交换律，但算符不一定。例如：若$a$和$b$都是数，那么有$ab=ba$；但是$\hat{A}\hat{B}$和$\hat{B}\hat{A}$不一定相等。我们定义算符$\hat{A}$和$\hat{B}$的\textbf{交换子}（commutator）$\left[\hat{A},\hat{B}\right]$为$\hat{A}\hat{B}-\hat{B}\hat{A}$：
 	\begin{equation}
 		\boxed{
 			\left[\hat{A},\hat{B}\right] \equiv \hat{A}\hat{B} - \hat{B}\hat{A}
@@ -200,7 +200,7 @@
 	\end{examplebox}
 	
 \section{本征函数和本征值}
-	假设某线性算符$\hat{A}$作用在某个函数$f\left(x\right)$上的结果是对$f\left(x\right)$乘上一个常数$k$。我们说$f\left(x\right)$是$\hat{A}$的一个\textbf{本征函数}，$k$是\textbf{本征值}。作为定义的一部分，我们将要求本征函数$f\left(x\right)$不等于零。我们的意思是说，尽管 $f\left(x\right)$ 可能在不同点上消失，但它并非处处为零。我们有
+	假设某线性算符$\hat{A}$作用在某个函数$f\left(x\right)$上的结果是对$f\left(x\right)$乘上一个常数$k$。我们说$f\left(x\right)$是$\hat{A}$的一个\textbf{本征函数}（eigenfunction），$k$是\textbf{本征值}（eigenvalue）。作为定义的一部分，我们将要求本征函数$f\left(x\right)$不等于零。我们的意思是说，尽管 $f\left(x\right)$ 可能在不同点上消失，但它并非处处为零。我们有
 	\begin{equation}
 		\boxed{
 			\hat{A}f\left(x\right) = kf\left(x\right)
@@ -270,22 +270,63 @@
 	\end{examplebox}
 	\indent 在第3.1节的第一个例题中，我们知道对任意的函数$g$，有$\left[z^3,\mathrm{d}/\mathrm{d}z\right]g\left(z\right) = -3z^2g\left(z\right)$，所以$\left[z^3,\mathrm{d}/\mathrm{d}z\right] = -3z^2$。相反地，本征方程$\hat{A}f\left(x\right) = kf\left(x\right)$[式(\ref{eq:3.14 definition of eigenfunctions and eigenvalues})]却不一定对任意函数$f\left(x\right)$成立，从这个方程中我们并不能得出$\hat{A}=k$。因此，结论$\left(\mathrm{d}/\mathrm{d}x\right)\mathrm{e}^{2x} = 2\mathrm{e}^{2x}$并不意味着$\mathrm{d}/\mathrm{d}x$与乘以2相等。
 	
-	
-	
-	
-	
-	
-	
-	
-
 \section{算符和量子力学}
-Key operators in quantum mechanics:
-\begin{align}
-	\text{Position:} & \quad \hat{x} = x \\
-	\text{Momentum:} & \quad \hat{p}_x = -i\hbar \pdv{x} \\
-	\text{Hamiltonian:} & \quad \hat{H} = -\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r})
-\end{align}
-
+	我们现在考虑算符和量子力学之间的关系。将式 (\ref{eq:3.1}) 与 (\ref{eq:3.14 definition of eigenfunctions and eigenvalues}) 比较，我们可以发现薛定谔方程是一个本征值问题。能量 $E$ 的值就是本征值。本征函数就是定态薛定谔方程$\psi$。所需的本征函数和本征值的算符是$-\left(\hbar^2/2m\right)\mathrm{d}^2/\mathrm{d}x^2+V\left(x\right)$。这个算符称为系统的\textbf{哈密顿算符}（Hamiltonian operator）。\\
+	\indent 威廉·罗文·哈密顿爵士（Sir William Rowan Hamilton）（1805-1865）设计了牛顿运动方程的另一种形式，其中涉及一个函数 $H$，即系统的\textbf{哈密顿函数}（Hamiltonian function）。对于势能仅是坐标函数的系统，总能量随时间保持不变；也就是说，$E$ 是守恒的。我们将只讨论这种保守系统。对于保守系统，经典力学哈密顿函数可以简单地用坐标和共轭动量来表示总能量。对于笛卡尔坐标 $x$、$y$、$z$，\textbf{共轭动量}是线性动量在 $x$、$y$、$z$ 方向上的分量$p_x$、$p_y$、$p_z$：
+	\begin{equation}
+		\boxed{
+			p_x \equiv mv_x, \quad p_y \equiv mv_y, \quad p_z \equiv mv_z
+		}
+		\label{eq:3.19}
+	\end{equation}
+	其中$v_x$、$v_y$、$v_z$分别是粒子的速度矢量在$x$、$y$、$z$方向上的分量。\\
+	\indent 让我们找出质量为 $m$ 的粒子在一维中运动并受到势能 $V\left(x\right)$ 作用的经典力学哈密顿函数。哈密顿函数等于系统的能量，而能量包括动能和势能。然而，我们熟悉的动能形式$\frac{1}{2}mv_x^2$并不适用，因为我们必须将哈密顿表示为坐标和动量的函数，而不是速度的函数。由于$v_x = p_x/m$，我们想要的动能表示形式为$p_x^2/2m$。那么哈密顿函数为
+	\begin{equation}
+		H = \frac{p_x^2}{2m}+V\left(x\right)
+		\label{eq:3.20}
+	\end{equation}
+	\indent 定态薛定谔方程（\ref{eq:3.1}）表明：与哈密顿函数（\ref{eq:3.20}）相对应，我们有一个量子力学算符
+	\begin{equation*}
+		-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2}{\mathrm{d}x^2}+V\left(x\right)
+	\end{equation*}
+	其本征值为系统能量的允许值。经典力学中的物理量与量子力学中的算符之间的这种对应关系是普遍的。量子力学的一个基本假设是，\textit{每一个物理量（例如能量、$x$ 坐标、动量）都有一个对应的量子力学算符。}我们进一步假设，将 $B$ 的经典力学表达式写成笛卡尔坐标和相应动量的函数，然后进行如下替换，就能找到与属性 $B$ 相对应的算符。每个笛卡尔坐标 $q$ 都用与该坐标相乘的算符来代替：
+	\begin{equation*}
+		\hat{q} = q \times
+	\end{equation*}
+	线性动量 $p_q$ 的每个笛卡尔分量都由以下算符代替：
+	\begin{equation*}
+		\hat{p}_q = \frac{\hbar}{\mathrm{i}}\frac{\partial}{\partial q} = -\mathrm{i}\hbar\frac{\partial}{\partial q}
+	\end{equation*}	
+	其中$\mathrm{i}$是虚数单位，$\partial / \partial q$是$p$对坐标 $q$ 的偏导数算符。\\
+	\indent 考虑几个例子。与 $x$ 坐标相对应的算符是 $x$ 的乘法运算：
+	\begin{equation}
+		\boxed{
+			\hat{x} = x \times
+		}
+		\label{eq:3.21}
+	\end{equation}
+	同样地，
+	\begin{equation}
+		\boxed{
+			\hat{y} = y \times, \quad \hat{z} = z \times
+		}
+		\label{eq:3.22}
+	\end{equation}
+	线性动量各分量的算符为
+	\begin{equation}
+		\boxed{
+			\hat{p}_x = \frac{\hbar}{\mathrm{i}}\frac{\partial}{\partial x}, \quad \hat{p}_y = \frac{\hbar}{\mathrm{i}}\frac{\partial}{\partial y}, \quad \hat{p}_z = \frac{\hbar}{\mathrm{i}}\frac{\partial}{\partial z}
+		}
+		\label{eq:3.23}
+	\end{equation}
+	与$p_x^2$相对应的算符为
+	$\hat{p}_x^2 = \left(\frac{\hbar}{\mathrm{i}} \frac{\partial}{\partial x}\right)^2 = \frac{\hbar}{\mathrm{i}} \frac{\partial}{\partial x}\frac{\hbar}{\mathrm{i}} \frac{\partial}{\partial x} = -\hbar^2 \frac{\partial^2}{\partial x^2}$
+	
+	
+	
+	
+	
+	
 \section{三维多粒子的薛定谔方程}
 
 \section{三维盒子中的粒子}
