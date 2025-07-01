@@ -320,7 +320,162 @@
 		\label{eq:3.23}
 	\end{equation}
 	与$p_x^2$相对应的算符为
-	$\hat{p}_x^2 = \left(\frac{\hbar}{\mathrm{i}} \frac{\partial}{\partial x}\right)^2 = \frac{\hbar}{\mathrm{i}} \frac{\partial}{\partial x}\frac{\hbar}{\mathrm{i}} \frac{\partial}{\partial x} = -\hbar^2 \frac{\partial^2}{\partial x^2}$
+	\begin{equation}
+		\hat{p}_x^2 = \left(\frac{\hbar}{\mathrm{i}} \frac{\partial}{\partial x}\right)^2 = \frac{\hbar}{\mathrm{i}} \frac{\partial}{\partial x}\frac{\hbar}{\mathrm{i}} \frac{\partial}{\partial x} = -\hbar^2 \frac{\partial^2}{\partial x^2}
+		\label{eq:3.24}
+	\end{equation}
+	$p_y$与$p_z$的表示类似。\\
+	\indent 一维的势能算符和动能算符是什么？设一个系统的势能函数为$V\left(x\right) = ax^2$，其中$a$是常数。将$x$用$x \times$替代，我们可以看到，势能算符只是乘以 $ax^2$。即，$\hat{V}\left(x\right) = ax^2 \times$。一般来说，对于任何势能函数
+	\begin{equation}
+		\boxed{
+			\hat{V}\left(x\right) = V\left(x\right) \times 
+		}
+		\label{eq:3.25 definition of potential energy operator}
+	\end{equation}
+	经典力学中动能$T$的表达式(\ref{eq:3.20})为
+	\begin{equation}
+		\boxed{
+			T = p_x^2 / 2m
+		}
+		\label{eq:3.26}
+	\end{equation}
+	将$p_x$用对应的算符(\ref{eq:3.23})代替，我们有
+	\begin{equation}
+		\hat{T} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} = -\frac{\hbar^2}{2m}\frac{\mathrm{d}^2}{\mathrm{d}x^2}
+	\end{equation}
+	其中用到了式(\ref{eq:3.24})，偏导数就变成了单变量的常导数。经典力学的哈密顿量（\ref{eq:3.20}）为
+	\begin{equation}
+		H = T + V = p_x^2/2m+V\left(x\right)
+		\label{eq:3.28}
+	\end{equation}
+	相应的量子力学哈密顿（或能量）算符为
+	\begin{equation}
+		\boxed{
+			\hat{H} = \hat{T} + \hat{V} = -\frac{\hbar^2}{2m}\frac{\mathrm{d}^2}{\mathrm{d}x^2}+V\left(x\right)
+		}
+		\label{eq:3.29}
+	\end{equation}
+	与薛定谔方程 (\ref{eq:3.1}) 中的算符一致。请注意，所有
+	这些算符都是线性的。\\
+	\indent 量子力学算符如何与系统对应的属性相关联？每个这样的算符都有自己的一组本征函数和本征值。令$\hat{B}$是与物理量$B$相对应的量子力学算符，令$f_i$和$b_i$分别代表算符$\hat{B}$的本征函数和本征值。带入式(\ref{eq:3.14 definition of eigenfunctions and eigenvalues})，我们有
+	\begin{equation}
+		\hat{B}f_i = b_if_i, \quad i = 1,2,3\cdots
+		\label{eq:3.30}
+	\end{equation}
+	算符$\hat{B}$有许多本征函数和本征值，用下标$i$相区分。$\hat{B}$通常是线性算符，且式(\ref{eq:3.30})是微分方程，对应的解可以给出本征函数和本征值。量子力学假设（无论系统的状态函数是什么）\textit{对属性 $B$ 的测量必须得到算符 $\hat{B}$ 的一个本征值 $b_i$。}例如，一个系统的能量只能通过能量（哈密顿）算符 $\hat{H}$ 的本征值求出。使用$\psi_i$来表示$\hat{H}$的本征函数，我们有本征方程(\ref{eq:3.30})
+	\begin{equation}
+		\boxed{
+			\hat{H}\psi_i = E_i\psi_i
+		}
+		\label{eq:3.31}
+	\end{equation}
+	将式(\ref{eq:3.29})带入式(\ref{eq:3.31})，我们可以得到：对于单粒子的一维系统，有
+	\begin{equation}
+		\left[-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2}{\mathrm{d}x^2}+V\left(x\right)\right]\psi_i = 
+		E_i\psi_i
+		\label{eq:3.32}
+	\end{equation}
+	就是式(\ref{eq:3.1})的定态薛定谔方程。因此，我们关于算符的假设与我们之前的工作是一致的。稍后，我们将进一步证明动量算符 (\ref{eq:3.23}) 的选择是正确的，因为在向经典力学的极限过渡中，这一选择会导出$p_x = m\left(\mathrm{d}x / \mathrm{d}t\right)$，这是理所应当的。（见问题 7.59）\\
+	\indent 在第一章中，我们假设量子力学系统的状态是由一个状态函数$\Psi$$\left(x,t\right)$指定的，这个状态函数包含了我们可能知道的系统所有的信息。$\Psi$是如何告诉我们关于性质$B$的信息的？我们假设：\textit{若$\Psi$是$\hat{B}$的本征函数，本征值为$b_k$，则对性质$B$的测量可得到值为$b_k$的结果。}例如，考虑系统的能量。能量算符的本征函数为定态薛定谔方程(\ref{eq:3.32})的解$\psi\left(x\right)$。假设系统处于束缚态，有态函数(\ref{eq:1.20})
+	\begin{equation}
+		\Psi\left(x,t\right) = \mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)
+		\label{eq:3.33}
+	\end{equation}
+	$\Psi\left(x,t\right)$是能量算符$\hat{H}$的本征函数吗？我们有
+	\begin{equation*}
+		\hat{H}\Psi\left(x,t\right) = \hat{H}\mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)
+	\end{equation*}
+	$\hat{H}$ 不包含对时间的导数，因此不会影响指数因子$\mathrm{e}^{-\mathrm{i}Et/\hbar}$，我们有
+	\begin{equation*}
+		\hat{H}\Psi\left(x,t\right) = \mathrm{e}^{-\mathrm{i}Et/\hbar}\hat{H}\psi\left(x\right) = E \mathrm{e}^{-\mathrm{i}Et/\hbar} \psi\left(x\right) = E \Psi\left(x,t\right)
+	\end{equation*}
+	\begin{equation}
+		\hat{H}\Psi = E\Psi
+		\label{eq:3.34}
+	\end{equation}
+	其中，我们用到了式(\ref{eq:3.31})。因此，对于束缚态系统，$\Psi\left(x,t\right)$是$\hat{H}$的本征函数，我们在测量能量时肯定会得到值为$E$的结果。\\
+	\indent 考虑另一个动量的例子。算符$\hat{p}_x$的本征函数$g$由以下方程求出：
+	\begin{equation*}
+		\hat{p}_x g =kg
+	\end{equation*}
+	\begin{equation}
+		\frac{\hbar}{\mathrm{i}} \frac{\mathrm{d}g}{\mathrm{d}x} = kg
+		\label{eq:3.35}
+	\end{equation}
+	我们有（问题3.29）
+	\begin{equation}
+		g = A\mathrm{e}^{\mathrm{i}kx/\hbar}
+		\label{eq:3.36}
+	\end{equation}
+	其中$A$是任意常数。当$\left|x\right|$充分大时，为了确保$g$不趋于无穷，本征值$k$必须是实数。因此，$\hat{p}_x$算符的本征值一定为实数
+	\begin{equation}
+		-\infty < k < \infty
+		\label{eq:3.37}
+	\end{equation}
+	这是很合理的。任何对$p_x$的测量都会有符合式(\ref{eq:3.37})的$\hat{p}_x$的本征值。(\ref{eq:3.36}) 中每一个不同的 $k$ 值都给出了不同的本征函数$g$。物理量动量的算符涉及虚数$\mathrm{i}$，这似乎令人惊讶。事实上，$\mathrm{i}$的出现确保了本征值$k$一定为实数。回忆算符$\mathrm{d}/\mathrm{d}x$的本征值为虚数（第3.2节）。比较自由粒子波函数 (\ref{eq:2.30}) 和 $\hat{p}_x$ 的本征函数 (\ref{eq:3.36})，我们注意到以下物理解释： (\ref{eq:2.30}) 中的第一项相当于正动量，代表 $+x$ 方向的运动；(\ref{eq:2.30}) 中的第二项相当于负动量，代表 $-x$ 方向的运动。\\
+	\indent 现在来考虑一个盒子中粒子的动量。在一维盒子中处于静止状态的粒子的状态函数为[式 (\ref{eq:3.33}) , (\ref{eq:2.20 energy of one-dimensional box}) , 和 (\ref{eq:2.23 stationary state wave function for the particle in a box}) ]。
+	\begin{equation}
+		\Psi\left(x,t\right) = \mathrm{e}^{-\mathrm{i}Et/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n\pi x}{l}\right)
+		\label{eq:3.38}
+	\end{equation}
+	其中$E = n^2h^2/8ml^2$。粒子的$p_x$值是确定的吗？即$\Psi\left(x,t\right)$是算符$\hat{p}_x$的本征函数吗？注意$\hat{p}_x$的本征函数，我们可以看到：没有任何实常数$k$的数值可以使(\ref{eq:3.36})中的指数函数变成正弦函数，如(\ref{eq:3.38})中的正弦函数。因此$\Psi$不是$\hat{p}_x$的本征函数。我们可以直接验证这一点；我们有
+	\begin{equation*}
+		\hat{p}_x\Psi = \frac{\hbar}{\mathrm{i}}\frac{\partial}{\partial x}\mathrm{e}^{-\mathrm{i}Et/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n\pi x}{l}\right) = \frac{n\pi \hbar}{\mathrm{i}l}\mathrm{e}^{-\mathrm{i}Et/\hbar}\left(\frac{2}{l}\right)^{1/2}\cos\left(\frac{n\pi x}{l}\right)
+	\end{equation*}
+	由于$\hat{p}_x\Psi \neq \text{常数} \cdot \Psi$，态函数$\Psi$不是算符$\hat{p}_x$的本征函数。\\
+	\indent 注意：系统的态函数$\Psi$不一定是与系统物理量$B$相对应的算符$\hat{B}$的本征函数$f_i$。因此，箱中粒子束缚态波函数不是$\hat{p}_x$的本征函数。尽管如此，当我们对箱中粒子束缚态的动量值进行观测时，我们也必须得到$\hat{p}_x$的一个本征值(\ref{eq:3.37})。\\
+	\indent 箱中粒子束缚态波函数是$\hat{p}_x$的本征函数吗？由(\ref{eq:3.24})，我们有
+	\begin{equation*}
+		\hat{p}_x^2\Psi = -\hbar^2\frac{\partial^2}{\partial x^2}\mathrm{e}^{-\mathrm{i}Et/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n\pi x}{l}\right) = \frac{n^2\pi^2 \hbar^2}{l^2}\mathrm{e}^{-\mathrm{i}Et/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n\pi x}{l}\right)
+	\end{equation*}
+	\begin{equation}
+		\hat{p}_x^2\Psi = \frac{n^2h^2}{4l^2}\Psi
+		\label{eq:3.39}
+	\end{equation}
+	因此，对处于量子数为$n$的束缚态粒子，对$\hat{p}_x^2$的观测始终得到值为$n^2h^2/4l^2$的结果。这一点不足为奇：盒子中的势能为零，哈密顿算符为
+	\begin{equation*}
+		\hat{H} = \hat{T}+ \hat{V} = \hat{T} = \hat{p}_x^2/2m
+	\end{equation*}
+	则有式(\ref{eq:3.34})：
+	\begin{equation*}
+		\hat{H}\Psi = E\Psi = \frac{\hat{p}_x^2}{2m}\Psi
+	\end{equation*}
+	\begin{equation}
+		\hat{p}_x^2\Psi = 2mE\Psi = 2m\frac{n^2h^2}{8ml^2}\Psi = \frac{n^2h^2}{4l^2}\Psi
+		\label{eq:3.40}
+	\end{equation}
+	与 (\ref{eq:3.39}) 一致。$p_x$ 的唯一可能取值是
+	\begin{equation}
+		p_x^2 = n^2h^2 / 4l^2
+		\label{eq:3.41}
+	\end{equation}
+	\begin{quote}
+		\small % 字号小一号（可选 \footnotesize 更小）
+		\noindent % 取消首行缩进（可选）
+		等式 (\ref{eq:3.41}) 表明，测量 $p_x$ 必然会得到以下两个值中的一个，即$p_x = \pm \frac{1}{2}nh/l$，对应于粒子在盒中向右或向左移动。这种似是而非的说法并不准确。使用第 7 章的方法进行的分析表明：测量值很有可能接近以下两个值之一：$p_x = \pm \frac{1}{2}nh/l$。但任何符合 (\ref{eq:3.37}) 的值都可以通过测量盒子中粒子的 $p_x$ 得出；见问题 7.41。
+	\end{quote}
+	\indent 我们假设对性质$B$的观测一定会给出$\hat{B}$的其中一个本征值。如果态函数$\Psi$恰好是$B$的本征函数，本征值为$b$，当我们观测$B$时就一定会得到$b$。然而，假设$\Psi$不是$\hat{B}$的本征函数，会发生什么呢？我们仍然断言：当我们测量$B$时，会得到$\hat{B}$ 的一个本征值，但我们无法预测会得到哪个本征值。我们将在第 7 章中看到，得到$\hat{B}$ 的各种本征值的概率是可以预测的。\\
+	\begin{examplebox}
+		\textbf{例题：}测量长度为 $l$ 的一维盒子中质量为 $m$ 的粒子的能量。\\
+		如果开始测量时，粒子的状态函数为\\
+		(a)$\Psi = \left(30/l^5\right)^{1/2}x\left(l-x\right), \quad 0 \le x \le l$；\\
+		(b)$\Psi = \left(2/l\right)^{1/2}\sin\left(3\pi x/l\right), \quad 0 \le x \le l$；\\
+		测量结果可能是哪些值？\\
+		\\
+		(a)对性质 $E$ 进行测量的可能结果是系统能量（哈密顿）算符$\hat{H}$的本征值。因此，测量值一定是$n^2h^2/8ml^2, \quad n = 1,2,3\cdots$中的一个值。由于$\Psi$不是$\hat{H}$的本征函数[$\left(2/l\right)^{1/2}\sin\left(n\pi x/l\right)$式(\ref{eq:2.23 stationary state wave function for the particle in a box})]，我们无法预测这个非稳态会得到其中哪一个本征值。(获得这些本征值的概率可在第 7.6 节的最后一个例子中找到）\\
+		(b)由于$\Psi$是$\hat{H}$的本征函数，本征值为$3^2h^2/8ml^2$，测量值为$9^2h^2/8ml^2$。
+	\end{examplebox}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
