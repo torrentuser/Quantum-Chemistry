@@ -376,7 +376,7 @@
 		\label{eq:3.32}
 	\end{equation}
 	就是式(\ref{eq:3.1})的定态薛定谔方程。因此，我们关于算符的假设与我们之前的工作是一致的。稍后，我们将进一步证明动量算符 (\ref{eq:3.23}) 的选择是正确的，因为在向经典力学的极限过渡中，这一选择会导出$p_x = m\left(\mathrm{d}x / \mathrm{d}t\right)$，这是理所应当的。（见问题 7.59）\\
-	\indent 在第一章中，我们假设量子力学系统的状态是由一个状态函数$\Psi$$\left(x,t\right)$指定的，这个状态函数包含了我们可能知道的系统所有的信息。$\Psi$是如何告诉我们关于性质$B$的信息的？我们假设：\textit{若$\Psi$是$\hat{B}$的本征函数，本征值为$b_k$，则对性质$B$的测量可得到值为$b_k$的结果。}例如，考虑系统的能量。能量算符的本征函数为定态薛定谔方程(\ref{eq:3.32})的解$\psi\left(x\right)$。假设系统处于束缚态，有态函数(\ref{eq:1.20})
+	\indent 在第一章中，我们假设量子力学系统的状态是由一个状态函数$\Psi$$\left(x,t\right)$指定的，这个状态函数包含了我们可能知道的系统所有的信息。$\Psi$是如何告诉我们关于性质$B$的信息的？我们假设：\textit{若$\Psi$是$\hat{B}$的本征函数，本征值为$b_k$，则对性质$B$的测量可得到值为$b_k$的结果。}例如，考虑系统的能量。能量算符的本征函数为定态薛定谔方程(\ref{eq:3.32})的解$\psi\left(x\right)$。假设系统处于定态，有态函数(\ref{eq:1.20})
 	\begin{equation}
 		\Psi\left(x,t\right) = \mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)
 		\label{eq:3.33}
@@ -393,7 +393,7 @@
 		\hat{H}\Psi = E\Psi
 		\label{eq:3.34}
 	\end{equation}
-	其中，我们用到了式(\ref{eq:3.31})。因此，对于束缚态系统，$\Psi\left(x,t\right)$是$\hat{H}$的本征函数，我们在测量能量时肯定会得到值为$E$的结果。\\
+	其中，我们用到了式(\ref{eq:3.31})。因此，对于定态系统，$\Psi\left(x,t\right)$是$\hat{H}$的本征函数，我们在测量能量时肯定会得到值为$E$的结果。\\
 	\indent 考虑另一个动量的例子。算符$\hat{p}_x$的本征函数$g$由以下方程求出：
 	\begin{equation*}
 		\hat{p}_x g =kg
@@ -423,8 +423,8 @@
 		\hat{p}_x\Psi = \frac{\hbar}{\mathrm{i}}\frac{\partial}{\partial x}\mathrm{e}^{-\mathrm{i}Et/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n\pi x}{l}\right) = \frac{n\pi \hbar}{\mathrm{i}l}\mathrm{e}^{-\mathrm{i}Et/\hbar}\left(\frac{2}{l}\right)^{1/2}\cos\left(\frac{n\pi x}{l}\right)
 	\end{equation*}
 	由于$\hat{p}_x\Psi \neq \text{常数} \cdot \Psi$，态函数$\Psi$不是算符$\hat{p}_x$的本征函数。\\
-	\indent 注意：系统的态函数$\Psi$不一定是与系统物理量$B$相对应的算符$\hat{B}$的本征函数$f_i$。因此，箱中粒子束缚态波函数不是$\hat{p}_x$的本征函数。尽管如此，当我们对箱中粒子束缚态的动量值进行观测时，我们也必须得到$\hat{p}_x$的一个本征值(\ref{eq:3.37})。\\
-	\indent 箱中粒子束缚态波函数是$\hat{p}_x$的本征函数吗？由(\ref{eq:3.24})，我们有
+	\indent 注意：系统的态函数$\Psi$不一定是与系统物理量$B$相对应的算符$\hat{B}$的本征函数$f_i$。因此，箱中粒子定态波函数不是$\hat{p}_x$的本征函数。尽管如此，当我们对箱中粒子定态的动量值进行观测时，我们也必须得到$\hat{p}_x$的一个本征值(\ref{eq:3.37})。\\
+	\indent 箱中粒子定态波函数是$\hat{p}_x$的本征函数吗？由(\ref{eq:3.24})，我们有
 	\begin{equation*}
 		\hat{p}_x^2\Psi = -\hbar^2\frac{\partial^2}{\partial x^2}\mathrm{e}^{-\mathrm{i}Et/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n\pi x}{l}\right) = \frac{n^2\pi^2 \hbar^2}{l^2}\mathrm{e}^{-\mathrm{i}Et/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n\pi x}{l}\right)
 	\end{equation*}
@@ -432,7 +432,7 @@
 		\hat{p}_x^2\Psi = \frac{n^2h^2}{4l^2}\Psi
 		\label{eq:3.39}
 	\end{equation}
-	因此，对处于量子数为$n$的束缚态粒子，对$\hat{p}_x^2$的观测始终得到值为$n^2h^2/4l^2$的结果。这一点不足为奇：盒子中的势能为零，哈密顿算符为
+	因此，对处于量子数为$n$的定态粒子，对$\hat{p}_x^2$的观测始终得到值为$n^2h^2/4l^2$的结果。这一点不足为奇：盒子中的势能为零，哈密顿算符为
 	\begin{equation*}
 		\hat{H} = \hat{T}+ \hat{V} = \hat{T} = \hat{p}_x^2/2m
 	\end{equation*}
@@ -466,23 +466,144 @@
 		(b)由于$\Psi$是$\hat{H}$的本征函数，本征值为$3^2h^2/8ml^2$，测量值为$9^2h^2/8ml^2$。
 	\end{examplebox}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 \section{三维多粒子的薛定谔方程}
+	到目前为止，我们的研究仅限于一维单粒子系统。上一节中发展的算符形式主义允许我们将工作扩展到三维多粒子系统。含时薛定谔方程的状态函数的时间发展假定为公式 (\ref{eq:1.13 Time-dependent Schödinger equation}) 的形式：
+	\begin{equation}
+		\boxed{
+			\mathrm{i}\hbar\frac{\partial \Psi}{\partial t} = \hat{H}\Psi
+		}
+		\label{eq:3.42}
+	\end{equation}
+	能量本征函数和本征值的定态薛定谔方程为
+	\begin{equation}
+		\boxed{
+			\hat{H}\psi = E\psi
+		}
+		\label{eq:3.43}
+	\end{equation}
+	将势能视为与时间无关，并应用从(\ref{eq:1.13 Time-dependent Schödinger equation}) 得出 (\ref{eq:1.19 time-independent Schrödinger Equation})所用的变量分离方法，即可从 (\ref{eq:3.42}) 导出该式。\\
+	\indent 对于单粒子三维系统，经典力学下的哈密顿量为
+	\begin{equation}
+		H = T + V = \frac{1}{2m}\left(p_x^2+p_y^2+p_z^2\right)+V\left(x,y,z\right)
+		\label{eq:3.44}
+	\end{equation}
+	引入量子力学算符，我们有哈密顿算符
+	\begin{equation}
+		\hat{H} = -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}\right)+V\left(x,y,z\right)
+		\label{eq:3.45}
+	\end{equation}
+	(\ref{eq:3.45}) 中括号内的算符称为\textbf{拉普拉斯算符}（Laplacian operator，$\nabla^2$）：
+	\begin{equation}
+		\boxed{
+			\nabla^2 \equiv \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
+		}
+		\label{eq:3.46}
+	\end{equation}
+	则单粒子三维系统的定态薛定谔方程为
+	\begin{equation}
+		-\frac{\hbar^2}{2m}\nabla^2\psi + V\psi = E\psi
+		\label{eq:3.47}
+	\end{equation}
+	\indent 现在考虑一个有$n$个粒子的三维系统。设粒子$i$具有质量$m_i$，坐标$\left(x_i,y_i,z_i\right)$，其中$i = 1,2,3,\cdots,n$。系统的总动能为动能是各个粒子动能的总和：
+	\begin{equation*}
+		T = \frac{1}{2m_1}\left(p_{x_1}^2+p_{y_z}^2+p_{z_1}^2\right) + \frac{1}{2m_2}\left(p_{x_2}^2+p_{y_2}^2+p_{z_2}^2\right) + \cdots + \frac{1}{2m_n}\left(p_{x_n}^2+p_{y_n}^2+p_{z_n}^2\right)
+	\end{equation*}
+	其中$p_{x_i}$是第$i$个粒子动量在$x$方向上的分量。动能算符则为
+	\begin{equation*}
+		\hat{T} = -\frac{\hbar^2}{2m_1}\left(\frac{\partial^2}{\partial x_1^2}+\frac{\partial^2}{\partial y_1^2}+\frac{\partial^2}{\partial z_1^2}\right) - \cdots - \frac{\hbar^2}{2m_n}\left(\frac{\partial^2}{\partial x_n^2}+\frac{\partial^2}{\partial y_n^2}+\frac{\partial^2}{\partial z_n^2}\right)
+	\end{equation*}
+	\begin{equation}
+		\boxed{
+			\hat{T} = - \sum_{i=1}^{n}\frac{\hbar^2}{2m}\nabla^2
+		}
+		\label{eq:3.48}
+	\end{equation}
+	\begin{equation}
+		\boxed{
+			\nabla_i^2 \equiv \frac{\partial^2}{\partial x_i^2} + \frac{\partial^2}{\partial y_i^2} + \frac{\partial^2}{\partial z_i^2}
+		}
+		\label{eq:3.49}
+	\end{equation}
+	我们通常只讨论势能只取决于$n$个粒子的 $3n$ 个坐标的情况：
+	\begin{equation*}
+		V = V\left(x_1,y_1,z_1,\cdots, x_n,y_n,z_n\right)
+	\end{equation*}
+	则有$n$粒子的三维系统的哈密顿算符为
+	\begin{equation}
+		\boxed{
+			\hat{H} = -\sum_{i=1}^{n}\frac{\hbar^2}{2m}\nabla_i^2+V\left(x_1,\cdots,z_n\right)
+		}
+		\label{eq:3.50}
+	\end{equation}
+	，对应的定态薛定谔方程为
+	\begin{equation}
+		\left[-\sum_{i=1}^{n}\frac{\hbar^2}{2m}\nabla_i^2+V\left(x_1,\cdots,z_n\right)\right]\psi = E\psi
+		\label{eq:3.51}
+	\end{equation}
+	其中定态波函数是$n$个粒子的$3n$个坐标的函数：
+	\begin{equation}
+		\psi = \psi\left(x_1,y_1,z_1,\cdots,x_n,y_n,z_n\right)
+		\label{eq:3.52}
+	\end{equation}
+	薛定谔方程 (\ref{eq:3.51}) 是一个线性偏微分方程。\\
+	\indent 例如，考虑一个由两个相互作用的粒子组成的系统，其势能与它们之间的距离成反比，$c$ 为比例常数。薛定谔方程 (\ref{eq:3.51}) 变为
+	\begin{equation}
+		\begin{aligned}
+			&\left[-\frac{\hbar^2}{2m_1}\left(\frac{\partial^2}{\partial x_1^2} + \frac{\partial^2}{\partial y_1^2} + \frac{\partial^2}{\partial z_1^2}\right) - \frac{\hbar^2}{2m_2}\left(\frac{\partial^2}{\partial x_2^2} + \frac{\partial^2}{\partial y_2^2} + \frac{\partial^2}{\partial z_2^2}\right) \right.\\
+			&\quad + \left. \frac{c}{\left[\left(x_1-x_2\right)^2+\left(y_1-y_2\right)^2+\left(z_1-z_2\right)^2\right]^{1/2}}\right]\psi = E\psi
+		\end{aligned}
+		\label{eq:3.53}
+	\end{equation}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Figures/3.1.png}  % 图片路径
+		\caption{\text{位于}$x^{\prime}, y^{\prime},z^{\prime}$的一个无穷小箱形区域}
+		\label{fig:3.1}
+	\end{figure}
+	虽然(\ref{eq:3.53})看起来很困难，但我们将在第 6 章中解决它。\\
+	\indent 对于单粒子一维系统，玻恩假设[式(\ref{exp:1.15 probability of a particle})]表明：$\left|\Psi\left(x^{\prime},t\right)^2\mathrm{d}x\right|$是在$t$时刻在$x^{\prime}$到$x^{\prime}+\mathrm{d}x$区域内找到粒子的概率，其中$x^{\prime}$是$x$的一个特定值。我们对这一假设作如下扩展：\textit{对于三维单粒子系统，表达式}
+	\begin{equation}
+		\boxed{
+			\left|\Psi\left(x^{\prime}, y^{\prime}, z^{\prime},t\right)\right|^2 \mathrm{d}x\mathrm{d}y\mathrm{d}z
+		}
+		\label{exp:3.54}
+	\end{equation}
+	\textit{是在$x^{\prime}$到$x^{\prime}+\mathrm{d}x$、$y^{\prime}$到$y^{\prime}+\mathrm{d}y$、$z^{\prime}$到$z^{\prime}+\mathrm{d}z$这一无限小空间内找到粒子的概率。}由于找到粒子的总概率为 1，因此归一化条件为
+	\begin{equation}
+		\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\left|\Psi\left(x^{\prime}, y^{\prime}, z^{\prime},t\right)\right|^2 \mathrm{d}x\mathrm{d}y\mathrm{d}z = 1
+		\label{eq:3.55}
+	\end{equation}
+	\indent \textit{对于$n$粒子的三维系统，我们假设}
+	\begin{equation}
+		\boxed{
+			\left|\Psi\left(x_1^{\prime}, y_1^{\prime}, z_1^{\prime},x_2^{\prime}, y_2^{\prime}, z_2^{\prime},\cdots,x_n^{\prime}, y_n^{\prime}, z_n^{\prime},t\right)\right|^2 \mathrm{d}x_1\mathrm{d}y_1\mathrm{d}z_1\mathrm{d}x_2\mathrm{d}y_2\mathrm{d}z_2\cdots\mathrm{d}x_n\mathrm{d}y_n\mathrm{d}z_n
+		}
+		\label{eq:3.56}
+	\end{equation}
+	\textit{是在$\left(x_1^{\prime},y_1^{\prime},z_1^{\prime}\right)$处带边$\mathrm{d}x_1,\mathrm{d}y_1,\mathrm{d}z_1$的无限小矩形盒状区域内发现粒子1，在$\left(x_2^{\prime},y_2^{\prime},z_2^{\prime}\right)$处带边$\mathrm{d}x_2,\mathrm{d}y_2,\mathrm{d}z_2$的无限小矩形盒状区域内发现粒子2，$\cdots$，在$\left(x_n^{\prime},y_n^{\prime},z_n^{\prime}\right)$处带边$\mathrm{d}x_n,\mathrm{d}y_n,\mathrm{d}z_n$的无限小矩形盒状区域内发现粒子$n$的概率。}由于找到粒子的总概率为 1，因此归一化条件为
+	\begin{equation}
+		\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\cdots\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\left|\Psi\right|^2 \mathrm{d}x_1\mathrm{d}y_1\mathrm{d}z_1\cdots\mathrm{d}x_n\mathrm{d}y_n\mathrm{d}z_n = 1
+		\label{eq:3.57}
+	\end{equation}
+	\textit{在量子力学中，对一个系统的全空间进行积分的习惯做法是$\int\mathbf{d}\tau$。简写式}(\ref{eq:3.55})\textit{和}(\ref{eq:3.57})，\textit{有}
+	\begin{equation}
+		\boxed{
+			\int\left|\Psi\right|^2\mathrm{d}\tau = 1
+		}
+		\label{eq:3.58}
+	\end{equation}
+	\textit{虽然}(\ref{eq:3.58})\textit{看起来像是一个不定积分，但我们可以理解为一个定积分。}根据上下文可以理解积分变量及其范围。\\
+	\indent 对于定态系统，$\left|\Psi\right|^2 = \left|\psi\right|^2$，及
+	\begin{equation}
+		\boxed{
+			\int\left|\psi\right|^2\mathrm{d}\tau = 1
+		}
+		\label{eq:3.59}
+	\end{equation}
+	
+	
+	
+	
 
 \section{三维盒子中的粒子}
 
