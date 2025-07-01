@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  1 JUL 2025 17:38
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  1 JUL 2025 20:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1601,43 +1601,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 457--467
 
  []
 
-[35]) (./chapters/04.tex [36]
-Chapter 4.
-) (./chapters/05.tex [37
+[35] [36]
+File: Figures/3.1.png Graphic file (type bmp)
+<Figures/3.1.png>
 
-] [38
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[37]) (./chapters/04.tex [38]
+Chapter 4.
+) (./chapters/05.tex [39
+
+] [40
 
 ]
 Chapter 5.
-) (./chapters/06.tex [39] [40
+) (./chapters/06.tex [41] [42
 
 ]
 Chapter 6.
-) (./chapters/07.tex [41] [42
+) (./chapters/07.tex [43] [44
 
 ]
 Chapter 7.
-) (./chapters/08.tex [43] [44
+) (./chapters/08.tex [45] [46
 
 ]
 Chapter 8.
-) (./chapters/09.tex [45] [46
+) (./chapters/09.tex [47] [48
 
 ]
 Chapter 9.
-) (./chapters/10.tex [47] [48
+) (./chapters/10.tex [49] [50
 
 ]
 Chapter 10.
-) (./chapters/11.tex [49] [50
+) (./chapters/11.tex [51] [52
 
 ]
 Chapter 11.
-) (./chapters/12.tex [51] [52
+) (./chapters/12.tex [53] [54
 
 ]
 Chapter 12.
-) (./chapters/13.tex [53] [54
+) (./chapters/13.tex [55] [56
 
 ]
 Chapter 13.
@@ -1704,15 +1711,15 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55]
+ [57]
 Overfull \vbox (69.2806pt too high) has occurred while \output is active []
 
 
-[56]
+[58]
 Chapter 14.
-) (./chapters/15.tex [57
+) (./chapters/15.tex [59
 
-] [58
+] [60
 
 ]
 Chapter 15.
@@ -1731,44 +1738,44 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59]
+ [61]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
-[60]
+[62]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61
+ [63
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
-[62]
+[64]
 Chapter 17.
-[63
+[65
 
-]) (./chapters/appendix.tex [64]
+]) (./chapters/appendix.tex [66]
 附录 A.
-) (./chapters/bibliography.tex [65
+) (./chapters/bibliography.tex [67
 
-] [66
+] [68
 
 ]
 附录 B.
-[67] [68
+[69] [70
 
-]) (./chapters/answers.tex [69] [70
+]) (./chapters/answers.tex [71] [72
 
 ]
 附录 C.
-) (./chapters/index.tex [71] [72
+) (./chapters/index.tex [73] [74
 
 ]
 附录 D.
-) [73] (./Quantum Chemistry.aux)
+) [75] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -1777,12 +1784,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 37474 strings out of 474773
- 841052 string characters out of 5751499
+ 37513 strings out of 474773
+ 841706 string characters out of 5751499
  1972842 words of memory out of 5000000
- 58998 multiletter control sequences out of 15000+600000
- 577183 words of font info for 161 fonts, out of 8000000 for 9000
+ 59029 multiletter control sequences out of 15000+600000
+ 577215 words of font info for 165 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,114p,745b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (81 pages).
+Output written on Quantum Chemistry.pdf (83 pages).
