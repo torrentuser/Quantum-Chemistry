@@ -759,7 +759,6 @@
 	由于$\hat{H}$是线性算符，我们可以对式(\ref{eq:3.78})的左边应用式(\ref{eq:3.9})$n-1$次，有
 	\begin{equation*}
 		\hat{H}\left(c_1\psi_1 + c_2\psi_2 +  \cdots + c_n\psi_n\right) = \hat{H}\left(c_1\psi_1\right) + \hat{H}\left(c_2\psi_2\right) + \cdots + \hat{H}\left(c_n\psi_n\right)
-		\label{eq:3.79}
 	\end{equation*}
 	再使用式(\ref{eq:3.10})，则(\ref{eq:3.79})变为
 	\begin{equation*}
@@ -775,13 +774,100 @@
 	\indent 由于与简并能级相对应的波函数的任何线性组合都是具有相同本征值的 $\hat{H}$ 的本征函数，因此我们可以为任何简并能级构造出无数个不同的波函数。事实上，我们只对线性无关的本征函数感兴趣。若$f_1,f_2,\cdots,f_n$当且仅当所有常数$c_1,c_2,\cdots,c_n$都为零时，满足关系式$c_1f_1+c_2f_2+\cdots+c_nf_n=0$，则称$f_1,f_2,\cdots,f_n$是\textbf{线性无关}的。这就意味着\textit{在一组线性独立函数中，没有一个函数可以用其余函数的线性组合来表示。}例如，函数$f_1=3x$，$f_2=5x^2-x$，$f_3=x^2$不是线性无关的，因为$f_2=5f_3-\frac{1}{3}f_1$。而函数$g_1=1$，$g_2=x$，$g_3=x^2$是线性无关的，因为没有一个函数可以用其余函数的线性组合来表示。\\
 	\indent 一个能级的\textbf{简并度}等于与该能值相对应的线性独立波函数的数目。一维自由粒子波函数 (\ref{eq:2.30}) 是两个线性独立函数的线性组合，这两个函数分别是具有相同能量本征值 $E$ 的本征函数。因此每个这样的能级（除了$E=0$）都是二重简并的（简并度为2）。\\
 
-	
-	
-	
-	
-	
-
 \section{平均值}
+	第3.3节指出：若态函数$\Psi$不是算符$\hat{B}$的本征函数，则对$B$的观测将得到一组可能值的其中一个（$\hat{B}$的本征值）。我们现在考虑具有状态$\Psi$的系统的性质$B$的平均值。\\
+	\indent 为了在实验中找到 $B$ 的平均值，我们需要许多相同的、不相互影响的系统$\Psi$，每个系统都处于相同的状态，然后测量每个系统中的 $B$。$B$的\textbf{平均值}，记作$\langle B \rangle$，定义为所有测量值$b_1,b_2,\cdots,b_N$的算术平均：
+	\begin{equation}
+		\langle B \rangle = \frac{1}{N}\sum_{j=1}^{N}B_j
+		\label{eq:3.79}
+	\end{equation}
+	其中系统的数目$N$是很大的一个数。\\
+	\indent 我们可以对 $B$ 的所有可能值求和，而不是对 $B$ 的观测值求和，将每个可能值乘以观测到的次数，得到等价表达式
+	\begin{equation}
+		\langle B \rangle = \frac{1}{N}\sum_{b}n_bb
+		\label{eq:3.80}
+	\end{equation}
+	其中 $n_b$ 是观测到的值 $b$ 的次数。举一个例子就会很清楚。假设一个班级的五名学生进行了五道题的测试，取得的分数为：0，20，20，60，60，80，80，80，100。则用式(\ref{eq:3.79})计算平均分，我们有
+	\begin{equation*}
+		\frac{1}{N}\sum_{j=2}^{N}B_j = \frac{0+20+20+60+60+80+80+80+100}{9} = \frac{500}{9} = 56
+	\end{equation*}
+	用式(\ref{eq:3.80})计算平均分，对所有可能的分数：0，20，40，60，80，100求和，我们有
+	\begin{equation*}
+		\frac{1}{N}\sum_{b}n_bb = \frac{1\left(0\right)+2\left(20\right)+0\left(40\right)+2\left(60\right)+3\left(80\right)+1\left(100\right)}{9} = \frac{500}{9} = 56
+	\end{equation*}
+	\indent 方程(\ref{eq:3.80})可以写作
+	\begin{equation*}
+		\langle B \rangle = \sum_{b}\left(\frac{n_b}{N}\right)b
+	\end{equation*}
+	由于$N$很大，$n_b/N$是观测到值$b$的概率$P_b$，因此
+	\begin{equation}
+		\langle B \rangle = \sum_{b}P_bb
+		\label{eq:3.81}
+	\end{equation}
+	\indent 现在考虑态函数为$\Psi\left(x,t\right)$的一维单粒子系统中$x$坐标的平均值。$x$ 坐标的取值范围是连续的，在$x$到$x+\mathrm{d}x$的无限小区间内找到粒子的概率为$\left|\Psi\right|^2\mathrm{d}x$。对无限小区间的求和等同于对整个 $x$ 范围的积分，因此 (\ref{eq:3.81}) 变为
+	\begin{equation}
+		\langle x \rangle = \int_{-\infty}^{\infty}x\left|\Psi\left(x,t\right)\right|^2\mathrm{d}x
+		\label{eq:3.82}
+	\end{equation}
+	对于单粒子三维系统，在位于$\left(x,y,z\right)$，具有边长$\mathrm{d}x,\mathrm{d}y,\mathrm{d}z$的体积微元内找到粒子的概率为
+	\begin{equation}
+		\left|\Psi\left(x,y,z,t\right)\right|^2\mathrm{d}x\mathrm{d}y\mathrm{d}z
+		\label{eq:3.83}
+	\end{equation}
+	如果我们想知道在$x$到$x+\mathrm{d}x$的范围内找到粒子的概率，我们必须用$y$和$z$的所有可能取值对式(\ref{eq:3.83})进行积分，由于当$x$在$x+\mathrm{d}x$范围内时，粒子的$y$和$z$坐标可以任意取值。因此，对于三维的例子，式(\ref{eq:3.82})变为
+	\begin{equation}
+		\langle x \rangle = \int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\left|\Psi\left(x,y,z,t\right)\right|^2\mathrm{d}y\mathrm{d}z\right]x\mathrm{d}x
+		\label{eq:3.84}
+	\end{equation}
+	\begin{equation*}
+		\langle x \rangle = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}x\left|\Psi\left(x,y,z,t\right)\right|^2\mathrm{d}x\mathrm{d}y\mathrm{d}z
+	\end{equation*}
+	\indent 现在，我们来看看某种物理特性 $B\left(x,y,z\right)$ 的平均值，它是粒子坐标的函数。一个例子就是势能函数$V\left(x,y,z\right)$。根据式 (\ref{eq:3.84}) 的相同推理，可以得出
+	\begin{equation}
+		\langle B\left(x,y,z\right) \rangle = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\left|\Psi\left(x,y,z,t\right)\right|^2B\left(x,y,z\right)\mathrm{d}x\mathrm{d}y\mathrm{d}z
+		\label{eq:3.85}
+	\end{equation}
+	\begin{equation}
+		\langle B\left(x,y,z\right) \rangle = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\Psi^{\ast}B\Psi\mathrm{d}x\mathrm{d}y\mathrm{d}z
+		\label{eq:3.86}
+	\end{equation}
+	式(\ref{eq:3.86}) 的形式似乎有点异想天开，因为它与 (\ref{eq:3.85}) 没有什么不同。但稍后我们将看到它的重要意义。\\
+	\indent 一般来说，对于单粒子三维系统，属性 $B$ 既取决于坐标，也取决于动量：
+	\begin{equation*}
+		B = B\left(x,y,z,p_x,p_y,p_z\right)
+	\end{equation*}
+	我们如何找到$B$的平均值？我们\textit{假设}处于$\Psi$状态的系统的$\langle B \rangle$为
+	\begin{equation*}
+		\langle B \rangle = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\Psi^{\ast}B\left(x,y,z,\frac{\hbar^2}{\mathrm{i}}\frac{\partial}{\partial x},\frac{\hbar^2}{\mathrm{i}}\frac{\partial}{\partial y},\frac{\hbar^2}{\mathrm{i}}\frac{\partial}{\partial z}\right)\Psi\mathrm{d}x\mathrm{d}y\mathrm{d}z
+	\end{equation*}
+	\begin{equation}
+		\langle B \rangle = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\Psi^{\ast}\hat{B}\Psi\mathrm{d}x\mathrm{d}y\mathrm{d}z
+		\label{eq:3.87}
+	\end{equation}
+	其中$\hat{B}$是性质$B$的量子力学算符。[稍后，我们将利用 (\ref{eq:3.87}) 来证明含时薛定谔方程在从量子力学到经典力学的转变过程中还原为牛顿第二定律，从而为这一假设提供一些理由；见问题 7.59。]，对于$n$粒子体系，我们假设
+	\begin{equation}
+		\boxed{
+			\langle B \rangle = \int \Psi^{\ast}\hat{B}\Psi\mathrm{d}\tau
+		}
+		\label{eq:3.88}
+	\end{equation}
+	其中$\int\mathrm{d}\tau$表示对全空间的$3n$坐标的积分。由于我们将$\Psi^{\ast}\Psi$视为概率密度，式(\ref{eq:3.88})中的态函数必须先归一化。重要的是，要将算符放在在$\Psi^{\ast}$和$\Psi$中间。表达式$\hat{B}\Psi^{\ast}\Psi$、$\Psi^{\ast}\Psi\hat{B}$和$\Psi^{\ast}\hat{B}\Psi$的含义是不同的，除非$B$只是坐标的函数。在$\int\Psi^{\ast}\hat{B}\Psi\mathrm{d}\tau$中，第一个操作是将算符$\hat{B}$应用于态函数$\Psi$，然后将结果与$\Psi^{\ast}$相乘并对全空间进行积分，就得到了$\langle B \rangle$。\\
+	\indent 对于定态，我们有[式\ref{eq:1.20}]
+	\begin{equation*}
+		\Psi^{\ast}\hat{B}\Psi = \mathrm{e}^{\mathrm{i}Et/\hbar}\psi^{\ast}\hat{B}\mathrm{e}^{-\mathrm{i}Et/\hbar}\psi = \mathrm{e}^{0}\psi^{\ast}\hat{B}\psi = \psi^{\ast}\hat{B}\psi
+	\end{equation*}
+	由于$\hat{B}$不包含对时间的导数，也不会影响 $\Psi$ 中的时间因子，因此，对于定态，有
+	\begin{equation}
+		\langle B \rangle = \int \psi^{\ast}\hat{B}\psi\mathrm{d}\tau
+		\label{eq:3.89}
+	\end{equation}
+	因此，在定态系统中，若$\hat{B}$与时间无关，则$\langle B \rangle$也是与时间无关的。\\
+	\indent 考虑一个特殊的例子，若$\Psi$是$\hat{B}$的本征函数。当$\hat{B}\Psi = k\Psi$时，式(\ref{eq:3.88})变为
+	\begin{equation}
+		\langle B \rangle = \int \Psi^{\ast}\hat{B}\Psi\mathrm{d}\tau = \int \Psi^{\ast}k\Psi\mathrm{d}\tau = k \int \Psi^{\ast}\Psi\mathrm{d}\tau = k
+		\label{eq:3.90}
+	\end{equation}
+	其中$\Psi$已归一化。
 
 \section{波函数的约束条件}
 
