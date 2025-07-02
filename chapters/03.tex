@@ -863,11 +863,56 @@
 	\end{equation}
 	因此，在定态系统中，若$\hat{B}$与时间无关，则$\langle B \rangle$也是与时间无关的。\\
 	\indent 考虑一个特殊的例子，若$\Psi$是$\hat{B}$的本征函数。当$\hat{B}\Psi = k\Psi$时，式(\ref{eq:3.88})变为
-	\begin{equation}
+	\begin{equation*}
 		\langle B \rangle = \int \Psi^{\ast}\hat{B}\Psi\mathrm{d}\tau = \int \Psi^{\ast}k\Psi\mathrm{d}\tau = k \int \Psi^{\ast}\Psi\mathrm{d}\tau = k
+	\end{equation*}
+	其中$\Psi$已归一化。由于当$\hat{B}\Psi = k\Psi$时，$k$ 是我们在测量时能找到的唯一可能的 $B$ 值（第 3.3 节）。\\
+	\indent 以下关于平均值的性质由式(\ref{eq:3.88})很容易证明（见问题 3.49）：
+	\begin{equation}
+		\boxed{
+			\langle A + B \rangle = \langle A \rangle + \langle B \rangle
+		}
+		\quad
+		\boxed{
+			\langle cB \rangle = c\langle B \rangle
+		}
 		\label{eq:3.90}
 	\end{equation}
-	其中$\Psi$已归一化。
+	其中$A$和$B$是系统的物理量，$c$是常数。但是，平均值的乘积不一定等于乘积的平均值：$\langle AB \rangle \neq \langle A \rangle\langle B \rangle$。\\
+	\indent 通常使用\textbf{期望值}一词来代替平均值。期望值并不一定是我们观察到的可能值之一。
+	\begin{examplebox}
+		\textbf{例题：}对于处于基态的三维单粒子系统，求$\langle x \rangle$和$\langle p_x \rangle$的值。\\
+		\\
+		将基态波函数$\psi=f\left(x\right)g\left(y\right)h\left(z\right)$[式(\ref{eq:3.62})]代入式(\ref{eq:3.89})，有
+		\begin{equation*}
+			\langle x \rangle = \int \psi^{\ast}\hat{x}\psi \mathrm{d}\tau = \int_{0}^{c}\int_{0}^{b}\int_{0}^{a}f^{\ast}g^{\ast}h^{\ast} x fgh\mathrm{d}x\mathrm{d}y\mathrm{d}z
+		\end{equation*}
+		而在势箱外有$\psi = 0$。由于$g\left(y\right)$和$h\left(z\right)$已归一化，使用式(\ref{eq:3.74})，我们有
+		\begin{equation*}
+			\langle x \rangle = \int_{0}^{a} x\left|f\left(x\right)\right|^{2}\mathrm{d}x \int_{0}^{b}\left|g\left(y\right)\right|^{2}\mathrm{d}y \int_{0}^{c}\left|h\left(z\right)\right|^{2}\mathrm{d}z = \int_{0}^{a} x\left|f\left(x\right)\right|^{2}\mathrm{d}x
+		\end{equation*}
+		由于系统处于基态，有$n_x=1$，则$f\left(x\right) = \left(2/a\right)^{1/2}\sin\left(\pi x/a\right)$，因此
+		\begin{equation}
+			\langle x \rangle = \frac{2}{a}\int_{0}^{a} x\sin^{2}\left(\frac{\pi x}{a}\right)\mathrm{d}x = \frac{a}{2}
+			\label{eq:3.91}
+		\end{equation}
+		其中我们用到了附录中的(A.3)。根据图\ref{fig:2.4}，这个结果是合理的。\\
+		\indent 同样地，
+		\begin{equation*}
+			\langle p_x \rangle = \int \psi^{\ast}\hat{p}_x\psi \mathrm{d}\tau = \int_{0}^{c}\int_{0}^{b}\int_{0}^{a}f^{\ast}g^{\ast}h^{\ast} \frac{\hbar}{\mathrm{i}}\frac{\partial}{\partial x}\left[f\left(x\right)g\left(y\right)h\left(z\right)\right]\mathrm{d}x\mathrm{d}y\mathrm{d}z
+		\end{equation*}
+		\begin{equation*}
+			\langle p_x \rangle = \frac{\hbar}{\mathrm{i}}\int_{0}^{a}f^{\ast}\left(x\right)f^{\prime}\left(x\right)\mathrm{d}x \int_{0}^{b}\left|g\left(y\right)\right|^{2}\mathrm{d}y \int_{0}^{c}\left|h\left(z\right)\right|^{2}\mathrm{d}z
+		\end{equation*}
+		\begin{equation}
+			\langle p_x \rangle = \frac{\hbar}{\mathrm{i}}\int_{0}^{a}f\left(x\right)f^{\prime}\left(x\right)\mathrm{d}x = \frac{\hbar}{2\mathrm{i}}\left. f^2\left(x\right) \right|_{0}^{a} = 0
+			\label{eq:3.92}
+		\end{equation}
+		其中，我们用到了定解条件$f\left(0\right)=f\left(a\right)=0$。由于粒子向$+x$和$-x$方向的移动是等概率的，因此这个结果是合理的。\\
+		\\
+		\textbf{练习：}求处于基态的三维单粒子系统的$\langle p_x^2 \rangle$的值。\\
+		(\textit{答案：}$h^2/4l^2$。)
+	\end{examplebox}
 
 \section{波函数的约束条件}
 
