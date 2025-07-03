@@ -915,6 +915,27 @@
 	\end{examplebox}
 
 \section{波函数的约束条件}
+	在求解箱中粒子的问题时，我们要求$\psi$是连续的。我们现在讨论波函数需要满足的其他约束条件。\\
+	\indent 由于$\left|\psi\right|^2\mathrm{d}\tau$是概率，我们希望可以通过选择一个合适的\textbf{归一化常数}（normalization constant）与波函数相乘，使得波函数可以归一化。若$\psi$未归一化而$N\psi$已归一化，则根据归一化条件，有
+	\begin{equation}
+		1 = \int \left|N\psi\right|^2\mathrm{d}\tau = N^2\int \left|\psi\right|^2\mathrm{d}\tau
+		\label{eq:3.93}
+	\end{equation}
+	\begin{equation*}
+		N = \left(\int \left|\psi\right|^2\mathrm{d}\tau\right)^{-1/2}
+	\end{equation*}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Figures/3.4.png}  % 图片路径
+		\caption{\shortstack{\text{函数(a)是连续函数，其一阶导数也连续；}\\\text{函数(b)是连续函数，但其一阶导数不连续；}\\\text{函数(c)不是连续函数}}}
+		\vspace{-6pt}
+		\label{fig:3.4}
+	\end{figure}
+	只有当$\psi$处处为零时，定积分$\int \left|\psi\right|^2\mathrm{d}\tau$才为零。然而，$\psi$不可能处处为零（这表明粒子无处可找）。因此，这个积分一定不会为零。若$\int \left|\psi\right|^2\mathrm{d}\tau$为无穷大，则$\left|N\right|$为零，$\psi$就无法归一化。当且仅当$\int \left|\psi\right|^2\mathrm{d}\tau$具有有限而非无限值时，我们才能对$\psi$进行归一化。如果对全空间的积分$\int \left|\psi\right|^2\mathrm{d}\tau$为有限值，我们说$\psi$是\textbf{平方可积的}（quadratically integrable）。因此，我们一般要求$\psi$是平方可积的。一个最重要的例外不处于束缚态的粒子。因此，粒子在势阱中（第 2.4 节）的非束缚态和自由粒子的波函数都不是平方可积的。\\
+	\indent 由于$\psi^{\ast}\psi$是概率密度，波函数一定是单值的。如果我们的理论对在某一点发现粒子的概率给出了两个不同的值，那就太尴尬了。如果我们要求$\psi$是单值的，那么显然$\psi^{\ast}\psi$也是单值的。$\psi$可能会有多个值[例如，$\psi\left(q\right) = -1,1,\mathrm{i}$]，但$\psi^{\ast}\psi$只能有一个值。因此，我们要求$\psi$是单值的。\\
+	\indent 除了要求$\psi$是连续的之外，我们也通常要求其偏导数$\partial\psi/\partial x$，$\partial\psi/\partial y$等也是连续的(见图\ref{fig:3.4}a)。不过，回过头来看第 2.2 节，我们会发现，对于箱中粒子$\partial\psi/\partial x$在箱壁上不连续，以及$\partial\psi/\partial x$在箱外为零，但是由方程(\ref{eq:2.23 stationary state wave function for the particle in a box})可知，$\partial\psi/\partial x$在箱壁上又不为零。$\psi^{\prime}$的不连续性是由在箱壁处势能突然变为无穷大造成的。对于具有有限高度的势垒来说，$\psi^{\prime}$在箱壁处是连续的。\\
+	\indent 与平方可积的要求一致，有时也会说波函数必须在任何地方都是有限的，包括无穷大。然而，这通常是比二次可积性更强的要求。事实上，氢原子的一些相对论波函数在原点处是无限的，但却是二次可积的。偶尔，我们也会遇到在原点处无限大的非相对论波函数 [L. D．D. 兰道和 E. M. 利夫希茨，《量子力学》，第三版（1977 年），第 35 节]。因此，基本要求是平方可积性，而不是有限性。\\
+	\indent 我们要求任何代表物理量的算符的本征函数都满足上述要求。符合这些要求的函数被称为\textbf{品优函数}（well-behaved function）。
 
 \section*{总结}
 
