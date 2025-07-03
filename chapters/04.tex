@@ -1,10 +1,114 @@
 % ===== CHAPTER 4 =====
 \chapter{谐振子}
 \label{chap:4}
-
+    我们将在第 13.2 节中看到，气相分子的能量可以近似为平动、转动、振动和电子能量之和。电子能量的计算将在第 13 章至第 17 章中讨论。平动能是分子作为一个整体在容纳物质的容器空间中的运动动能。平动能级可视为三维空间中粒子的能级（第 3.5 节）。二原子（双原子）分子的转动能级可以用刚性转子的转动能级来近似表示，第 6.4 节将对此进行讨论。双原子分子的最低几个振动能级可以用谐振子的能级来近似表示（第 4.3 节），多原子分子的振动能可以用线性谐振子振动能之和来近似表示（第 15.12 节）。本章第 4.2 节将求解谐振子的薛定谔方程。作为初步介绍，第 4.1 节讨论了求解微分方程的幂级数解法，该方法用于求解谐振子的薛定谔方程。第 4.3 节讨论分子振动。第 4.4 节介绍了求一维薛定谔方程特征值和特征函数的数值方法。
 \section{微分方程的幂级数解}
 \label{sec:4.1 Power-Series Solutions of Differential Equations}
-
+    到目前为止，我们只考虑了势能$V\left(x\right)$是常数的情况。这使得薛定谔方程成为一个具有常数系数的二阶线性齐次微分方程，我们知道如何求解这个方程。对于 $V$ 随 $x$ 变化的情况，一种有用的方法是尝试薛定谔方程的幂级数解法。\\
+    \indent 为了说明这种方法，考虑微分方程
+    \begin{equation}
+        y^{\prime\prime}\left(x\right) + c^2 y\left(x\right) = 0
+        \label{eq:4.1}
+    \end{equation}
+    其中$c^2>0$。当然，这个微分方程有常系数，但我们可以用幂级数法求解。让我们先用特征方程$s^2+c^2=0$来求解这个方程。特征方程的根是$s=\pm \mathrm{i}c$。回忆第 2.2 节中的工作[公式 (\ref{eq:2.10 schrödinger equation for particle between 0 and l}) 和 (\ref{eq:4.1}) 是相同的]，当特征方程的根是纯虚数时，我们会得到三角函数形式的通解：
+    \begin{equation}
+        y\left(x\right) = A \cos\: cx + B \sin\: cx
+        \label{eq:4.2}
+    \end{equation}
+    其中 $A$ 和 $B$ 是积分常量。式(\ref{eq:4.2})的另一种形式是
+    \begin{equation}
+        y = D \sin\left(cx+e\right)
+        \label{eq:4.3}
+    \end{equation}
+    其中 $D$ 和 $e$ 是任意常数。利用两角之和的正弦公式，我们可以证明 (\ref{eq:4.3}) 等价于 (\ref{eq:4.2})。\\
+    \indent 现在让我们用幂级数法来求解 (\ref{eq:4.1})。我们假设方程的解可以在$x=0$处展开成Taylor级数的形式(见问题：4.1)，也就是说，我们假设
+    \begin{equation}
+        y\left(x\right) = \sum_{n=0}^{\infty}a_nx^n = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \cdots
+        \label{eq:4.4}
+    \end{equation}
+    其中 $a$ 为常数系数，有待确定，以使式 (\ref{eq:4.1}) 成立。对式(\ref{eq:4.4})求导，有
+    \begin{equation}
+        y^{\prime}\left(x\right) = a_1 + 2a_2 x + 3a_3 x^2 + \cdots = \sum_{n=1}^{\infty}na_nx^{n-1}
+        \label{eq:4.5}
+    \end{equation}
+    其中，我们假设该数列可以逐项求导（对于无穷级数来说，这并不总是正确的）。对于$y^{\prime\prime}$，我们有
+    \begin{equation}
+        y^{\prime\prime}\left(x\right) = 2a_2 + 3\left(2\right)a_3 x + \cdots = \sum_{n=2}^{\infty}n(n-1)a_nx^{n-2}
+        \label{eq:4.6}
+    \end{equation}
+    将 (\ref{eq:4.6}) 和 (\ref{eq:4.4}) 代入 (\ref{eq:4.1})，得到
+    \begin{equation}
+        \sum_{n=2}^{\infty}n(n-1)a_nx^{n-2} + c^2\sum_{n=0}^{\infty}a_nx^n = 0
+        \label{eq:4.7}
+    \end{equation}
+    我们想把 (\ref{eq:4.7}) 中的两个和合并起来。只要满足一定条件，我们就可以将两个无穷级数逐项相加，得到它们的和：
+    \begin{equation}
+        \sum_{j=0}^{\infty}b_jx^j + \sum_{j=0}^{max}c_jx^j = \sum_{j=0}^{\infty}(b_j+c_j)x^j
+        \label{eq:4.8}
+    \end{equation}
+    要将 (\ref{eq:4.8}) 应用于 (\ref{eq:4.7}) 中的两个和，我们希望每个和的极限相同，$x$ 的幂相同。因此，我们改变了 (\ref{eq:4.7}) 中第一个和的下标，定义$k \equiv n-2$。极限$n = 2$到无穷大与$k = 0$到无穷大相对应，将$n=k+2$代入第一个和，有
+    \begin{equation}
+        \sum_{n=2}^{\infty}n\left(n-1\right)a_nx^{n-2} = \sum_{k=0}^{\infty}\left(k+2\right)\left(k+1\right)a_{k+2}x^k = \sum_{n=0}^{\infty}\left(n+2\right)\left(n+1\right)a_{n+2}x^n
+        \label{eq:4.9}
+    \end{equation}
+    (\ref{eq:4.9}) 中的最后一个等式是有效的，因为求和指数是一个\textbf{虚拟变量}（dummy variable）；我们用什么字母来表示这个变量没有区别。例如，求和$\sum_{i=1}^{3}c_ix^i$和$\sum_{m=1}^{3}c_mx^m$是相等的，因为它们只有求和指数不同。如果我们将这个求和展开就会更好理解：
+    \begin{equation*}
+        \sum_{i=1}^{3}c_ix_6 = c_1x^1 + c_2x^2 + c_3x^3, \quad \sum_{m=1}^{3}c_mx^m = c_1x^1 + c_2x^2 + c_3x^3
+    \end{equation*}
+    在 (\ref{eq:4.9}) 的最后一个等式中，我们只是将表示求和指数的符号从 $k$ 改为 $n$。定积分中的积分变量也是一个虚拟变量，因为定积分的值不受变量字母的影响：
+    \begin{equation}
+        \int_{a}^{b}f\left(x\right)dx = \int_{a}^{b}f\left(t\right)dt
+        \label{eq:4.10}
+    \end{equation}
+    将式(\ref{eq:4.9}) 代入 (\ref{eq:4.7})，我们得到
+    \begin{equation}
+        \sum_{n=0}^{\infty}\left[\left(n+2\right)\left(n+1\right)a_{n+2}+c^2a_n\right]x^n = 0
+        \label{eq:4.11}
+    \end{equation}
+    如果 (\ref{eq:4.11}) 对所有 $x$ 值都成立，那么 $x$ 的每个幂的系数都必须为零。为了说明这一点，请看方程
+    \begin{equation}
+        \sum_{j=0}^{\infty}b_jx^j = 0
+        \label{eq:4.12}
+    \end{equation}
+    在式(\ref{eq:4.12})，令$x=0$，我们有$b_0=0$。将式(\ref{eq:4.12})左右两侧对$x$求导，则$b_1=0$。求$n$阶导数，令$x=0$，我们得到$b_n=0$。因此，从式(\ref{eq:4.11})中，我们有：
+    \begin{equation}
+        \left(n+2\right)\left(n+1\right)a_{n+2} + c^2 a_n = 0
+        \label{eq:4.13}
+    \end{equation}
+    \begin{equation}
+        a_{n+2} = -\frac{c^2}{\left(n+1\right)\left(n+2\right)}a_n
+        \label{eq:4.14}
+    \end{equation}
+    方程(\ref{eq:4.14}) 是一个\textbf{递推关系式}（recursion relation），如果我们知道$a_0$的值，就能用式(\ref{eq:4.14})计算出$a_2$、$a_4$、$a_6$等的值。如果我们知道$a_1$的值，就能用式(\ref{eq:4.14})计算出$a_3$、$a_5$、$a_7$等的值。由于对$a_0$和$a_1$的选择没有限制，它们是任意常数，我们分别用$A$和$Bc$来表示：
+    \begin{equation}
+        a_0 = A, \quad a_1 = Bc
+        \label{eq:4.15}
+    \end{equation}
+    则利用式(\ref{eq:4.14})，我们可以计算系数：
+    \begin{equation*}
+        a_0 = A, \quad a_2 = -\frac{c^2}{1 \cdot 2}A, \quad a_4 = \frac{c^4}{1 \cdot 2\cdot 3}A, \quad a_6 = -\frac{c^6}{6!}A, \quad \ldots
+    \end{equation*}
+    \begin{equation}
+        a_{2k} = (-1)^k \frac{c^{2k}}{(2k)!}A, \quad k = 0, 1, 2, \ldots
+        \label{eq:4.16}
+    \end{equation}
+    \begin{equation*}
+        a_1 = Bc, \quad a_3 = -\frac{c^3}{2 \cdot 3}Bc, \quad a_5 = \frac{c^5}{2 \cdot 3 \cdot 4 \cdot 5}Bc, \quad a_7 = -\frac{c^7}{7!}Bc, \quad \ldots
+    \end{equation*}
+    \begin{equation}
+        a_{2k+1} = (-1)^k \frac{c^{2k+1}}{(2k+1)!}B, \quad k = 0, 1, 2, \ldots
+        \label{eq:4.17}
+    \end{equation}
+    根据式(\ref{eq:4.4})、 (\ref{eq:4.16}) 和 (\ref{eq:4.17}) 我们有
+    \begin{equation}
+        y = \sum_{n=0}^{\infty}a_nx^n = \sum_{n=0,2,4, \cdots}^{\infty}a_nx^n + \sum_{n=1,3,5, \cdots}^{\infty}a_nx^n
+        \label{eq:4.18}
+    \end{equation}
+    \begin{equation}
+        y = A\sum_{k=0}^{\infty}(-1)^k\frac{c^{2k}x^{2k}}{(2k)!} + B\sum_{k=0}^{\infty}(-1)^k\frac{c^{2k+1}x^{2k+1}}{(2k+1)!}
+        \label{eq:4.19}
+    \end{equation}
+    (\ref{eq:4.19}) 中的两个级数是 $\cos\: cx$ 和 $\sin\: cx$ 的Taylor级数（问题：4.2）。因此，与式(\ref{eq:4.2}) 相同，我们有$y = \cos\: cx + \sin\: cx$。
 
 \section{一维谐振子}
 \label{sec:4.2 The}
