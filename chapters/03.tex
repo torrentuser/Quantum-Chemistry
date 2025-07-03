@@ -751,7 +751,7 @@
 		\phi \equiv c_1\psi_1 + c_2\psi_2 + c_3\psi_3 + \cdots + c_n\psi_n
 		\label{eq:3.77}
 	\end{equation}
-	\textit{也是能量本征函数，且具有相同的能量本征值 $w$。} [式(\ref{eq:3.1})是函数$\psi_1$，$\psi_2$，$\psi_3$，$\cdots$，$\psi_n$\textbf{线性组合}的定义。其中$c$是常数，有些可能为零。]为了证明这个理论，我们必须指明$\hat{H}\phi = w\phi$，或者
+	\textit{也是能量本征函数，且具有相同的能量本征值 $w$。} [式(\ref{eq:3.77})是函数$\psi_1$，$\psi_2$，$\psi_3$，$\cdots$，$\psi_n$\textbf{线性组合}的定义。其中$c$是常数，有些可能为零。]为了证明这个理论，我们必须指明$\hat{H}\phi = w\phi$，或者
 	\begin{equation}
 		\hat{H}\left(c_1\psi_1 + c_2\psi_2 +  \cdots + c_n\psi_n\right) = w\left(c_1\psi_1 + c_2\psi_2 + \cdots + c_n\psi_n\right)
 		\label{eq:3.78}
@@ -775,8 +775,8 @@
 	\indent 一个能级的\textbf{简并度}等于与该能值相对应的线性独立波函数的数目。一维自由粒子波函数 (\ref{eq:2.30}) 是两个线性独立函数的线性组合，这两个函数分别是具有相同能量本征值 $E$ 的本征函数。因此每个这样的能级（除了$E=0$）都是二重简并的（简并度为2）。\\
 
 \section{平均值}
-	第3.3节指出：若态函数$\Psi$不是算符$\hat{B}$的本征函数，则对$B$的观测将得到一组可能值的其中一个（$\hat{B}$的本征值）。我们现在考虑具有状态$\Psi$的系统的性质$B$的平均值。\\
-	\indent 为了在实验中找到 $B$ 的平均值，我们需要许多相同的、不相互影响的系统$\Psi$，每个系统都处于相同的状态，然后测量每个系统中的 $B$。$B$的\textbf{平均值}，记作$\langle B \rangle$，定义为所有测量值$b_1,b_2,\cdots,b_N$的算术平均：
+	第3.3节指出：若态函数$\Psi$不是算符$\hat{B}$的本征函数，则对$B$的观测将得到一组可能值（$\hat{B}$的本征值的其中一个）。我们现在考虑具有状态$\Psi$的系统的性质$B$的平均值。\\
+	\indent 为了在实验中找到 $B$ 的平均值，我们需要许多相同的、不相互影响的系统$\Psi$，每个系统都处于相同的状态，然后测量每个系统中的 $B$。$B$的\textbf{平均值}（average value），记作$\langle B \rangle$，定义为所有测量值$b_1,b_2,\cdots,b_N$的算术平均：
 	\begin{equation}
 		\langle B \rangle = \frac{1}{N}\sum_{j=1}^{N}B_j
 		\label{eq:3.79}
@@ -866,8 +866,8 @@
 	\begin{equation*}
 		\langle B \rangle = \int \Psi^{\ast}\hat{B}\Psi\mathrm{d}\tau = \int \Psi^{\ast}k\Psi\mathrm{d}\tau = k \int \Psi^{\ast}\Psi\mathrm{d}\tau = k
 	\end{equation*}
-	其中$\Psi$已归一化。由于当$\hat{B}\Psi = k\Psi$时，$k$ 是我们在测量时能找到的唯一可能的 $B$ 值（第 3.3 节）。\\
-	\indent 以下关于平均值的性质由式(\ref{eq:3.88})很容易证明（见问题 3.49）：
+	其中$\Psi$已归一化。由于当$\hat{B}\Psi = k\Psi$时，$k$ 是我们在测量时能找到的唯一可能的 $B$ 值，因此这个结果是合理的（第 3.3 节）。\\
+	\indent 由式(\ref{eq:3.88})很容易证明以下关于平均值的性质（见问题 3.49）：
 	\begin{equation}
 		\boxed{
 			\langle A + B \rangle = \langle A \rangle + \langle B \rangle
@@ -879,7 +879,7 @@
 		\label{eq:3.90}
 	\end{equation}
 	其中$A$和$B$是系统的物理量，$c$是常数。但是，平均值的乘积不一定等于乘积的平均值：$\langle AB \rangle \neq \langle A \rangle\langle B \rangle$。\\
-	\indent 通常使用\textbf{期望值}一词来代替平均值。期望值并不一定是我们观察到的可能值之一。
+	\indent 通常使用\textbf{期望值}（expectation value）一词来代替平均值。期望值并不一定是我们观察到的可能值之一。
 	\begin{examplebox}
 		\textbf{例题：}对于处于基态的三维单粒子系统，求$\langle x \rangle$和$\langle p_x \rangle$的值。\\
 		\\
@@ -931,10 +931,10 @@
 		\vspace{-6pt}
 		\label{fig:3.4}
 	\end{figure}
-	只有当$\psi$处处为零时，定积分$\int \left|\psi\right|^2\mathrm{d}\tau$才为零。然而，$\psi$不可能处处为零（这表明粒子无处可找）。因此，这个积分一定不会为零。若$\int \left|\psi\right|^2\mathrm{d}\tau$为无穷大，则$\left|N\right|$为零，$\psi$就无法归一化。当且仅当$\int \left|\psi\right|^2\mathrm{d}\tau$具有有限而非无限值时，我们才能对$\psi$进行归一化。如果对全空间的积分$\int \left|\psi\right|^2\mathrm{d}\tau$为有限值，我们说$\psi$是\textbf{平方可积的}（quadratically integrable）。因此，我们一般要求$\psi$是平方可积的。一个最重要的例外不处于束缚态的粒子。因此，粒子在势阱中（第 2.4 节）的非束缚态和自由粒子的波函数都不是平方可积的。\\
-	\indent 由于$\psi^{\ast}\psi$是概率密度，波函数一定是单值的。如果我们的理论对在某一点发现粒子的概率给出了两个不同的值，那就太尴尬了。如果我们要求$\psi$是单值的，那么显然$\psi^{\ast}\psi$也是单值的。$\psi$可能会有多个值[例如，$\psi\left(q\right) = -1,1,\mathrm{i}$]，但$\psi^{\ast}\psi$只能有一个值。因此，我们要求$\psi$是单值的。\\
-	\indent 除了要求$\psi$是连续的之外，我们也通常要求其偏导数$\partial\psi/\partial x$，$\partial\psi/\partial y$等也是连续的(见图\ref{fig:3.4}a)。不过，回过头来看第 2.2 节，我们会发现，对于箱中粒子$\partial\psi/\partial x$在箱壁上不连续，以及$\partial\psi/\partial x$在箱外为零，但是由方程(\ref{eq:2.23 stationary state wave function for the particle in a box})可知，$\partial\psi/\partial x$在箱壁上又不为零。$\psi^{\prime}$的不连续性是由在箱壁处势能突然变为无穷大造成的。对于具有有限高度的势垒来说，$\psi^{\prime}$在箱壁处是连续的。\\
-	\indent 与平方可积的要求一致，有时也会说波函数必须在任何地方都是有限的，包括无穷大。然而，这通常是比二次可积性更强的要求。事实上，氢原子的一些相对论波函数在原点处是无限的，但却是二次可积的。偶尔，我们也会遇到在原点处无限大的非相对论波函数 [L. D．D. 兰道和 E. M. 利夫希茨，《量子力学》，第三版（1977 年），第 35 节]。因此，基本要求是平方可积性，而不是有限性。\\
+	只有当$\psi$处处为零时，定积分$\int \left|\psi\right|^2\mathrm{d}\tau$才为零。然而，$\psi$不可能处处为零（这意味着没有粒子存在）。因此，这个积分一定不会为零。若$\int \left|\psi\right|^2\mathrm{d}\tau$为无穷大，则$\left|N\right|$为零，$\psi$就无法归一化。当且仅当$\int \left|\psi\right|^2\mathrm{d}\tau$具有有限而非无限值时，我们才能对$\psi$进行归一化。如果对全空间的积分$\int \left|\psi\right|^2\mathrm{d}\tau$为有限值，我们说$\psi$是\textbf{平方可积的}（quadratically integrable）。因此，我们一般要求$\psi$是平方可积的。一个最重要的例外不处于束缚态的粒子。因此，粒子在势阱中（第 2.4 节）的非束缚态和自由粒子的波函数都不是平方可积的。\\
+	\indent 由于$\psi^{\ast}\psi$是概率密度，因此波函数一定是单值的。如果我们的理论对在某一点发现粒子的概率给出了两个不同的值，那就太尴尬了。如果我们要求$\psi$是单值的，那么显然$\psi^{\ast}\psi$也是单值的。$\psi$可能会有多个值[例如，$\psi\left(q\right) = -1,1,\mathrm{i}$]，但$\psi^{\ast}\psi$只能有一个值。然而，我们仍要求$\psi$是单值的。\\
+	\indent 除了要求$\psi$是连续，我们也通常要求其偏导数$\partial\psi/\partial x$，$\partial\psi/\partial y$等也是连续的(见图\ref{fig:3.4}a)。不过，回过头来看第 2.2 节，我们会发现：对于箱中粒子$\partial\psi/\partial x$在箱壁上不连续，以及$\partial\psi/\partial x$在箱外为零，但是由方程(\ref{eq:2.23 stationary state wave function for the particle in a box})可知，$\partial\psi/\partial x$在箱壁上又不为零。$\psi^{\prime}$的不连续性是由在箱壁处势能突然变为无穷大造成的。对于具有有限高度的势垒来说，$\psi^{\prime}$在箱壁处是连续的。\\
+	\indent 与平方可积的要求一致，有时也会说波函数必须在任何地方都是有限的，包括无穷大。然而，这通常是比平方可积性更强的要求。事实上，氢原子的一些相对论波函数在原点处是无限的，但却是平方可积的。偶尔，我们也会遇到在原点处无限大的非相对论波函数 [L. D．D. 兰道和 E. M. 利夫希茨，《量子力学》，第三版（1977 年），第 35 节]。因此，基本要求是平方可积性，而不是有限性。\\
 	\indent 我们要求任何代表物理量的算符的本征函数都满足上述要求。符合这些要求的函数被称为\textbf{品优函数}（well-behaved function）。
 
 \section*{总结}
