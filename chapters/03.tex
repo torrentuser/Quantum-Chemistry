@@ -1,6 +1,8 @@
 % ===== CHAPTER 3 =====
 \chapter{算符}
+\label{chap:3}
 \section{算符}
+	\label{sec:3.1 Operators}
 	现在，我们以一种比以前更一般的方式来发展量子力学理论。首先，我们将单粒子一维定态薛定谔方程 (\ref{eq:1.19 time-independent Schrödinger Equation}) 写成以下形式
 	\begin{equation}
 		\left[-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2}+V\left(x\right)\right]\psi\left(x\right) = E\psi\left(x\right)
@@ -200,6 +202,7 @@
 	\end{examplebox}
 	
 \section{本征函数和本征值}
+\label{sec:3.2 Eigenfunctions and Eigenvalues}
 	假设某线性算符$\hat{A}$作用在某个函数$f\left(x\right)$上的结果是对$f\left(x\right)$乘上一个常数$k$。我们说$f\left(x\right)$是$\hat{A}$的一个\textbf{本征函数}（eigenfunction），$k$是\textbf{本征值}（eigenvalue）。作为定义的一部分，我们将要求本征函数$f\left(x\right)$不等于零。我们的意思是说，尽管 $f\left(x\right)$ 可能在不同点上消失，但它并非处处为零。我们有
 	\begin{equation}
 		\boxed{
@@ -271,6 +274,7 @@
 	\indent 在第3.1节的第一个例题中，我们知道对任意的函数$g$，有$\left[z^3,\mathrm{d}/\mathrm{d}z\right]g\left(z\right) = -3z^2g\left(z\right)$，所以$\left[z^3,\mathrm{d}/\mathrm{d}z\right] = -3z^2$。相反地，本征方程$\hat{A}f\left(x\right) = kf\left(x\right)$[式(\ref{eq:3.14 definition of eigenfunctions and eigenvalues})]却不一定对任意函数$f\left(x\right)$成立，从这个方程中我们并不能得出$\hat{A}=k$。因此，结论$\left(\mathrm{d}/\mathrm{d}x\right)\mathrm{e}^{2x} = 2\mathrm{e}^{2x}$并不意味着$\mathrm{d}/\mathrm{d}x$与乘以2相等。
 	
 \section{算符和量子力学}
+\label{sec:3.3 Operators and Quantum Mechanics}
 	我们现在考虑算符和量子力学之间的关系。将式 (\ref{eq:3.1}) 与 (\ref{eq:3.14 definition of eigenfunctions and eigenvalues}) 比较，我们可以发现薛定谔方程是一个本征值问题。能量 $E$ 的值就是本征值。本征函数就是定态薛定谔方程$\psi$。所需的本征函数和本征值的算符是$-\left(\hbar^2/2m\right)\mathrm{d}^2/\mathrm{d}x^2+V\left(x\right)$。这个算符称为系统的\textbf{哈密顿算符}（Hamiltonian operator）。\\
 	\indent 威廉·罗文·哈密顿爵士（Sir William Rowan Hamilton）（1805-1865）设计了牛顿运动方程的另一种形式，其中涉及一个函数 $H$，即系统的\textbf{哈密顿函数}（Hamiltonian function）。对于势能仅是坐标函数的系统，总能量随时间保持不变；也就是说，$E$ 是守恒的。我们将只讨论这种保守系统。对于保守系统，经典力学哈密顿函数可以简单地用坐标和共轭动量来表示总能量。对于笛卡尔坐标 $x$、$y$、$z$，\textbf{共轭动量}是线性动量在 $x$、$y$、$z$ 方向上的分量$p_x$、$p_y$、$p_z$：
 	\begin{equation}
@@ -467,6 +471,7 @@
 	\end{examplebox}
 	
 \section{三维多粒子的薛定谔方程}
+\label{sec:3.4 The Three-Dimensional, Many-Particle Schrödinger Equation}
 	到目前为止，我们的研究仅限于一维单粒子系统。上一节中发展的算符形式主义允许我们将工作扩展到三维多粒子系统。含时薛定谔方程的状态函数的时间发展假定为公式 (\ref{eq:1.13 Time-dependent Schödinger equation}) 的形式：
 	\begin{equation}
 		\boxed{
@@ -602,6 +607,7 @@
 	\end{equation}
 	
 \section{三维盒子中的粒子}
+\label{sec:3.5 The Particle in a Three-Dimensional Box}
 	目前，我们只讨论单粒子问题。在本节中，我们将考虑第 2.2 节中解决的问题的三维情况，即粒子在盒子中的情况。\\
 	\begin{figure}[h!]
 		\centering
@@ -741,6 +747,7 @@
 	\indent 在金属的自由电子理论中，非过渡金属的价电子被视为一个盒子中的非相互作用粒子，盒子的两侧是金属的表面。这种近似方法虽然粗糙，但对金属的某些性质给出了相当不错的结果。
 	
 \section{简并}
+\label{sec:3.6 Degeneracy}
 	对于一个$n$重简并的能级，有$n$个独立的波函数$\psi_1$，$\psi_2$，$\psi_3$，$\cdots$，$\psi_n$每个波函数均有本征值$w$：
 	\begin{equation}
 		\hat{H}\psi_1 = w\psi_1, \quad\hat{H}\psi_2 = w\psi_2, \cdots,\quad \hat{H}\psi_n = w\psi_n
@@ -775,6 +782,7 @@
 	\indent 一个能级的\textbf{简并度}等于与该能值相对应的线性独立波函数的数目。一维自由粒子波函数 (\ref{eq:2.30}) 是两个线性独立函数的线性组合，这两个函数分别是具有相同能量本征值 $E$ 的本征函数。因此每个这样的能级（除了$E=0$）都是二重简并的（简并度为2）。\\
 
 \section{平均值}
+\label{sec:3.7 Average Values}
 	第3.3节指出：若态函数$\Psi$不是算符$\hat{B}$的本征函数，则对$B$的观测将得到一组可能值（$\hat{B}$的本征值的其中一个）。我们现在考虑具有状态$\Psi$的系统的性质$B$的平均值。\\
 	\indent 为了在实验中找到 $B$ 的平均值，我们需要许多相同的、不相互影响的系统$\Psi$，每个系统都处于相同的状态，然后测量每个系统中的 $B$。$B$的\textbf{平均值}（average value），记作$\langle B \rangle$，定义为所有测量值$b_1,b_2,\cdots,b_N$的算术平均：
 	\begin{equation}
@@ -915,6 +923,7 @@
 	\end{examplebox}
 
 \section{波函数的约束条件}
+\label{sec:3.8 Requirements for an Acceptable Wave Function}
 	在求解箱中粒子的问题时，我们要求$\psi$是连续的。我们现在讨论波函数需要满足的其他约束条件。\\
 	\indent 由于$\left|\psi\right|^2\mathrm{d}\tau$是概率，我们希望可以通过选择一个合适的\textbf{归一化常数}（normalization constant）与波函数相乘，使得波函数可以归一化。若$\psi$未归一化而$N\psi$已归一化，则根据归一化条件，有
 	\begin{equation}
