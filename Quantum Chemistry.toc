@@ -27,7 +27,7 @@
 \contentsline {section}{\numberline {4.1}微分方程的幂级数解}{47}{section.4.1}%
 \contentsline {section}{\numberline {4.2}一维谐振子}{49}{section.4.2}%
 \contentsline {section}{\numberline {4.3}双原子分子的振动}{57}{section.4.3}%
-\contentsline {section}{\numberline {4.4}一维定态薛定谔方程的数值解法}{57}{section.4.4}%
+\contentsline {section}{\numberline {4.4}一维定态薛定谔方程的数值解法}{58}{section.4.4}%
 \contentsline {chapter}{\numberline {5}角动量}{59}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Simultaneous Specification of Several Properties}{59}{section.5.1}%
 \contentsline {section}{\numberline {5.2}向量}{59}{section.5.2}%
