@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  4 JUL 2025 16:12
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  4 JUL 2025 18:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1366,48 +1366,74 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: Figures/4.4.png Graphic file (type bmp)
 <Figures/4.4.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--380
+Underfull \hbox (badness 10000) in paragraph at lines 364--382
 
  []
 
+[55]
+File: Figures/4.5.png Graphic file (type bmp)
+<Figures/4.5.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--380
+Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
+(fontspec)             doesn't exist).
 
+
+Package fontspec Info: Could not resolve font "FangSong/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "FangSong/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
+(fontspec)             with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Overfull \hbox (15.9104pt too wide) in paragraph at lines 424--444
+\TU/SimSun(0)/m/n/10.53937 函 数、|  概 率 密 度；| $[]$ 和 $[]$ 可 以 改 变） ；| [][]$[][][][][][][][][][][][] [] [][][][][][][] [] [][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
  []
 
-) (./chapters/05.tex [55] [56
+[56]) (./chapters/05.tex [57] [58
 
 ]
 Chapter 5.
-) (./chapters/06.tex [57] [58
+) (./chapters/06.tex [59] [60
 
 ]
 Chapter 6.
-) (./chapters/07.tex [59] [60
+) (./chapters/07.tex [61] [62
 
 ]
 Chapter 7.
-) (./chapters/08.tex [61] [62
+) (./chapters/08.tex [63] [64
 
 ]
 Chapter 8.
-) (./chapters/09.tex [63] [64
+) (./chapters/09.tex [65] [66
 
 ]
 Chapter 9.
-) (./chapters/10.tex [65] [66
+) (./chapters/10.tex [67] [68
 
 ]
 Chapter 10.
-) (./chapters/11.tex [67] [68
+) (./chapters/11.tex [69] [70
 
 ]
 Chapter 11.
-) (./chapters/12.tex [69] [70
+) (./chapters/12.tex [71] [72
 
 ]
 Chapter 12.
-) (./chapters/13.tex [71] [72
+) (./chapters/13.tex [73] [74
 
 ]
 Chapter 13.
@@ -1474,14 +1500,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73]
+ [75]
 Overfull \vbox (69.2806pt too high) has occurred while \output is active []
 
- [74]
+ [76]
 Chapter 14.
-) (./chapters/15.tex [75
+) (./chapters/15.tex [77
 
-] [76
+] [78
 
 ]
 Chapter 15.
@@ -1500,42 +1526,42 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [77]
+ [79]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
- [78]
+ [80]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [79
+ [81
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
- [80]
+ [82]
 Chapter 17.
-[81
+[83
 
-]) (./chapters/appendix.tex [82]
+]) (./chapters/appendix.tex [84]
 附录 A.
-) (./chapters/bibliography.tex [83
+) (./chapters/bibliography.tex [85
 
-] [84
+] [86
 
 ]
 附录 B.
-[85] [86
+[87] [88
 
-]) (./chapters/answers.tex [87] [88
+]) (./chapters/answers.tex [89] [90
 
 ]
 附录 C.
-) (./chapters/index.tex [89] [90
+) (./chapters/index.tex [91] [92
 
 ]
 附录 D.
-) [91] (./Quantum Chemistry.aux)
+) [93] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -1544,12 +1570,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 37853 strings out of 474773
- 851190 string characters out of 5751499
- 1974842 words of memory out of 5000000
- 59362 multiletter control sequences out of 15000+600000
- 577215 words of font info for 165 fonts, out of 8000000 for 9000
+ 37901 strings out of 474773
+ 852654 string characters out of 5751499
+ 1977842 words of memory out of 5000000
+ 59399 multiletter control sequences out of 15000+600000
+ 577255 words of font info for 170 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,114p,741b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (99 pages).
+Output written on Quantum Chemistry.pdf (101 pages).

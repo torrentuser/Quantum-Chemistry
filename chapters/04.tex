@@ -377,23 +377,70 @@
     很容易证明，两个偶函数或两个奇函数的乘积是偶函数，而一个偶函数和一个奇函数的乘积是奇函数。\\
     \\
     \textbf{谐振子波函数}\\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    \indent 式(\ref{eq:4.47})中的指数部分$\mathrm{e}^{-\alpha x^2/2}$是偶函数。若$v$是偶数，则多项式因子只包含$x$的偶次幂，使得$\psi_v$是偶函数。若$v$是奇数，则多项式因子只包含$x$的奇次幂，使得$\psi_v$是一个奇函数和一个偶函数的乘积，为奇函数。每一个谐振子状态方程$\psi$都是一个奇函数或偶函数，取决于$v$的奇偶性。在第\ref{sec:7.5 Parity}节中，我们将看到：当势能函数$V$是偶函数时，非简并能级的波函数一定是奇函数或偶函数。\\
+    \indent 现在，我们找到了最低三个能级波函数的显式。对于$v=0$的基态，式(\ref{eq:4.47})给出
+    \begin{equation}
+        \psi_0 = c_0\mathrm{e}^{-\alpha x^2/2}
+        \label{eq:4.52}
+    \end{equation}
+    其中$\psi$的下标表示量子数$v$。通过归一化，我们可以求出$c_0$：
+    \begin{equation*}
+        1 = \int_{-\infty}^{\infty}\left|c_0\right|\mathrm{e}^{-\alpha x^2}\mathrm{d}x = 2\left|c_0\right|^2\int_{0}^{\infty}\mathrm{e}^{-\alpha x^2}\mathrm{d}x
+    \end{equation*}
+    其中，我们用到了式(\ref{eq:4.49})。使用附录中的积分(A.9)，我们有$\left|c_0\right| = \left(\alpha/\pi\right)^{1/4}$。因此，如果我们选择令归一化常数的相位为零，则基态波函数为
+    \begin{equation}
+        \psi_0 = \left(\alpha / \pi\right)^{1/4}\mathrm{e}^{-\alpha x^2 /2}
+        \label{eq:4.53}
+    \end{equation}
+    波函数 (\ref{eq:4.53}) 是一个高斯函数（图\ref{fig:4.4}a）。\\
+    \indent 对于状态$v=1$，式(\ref{eq:4.47})给出
+    \begin{equation}
+        \psi_1 = c_1x\mathrm{e}^{-\alpha x^2 / 2}
+        \label{eq:4.54}
+    \end{equation}
+    使用(A.10)进行归一化，我们有
+    \begin{equation}
+        \psi_1 = \left(4\alpha^3 / \pi\right)^{1/4}x\mathrm{e}^{-\alpha x^2 / 2}
+        \label{eq:4.55}
+    \end{equation}
+    图\ref{fig:4.4}b显示了$\psi_1$的图象。\\
+    \indent 对于状态$v=2$，式(\ref{eq:4.47})给出
+    \begin{equation*}
+        \psi_2 = \left(c_0 + c_2x^2\right)\mathrm{e}^{-\alpha x^2 / 2}
+    \end{equation*}
+    将$v=2$代入(\ref{eq:4.46})，我们有
+    \begin{equation*}
+        c_2 = \frac{2\alpha \left(-2\right)}{1\cdot2}c_0 = -2\alpha c_0
+    \end{equation*}
+    因此，
+    \begin{equation}
+        \psi_2 = c_0\left(1-2\alpha x^2\right)\mathrm{e}^{-\alpha x^2 / 2}
+        \label{eq:4.56}
+    \end{equation}
+    使用归一化解出$c_0$，我们有（问题4.10）
+    \begin{equation}
+        \psi_2 = \left(4\alpha^3 / \pi\right)^{1/4}\left(2\alpha x^2 - 1\right)\mathrm{e}^{-\alpha x^2 / 2}
+        \label{eq:4.57}
+    \end{equation}
+    注意：$\psi_2$中的$c_0$和$\psi_0$中的$c_0$是不同的。\\
+    \indent 波函数节点的个数与量子数$v$相同。可以证明（见《Messiah》，第 109-110 页）：\textit{对于一维定态束缚态问题，若$\psi$处于基态，则边界点内部的节点数为零；而对于每一个连续的激发态，节点数都会增加一个。}\\
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.65\textwidth]{Figures/4.5.png}
+        \caption{
+            谐振子的经典允许区域$-a \le x \le a$和禁阻区域$x > a$，$x < -a$
+        }
+        \label{fig:4.5}
+    \end{figure}\\
+    \indent 谐振子波函数中的多项式因子在数学中是众所周知的，被称为\textit{厄米多项式}（Hermite polynomials），是以一位法国数学家的名字命名的。（见问题 4.21）\\
+    \indent 根据量子力学解法，在 $x$ 轴上的任何一点（节点除外）都有一定概率找到粒子。从经典角度讲，$E=T+V$，动能 $T$ 不能为负：$T \ge 0$。因此，$E-V = T \ge 0$则$V \le E$。势能 $V$ 是位置的函数，经典粒子被限制在 $V<E$ 的空间区域内。也就是说，势能不超过总能量。在图 (\ref{fig:4.5}) 中，标有 $E$ 的水平线表示谐振子的能量，抛物线表示势能 $\frac{1}{2}kx^2$。对于区域$x < -a$和$x > a$，我们有$V>E$，这些区域是\textbf{经典禁阻}（classical forbidden）的。\textbf{经典允许的区域}（classical allowed region） $-a \le x \le a$在图 (\ref{fig:4.5}) 中满足$V\le E$。\\
+    \indent 在量子力学中，定态波函数不是算符$\hat{T}$或$\hat{V}$的本征函数，因此我们无法确定定态系统的动能或势能值。与经典力学的方程$E=T+V$和$T \ge 0$不同，在量子力学中我们有$\langle E \rangle = \langle T \rangle + \langle V \rangle$（问题6.35）和$\langle T \rangle \ge 0$（问题7.7），所以量子力学中满足$\langle V \rangle \le E$，但是我们不能写作$V \le E$，因此，粒子有一定概率在经典禁区（$V>E$的区域）中被发现。\\
+    \indent 如果说粒子可以在经典允许的区域之外被发现，我们似乎就允许它具有负动能。实际上，量子力学的观点并不存在悖论。为了验证粒子是否处于经典禁止区域，我们必须测量它的位置。这种测量会改变系统的状态（第 \ref{sec:1.3 The Uncertainty Principle} 和 \ref{sec:1.4 The Time-Dependent Schrödinger Equation} 节）。振子与测量仪器的相互作用会将足够的能量传递给振子，使其处于经典禁区。对 $x$ 的精确测量会给动量带来很大的不确定性，因此也会给动能带来很大的不确定性。\ref{sec:2.4 Particle in a Rectangular Potential Well} 节和 \ref{sec:2.5 Tunneling} 节讨论了经典禁区的穿透问题。\\
+    \indent 一个定态谐振子满足$E = \left(v+\frac{1}{2}\right)h\nu$和$V=\frac{1}{2}kx^2 = 2\pi^2\nu^2mx^2$。因此，在经典允许的区域（$V\le E$）有$2\pi^2\nu^2mx^2 \le \left(v+\frac{1}{2}\right)h\nu$，即$x^2 \le \left(v+\frac{1}{2}\right)h/2\pi^2\nu^2m = \left(2v+1\right)\alpha$，其中$\alpha \equiv 2\pi\nu m/\hbar$[式(\ref{eq:4.31})]。因此，谐振子的经典允许区域为$-\left(2v+1\right)^{1/2} \le \alpha^{1/2}x \le \left(2v+1\right)^{1/2}$。\\
+    \indent 从图 (\ref{fig:4.4}) 中可以看出：\textit{$\psi$ 在经典允许区域中振荡，而在经典禁止区域则以指数形式下降到零。}我们之前在矩形势阱中看到过粒子的这种行为（第 \ref{sec:2.4 Particle in a Rectangular Potential Well} 节）。\\
+    \indent 图 (\ref{fig:4.4}) 显示，当谐振子的能量逐渐升高时，$\psi$ 和 $\left|\psi\right|^2$ 的最大值往往离原点越来越远。由于离原点越远，势能$V = \frac{1}{2}kx^2$越大，平均势能$\langle V \rangle = \int_{-\infty}^{\infty}\left|\psi\right|^2V\mathrm{d}x$也会随着量子数的增加而增大。平均动能由$\langle T \rangle = -\left(\hbar^2/2m\right)\int_{-\infty}^{\infty}\psi^{\ast}\psi^{\prime\prime}\mathrm{d}x$给出。应用分部积分（问题7.7b），有$\langle T \rangle = \left(\hbar^2/2m\right)\int_{-\infty}^{\infty}\left|\mathrm{d}\psi/\mathrm{d}x\right|^2\mathrm{d}x$。量子数越大的状态中节点的数量越多，$\psi$ 的变化速度就越快，因此随着量子数的增加，$\langle T \rangle$也会增加。\\
+    \indent 经典谐振子最有可能出现在运动转折点附近的区域，即振子运动速度最慢、$V$ 值较大的区域。相反，对于量子谐振子的基态，最有可能出现的区域是原点附近的区域。对于高振动量子数，人们会发现的外峰值大于原点附近的峰值，最可能的区域变成了经典转折点附近的区域，此时 $V$ 很大（见问题 4.18 ）。这是对应原理（第 \ref{sec:2.2 Particle in a One-Dimensional Box} 节）的一个例子。\\
+    \indent 量子谐振子的一些在线模拟可从以下网站获得：\url{www.phy.davidson.edu/StuHome/cabell_f/energy.html}（显示能级和波函数，并显示当能量从允许值改变时波函数如何发散）；\url{www.falstad.com/qm1d/}（从顶部的下拉菜单中选择谐振子；双击底部的一个小圆圈以显示静止状态；显示能量、波函数、概率密度；$m$ 和 $k$ 可以改变）；\url{demonrations.wolfram.com/HarmonicOscillatorEigenfunctions}（展示了$\left|\psi\right|^2$）。
 
 \section{双原子分子的振动}
 \label{sec:4.3 Vibrations of Diatomic Molecules}
