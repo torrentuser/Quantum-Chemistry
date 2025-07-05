@@ -535,7 +535,7 @@
 
 \section{一维定态薛定谔方程的数值解法}
 \label{sec:4.4 Numerical Solutions of the One-Dimensional Time-Independent Schrödinger Equation}
-\textbf{Numerov 方法}\\
+\noindent\textbf{Numerov 方法}\\
     \indent 我们已经精确求解了箱中粒子和谐振子的薛定谔方程。对于许多势能函数$V\left(x\right)$，单粒子一维薛定谔方程是无法精确求解的。本节将介绍一种用于计算机求解单粒子一维薛定谔方程的数值方法（\textbf{Numerov 方法}），该方法可以精确求出任意势能函数$V\left(x\right)$的薛定谔方程的束缚态本征值和本征函数。\\
     \indent 为了使用数值法求解薛定谔方程，我们需要处理 $x$ 轴的一部分，其中包括经典允许区域，以及在经典允许区域两端延伸到经典禁止区域的部分。我们将 $x$ 轴的这一部分划分为若干小区间，每个区间的长度为 $s$（图 \ref{fig:4.7}）。点$x_0$和$x_{max}$是这一部分的边界点，而$x_n$是第$n$个区间的右端点。令$\psi_{n-1}$、$\psi_n$和$\psi_{n+1}$分别为点$x_{n-s}$、$x_n$和$x_{n+s}$处波函数$\psi$的值，分别地（这些点是相邻区间的端点）：
     \begin{equation}
@@ -564,10 +564,133 @@
         \label{eq:4.67}
     \end{equation}
     其中$G_n \equiv G\left(x_n\right) \equiv m\hbar^{-2}\left[2V\left(x_n\right)-2E\right]$[式(\ref{eq:4.66})和\ref{eq:4.65}]。如果知道$\psi_n$和$\psi_{n-1}$，即$\psi$在$x_n$和$x_n-s$处的值，方程(\ref{eq:4.67})允许我们计算$\psi_{n+1}$，即$\psi$在点$x_{n+s}$处的值。\\
-    \indent 我们如何使用式(\ref{eq:4.67})来求解薛定谔方程？我们首先猜测一个能量本征值$E_{guess}$。我们从左侧经典禁区（图 \ref{fig:4.7}）中的一点 $x_0$ 开始，此处$\psi$的值很小，我们假设$\psi$在该点处的值为零：$\psi_0 \equiv \psi\left(x_0\right) = 0$。同样地，我们也在经典禁区（此处$\psi$的值也很小）的右侧点 $x_{max}$ 处假设 $\psi\left(x_{max}\right)$ 的值为零。我们为连续点之间的间隔 $s$ 选取一个较小的数值，在$x_0+s$处，我们将$\psi$的值设为一个较小的数值，例如0.0001：$\psi_1 \equiv \psi\left(x_1\right) \equiv \psi\left(x_0+s\right) = 0.0001$。$\psi_1$ 的值对找到的本征值不会有任何影响。如果我们令$\psi_1$为0.001，而不是0.0001，公式 (\ref{eq:4.67}) 表明，这只需将后续点上的所有 $\psi$ 值乘以 10 即可（问题 4.41）。这不会影响本征值[见公式 (\ref{eq:3.14 definition of eigenfunctions and eigenvalues}) 后的示例]。在找到每个本征值后，可以对波函数进行归一化处理。
+    \indent 我们如何使用式(\ref{eq:4.67})来求解薛定谔方程？我们首先猜测一个能量本征值$E_{guess}$。我们从左侧经典禁区（图 \ref{fig:4.7}）中的一点 $x_0$ 开始，此处$\psi$的值很小，我们假设$\psi$在该点处的值为零：$\psi_0 \equiv \psi\left(x_0\right) = 0$。同样地，我们也在经典禁区（此处$\psi$的值也很小）的右侧点 $x_{max}$ 处假设 $\psi\left(x_{max}\right)$ 的值为零。我们为连续点之间的间隔 $s$ 选取一个较小的数值，在$x_0+s$处，我们将$\psi$的值设为一个较小的数值，例如0.0001：$\psi_1 \equiv \psi\left(x_1\right) \equiv \psi\left(x_0+s\right) = 0.0001$。$\psi_1$ 的值对找到的本征值不会有任何影响。如果我们令$\psi_1$为0.001，而不是0.0001，公式 (\ref{eq:4.67}) 表明，这只需将后续点上的所有 $\psi$ 值乘以 10 即可（问题 4.41）。这不会影响本征值[见公式 (\ref{eq:3.14 definition of eigenfunctions and eigenvalues}) 后的示例]。在找到每个本征值后，可以对波函数进行归一化处理。\\
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Figures/4.8.png}
+        \caption{Numerov 方法求解的节点数与能量 $E_{guess}$ 的函数关系。}
+        \label{fig:4.8}
+    \end{figure}\\
+    \indent 现在我们有了 $\psi_0$ 和 $\psi_1$ 的值，可以使用式 (\ref{eq:4.67}) 计算 $\psi_2 \equiv \psi\left(x_2\right) \equiv \psi\left(x_1+2s\right)$ 的值，其中我们用$E_{guess}$计算得到$G$的值。接着，在式(\ref{eq:4.67})令$n=2$，我们可以计算出$\psi_3$的值，以此类推，直到达到$x_{max}$。如果$E_{guess}$不等于或不非常接近于本征值，那么$\psi$将不满足平方可积的要求，且$\left|\psi\left(x_{max}\right)\right|$的值会变得非常大。如果发现$\left|\psi\left(x_{max}\right)\right|$不接近于零，那我们重新选一个$E_{guess}$，并从$x_0$开始重复上述过程。这个过程将会循环往复，直到找到能使$\left|\psi\left(x_{max}\right)\right|$非常接近于零的$E_{guess}$的值。此时的$E_{guess}$基本上等同于一个本征值。找到本征值的系统方法是计算由 $E_{guess}$ 生成的 $\psi$ 中的节点。回忆在一维问题中（第\ref{sec:4.2 The One-Dimensional Harmonic Oscillator}节），基态的内部节点数为 0，第一激发态的内部节点数为 1，以此类推。令$E_1,E_2,E_3,\cdots$分别表示基态、第一激发态和第二激发态等的能量值。如果$\psi_{guess}$在$x_0$和$x_{max}$之间没有节点，那么$E_{guess}$应该小于或等于$E_1$。如果$\psi_{guess}$在$x_0$和$x_{max}$之间有一个节点，那么$E_{guess}$应该位于$E_1$和$E_2$之间。随后将给出例子。\\
+    \\
+    \noindent\textbf{无量纲变量}\\
+    \indent Numerov方法需要我们猜测$E$的值。但是我们猜测的数量级：$10^{-20} \: \mathrm{J},10^{-15} \: \mathrm{J},\cdots$应该是多少？为了回答这个问题，我们以谐振子为例，用无量纲变量重表示薛定谔方程。\\
+    \indent 谐振子的势能函数为$V = \frac{1}{2}kx^2$，其薛定谔方程包含三个常数，$k$、$m$和$\hbar$。我们试图找到无量纲约化能量 $E_r$ 和无量纲约化 $x$ 坐标 $x_r$，它们的定义是
+    \begin{equation}
+        E_r \equiv E/A, \quad x_r \equiv x/B
+        \label{eq:4.68}
+    \end{equation}
+    其中常数$A$是$k$、$m$和$\hbar$的组合，具有能量的量纲，而$B$是具有长度量纲的组合。能量的量纲为$\text{质量}\times\text{长度}^2\times\text{时间}^{-2}$，我们写作
+    \begin{equation}
+        \left[E\right] = \mathrm{M}\mathrm{L}^2\mathrm{T}^{-2}
+        \label{eq:4.69}
+    \end{equation}
+    其中，$E$ 的括号表示其维度，$\mathrm{M}$、$\mathrm{L}$ 和 $\mathrm{T}$ 分别表示质量、长度和时间。方程$V = \frac{1}{2}kx^2$表明$k$的量纲为$\text{能量}\times\text{长度}^{-2}$，由式(\ref{eq:4.69})，有$\left[k\right] = \mathrm{M}\mathrm{T}^{-2}$。$\hbar$的量纲为$\text{能量}\times\text{时间}$。因此，
+    \begin{equation}
+        \left[m\right] = \mathrm{M}, \quad \left[k\right] = \mathrm{M}\mathrm{T}^{-2}, \quad \left[\hbar\right] = \mathrm{M}\mathrm{L}^2\mathrm{T}^{-1}
+        \label{eq:4.70}
+    \end{equation}
+    式(\ref{eq:4.68})中的$A$和$B$的量纲分别为能量和长度，则
+    \begin{equation}
+        \left[A\right] = \mathrm{M}\mathrm{L}^2\mathrm{T}^{-2}, \quad \left[B\right] = \mathrm{L}
+        \label{eq:4.71}
+    \end{equation}
+    \indent 令$A = m^ak^b\hbar^c$，其中$a$、$b$和$c$是待定的指数，由$A$的量纲一定为$\mathrm{M}\mathrm{L}^2\mathrm{T}^{-2}$所确定。我们有
+    \begin{equation}
+        \left[A\right] = \left[m^ak^b\hbar^c\right] = \mathrm{M}^a\left(\mathrm{M}\mathrm{T}^{-2}\right)^b\left(\mathrm{M}\mathrm{L}^2\mathrm{T}^{-1}\right)^c = \mathrm{M}^{a+b+c}\mathrm{L}^{2c}\mathrm{T}^{-2b-c}
+        \label{eq:4.72}
+    \end{equation}
+    令 (\ref{eq:4.71}) 和 (\ref{eq:4.72}) 中 M、L 和 T 的指数相等，得到
+    \begin{equation*}
+        a+b+c = 1, \quad 2c = 2, \quad -2b-c = -2
+    \end{equation*}
+    解这个方程组，得到$c=1$，$b=\frac{1}{2}$，$a=-\frac{1}{2}$。因此
+    \begin{equation}
+        A = m^{-1/2}k^{1/2}\hbar
+        \label{eq:4.73}
+    \end{equation}
+    \indent 同样地，令$B = m^dk^e\hbar^f$。用得出式(\ref{eq:4.73})相同的量纲分析法，有（问题4.44）
+    \begin{equation}
+        B = m^{-1/4}k^{-1/4}\hbar^{1/2}
+        \label{eq:4.74}
+    \end{equation}
+    \indent 根据式(\ref{eq:4.68})、(\ref{eq:4.73})和(\ref{eq:4.74})，谐振子的约化变量为
+    \begin{equation}
+        E_r = E / m^{-1/2}k^{1/2}\hbar, \quad x_r = x / m^{-1/4}k^{-1/4}\hbar^{1/2}
+        \label{eq:4.75}
+    \end{equation}
+    使用$k^{1/2} = 2\pi\nu m^{1/2}$[式(\ref{eq:4.23})]将$k$从(\ref{eq:4.75})中消去，并回忆$\alpha \equiv 2\pi\nu m/\hbar$[式(\ref{eq:4.31})]，我们得到以下备选的表达式
+    \begin{equation}
+        E_r = E /h\nu, \quad x_r = \alpha ^{1/2}x
+        \label{eq:4.76}
+    \end{equation}
+    \indent 与方程$E_r \equiv E/A$[式(\ref{eq:4.68})]类似，我们可以定义约化势能函数$V_r$：
+    \begin{equation}
+        V_r \equiv V / A
+        \label{eq:4.77}
+    \end{equation}
+    \indent 由于$\left|\psi\left(x\right)\right|^2\mathrm{d}x$是概率，概率是没有量纲的，归一化后的$\psi\left(x\right)$一定具有$\text{长度}^{-1/2}$的量纲。因此，我们可以定义一个没有量纲的约化波函数$\psi_r$。由式(\ref{eq:4.71})，$B$具有长度的量纲，则$B^{-1/2}$具有$\text{长度}^{-1/2}$的量纲。因此，
+    \begin{equation}
+        \psi_r = \psi / B^{-1/2}
+        \label{eq:4.78}
+    \end{equation}
+    $\psi_r$ 满足 $\int_{-\infty}^{\infty} \left|\psi_r\right|^2\mathrm{d}x_r = 1$；这是由式(\ref{eq:4.76})、 (\ref{eq:4.78}) 和$\int_{-\infty}^{\infty} \left|\psi\right|^2\mathrm{d}x = 1$得出的。\\
+    \indent 我们现在使用无量纲变量$E_r$、$x_r$和$\psi_r$来重写薛定谔方程。有
+    \begin{equation*}
+        \frac{\mathrm{d}^2\psi}{\mathrm{d}x^2} = \frac{\mathrm{d}^2}{\mathrm{d}x^2}B^{-1/2}\psi_r = B^{-1/2}\frac{\mathrm{d}}{\mathrm{d}x}\frac{\mathrm{d}\psi_r}{\mathrm{d}x} = B^{-1/2}\frac{\mathrm{d}}{\mathrm{d}x}\frac{\mathrm{d}\psi_r}{\mathrm{d}x_r}\frac{\mathrm{d}x_r}{\mathrm{d}x} = B^{-1/2}\frac{\mathrm{d}\left(\mathrm{d}\psi_r/\mathrm{d}x_r\right)}{\mathrm{d}x_r}\frac{\mathrm{d}x_r}{\mathrm{d}x}\frac{\mathrm{d}x_r}{\mathrm{d}x}
+    \end{equation*}
+    \begin{equation}
+        \frac{\mathrm{d}^2\psi}{\mathrm{d}x^2} = B^{-5/2}\frac{\mathrm{d}^2\psi_r}{\mathrm{d}x_r^2}
+        \label{eq:4.79}
+    \end{equation}
+    其中，我们用到了$\mathrm{d}x_r/\mathrm{d}x = B^{-1/2}$。将式(\ref{eq:4.68})、(\ref{eq:4.77})和(\ref{eq:4.79})代入薛定谔方程$-\left(\hbar^2/m\right)\left(\mathrm{d}^2\psi/\mathrm{d}x^2\right) + V\psi = E\psi$，得到
+    \begin{equation*}
+        -\frac{\hbar^2}{m}B^{-5/2}\frac{\mathrm{d}^2\psi_r}{\mathrm{d}x_r^2} + AV_rB^{-1/2}\psi_r = AE_rB^{-1/2}\psi_r
+    \end{equation*}
+    \begin{equation}
+        -\frac{\hbar^2}{2m}\frac{1}{AB^2}\frac{\mathrm{d}^2\psi_r}{\mathrm{d}x_r^2} + V_r\psi_r = E_r\psi_r
+        \label{eq:4.80}
+    \end{equation}
+    根据式(\ref{eq:4.73})和(\ref{eq:4.74})，有$AB^2 = \hbar^2/m$，所以对于谐振子，有$\hbar^2/mAB^2 = 1$。\\
+    \indent 更一般地说，让 $V$ 包含一个非无量纲参数 $c$。例如，我们有$V = cx^4$或$V = cx^2\left(1+0.05m^{1/2}c^{1/2}\hbar^{-1}x^2\right)$（注意 $m^{1/2}c^{1/2}\hbar^{-1}x^2$ 是无量纲的，因为 1 是无量纲的，所以它必须是无量纲的）。式(\ref{eq:4.80})中的$AB$一定可以写成$\hbar^rm^sc^t$的形式，其中$r$、$s$和$t$是待定的指数。由于(\ref{eq:4.80})中的$V_r\psi_r$是无量纲的，因此第一项也是无量纲的。那么$\hbar^2/mAB^2$是无量纲的，$AB^2$与$\hbar^2/m$具有相同的量纲。所以$r=2$，$s=1$，$t=0$。因此，$AB^2 = \hbar^2/m$，带入(\ref{eq:4.80})，有无量纲的薛定谔方程
+    \begin{equation}
+        \frac{\mathrm{d}^2\psi}{\mathrm{d}x_r^2} = \left(2V_r-2E_r\right)\psi_r
+        \label{eq:4.81}
+    \end{equation}
+    \begin{equation}
+        \psi^{\prime\prime} = G_r\psi_r, \quad \text{其中} \quad G_r \equiv 2V_r-2E_r
+        \label{eq:4.82}
+    \end{equation}
+    对于谐振子，$V_r \equiv V/A = \frac{1}{2}kx^2/m^{-1/2}k^{1/2}\hbar = \frac{1}{2}x_r^2$，因此[式(\ref{eq:4.73})和式(\ref{eq:4.75})]：
+    \begin{equation}
+        V_r = \frac{1}{2}x_r^2
+        \label{eq:4.83}
+    \end{equation}
+    \indent 将谐振子薛定谔方程约化为只涉及无量纲量的形式 (\ref{eq:4.81})后，我们可以预期最低能量本征值的数量级为 1。\\
+    \indent 约化谐振子薛定谔方程(\ref{eq:4.82})与(\ref{eq:4.66})具有相同的形式，所以我们可以用Numerov公式(\ref{eq:4.67})来求解。使用$\psi_r$的值代替$\psi$，$G_r$的值代替$G$，与(\ref{eq:4.68})类似，$s_r$的值代替$s$。\\
+    \indent 一旦找到约化能量$E_r$的数值，就可以根据 (\ref{eq:4.75}) 或 (\ref{eq:4.76}) 求出能量 $E$。\\
+    \\
+    \textbf{$x_r$、$x_0$ 、 $x_{max}$ 和$s_r$的选择}\\
+    \indent 我们需要选择$x_r$的起始值、结束值，以及相邻点之间的间隔值$s_r$。假设我们希望找到满足$E_r \le 5$的谐振子的所有本征函数和本征值。我们从左侧经典禁区开始求解，因此首先要找到 $E_r=5$ 的经典禁区。经典允许和经典禁止区域的边界满足$E_r=V_r$。由式(\ref{eq:4.83})，有$V_r = \frac{1}{2}x_r^2$，因此$E_r=V_r$变成了$5=\frac{1}{2}x_r^2$所以满足$E_r \le 5$的经典允许区域为$x_r = -\left(10\right)^{1/2}=-3.16$到$x_r = \left(10\right)^{1/2}=3.16$。若$E_r<5$，则经典允许区域将更小。我们希望从左侧经典禁区（$\psi$ 非常小）内的某一点开始求解，我们希望在右侧经典禁区内的某一点结束求解。对于$E_r=5$，左侧的经典禁区在$x_r=-3.16$处结束，，所以一个合理的选择为$x_r=-5$[太深入经典禁区有时会带来麻烦（见下文），因此在选择起点时可能需要试错]。由于 $V$ 是对称的，因此我们将在 $x_r=5$ 处结束求解。\\
+    \indent 为了达到合理的精确度，通常至少需要 100 个点，因此我们取 $s_r=0.1$ 以得到 100 个点。从 Numerov 方法的推导中可以看出，$s_r$ 必须很小。合理的规则可能是 $s_r$ 不大于 0.1。
+    \begin{quote}
+        \small
+        \noindent
+        如果像通常情况那样，当$x \to \pm \infty$时有$V \to \infty$，那么在经典禁区内起步太远会使 Numerov 公式 (\ref{eq:4.67}) 中的分母 $1-G_{n+1}s^2/12$ 变成负数。我们有 $G_r=2V_r-2E_r$，如果我们从 $V_r$ 非常大的点 $x_0$ 开始，该点的 $G_r$ 可能大到足以使 Numerov 公式的分母为负。这样，该方法就会失效。我们将 $\psi_0$ 取为零，将 $\psi_1$ 取为正数。Numerov 公式 (\ref{eq:4.67}) 表明，如果分母是负数，那么 $\psi_2$ 也将是负数，我们将在 $x_1$ 和 $x_2$ 之间产生一个虚假的 $\psi$ 节点。为了避免这个问题，我们可以减小步长 $s_r$ 或 $x_r$、$x_{max}$、$-x_r$和$-x_0$。（见问题 4.46）。
+    \end{quote}
+
+    \noindent\textbf{Numerov方法的计算机程序}\\
+
+    \noindent\textbf{使用电子表格求解一维薛定谔方程}\\
+
+    \noindent\textbf{Numerov 方法步骤摘要}\\
 
 
 
+
+
+
+    
 
 
 
