@@ -533,19 +533,43 @@
         \textbf{练习：}(a)求分子$^{12}\mathrm{C}^{16}\mathrm{O}$零点能的近似值；(\textit{答案：}$2.1 \times 10^{-20} \:\mathrm{J}$)；(b)求分子$^{13}\mathrm{C}^{16}\mathrm{O}$的$\nu_e$。(\textit{答案：}$6.28 \times 10^{13} \:\mathrm{s}^{-1}$)
     \end{examplebox}
 
-
-
-
-
-
-
-
-
-
-
-
 \section{一维定态薛定谔方程的数值解法}
 \label{sec:4.4 Numerical Solutions of the One-Dimensional Time-Independent Schrödinger Equation}
+\textbf{Numerov 方法}\\
+    \indent 我们已经精确求解了箱中粒子和谐振子的薛定谔方程。对于许多势能函数$V\left(x\right)$，单粒子一维薛定谔方程是无法精确求解的。本节将介绍一种用于计算机求解单粒子一维薛定谔方程的数值方法（\textbf{Numerov 方法}），该方法可以精确求出任意势能函数$V\left(x\right)$的薛定谔方程的束缚态本征值和本征函数。\\
+    \indent 为了使用数值法求解薛定谔方程，我们需要处理 $x$ 轴的一部分，其中包括经典允许区域，以及在经典允许区域两端延伸到经典禁止区域的部分。我们将 $x$ 轴的这一部分划分为若干小区间，每个区间的长度为 $s$（图 \ref{fig:4.7}）。点$x_0$和$x_{max}$是这一部分的边界点，而$x_n$是第$n$个区间的右端点。令$\psi_{n-1}$、$\psi_n$和$\psi_{n+1}$分别为点$x_{n-s}$、$x_n$和$x_{n+s}$处波函数$\psi$的值，分别地（这些点是相邻区间的端点）：
+    \begin{equation}
+        \psi_{n-1} \equiv \psi\left(x_n-s\right), \quad \psi_n \equiv \psi\left(x_n\right), \quad \psi_{n+1} \equiv \psi\left(x_n+s\right)
+        \label{eq:4.65}
+    \end{equation}
+    不要被这些符号迷惑了。下标$n-1$、$n$和$n+1$并代表不同的状态，而是表示 $x$ 轴上以 $s$ 为间隔的各点上一个特定波函数 $\psi$ 的值。下标$n$表示 $\psi$ 在 $x_n$ 点求值。我们将薛定谔方程$-\left(\hbar^2/m\right)\psi^{\prime\prime} + V\psi = E\psi$写成
+    \begin{equation}
+        \psi^{\prime\prime} = G\psi, \quad \text{其中} \quad G \equiv m\hbar^{-2}\left[2V\left(x\right)-2E\right]
+        \label{eq:4.66}
+    \end{equation}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\textwidth]{figures/4.7.png}
+        \caption{一维单粒子系统的$V$关于$x$的图象}
+        \label{fig:4.7}
+    \end{figure}
+    \\
+    \indent 用涉及$s$的幂的Taylor级数展开$\psi\left(x_n+s\right)$和$\psi\left(x_n-s\right)$，将两式相加即可消去$s$的奇次幂项，并用薛定谔方程来表示 $\psi^{\prime\prime}$ 和 $\psi^{\left(\mathrm{iv}\right)}$，以 $\psi$ 表示，并忽略 $s^6$ 和 $s$ 的高次幂项（如果 $s$ 较小，近似值将是准确的），我们会发现（问题 4.43）
+    \begin{equation}
+        \psi_{n+1} \equiv = \frac{
+            2\psi_n - \psi_{n-1} + 5G_n\psi_n s^2/6 + G_{n-1}\psi_{n-1}s^2/12
+        }{
+            1-G_{n+1}s^2/12
+        }
+        \label{eq:4.67}
+    \end{equation}
+    其中$G_n \equiv G\left(x_n\right) \equiv m\hbar^{-2}\left[2V\left(x_n\right)-2E\right]$[式(\ref{eq:4.66})和\ref{eq:4.65}]。如果知道$\psi_n$和$\psi_{n-1}$，即$\psi$在$x_n$和$x_n-s$处的值，方程(\ref{eq:4.67})允许我们计算$\psi_{n+1}$，即$\psi$在点$x_{n+s}$处的值。\\
+    \indent 我们如何使用式(\ref{eq:4.67})来求解薛定谔方程？我们首先猜测一个能量本征值$E_{guess}$。我们从左侧经典禁区（图 \ref{fig:4.7}）中的一点 $x_0$ 开始，此处$\psi$的值很小，我们假设$\psi$在该点处的值为零：$\psi_0 \equiv \psi\left(x_0\right) = 0$。同样地，我们也在经典禁区（此处$\psi$的值也很小）的右侧点 $x_{max}$ 处假设 $\psi\left(x_{max}\right)$ 的值为零。我们为连续点之间的间隔 $s$ 选取一个较小的数值，在$x_0+s$处，我们将$\psi$的值设为一个较小的数值，例如0.0001：$\psi_1 \equiv \psi\left(x_1\right) \equiv \psi\left(x_0+s\right) = 0.0001$。$\psi_1$ 的值对找到的本征值不会有任何影响。如果我们令$\psi_1$为0.001，而不是0.0001，公式 (\ref{eq:4.67}) 表明，这只需将后续点上的所有 $\psi$ 值乘以 10 即可（问题 4.41）。这不会影响本征值[见公式 (\ref{eq:3.14 definition of eigenfunctions and eigenvalues}) 后的示例]。在找到每个本征值后，可以对波函数进行归一化处理。
+
+
+
+
+
 
 \section*{总结}
 
