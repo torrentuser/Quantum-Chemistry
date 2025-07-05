@@ -444,11 +444,94 @@
 
 \section{双原子分子的振动}
 \label{sec:4.3 Vibrations of Diatomic Molecules}
-    我们将在第 \ref{sec:13.1 The Born-Oppenheimer Approximation} 节中看到，在极好的近似条件下，我们可以分别处理分子中电子的运动和原子核的运动（这是由于原子核的质量要大得多）。首先想象原子核静止不动，然后求解电子能量 $U$ 的薛定谔方程。（$U$ 还包括核排斥能量）对于二原子（双原子）分子，电子能量 $U$ 取决于原子核之间的距离 $R$，$U=U\left(R\right)$，而 $U$ 与 $R$ 的关系曲线则如图 13.1 所示。\\
+    我们将在第 \ref{sec:13.1 The Born-Oppenheimer Approximation} 节中看到，在极好的近似条件下，我们可以分别处理分子中电子的运动和原子核的运动（这是由于原子核的质量要大得多）。首先想象原子核静止不动，然后求解电子能量 $U$ 的薛定谔方程（$U$ 还包括核排斥能量）。对于二原子（双原子）分子，电子能量 $U$ 取决于原子核之间的距离 $R$，$U=U\left(R\right)$，而 $U$ 与 $R$ 的关系曲线则如图 13.1 所示。\\
     \indent 找到$U\left(R\right)$后，可以先解决核运动的薛定谔方程，使用$U\left(R\right)$作为核运动的势能函数。对于双原子分子，核薛定谔方程是一个双粒子方程。我们将在第 \ref{sec:6.3 Reduction of the Two-Particle Problem to Two One-Particle Problems} 节中看到，当双粒子系统的势能只取决于粒子之间的距离时，系统的能量是 (a) 整个系统在空间平动的动能和 (b) 粒子相对于彼此的内部运动能量之和。双粒子内部运动能量的经典表达式是粒子间相互作用的势能与假设粒子的动能之和，其中假设粒子的质量为$m_1m_2/\left(m_1+m_2\right)$（$m_1$ 和 $m_2$ 分别是两个原子的质量），该粒子的坐标为一个粒子相对于另一个粒子的坐标。$m_1m_2/\left(m_1+m_2\right)$称为\textbf{约化质量}（reduced mass）$\mu$。\\
-    \indent 二原子分子的内部运动包括\textbf{振动}和\textbf{转动}，前者与两个原子核之间距离 $R$ 的变化相对应，后者与原子核连接线空间方向的变化相对应。通常可以近似地将振动和转动分开处理。转动能级见第 \ref{sec:6.4 The Two-Particle Rigid Rotor} 节。 此处我们考虑振动能级。
-
-
+    \indent 二原子分子的内部运动包括\textbf{振动}和\textbf{转动}，前者与两个原子核之间距离 $R$ 的变化相对应，后者与原子核连接线空间方向的变化相对应。通常可以近似地将振动和转动分开处理。转动能级见第 \ref{sec:6.4 The Two-Particle Rigid Rotor} 节。 此处我们考虑振动能级。\\
+    \indent 双原子分子振动的薛定谔方程有一个质量为$m_1m_2/\left(m_1+m_2\right)$假设粒子的动能算符和一个由$U\left(R\right)$给出的势能项。如果我们将原点与图 13.1 中$U$曲线的最低点重合，并将该最低点的能量取为势能的零点，那么 $U(R)$ 曲线的下半部分将与具有适当力常数 $k$ 的谐振子的势能曲线几乎重合（见图 \ref{fig:4.6} 和问题 4.28）。$U(R)$ 曲线的最小值出现在\textbf{平衡核间距}（equilibrium distance）$R_e$的位置。在图 \ref{fig:4.6} 中，$x$ 是核间距与平衡核间距的偏差：$x \equiv R - R_e$。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{Figures/4.6.png}
+        \caption{
+            \centering\parbox{\linewidth}{
+                \centering
+                二原子分子振动的势能（实线）和谐振子的势能（虚线）。\\
+                图中还显示了二原子分子的束缚态振动能级。\\
+                与谐振子相比，二原子分子只有有限数量的束缚振动能级。\\
+            }
+        }
+        \label{fig:4.6}
+    \end{figure}
+    \\
+    \indent 谐振子的力常数$k$在式(\ref{eq:4.26})中可以由$k = \mathrm{d}^2V /\mathrm{d}x^2$计算得到，在$R=R_e$处，谐振子曲线与$U(R)$曲线的下半部分几乎重合，所以分子的力常数$k = \left.\mathrm{d}^2U/\mathrm{d}R^2\right|_{R=R_e}$。（另见问题4.28）。\textit{核质量的差异对电子能量曲线 $U(R)$ 几乎没有影响，因此同一分子但由不同同位素取代的种类具有基本相同的力常数 $k$。}\\
+    \indent 因此，我们预计二原子分子振动能级 $E_{vib}$ 的一个合理近似是谐振子振动能级；由式(\ref{eq:4.45})和式(\ref{eq:4.23})，有
+    \begin{equation}
+        \boxed{
+            E_{vib} \approx \left(v+\frac{1}{2}\right)h\nu_e, \quad v = 0, 1, 2, \ldots
+        }
+        \label{eq:4.58}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            \nu_e = \frac{1}{2\pi}\left(\frac{k}{\mu}\right)^{1/2}, \quad \mu = \frac{m_1m_2}{m_1+m_2}, \quad k = \left.\frac{\mathrm{d}^2U}{\mathrm{d}R^2}\right|_{R=R_e}
+        }
+        \label{eq:4.59}
+    \end{equation}
+    其中$\nu_e$称为\textbf{简谐振动频率}（equilibrium or harmonic vibrational frequency）。这种近似方法最适用于较低的振动能级。随着$v$的增加，原子核位于远离其平衡间隔区域的时间更长。对于这些区域，势能大大偏离谐振子的势能，谐振子近似效果不佳。我们会发现：随着 $v$ 的增大，双原子分子的振动能级不是等距排列，而是越靠越近（图 \ref{fig:4.6}）。最终，振动能量大到足以将双原子分子解离成互不结合的原子。与谐振子不同，双原子分子只有有限数量的束缚态振动能级。考虑到振动的非谐性，分子振动能的更精确表达式是
+    \begin{equation}
+        E_{vib} = \left(v+\frac{1}{2}\right)h\nu_e - \left(v+\frac{1}{2}\right)^2h\nu_e \chi_e
+        \label{eq:4.60}
+    \end{equation}
+    其中\textit{非谐性常数}（anharmonicity constant）$\nu_e\chi_e$几乎在所有情况下都大于零。（\textit{译者注：一般认定$\chi_e$为非谐性常数？}）\\
+    \indent 使用含时薛定谔方程，我们可以发现（见第\ref{sec:9.9 Interaction of Radiation and Matter}节）：当双原子分子暴露在电磁辐射下时，最有可能发生的振动跃迁是那些 $v$ 变化了 $\pm 1$ 的跃迁。此外，要吸收或发射电磁辐射，振动必须改变分子的偶极矩。因此，同核双原子分子（例如$\mathrm{H}_2$、$\mathrm{N}_2$）不能通过吸收或发射辐射实现振动能级之间的转换（这种转变可以发生在分子间碰撞中）。关系$E_{upper}-E_{lower} = h\nu$（其中$\nu$为辐射频率）、近似方程(\ref{eq:4.58})、吸收和发射辐射的\textbf{选律}（selection rule）$\Delta v = \pm 1$表明：一个振动频率为$\nu_e$的异核双原子分子将对近似为下式给出频率的辐射$\nu_{light}$有强烈吸收：
+    \begin{equation}
+        \nu_{light} = \left(E_2-E_1\right)/h \approx \left[\left(v_2+\frac{1}{2}\right)h\nu_e-\left(v_1+\frac{1}{2}\right)h\nu_e\right]/h = \left(v_2-v_1\right)\nu_e = \nu_E
+        \label{eq:4.61}
+    \end{equation}
+    双原子分子$k$和$\mu$值的特性使得$\nu_{light}$通常位于光谱的红外区域。$\Delta v = 2,3,\cdots$的跃迁也会发生，但这些（称为\textit{泛频}（overtones））的吸收要比$\Delta v = 1$的跃迁弱得多。\\
+    \indent 使用更准确的方程(\ref{eq:4.60})，有（问题4.27）
+    \begin{equation}
+        \nu_{light} = \nu_e - 2\nu_e\chi_e\left(v_1+1\right)
+        \label{eq:4.62}
+    \end{equation}
+    其中$v_1$是较低能级的振动量子数，选律为$\Delta v = \pm 1$。\\
+    \indent 热平衡系统中分子两个能级的布居数由\textbf{玻尔兹曼分布律}（Boltzmann distribution law）给出（见物理化学教材）：
+    \begin{equation}
+        \boxed{
+            \frac{N_i}{N_j} = \frac{g_i}{g_j} \mathrm{e}^{-(E_i-E_j)/kT}
+        }
+        \label{eq:4.63}
+    \end{equation}
+    其中能级$i$和$j$的能量分别为$E_i$和$E_j$，$g_i$和$g_j$是对应能级的简并度，$k$是玻尔兹曼常数，$T$是热力学温度。对于非简并能级，有$g_i=1$。\\
+    \indent $\nu = \left(1/2\pi\right)\left(k/\mu\right)^{1/2}$的数量级使得在室温下，对于轻分子（例如$\mathrm{H}_2$、$\mathrm{HCl}$、$\mathrm{CO}$），只有$v=0$的振动能级是被显著占据的。对于重分子（例如$\mathrm{I}_2$），在室温下有一个或多个激发态振动能级被显著占据。\\
+    \indent 极性双原子分子的振动吸收光谱包含$v= 0 \to 1$吸收带，很弱的泛频吸收带（$v = 0\to 2, 0 \to 3, \cdots$），以及若$v>0$的能级也被显著占据，也有\textit{热带}（hot bands），例如$v = 1 \to 2$、$v = 1 \to 3$等。与特定振动跃迁相对应的每个波段都由几条紧密相连的线组成。每一条这样的线都对应于与振动状态变化同时发生的不同的转动状态变化。每一条线都是振动-转动跃迁的结果。\\
+    \indent 光谱频率的国际单位为\textbf{赫兹}（hertz，Hz），定义
+    为$1 \:\mathrm{Hz} \equiv 1 \:\mathrm{s}^{-1}$。通常使用的倍数有等于 $10^6$ 赫兹的兆赫兹（MHz）和等于 $10^9$ 赫兹的千兆赫兹（GHz）。红外（IR）吸收峰通常由\textbf{波数}（wavenumber）$\tilde{\nu}$给出，定义为
+    \begin{equation}
+        \boxed{
+            \tilde{\nu} \equiv \frac{\nu}{c} = \frac{1}{\lambda}
+        }
+        \label{eq:4.64}
+    \end{equation}
+    其中$\lambda$是真空中辐射的波长。\\
+    \indent 在谐振子近似中，多原子分子的量子力学能级为$E_{vib} = \sum i\left(v_i+\frac{1}{2}\right)h\nu_i$，其中$\nu_i$是分子每个正则振动模式的频率，$v_i$是对应第$i$个正则振动的量子数。每个振动量子数$v_i$的取值$0,1,2,\cdots$都与其他振动量子数的取值无关。一个具有$n$个原子的线性分子具有$3n-6$个正则振动模式，而一个具有$n$个原子的非线性分子具有$3n-5$个正则振动模式。\\
+    \indent 为了由式(\ref{eq:4.59})计算折合质量$\mu$，我们需要知道每种同位素的质量。附录表 A.3 列出了一些常见同位素的相对原子质量。\\
+    \begin{examplebox}
+        \textbf{例题：}$^{12}\mathrm{C}^{16}\mathrm{O}$分子的最强红外吸收峰位于$\tilde{\nu} = 2140 \:\mathrm{cm}^{-1}$。计算该分子的力常数 $k$。请说明所做的近似计算。\\
+        \\
+        最强的红外吸收峰对应于$v = 0 \to 1$的跃迁。我们将分子振动近似为谐振子模型。由式(\ref{eq:4.61})，分子的平衡振动频率近似为
+        \begin{equation*}
+            \nu_e \approx \nu_{light} = \tilde{\nu}c = \left(2140 \:\mathrm{cm}^{-1}\right)\left(2.9979 \times 10^{10} \:\mathrm{cm/s}\right)  = 6.424 \times 10^{13} \:\mathrm{s}^{-1}
+        \end{equation*}
+        使用式(\ref{eq:4.59})，将$k$与$\nu_e$联系起来，我们需要折合质量$\mu = m_1m_2/\left(m_1+m_2\right)$。1 mol $^{12}\mathrm{C}$的质量为12 g，包含阿伏伽德罗常数（$N_A$）个分子，则一个$^{12}\mathrm{C}$原子的质量为$\left(12 \: \mathrm{g} \right)/ \left(6.02214 \times 10^{23}\right)$。折合质量和力常数分别为
+        \begin{equation*}
+            \mu = \frac{12 \left(15.9949\right)\: g}{27.9949} \frac{1}{6.02214 \times 10^{23}} = 1.1385 \times 10^{-23} \:\mathrm{g}
+        \end{equation*}
+        \begin{equation*}
+            k = 4\pi^2 \nu_e^2\mu = 4\pi^2 \left(6.424 \times 10^{13} \:\mathrm{s}^{-1}\right)^2\left(1.1385 \times 10^{-23} \:\mathrm{g}\right) = 1855 \: \mathrm{N} / \mathrm{m}
+        \end{equation*}
+        \\
+        \textbf{练习：}(a)求分子$^{12}\mathrm{C}^{16}\mathrm{O}$零点能的近似值；(\textit{答案：}$2.1 \times 10^{-20} \:\mathrm{J}$)；(b)求分子$^{13}\mathrm{C}^{16}\mathrm{O}$的$\nu_e$。(\textit{答案：}$6.28 \times 10^{13} \:\mathrm{s}^{-1}$)
+    \end{examplebox}
 
 
 
