@@ -16,7 +16,7 @@
 \contentsline {section}{\numberline {2.5}隧穿}{25}{section.2.5}%
 \contentsline {chapter}{\numberline {3}算符}{27}{chapter.3}%
 \contentsline {section}{\numberline {3.1}算符}{27}{section.3.1}%
-\contentsline {section}{\numberline {3.2}本征函数和本征值}{31}{section.3.2}%
+\contentsline {section}{\numberline {3.2}本征函数和本征值}{30}{section.3.2}%
 \contentsline {section}{\numberline {3.3}算符和量子力学}{32}{section.3.3}%
 \contentsline {section}{\numberline {3.4}三维多粒子的薛定谔方程}{36}{section.3.4}%
 \contentsline {section}{\numberline {3.5}三维盒子中的粒子}{38}{section.3.5}%
@@ -29,10 +29,10 @@
 \contentsline {section}{\numberline {4.3}双原子分子的振动}{57}{section.4.3}%
 \contentsline {section}{\numberline {4.4}一维定态薛定谔方程的数值解法}{60}{section.4.4}%
 \contentsline {chapter}{\numberline {5}角动量}{65}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Simultaneous Specification of Several Properties}{65}{section.5.1}%
-\contentsline {section}{\numberline {5.2}向量}{65}{section.5.2}%
-\contentsline {section}{\numberline {5.3}单粒子系统的角动量}{65}{section.5.3}%
-\contentsline {section}{\numberline {5.4}角动量梯度算符法}{65}{section.5.4}%
+\contentsline {section}{\numberline {5.1}同时规范多个属性}{65}{section.5.1}%
+\contentsline {section}{\numberline {5.2}向量}{66}{section.5.2}%
+\contentsline {section}{\numberline {5.3}单粒子系统的角动量}{66}{section.5.3}%
+\contentsline {section}{\numberline {5.4}角动量梯度算符法}{66}{section.5.4}%
 \contentsline {chapter}{\numberline {6}氢原子}{67}{chapter.6}%
 \contentsline {section}{\numberline {6.1}单粒子中心力问题}{67}{section.6.1}%
 \contentsline {section}{\numberline {6.2}无相互作用的粒子和变量分离}{67}{section.6.2}%

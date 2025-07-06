@@ -1,8 +1,102 @@
 % ===== CHAPTER 5 =====
 \chapter{角动量}
 \label{chap:5}
-\section{Simultaneous Specification of Several Properties}
+\section{同时规范多个属性}
 \label{sec:5.1 Simultaneous Specification of Several Properties}
+    在本章中，我们将讨论角动量，在下一章中，我们将证明对于氢原子的静止态，电子角动量的大小是恒定的。首先，我们要考虑用什么标准来决定一个系统的哪些性质可以同时赋予定值。
+
+    在第\ref{sec:3.3 Operators and Quantum Mechanics}节中，我们假设：若态函数$\Psi$时算符$\hat{A}$的本征函数，本征值为$s$，则对物理量$A$的测量结果一定为为$s$。若$\Psi$同时是$\hat{A}$和$\hat{B}$的本征函数，即$\hat{A}\Psi=s\Psi$，$\hat{B}\Psi=t\Psi$，那么我们就可以同时为物理量 $A$ 和 $B$ 赋以确定的值。什么时候$\Psi$会同时是两个算符的本征函数呢？在第\ref{chap:7}章中，我们将证明如下两个理论。首先，两个算符的同时本征函数的完整集合存在的必要条件是算符之间可对易（这里使用的“\textit{完整}”一词有一定的技术含义，我们将在第 \ref{chap:7} 章再讨论这个问题）。反之亦然，若对应于物理量的两个算符$\hat{A}$ 和 $\hat{B}$ 可对易，则存在一组完整的函数，它们同时是$\hat{A}$和$\hat{B}$的本征函数。因此，若$\left[\hat{A},\hat{B}\right]=0$，那么$\Psi$可以同时是$\hat{A}$和$\hat{B}$的本征函数。
+
+    回忆算符$\hat{A}$和$\hat{B}$的交换子为$\left[\hat{A},\hat{B}\right] \equiv \hat{A}\hat{B} - \hat{B}\hat{A}$[式(\ref{eq:3.7 definition of commutator for two operators})]。下列等式有助于计算交换子。通过详细写出交换子可以证明这些等式（问题5.2）：
+    \begin{equation}
+        \boxed{
+            \left[\hat{A},\hat{B}\right] = -\left[\hat{B},\hat{A}\right]
+        }
+        \label{eq:5.1}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            \left[\hat{A}, \hat{A}^n\right] = 0, \quad n = 1, 2, 3, \ldots
+        }
+        \label{eq:5.2}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            \left[k\hat{A},\hat{B}\right] = \left[\hat{A}, k\hat{B}\right] = k\left[\hat{A},\hat{B}\right]
+        }
+        \label{eq:5.3}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            \left[\hat{A}, \hat{B}+\hat{C}\right] = \left[\hat{A},\hat{B}\right] + \left[\hat{A},\hat{C}\right]
+        }
+        \quad 
+        \boxed{
+            \left[\hat{A}+\hat{B},\hat{C}\right] = \left[\hat{A},\hat{C}\right] + \left[\hat{B},\hat{C}\right]
+        }
+        \label{eq:5.4}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            \left[\hat{A}, \hat{B}\hat{C}\right] = \left[\hat{A},\hat{B}\right]\hat{C} + \hat{B}\left[\hat{A},\hat{C}\right]
+        }
+        \quad
+        \boxed{
+            \left[\hat{A}\hat{B},\hat{C}\right] = \hat{A}\left[\hat{B},\hat{C}\right] + \left[\hat{A},\hat{C}\right]\hat{B}
+        }
+        \label{eq:5.5}
+    \end{equation}
+    其中$k$是常数，所有算符都假设为线性算符。
+    \begin{examplebox}
+        \textbf{例题：}从$\left[\partial/\partial x,x\right]=1$[式(\ref{eq:3.8})]出发，使用对易子的性质(式(\ref{eq:5.1})至(\ref{eq:5.5}))求以下对易子：(a)$\left[\hat{x},\hat{p_x}\right]$；(b)$\left[\hat{x}, \hat{p_x^2}\right]$；(c)三维单粒子系统的$\left[\hat{x},\hat{H}\right]$。
+        \\
+        (a)使用式(\ref{eq:5.3})和(\ref{eq:5.1})，因为$\left[\partial/\partial x,x\right]=1$，我们有
+        \begin{equation*}
+            \left[\hat{x},\hat{p_x}\right] = \left[\hat{x},\frac{\hbar}{\mathrm{i}}\frac{\partial}{\partial x}\right] = \frac{\hbar}{\mathrm{i}}\left[\hat{x},\frac{\partial}{\partial x}\right] = -\frac{\hbar}{\mathrm{i}}\left[\frac{\partial}{\partial x},\hat{x}\right] = -\frac{\hbar}{\mathrm{i}}
+        \end{equation*}
+        \begin{equation}
+            \left[\hat{x},\hat{p_x}\right]=\mathrm{i}\hbar
+            \label{eq:5.6}
+        \end{equation}
+        (b)由式(\ref{eq:5.5})和(\ref{eq:5.6})，有
+        \begin{equation*}
+            \left[\hat{x},\hat{p_x^2}\right] = \left[\hat{x},\hat{p_x}\right]\hat{p_x} + \hat{p_x}\left[\hat{x},\hat{p_x}\right] = \mathrm{i}\hbar\cdot\frac{\hbar}{\mathrm{i}}\frac{\partial}{\partial x} + \frac{\hbar}{\mathrm{i}}\frac{\partial}{\partial x} \cdot \mathrm{i}\hbar
+        \end{equation*}
+        \begin{equation}
+            \left[\hat{x},\hat{p_x^2}\right] = 2\hbar^2\frac{\partial}{\partial x}
+            \label{eq:5.7}
+        \end{equation}
+        (c)使用式(\ref{eq:5.4})、(\ref{eq:5.3})和(\ref{eq:5.7})，有
+        \begin{equation*}
+            \begin{aligned}
+                \left[\hat{x},\hat{H}\right] &= \left[\hat{x},\hat{T}+\hat{V}\right] = \left[\hat{x},\hat{T}\right] + \left[\hat{x},\hat{V}\left(x,y,z\right)\right] =\left[\hat{x},\hat{T}\right] \\
+                &= \left[\hat{x}, \left(1/2m\right)\left(\hat{p_x^2}+\hat{p_y^2}+\hat{p_z^2}\right)\right]\\
+                &= \left(1/2m\right)\left[\hat{x},\hat{p_x^2}\right] + \left(1/2m\right)\left[\hat{x},\hat{p_y^2}\right] + \left(1/2m\right)\left[\hat{x},\hat{p_z^2}\right]\\
+                &= \frac{1}{2m}2\hbar^2\frac{\partial}{\partial x} + 0 + 0
+            \end{aligned}
+        \end{equation*}
+        \begin{equation}
+            \left[\hat{x},\hat{H}\right] = \frac{\hbar^2}{m}\frac{\partial}{\partial x} = \frac{\mathrm{i}\hbar}{m}\hat{p_x}
+            \label{eq:5.8}
+        \end{equation}
+        \\
+        \textbf{练习：}求证：对于单粒子三维系统，有
+        \begin{equation}
+            \left[\hat{p_x^2},\hat{H}\right] = -\mathrm{i}\hbar \:\partial V\left(x,y,z\right)/\partial x
+            \label{eq:5.9}
+        \end{equation}
+    \end{examplebox}
+
+    这些对易子有重要的物理影响。由于$\left[\hat{x},\hat{p_x}\right] \neq 0$，我们不能希望态函数同时是$\hat{x}$和$\hat{p_x}$的本征函数。因此，与不确定性关系相符，我们不能同时测定$x$和$p_x$的精确值。由于$\hat{x}$与$\hat{H}$不可对易，我们不能指望同时为能量和 $x$ 坐标赋予确定的值。定态（具有确定的能量）会显示出$x$的各种可能值，观察到各种$x$值的概率由玻恩公设给出。
+
+    对于不是$\hat{A}$的本征函数的态函数$\Psi$，在完全相同的系统中对$A$的测量将得到各种可能的结果。
+
+
+
+
+
+
+
 
 \section{向量}
 \label{sec:5.2 Vectors}
