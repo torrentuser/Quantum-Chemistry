@@ -87,16 +87,94 @@
         \end{equation}
     \end{examplebox}
 
-    这些对易子有重要的物理影响。由于$\left[\hat{x},\hat{p_x}\right] \neq 0$，我们不能希望态函数同时是$\hat{x}$和$\hat{p_x}$的本征函数。因此，与不确定性关系相符，我们不能同时测定$x$和$p_x$的精确值。由于$\hat{x}$与$\hat{H}$不可对易，我们不能指望同时为能量和 $x$ 坐标赋予确定的值。定态（具有确定的能量）会显示出$x$的各种可能值，观察到各种$x$值的概率由玻恩公设给出。
+    这些对易子有重要的物理影响。由于$\left[\hat{x},\hat{p_x}\right] \neq 0$，我们不能希望态函数同时是$\hat{x}$和$\hat{p_x}$的本征函数。因此，与不确定性原理相符，我们不能同时测定$x$和$p_x$的精确值。由于$\hat{x}$与$\hat{H}$不可对易，我们不能指望同时为能量和 $x$ 坐标赋予确定的值。定态（具有确定的能量）会显示出$x$的各种可能值，观察到各种$x$值的概率由玻恩公设给出。
 
-    对于不是$\hat{A}$的本征函数的态函数$\Psi$，在完全相同的系统中对$A$的测量将得到各种可能的结果。
+    对于不是$\hat{A}$的本征函数的态函数$\Psi$，在完全相同的系统中对$A$的测量将得到各种可能的结果。我们需要对观测值 $A_i$ 的分布或离散性进行某种测量。如果 $\langle A \rangle$ 是这些值的平均值，那么每个测量值与平均值的偏差为$A_i - \langle A \rangle$。如果我们对所有偏差求平均值，就会得到零，因为正负偏差会抵消。因此，为了使所有偏差都为正值，我们要将它们平方。偏差平方的平均值称为 $A$ 的\textbf{方差}（variance），在统计学中用 $\sigma^2\left(A\right)$ 表示，在量子力学中用 $\left(\Delta A\right)^2$ 表示：
+    \begin{equation}
+        \left(\Delta A\right)^2 \equiv \sigma^2\left(A\right) = \langle \left(A - \langle A \rangle\right)^2 \rangle = \int \Psi^{\ast}\left(\hat{A}-\langle A \rangle\right)^2\Psi\mathrm{d}\tau
+        \label{eq:5.10}
+    \end{equation}
+    其中我们用到了平均值的表达式(\ref{eq:3.88})。定义(\ref{eq:5.10})与以下表达式等价（问题5.7）：
+    \begin{equation}
+        \left(\Delta A\right)^2 = \langle A^2 \rangle - \langle A \rangle^2
+        \label{eq:5.11}
+    \end{equation}
 
+    方差的正平方根称为\textbf{标准差}（standard deviation），用 $\Delta A$ 或$\sigma\left(A\right)$ 表示。标准差是最常用的价差度量，我们将用它来度量属性 $A$ 的 “不确定性”。
 
+    罗伯逊（Robertson）于 1929 年证明，状态函数为 $\Psi$ 的量子力学系统的两个属性的标准偏差的乘积必须满足不等式
+    \begin{equation}
+        \sigma\left(A\right)\sigma\left(B\right) = \Delta A \Delta B \ge \frac{1}{2}\left|\int \Psi^{\ast}\left[\hat{A},\hat{B}\right]\Psi\mathrm{d}\tau\right|
+        \label{eq:5.12}
+    \end{equation}
+    (\ref{eq:5.12}) 的证明源于量子力学公设，见问题 7.60。如果$\hat{A}$和$\hat{B}$可对易，那么式(\ref{eq:5.12})中的积分为零，则$\Delta A$和$\Delta B$可能都为零，与上文的讨论相符。
 
+    作为式(\ref{eq:5.12})的一个例子，我们使用式(\ref{eq:5.6})、$\left|z_1z_2\right|=\left|z_1\right|\left|z_2\right|$[式(\ref{eq:1.34 properties of product and quotient absolute values})]，以及归一化方法：
+    \begin{equation*}
+        \Delta x \Delta p_x \ge \frac{1}{2}\left|\int \Psi^{\ast}\left[\hat{x},\hat{p_x}\right]\Psi\mathrm{d}\tau\right| = \frac{1}{2}\left|\int \Psi^{\ast}\mathrm{i}\hbar\Psi\mathrm{d}\tau\right| = \frac{1}{2}\hbar\left|\mathrm{i}\right|\left|\int \Psi^{\ast}\Psi\mathrm{d}\tau\right|
+    \end{equation*}
+    \begin{equation}
+        \sigma\left(x\right)\sigma\left(p_x\right) \equiv \Delta x \Delta p_x \ge \frac{1}{2}\hbar
+        \label{eq:5.13}
+    \end{equation}
 
+    式(\ref{eq:5.13})通常被认为是\textbf{海森堡不确定性原理}（Heisenberg Uncertainty Principle）（第\ref{sec:1.3 The Uncertainty Principle}节）的定量表述。然而，公式 (\ref{eq:5.12}) 和 (\ref{eq:5.13}) 中标准偏差的含义与第 \ref{sec:1.3 The Uncertainty Principle} 节中不确定度的含义截然不同。为了在式(\ref{eq:5.13})中找到$\Delta x$，我们选取大量的系统，每个系统都有相同的状态函数 $\psi$，在每个系统中对 $x$ 进行一次测量。将测得的数据标记为$x_i$，计算$\langle x \rangle$和偏差的平方$\left(x_1-\langle x \rangle\right)^2$。我们求出偏差平方的平均值，得到方差，再取平方根，得到标准偏差$\sigma\left(x\right)\equiv \Delta x$。然后我们再取大量的系统，它们具有与得到$\Delta x$时一致的状态$\Psi$，对每个系统测量一次$p_x$，由这些数据计算出$\Delta p_x$。因此，(\ref{eq:5.13})中的统计量 $\Delta x$ 和 $\Delta p_x$ 不是单个测量的误差，也不是通过同时测量 $x$ 和 $p_x$ 得出的。
 
+    令$\varepsilon\left(x\right)$是对 $x$ 的单次测量的典型误差，令$\eta \left(p_x\right)$是测量 $x$ 时对 $p_x$ 造成的典型干扰。1927 年，海森堡分析了进行位置测量的具体思想实验，得出结论：乘积 $\varepsilon\left(x\right)\eta\left(x\right)$ 的数量级为 $h$ 或更大。海森堡没有给出这些量的精确定义。小泽正直（Masanao Ozawa）将海森堡的关系改写为
+    \begin{equation*}
+        \varepsilon\left(x\right)\eta\left(p_x\right) \ge \frac{1}{2}\hbar
+    \end{equation*}
+    其中$\varepsilon\left(x\right)$定义为$x$ 的测量值与理论值的方均根偏差，$\eta\left(p_x\right)$定义为测量 $x$ 所产生的$p_x$变化的方均根偏差。更一般地说，对于任意两个性质，小泽将海森堡不确定性原理写成
+    \begin{equation}
+        \varepsilon\left(A\right)\eta\left(B\right) \ge \frac{1}{2}\left|\int \Psi^{\ast}\left[\hat{A},\hat{B}\right]\Psi\mathrm{d}\tau\right|
+        \label{eq:5.14}
+    \end{equation}
+    小泽提出的论点是：在某些情况下，海森堡不等式 (\ref{eq:5.14}) 可能被违反。小泽推导出以下关系来取代 (\ref{eq:5.14}) [M. Ozawa, Phys. Ozawa, Phys. Rev. A, 67, 042105 (2003); available at arxiv.org/abs/quant-ph/0207121]：
+    \begin{equation*}
+        \varepsilon\left(A\right)\eta\left(B\right) + \varepsilon\left(A\right)\sigma\left(B\right) + \sigma\left(A\right)\eta\left(B\right) \ge \frac{1}{2}\left|\int \Psi^{\ast}\left[\hat{A},\hat{B}\right]\Psi\mathrm{d}\tau\right|
+    \end{equation*}
+    其中$\sigma\left(A\right)$和$\sigma\left(B\right)$由式(\ref{eq:5.10})给出。2012 年，一项测量中子自旋分量的实验发现：自旋分量不服从海森堡误差-扰动不等式 (\ref{eq:5.14})，但服从小泽不等式[J. Erhart 等，《自然物理学》，8, 185 (2012); arxiv.org/abs/1201.1833]。
 
+    另一个不等式是海森堡不确定关系，即用一台仪器同时测量 $A$ 和 $B$ 的两种性质：
+    \begin{equation*}
+        \varepsilon\left(A\right)\varepsilon\left(B\right) \ge \frac{1}{2}\left|\int \Psi^{\ast}\left[\hat{A},\hat{B}\right]\Psi\mathrm{d}\tau\right|
+    \end{equation*}
+    其中$\varepsilon\left(A\right)$和$\varepsilon\left(B\right)$分别是测量$A$与$B$时的实验误差。这一关系已被证明是成立的，前提是某个可信的假设（相信对目前所有可用的测量设备都是成立的）成立（见上文引用的小泽论文参考文献 6-12）。
+    \begin{examplebox}
+        \textbf{例题：}式 (\ref{eq:3.91}) 、 (\ref{eq:3.92}) 、 (\ref{eq:3.39}) 、 (\ref{eq:3.89}) 之后的等式和问题 3.48 指出：对于单粒子三维系统的基态，有
+        \begin{equation*}
+            \langle x \rangle = \frac{a}{2}, \quad \langle x^2 \rangle = \left(\frac{1}{3}-\frac{1}{2\pi^2}\right)a^2, \quad \langle p_x \rangle = 0, \quad \langle p_x^2 \rangle = \frac{h^2}{4a^2}
+        \end{equation*}
+        使用这些结果证明该系统是否遵守不确定性原理(\ref{eq:5.13})。
+        \\ \\
+        我们有
+        \begin{equation*}
+            \left(\Delta x\right)^2 = \langle x^2 \rangle - \langle x \rangle^2 = \left(\frac{1}{3}-\frac{1}{2\pi^2}\right)a^2 - \frac{a^2}{4} = \frac{\pi^2-6}{12\pi^2}a^2
+        \end{equation*}
+        \begin{equation*}
+            \Delta x = \left(\frac{\pi^2-6}{12}\right)^{1/2}\frac{a}{\pi}
+        \end{equation*}
+        \begin{equation*}
+            \Delta p_x = \langle p_x^2 \rangle - \langle p_x \rangle^2 = \frac{h^2}{4a^2}, \quad \Delta p_x = \frac{h}{2a}
+        \end{equation*}
+        \begin{equation*}
+            \Delta x \Delta p_x = \left(\frac{\pi^2-6}{12}\right)^{1/2}\frac{h}{2\pi} = 0.568\hbar > \frac{1}{2}\hbar
+        \end{equation*}
+    \end{examplebox}
 
+    还有一种涉及能量和时间的不确定关系：
+    \begin{equation}
+        \Delta E \Delta t \ge \frac{1}{2}\hbar
+        \label{eq:5.15}
+    \end{equation}
+    一些文章指出：(\ref{eq:5.15}) 是通过将 $\mathrm{i}\hbar \: \partial /\partial t$ 作为能量算符，并乘以 $t$ 作为时间算符而从 (\ref{eq:5.12}) 推导出来的。然而，能量算符是哈密顿$\hat{H}$，而不是 $\mathrm{i}\hbar \: \partial /\partial t$。此外，时间不是一种可观测的参数，而是量子力学中的一个参数。因此，不存在量子力学的时间算符（量子力学中的名词 \textbf{可观测}（observable） 指的是系统的物理可测量属性）。方程 (\ref{eq:5.15}) 必须通过特殊处理才能得出，我们略去不表（见 \textit{Ballentine}，第12.3节）。式 (\ref{eq:5.15}) 的推导表明：$\Delta t$被解释为能量不确定度为$\Delta E$的状态的时间寿命。通常情况下，（\ref{eq:5.15}）中的 $\Delta t$ 是能量测量的持续时间。然而，Aharonov和Bohm已经证明：“能量可以在任意短的时间内重复测量”[Y. Aharonov and D. Bohm, \textit{Phys. Rev.}, 122, 1649 (1961); 134, B1417 (1964); see also S. Massar and S. Popescu, \textit{Phys. Rev.} A, 71, 042106 (2005); P. Busch, \textit{The Time–Energy Uncertainty Relation}, arxiv.org/abs/quant-ph/0105049]。
+
+    现在，我们来考虑同时为三个物理量赋予确定值的可能性：假设
+    \begin{equation}
+        \left[\hat{A},\hat{B}\right] = 0, \quad \left[\hat{A},\hat{C}\right] = 0
+        \label{eq:5.16}
+    \end{equation}
+    这是否足以确保存在三个算符的同时本征函数？由于$\left[\hat{A},\hat{B}\right] = 0$，我们可以为 $\hat{A}$ 和 $\hat{B}$ 构造一组共同的本征函数。由于$\left[\hat{A},\hat{C}\right] = 0$，我们可以为 $\hat{A}$ 和 $\hat{C}$ 构造一组共同的本征函数。如果这两组本征函数是相同的，那么我们就会为所有三个算符找到一组共同的本征函数。因此我们要问：线性算符 $\hat{A}$ 的本征函数集是唯一确定的吗（除了乘以任意常数）？一般来说，答案都是否。如果与 $\hat{A}$ 的本征值相对应的独立本征函数不止一个（即简并），那么简并本征值的本征函数的任何线性组合都是$\hat{A}$ 的本征函数（第 \ref{sec:3.6 Degeneracy} 节）。给出 $\hat{B}$ 本征函数所需的适当线性组合很可能与给出 $\hat{C}$ 本征函数的线性组合不同。事实上，要想拥有三个算符的共同完整的本征函数集，除了满足式(\ref{eq:5.16})外，还需要满足$\left[\hat{B},\hat{C}\right] = 0$。\textit{要有一组完整的函数同时是几个算符的本征函数，每个算符必须与其他每个算符可对易。}
 
 \section{向量}
 \label{sec:5.2 Vectors}
