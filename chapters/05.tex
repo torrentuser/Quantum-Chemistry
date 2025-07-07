@@ -176,8 +176,241 @@
     \end{equation}
     这是否足以确保存在三个算符的同时本征函数？由于$\left[\hat{A},\hat{B}\right] = 0$，我们可以为 $\hat{A}$ 和 $\hat{B}$ 构造一组共同的本征函数。由于$\left[\hat{A},\hat{C}\right] = 0$，我们可以为 $\hat{A}$ 和 $\hat{C}$ 构造一组共同的本征函数。如果这两组本征函数是相同的，那么我们就会为所有三个算符找到一组共同的本征函数。因此我们要问：线性算符 $\hat{A}$ 的本征函数集是唯一确定的吗（除了乘以任意常数）？一般来说，答案都是否。如果与 $\hat{A}$ 的本征值相对应的独立本征函数不止一个（即简并），那么简并本征值的本征函数的任何线性组合都是$\hat{A}$ 的本征函数（第 \ref{sec:3.6 Degeneracy} 节）。给出 $\hat{B}$ 本征函数所需的适当线性组合很可能与给出 $\hat{C}$ 本征函数的线性组合不同。事实上，要想拥有三个算符的共同完整的本征函数集，除了满足式(\ref{eq:5.16})外，还需要满足$\left[\hat{B},\hat{C}\right] = 0$。\textit{要有一组完整的函数同时是几个算符的本征函数，每个算符必须与其他每个算符可对易。}
 
-\section{向量}
+\section{矢量}
 \label{sec:5.2 Vectors}
+    下一节我们将求解角动量的本征值问题，角动量是一种矢量。因此，我们首先回顾一下矢量。
+
+    完全由大小指定的物理属性（如质量、长度、能量）称为\textbf{标量}（scalar）。需要同时指定大小和方向的物理属性（如力、速度、动量）称为\textbf{矢量}（vector）。矢量由一条有方向的线段表示，其长度和方向表示属性的大小和方向。
+
+    两个矢量 $\mathbf{A}$ 和 $\mathbf{B}$ 的和由如下过程定义：滑动第一个矢量，使其终点与第二个矢量的起点重合，同时保持其方向不变。然后从第二个矢量的尾部到第一个矢量的头部绘制一个新的矢量。参见图 \ref{fig:5.1}。矢量与标量乘积$c\mathbf{A}$定义为：长度为$\left|c\right|$的矢量长度乘以$\mathbf{A}$的长度，若$c$为正，则方向与$\mathbf{A}$相同；若$c$为负，则方向与$\mathbf{A}$相反。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{Figures/5.1.png}
+        \caption{两个矢量的和}
+        \label{fig:5.1}
+    \end{figure}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{Figures/5.2.png}
+        \caption{单位矢量$\mathrm{i}$、$\mathrm{j}$和$\mathrm{k}$，$\mathrm{A}$的三个分量}
+        \label{fig:5.2}
+    \end{figure}
+
+    为了获得表示矢量的代数（以及几何）方法，我们在空间中建立了笛卡尔坐标。我们在$x$轴正方向画一个单位矢量，称为$\mathbf{i}$（与虚数单位没有关系）。$y$轴和$z$轴的单位矢量分别称为$\mathbf{j}$和$\mathbf{k}$（图 \ref{fig:5.2}）。为了用这三个单位矢量表示空间中的任意矢量$\mathbf{A}$，我们首先将$\mathbf{A}$的起点与原点重合，保持其方向不变。然后，我们找到$\mathbf{A}$在$x$轴、$y$轴和$z$轴上的投影，分别为 $A_x$、$A_y$ 和 $A_z$。由矢量加和的定义，我们有（图 \ref{fig:5.2}）：
+    \begin{equation}
+        \boxed{
+            \mathbf{A} = A_x\mathbf{i} + A_y\mathbf{j} + A_z\mathbf{k}
+        }
+        \label{eq:5.17}
+    \end{equation}
+    我们可以通过指定$\mathbf{A}$的三个分量（$A_x$、$A_y$ 和 $A_z$）来指定矢量 $\mathbf{A}$。因此，三维空间中的矢量可以定义为由三个数组成的有序集合。
+
+    当且仅当两个矢量所有对应的分量都相等时：$A_x = B_x$、$A_y = B_y$ 和 $A_z = B_z$，我们才说这两个向量$\mathbf{A}$和$\mathbf{B}$相等。因此，一个矢量方程等价于三个标量方程。
+
+    为了将两个矢量相加，我们将它们对应的分量相加：
+    \begin{equation*}
+        \mathbf{A} + \mathbf{B} = A_x\mathbf{i} + A_y\mathbf{j} + A_z\mathbf{k} + B_x\mathbf{i} + B_y\mathbf{j} + B_z\mathbf{k}
+    \end{equation*}
+    \begin{equation}
+        \boxed{
+            \mathbf{A} + \mathbf{B} = (A_x + B_x)\mathbf{i} + (A_y + B_y)\mathbf{j} + (A_z + B_z)\mathbf{k}
+        }
+        \label{eq:5.18}
+    \end{equation}
+    若$c$是标量，则
+    \begin{equation}
+        \boxed{
+            c\mathbf{A} = cA_x\mathbf{i} + cA_y\mathbf{j} + cA_z\mathbf{k}
+        }
+        \label{eq:5.19}
+    \end{equation}
+
+    矢量$\mathbf{A}$的\textbf{模}（magnitude）为它的长度，由$A$或$\left|\mathbf{A}\right|$表示。模$A$是一个标量。
+
+    两个矢量$\mathbf{A}\cdot\mathbf{B}$的\textbf{点积}（dot product）或\textit{数量积}（scalar product）定义为
+    \begin{equation}
+        \boxed{
+            \mathbf{A}\cdot\mathbf{B} = \left|A\right|\left|B\right|\cos\theta = \mathbf{B}\cdot\mathbf{A}
+        }
+        \label{eq:5.20}
+    \end{equation}
+    其中$\theta$是$\mathbf{A}$和$\mathbf{B}$之间的夹角。点积是三个标量的乘积，因此是一个标量。注意$\left|\mathbf{A}\right|\cos\theta$是$\mathbf{A}$在$\mathbf{B}$方向上的投影。根据矢量加法的定义，可以得出矢量 $\mathbf{A}$ + $\mathbf{B}$ 在某个矢量 $\mathbf{C}$ 上的投影是 $\mathbf{A}$ 和 $\mathbf{B}$ 在 $\mathbf{C}$ 上的投影之和。因此，
+    \begin{equation}
+        \left(\mathbf{A} + \mathbf{B}\right)\cdot\mathbf{C} = \left(\mathbf{A}\cdot\mathbf{C}\right) + \left(\mathbf{B}\cdot\mathbf{C}\right)
+        \label{eq:5.21}
+    \end{equation}
+    由于三个单位矢量 $\mathbf{i}$、$\mathbf{j}$ 和 $\mathbf{k}$ 的长度均为单位长度且互相垂直，我们有
+    \begin{equation}
+        \mathbf{i}\cdot\mathbf{i} = \mathbf{j}\cdot\mathbf{j} = \mathbf{k}\cdot\mathbf{k} = \cos 0 = 1, \quad \mathbf{i}\cdot\mathbf{j} = \mathbf{i}\cdot\mathbf{k} = \mathbf{j}\cdot\mathbf{k} = \cos \left(\pi/2\right) = 0
+        \label{eq:5.22}
+    \end{equation}
+
+    使用(\ref{eq:5.22})和分配律(\ref{eq:5.21})，我们有
+    \begin{equation*}
+        \mathbf{A}\cdot\mathbf{B} = \left(A_x\mathbf{i} + A_y\mathbf{j} + A_z\mathbf{k}\right)\cdot\left(B_x\mathbf{i} + B_y\mathbf{j} + B_z\mathbf{k}\right)
+    \end{equation*}
+    \begin{equation}
+        \boxed{
+            \mathbf{A}\cdot\mathbf{B} = A_xB_x + A_yB_y + A_zB_z
+        }
+        \label{eq:5.23}
+    \end{equation}
+    其中点积的 9 项中有 6 项为零。
+
+    由式(\ref{eq:5.20})有
+    \begin{equation}
+        \boxed{
+            \mathbf{A}\cdot\mathbf{A} = \left|\mathbf{A}\right|^2
+        }
+        \label{eq:5.24}
+    \end{equation}
+    使用式(\ref{eq:5.23})，我们有
+    \begin{equation}
+        \boxed{
+            \left|\mathbf{A}\right| = \left(A_x^2 + A_y^2 + A_z^2\right)^{1/2}
+        }
+        \label{eq:5.25}
+    \end{equation}
+
+    对于三维矢量，还有另一种乘积方式。$\mathbf{A}\times\mathbf{B}$的\textbf{叉积}（cross product）或\textit{向量积}（vector product）是一个新的矢量，其模为
+    \begin{equation}
+        \mathbf{A}\times\mathbf{B} = \left|\mathbf{A}\right|\left|\mathbf{B}\right|\sin\theta
+        \label{eq:5.26}
+    \end{equation}
+    其线段垂直于$\mathbf{A}$和$\mathbf{B}$所在的平面，其方向与$\mathbf{A}$和$\mathbf{B}$形成一个右手定则的系统（与$x$轴、$y$轴和$z$轴的右手定则相同）。见图 \ref{fig:5.3}。因此，由定义，我们有
+    \begin{equation*}
+        \mathbf{B}\times\mathbf{A} = -\mathbf{A}\times\mathbf{B}
+    \end{equation*}
+    同样地（见\textit{Taylor and Mann}, Section 10.2）
+    \begin{equation}
+        \mathbf{A}\times\left(\mathbf{B}+\mathbf{C}\right) = \mathbf{A}\times\mathbf{B} + \mathbf{A}\times\mathbf{C}
+        \label{eq:5.27}
+    \end{equation}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/5.3.png}
+        \caption{两个矢量的叉积}
+        \label{fig:5.3}
+    \end{figure}
+    对于三个单位向量，我们有
+    \begin{equation*}
+        \mathbf{i}\times\mathbf{i} = \mathbf{j}\times\mathbf{j} = \mathbf{k}\times\mathbf{k} = \sin \: 0 = 0
+    \end{equation*}
+    \begin{equation*}
+        \mathbf{i}\times\mathbf{j} = \mathbf{k}, \quad \mathbf{j}\times\mathbf{i} = -\mathbf{k}, \quad \mathbf{j}\times\mathbf{k} = \mathbf{i}, \quad \mathbf{k}\times\mathbf{j} = -\mathbf{i}, \quad \mathbf{k}\times\mathbf{i} = \mathbf{j}, \quad \mathbf{i}\times\mathbf{k} = -\mathbf{j}
+    \end{equation*}
+    使用这些等式及分配律(\ref{eq:5.27})，我们有
+    \begin{equation*}
+        \mathbf{A}\times\mathbf{B} = \left(A_x\mathbf{i} + A_y\mathbf{j} + A_z\mathbf{k}\right)\times\left(B_x\mathbf{i} + B_y\mathbf{j} + B_z\mathbf{k}\right)
+    \end{equation*}
+    \begin{equation*}
+        \mathbf{A}\times\mathbf{B} = \left(A_yB_z - A_zB_y\right)\mathbf{i} + \left(A_zB_x - A_xB_z\right)\mathbf{j} + \left(A_xB_y - A_yB_x\right)\mathbf{k}
+    \end{equation*}
+    为了便于记忆，我们可以将叉积表示为行列式（见第 8.3 节）：
+    \begin{equation}
+        \mathbf{A}\times\mathbf{B} = \left|
+            \begin{array}{ccc}
+            \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+            A_x & A_y & A_z \\
+            B_x & B_y & B_z
+            \end{array}
+        \right| = \mathbf{i}\left|
+            \begin{array}{ccc}
+            A_y & A_z \\
+            B_y & B_z
+            \end{array}
+        \right| - \mathbf{j}\left|
+            \begin{array}{ccc}
+            A_x & A_z \\
+            B_x & B_z
+            \end{array}
+        \right| + \mathbf{k}\left|
+            \begin{array}{ccc}
+            A_x & A_y \\
+            B_x & B_y
+            \end{array}
+        \right|
+        \label{eq:5.28}
+    \end{equation}
+
+    我们定义如下的矢量\textbf{微分}（del）算符：
+    \begin{equation}
+        \boxed{
+            \nabla \equiv \mathbf{i}\frac{\partial}{\partial x} + \mathbf{j}\frac{\partial}{\partial y} + \mathbf{k}\frac{\partial}{\partial z}
+        }
+        \label{eq:5.29}
+    \end{equation}
+    则由式(\ref{eq:3.23})，线性动量的矢量算符为$\hat{\mathbf{p}}=-\mathrm{i}\hbar\nabla$。
+
+    函数$g\left(x,y,z\right)$的\textbf{梯度}（gradient）定义为将微分算符作用到函数$g$上的结果：
+    \begin{equation}
+        \boxed{
+            \mathbf{grad} \: g\left(x,y,z\right) \equiv \nabla g\left(x,y,z\right) \equiv \mathbf{i}\frac{\partial g}{\partial x} + \mathbf{j}\frac{\partial g}{\partial y} + \mathbf{k}\frac{\partial g}{\partial z}
+        }
+        \label{eq:5.30}
+    \end{equation}
+    一个标量函数的梯度为一个矢量函数。矢量$\nabla g\left(x,y,z\right)$代表函数$g$的空间变化率：$\nabla \:g$在$x$方向的分量表示函数$g$在$x$方向的变化率，以此类推。可以证明，矢量$\nabla g$指向 g 变化率最大的方向。由式(\ref{eq:4.24})，势能和力之间的关系为
+    \begin{equation}
+        \mathbf{F} = -\nabla V\left(x,y,z\right) = -\mathbf{i}\frac{\partial V}{\partial x} - \mathbf{j}\frac{\partial V}{\partial y} - \mathbf{k}\frac{\partial V}{\partial z}
+        \label{eq:5.31}
+    \end{equation}
+
+    假设某矢量$\mathbf{A}$的三个分量是某参数$t$的函数，即$A_x = A_x\left(t\right)$、$A_y = A_y\left(t\right)$和$A_z = A_z\left(t\right)$。则我们将$\mathbf{A}$对$t$的\textbf{导数}（derivative）定义为
+    \begin{equation}
+        \frac{\mathrm{d}\mathbf{A}}{\mathrm{d}t} = \mathbf{i}\frac{\mathrm{d}A_x}{\mathrm{d}t} + \mathbf{j}\frac{\mathrm{d}A_y}{\mathrm{d}t} + \mathbf{k}\frac{\mathrm{d}A_z}{\mathrm{d}t}
+        \label{eq:5.32}
+    \end{equation}
+
+    矢量符号是表示函数变量的一种便捷方法。双粒子系统的波函数可以写作$\psi\left(x_1,y_1,z_1,x_2,y_2,z_2\right)$，如果矢量$\mathbf{r}_1$从原点指向粒子1，那么$\mathbf{r}_1$就具有$x,y,z$三个方向的分量，指定$\mathbf{r}_1$等同于指定三个坐标$x,y,z$。$\mathbf{r}_2$也是如此。因此，我们可以将波函数写成$\psi\left(\mathbf{r}_1,\mathbf{r}_2\right)$。矢量符号也可以用在积分中，例如式(\ref{eq:3.57})对全空间的积分经常写成$\int \cdots \int\left|\Psi\left(\mathbf{r}_1,\cdots,\mathbf{r}_n\right)\right|^2\mathrm{d}\mathbf{r}_1\cdots\mathrm{d}\mathbf{r}_n$。
+    \\
+    
+    \noindent\textbf{$n$维空间的矢量}
+
+    矢量的定义可以推广到三维以上的空间。三维空间中的矢量$\mathbf{A}$可以由其模$\left|\mathbf{A}\right|$和方向来定义；若在笛卡尔坐标系中，还可以用其三个分量$\left(A_x,A_y,A_z\right)$来定义。因此，我们可以把三维矢量定义为按特定顺序排列的三个实数$\left(A_x,A_y,A_z\right)$的集合。$n$ 维实数矢量 “空间”（有时称为超空间）中的矢量 $\mathbf{B}$ 定义为 $n$ 个实数的有序集合$\left(B_1,B_2,\cdots,B_n\right)$，其中$B_1$，$B_2$，$\cdots$，$B_n$是$\mathbf{B}$的\textbf{分量}（components）。不要担心无法将 $n$ 维空间中的矢量可视化。
+
+    函数的变量通常使用 $n$ 维矢量符号表示。例如，在双粒子系统中，与$\psi\left(x_1,y_1,z_1,x_2,y_2,z_2\right)$不同，我们可以定义一个六维矢量$\mathbf{q}$，其分量满足$q_1=x_1, q_2=y_1, q_3=z_1, q_4=x_2, q_5=y_2, q_6=z_2$，且将波函数写成 $\psi\left(\mathbf{q}\right)$。对于有$n$个粒子的系统，我们可以定义一个有$3n$个分量的矢量$\mathbf{q}$，将波函数写成$\psi\left(\mathbf{q}\right)$，使用$\int\left|\psi\left(\mathbf{q}\right)\right|^2\mathrm{d}\mathbf{q}$来进行归一化处理。
+
+    寻找分子平衡几何的理论使用 $n$ 维矢量（第 \ref{sec:15.10 Molecular Geometry} 节）。第 \ref{sec:5.2 Vectors} 节的其余部分与第 \ref{sec:15.10 Molecular Geometry} 节相关，在学习第 \ref{sec:15.10 Molecular Geometry} 节之前不必阅读。
+
+    当且仅当$n$维矢量$\mathbf{B}$和$\mathbf{C}$的所有分量都相等时：$B_1 = C_1$、$B_2 = C_2$、$\cdots$、$B_n = C_n$，我们才说这两个向量\textbf{相等}（equal）。因此，在$n$维空间中，一个矢量方程等价于 $n$ 个标量方程。两个$n$维矢量$\mathbf{B}$与$\mathbf{D}$\textbf{和}（sum）的定义为矢量$\left(B_1+D_1,B_2+D_2,\cdots,B_n+D_n\right)$。矢量的差定义类似。矢量$k\mathbf{B}$定义为矢量$\left(kB_1,kB_2,\cdots,kB_n\right)$，其中 $k$ 是标量。在三维空间中，若$k>0$，则矢量$k\mathbf{A}$的方向一致。在$n$维空间中亦然。与实数对$\left(A_x,A_y,A_z\right)$定义三维空间中的一个点类似，$\left(B_1,B_2,\cdots,B_n\right)$定义$n$维空间中的一个\textbf{点}（point）。
+
+    $n$ 维实数矢量的\textbf{长度}（length）（或\textbf{大小}（magnitude）或\textbf{欧几里得范数}（Euclidean norm））$\left|\mathbf{B}\right|$（有时表示为$\left|\left|\mathbf{B}\right|\right|$ ）定义为
+    \begin{equation*}
+        \left|\mathbf{B}\right| \equiv \left(\mathbf{B}\cdot\mathbf{B}\right)^{1/2} = \left(B_1^2 + B_2^2 + \cdots + B_n^2\right)^{1/2}
+    \end{equation*}
+    长度为1的矢量称为\textbf{归一化的}（normalized）。
+
+    两个$n$维矢量$\mathbf{B}$和$\mathbf{G}$的\textbf{内积}（inner product）或\textbf{数量积}（scalar product）定义为标量
+    \begin{equation*}
+        \mathbf{B}\cdot\mathbf{G} \equiv B_1G_1 + B_2G_2 + \cdots + B_nG_n
+    \end{equation*}
+    若$\mathbf{B}\cdot\mathbf{G}=0$，则称$\mathbf{B}$和$\mathbf{G}$\textbf{正交}（orthogonal）。由式(\ref{eq:5.20})，两个$n$维矢量夹角$\theta$的余弦值定义为$\cos\theta \equiv \left(\mathbf{B}\cdot\mathbf{C}\right)/\left|\mathbf{B}\right|\left|\mathbf{C}\right|$。我们可以证明，这个定义使得 $\theta$ 位于-1 到 1 的范围内。
+
+    在三维空间内，单位矢量$\mathbf{i} = \left(1,0,0\right), \mathbf{j} = \left(0,1,0\right), \mathbf{k} = \left(0,0,1\right)$互相垂直。因此，任意矢量都可以表示为这三个矢量的线性组合[式(\ref{eq:5.17})]。在$n$维空间中，单位矢量$\mathbf{e}_1 \equiv \left(1,0,\cdots,0\right), \mathbf{e}_2 \equiv \left(0,1,\cdots,0\right), \cdots, \mathbf{e}_n \equiv \left(0,0,\cdots,1\right)$互相正交。由于任意$n$维矢量$\mathbf{B}$等于$B_1\mathbf{e}_1 + B_2\mathbf{e}_2 + \cdots + B_n\mathbf{e}_n$，任意$n$维矢量都可以表示为这$n$个单位矢量的线性组合。因此，这 $n$ 个矢量可以说是 $n$ 维实数矢量空间的\textbf{基}（basis）。由于矢量$\mathbf{e_1}, \mathbf{e}_2, \cdots, \mathbf{e}_n$是正交且归一的，它们是这个实矢量空间的\textbf{正交}基（orthonormal basis）。点积$\mathbf{B}\cdot\mathbf{e_i}$给出了矢量 $\mathbf{B}$ 在 $\mathbf{e}_i$ 方向上的分量。矢量空间有许多可能的基集。任何由 $n$ 个线性无关的实矢量组成的集合都可以作为 $n$ 维实矢量空间的基。
+
+    一个三维矢量可以用它的三个分量来指定，也可以用它的长度和方向来指定。可以通过给出矢量与 $x$、$y$ 和 $z$ 轴正半轴所成的三个角度来指定方向。这些角度称为矢量的\textbf{方向角}（direction angles），其值在$0$到$\pi$之间。但是，一旦给出了其他两个方向角，$z$ 轴的方向角就会固定下来，因此只有两个方向角是独立的。因此，一个三维矢量可以用长度和两个方向角来表示。同样，在$n$维空间中，一个矢量和每个单位矢量$\mathbf{e_1},\mathbf{e_2},\cdots,\mathbf{e_n}$之间的方向角也可以根据上述两个矢量之间夹角的余弦公式求出。因此，一个 $n$ 维矢量可以用它的长度和 $n-1$ 个方向角来指定。
+
+    三变量函数的梯度由 (\ref{eq:5.30}) 定义。$n$变量函数$f\left(q_1,q_2,\cdots,q_n\right)$的\textbf{梯度}（gradient）定义为$n$维矢量，其分量分别为$f$对每个变量的一阶偏导数：
+    \begin{equation*}
+        \nabla f \equiv \left(\partial f/\partial q_1\right)\mathbf{e_1} + \left(\partial f/\partial q_2\right)\mathbf{e}_2 + \cdots + \left(\partial f/\partial q_n\right)\mathbf{e}_n
+    \end{equation*}
+
+    我们考虑的是实数 $n$ 维矢量空间。狄拉克（Dirac）对量子力学的表述使用的是复数、无穷维的矢量空间，对它的讨论从略。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{单粒子系统的角动量}
 \label{sec:5.3 Angular Momentum of a One-Particle System}
