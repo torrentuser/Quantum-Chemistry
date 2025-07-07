@@ -397,23 +397,397 @@
 
     我们考虑的是实数 $n$ 维矢量空间。狄拉克（Dirac）对量子力学的表述使用的是复数、无穷维的矢量空间，对它的讨论从略。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{单粒子系统的角动量}
 \label{sec:5.3 Angular Momentum of a One-Particle System}
+    在第\ref{sec:3.3 Operators and Quantum Mechanics}节中，我们找到了线性动量算符$\hat{p}_x$的本征函数和对应的本征值。本节中我们对粒子的角动量进行类似的分析。角动量在原子结构的量子力学中扮演重要的角色。我们从回顾经典力学的角动量开始。
+
+    \subsection*{单粒子的经典力学角动量}
+    考虑一个质量为 $m$ 的运动粒子。我们建立一个固定在空间的直角坐标系。设$\mathbf{r}$为从原点指向粒子瞬时位置的矢量，我们有
+    \begin{equation}
+        \mathbf{r} = \mathbf{i}x + \mathbf{j}y + \mathbf{k}z
+        \label{eq:5.33}
+    \end{equation}
+    其中$x$、$y$ 和 $z$ 是粒子在给定瞬间的坐标。这些坐标是时间的函数。将速度矢量$\mathbf{v}$定义为粒子位置矢量$\mathbf{r}$对时间的导数，我们有[式(\ref{eq:5.32})]
+    \begin{equation}
+        \mathbf{v} \equiv \frac{\mathrm{d}\mathbf{r}}{\mathrm{d}t} = \mathbf{i}\frac{\mathrm{d}x}{\mathrm{d}t} + \mathbf{j}\frac{\mathrm{d}y}{\mathrm{d}t} + \mathbf{k}\frac{\mathrm{d}z}{\mathrm{d}t}
+        \label{eq:5.34}
+    \end{equation}
+    \begin{equation*}
+        v_x = \mathrm{d}x/\mathrm{d}t, \quad v_y = \mathrm{d}y/\mathrm{d}t, \quad v_z = \mathrm{d}z/\mathrm{d}t
+    \end{equation*}
+
+    我们定义粒子的\textbf{线性动量}（linear momentum）的矢量$\mathbf{p}$为
+    \begin{equation}
+        \boxed{
+            \mathbf{p} \equiv m\mathbf{v}
+        }
+        \label{eq:5.35}
+    \end{equation}
+    \begin{equation}
+        p_x = mv_x, \quad p_y = mv_y, \quad p_z = mv_z
+        \label{eq:5.36}
+    \end{equation}
+
+    粒子相对于坐标原点的\textbf{角动量}（angular momentum）$\mathbf{L}$在经典力学中定义为
+    \begin{equation}
+        \boxed{
+            \mathbf{L} \equiv \mathbf{r} \times \mathbf{p}
+        }
+        \label{eq:5.37}
+    \end{equation}
+    \begin{equation}
+        \mathbf{L} = \left|
+            \begin{array}{ccc}
+            \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+            x & y & z \\
+            p_x & p_y & p_z
+            \end{array}
+            \right|
+        \label{eq:5.38}
+    \end{equation}
+    \begin{equation}
+        L_x = yp_z - zp_y, \quad L_y = zp_x - xp_z, \quad L_z = xp_y - yp_x
+        \label{eq:5.39}
+    \end{equation}
+    其中，我们用到了式(\ref{eq:5.28})。$L_x$、$L_y$ 和 $L_z$ 分别是角动量矢量 $\mathbf{L}$ 在 $x$、$y$ 和 $z$ 方向上的分量。角动量向量的方向垂直于由粒子的位置矢量$\mathbf{r}$和速度矢量$\mathbf{v}$所确定的平面（图\ref{fig:5.4}）。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/5.4.png}
+        \caption{$\mathbf{L \equiv \mathbf{r} \times \mathbf{p}}$}
+        \label{fig:5.4}
+    \end{figure}
+
+    作用在粒子上的\textit{力矩}（torque）$\tau$定义为力$\mathbf{F}$和位置矢量$\mathbf{r}$的叉积：$\tau \equiv \mathbf{r} \times \mathbf{F}$。可以证明：$\tau = \mathrm{d}\mathbf{L} / \mathrm{d}t$。当没有力矩作用于粒子时，其角动量的变化率为零；也就是说，其角动量是恒定的（或守恒的）。对于绕太阳运行的行星来说，引力是沿径向分布的。由于两个平行矢量的交积为零，因此行星上没有力矩，其角动量是守恒的。
+
+    \subsection*{单粒子轨道角动量算符}
+    现在，让我们来看看量子力学的处理方法。量子力学中有两种角动量。\textbf{轨道角动量}（orbital angular momentum）是粒子在空间运动的结果，与经典力学量 $\mathbf{L}$ 类似。\textbf{自旋角动量}（spin angular momentum）（第\ref{chap:10}章）是许多微观粒子的固有属性，与经典力学没有类似之处。我们现在只考虑轨道角动量。将经典方程(\ref{eq:5.39}) 中的坐标和角动量替换为相应的算符[式 (\ref{eq:3.21})-(\ref{eq:3.23})] ，我们就得到了粒子轨道角动量分量的量子力学算符。有
+    \begin{equation}
+        \hat{L}_x = -\mathrm{i}\hbar\left(y\frac{\partial}{\partial z} - z\frac{\partial}{\partial y}\right)
+        \label{eq:5.40}
+    \end{equation}
+    \begin{equation}
+        \hat{L}_y = -\mathrm{i}\hbar\left(z\frac{\partial}{\partial x} - x\frac{\partial}{\partial z}\right)
+        \label{eq:5.41}
+    \end{equation}
+    \begin{equation}
+        \hat{L}_z = -\mathrm{i}\hbar\left(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x}\right)
+        \label{eq:5.42}
+    \end{equation}
+    （由于$\hat{y}\hat{p}_z = \hat{p}_z\hat{y}$等，我们在构造这些算符时不会遇到不可对易的问题）。使用
+    \begin{equation}
+        \hat{L}^2 = \left|\hat{\mathbf{L}}\right|^2 = \hat{\mathbf{L}}\cdot\hat{\mathbf{L}} = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2
+        \label{eq:5.43}
+    \end{equation}
+    我们可以根据 (\ref{eq:5.40})-(\ref{eq:5.42}) 中的算符构建角动量大小平方的算符。
+
+    由于对易关系决定了哪些物理量可以同时被赋予定值，我们对角动量的对易关系进行了研究。将算符$\hat{L}_y$作用到函数$f\left(x,y,z\right)$上，我们有
+    \begin{equation*}
+        \hat{L}_yf\left(x,y,z\right) = -\mathrm{i}\hbar\left(z\frac{\partial f}{\partial x} - x\frac{\partial f}{\partial z}\right)
+    \end{equation*}
+    将$\hat{L}_x$作用到上一个方程上，我们有
+    \begin{equation}
+        \hat{L}_x\hat{L}_yf = -\hbar^2\left(y\frac{\partial f}{\partial x} + yz \frac{\partial^2f}{\partial z \: \partial x} - yx\frac{\partial^2f}{\partial z^2} - z^2\frac{\partial ^2f}{\partial y \: \partial x} + zx\frac{\partial^2f}{\partial y\: \partial z}\right)
+        \label{eq:5.44}
+    \end{equation}
+    同样地，
+    \begin{equation*}
+        \hat{L}_xf = -\mathrm{i}\hbar\left(y\frac{\partial f}{\partial z} - z\frac{\partial f}{\partial y}\right)
+    \end{equation*}
+    将$\hat{L}_y$作用到上一个方程上，我们有
+    \begin{equation}
+        \hat{L}_y\hat{L}_xf = -\hbar^2\left(zy\frac{\partial^2f}{\partial x\: \partial z}  - z^2\frac{\partial ^2f}{\partial x \: \partial y} - xy\frac{\partial^2f}{\partial z^2} + x\frac{\partial f}{\partial y} + xz \frac{\partial^2f}{\partial z \: \partial y}\right)
+        \label{eq:5.45}
+    \end{equation}
+    (\ref{eq:5.44}) 减去 (\ref{eq:5.45}) ，我们得到
+    \begin{equation*}
+        \hat{L}_x\hat{L}_yf - \hat{L}_y\hat{L}_xf = -\hbar^2\left(y\frac{\partial f}{\partial x} - x\frac{\partial f}{\partial y}\right)
+    \end{equation*}
+    \begin{equation}
+        \left[\hat{L}_x, \hat{L}_y\right] = \mathrm{i}\hbar\hat{L}_z
+        \label{eq:5.46}
+    \end{equation}
+    其中我们用到了类似以下的关系：
+    \begin{equation}
+        \boxed{
+            \frac{\partial ^2f}{\partial z \: \partial x} = \frac{\partial ^2f}{\partial x \: \partial z}
+        }
+        \label{eq:5.47}
+    \end{equation}
+    对于品优函数是正确的。我们可以用相同的过程求出$\left[\hat{L}_y, \hat{L}_z\right]$和$\left[\hat{L}_z, \hat{L}_x\right]$。但我们可以通过注意 (\ref{eq:5.40})-(\ref{eq:5.42}) 中的某种对称性来节省时间。所谓$x$、$y$和$z$的\textbf{循环排列}（cyclic permutation）是指用$y$替换$x$，用$z$替换$y$，用$x$替换$z$。如果我们在$\hat{L}_x$中进行循环排列，就得到了$\hat{L}_y$，在$\hat{L}_y$中进行循环排列就得到了$\hat{L}_z$，在$\hat{L}_z$中进行循环排列就得到了$\hat{L}_x$。因此，对 (\ref{eq:5.46}) 连续进行两次循环置换，就可以得到
+    \begin{equation}
+        \left[\hat{L}_y, \hat{L}_z\right] = \mathrm{i}\hbar\hat{L}_x, \quad \left[\hat{L}_z, \hat{L}_x\right] = \mathrm{i}\hbar\hat{L}_y
+        \label{eq:5.48}
+    \end{equation}
+
+    接下来，我们利用第\ref{sec:5.1 Simultaneous Specification of Several Properties}节中对易子的性质，求$\hat{L}^2$和它对应分量的对易子。
+    \begin{equation*}
+        \begin{aligned}
+            \left[\hat{L}^2,\hat{L}_x\right] & = \left[\hat{L}_x^2+\hat{L}_y^2+\hat{L}_z^2,\hat{L}_x\right] \\
+            & = \left[\hat{L}_x^2,\hat{L}_x\right] + \left[\hat{L}_y^2,\hat{L}_x\right] + \left[\hat{L}_z^2,\hat{L}_x\right] \\
+            & = \left[\hat{L}_y^2,\hat{L}_x\right] + \left[\hat{L}_z^2,\hat{L}_x\right] \\
+            & = \hat{L}_y\left[\hat{L}_y,\hat{L}_x\right] + \left[\hat{L}_y,\hat{L}_x\right]\hat{L}_y + \left[\hat{L}_z,\hat{L}_x\right]\hat{L}_z + \hat{L}_z\left[\hat{L}_z,\hat{L}_x\right] \\
+            & = -\mathrm{i}\hbar\hat{L}_z\hat{L}_y - \mathrm{i}\hbar\hat{L}_y\hat{L}_z + \mathrm{i}\hbar\hat{L}_y\hat{L}_z + \mathrm{i}\hbar\hat{L}_z\hat{L}_y \\
+        \end{aligned} 
+    \end{equation*}
+    \begin{equation}
+        \boxed{
+            \left[\hat{L}^2,\hat{L}_x\right] = 0
+        }
+        \label{eq:5.49}
+    \end{equation}
+    对$x$、$y$和$z$进行循环替换后，$\hat{L}^2 = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2$没有变化，如果对式(\ref{eq:5.49})进行循环替换，我们就可以得到
+    \begin{equation}
+        \boxed{
+            \left[\hat{L}^2,\hat{L}_y\right] = 0, \quad \left[\hat{L}^2,\hat{L}_z\right] = 0
+        }
+        \label{eq:5.50}
+    \end{equation}
+
+    我们可以给$L,L_x,L_y,L_z$中的哪些量赋定值？由于$\hat{L}^2$与其所有分量对应算符均可对易，我们可以为$L^2$和其任意一个分量指定一个精确的值。然而，$\hat{\mathbf{L}}$的任意两个分量之间都不存在对易关系，因此我们不能同时确定多个分量（这个说法有一个例外，稍后讨论）。传统的做法是将 $L_z$ 作为角动量的分量，与 $L^2$ 一起指定。注意：在指定$L^2 = \left|\mathbf{L}\right|^2$的值时，我们并没有指定矢量$\mathbf{L}$的方向。我们只指定了其大小。完整指定$\mathbf{L}$需要同时指定其三个分量，这是我们做不到的。在经典力学中，当角动量守恒时，其三个分量均具有确定的值。而在量子力学中，当角动量守恒时，只有其大小和其中一个分量是确定的。
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/5.5.png}
+        \caption{球面坐标}
+        \label{fig:5.5}
+    \end{figure}
+
+    现在，使用这些算符在空间直角坐标系中的形式，我们尝试求出$\hat{L}^2$和$\hat{L}_z$的本征函数和本征值。然而，我们会发现得到的偏微分方程无法分离变量。因此，我们将这些算符转换为\textbf{球面坐标}（spherical coordinate）。坐标$r$表示点$\left(x,y,z\right)$到原点的距离。而角度$\theta$是矢量$\mathbf{r}$与$z$轴正半轴之间的夹角，$\phi$是矢量$\mathbf{r}$在$xOy$平面上的投影与$x$轴正半轴之间的夹角（数学书通常将$\theta$与$\phi$互换）。使用三角法计算，有
+    \begin{equation}
+        x = r\sin\theta\cos\phi, \quad y = r\sin\theta\sin\phi, \quad z = r\cos\theta
+        \label{eq:5.51}
+    \end{equation}
+    \begin{equation}
+        r^2 = x^2 + y^2 + z^2, \quad \cos\theta = \frac{z}{\left(x^2+y^2+z^2\right)^{1/2}}, \quad \tan\phi = \frac{y}{x}
+        \label{eq:5.52}
+    \end{equation}
+
+    为了将角动量算符转换为球坐标，我们需要对$\partial /\partial x$、$\partial /\partial y$和$\partial /\partial z$进行球坐标变换[如果需要，可以略读这一变换。在 (\ref{eq:5.64}) 之后重新开始阅读]。
+    \begin{quote}
+        \small 要进行这种变换，我们需要使用\textit{链式法则}（chain rule）。假设我们有一个关于$r$、$\theta$和$\phi$的函数$f\left(r,\theta,\phi\right)$。如果我们改变自变量，将
+        \begin{equation*}
+            r =r\left(x,y,z\right), \quad \theta = \theta\left(x,y,z\right), \quad \phi = \phi\left(x,y,z\right)
+        \end{equation*}
+        带入$f$，我们就将其变换为$x$、$y$和$z$的函数
+        \begin{equation*}
+            f\left[r\left(x,y,z\right),\theta\left(x,y,z\right),\phi\left(x,y,z\right)\right] = g\left(x,y,z\right)
+        \end{equation*}
+        例如，假设$f\left(r,\theta,\phi\right) = 3r\cos\theta+2\tan^2\phi$。使用式(\ref{eq:5.52})，我们有$g\left(x,y,z\right) = 3z+2y^{2}/x^{2}$。
+
+        链式法则告诉我们$g\left(x,y,z\right)$的偏导数是如何与$f\left(r,\theta,\phi\right)$的偏导数联系起来的。事实上，
+        \begin{equation}
+            \left(\frac{\partial g}{\partial x}\right)_{y,z} = \left(\frac{\partial f}{\partial r}\right)_{\theta,\phi}\left(\frac{\partial r}{\partial x}\right)_{y,z} + \left(\frac{\partial f}{\partial \theta}\right)_{r,\phi}\left(\frac{\partial \theta}{\partial x}\right)_{y,z} + \left(\frac{\partial f}{\partial \phi}\right)_{r,\theta}\left(\frac{\partial \phi}{\partial x}\right)_{y,z}
+            \label{eq:5.53}
+        \end{equation}
+        \begin{equation}
+            \left(\frac{\partial g}{\partial y}\right)_{x,z} = \left(\frac{\partial f}{\partial r}\right)_{\theta,\phi}\left(\frac{\partial r}{\partial y}\right)_{x,z} + \left(\frac{\partial f}{\partial \theta}\right)_{r,\phi}\left(\frac{\partial \theta}{\partial y}\right)_{x,z} + \left(\frac{\partial f}{\partial \phi}\right)_{r,\theta}\left(\frac{\partial \phi}{\partial y}\right)_{x,z}
+            \label{eq:5.54}
+        \end{equation}
+        \begin{equation}
+            \left(\frac{\partial g}{\partial z}\right)_{x,y} = \left(\frac{\partial f}{\partial r}\right)_{\theta,\phi}\left(\frac{\partial r}{\partial z}\right)_{x,y} + \left(\frac{\partial f}{\partial \theta}\right)_{r,\phi}\left(\frac{\partial \theta}{\partial z}\right)_{x,y} + \left(\frac{\partial f}{\partial \phi}\right)_{r,\theta}\left(\frac{\partial \phi}{\partial z}\right)_{x,y}
+            \label{eq:5.55}
+        \end{equation}
+        为了将这些方程转换为算符方程，我们删去$f$和$g$，得出
+        \begin{equation}
+            \frac{\partial}{\partial x} = \left(\frac{\partial r}{\partial x}\right)_{y,z}\frac{\partial}{\partial r} + \left(\frac{\partial \theta}{\partial x}\right)_{y,z}\frac{\partial}{\partial \theta} + \left(\frac{\partial \phi}{\partial x}\right)_{y,z}\frac{\partial}{\partial \phi}
+            \label{eq:5.56}
+        \end{equation}
+        $\partial /\partial y$和$\partial /\partial z$的方程类似。现在的任务是计算类似于$\left(\partial r/\partial x\right)_{y,z}$的偏导数。将(\ref{eq:5.52})中第一个方程在$y$和$z$恒定的条件下对$x$求偏导数，我们有
+        \begin{equation*}
+            2r\left(\frac{\partial r}{\partial x}\right)_{y,z} = 2x = 2r\sin\theta\cos\phi
+        \end{equation*}
+        \begin{equation}
+            \left(\frac{\partial r}{\partial x}\right)_{y,z} = \sin\theta\cos\phi
+            \label{eq:5.57}
+        \end{equation}
+        将式$r^2 = x^2 + y^2 + z^2$对$y$和$z$求偏导数，我们有
+        \begin{equation}
+            \left(\frac{\partial r}{\partial y}\right)_{x,z} = \sin\theta\cos\phi, \quad \left(\frac{\partial r}{\partial z}\right)_{x,y} = \cos\theta
+            \label{eq:5.58}
+        \end{equation}
+        由(\ref{eq:5.52})中第二个方程，我们有
+        \begin{equation*}
+            -\sin\theta\left(\frac{\partial \theta}{\partial x}\right)_{y,z} = -\frac{xz}{r^3}
+        \end{equation*}
+        \begin{equation}
+            \left(\frac{\partial \theta}{\partial x}\right)_{y,z} = \frac{\cos\theta\cos\phi}{r}
+            \label{eq:5.59}
+        \end{equation}
+        同样地，
+        \begin{equation}
+            \left(\frac{\partial \theta}{\partial y}\right)_{x,z} = \frac{\cos\theta\sin\phi}{r}, \quad \left(\frac{\partial \theta}{\partial z}\right)_{x,y} = -\frac{\sin\theta}{r}
+            \label{eq:5.60}
+        \end{equation}
+        由$\tan\phi = y/x$，我们有
+        \begin{equation}
+            \left(\frac{\partial\phi}{\partial x}\right)_{y,z} = -\frac{\sin\phi}{r\sin\theta}, \quad \left(\frac{\partial\phi}{\partial y}\right)_{x,z} = \frac{\cos\phi}{r\sin\theta}, \quad \left(\frac{\partial\phi}{\partial z}\right)_{x,y} = 0
+            \label{eq:5.61}
+        \end{equation}
+        将(\ref{eq:5.57})、(\ref{eq:5.59})和(\ref{eq:5.61})代入(\ref{eq:5.56})，我们得到
+        \begin{equation}
+            \frac{\partial}{\partial x} = \sin\theta\cos\phi\frac{\partial}{\partial r} + \frac{\cos\theta\cos\phi}{r}\frac{\partial}{\partial \theta} - \frac{\sin\phi}{r\sin\theta}\frac{\partial}{\partial \phi}
+            \label{eq:5.62}
+        \end{equation}
+        类似地，我们可以得到
+        \begin{equation}
+            \frac{\partial}{\partial y} = \sin\theta\sin\phi\frac{\partial}{\partial r} + \frac{\cos\theta\sin\phi}{r}\frac{\partial}{\partial \theta} + \frac{\cos\phi}{r\sin\theta}\frac{\partial}{\partial \phi}
+            \label{eq:5.63}
+        \end{equation}
+        \begin{equation}
+            \frac{\partial}{\partial z} = \cos\theta\frac{\partial}{\partial r} - \frac{\sin\theta}{r}\frac{\partial}{\partial \theta}
+            \label{eq:5.64}
+        \end{equation}
+    \end{quote}
+
+    最后，我们可以用球面坐标来表示角动量分量了。将(\ref{eq:5.51})、(\ref{eq:5.63})和(\ref{eq:5.64})带入(\ref{eq:5.40})，得到
+    \begin{equation*}
+        \begin{aligned}
+            \hat{L}_x & = -\mathrm{i}\hbar\left[r\sin\theta\sin\phi\left(\cos\theta\frac{\partial}{\partial r}\right) - \frac{\sin\theta}{r}\frac{\partial }{\partial\theta}\right.\\
+            &  \quad \left.-r\cos\theta\left(\sin\theta\sin\phi\frac{\partial}{\partial r} +\frac{\cos\theta\sin\phi}{r}\frac{\partial}{\partial \phi}+\frac{\cos\phi}{r\sin\theta}\frac{\partial}{\partial \phi}\right)\right]
+        \end{aligned}
+    \end{equation*}
+    \begin{equation}
+        \hat{L}_x = \mathrm{i}\hbar\left(\sin\phi\frac{\partial}{\partial \theta} - \cos\theta\cos\phi\frac{\partial}{\partial \phi}\right)
+        \label{eq:5.65}
+    \end{equation}
+    同样，我们有
+    \begin{equation}
+        \hat{L}_y = -\mathrm{i}\hbar\left(\cos\phi\frac{\partial}{\partial \theta} - \cot\theta\sin\phi\frac{\partial}{\partial \phi}\right)
+        \label{eq:5.66}
+    \end{equation}
+    \begin{equation}
+        \hat{L}_z = -\mathrm{i}\hbar\frac{\partial}{\partial \phi}
+        \label{eq:5.67}
+    \end{equation}
+
+    对$\hat{L}_x$、$\hat{L}_y$和$\hat{L}_z$进行平方并相加，我们可以构造出$\hat{L}^2 = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2$[式(\ref{eq:5.43})]。结果为（问题5.17）
+    \begin{equation}
+        \hat{L}^2 = -\hbar^2\left(\frac{\partial^2}{\partial\theta^2} + \cot\theta\frac{\partial}{\partial\theta} + \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}\right)
+        \label{eq:5.68}
+    \end{equation}
+
+    虽然角动量算符取决于所有三个直角坐标$x$、$y$和$z$，但它们只涉及两个球面坐标$\theta$和$\phi$。
+
+    \subsection*{单粒子轨道角动量的本征函数和本征值}
+    我们现在希望找到$\hat{L}^2$和$\hat{L}_z$的共同本征函数，记作$Y$。由于这些算符只涉及$\theta$和$\phi$，那么$Y$就是这两个变量的函数：$Y = Y\left(\theta,\phi\right)$（当然，由于这些算符都是线性算符，我们可以用任意一个关于$r$的函数乘以$Y$而不改变$Y$是$\hat{L}^2$和$\hat{L}_z$的本征函数的事实）。我们必须解以下方程：
+    \begin{equation}
+        \hat{L}_zY\left(\theta,\phi\right) = bY\left(\theta,\phi\right)
+        \label{eq:5.69}
+    \end{equation}
+    \begin{equation}
+        \hat{L}^2Y\left(\theta,\phi\right) = cY\left(\theta,\phi\right)
+        \label{eq:5.70}
+    \end{equation}
+    其中$b$和$c$分别是$\hat{L}_z$和$\hat{L}^2$的本征值。
+
+    使用算符$\hat{L}_z$，我们有
+    \begin{equation}
+        -\mathrm{i}\hbar\frac{\partial}{\partial \phi}Y\left(\theta,\phi\right) = bY\left(\theta,\phi\right)
+        \label{eq:5.71}
+    \end{equation}
+    由于(\ref{eq:5.71})中的算符不涉及$\theta$，我们可以尝试分离变量。将$Y$写成
+    \begin{equation}
+        Y\left(\theta,\phi\right) = S\left(\theta\right)T\left(\phi\right)
+        \label{eq:5.72}
+    \end{equation}
+    则方程(\ref{eq:5.71})变为
+    \begin{equation*}
+        -\mathrm{i}\hbar\frac{\partial}{\partial \phi}\left[S\left(\theta\right)T\left(\phi\right)\right] = bS\left(\theta\right)T\left(\phi\right)
+    \end{equation*}
+    \begin{equation*}
+        -\mathrm{i}\hbar S\left(\theta\right)\frac{\mathrm{d}T\left(\phi\right)}{\mathrm{d}\phi} = bS\left(\theta\right)T\left(\phi\right)
+    \end{equation*}
+    \begin{equation*}
+        \frac{\mathrm{d}T\left(\phi\right)}{T\left(\phi\right)} = \frac{\mathrm{i}b}{\hbar}\mathrm{d}\phi
+    \end{equation*}
+    \begin{equation}
+        T\left(\phi\right) = A e^{\mathrm{i}b\phi/\hbar}
+        \label{eq:5.73}
+    \end{equation}
+    其中$A$是任意常数。
+
+    $T$适合作为本征函数吗。答案是否定的，因为它一般不是单值函数。如果我们将$\phi$增加$2\pi$，我们仍将处于空间中的同一点，因此我们希望这样做时 $T$ 保持不变。为了使$T$成为单值函数，我们需要做如下限制：
+    \begin{equation*}
+        T\left(\phi + 2\pi\right) = T\left(\phi\right)
+    \end{equation*}
+    \begin{equation*}
+        A e^{\mathrm{i}b\phi/\hbar}\mathrm{e}^{\mathrm{i}b2\pi/\hbar} = A e^{\mathrm{i}b\phi/\hbar}
+    \end{equation*}
+    \begin{equation}
+        \mathrm{e}^{\mathrm{i}b2\pi/\hbar} = 1
+        \label{eq:5.74}
+    \end{equation}
+
+    为了满足$\mathrm{e}^{\mathrm{i}\alpha} = \cos\alpha + \mathrm{i}\sin\alpha = 1$，我们需要$\alpha = 2\pi m$，其中
+    \begin{equation*}
+        m = 0, \pm 1, \pm 2, \pm\ldots
+    \end{equation*}
+    因此，由式(\ref{eq:5.74})我们得到
+    \begin{equation*}
+        2\pi b/\hbar = 2\pi m
+    \end{equation*}
+    \begin{equation}
+        b = m\hbar, \quad m = \ldots, -2, -1, 0, 1, 2, \ldots
+        \label{eq:5.75}
+    \end{equation}
+    式(\ref{eq:5.73})变为
+    \begin{equation}
+        T\left(\phi\right) = A e^{\mathrm{i}m\phi}, \quad m = 0, \pm 1, \pm 2, \ldots
+        \label{eq:5.76}
+    \end{equation}
+    角动量在$z$方向分量的本征值是量子化的。
+
+    通过归一化$T$，我们可以确定常数$A$。首先，让我们考虑对关于$r$、$\theta$和$\phi$的函数$F$进行归一化。三个独立变量的取值范围是（见图\ref{fig:5.5}）
+    \begin{equation}
+        \boxed{
+            0 \le r \le \infty, \quad 0 \le \theta \le \pi, \quad 0 \le \phi < 2\pi
+        }
+        \label{eq:5.77}
+    \end{equation}
+    球坐标系下的体积微元为（\textit{Taylor and Mann}，第13.9节）
+    \begin{equation}
+        \boxed{
+            \mathrm{d}\tau = r^2\sin\theta \: \mathrm{d}r \: \mathrm{d}\theta \: \mathrm{d}\phi
+        }
+        \label{eq:5.78}
+    \end{equation}
+    (\ref{eq:5.78})是一个无限小区域空间的体积，其球面坐标位于$r$到$r+\mathrm{d}r$、$\theta$到$\theta+\mathrm{d}\theta$和$\phi$到$\phi+\mathrm{d}\phi$之间。因此，球坐标下$F$的归一化条件为
+    \begin{equation}
+        \int_{0}^{\infty}\left[\int_{0}^{\pi}\left[\int_{0}^{2\pi}\left|F\left(r,\theta,\phi\right)\right|^2 \mathrm{d}\phi\right]\sin\theta \mathrm{d}\theta\right]r^2\mathrm{d}r = 1
+        \label{eq:5.79}
+    \end{equation}
+    如果$F$恰好可以写成
+    \begin{equation*}
+        F\left(r,\theta,\phi\right) = R\left(r\right)S\left(\theta\right)T\left(\phi\right)
+    \end{equation*}
+    则对(\ref{eq:5.79})使用积分(\ref{eq:3.74})，有
+    \begin{equation*}
+        \int_{0}^{\infty}\left|R\left(r\right)\right|^2 r^2 \mathrm{d}r \int_{0}^{\pi}\left|S\left(\theta\right)\right|^2 \sin\theta \: \mathrm{d}\theta \int_{0}^{2\pi}\left|T\left(\phi\right)\right|^2 \mathrm{d}\phi = 1
+    \end{equation*}
+    方便的做法是将$F$的每个因子都作归一化处理：
+    \begin{equation}
+        \int_{0}^{\infty}\left|R\left(r\right)\right|^2 r^2 \mathrm{d}r = 1, \quad \int_{0}^{\pi}\left|S\left(\theta\right)\right|^2 \sin\theta \: \mathrm{d}\theta = 1, \quad \int_{0}^{2\pi}\left|T\left(\phi\right)\right|^2 \mathrm{d}\phi = 1
+        \label{eq:5.80}
+    \end{equation}
+    因此，
+    \begin{equation*}
+        \int_{0}^{2\pi}\left(A\mathrm{e}^{\mathrm{i}m\phi}\right)^{\ast}\left(A\mathrm{e}^{\mathrm{i}m\phi}\right) \mathrm{d}\phi = 1 = \left|A\right|^2\int_{0}^{2\pi} \mathrm{d}\phi
+    \end{equation*}
+    \begin{equation*}
+        \left|A\right| = \left(2\pi\right)^{-1/2}
+    \end{equation*}
+    \begin{equation}
+        T\left(\phi\right) = \frac{1}{\sqrt{2\pi}}e^{\mathrm{i}m\phi}, \quad m = 0, \pm 1, \pm 2, \ldots
+        \label{eq:5.81}
+    \end{equation}
+
+
+
+
+
+
+
+
+
 
 \section{角动量梯度算符法}
 \label{sec:5.4 The Ladder-Operator Method for Angular Momentum}
