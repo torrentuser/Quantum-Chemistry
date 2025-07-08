@@ -780,17 +780,241 @@
         \label{eq:5.81}
     \end{equation}
 
+    我们现在尝试使用式(\ref{eq:5.70})来求解$\hat{L}^2$的本征值$c$。对$\hat{L}^2$使用式(\ref{eq:5.68})、对$Y$使用式(\ref{eq:5.72})，由式(\ref{eq:5.81})，我们有
+    \begin{equation*}
+        -\hbar^2\left(\frac{\partial^2}{\partial\theta^2} + \cot\theta\frac{\partial}{\partial\theta} + \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial\phi^2}\right)\left(S\left(\theta\right)\frac{1}{\sqrt{2\pi}}e^{\mathrm{i}m\phi}\right) = cS\left(\theta\right)\frac{1}{\sqrt{2\pi}}e^{\mathrm{i}m\phi}
+    \end{equation*}
+    \begin{equation}
+        \frac{\mathrm{d}^2S}{\mathrm{d}\theta^2}+\cot\theta\frac{\mathrm{d}S}{\mathrm{d}\theta} - \frac{m^2}{\sin^2\theta}S = -\frac{c}{\hbar^2}S
+        \label{eq:5.82}
+    \end{equation}
+    \begin{quote}
+        \small
+        \noindent 为了解方程(\ref{eq:5.82})，我们需要进行一些繁琐的操作，如果需要，可以略过不读。在式(\ref{eq:5.91})处重新开始阅读。首先，为了方便起见，我们将自变量代替为
+        \begin{equation}
+            w = \cos\theta
+            \label{eq:5.83}
+        \end{equation}
+        将$S$变换为一个新的关于$w$的函数：
+        \begin{equation}
+            S\left(\theta\right) = G\left(w\right)
+            \label{eq:5.84}
+        \end{equation}
+        由链式法则，我们有
+        \begin{equation}
+            \frac{\mathrm{d}S}{\mathrm{d}\theta} = \frac{\mathrm{d}G}{\mathrm{d}w}\frac{\mathrm{d}w}{\mathrm{d}\theta} = -\sin\theta\frac{\mathrm{d}G}{\mathrm{d}w} = -\left(1-w^2\right)^{1/2}\frac{\mathrm{d}G}{\mathrm{d}w}
+            \label{eq:5.85}
+        \end{equation}
+        同样地，我们得出（问题5.25）
+        \begin{equation}
+            \frac{\mathrm{d}^2S}{\mathrm{d}\theta^2} = \left(1-w^2\right)\frac{\mathrm{d}^2G}{\mathrm{d}w^2} - w\frac{\mathrm{d}G}{\mathrm{d}w}
+            \label{eq:5.86}
+        \end{equation}
+        由式(\ref{eq:5.86})、(\ref{eq:5.85})和$\cot\theta = \cos\theta/\sin\theta = w/\left(1-w^2\right)^{1/2}$，我们可以将(\ref{eq:5.82})重写为
+        \begin{equation}
+            \left(1-w^2\right)\frac{\mathrm{d}^2G}{\mathrm{d}w^2} - 2w\frac{\mathrm{d}G}{\mathrm{d}w}+\left[\frac{c}{\hbar^2}-\frac{m^2}{1-w^2}\right]G\left(w\right) = 0
+            \label{eq:5.87}
+        \end{equation}
+        $w$的取值范围是$-1 \le w \le 1$。
 
+        在尝试幂级数求解时，为了得到两项的递推关系，我们需要对因变量作如下改变：
+        \begin{equation}
+            G\left(w\right) = \left(1-w^2\right)^{\left|m\right|/2}H\left(w\right)
+            \label{eq:5.88}
+        \end{equation}
+        对(\ref{eq:5.88})求导，我们得到了$G^{\prime}$和$G^{\prime\prime}$，在除以$\left(1-w^2\right)^{\left|m\right|/2}$后，我们可以将(\ref{eq:5.87})变为
+        \begin{equation}
+            \left(1-w^2\right)H^{\prime\prime} - 2\left(\left|m\right|+1\right)wH^{\prime} + \left[c\hbar^{-2}-\left|m\right|\left(\left|m\right|+1\right)\right]H = 0
+            \label{eq:5.89}
+        \end{equation}
+        现在，我们尝试$H$的幂级数解
+        \begin{equation}
+            H\left(w\right) = \sum_{n=0}^{\infty}a_jw^j
+            \label{eq:5.90}
+        \end{equation}
+        对其求导[与式(\ref{eq:4.36})-(\ref{eq:4.38})类似]，我们有
+        \begin{equation*}
+            H^{\prime}\left(w\right) = \sum_{j=0}^{\infty}ja_jw^{j-1}
+        \end{equation*}
+        \begin{equation*}
+            H^{\prime\prime}\left(w\right) = \sum_{j=0}^{\infty}j(j-1)a_jw^{j-2} = \sum_{j=0}^{\infty}\left(j+2\right)\left(j+1\right)a_{j+2}w^{j}
+        \end{equation*}
+        将这些幂级数带入式(\ref{eq:5.89})，合并求和后，有
+        \begin{equation*}
+            \sum_{j=0}^{\infty}\left[\left(j+2\right)\left(j+1\right)a_{j+2}+\left(-j^2-j-2\left|m\right|j+\frac{c}{\hbar^2}-\left|m\right|^2-\left|m\right|\right)a_j\right]w^j=0
+        \end{equation*}
+        令$w^j$的系数为零，我们得到
+        \begin{equation}
+            a_{j+2} = \frac{\left(j+\left|m\right|\right)\left(j+\left|m\right|+1\right)-c/\hbar^{-2}}{\left(j+1\right)\left(j+2\right)}a_j
+            \label{eq:5.91}
+        \end{equation}
+    \end{quote}
 
+    与谐振子的例子一样，式(\ref{eq:5.89})的通解也是偶次幂级数（系数由$a_0$决定）和奇次幂级数（系数由$a_1$决定）的任意线性组合。可以证明，由式(\ref{eq:5.91})定义的无穷级数不是品优函数。[许多文献都指出：该级数在$w = \pm 1$处发散。然而，这并不足以否定该无穷级数，因为本征函数是平方可积的，即使在某两点上是无穷的。仔细讨论见 M. Whippman, Am. Phys., 34, 656 (1966)。]因此，与谐振子的情况一致，我们必须让级数在某一项$a_kw^k$处打断。根据$k$是奇数还是偶数，我们设$a_0$或$a_1$为零，从而消除其他级数。
 
+    令式(\ref{eq:5.91})中$a_k$的系数为零，得到
+    \begin{equation}
+        c = \hbar^2\left(k+\left|m\right|\right)\left(k+\left|m\right|+1\right), \quad k = 0, 1, 2, \ldots
+        \label{eq:5.92}
+    \end{equation}
+    由于$\left|m\right|$的值为$0, 1, 2, \ldots$，$k+\left|m\right|$的值为$0, 1, 2, \ldots$。因此，我们可以定义量子数$l$为
+    \begin{equation}
+        l = k + \left|m\right|
+        \label{eq:5.93}
+    \end{equation}
+    角动量大小平方的本征值为
+    \begin{equation}
+        c = l\left(l+1\right)\hbar^2, \quad l = 0, 1, 2, \ldots
+        \label{eq:5.94}
+    \end{equation}
+    单粒子轨道角动量的大小为
+    \begin{equation}
+        \left|\mathbf{L}\right| = \left[l\left(l+1\right)\right]^{1/2}\hbar
+        \label{eq:5.95}
+    \end{equation}
 
+    由式(\ref{eq:5.93})有$\left|m\right| = l$。因此，$m$的取值范围为
+    \begin{equation}
+        m = -l, -l+1, -l+2, \ldots, -1, 0, 1, \ldots, l-2, l-1, l, l
+        \label{eq:5.96}
+    \end{equation}
 
+    现在让我们检查角动量的本征函数。由式(\ref{eq:5.83})、(\ref{eq:5.84})、(\ref{eq:5.88})、(\ref{eq:5.90})和(\ref{eq:5.93})，本征函数中的$\theta$因子为
+    \begin{equation}
+        S_{l,m}\left(\theta\right) = \sin^{\left|m\right|}\theta\sum_{\substack{j=1,3,\ldots \\ j=0,2,\ldots}}^{l-\left|m\right|}a_j\cos^j\theta
+        \label{eq:5.97}
+    \end{equation}
+    其中，$l-\left|m\right|$的奇偶性决定求和从$j=1$还是$j=0$开始。使用式(\ref{eq:5.94})，$a_j$的系数满足的递推关系(\ref{eq:5.91})可以写成
+    \begin{equation}
+        a_{j+2} = \frac{\left(j+\left|m\right|\right)\left(j+\left|m\right|+1\right)-l\left(l+1\right)}{\left(j+1\right)\left(j+2\right)}a_j
+        \label{eq:5.98}
+    \end{equation}
 
+    $\hat{L}^2$和$\hat{L}_z$的本征函数由式(\ref{eq:5.72})和式(\ref{eq:5.81})给出：
+    \begin{equation}
+        \boxed{
+            Y^m_l\left(\theta,\phi\right) = S_{l,m}\left(\theta\right)T\left(\phi\right) = \frac{1}{\sqrt{2\pi}}S_{l,m}\left(\theta\right)e^{\mathrm{i}m\phi}
+        }
+        \label{eq:5.99}
+    \end{equation}
+    $Y^m_l$中的$m$是一个标签，而不是指数。
+    \begin{examplebox}
+        \textbf{例题：}分别求当(a)$l=0$；(b)$l=1$时$Y_l^m\left(\theta,\phi\right)$、$\hat{L}^2$和$\hat{L}_z$的本征值。
+        \\
 
+        \textbf{(a)}对于$l=0$，由式(\ref{eq:5.96})，有$m=0$。则式(\ref{eq:5.97})变为
+        \begin{equation}
+            S_{0,0}\left(\theta\right) = a_0
+            \label{eq:5.100}
+        \end{equation}
+        由归一化条件(\ref{eq:5.80})，我们有
+        \begin{equation*}
+            \int_{0}^{\pi}\left|a_0\right|^2 \sin\theta \: \mathrm{d}\theta = 1 = 2\left|a_0\right|^2
+        \end{equation*}
+        \begin{equation*}
+            \left|a_0\right| = 2^{-1/2}
+        \end{equation*}
+        则式(\ref{eq:5.99})变为
+        \begin{equation}
+            Y^0_0\left(\theta,\phi\right) = \frac{1}{\sqrt{4\pi}}
+            \label{eq:5.101}
+        \end{equation}
+        [显然，式(\ref{eq:5.101})是$\hat{L}^2$、$\hat{L}_x$、$\hat{L}_y$和$\hat{L}_z$的本征函数，方程(\ref{eq:5.65})-(\ref{eq:5.68})。]对于$l=0$，本征函数不存在角度依赖关系，我们说本征函数是\textbf{球对称的}（spherically symmetric）。
 
+        对于$l=0$和$m=0$，由式(\ref{eq:5.69})、(\ref{eq:5.70})、(\ref{eq:5.75})和(\ref{eq:5.94})，我们有$\hat{L}^2$的本征值为$c=0$，$\hat{L}_z$的本征值为$b=0$。
+
+        \textbf{(b)} 对于$l=1$，由式(\ref{eq:5.96})，有$m=-1, 0, 1$。当$\left|m\right| = 1$时，式(\ref{eq:5.97})变为
+        \begin{equation}
+            S_{1,\pm 1}\left(\theta\right) = a_0\sin\theta
+            \label{eq:5.102}
+        \end{equation}
+        (\ref{eq:5.102})中的$a_0$和(\ref{eq:5.100})中的$a_0$不一定相等。由归一化条件，有
+        \begin{equation*}
+            1 = \left|a_0^2\right|\int_{0}^{\pi}\sin^2\theta\sin\theta \: \mathrm{d}\theta = \left|a_0^2\right|\int_{-1}^{1}\left(1-w^2\right) \: \mathrm{d}w
+        \end{equation*}
+        \begin{equation*}
+            \left|a_0\right| = \sqrt{3}/2
+        \end{equation*}
+        其中，我们将$w$用$\cos\theta$代替。因此，我们有$S_{1,\pm 1}\left(3^{1/2}/2\right)\sin\theta$，式(\ref{eq:5.99})变为
+        \begin{equation}
+            Y_1^1 = \left(3/8\pi\right)^{1/2}\sin\theta e^{\mathrm{i}\phi}, \quad Y_1^{-1} = \left(3/8\pi\right)^{1/2}\sin\theta e^{-\mathrm{i}\phi}
+            \label{eq:5.103}
+        \end{equation}
+        当$l=1$而$m=0$时，我们得出（见下文的练习题）$S_{1,0} = \left(3/2\right)^{1/2}\cos\theta$，$Y_1^0 = \left(3/4\pi\right)^{1/2}\cos\theta$。因此，当$l=1$时，由式(\ref{eq:5.94})可得$\hat{L}^2$的本征值为$2\hbar^2$;由式(\ref{eq:5.75})，$\hat{L}_z$的本征值为$\hbar$、$0$和$-\hbar$，分别与$m=1, 0, -1$对应。
+        \\
+
+        \textbf{练习：}验证$S_{1,0}$和$Y_1^0$的表达式。
+    \end{examplebox}
+
+    函数$S_{l,m}\left(\theta\right)$在数学中是众所周知的，是乘以一个归一化系数后的\textit{连带勒让德函数}（associated Legendre function）。连带勒让德函数的定义见问题5.34。表(\ref{tab:5.1})列出了$l \le 3$的$S_{l,m}\left(\theta\right)$表达式。
+    \begin{table}[htbp]
+        \centering
+        \caption{$S_{l,m}\left(\theta\right)$}
+        \label{tab:5.1}
+        \begin{tabular}{|l|l|}
+            \hline
+            $l=0$: & $S_{0,0} = \frac{1}{2}\sqrt{2}$ \\
+            \hline
+            $l=1$: & $S_{1,0} = \frac{1}{2}\sqrt{6}\cos\theta$ \\
+            & $S_{1,\pm 1} = \frac{1}{2}\sqrt{3}\sin\theta$ \\
+            \hline
+            $l=2$: & $S_{2,0} = \frac{1}{4}\sqrt{10}\left(3\cos^2\theta - 1\right)$ \\
+            & $S_{2,\pm 1} = \frac{1}{2}\sqrt{15}\sin\theta\cos\theta$ \\
+            & $S_{2,\pm 2} = \frac{1}{4}\sqrt{15}\sin^2\theta$ \\
+            \hline
+            $l=3$: & $S_{3,0} = \frac{3}{4}\sqrt{14}\left(\frac{5}{3}\cos^3\theta-\cos\theta\right)$ \\
+            & $S_{3, \pm 1} = \frac{1}{8}\sqrt{42}\sin\theta\left(5\cos^2\theta - 1\right)$ \\
+            & $S_{3, \pm 2} = \frac{1}{4}\sqrt{105}\sin^2\theta\cos\theta$ \\
+            & $S_{3, \pm 3} = \frac{1}{8}\sqrt{70}\sin^3\theta$ \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \begin{equation}
+        \boxed{
+            \hat{L}^2Y^m_l\left(\theta,\phi\right) = l\left(l+1\right)\hbar^2Y^m_l\left(\theta,\phi\right), \quad l = 0, 1, 2, \ldots
+        }
+        \label{eq:5.104}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            \hat{L}_zY^m_l\left(\theta,\phi\right) = m\hbar Y^m_l\left(\theta,\phi\right), \quad m = -l, -l+1, \ldots, l-1, l
+        }
+        \label{eq:5.105}
+    \end{equation}
+    其中，本征函数由式(\ref{eq:5.99})给出。我们通常使用符号$m_l$代替$m$来表示$L_z$量子数。我们稍后会看到球谐函数是正交函数（方程7.27）。
+
+    由于$l \ge \left|m\right|$，因此除了$l=0$以外，轨道角动量$\mathbf{L}$的大小$\left[l\left(l+1\right)\right]^{1/2}\hbar^2$大于其$z$方向的分量$\left|m\right|\hbar$。如果可以让角动量的大小等于其 $z$ 分量，这就意味着 $x$ 和 $y$ 分量为零，我们就可以指定 $\mathbf{L}$ 的所有三个分量了。然而这是做不到的，因为角动量三个分量的算符不可对易。只有一种例外，就是$l$为零时。在该情况中，$\left|\mathbf{L}\right|^2 = L_x^2+ L_y^2 + L_z^2 = 0$，因此所有三个分量都为零。由式(\ref{eq:5.12})，角动量分量的不确定性满足
+    \begin{equation}
+        \Delta L_x\Delta L_y \ge \left|\frac{1}{2}\Psi^{\ast}\left[\hat{L}_x,\hat{L}_y\right]\Psi\mathrm{d}\tau\right| = \frac{\hbar}{2}\left|\int \Psi^{\ast}\hat{L}_z\Psi\mathrm{d}\tau\right|
+        \label{eq:5.106}
+    \end{equation}
+    通过循环排列能得出其余两个相似的方程。当$\hat{L}_x$、$\hat{L}_y$和$\hat{L}_z$的本征值为零时，$\hat{L}_x\Psi = 0$，$\hat{L}_y\Psi = 0$，$\hat{L}_z\Psi = 0$，式(\ref{eq:5.106})的右侧和另两个相似的方程也为零，因此$\Delta L_x = \Delta L_y = \Delta L_z = 0$被允许。然而，根据第\ref{sec:5.1 Simultaneous Specification of Several Properties}节，要同时得到两个算符的本征函数，这两个算符必须可对易，这又是怎么回事呢？答案是，这个定理指的是一个算符的整套本征函数是另一个算符的本征函数的可能性。因此，尽管$\hat{L}_x$和$\hat{L}_z$不可对易，但仍有可能使得$\hat{L}_x$的本征函数同时也是$\hat{L}_z$的本征函数（$l=0=m$时）。然而，使得$\hat{L}_x$的\textit{所有}本征函数都是$\hat{L}_z$的本征函数是不可能的。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/5.6.png}
+        \caption{$\mathbf{L}$的方向}
+        \label{fig:5.6}
+    \end{figure}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/5.7.png}
+        \caption{$l=1$时$\mathbf{L}$相对于$z$轴的方向}
+        \label{fig:5.7}
+    \end{figure}
+
+    由于我们无法指定$L_x$和$L_y$，所以矢量$\mathbf{L}$可以位于以$z$轴为轴，高度为$m\hbar$的圆锥面上的任何位置。当$l=1$时，$\mathbf{L}$相对于$z$轴的可能方向如图\ref{fig:5.7}所示。对于每一个$\hat{L}^2$的本征值，都有$2l+1$个不同的本征函数$Y_l^m$，与$m$的$2l+1$个取值相对应。我们说$\hat{L}^2$的本征值是$\left(2l+1\right)$重简并的，\textbf{简并}（degeneracy）一词适用于任何算符的本征值，而不仅仅是哈密顿算符。
+
+    当然，$z$轴并没有什么特别之处。空间中的所有方向都是等价的。如果我们选择确定$L^2$和$L_x$（而不是$L_z$），我们会得到与$L_z$相同的$L_x$的本征值。然而，解$\hat{L}_z$的本征方程更为简单，因为在球坐标系中，$\hat{L}_z$的形式更简单，其中涉及到围绕$z$轴的旋转角度$\phi$。
 
 \section{角动量梯度算符法}
 \label{sec:5.4 The Ladder-Operator Method for Angular Momentum}
+
+
+
+
+
+
+
 
 \section*{总结}
 
