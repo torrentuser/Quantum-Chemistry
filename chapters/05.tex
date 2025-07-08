@@ -1,7 +1,7 @@
 % ===== CHAPTER 5 =====
 \chapter{角动量}
 \label{chap:5}
-\section{同时规范多个属性}
+\section{同时确定多个属性}
 \label{sec:5.1 Simultaneous Specification of Several Properties}
     在本章中，我们将讨论角动量，在下一章中，我们将证明对于氢原子的静止态，电子角动量的大小是恒定的。首先，我们要考虑用什么标准来决定一个系统的哪些性质可以同时赋予定值。
 
@@ -1006,14 +1006,281 @@
 
     当然，$z$轴并没有什么特别之处。空间中的所有方向都是等价的。如果我们选择确定$L^2$和$L_x$（而不是$L_z$），我们会得到与$L_z$相同的$L_x$的本征值。然而，解$\hat{L}_z$的本征方程更为简单，因为在球坐标系中，$\hat{L}_z$的形式更简单，其中涉及到围绕$z$轴的旋转角度$\phi$。
 
-\section{角动量梯度算符法}
+\section{角动量阶梯算符法}
 \label{sec:5.4 The Ladder-Operator Method for Angular Momentum}
+    通过将轨道角动量的算符表示为微分算符，并求解由此产生的微分方程，我们得到了$\hat{L}^2$和$\hat{L}_z$的本征值。我们现在证明：只需要利用算符之间的对易关系就能找到这些本征值。本节的工作适用于任何满足角动量对易关系的算符。它尤其适用于自旋角动量（第 \ref{chap:10} 章）和轨道角动量。
 
+    我们使用字母$L$来表示轨道角动量。在这里，我们将使用字母 $M$ 来表示我们正在处理的任何一种角动量。我们有三个线性算符$\hat{M}_x$、$\hat{M}_y$和$\hat{M}_z$，我们只知道它们符合对易关系[与式(\ref{eq:5.46})和(\ref{eq:5.48})相似]
+    \begin{equation}
+        \left[\hat{M}_x,\hat{M}_y\right] = \mathrm{i}\hbar\hat{M}_z, \quad \left[\hat{M}_y,\hat{M}_z\right] = \mathrm{i}\hbar\hat{M}_x, \quad \left[\hat{M}_z,\hat{M}_x\right] = \mathrm{i}\hbar\hat{M}_y
+        \label{eq:5.107}
+    \end{equation}
+    我们定义算符$\hat{M}^2$为
+    \begin{equation}
+        \hat{M}^2 = \hat{M}_x^2 + \hat{M}_y^2 + \hat{M}_z^2
+        \label{eq:5.108}
+    \end{equation}
+    我们的问题是如何找到$\hat{M}^2$和$\hat{M}_z$的本征值。
 
+    使用式(\ref{eq:5.107})和(\ref{eq:5.108})，我们从对$\hat{M}^2$及其分量的对易子进行评估开始。与推导(\ref{eq:5.49})和(\ref{eq:5.50})时的推导类似，我们有
+    \begin{equation}
+        \left[\hat{M}^2,\hat{M}_x\right] = \left[\hat{M}^2,\hat{M}_y\right] = \left[\hat{M}^2,\hat{M}_z\right] = 0
+        \label{eq:5.109}
+    \end{equation}
+    因此，我们可以得到$\hat{M}^2$和$\hat{M}_z$的同时本征函数。
 
+    现在我们定义两个新算符，\textbf{升算符}（raising operator）$\hat{M}_+$和\textbf{降算符}（lowering operator）$\hat{M}_-$，它们的定义为
+    \begin{equation}
+        \hat{M}_+ \equiv \hat{M}_x + \mathrm{i}\hat{M}_y
+        \label{eq:5.110}
+    \end{equation}
+    \begin{equation}
+        \hat{M}_- \equiv \hat{M}_x - \mathrm{i}\hat{M}_y
+        \label{eq:5.111}
+    \end{equation}
+    这些是\textbf{阶梯算符}（ladder operator）的例子。使用这些术语的原因很快就会清楚。我们有
+    \begin{equation*}
+        \begin{aligned}
+            \hat{M}_+\hat{M}_- & = \left(\hat{M}_x+\mathrm{i}\hat{M}_y\right)\left(\hat{M}_x-\mathrm{i}\hat{M}_y\right) = \hat{M}_x\left(\hat{M}_x-\mathrm{i}\hat{M}_y\right) + \mathrm{i}\hat{M}_y\left(\hat{M}_x-\mathrm{i}\hat{M}_y\right) \\
+            & = \hat{M}_x^2 - \mathrm{i}\hat{M}_x\hat{M}_y + \mathrm{i}\hat{M}_y\hat{M}_x + \hat{M}_y^2 = \hat{M}^2 - \hat{M}_z^2 + \mathrm{i}\left[\hat{M}_y,\hat{M}_x\right]
+        \end{aligned}
+    \end{equation*}
+    \begin{equation}
+        \hat{M}_+\hat{M}_- = \hat{M}^2 - \hat{M}_z^2 + \hbar\hat{M}_z
+        \label{eq:5.112}
+    \end{equation}
+    同样地，我们有
+    \begin{equation}
+        \hat{M}_-\hat{M}_+ = \hat{M}^2 - \hat{M}_z^2 - \hbar\hat{M}_z
+        \label{eq:5.113}
+    \end{equation}
+    对于这些算符与$\hat{M}_z$的对易子，我们有
+    \begin{equation*}
+        \left[\hat{M}_+,\hat{M}_z\right] = \left[\hat{M}_x+\mathrm{i}\hat{M}_y,\hat{M}_z\right] = \left[\hat{M}_x,\hat{M}_z\right]+\mathrm{i}\left[\hat{M}_y,\hat{M}_z\right] = -\mathrm{i}\hbar\hat{M}_y - \hbar\hat{M}_x
+    \end{equation*}
+    \begin{equation*}
+        \left[\hat{M}_+,\hat{M}_z\right] = -\hbar\hat{M}_+
+    \end{equation*}
+    \begin{equation}
+        \hat{M}_+\hat{M}_z = \hat{M}_z\hat{M}_+ - \hbar\hat{M}_+
+        \label{eq:5.114}
+    \end{equation}
+    其中我们用到了式(\ref{eq:5.107})。同样地，我们有
+    \begin{equation}
+        \hat{M}_-\hat{M}_z = \hat{M}_z\hat{M}_- + \hbar\hat{M}_-
+        \label{eq:5.115}
+    \end{equation}
 
+    设$Y$是$\hat{M}^2$和$\hat{M}_z$的共同本征函数，即
+    \begin{equation}
+        \hat{M}^2Y = cY
+        \label{eq:5.116}
+    \end{equation}
+    \begin{equation}
+        \hat{M}_zY = bY
+        \label{eq:5.117}
+    \end{equation}
+    其中$c$和$b$是本征值。将算符$\hat{M}_+$作用于式(\ref{eq:5.117})，我们有
+    \begin{equation*}
+        \hat{M}_+\hat{M}_zY = \hat{M}_+bY
+    \end{equation*}
+    使用式(\ref{eq:5.114})，及$\hat{M}_+$是线性算符，我们有
+    \begin{equation*}
+        \left(\hat{M}_z\hat{M}_+-\hbar\hat{M}_+\right)Y = b\hat{M}_+Y
+    \end{equation*}
+    \begin{equation}
+        \hat{M}_z\left(\hat{M}_+Y\right) = \left(b+\hbar\right)\left(\hat{M}_+Y\right)
+        \label{eq:5.118}
+    \end{equation}
+    最后一个方程说明：$\hat{M}_+Y$是算符$\hat{M}_z$的本征函数，其本征值为$b+\hbar$。换句话说，将升算符$\hat{M}_+$作用到本征函数$Y$上后，可以将$Y$转换成另一个$\hat{M}_z$的本征函数，其本征值比$Y$的大$\hbar$。如果我们现在对式(\ref{eq:5.118})使用升算符，并再次使用式(\ref{eq:5.114})，我们得到
+    \begin{equation*}
+        \hat{M}_z\left(\hat{M}_+^2Y\right) = \left(b+2\hbar\right)\left(\hat{M}_+^2Y\right)
+    \end{equation*}
+    重复应用升算符，有
+    \begin{equation}
+        \hat{M}_z\left(\hat{M}_+^kY\right) = \left(b+k\hbar\right)\left(\hat{M}_+^kY\right), \quad k = 0, 1, 2, \ldots
+        \label{eq:5.119}
+    \end{equation}
 
+    如果我们对式(\ref{eq:5.117})使用降算符$\hat{M}_-$并应用式(\ref{eq:5.115})，我们已同样的方式发现：
+    \begin{equation}
+        \hat{M}_z\left(\hat{M}_-Y\right) = \left(b-\hbar\right)\left(\hat{M}_-Y\right)
+        \label{eq:5.120}
+    \end{equation}
+    \begin{equation}
+        \hat{M}_z\left(\hat{M}_-^kY\right) = \left(b-k\hbar\right)\left(\hat{M}_-^kY\right)
+        \label{eq:5.121}
+    \end{equation}
 
+    这样，通过对本征值为$b$的本征函数使用升降算符，我们得到了一个本征值阶梯，阶梯之间的差值为$\hbar$：
+    \begin{equation*}
+        \ldots, \quad b-2\hbar, \quad b-\hbar, \quad b, \quad b+\hbar, \quad b+2\hbar, \quad \ldots
+    \end{equation*}
+    函数$\hat{M}_{\pm}^kY$是$\hat{M}_z$的本征函数，其本征值为$b \pm k\hbar$[式(\ref{eq:5.119})和(\ref{eq:5.121})]。我们现在表明这些函数也是$\hat{M}^2$的本征函数，其本征值为$c$：
+    \begin{equation}
+        \hat{M}_z\hat{M}_{\pm}^kY = \left(b \pm k\hbar\right)\hat{M}_{\pm}^kY
+        \label{eq:5.122}
+    \end{equation}
+    \begin{equation}
+        \hat{M}^2\hat{M}_{\pm}^kY = c\hat{M}_{\pm}^kY
+        \label{eq:5.123}
+    \end{equation}
+    为了证明(\ref{eq:5.123})，我们首先表明$\hat{M}^2$与$\hat{M}_+$和$\hat{M}_-$对易。我们有
+    \begin{equation*}
+        \left[\hat{M}^2,\hat{M}_{\pm}\right] = \left[\hat{M}^2,\hat{M}_x\pm\mathrm{i}\hat{M}_y\right] = \left[\hat{M}^2,\hat{M}_x\right] \pm \mathrm{i}\left[\hat{M}^2,\hat{M}_y\right] = 0 \pm 0 = 0
+    \end{equation*}
+    也有
+    \begin{equation*}
+        \left[\hat{M}^2,\hat{M}_{\pm}^2\right] = \left[\hat{M}^2,\hat{M}_{\pm}\right]\hat{M}_{\pm} + \hat{M}_{\pm}\left[\hat{M}^2,\hat{M}_{\pm}\right] = 0 + 0 = 0
+    \end{equation*}
+    通过归纳法可以得出
+    \begin{equation}
+        \left[\hat{M}^2,\hat{M}_{\pm}^k\right] = 0, \quad \text{或} \quad \hat{M}^2\hat{M}_{\pm}^k = \hat{M}_{\pm}^k\hat{M}^2, \quad k = 0, 1, 2, \ldots
+        \label{eq:5.124}
+    \end{equation}
+    如果我们对式(\ref{eq:5.116})使用升降算符$\hat{M}_{\pm}$，并使用(\ref{eq:5.124})，我们有
+    \begin{equation*}
+        \hat{M}_{\pm}^k\hat{M}^2Y = \hat{M}_{\pm}^k cY
+    \end{equation*}
+    \begin{equation}
+        \hat{M}^2\left(\hat{M}_{\pm}^kY\right) = c\left(\hat{M}_{\pm}^kY\right)
+        \label{eq:5.125}
+    \end{equation}
+    这正是我们想要证明的。
+
+    接下来我们想证明：使用阶梯算符生成的$\hat{M}_z$的本征值集合是有界的。对于特定的，本征值为$b$的算符$\hat{M}_z$的本征函数$Y$，我们有
+    \begin{equation*}
+        \hat{M}_zY = bY
+    \end{equation*}
+    若考虑由阶梯算符生成的本征函数与本征值的集合，我们有
+    \begin{equation}
+        \hat{M}_zY_k = b_kY_k
+        \label{eq:5.126}
+    \end{equation}
+    其中
+    \begin{equation}
+        Y_k = \hat{M}_{\pm}^kY
+        \label{eq:5.127}
+    \end{equation}
+    \begin{equation}
+        b_k = b \pm k\hbar
+        \label{eq:5.128}
+    \end{equation}
+    （$\hat{M}_+$和$\hat{M}_-$的使用破坏了$Y$的归一性，所以$Y_k$不是归一化的。若想找到归一化常数，见问题10.27。）
+
+    对式(\ref{eq:5.126})使用$\hat{M}_z$，我们有
+    \begin{equation*}
+        \hat{M}_z^2Y_k = b_k\hat{M}_zY_k
+    \end{equation*}
+    \begin{equation}
+        \hat{M}_z^2Y_k = b_k^2Y_k
+        \label{eq:5.129}
+    \end{equation}
+    现在用式(\ref{eq:5.123})减去式(\ref{eq:5.129})，使用式(\ref{eq:5.127})和(\ref{eq:5.108})，有
+    \begin{equation*}
+        \hat{M}^2Y_k - \hat{M}_z^2Y_k = cY_k - b_k^2Y_k
+    \end{equation*}
+    \begin{equation}
+        \left(\hat{M}_x^2+\hat{M}_y^2\right)Y_k = \left(c - b_k^2\right)Y_k
+        \label{eq:5.130}
+    \end{equation}
+    算符$\hat{M}_x^2+\hat{M}_y^2$对应于一个非负的物理量，因此其本征值应该是非负的（在问题7.11中得到证明）。因此，式(\ref{eq:5.130})表明$c-b_k^2 \ge 0$即$c^{1/2} \ge \left|b_k\right|$。因此，
+    \begin{equation}
+        c^{1/2} \ge b_k \ge c^{1/2}, \quad k = 0, \pm 1, \pm 2, \ldots
+        \label{eq:5.131}
+    \end{equation}
+
+    由于$k$变化时$c$保持不变，因此式(\ref{eq:5.131})表明本征值$b$同时具有上界和下界。令$b_{\max}$和$b_{\min}$分别为$b_k$的最大值和最小值，$Y_{\max}$和$Y_{\min}$分别为对应的本征函数：
+    \begin{equation}
+        \hat{M}_zY_{\max} = b_{\max}Y_{\max}
+        \label{eq:5.132}
+    \end{equation}
+    \begin{equation}
+        \hat{M}_zY_{\min} = b_{\min}Y_{\min}
+        \label{eq:5.133}
+    \end{equation}
+    现在，将升算符作用到式(\ref{eq:5.132})上，并使用式(\ref{eq:5.114})，我们有
+    \begin{equation*}
+        \hat{M}_z\hat{M}_+Y_{\max} = b_{\max}\hat{M}_+Y_{\max}
+    \end{equation*}
+    \begin{equation}
+        \hat{M}_z\left(\hat{M}_+Y_{\max}\right) = \left(b_{\max}+\hbar\right)\left(\hat{M}_+Y_{\max}\right)
+        \label{eq:5.134}
+    \end{equation}
+    由于最后一个方程声明$\hat{M}_+Y_{\max}$是$\hat{M}_z$的本征函数，其本征值为$b_{\max}+\hbar$，因此似乎与$b_{\max}$是$b_k$的最大值矛盾。解决这一矛盾的唯一办法就是让$\hat{M}_+Y_{\max} = 0$消失（基于物理原因，我们总是拒绝将零作为本征函数）。因此，
+    \begin{equation}
+        \hat{M}_+Y_{\max} = 0
+        \label{eq:5.135}
+    \end{equation}
+    将将算符作用到式(\ref{eq:5.133})上，并使用式(\ref{eq:5.113})、(\ref{eq:5.132})和(\ref{eq:5.116})，我们有
+    \begin{equation*}
+        0 = \hat{M}_-\hat{M}_+Y_{\max} = \left(\hat{M}^2\hat{M}_z^2-\hbar\hat{M}_z\right)Y_{\max} = \left(c-b_{\max}^2+\hbar b_{\max}\right)Y_{\max}
+    \end{equation*}
+    \begin{equation*}
+        c - b_{\max}^2 - \hbar b_{\max} = 0
+    \end{equation*}
+    \begin{equation}
+        c = b_{\max}^2 + \hbar b_{\max}
+        \label{eq:5.136}
+    \end{equation}
+    类似的论证表明
+    \begin{equation}
+        \hat{M}_-Y_{\min} = 0
+        \label{eq:5.137}
+    \end{equation}
+    通过将升算符作用于这个方程并使用式(\ref{eq:5.112})，我们有
+    \begin{equation*}
+        c = b^2_{\min} - \hbar b_{\min}
+    \end{equation*}
+    从式(\ref{eq:5.136})中减去最后一个等式，得出
+    \begin{equation*}
+        b_{\max}^2 + \hbar^2b_{\max} + \left(\hbar^2b_{\min}- b_{\min}^2\right) = 0
+    \end{equation*}
+    这是一个关于$b_{\max}$的二次方程，使用通常的公式（在量子力学中仍然有效），有
+    \begin{equation*}
+        b_{\max} = -b_{\min}, \quad b_{\max} = b_{\min} - \hbar
+    \end{equation*}
+    由于第二个根表明$b_{\max}$小于于$b_{\min}$，应舍去，所以
+    \begin{equation}
+        b_{\min} = -b_{\max}
+        \label{eq:5.138}
+    \end{equation}
+    除此以外，式(\ref{eq:5.128})表明$b_{\max}$和$b_{\min}$之差是$\hbar$的整数倍：
+    \begin{equation}
+        b_{\max} - b_{\min} = \hbar n, \quad n = 0, 1, 2, \ldots
+        \label{eq:5.139}
+    \end{equation}
+    将(\ref{eq:5.138})代入(\ref{eq:5.139})，我们得到了$\hat{M}_z$的本征值：
+    \begin{equation}
+        \begin{aligned}
+            b_{\max} & = \frac{1}{2}n\hbar \\
+            b_{\max} & = j\hbar \\
+            b_{\min} & = -j\hbar
+        \end{aligned} \quad j = 0, \frac{1}{2}, 1, \frac{3}{2}, 2, \ldots
+        \label{eq:5.140}
+    \end{equation}
+    \begin{equation}
+        b = -j\hbar, \: \left(-j+1\right)\hbar, \: \left(-j+2\right)\hbar, \ldots, \: \left(j-2\right)\hbar, \: \left(j-1\right)\hbar, \: j\hbar
+        \label{eq:5.141}
+    \end{equation}
+    由式(\ref{eq:5.136})，我们找到了$\hat{M}^2$的本征值：
+    \begin{equation}
+        c = j\left(j+1\right)\hbar^2, \quad j = 0, \frac{1}{2}, 1, \frac{3}{2}, 2, \ldots
+        \label{eq:5.142}
+    \end{equation}
+    因此，
+    \begin{equation}
+        \hat{M}^2Y = j\left(j+1\right)\hbar^2Y, \quad j = 0, \frac{1}{2}, 1, \frac{3}{2}, 2, \ldots
+        \label{eq:5.143}
+    \end{equation}
+    \begin{equation}
+        \hat{M}_zY = m_j\hbar Y, \quad m_j = -j, \: -j+1, \: \ldots, \:j-1, \: j
+        \label{eq:5.144}
+    \end{equation}
+
+    通过使用算符间的对易关系，我们已经找到了$\hat{M}^2$和$\hat{M}_z$的本征值。然而，将式(\ref{eq:5.143})和(\ref{eq:5.144})与式(\ref{eq:5.104})和(\ref{eq:5.105})进行比较，我们发现：角量子数除了可以取整数以外，还可以取半整数值。这或许表明：除了轨道角动量以外，可能还有另一种角动量。在第\ref{chap:10}章中，我们将看到自旋角动量可以具有半整数和整数量子数。对于轨道角动量，$T\left(\phi\right)$本征函数的单值定解条件[见(\ref{eq:5.73})之后的等式]消除了角动量量子数的半整数值。[并不是每个人都接受单值性作为波函数的有效边界条件，而且还有许多其他拒绝半整轨道-角动量量子数的理由；见 C. G. Gray, Am. J. Phys., 37, 559 (1969); M. L. Whippman, Am. J. Phys., 34, 656 (1966)。]
+
+    阶梯算符法也可用于求解其他本征值问题，见问题5.36.
 
 
 \section*{总结}
