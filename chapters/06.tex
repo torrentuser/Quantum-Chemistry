@@ -203,6 +203,144 @@
     例如三维盒子中的质点（第 \ref{sec:3.5 The Particle in a Three-Dimensional Box} 节）、三维自由质点（问题 3.42）和三维谐振子（问题 4.20）。
 \section{将双粒子问题简化为两个单粒子问题}
 \label{sec:6.3 Reduction of the Two-Particle Problem to Two One-Particle Problems}
+    氢原子包含两个粒子——质子和电子。对于一个双粒子系统（粒子1的坐标为$\left(x_1,y_1,z_1\right)$，粒子2的坐标为$\left(x_2,y_2,z_2\right)$），粒子间相互作用的势能通常只是粒子相对坐标$x_2-x_1$、$y_2-y_1$和$z_2-z_1$的函数。在这种情况中，双粒子问题可以简化为两个单粒子问题，正如我们现在所要证明的。
+
+    先考虑经典力学处理两个相互作用粒子的情况，令其质量分别为$m_1$和$m_2$。我们用从直角坐标系原点出发的半径矢量$\mathbf{r}_1$和$\mathbf{r}_2$来指定它们的位置（图\ref{fig:6.1}）。粒子1和2的坐标分别为$\left(x_1,y_1,z_1\right)$和$\left(x_2,y_2,z_2\right)$。我们从粒子1到粒子2画出矢量$\mathbf{r} = \mathbf{r}_2 - \mathbf{r}_1$，并用$x$、$y$和$z$表示其分量：
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/6.1.png}
+        \caption{质心位于$C$的双粒子系统}
+        \label{fig:6.1}
+    \end{figure}
+    \begin{equation}
+        \boxed{
+            x = x_2 - x_1, \quad y = y_2 - y_1, \quad z = z_2 - z_1
+        }
+        \label{eq:6.28}
+    \end{equation}
+    $x$、$y$和$z$称为\textbf{相对坐标}或\textbf{内坐标}（relative or internal coordinates）。
+
+    我们现在从原点指向系统的质心$C$画出矢量$\mathbf{R}$，其分量用$X$、$Y$和$Z$表示：
+    \begin{equation}
+        \mathbf{R} = \mathbf{i}X + \mathbf{j}Y + \mathbf{k}Z
+        \label{eq:6.29}
+    \end{equation}
+    根据双粒子系统质心的定义，有
+    \begin{equation}
+        X = \frac{m_1x_1 + m_2x_2}{m_1 + m_2}, \quad Y = \frac{m_1y_1 + m_2y_2}{m_1 + m_2}, \quad Z = \frac{m_1z_1 + m_2z_2}{m_1 + m_2}
+        \label{eq:6.30}
+    \end{equation}
+    这三个方程与矢量方程等价：
+    \begin{equation}
+        \mathbf{R} = \frac{m_1\mathbf{r}_1 + m_2\mathbf{r}_2}{m_1 + m_2}
+        \label{eq:6.31}
+    \end{equation}
+    我们也有
+    \begin{equation}
+        \mathbf{r} = \mathbf{r}_2 - \mathbf{r}_1
+        \label{eq:6.32}
+    \end{equation}
+    我们将式(\ref{eq:6.31})和(\ref{eq:6.32})联立为关于$\mathbf{r}_1$和$\mathbf{r}_2$的方程组，并求解得到
+    \begin{equation}
+        \mathbf{r}_1 = \mathbf{R} - \frac{m_2}{m_1 + m_2}\mathbf{r}, \quad \mathbf{r}_2 = \mathbf{R} + \frac{m_1}{m_1 + m_2}\mathbf{r}
+        \label{eq:6.33}
+    \end{equation}
+    方程(\ref{eq:6.31})和(\ref{eq:6.32})代表了一种将$x_1,y_1,z_1$和$x_2,y_2,z_2$坐标转换为$X,Y,Z$和$x,y,z$坐标的变换。考虑一下在这种变化下，系统的哈密顿量会发生什么变化。用字母顶上的点表示对时间的导数。粒子1的速度为[式(\ref{eq:5.34})]$\mathbf{v}_1 = \mathrm{d}\mathbf{r}_1/\mathrm{d}t = \dot{\mathbf{r}}_1$。系统的动能为两个粒子的动能之和：
+    \begin{equation}
+        T = \frac{1}{2}m_1\left|\dot{\mathbf{r}_1}\right|^2 + \frac{1}{2}m_2\left|\dot{\mathbf{r}_2}\right|^2
+        \label{eq:6.34}
+    \end{equation}
+    将(\ref{eq:6.33})的时间导数代入(\ref{eq:6.34})，我们得到
+    \begin{equation*}
+        \begin{aligned}
+            T = & \frac{1}{2}m_1\left(\dot{\mathbf{R}} - \frac{m_2}{m_1+m_2}\dot{\mathbf{r}}\right)\cdot \left(\dot{\mathbf{R}} - \frac{m_2}{m_1+m_2}\dot{\mathbf{r}}\right) \\
+            & + \frac{1}{2}m_2\left(\dot{\mathbf{R}} + \frac{m_1}{m_1+m_2}\dot{\mathbf{r}}\right)\cdot \left(\dot{\mathbf{R}} + \frac{m_1}{m_1+m_2}\dot{\mathbf{r}}\right) \\
+        \end{aligned}
+    \end{equation*}
+    其中，我们用到了$\left|\mathbf{A}\right|^2 = \mathbf{A}\cdot \mathbf{A}$[式(\ref{eq:5.24})]。使用矢量数量积的分配律，化简后，我们得到
+    \begin{equation}
+        T = \frac{1}{2}\left(m_1 + m_2\right)\left|\dot{\mathbf{R}}\right|^2 + \frac{1}{2}\left(\frac{m_1m_2}{m_1+m_2}\right)\left|\dot{\mathbf{r}}\right|^2
+        \label{eq:6.35}
+    \end{equation}
+    令$M$为系统的总质量：
+    \begin{equation}
+        M \equiv m_1 + m_2
+        \label{eq:6.36}
+    \end{equation}
+    我们定义双粒子系统的\textbf{折合质量}（reduced mass）为
+    \begin{equation}
+        \boxed{
+            \mu \equiv \frac{m_1m_2}{m_1+m_2}
+        }
+        \label{eq:6.37}
+    \end{equation}
+    那么
+    \begin{equation}
+        T = \frac{1}{2}M\left|\dot{\mathbf{R}}\right|^2 + \frac{1}{2}\mu\left|\dot{\mathbf{r}}\right|^2
+        \label{eq:6.38}
+    \end{equation}
+
+    (\ref{eq:6.38})的第一项是质量为$M$的整个系统平动产生的动能。\textbf{平动}（translational motion）是指每个质点都经历相同位移的运动。$\frac{1}{2}M\left|\dot{\mathbf{R}}\right|^2$是位于质心，具有质量$M$的假想粒子的动能。(\ref{eq:6.38})的第二项是两个粒子内运动（相对运动）产生的动能。内运动有两种形式。两个粒子间的距离$r$可以变化（振动），以及矢量$\mathbf{r}$的方向可以发生变化（转动）。注意：$\left|\dot{\mathbf{r}}\right| = \left|\mathrm{d}\mathbf{r}/\mathrm{d}t\right| \neq \mathrm{d}\left|\mathbf{r}\right|/\mathrm{d}t$。
+
+    与六个原始坐标$x_1,y_1,z_1,x_2,y_2,z_2$相对应，我们有六个线性动量：
+    \begin{equation}
+        p_{x_1} = m_1\dot{x}_1, \quad \ldots, \quad p_{z_2} = m_2\dot{z}_2
+        \label{eq:6.39}
+    \end{equation}
+    将(\ref{eq:6.34})和(\ref{eq:6.38})相比较，我们将新坐标$X,Y,Z,x,y,z$的动量定义为
+    \begin{equation*}
+        p_X \equiv M\dot{X}, \quad p_Y \equiv M\dot{Y}, \quad p_Z \equiv M\dot{Z}
+    \end{equation*}
+    \begin{equation*}
+        p_x \equiv \mu\dot{x}, \quad p_y \equiv \mu\dot{y}, \quad p_z \equiv \mu\dot{z}
+    \end{equation*}
+    我们定义两个新动量矢量：
+    \begin{equation*}
+        \mathbf{p}_M = \mathbf{i}M\dot{X} + \mathbf{j}M\dot{Y} + \mathbf{k}M\dot{Z},
+        \quad \text{和} \quad \mathbf{p}_{\mu} = \mathbf{i}\mu\dot{x} + \mathbf{j}\mu\dot{y} + \mathbf{k}\mu\dot{z}
+    \end{equation*}
+    将这些动量代入式(\ref{eq:6.38})，我们得到
+    \begin{equation}
+        T = \frac{\left|\mathbf{p}_M\right|^2}{2M} + \frac{\left|\mathbf{p}_{\mu}\right|^2}{2\mu}
+        \label{eq:6.40}
+    \end{equation}
+
+    现在，我们来考虑势能。我们限制$V$只是两个粒子的相对坐标$x$、$y$和$z$的函数：
+    \begin{equation}
+        V = V\left(x,y,z\right)
+        \label{eq:6.41}
+    \end{equation}
+    (\ref{eq:6.41})的一个例子是相互作用遵守库仑定律的两个带电粒子[见式(\ref{eq:3.53})]。根据对$V$的这一限制，哈密顿函数为
+    \begin{equation}
+        H = \frac{p_M^2}{2M} + \left[\frac{p_{\mu}^2}{2\mu} + V\left(x,y,z\right)\right]
+        \label{eq:6.42}
+    \end{equation}
+
+    现在，假设我们有一个由质量为 $M$ 的粒子和质量为 $\mu$ 的粒子组成的系统，前者不受力，后者受势能函数 $V\left(x,y,z\right)$ 的作用。再假设这些粒子之间没有相互作用。如果$\left(X,Y,Z\right)$表示质量为$M$的粒子的坐标，而$\left(x,y,z\right)$表示质量为$\mu$的粒子的坐标，那么这个假设系统的哈密顿量是什么？显然，它与式(\ref{eq:6.42})完全相同。
+
+    哈密顿量(\ref{eq:6.42})可以看作是两个无相互作用假想粒子的哈密顿量之和：质量为$M$的粒子其哈密顿量为$p_M^2/2M$，质量为$\mu$的粒子其哈密顿量为$p_{\mu}^2/2\mu + V\left(x,y,z\right)$。因此，第\ref{sec:6.2 Noninteracting Particles and Separation of Variables}的结果表明：系统的量子力学能量是两个假想粒子的能量之和[式(\ref{eq:6.23})]：$E = E_M + E_{\mu}$。由式(\ref{eq:6.24})和(\ref{eq:6.42})可知，平动能$E_M$可以通过求解薛定谔方程$\left(\hat{p}_M^2/2M\right)\psi_M = E_M\psi_M$得到。这是质量为$M$的自由粒子的薛定谔方程，因此其可能的本征值全是非负数[式(\ref{neq:2.31})]：$E_m \ge 0$。由式(\ref{eq:6.42})和(\ref{eq:6.24})可知，内运动能$E_{\mu}$可以通过求解以下薛定谔方程得到：
+    \begin{equation}
+        \left[\frac{\hat{p}_{\mu}^2}{2\mu} + V\left(x,y,z\right)\right]\psi_{\mu}\left(x,y,z\right) = E_{\mu}\psi_{\mu}\left(x,y,z\right)
+        \label{eq:6.43}
+    \end{equation}
+
+    这样，我们就把两个粒子根据仅取决于相对坐标 $x$、$y$、$z$ 的势能函数 $V\left(x,y,z\right)$ 进行相互作用的问题分离成了两个独立的单粒子问题：(1)质量为$M$的整体系统平动，它只是在系统能量的基础上增加了一个恒非负的能量$E_M$；(2)通过求解质量为 $\mu$ 的假想粒子的薛定谔方程 (\ref{eq:6.43})来处理相对运动或内部运动，该粒子的坐标为相对坐标 $x$、$y$、$z$，并在势能 $V\left(x,y,z\right)$ 的作用下运动。
+
+    例如，对于包含一个电子(e)和一个质子(p)的氢原子，原子的总能量为$E = E_M + E_{\mu}$，其中的$E_M$是质量为$M = m_e+m_p$的整个原子在空间中的平动能，其中的$E_{\mu}$是通过将$\mu = m_em_p/(m_e+m_p)$代入(\ref{eq:6.43})得到的，$V$ 是电子和质子相互作用的库仑定律势能；见第 \ref{sec:6.5 The Hydrogen Atom} 节。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{双粒子的刚性转子模型}
 \label{sec:6.4 The Two-Particle Rigid Rotor}
