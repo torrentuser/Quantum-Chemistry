@@ -1,12 +1,206 @@
 % ===== CHAPTER 6 =====
 \chapter{氢原子}
 \label{chap:6}
+    
 \section{单粒子中心力问题}
 \label{sec:6.1 The One-Particle Central Force Problem}
+    在研究氢原子之前，我们先来看看单个粒子在中心力作用下运动这一更为普遍的问题。本节的结果适用于任何中心力问题。例如氢原子（第 \ref{sec:6.5 The Hydrogen Atom} 节）和各向同性的三维谐振子（第 \ref{sec:6.3 Reduction of the Two-Particle Problem to Two One-Particle Problems} 节）。
 
-\section{无相互作用的粒子和变量分离}
+    \textbf{中心力}（central force）是由球面对称的势能函数导出的，这意味着中心力只是粒子与原点距离的函数$V = V\left(r\right)$。力和势能的关系由式(\ref{eq:5.31})给出：
+    \begin{equation}
+        F - \nabla V\left(x,y,z\right) = -\mathbf{i}\left(\partial V/\partial x\right) - \mathbf{j}\left(\partial V/\partial y\right) - \mathbf{k}\left(\partial V/\partial z\right)
+        \label{eq:6.1}
+    \end{equation}
+    (\ref{eq:6.1})中的偏导数可以用链式法则求得[式(\ref{eq:5.53})- \ref{eq:5.55}]。在这个例子中，由于$V$只是$r$的函数，所以我们有$\left(\partial V/\partial\theta\right)_{r,\phi} = 0$和$\left(\partial V/\partial\phi\right)_{r,\theta} = 0$。因此，
+    \begin{equation}
+        \left(\frac{\partial V}{\partial x}\right)_{y,z} = \frac{\mathrm{d}V}{\mathrm{d}r}\left(\frac{\partial r}{\partial x}\right)_{y,z} = \frac{x}{r}\frac{\mathrm{d}V}{\mathrm{d}r}
+        \label{eq:6.2}
+    \end{equation}
+    \begin{equation}
+        \left(\frac{\partial V}{\partial y}\right)_{x,z} = \frac{y}{r}\frac{\mathrm{d}V}{\mathrm{d}r}, \quad \left(\frac{\partial V}{\partial z}\right)_{x,y} = \frac{z}{r}\frac{\mathrm{d}V}{\mathrm{d}r}
+        \label{eq:6.3}
+    \end{equation}
+    其中我们用到了式(\ref{eq:5.57})和(\ref{eq:5.58})。则方程(\ref{eq:6.1})可以写成
+    \begin{equation}
+        \mathbf{F} = -\frac{1}{r}\frac{\mathrm{d}V}{\mathrm{d}r}\left(x\mathbf{i}+y\mathbf{j}+z\mathbf{k}\right) = -\frac{\mathrm{d}V\left(r\right)}{\mathrm{d}r}\frac{\mathbf{r}}{r}
+        \label{eq:6.4}
+    \end{equation}
+    其中$\mathbf{r}$的计算使用了式(\ref{eq:5.33})。式(\ref{eq:6.4})中的$\mathbf{r}/r$是径向上的单位矢量。因此中心力是径向的。
+
+    现在，让我们来看看受中心力作用的单粒子量子力学。其哈密顿算符为
+    \begin{equation}
+        \hat{H} = \hat{T} + \hat{V} = -\left(\hbar^2/2m\right)\nabla^2 + V\left(r\right)
+        \label{eq:6.5}
+    \end{equation}
+    其中$\nabla^2 \equiv \partial^2/\partial x^2 + \partial^2/\partial y^2 + \partial^2/\partial z^2$[式(\ref{eq:3.46})]。由于$V$是球对称的，我们将在球坐标系中进行计算。因此，我们希望将拉普拉斯算符转换为球坐标的形式。我们已经有了$\partial/\partial x$、$\partial/\partial y$和$\partial /\partial z$的表达式[式(\ref{eq:5.62})-(\ref{eq:5.65})]，通过将这些算符平方并相加，我们就得到了拉普拉斯算符。该计算留作课后习题。结果为（问题6.4）：
+    \begin{equation}
+        \nabla^2 = \frac{\partial^2}{\partial r^2} + \frac{2}{r}\frac{\partial}{\partial r} + \frac{1}{r^2}\frac{\partial^2}{\partial\theta^2} + \frac{1}{r^2}\cot\theta\frac{\partial}{\partial\theta} + \frac{1}{r^2\sin^2\theta}\frac{\partial^2}{\partial\phi^2}
+        \label{eq:6.6}
+    \end{equation}
+
+    回过头来看式(\ref{eq:5.68})，其中给出了单粒子轨道角动量大小平方的算符$\hat{L}^2$，我们可以看到
+    \begin{equation}
+        \nabla^2 = \frac{\partial^2}{\partial r^2} + \frac{2}{r}\frac{\partial}{\partial r} - \frac{1}{r^2\hbar^2}\hat{L}^2
+        \label{eq:6.7}
+    \end{equation}
+    哈密顿算符(\ref{eq:6.5})变为
+    \begin{equation}
+        \hat{H} = -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial r^2} + \frac{2}{r}\frac{\partial}{\partial r}\right) + \frac{1}{2mr^2}\hat{L}^2 + V\left(r\right)
+        \label{eq:6.8}
+    \end{equation}
+
+    在经典力学中，受中心力作用的粒子其角动量是守恒的（第\ref{sec:5.3 Angular Momentum of a One-Particle System}节）。在量子力学中，我们可能会问，我们是否可以拥有能量和角动量都有确定值的状态？为了使$\hat{H}$的本征函数组也是$\hat{L}^2$的本征函数，对易子$\left[\hat{H},\hat{L}^2\right]$必须为零。我们有
+    \begin{equation*}
+        \left[\hat{H},\hat{L}^2\right] = \left[\hat{T},\hat{L}^2\right] + \left[\hat{V},\hat{L}^2\right]
+    \end{equation*}
+    \begin{equation*}
+        \left[\hat{T}, \hat{L}^2\right] = \left[-\frac{\hbar^2}{2m}\left(\frac{\partial ^2}{\partial r^2} + \frac{2}{r}\frac{\partial}{\partial r}\right) + \frac{1}{2mr^2}\hat{L}^2, \hat{L}^2\right]
+    \end{equation*}
+    \begin{equation}
+        \left[\hat{T},\hat{L}^2\right] = -\frac{\hbar^2}{2m}\left[\frac{\partial^2}{\partial r^2} + \frac{2}{r}\frac{\partial}{\partial r}, \hat{L}^2\right] + \frac{1}{2m}\left[\frac{1}{r^2}\hat{L}^2, \hat{L}^2\right]
+        \label{eq:6.9}
+    \end{equation}
+    回忆$\hat{L}^2$只是$\theta$和$\phi$的函数，而不是$r$的函数[式(\ref{eq:5.68})]。因此它与任何包含$r$的算符可对易。[为了证明这一结论，我们必须使用(\ref{eq:5.47})类似的关系，但将$x$和$z$分别换成$r$和$\theta$。]因此，式(\ref{eq:6.9})中第一项的对易子为零。此外，由于任何算符都与它自己对易，式(\ref{eq:6.9})第二项的对易子也为零。因此，$\left[\hat{T},\hat{L}^2\right] = 0$。同样地，由于$\hat{L}^2$不包含$r$，$V$只是$r$的函数，我们有$\left[\hat{V},\hat{L}^2\right] = 0$。因此，
+    \begin{equation}
+        \left[\hat{H},\hat{L}^2\right] = 0, \quad \text{若} V = V\left(r\right)
+        \label{eq:6.10}
+    \end{equation}
+    当势能函数与$\theta$和$\phi$都无关时，$\hat{H}$和$\hat{L}^2$可对易。
+
+    现在，我们来考虑算符$\hat{L}_z = -\mathrm{i}\hbar\partial/\partial\phi$[式(\ref{eq:5.67})]。由于$\hat{L}_z$不包含$r$，因此它与$\hat{L}^2$可对易[式(\ref{eq:5.50})]，因此$\hat{H}$(\ref{eq:6.8})和$\hat{L}_z$也可对易。我们有
+    \begin{equation}
+        \left[\hat{H}, \hat{L}_z\right] = 0, \quad \text{若} V = V\left(r\right)
+        \label{eq:6.11}
+    \end{equation}
+
+    因此，我们现在有了中心力问题中，一组同时是$\hat{H}$、$\hat{L}^2$和$\hat{L}_z$的本征函数的函数。令$\psi$表示这些共同本征函数：
+    \begin{equation}
+        \boxed{
+            \hat{H}\psi = E\psi
+        }
+        \label{eq:6.12}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            \hat{L}^2\psi = l\left(l+1\right)\hbar^2\psi, \quad l = 0, 1, 2, \ldots
+        }
+        \label{eq:6.13}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            \hat{L}_z\psi = m\hbar\psi, \quad m = -l, -l+1, \ldots, l-1, l
+        }
+        \label{eq:6.14}
+    \end{equation}
+    其中，我们用到了式(\ref{eq:5.104})和式(\ref{eq:5.105})。
+
+    根据式(\ref{eq:6.8})和(\ref{eq:6.13})，对薛定谔方程(\ref{eq:6.12})，有
+    \begin{equation*}
+        -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial r^2} + \frac{2}{r}\frac{\partial}{\partial r}\right) + \frac{1}{2mr^2}\hat{L}^2\psi + V\left(r\right)\psi = E\psi
+    \end{equation*}
+    \begin{equation}
+        -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial r^2} + \frac{2}{r}\frac{\partial}{\partial r}\right) + \frac{l\left(l+1\right)\hbar^2}{2mr^2}\psi + V\left(r\right)\psi = E\psi
+        \label{eq:6.15}
+    \end{equation}
+
+    $\hat{L}^2$的本征函数是球谐函数$Y_l^m\left(\theta, \phi\right)$,由于$\hat{L}^2$不包含$r$，我们可以将任意一个关于$r$的函数与球谐函数相乘，新函数依然是$\hat{L}^2$和$\hat{L}_z$的本征函数。因此，
+    \begin{equation}
+        \boxed{
+            \psi = R\left(r\right)Y_l^m\left(\theta, \phi\right)
+        }
+        \label{eq:6.16}
+    \end{equation}
+    将(\ref{eq:6.16})代入(\ref{eq:6.15})，然后两边同除以$Y_l^m$，得到关于未知函数$R\left(r\right)$的微分方程：
+    \begin{equation}
+        -\frac{\hbar^2}{2m}\left(R^{\prime\prime}+ \frac{2}{r}R^{\prime}\right) + \frac{l\left(l+1\right)\hbar^2}{2mr^2}R + V\left(r\right)R = ER\left(r\right)
+        \label{eq:6.17}
+    \end{equation}
+
+    我们已经证明：\textit{对于任意势能函数$V\left(r\right)$是球对称的单粒子问题，定态波函数为$\psi = R\left(r\right)Y_l^m\left(\theta, \phi\right)$，其中$R\left(r\right)$满足微分方程(\ref{eq:6.17})。}通过指定式(\ref{eq:6.17})中势能函数$V\left(r\right)$的形式，我们可以针对某个特定问题解决它。
+
+\section{非相互作用粒子和变量分离}
 \label{sec:6.2 Noninteracting Particles and Separation of Variables}
+    到目前为止，我们只解决了单粒子量子力学问题。氢原子是一个双粒子系统，作为处理氢原子的第一步，我们首先考虑一个更简单的情况，即两个不相互作用的粒子。
 
+    假设一个系统由两个无相互作用的粒子1和2组成。令$q_1$和$q_2$分别表示粒子1的$\left(x_1,y_1,z_1\right)$坐标和粒子2的$\left(x_2,y_2,z_2\right)$坐标。由于粒子之间没有相互作用力，系统的经典机械能就是两个粒子的能量之和：$E = E_1+E_2 = T_1+V_1 + T_2 + V_2$,经典哈密顿量是两个粒子哈密顿量之和：$H = H_1 + H_2$。因此，系统的哈密顿算符为
+    \begin{equation*}
+        \hat{H} = \hat{H}_1 + \hat{H}_2
+    \end{equation*}
+    其中$\hat{H}_1$只和坐标$q_1$有关，动量算符$\hat{p}_1$对应于$q_1$。系统的薛定谔方程为
+    \begin{equation}
+        \left(\hat{H}_1 + \hat{H}_2\right)\psi\left(q_1,q_2\right) = E\psi\left(q_1,q_2\right)
+        \label{eq:6.18}
+    \end{equation}
+    我们尝试用分离变量法来求解(\ref{eq:6.18})，令
+    \begin{equation}
+        \psi\left(q_1,q_2\right) = G_1\left(q_1\right)G_2\left(q_2\right)
+        \label{eq:6.19}
+    \end{equation}
+    我们有
+    \begin{equation}
+        \hat{H}_1G_1\left(q_1\right)G_2\left(q_2\right) + \hat{H}_2G_1\left(q_1\right)G_2\left(q_2\right) = EG_1\left(q_1\right)G_2\left(q_2\right)
+        \label{eq:6.20}
+    \end{equation}
+    由于$\hat{H}_1$只包含粒子1的位置和动量算符，我们有$\hat{H}_1\left[G_1\left(q_1\right)G_2\left(q_2\right)\right] = G_2\left(q_2\right)\hat{H}_1G_1\left(q_1\right)$，因此，就$\hat{H}_1$而言，$G_2\left(q_2\right)$是常数。使用这个方程以及类似的关于$\hat{H}_2$的方程，我们发现(\ref{eq:6.20})变为
+    \begin{equation}
+        G_2\left(q_2\right)\hat{H}_1G_1\left(q_1\right) + G_1\left(q_1\right)\hat{H}_2G_2\left(q_2\right) = EG_1\left(q_1\right)G_2\left(q_2\right)
+        \label{eq:6.21}
+    \end{equation}
+    \begin{equation}
+        \frac{\hat{H}_1G_1\left(q_1\right)}{G_1\left(q_1\right)} + \frac{\hat{H}_2G_2\left(q_2\right)}{G_2\left(q_2\right)} = E
+        \label{eq:6.22}
+    \end{equation}
+    现在，通过与式 (\ref{eq:3.65}) 相同的论证，我们得出结论：在 (\ref{eq:6.22}) 中，左边的每项必须是常数。令$E_1$和$E_2$分别表示这些常数，我们有
+    \begin{equation*}
+        \frac{\hat{H}_1G_1\left(q_1\right)}{G_1\left(q_1\right)} = E_1, \quad \frac{\hat{H}_2G_2\left(q_2\right)}{G_2\left(q_2\right)} = E_2
+    \end{equation*}
+    \begin{equation}
+        E = E_1 + E_2
+        \label{eq:6.23}
+    \end{equation}
+    因此，当系统由两个无相互作用的粒子组成时，通过求解下式，我们可以将双粒子问题简化为两个单粒子问题：
+    \begin{equation}
+        \hat{H}_1G_1\left(q_1\right) = E_1G_1\left(q_1\right), \quad \hat{H}_2G_2\left(q_2\right) = E_2G_2\left(q_2\right)
+        \label{eq:6.24}
+    \end{equation}
+    它们是每个粒子的独立薛定谔方程。
+
+    将该结果推广到$n$个无相互作用的粒子，我们有
+    \begin{equation*}
+        \hat{H} = \hat{H}_1 + \hat{H}_2 + \ldots + \hat{H}_n
+    \end{equation*}
+    \begin{equation}
+        \boxed{
+                \psi\left(q_1,q_2,\ldots,q_n\right) = G_1\left(q_1\right)G_2\left(q_2\right)\ldots G_n\left(q_n\right)
+        }
+        \label{eq:6.25}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            E = E_1 + E_2 + \ldots + E_n
+        }
+        \label{eq:6.26}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            \hat{H}_iG_i = E_iG_i, \quad i = 1, 2, \ldots, n
+        }
+        \label{eq:6.27}
+    \end{equation}
+    \textit{对于一个无相互作用粒子系统，能量是每个粒子各自能量的总和，波函数是每个粒子波函数的乘积。利用哈密顿算符$\hat{H}_i$，求解粒子$i$的薛定谔方程，即可求得粒子$i$的波函数$G_i$。}
+
+    这些结果也适用于单个粒子，其哈密顿算符是每个坐标的独立项之和：
+    \begin{equation*}
+        \hat{H} = \hat{H}_x\left(\hat{x},\hat{p}_x\right) + \hat{H}_y\left(\hat{y},\hat{p}_y\right) + \hat{H}_z\left(\hat{z},\hat{p}_z\right)
+    \end{equation*}
+    在这种情况下，我们得出结论：波函数和能量分别为
+    \begin{equation*}
+        \psi\left(x,y,z\right) = F\left(x\right)G\left(y\right)K\left(z\right), E = E_x + E_y + E_z
+    \end{equation*}
+    \begin{equation*}
+        \hat{H}_xF\left(x\right) = E_xF\left(x\right), \quad \hat{H}_yG\left(y\right) = E_yG\left(y\right), \quad \hat{H}_zK\left(z\right) = E_zK\left(z\right)
+    \end{equation*}
+    例如三维盒子中的质点（第 \ref{sec:3.5 The Particle in a Three-Dimensional Box} 节）、三维自由质点（问题 3.42）和三维谐振子（问题 4.20）。
 \section{将双粒子问题简化为两个单粒子问题}
 \label{sec:6.3 Reduction of the Two-Particle Problem to Two One-Particle Problems}
 
