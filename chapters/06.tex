@@ -328,25 +328,169 @@
 
     例如，对于包含一个电子(e)和一个质子(p)的氢原子，原子的总能量为$E = E_M + E_{\mu}$，其中的$E_M$是质量为$M = m_e+m_p$的整个原子在空间中的平动能，其中的$E_{\mu}$是通过将$\mu = m_em_p/(m_e+m_p)$代入(\ref{eq:6.43})得到的，$V$ 是电子和质子相互作用的库仑定律势能；见第 \ref{sec:6.5 The Hydrogen Atom} 节。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{双粒子的刚性转子模型}
 \label{sec:6.4 The Two-Particle Rigid Rotor}
+    在求解氢原子的薛定谔方程之前，我们先来处理双粒子的刚性转子。这是一个双粒子系统，粒子之间的距离固定，由一根长度为$d$的刚性无质量杆连接。对于这个问题，图\ref{fig:6.1}中的矢量$\mathbf{r}$的长度$\left|\mathbf{r}\right|$是常数$d$。因此（见第\ref{sec:6.3 Reduction of the Two-Particle Problem to Two One-Particle Problems}节），内运动的动能完全是转动能。转子的能量完全由动能提供，以及
+    \begin{equation}
+        V=0
+        \label{eq:6.44}
+    \end{equation}
+    方程(\ref{eq:6.44})是(\ref{eq:6.41})的一个特例，因此，我们可以利用上一节得到的结果，将系统的平动分离出来。我们将只关注转动能量。旋转运动的哈密顿算符由(\ref{eq:6.43})中括号内的项给出：
+    \begin{equation}
+        \hat{H} = \frac{\hat{p}_{\mu}^2}{2\mu} = -\frac{\hbar^2}{2\mu}\nabla^2, \quad \mu = \frac{m_1m_2}{m_1+m_2}
+        \label{eq:6.45}
+    \end{equation}
+    其中$m_1$和$m_2$是两个粒子的质量。质量为$\mu$的假想粒子的坐标为$m_1$和$m_2$之间的相对坐标。[式(\ref{eq:6.28})]。
+
+    与使用相对笛卡尔坐标$x$、$y$和$z$不同，使用相对球坐标$r$、$\theta$和$\phi$来描述转子会更有成效。$r$坐标与图\ref{fig:6.1}中的矢量$\mathbf{r}$的长度相同，由于$m_1$和$m_2$受限于保持固定的距离，我们有$r=d$。因此，这个问题等价于一个质量为$\mu$的粒子受限在半径为$r$的球面上运动。由于径向坐标是恒定的，波函数将只是$\theta$和$\phi$的函数。因此，对波函数进行运算时，式(\ref{eq:6.8})中拉普拉斯算符的前两项为零，可以省略。换个角度看问题，我们注意到式(\ref{eq:6.8})中涉及$r$导数的算符对应于径向运动的动能，而由于没有径向运动，$\hat{H}$中不包含$r$的导数。
+
+    由于$V=0$是$V=V\left(r\right)$的特例，第\ref{sec:6.1 The One-Particle Central Force Problem}节的结论表明：本征函数由式(\ref{eq:6.16})给出，其中$r$的因子被省略：
+    \begin{equation}
+        \psi = Y_l^m\left(\theta, \phi\right)
+        \label{eq:6.46}
+    \end{equation}
+    其中，转动角量子数用$J$而不是$l$来表示。
+
+    哈密顿算符由式(\ref{eq:6.8})给出，其中省略了$r$的导数及$V\left(r\right) = 0$。因此，
+    \begin{equation*}
+        \hat{H} = \left(2\mu d^2\right)^{-1}\hat{L}^2
+    \end{equation*}
+    使用式(\ref{eq:6.13})，有
+    \begin{equation*}
+        \begin{aligned}
+            \hat{H}\psi & = E\psi \\
+            \left(2\mu d^2\right)^{-1}\hat{L}^2Y_J^m\left(\theta, \phi\right) & = EY_J^m\left(\theta, \phi\right) \\
+            \left(2\mu d^2\right)^{-1}J\left(J+1\right)\hbar^2Y_J^m\left(\theta, \phi\right) & = EY_J^m\left(\theta, \phi\right) \\
+        \end{aligned}
+    \end{equation*}
+    \begin{equation}
+        E = \frac{J\left(J+1\right)\hbar^2}{2\mu d^2}
+        \label{eq:6.47}
+    \end{equation}
+
+    由$n$个粒子组成的系统绕空间某一特定轴旋转产生的\textbf{转动惯量}（moment of inertia）$I$定义为
+    \begin{equation}
+        I \equiv \sum_{i=1}^{n}m_i\rho_i^2
+        \label{eq:6.48}
+    \end{equation}
+    其中$m_i$是粒子$i$的质量，$\rho_i$是粒子$i$到旋转轴的垂直距离。$I$的值与选择的旋转轴有关。对于双粒子的刚性转子，我们选择通过质心并垂直于连接 $m_1$ 和 $m_2$ 的直线作为我们的轴线（图 \ref{fig:6.2}）。如果我们将转子置于坐标系的$x$轴上，使得质心$C$位于原点，连接$m_1$和$m_2$的直线与$x$轴重合，那么$C$的坐标为$\left(0,0,0\right)$，$m_1$的坐标为$\left(-\rho_1,0,0\right)$，$m_2$的坐标为$\left(\rho_2,0,0\right)$。将这些坐标带入式(\ref{eq:6.30})，我们得到
+    \begin{equation}
+        m_1\rho_1 = m_2\rho_2
+        \label{eq:6.49}
+    \end{equation}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/6.2.png}
+        \caption{
+            \centering\parbox{\linewidth}{
+                \centering
+                用于计算双粒子刚性转子 \\
+                转动惯量的轴线（虚线）。\\
+                $C$是质心。
+            }
+        }
+        \label{fig:6.2}
+    \end{figure}
+    转子绕我们选择的轴旋转的转动惯量为
+    \begin{equation}
+        I = m_1\rho_1^2 + m_2\rho_2^2
+        \label{eq:6.50}
+    \end{equation}
+    使用式(\ref{eq:6.49})，我们可以将(\ref{eq:6.50})写成（问题6.14）
+    \begin{equation}
+        \boxed{
+            I = \mu d^2
+        }
+        \label{eq:6.51}
+    \end{equation}
+    其中$\mu \equiv m_1m_2/(m_1+m_2)$是系统的折合质量，$d \equiv \rho_1 + \rho_2$是$m_1$和$m_2$之间的距离。双粒子刚性转子允许的能级由式(\ref{eq:6.47})给出：
+    \begin{equation}
+        \boxed{
+            E = \frac{J\left(J+1\right)\hbar^2}{2I}, \quad J = 0, 1, 2, \ldots
+        }
+        \label{eq:6.52}
+    \end{equation}
+    最低的能级满足$E=0$，所以没有零点转动能。转动能为零，因此转子的角动量为零，这并不违反不确定性原理；回顾公式(\ref{eq:5.105})后面的讨论。请注意：$E$随着$J^2+J$的增大而增大，因此相邻旋转能级的间隔随着$J$的增大而增大。
+
+    转子的能级(\ref{eq:6.52})是简并的吗？能量只取决于$J$，而波函数(\ref{eq:6.46})同时取决于$J$和$m$，其中$m\hbar$是转子角动量在$z$方向上的分量。对于每个$J$的值，都有$2J+1$个$m$的可能值，从$-J$到$J$。因此，能级是$\left(2J+1\right)$-重简并的。简并能级的状态具有不同的转子绕空间固定轴方向的角动量矢量方向。
+
+    波函数(\ref{eq:6.46})中的$\theta$和$\phi$角是两个质点的相对坐标。如果我们建立一个笛卡尔坐标系，令转子的质心与原点重合，那么$\theta$和$\phi$将如图\ref{fig:6.3}所示。该坐标系与转子质心的平移运动相同，但不在空间中转动。
+
+    转动角动量$\left[J\left(J+1\right)\hbar^2\right]^{1/2}$是两个粒子相对于系统质心$C$处原点的角动量。
+
+    双原子分子的旋转能级可以用双粒子刚性转子模型(\ref{eq:6.52})来很好地近似。研究发现（\textit{Levine, Molecular Spectroscopy}, Section 4.4 ）：当双原子分子吸收或发射辐射时，允许的纯转动跃迁由以下选律给出：
+    \begin{equation}
+        \Delta J = \pm 1
+        \label{eq:6.53}
+    \end{equation}
+    此外，分子必须具有非零偶极矩，才能显示出纯转动光谱。\textit{纯转动跃迁}（pure rotational transition）是指只有转动量子数发生变化的跃迁。[振动-转动跃迁（第\ref{sec:4.3 Vibrations of Diatomic Molecules}节）涉及振动量子数和转动量子数的变化。]相邻较低旋转能级之间的能级间隔明显小于振动能级之间的能级间隔，纯转动光谱位于微波（或远红外）区域。因此，双原子分子纯转动光谱线的频率（近似值）为：
+    \begin{equation}
+        \nu = \frac{E_{J+1} - E_J}{h} = \frac{\left[\left(J+1\right)\left(J+2\right) - J\left(J+1\right)\right]\hbar^2}{8\pi^2 I} = 2\left(J+1\right)B
+        \label{eq:6.54}
+    \end{equation}
+    \begin{equation}
+        B \equiv h/8\pi^2 I, \quad J = 0, 1, 2, \ldots
+        \label{eq:6.55}
+    \end{equation}
+    $B$称为分子的\textbf{转动常数}（rotational constant）。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/6.3.png}
+        \caption{双粒子刚性转子的坐标系}
+        \label{fig:6.3}
+    \end{figure}
+
+    在室温下，具有较低$J$值的双粒子旋转能级间隔通常小于$kT$或与$kT$处于同一数量级，因此，玻尔兹曼分布律(\ref{eq:4.63})表明：室温下许多转动能级可以被显著占据。$J=0$的双原子分子吸收辐射后会产生一条频率为$2B$的谱线（对应$J = 0 \to 1$的跃迁），$J=1$的分子吸收辐射后会产生一条频率为$4B$的谱线（对应$J = 1 \to 2$的跃迁），$J=2$的分子吸收辐射后会产生一条频率为$6B$的谱线（对应$J = 2 \to 3$的跃迁），依此类推。见图\ref{fig:6.4}。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/6.4.png}
+        \caption{双粒子刚性转子吸收跃迁}
+        \label{fig:6.4}
+    \end{figure}
+
+    通过测量转动吸收频率可以得到$B$的值。根据$B$，我们可以得到分子的转动惯量$I$，根据$I$我们可以得到键长$d$。找到的$d$值是$v=0$振动运动的平均值。由于图4.6和图13.1中的势能曲线不对称，$d$比图13.1中的平衡键长略长。
+    % 此处记得改引用！！！！！
+
+    如第\ref{sec:4.3 Vibrations of Diatomic Molecules}节所述，$^1\mathrm{H}^{35}\mathrm{Cl}$和$^1\mathrm{H}^{37}\mathrm{Cl}$等同位素分子的电子能量曲线$U\left(R\right)$几乎相同，因此其平衡核间距也几乎相同。然而，不同的同位素质量会产生不同的转动惯量，从而产生不同的转动吸收频率。
+
+    由于分子不是刚性的，因此双原子分子的旋转能级与刚性转子的旋转能级略有不同。由式(\ref{eq:6.52})和(\ref{eq:6.55})，双粒子刚性转子的能级为$E_{rot} = BhJ\left(J+1\right)$。由于分子振动的非谐性（图\ref{fig:4.6}、\ref{fig:4.5}），当振动量子数$v$增加时，核间距平均值也会增加，所以$v$增加时，转动惯量$I$也会增加，则转动常数$B$减小。为了考虑$B$对$v$的依赖性，在$E_{rot}$中用$B_v$代替$B$。振动能级$v$的\textit{平均转动常数}（mean rotational constant）$B_v$满足$B_v = B_e - \alpha_e\left(v+1/2\right)$，其中$B_e$是利用图\ref{fig:4.5}和\ref{fig:4.5}势能曲线底部的平衡核间距$R_e$计算得出的，\textit{振转耦合常数}（vibrational-rotational coupling constant）$\alpha_e$是一个大于零的常数（因分子的不同而异），且远小于$B_e$。此外，随着转动能量的增加，平衡核间距有非常轻微的增加[这种现象称为\textit{离心形变}（centrifugal distortion）]。这就在$E_{rot}$中引入了一项$-hDJ^2\left(J+1\right)^2$，其中离心形变常数$D$是一个极小的正常数，随着分子的不同而异。例如，对$^{12}\mathrm{C}^{15}\mathrm{O}$分子，$B_0 = 57636 \: \mathrm{MHz}$，$\alpha_e = 540 \: \mathrm{MHz}$，$D = 0.18 \: \mathrm{MHz}$。如第\ref{sec:4.3 Vibrations of Diatomic Molecules}节所述，对于轻双原子分子，几乎所有分子在室温下都处在基态振动能级，观测到的转动常数为$B_0$。
+
+    有关双原子分子核运动的更多讨论，请参见第\ref{sec:13.2 Nuclear Motion in Diatomic Molecules}节。关于多原子分子的转动能，请参见\textit{Townes and Schawlow}, chaps. 2-4。
+
+    \begin{examplebox}
+        \textbf{例题：}分子$^{12}\mathrm{C}^{32}\mathrm{S}$的最低频率纯转动吸收线位于$48991.0 \: \mathrm{MHz}$。计算分子的键长。
+        \\
+        \\
+        最低频率的转动吸收为$J = 0 \to 1$线。根据式(\ref{eq:1.4 Higher state to lower state delta energy})、(\ref{eq:6.52})和(\ref{eq:6.51})，有
+        \begin{equation*}
+            h\nu = E_{upper} - E_{lower} = \frac{1\left(2\right)\hbar^2}{2\mu d^2} - \frac{0\left(1\right)\hbar^2}{2\mu d^2}
+        \end{equation*}
+        其中$d = \left(h/4\pi^2\nu\mu\right)^{1/2}$。使用附录中的表A.3，有
+        \begin{equation*}
+            \mu = \frac{m_1m_2}{m_1 + m_2} = \frac{12\left(31.97207\right)}{\left(12+31.97207\right)}\frac{1}{6.02214\times 10^{23}} \: \mathrm{g} = 1.44885 \times 10^{-23} \: \mathrm{kg}
+        \end{equation*}
+        质量的国际单位为千克，则
+        \begin{equation*}
+            \begin{aligned}
+                d = \frac{1}{2\pi}\left(\frac{h}{\nu_{0 \to 1}\mu}\right)^{1/2} & = \frac{1}{2\pi}\left[\frac{6.62607 \times 10^{-34} \: \mathrm{J \cdot s}}{\left(48991.0 \times 10^6\: \mathrm{s}^{-1}\right) \left(1.44885 \times 10^{-26} \: \mathrm{kg}\right)}\right]^{1/2} \\
+                & = 1.5377 \times 10^{-10} \: \mathrm{m} = 1.5377 \: \mathrm{Å}
+            \end{aligned}
+        \end{equation*}
+        \\
+        \\
+        \textbf{练习：}分子$^{12}\mathrm{C}^{16}\mathrm{O}$的$J = 1 \to 2$的纯转动跃迁位于$230.538 \: \mathrm{GHz}$。（1 GHz = $10^9$ Hz。）计算分子的键长。（\textit{答案：}$1.1309 \times 10^{-10} \: \mathrm{m}$。）
+    \end{examplebox}
 
 \section{氢原子}
 \label{sec:6.5 The Hydrogen Atom}
+
+
+
+
+
+
+
+
 
 \section{束缚态氢原子波函数}
 \label{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions}
