@@ -453,7 +453,7 @@
 
     如第\ref{sec:4.3 Vibrations of Diatomic Molecules}节所述，$^1\mathrm{H}^{35}\mathrm{Cl}$和$^1\mathrm{H}^{37}\mathrm{Cl}$等同位素分子的电子能量曲线$U\left(R\right)$几乎相同，因此其平衡核间距也几乎相同。然而，不同的同位素质量会产生不同的转动惯量，从而产生不同的转动吸收频率。
 
-    由于分子不是刚性的，因此双原子分子的旋转能级与刚性转子的旋转能级略有不同。由式(\ref{eq:6.52})和(\ref{eq:6.55})，双粒子刚性转子的能级为$E_{rot} = BhJ\left(J+1\right)$。由于分子振动的非谐性（图\ref{fig:4.6}、\ref{fig:4.5}），当振动量子数$v$增加时，核间距平均值也会增加，所以$v$增加时，转动惯量$I$也会增加，则转动常数$B$减小。为了考虑$B$对$v$的依赖性，在$E_{rot}$中用$B_v$代替$B$。振动能级$v$的\textit{平均转动常数}（mean rotational constant）$B_v$满足$B_v = B_e - \alpha_e\left(v+1/2\right)$，其中$B_e$是利用图\ref{fig:4.5}和\ref{fig:4.5}势能曲线底部的平衡核间距$R_e$计算得出的，\textit{振转耦合常数}（vibrational-rotational coupling constant）$\alpha_e$是一个大于零的常数（因分子的不同而异），且远小于$B_e$。此外，随着转动能量的增加，平衡核间距有非常轻微的增加[这种现象称为\textit{离心形变}（centrifugal distortion）]。这就在$E_{rot}$中引入了一项$-hDJ^2\left(J+1\right)^2$，其中离心形变常数$D$是一个极小的正常数，随着分子的不同而异。例如，对$^{12}\mathrm{C}^{15}\mathrm{O}$分子，$B_0 = 57636 \: \mathrm{MHz}$，$\alpha_e = 540 \: \mathrm{MHz}$，$D = 0.18 \: \mathrm{MHz}$。如第\ref{sec:4.3 Vibrations of Diatomic Molecules}节所述，对于轻双原子分子，几乎所有分子在室温下都处在基态振动能级，观测到的转动常数为$B_0$。
+    由于分子不是刚性的，因此双原子分子的旋转能级与刚性转子的旋转能级略有不同。由式(\ref{eq:6.52})和(\ref{eq:6.55})，双粒子刚性转子的能级为$E_{rot} = BhJ\left(J+1\right)$。由于分子振动的非谐性（图\ref{fig:4.6}、\ref{fig:4.5}），当振动量子数$v$增加时，核间距平均值也会增加，所以$v$增加时，转动惯量$I$也会增加，则转动常数$B$减小。为了考虑$B$对$v$的依赖性，在$E_{rot}$中用$B_v$代替$B$。振动能级$v$的\textit{平均转动常数}（mean rotational constant）$B_v$满足$B_v = B_e - \alpha_e\left(v+1/2\right)$，其中$B_e$是利用图\ref{fig:4.5}和\ref{fig:4.5}势能曲线底部的平衡核间距$R_e$计算得出的，\textit{振转耦合常数}（vibrational-rotational coupling constant）$\alpha_e$是一个大于零的常数（因分子的不同而异），且远小于$B_e$。此外，随着转动能量的增加，平衡核间距有非常轻微的增加[这种现象称为\textit{离心形变}（centrifugal distortion）]。这就在$E_{rot}$中引入了一项$-hDJ^2\left(J+1\right)^2$，其中离心形变常数$D$是一个极小的正数，随着分子的不同而异。例如，对$^{12}\mathrm{C}^{15}\mathrm{O}$分子，$B_0 = 57636 \: \mathrm{MHz}$，$\alpha_e = 540 \: \mathrm{MHz}$，$D = 0.18 \: \mathrm{MHz}$。如第\ref{sec:4.3 Vibrations of Diatomic Molecules}节所述，对于轻双原子分子，几乎所有分子在室温下都处在基态振动能级，观测到的转动常数为$B_0$。
 
     有关双原子分子核运动的更多讨论，请参见第\ref{sec:13.2 Nuclear Motion in Diatomic Molecules}节。关于多原子分子的转动能，请参见\textit{Townes and Schawlow}, chaps. 2-4。
 
@@ -483,14 +483,298 @@
 
 \section{氢原子}
 \label{sec:6.5 The Hydrogen Atom}
+    氢原子包含一个质子和一个电子，若用$\mathrm{e}$表示质子的电荷量（$\mathrm{e} = + 1.6 \times 10^{-19} \: \mathrm{C}$），则电子的电荷量为$-\mathrm{e}$。
+    \begin{quote}
+        \small
+        一些科学家推测，质子和电子的电荷量并不完全相等。实验表明，电子和质子的电荷量差距在$10^{-21}$的数量级。见G. Bressi 等., \textit{Phys. Rev. A}, \textbf{83}, 052101 (2011) (available online at arxiv.org/abs/1102.2766).
+    \end{quote}
 
+    我们将假定质子和电子是质点，其相互作用遵守库仑定律。在讨论原子和分子时，我们通常会考虑孤立的系统，而忽略原子和分子间的相互作用。
 
+    我们不只讨论氢原子，而是稍微考虑一个更为普遍的问题：\textbf{类氢原子}（hydrogenlike atom），它由一个电子和一个电荷为$Z\mathrm{e}$的原子核组成。若$Z=1$，则类氢原子就是氢原子；若$Z=2$，则类氢原子是\ce{He^+}；若$Z=3$，则类氢原子是\ce{Li^{2+}}；依此类推。类氢原子是量子化学中最重要的系统。由于存在电子间斥力，因此无法获得具有一个以上电子的原子的薛定谔方程的精确解。如果作为粗略的第一近似值，我们忽略这些斥力，那么电子就可以独立处理（参见第\ref{sec:6.2 Noninteracting Particles and Separation of Variables}节）。原子波函数将由单电子函数的乘积近似得出，而单电子函数将是类氢波函数。单电子波函数（无论是否为类氢波函数）称为\textbf{轨道}（orbital）。（更确切地说，\textbf{轨道}是一个单电子空间波函数，空间一词的意思是波函数取决于电子的三个空间坐标 $x$、$y$ 和 $z$ 或 $r$、$\theta$ 和 $\phi$。我们将在第 \ref{chap:10} 章中看到，电子自旋的存在为单电子波函数增加了第四个坐标，即所谓的自旋轨道。）原子中电子的轨道称为\textbf{原子轨道}（atomic orbital）。我们将使用原子轨道来构建多电子原子的近似波函数（第 \ref{chap:11} 章）。轨道还可用于构建分子的近似波函数。
 
+    对于类氢原子，令$\left(x,y,z\right)$为电子相对于原子核的坐标，再令$\mathbf{r} = \mathbf{i}x+\mathbf{j}y+\mathbf{k}z$。电子在类氢原子中受到的库仑力为 [见公式 (\ref{eq:1.37 coulomb's law}) ]
+    \begin{equation}
+        \mathbf{F} = -\frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r^2}\frac{\mathbf{r}}{r}
+        \label{eq:6.56}
+    \end{equation}
+    其中$\mathbf{r}/r$是$\mathbf{r}$方向的单位矢量。负号表示为吸引力。
 
+    \begin{quote}
+        \small
+        我们考虑了库仑定律出现微小偏差的可能性。实验表明，如果将库仑定律力写成与 $r^{-2+s}$ 成正比，那么 $\left|s\right|<10^{-16}$。库仑定律的偏差可以证明光子静止质量不为零。没有证据表明光子的静止质量不为零，而且数据表明，任何这种质量都必须小于 $10^{-51} \: \mathrm{g}$；A. S. Goldhaber and M. M. Nieto, \textit{Rev. Mod. Phys.}, \textbf{82}, 939 (2010) (arxiv.org/abs/0809.1003); G. Spavieri et al., \textit{Eur. Phys. J. D}, \textbf{61}, 531 (2011) (link.springer.com/content/pdf/10.1140/epjd/e2011-10508-7).
+    \end{quote}
 
+    式(\ref{eq:6.56})中的力是中心力，将其与式(\ref{eq:6.4})相比较，有$\mathrm{d}\left(r\right)/\mathrm{d}r = Z\mathrm{e}^2/4\pi\varepsilon_0r^2$。积分，得出
+    \begin{equation}
+        V = \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0}\int\frac{1}{r^2}\mathrm{d}r = -\frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r}
+        \label{eq:6.57}
+    \end{equation}
+    其中积分常数取 0，以便在电荷间距无限大时能满足$V=0$。对于任意两个相距$r_{12}$，电荷量分别为$Q_1$和$Q_2$的粒子，式(\ref{eq:6.57})可以写成
+    \begin{equation}
+        \boxed{
+            V = -\frac{Q_1Q_2}{4\pi\varepsilon_0r_{12}}
+        }
+        \label{eq:6.58}
+    \end{equation}
 
+    由于这个双粒子系统的势能只取决于粒子的相对坐标，我们可以应用第 \ref{sec:6.3 Reduction of the Two-Particle Problem to Two One-Particle Problems} 节的结果将问题简化为两个单粒子问题。原子的整体平移运动只是在总能量中增加了一个常数，我们将不再关注它。为了处理系统的内部运动，我们引入一个质量由下式定义的假想粒子
+    \begin{equation}
+        \mu = \frac{m_{\mathrm{e}}m_N}{m_{\mathrm{e}} + m_N}
+        \label{eq:6.59}
+    \end{equation}
 
+   其中$m_{\mathrm{e}}$为电子的质量，$m_N$为原子核的质量。质量为 $\mu$ 的粒子在势能函数 (\ref{eq:6.57}) 的作用下运动，其坐标$\left(r,\theta,\phi\right)$是一个粒子相对于另一个粒子的球面坐标（图\ref{fig:6.5}）。
+   \begin{figure}
+       \centering
+       \includegraphics[width=0.5\textwidth]{Figures/6.5.png}
+       \caption{相对球坐标}
+       \label{fig:6.5}
+   \end{figure}
 
+   粒子内部运动的哈密顿算符为[式(\ref{eq:6.43})]
+   \begin{equation}
+        \hat{H} = -\frac{\hbar^2}{2\mu}\nabla^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r}
+        \label{eq:6.60}
+   \end{equation}
+   由于$V$只是坐标$r$的函数，这是一个单粒子中心力问题，所以我们可以使用第\ref{sec:6.1 The One-Particle Central Force Problem}节的结果来求解。使用方程(\ref{eq:6.16})和(\ref{eq:6.17})，我们可以写出波函数
+   \begin{equation}
+        \psi\left(r,\theta,\phi\right) = R\left(r\right)Y_l^m\left(\theta,\phi\right), \quad l = 0, 1, 2, \ldots, \quad \left|m\right| \leq l
+    \label{eq:6.61}
+   \end{equation}
+   其中$Y_l^m$是球谐函数，径向函数$R\left(r\right)$满足
+   \begin{equation}
+        -\frac{\hbar^2}{2\mu}\left(R^{\prime\prime} + \frac{2}{r}R^{\prime}\right) + \frac{l\left(l+1\right)\hbar^2}{2\mu r^2}R - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r}R = ER\left(r\right)
+        \label{eq:6.62}
+   \end{equation}
+   为了节省时间，我们定义常数$a$满足
+   \begin{equation}
+        a \equiv \frac{4\pi\varepsilon_0\hbar^2}{\mu \mathrm{e}^2}
+        \label{eq:6.63}
+   \end{equation}
+   则方程(\ref{eq:6.62})可以写成
+   \begin{equation}
+        R^{\prime\prime} + \frac{2}{r}R^{\prime} + \left[\frac{8\pi\varepsilon_0E}{a\mathrm{e}^2} + \frac{2Z}{ar} - \frac{l\left(l+1\right)}{r^2}\right]R = 0
+        \label{eq:6.64}
+   \end{equation}
+
+\subsection*{径向方程的求解}
+   现在我们可以尝试 (\ref{eq:6.64}) 的幂级数解法，但得到的是三项递推关系，而不是两项递推关系。因此，我们要寻找一种能得到两项递推关系的替代方法。事实证明，通过研究大 $r$ 值时解的行为，可以找到合适的替代方法。当$r$值很大时，方程(\ref{eq:6.64})变为
+   \begin{equation}
+        R^{\prime\prime} + \frac{8\pi\varepsilon_0E}{a\mathrm{e}^2}R = 0, \quad \text{当}r\text{很大时}
+        \label{eq:6.65}
+   \end{equation}
+   该微分方程可以使用特征方程(\ref{eq:2.7 auxiliary equation})求解。其解为
+   \begin{equation}
+        \exp\left[\pm\left(-8\pi\varepsilon_0E/a\mathrm{e}^2\right)^{1/2}r\right]
+        \label{eq:6.66}
+   \end{equation}
+
+   假设 $E$ 为正数。(\ref{eq:6.66}) 中平方根符号下的量是负数，乘以 $r$ 的因子是虚数：
+   \begin{equation}
+        R\left(r\right) \sim \mathrm{e}^{\pm \mathrm{i}\sqrt{2\mu Er}/\hbar}, \quad E \geq 0
+        \label{eq:6.67}
+   \end{equation}
+   其中我们用到了(\ref{eq:6.63})。(\ref{eq:6.67})中的符号$\sim$表示我们给出的是在$r$值较大时$R\left(r\right)$的行为，这就是函数的\textit{渐近}（asymptotic）行为。请注意 (\ref{eq:6.67}) 与自由粒子波函数公式 (\ref{eq:2.30}) 的相似性。 (\ref{eq:6.67}) 并没有给出正能量波函数中的完整径向因子。进一步的研究（\textit{Bethe and Salpeter}，第 21-24 页）表明，无论 $E$ 的值如何，$E \geq 0$ 的径向函数在所有 $r$ 值上都是有限的。因此，正如自由粒子一样，氢原子的所有非负能量都是允许的。在物理学上，这些本征函数对应于电子不与原子核结合的状态，即原子电离时的状态。（一个经典的机械比喻是彗星围绕太阳在双曲线轨道上运动。彗星不受约束，只访问太阳系一次。）由于我们得到的 $E \geq 0$ 的允许值是连续的而不是离散的，因此正能量本征函数又称为\textbf{连续谱本征函数}（continuum eigenfunctions）。连续谱波函数的角度部分是球面谐波。与自由粒子波函数一样，连续谱本征函数也不是通常意义上可归一化的。
+
+   现在我们考虑氢原子的\textit{束缚}态，即 $E < 0$。（对于一个\textbf{束缚态}，当$x \to \pm \infty$时，$\psi \to 0$。）在这种情况下，(\ref{eq:6.66})中括号内的量为正数。由于我们希望波函数在 $r$ 变为无穷大时保持有限，因此我们更倾向于使用 (\ref{eq:6.66}) 中的负号，为了得到两项递推关系，我们将其替换为
+   \begin{equation}
+        R\left(r\right) = \mathrm{e}^{-Cr}K\left(r\right)
+        \label{eq:6.68}
+   \end{equation}
+   \begin{equation}
+        C \equiv \left(-\frac{8\pi\varepsilon_0E}{a\mathrm{e}^2}\right)^{1/2}
+        \label{eq:6.69}
+   \end{equation}
+   其中，(\ref{eq:6.68})中的$\mathrm{e}$是自然对数的底数，而不是电子的电荷量。使用代换 (\ref{eq:6.68}) 无法保证当$r$很大时的波函数行为。这样代换得到的微分方程仍然有两个线性独立的解。我们可以在微分方程中进行任意代换；事实上，我们可以进行如下代换$R\left(r\right) = \mathrm{e}^{+Cr}J\left(r\right)$并最终得到正确的本征函数和本征值。$J$和$K$的关系自然是$J\left(r\right) = \mathrm{e}^{-2Cr}K\left(r\right)$。
+
+   根据(\ref{eq:6.68})，我们来计算$R^{\prime}$和$R^{\prime\prime}$，带入(\ref{eq:6.64})，乘以$r^2\mathrm{e}^{Cr}$并利用(\ref{eq:6.69})得到$K\left(r\right)$的微分方程：
+   \begin{equation}
+        r^2K^{\prime\prime} + \left(2r - 2Cr^2\right)K^{\prime} + \left[\left(2Za^{-1} - 2C\right)r - l\left(l+1\right)\right]K = 0
+        \label{eq:6.70}
+   \end{equation}
+
+   现在，我们可以用以下形式的幂级数来代替$K$：
+   \begin{equation}
+        K = \sum_{k=0}^{\infty}c_kr^k
+        \label{eq:6.71}
+   \end{equation}
+   如果我们这样做，就会发现：一般来说，(\ref{eq:6.71})中的前几项的系数都是零。如果$c_s$是第一个不为零的系数，那么(\ref{eq:6.71})可以写为
+   \begin{equation}
+        K = \sum_{s}^{\infty}c_kr^k, \quad c_s \neq 0
+        \label{eq:6.72}
+   \end{equation}
+   令$j \equiv k-s$，再定义$b_j \equiv c_{j+s}$，我们有
+   \begin{equation}
+        K = \sum_{j=0}^{\infty}c_{j+s}r^{j+s} = r^s\sum_{j=0}^{\infty}b_jr^j, \quad b_0 \neq 0
+        \label{eq:6.73}
+   \end{equation}
+   （虽然我们所做的各种替换看似随意，但它们却是用幂级数求解微分方程的标准程序。）将整数 $s$ 代入微分方程即可求出结果。方程(\ref{eq:6.73})变为
+   \begin{equation}
+        K\left(r\right) = r^sM\left(r\right)
+        \label{eq:6.74}
+   \end{equation}
+   \begin{equation}
+        M\left(r\right) = \sum_{j=0}^{\infty}b_jr^j, \quad b_0 \neq 0
+        \label{eq:6.75}
+   \end{equation}
+   求出(\ref{eq:6.74})中的$K^{\prime}$和$K^{\prime\prime}$，将其代入(\ref{eq:6.70})，得到
+   \begin{equation}
+        r^2M^{\prime\prime} + \left[\left(2s+2\right)r - 2Cr^2\right]M^{\prime} + \left[s^2 + s + \left(2Za^{-1} - 2C -2Cs\right)r - l\left(l+1\right)\right]M = 0
+        \label{eq:6.76}
+   \end{equation}
+
+   为了求出$s$，我们先看$r=0$时的(\ref{eq:6.76})。由(\ref{eq:6.75})，我们得到
+   \begin{equation}
+        M\left(0\right) = b_0, \quad M^{\prime}\left(0\right) = b_1, \quad M^{\prime\prime}\left(0\right) = 2b_2
+        \label{eq:6.77}
+   \end{equation}
+   在(\ref{eq:6.76})中使用(\ref{eq:6.77})，得到
+   \begin{equation}
+        b_0\left(s^2+s-l^2-l\right) = 0
+        \label{eq:6.78}
+   \end{equation}
+   由于$b_0$不为零，括号中式子就必须为零：$s^2+s-l^2-l=0$。这是一个关于未知数$s$的二次方程。它的根为
+   \begin{equation}
+        s = l, \quad s = -l-1
+        \label{eq:6.79}
+    \end{equation}
+    这些根对应于微分方程的两个线性独立解。让我们从波函数正确行为的角度来研究它们。由(\ref{eq:6.68})、(\ref{eq:6.74})和(\ref{eq:6.75})，我们有
+    \begin{equation}
+        R\left(r\right) = \mathrm{e}^{-Cr}r^s\sum_{j=0}^{\infty}b_jr^j
+        \label{eq:6.80}
+    \end{equation}
+    由于$\mathrm{e}^{-Cr} = 1-Cr+\ldots$，当$r$很小时，$R\left(r\right)$的行为与$b_0r^s$相同。当$s=l$时，$R\left(r\right)$在原点处表现正常。然而，当$s = -l-1$时，$R\left(r\right)$与下式在$r$很小时成正比：
+    \begin{equation}
+        \frac{1}{r^{l+1}}
+        \label{eq:6.81}
+    \end{equation}
+    由于$l=0,1,2,\ldots$，则根$s=-l-1$使得波函数中径向部分在原点处变得无限大。许多文献都将此作为拒绝接受这一根的充分理由。然而，这并不是一个很好的论据，因为对于\textit{相对论}（relativistic）氢原子来说，$l=0$的本征函数在$r=0$处是无限的。因此，让我们从平方可积性的角度来研究 (\ref{eq:6.81})，因为我们当然要求束缚态本征函数是可归一化的。
+
+    与 (\ref{eq:6.81}) 类似的径向函数的归一化积分[式 (\ref{eq:5.80}) ] （当$r$不是很大时）如下
+    \begin{equation}
+        \int_{0}\left|R\right|^2r^2\mathrm{d}r \approx \int_{0}\frac{1}{r^{2l}}\mathrm{d}r
+        \label{eq:6.82}
+    \end{equation}
+    积分下限处的积分行为是
+    \begin{equation}
+        \left.\frac{1}{r^{2l}}\right|_{r=0}
+        \label{eq:6.83}
+    \end{equation}
+    对于$l=1,2,3,\ldots$，(\ref{eq:6.83})是无限的，那么归一化积分也是无限的。因此我们舍去当$l \geq 1$时的根$s = -l-1$。不过，对于 $l=0$，(\ref{eq:6.83}) 是有限的，平方可积性也没有问题。因此，径向方程存在一个平方可积的解，在小 $r$ 时表现为 $r^{-1}$ 。
+
+    对这一解决方案的进一步研究表明，它所对应的能量值是实验氢原子谱所不存在的。因此，$r^{-1}$的解必须被舍去，但对这样做的原因存在一些争议。一种观点认为：除原点外，$1/r$ 的在空间的任何地方都满足薛定谔方程，因此必须予以舍去[\textit{Dirac}, page 156; B. H. Armstrong and E. A. Power, \textit{Am. J. Phys.}, \textbf{31}, 262 (1963)]。第二种观点认为，必须舍去 $1/r$ 的解，因为哈密顿算符对它来说不是厄米的（\textit{Merzbacher}, Section 10.5）。（在第 \ref{chap:7} 章中，我们将定义厄米算符，并说明量子力学算符必须是厄米的。）进一步讨论见 A. A. Khelashvili 和 T. P. Nadareishvili, \textit{Am. J. Phys.}, \textbf{79}, 668 (2011) (see arxiv.org/abs/1102.1185) and in Y. C. Cantelaube, arxiv.org/abs/1203.0551.
+
+    取(\ref{eq:6.79})的第一个根，我们得到了径向部分的因子(\ref{eq:6.80})
+    \begin{equation}
+        R\left(r\right) = \mathrm{e}^{-Cr}r^lM\left(r\right)
+        \label{eq:6.84}
+    \end{equation}
+    由于$s=l$，(\ref{eq:6.75})变为
+    \begin{equation}
+        rM^{\prime\prime} + \left(2l+1-2Cr\right)M^{\prime} + \left(2Za^{-1}-2C-2Cl\right)M = 0
+        \label{eq:6.85}
+    \end{equation}
+    由(\ref{eq:6.75})，我们有
+    \begin{equation}
+        M\left(r\right) = \sum_{j=0}^{\infty}b_jr^j
+        \label{eq:6.86}
+    \end{equation}
+    \begin{equation*}
+        M^{\prime} = \sum_{j=0}^{\infty}b_jjr^{j-1} = \sum_{j=1}^{\infty}jb_jr^{j-1} = \sum_{k=0}^{\infty}\left(k+1\right)b_{k+1}r^k = \sum_{j=0}^{\infty}\left(j+1\right)b_{j+1}r^j
+    \end{equation*}
+    \begin{equation*}
+        M^{\prime\prime} = \sum_{j=0}^{\infty}j\left(j-1\right)b_jr^{j-2} = \sum_{j=1}^{\infty}b_jj\left(j-1\right)r^{j-2} = \sum_{k=0}^{\infty}\left(k+1\right)kb_{k+1}r^{k-1}
+    \end{equation*}
+    \begin{equation}
+        M^{\prime\prime} = \sum_{j=0}^{\infty}\left(j+1\right)jb_{j+1}r^{j-1}
+        \label{eq:6.87}
+    \end{equation}
+    将这些式子带入(\ref{eq:6.85})并求和，得到
+    \begin{equation*}
+        \sum_{j=0}^{\infty}\left[j\left(j+1\right)b_{j+1} + 2\left(l+1\right)\left(j+1\right)b_{j+1} + \left(\frac{2Z}{a} - 2C - 2Cl - 2Cj\right)b_j\right]r^j = 0
+    \end{equation*}
+    令$r^j$的系数为零，得到递推关系式
+    \begin{equation}
+        b_{j+1} = \frac{2C + 2Cl + 2Cj - 2Za^{-1}}{j\left(j+1\right) + 2\left(l+1\right)\left(j+1\right)}b_j
+        \label{eq:6.88}
+    \end{equation}
+
+    现在我们必须研究大 $r$ 时无穷级数 (\ref{eq:6.86}) 的行为。根据对 (\ref{eq:4.42}) 中谐振子幂级数的相同检验方法得出的结果，对于大 $r$，无穷级数 (\ref{eq:6.86}) 的表现与$\mathrm{e}^{2Cr}$一致（见问题6.20）。当$r$很大时，径向函数(\ref{eq:6.84})的表现为
+    \begin{equation}
+        R\left(r\right) \sim \mathrm{e}^{-Cr}r^l\mathrm{e}^{2Cr} = r^l\mathrm{e}^{Cr}
+        \label{eq:6.89}
+    \end{equation}
+    因此，当$r$变得无穷大时，$R\left(r\right)$将变为无穷大，并且不具有平方可积性。避免这种 “无穷大灾难”（如谐振子情况）的唯一方法是让级数在有限的项数后被打断，在这种情况下，$\mathrm{e}^{-Cr}$ 因子将确保波函数在 $r$ 变为无穷大时趋于零。令该级数的最后一项为$b_kr^k$。那么为了使$b_{k+1}, b_{k+2}, \ldots$ 都为零，我们必须让 $j=k$ 时，递推关系 (\ref{eq:6.88}) 中与 $b_j$ 相乘的系数消失。因此，
+    \begin{equation}
+        2C\left(k+l+1\right) = 2Za^{-1}, \quad k = 0, 1, 2, \ldots
+        \label{eq:6.90}
+    \end{equation}
+    $k$和$l$都是整数，现在我们定义一个新的整数$n$：
+    \begin{equation}
+        n \equiv k + l + 1, \quad n = 1, 2, 3, \ldots
+        \label{eq:6.91}
+    \end{equation}
+    根据(\ref{eq:6.91})，量子数$l$必须满足
+    \begin{equation}
+        l \leq n-1
+        \label{eq:6.92}
+    \end{equation}
+    因此，$l$的取值范围为0到$n-1$。
+    \\
+
+    \noindent\textbf{能级}
+
+    将(\ref{eq:6.91})代入(\ref{eq:6.90})，得到
+    \begin{equation}
+        Cn = Za^{-1}
+        \label{eq:6.93}
+    \end{equation}
+    将$C \equiv \left(-8\pi\varepsilon_0E/a\mathrm{e}^2\right)^{1/2}$[式(\ref{eq:6.69})]代入(\ref{eq:6.93})，解出$E$，得到
+    \begin{equation}
+        E = -\frac{Z^2}{n^2}\frac{\mathrm{e}^2}{8\pi\varepsilon_0a} = -\frac{Z^2\mu\mathrm{e}^4}{8\varepsilon_0^2n^2h^2}
+        \label{eq:6.94}
+    \end{equation}
+    其中$a \equiv 4\pi\varepsilon_0\hbar^2/\mu\mathrm{e}^2$ [式(\ref{eq:6.63})]。这些是类氢原子的束缚态能级，它们是离散的。图 \ref{fig:6.6} 显示了氢原子($Z=1$)的势能曲线[公式 (\ref{eq:6.57}) ] 和一些允许能级。横线表示允许使用所有正能量。
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/6.6.png}
+        \caption{氢原子的能级}
+        \label{fig:6.6}
+    \end{figure}
+
+    事实证明，在光的吸收和发射过程中，$n$ 的所有变化都是允许的。因此，氢原子谱线的波长[公式 (\ref{eq:4.64}) ] 为
+    \begin{equation}
+        \tilde{\nu} = \frac{1}{\lambda} = \frac{\nu}{c} = \frac{E_2 - E_1}{hc} = \frac{\mathrm{e}^2}{8\pi\varepsilon_0ahc}\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right) = R_H\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right)
+        \label{eq:6.95}
+    \end{equation}
+    其中$R_H = 109677.6 \: \mathrm{cm}^{-1}$是氢的\textit{里德伯常数}（Rydberg constant）。
+    \\
+
+    \noindent\textbf{简并}
+
+    氢原子的能级是简并的吗？对于束缚态，能量(\ref{eq:6.94})只取决于 $n$。然而，波函数 (\ref{eq:6.61}) 取决于所有三个量子数 $n$、$l$ 和 $m$，它们的允许值分别为[式 (\ref{eq:6.91}) 、 (\ref{eq:6.92})、 (\ref{eq:5.104})  和 (\ref{eq:5.105}) ]
+    \begin{equation}
+        \boxed{
+            n = 1,2,3,\ldots
+        }
+        \label{eq:6.96}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            l = 0,1,2,\ldots,n-1
+        }
+        \label{eq:6.97}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            m = -l,-l+1,\ldots,0,\ldots,l-1,l
+        }
+        \label{eq:6.98}
+    \end{equation}
+    $l$ 或 $m$ 值不同但 $n$ 值相同的氢原子态具有相同的能量。能级是简并的，只有 $n=1$ 除外，此时 $l$ 和 $m$ 必须都为 0。对于给定的 $n$ 值，我们可以有 $n$ 个不同的 $l$ 值。对于每个 $l$ 值，我们都可以有 $2l+1$ 个 $m$ 值。 H 原子束缚态能级的简并度等于$n^2$（省略了旋转方面的考虑），见问题6.16。对于连续能级，事实证明，对于给定的能量，$l$ 的最大值没有限制；因此，这些能级是无穷重简并的。
+
+    氢原子的径向方程也可以通过梯形算符（也称为\textit{因式分解}（factorization））来求解；参见 Z. W. Salsburg, \textit{Am. J. Phys.}, \textbf{33}, 36 (1965)。
 
 \section{束缚态氢原子波函数}
 \label{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions}
