@@ -723,7 +723,7 @@
     因此，$l$的取值范围为0到$n-1$。
     \\
 
-    \noindent\textbf{能级}
+\subsubsection*{能级}
 
     将(\ref{eq:6.91})代入(\ref{eq:6.90})，得到
     \begin{equation}
@@ -751,7 +751,7 @@
     其中$R_H = 109677.6 \: \mathrm{cm}^{-1}$是氢的\textit{里德伯常数}（Rydberg constant）。
     \\
 
-    \noindent\textbf{简并}
+\subsubsection*{简并}
 
     氢原子的能级是简并的吗？对于束缚态，能量(\ref{eq:6.94})只取决于 $n$。然而，波函数 (\ref{eq:6.61}) 取决于所有三个量子数 $n$、$l$ 和 $m$，它们的允许值分别为[式 (\ref{eq:6.91}) 、 (\ref{eq:6.92})、 (\ref{eq:5.104})  和 (\ref{eq:5.105}) ]
     \begin{equation}
@@ -778,6 +778,336 @@
 
 \section{束缚态氢原子波函数}
 \label{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions}
+
+\subsection*{径向因子}
+    使用(\ref{eq:6.93})，我们有递推关系(\ref{eq:6.88})
+    \begin{equation}
+        b_{j+1} = \frac{2Z}{na} = \frac{j+l+1-n}{\left(j+1\right)\left(j+2l+2\right)}b_j
+        \label{eq:6.99}
+    \end{equation}
+    (\ref{eq:6.91})前面的讨论表明：多项式$M\left(r\right) = \sum_{j}b_jr^j$中$r$的最高次幂为$k = n-l-1$。因此，将$C = Z/na$(\ref{eq:6.93})代入$R\left(r\right) \mathrm{e}^{-Cr}r^lM\left(r\right)$(\ref{eq:6.84})，我们得到
+    \begin{equation}
+        R_{nl}\left(r\right) = r^l\mathrm{e}^{-Zr/na}\sum_{j=0}^{n-l-1}b_jr^j
+        \label{eq:6.100}
+    \end{equation}
+    其中$a \equiv 4\pi\varepsilon_0\hbar^2/\mu\mathrm{e}^2$ [式(\ref{eq:6.63})]。完整的类氢束缚态波函数为[式 (\ref{eq:6.61}) ]
+    \begin{equation}
+        \psi_{nlm} = R_{nl}\left(r\right)Y_l^m\left(\theta,\phi\right) = R_{nl}\left(r\right)S_{lm}\left(\theta\right)\frac{1}{\sqrt{2\pi}}\mathrm{e}^{\mathrm{i}m\phi}
+        \label{eq:6.101}
+    \end{equation}
+    其中前几个 $\theta$ 函数见表 \ref{tab:5.1}。
+
+    $R\left(r\right)$有多少个节点？径向函数在$r = \infty$、$l \neq 0$时$r = 0$和使$M\left(r\right)$消失的$r$值处为零。$M\left(r\right)$是一个$n-l-1$次多项式，可以证明，$M\left(r\right) = 0$的所有根均为正实数。因此，除了原点和无穷远之外，$R\left(r\right)$还有$n-l-1$个节点。球谐函数的节点将在问题6.41中讨论。
+
+\subsection*{基态波函数和能量}
+    对于类氢原子的基态，我们有$n=1$， $l=0$，$m=0$。因此，径向因子(\ref{eq:6.100})为
+    \begin{equation}
+        R_{10}\left(r\right) = b_0\mathrm{e}^{-Zr/a}
+        \label{eq:6.102}
+    \end{equation}
+    常数$b_0$可以通过归一化条件[式(\ref{eq:5.80})]来确定：
+    \begin{equation*}
+        \left|b_0\right|^2\int_{0}^{\infty}\mathrm{e}^{-2Zr/a}r^2\mathrm{d}r = 1
+    \end{equation*}
+    使用附录中的积分(A.8)，我们得到
+    \begin{equation}
+        R_{10}\left(r\right) = 2\left(\frac{Z}{a}\right)^{3/2}\mathrm{e}^{-Zr/a}
+        \label{eq:6.103}
+    \end{equation}
+    乘上$Y_0^0 = 1/\left(\sqrt{4\pi}\right)$，我们得到基态波函数：
+    \begin{equation}
+        \psi_{100} = \frac{1}{\pi^{1/2}}\left(\frac{Z}{a}\right)^{3/2}\mathrm{e}^{-Zr/a}
+        \label{eq:6.104}
+    \end{equation}
+
+    氢原子的能量和波函数涉及约化质量，由式(\ref{eq:6.59})给出
+    \begin{equation}
+        \mu_{\mathrm{H}} = \frac{m_{\mathrm{e}}m_{\mathrm{p}}}{m_{\mathrm{e}} + m_{\mathrm{p}}} = \frac{m_{\mathrm{e}}}{1+m_{\mathrm{e}}/m_{\mathrm{p}}} = \frac{m_{\mathrm{e}}}{1+0.000544617} = 0.9994557 \: m_{\mathrm{e}}
+        \label{eq:6.105}
+    \end{equation}
+    其中$m_{\mathrm{p}}$是质子的质量，$m_{\mathrm{e}}/m_{\mathrm{p}}$的值从表A.1中可以查到。约化质量与电子的质量非常接近。正因为如此，一些教科书在 \ce{H} 原子薛定谔方程中使用电子的质量而不是约化质量。这相当于假设质子的质量与 (\ref{eq:6.105}) 中电子的质量相比是无限大的，并且所有的内部运动都是电子的运动。对于氢原子来说，用电子质量代替约化质量所带来的误差约为 $1/2000$。对于较重的原子，假设原子核无限重所带来的误差甚至比这还要小。此外，对于多电子原子，核运动的修正形式也相当复杂。基于这些原因，我们今后将假设原子核无限重，并在书写原子的薛定谔方程时简单地使用电子质量。
+
+    如果我们用电子质量代替氢原子的约化质量，则由 (\ref{eq:6.63}) 定义的量 $a$ 变为
+    \begin{equation}
+        a_0 = \frac{4\pi\varepsilon_0\hbar^2}{m_{\mathrm{e}}\mathrm{e}^2} = 0.529177 \: \mathrm{Å}
+        \label{eq:6.106}
+    \end{equation}
+    其中下标$0$表示使用电子质量而不是约化质量。因为$a_0$是玻尔理论中氢原子基态中电子移动的圆半径，所以它被称为\textbf{玻尔半径}（Bohr radius）。当然，由于基态波函数 (\ref{eq:6.104}) 对所有有限的 $r$ 值都不为零，因此在离原子核的任何距离上都有一定概率找到电子。电子当然不会被限制在一个圆内。
+
+    电子能量的方便单位是\textbf{电子伏特}（electronvolt）（eV），定义为电子在 1 伏特（V）电位差中加速所获得的动能。电位差的定义是单位电荷的能量。由于$\mathrm{e} = 1.6021766 \times 10^{-19} \: \mathrm{C}$以及$1 \mathrm{V} \: \mathrm{C} = 1 \: \mathrm{J}$，因此
+    \begin{equation}
+        1 \: \mathrm{eV} = 1.6021766 \times 10^{-19} \: \mathrm{J}
+        \label{eq:6.107}
+    \end{equation}
+
+    \begin{examplebox}
+        \textbf{例题：}使用国际单位制计算氢原子的基态能量，并将结果转换为电子伏特。
+        \\
+
+        氢原子基态能量由式(\ref{eq:6.94})给出，其中$n=1$，$Z=1$，能量为$E = -\mu\mathrm{e}^4/8\hbar^2\varepsilon_0^2$。将$\mu$用(\ref{eq:6.105})代替，得到
+        \begin{equation*}
+            E = -\frac{0.9994557\left(9.109383 \times 10^{-31} \: \mathrm{kg}\right)\left(1.6021766 \times 10^{-19} \: \mathrm{C}\right)^4}{8\left(6.626070 \times 10^{-34} \: \mathrm{J} \cdot \mathrm{s}\right)^2\left(8.8541878 \times 10^{-12} \: \mathrm{C}^2/\mathrm{N-m}^2\right)^2}\frac{Z^2}{n^2}
+        \end{equation*}
+        \begin{equation*}
+            E = -\left(2.178686 \times 10^{-18} \: \mathrm{J}\right)\left(Z^2/n^2\right)\left[\left(1\:\mathrm{eV}\right)/\left(1.6021766 \times 10^{-19} \: \mathrm{J}\right)\right]
+        \end{equation*}
+        \begin{equation}
+            E = -\left(13.598 \: \mathrm{eV}\right)\left(Z^2/n^2\right) = -13.598 \: \mathrm{eV}
+            \label{eq:6.108}
+        \end{equation}
+        这是一个值得记住的数字。基态氢原子电离所需的最小能量为$13.598 \: \mathrm{eV}$。
+        \\
+
+        \textbf{练习：}求\ce{Li^2+}的$n=2$能量，用电子伏特表示；尽可能减少计算量。（\textit{答案：}$-30.60 \: \mathrm{eV}$。）
+    \end{examplebox}
+
+    \begin{examplebox}
+        \textbf{例题：}求氢原子基态的动能平均期望$\left\langle T \right\rangle$。
+        \\
+
+        对$\left\langle T \right\rangle$的计算，我们使用(\ref{eq:3.89})；而对$\nabla^2\psi$的计算，我们使用(\ref{eq:6.7})。因此，
+        \begin{equation*}
+            \left\langle T \right\rangle = \int\psi^{\ast}\hat{T}\psi\mathrm{d}\tau = -\frac{\hbar^2}{2\mu}\int\psi^{\ast}\nabla^2\psi\mathrm{d}\tau
+        \end{equation*}
+        \begin{equation*}
+            \nabla^2\psi = \frac{\partial^2\psi}{\partial r^2} + \frac{2}{r}\frac{\partial\psi}{\partial r} - \frac{1}{r^2\hbar^2}\hat{L}^2\psi = \frac{\partial^2\psi}{\partial r^2} + \frac{2}{r}\frac{\partial\psi}{\partial r}
+        \end{equation*}
+        其中，我们用到了$\hat{L}^2\psi = l\left(l+1\right)\hbar^2\psi$以及对于$s$态有$l=0$。将$Z=1$带入(\ref{eq:6.104})，我们有$\psi = \pi^{-1/2}a^{-3/2}\mathrm{e}^{-r/a}$。因此，$\partial\psi/\partial r = -\pi^{-1/2}a^{-5/2}\mathrm{e}^{-r/a}$，$\partial^2\psi/\partial r^2 = \pi^{-1/2}a^{-7/2}\mathrm{e}^{-r/a}$。使用$\mathrm{d}\tau = r^2\sin\theta\:\mathrm{d}r\:\mathrm{d}\theta\:\mathrm{d}\phi$(\ref{eq:5.78})，我们有
+        \begin{equation*}
+            \left\langle T \right\rangle = -\frac{\hbar^2}{2\mu}\frac{1}{\pi a^4}\int_{0}^{2\pi}\int_{0}^{\pi}\int_{0}^{\infty}\left(\frac{1}{a}\mathrm{e}^{-2r/a} - \frac{2}{r}\mathrm{e}^{-2r/a}\right)r^2\sin\theta\:\mathrm{d}r\:\mathrm{d}\theta\:\mathrm{d}\phi
+        \end{equation*}
+        \begin{equation*}
+            = -\frac{\hbar^2}{2\mu\pi a^4}\int_{0}^{2\pi}\mathrm{d}\phi\int_{0}^{\pi}\sin\theta\:\mathrm{d}\theta\int_{0}^{\infty}\left(\frac{r^2}{a}\mathrm{e}^{-2r/a} - 2r\mathrm{e}^{-2r/a}\right)\mathrm{d}r = \frac{\hbar^2}{2\mu a^2} = \frac{\mathrm{e}^2}{8\pi\varepsilon_0a}
+        \end{equation*}
+        其中，我们用到了附录中的积分A.8以及$a = 4\pi\varepsilon_0\hbar^2/\mu\mathrm{e}^2$。根据(\ref{eq:6.94})，$\mathrm{e}^2/8\pi\varepsilon_0a$为基态氢原子能量的负值，$\left\langle T \right\rangle$由(\ref{eq:6.108})给出$\left\langle T \right\rangle = 13.598 \: \mathrm{eV}$。（另见第\ref{sec:14.4 The Virial Theorem}节。）
+        \\
+
+        \textbf{练习：}使用(\ref{eq:6.113})，求氢原子$2p_0$的动能平均期望$\left\langle T \right\rangle$。（\textit{答案：}$\mathrm{e}^2/32\pi\varepsilon_0a = \left(13.598 \: \mathrm{eV}\right) /4 = 3.40 \: \mathrm{eV}$。）
+    \end{examplebox}
+
+    让我们来看看基态波函数 (\ref{eq:6.104}) 的一个重要性质。我们有$r = \left(x^2+y^2+z^2\right)^{1/2}$。对于在$x$轴上的点，$y = 0$，$z = 0$，则$r = \left(x^2\right)^{1/2} = \left|x\right|$。即
+    \begin{equation}
+        \psi_{100}\left(x,0,0\right) = \pi^{-1/2}\left(Z/a\right)^{-3/2}\mathrm{e}^{-Z\left|x\right|/a}
+        \label{eq:6.109}
+    \end{equation}
+    图 \ref{fig:6.7} 显示了 (\ref{eq:6.109}) 沿 $x$ 轴的变化情况。尽管$\psi_{100}$在原点处连续，但曲线切线的斜率在原点左侧为正，而在原点右侧为负。因此$\partial \psi/\partial x$在原点处不连续。我们说波函数在原点处有一个\textit{尖点}（cusp）。尖顶的出现是因为势能$V = -Z\mathrm{e}^2/4\pi\varepsilon_0r$在原点处变得无限大。回想一下，箱中粒子波函数在箱壁上的斜率是不连续的。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/6.7.png}
+        \caption{氢原子基态波函数中的尖点}
+        \label{fig:6.7}
+    \end{figure}
+
+    我们用三个下标来表示氢原子束缚态波函数，分别表示 $n$、$l$ 和 $m$ 的值。在另一种表示中，$l$ 的值用字母表示：
+    \begin{equation}
+        \begin{array}{|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            \text{字母} & s & p & d & f & g & h & i & k & \ldots \\
+            \hline
+            l & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & \ldots \\
+            \hline
+        \end{array}
+        \label{eq:6.110}
+    \end{equation}
+    字母 $s$、$p$、$d$、$f$ 源于光谱学，分别代表尖锐（sharp）、主要（principal）、扩散（diffuse）和基本（fundamental）。之后，我们按字母顺序排列，只是省略了 $j$。在 $l$ 的字母前，我们写上 $n$ 的值。因此，基态波函数$\psi_{100}$ 可以写成 $\psi_{1s}$或更简单的$1s$。
+
+\subsection*{$n=2$的波函数}
+
+    对于$n=2$，我们有状态$\psi_{200}$、$\psi_{21-1}$、$\psi_{210}$、$\psi_{211}$。我们将$\psi_{200}$表示为$\psi_{2s}$或简单的$2s$。为了区分三个$2p$函数，我们使用下标来表示 $m$ 值，并将它们表示为$2p_1$、$2p_0$和$2p_{-1}$。从 (\ref{eq:6.100}) 可以看出，波函数中的径向因子取决于 $n$ 和 $l$，但不取决于 $m$。因此，三个 $2p$ 波函数都具有相同的径向因子。根据 (\ref{eq:6.100}) 和 (\ref{eq:6.99}) 可以用通常的方法求出 $2s$ 和 $2p$ 的径向因子，然后进行归一化处理。结果见表 \ref{tab:6.1}。请注意，$n=2$ 径向函数中的指数因子与 $R_{1s}$ 函数中的指数因子不同。将径向因子乘以适当的球谐函数，就能得到完整的波函数。使用(\ref{eq:6.101})、表\ref{tab:6.1}和表\ref{tab:5.1}，我们有
+    \begin{equation}
+        2s = \frac{1}{2\pi^{1/2}}\left(\frac{Z}{a}\right)^{3/2}\left(1 - \frac{Zr}{2a}\right)\mathrm{e}^{-Zr/2a}
+        \label{eq:6.111}
+    \end{equation}
+    \begin{equation}
+        2p_{-1} = \frac{1}{8\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\sin\theta\:\mathrm{e}^{-\mathrm{i}\phi}
+        \label{eq:6.112}
+    \end{equation}
+    \begin{equation}
+        2p_0 = \frac{1}{2\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\cos\theta
+        \label{eq:6.113}
+    \end{equation}
+    \begin{equation}
+        2p_1 = \frac{1}{8\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\sin\theta\:\mathrm{e}^{\mathrm{i}\phi}
+        \label{eq:6.114}
+    \end{equation}
+    \begin{table}[htbp]
+        \centering
+        \caption{类氢原子波函数的径向因子}
+        \label{tab:6.1}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{l}
+            \hline
+            $R_{1s} = 2\left(\frac{Z}{a}\right)^{3/2}\mathrm{e}^{-Zr/a}$ \\[0.5ex]
+            \hline
+            $R_{2s} = \frac{1}{\sqrt{2}}\left(\frac{Z}{a}\right)^{3/2}\left(1 - \frac{Zr}{2a}\right)\mathrm{e}^{-Zr/2a}$ \\[0.5ex]
+            \hline
+            $R_{2p} = \frac{1}{2\sqrt{6}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}$ \\[0.5ex]
+            \hline
+            $R_{3s} = \frac{2}{3\sqrt{3}}\left(\frac{Z}{a}\right)^{3/2}\left(1 - \frac{Zr}{3a} + \frac{2Z^2r^2}{27a^2}\right)\mathrm{e}^{-Zr/3a}$ \\[0.5ex]
+            \hline
+            $R_{3p} = \frac{8}{27\sqrt{6}}\left(\frac{Z}{a}\right)^{3/2}\left(\frac{Zr}{a} - \frac{Z^2r^2}{6a^2}\right)\mathrm{e}^{-Zr/3a}$ \\[0.5ex]
+            \hline
+            $R_{3d} = \frac{4}{81\sqrt{30}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}$ \\[0.5ex]
+            \hline
+        \end{tabular}
+    \end{table}
+
+    表 \ref{tab:6.1} 列出了类氢波函数中的一些归一化径向因子。图 \ref{fig:6.8} 是一些径向函数的示意图。除了$s$状态以外，因子$r^l$使得径向函数在$r=0$处为零。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\textwidth]{Figures/6.8.png}
+        \caption{
+                \centering\parbox{\linewidth}{
+                \centering
+                氢原子（$Z=1$）波函数\\
+                径向因子$R_{nl}\left(r\right)$的示意图。\\
+                所有图表都使用了相同的比例尺。\\
+                （在某些课本中，这些函数没有按比例绘制）。
+            }
+        }
+        \label{fig:6.8}
+    \end{figure}
+
+\subsection*{径向分布函数}
+
+    在空间中位于$r$到$r+\mathrm{d}r$、$\theta$到$\theta+\mathrm{d}\theta$、$\phi$到$\phi+\mathrm{d}\phi$的体积微元内找到电子的概率为[式(\ref{eq:5.78})]
+    \begin{equation}
+        \left|\psi\right|^2\mathrm{d}\tau = \left[R_{nl}\left(r\right)\right]^2\left|Y_l^m\left(\theta,\phi\right)\right|^2r^2\sin\theta\:\mathrm{d}r\:\mathrm{d}\theta\:\mathrm{d}\phi
+        \label{eq:6.115}
+    \end{equation}
+    我们现在想知道：在不限制 $\theta$ 和 $\phi$ 值的情况下，电子的径向坐标介于 $r$ 和 $r + \mathrm{d}r$ 之间的概率是多少？我们想知道在以原点为中心的薄球壳中找到电子的概率，其内半径为$r$，外半径为 $r + \mathrm{d}r$。因此，我们必须在保持 $r$ 不变的情况下，将 $\theta$ 和 $\phi$ 所有可能值的无穷小概率 (\ref{eq:6.115}) 相加。这相当于在 $theta$ 和 $\phi$ 上对 (\ref{eq:6.115}) 进行积分。因此，在$r$到$r+\mathrm{d}r$的区间内找到电子的概率为
+    \begin{equation}
+        \left[R_{nl}\left(r\right)\right]^2r^2\mathrm{d}r\int_{0}^{2\pi}\int_{0}^{\pi}\left|Y_l^m\left(\theta,\phi\right)\right|^2\sin\theta\:\mathrm{d}\theta\:\mathrm{d}\phi = \left[R_{nl}\left(r\right)\right]^2r^2\mathrm{d}r
+        \label{eq:6.116}
+    \end{equation}
+    其中，我们用到了球谐函数是归一化的：
+    \begin{equation}
+        \boxed{
+            \int_{0}^{2\pi}\int_{0}^{\pi}\left|Y_l^m\left(\theta,\phi\right)\right|^2\sin\theta\:\mathrm{d}\theta\:\mathrm{d}\phi = 1
+        }
+        \label{eq:6.117}
+    \end{equation}
+    从 (\ref{eq:5.72}) 和 (\ref{eq:5.80}) 可以看出。函数$R^2\left(r\right)r^2$决定了在距离原子核 $r$ 处找到电子的概率，称为\textbf{径向分布函数}（radial distribution function）；见图 \ref{fig:6.9}。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/6.9.png}
+        \caption{氢原子径向分布函数$\left[R_{nl}\left(r\right)\right]^2r^2$的图象。}
+        \label{fig:6.9}
+    \end{figure}
+
+    对于氢原子的$1s$基态，概率密度$\left|\psi\right|^2$由式(\ref{eq:6.104})给出，等于$\mathrm{e}^{-2r/a}$乘上一个常数，因此$\left|\psi_{1s}\right|^2$在$r=0$处达到最大值（见图\ref{fig:6.14}）。然而，径向分布函数$\left[R_{1s}\left(r\right)\right]^2r^2$在原点处为零，而在$r=a$处达到最大值（见图 \ref{fig:6.9}）。这两个事实并不矛盾。概率密度$\left|\psi\right|^2$与在体积为 $\mathrm{d}x\mathrm{d}y\mathrm{d}z$ 的无限小盒子中找到电子的概率成正比，而这一概率在原子核处为最大值。径向分布函数与在内外半径分别为 $r$ 和 $r +\mathrm{d}r$ 的薄球壳中找到电子的概率成正比，这一概率在$r = a$ 处达到最大值。由于$\psi_{1s}$只与$r$有关，$1s$ 的概率密度在薄球壳中基本恒定。如果我们把薄壳想象成无数个无穷小的盒子，每个盒子的体积都是 $\mathrm{d}x\mathrm{d}y\mathrm{d}z$，那么我们就可以把在薄壳中每个小盒子里的概率 $\left|\psi_{1s}\right|^2\mathrm{d}x\mathrm{d}y\mathrm{d}z$ 相加，得到在薄壳中找到电子的概率是$\left|\psi_{1s}\right|^2V_{\text{shell}}$。薄壳的体积 $V_{\text{shell}}$ 为
+    \begin{equation*}
+        \frac{4}{3}\pi\left(r+\mathrm{d}r\right)^3 - \frac{4}{3}\pi r^3 = 4\pi r^2\mathrm{d}r
+    \end{equation*}
+    其中$\left(\mathrm{d}r\right)^2$和$\left(\mathrm{d}r\right)^3$与$\mathrm{d}r$相比可以忽略。因此，位于薄壳中的概率是
+    \begin{equation*}
+        \left|\psi_{1s}\right|^2V_{\text{shell}} = R_{1s}^2\left(Y_0^0\right)^24\pi r^2\mathrm{d}r = R_{1s}^2\left[\left(4\pi\right)^{-1/2}\right]^24\pi r^2\mathrm{d}r = R_{1s}^2r^2\mathrm{d}r
+    \end{equation*}
+    与(\ref{eq:6.116})一致。$1s$ 径向分布函数在 $r =0$ 时为零，因为当 $r$ 变为零时，薄球壳的体积 $4\pi r^2\mathrm{d}r$ 变为零。它们的乘积$\left|\psi_{1s}\right|^24\pi r^2\mathrm{d}r$在$r=a$处达到最大值。
+
+    \begin{examplebox}
+        \textbf{例题：}求基态 \ce{H} 原子中电子与原子核的距离小于 $a$ 的概率。
+        \\
+
+        我们希望找到径向坐标介于$0$到$a$之间的概率。将处于 $r$ 和 $r +\mathrm{d}r$ 之间的无穷小概率 (\ref{eq:6.116}) 在 $0$ 到 $a$ 的范围内求和，就可以得出这个结果。这个无穷小量之和就是定积分
+        \begin{equation*}
+            \begin{aligned}
+                \int_{0}^{a}R_{nl}^2r^2\mathrm{d}r & = \frac{4}{a^3}\int_{0}^{a}\mathrm{e}^{-2r/a}r^2\mathrm{d}r  = \left. -\frac{4}{a^3}\mathrm{e}^{-2r/a}\left(-\frac{r^a}{2} - \frac{2ra^2}{4} - \frac{2a^3}{8}\right)\right|_{0}^{a}\\
+                & = 4\left[\mathrm{e}^{-2}\left(-5/4\right)- \left(-1/4\right)\right] = 0.323          
+            \end{aligned}
+        \end{equation*}
+        其中$R_{10}$来自表\ref{tab:6.1}，用到了附录中的积分A.7。
+        \\
+
+        \textbf{练习：}求 $2p_1$ \ce{H} 原子中电子与原子核的距离小于 $a$ 的概率。使用积分表或网站integrals.wolfram.com。（\textit{答案：}$0.00366$。）
+    \end{examplebox}
+
+\subsection*{实际类氢函数}
+
+    除了$m=0$以外，因子$\mathrm{e}^{\mathrm{i}m\phi}$使得球谐函数为复数。化学家通常不使用 (\ref{eq:6.112}) 和 (\ref{eq:6.114}) 等复波函数，而是使用由复函数的线性组合形成的实类氢波函数。第 \ref{sec:3.6 Degeneracy} 节的定理给出了这一步骤的理由：简并能级的任何本征函数的线性组合都是具有相同本征值的哈密顿算符的本征函数。由于氢原子的能量与$m$无关，状态$2p_1$和$2p_{-1}$属于一个简并的能级。它们的任何线性组合都是哈密顿算符的本征函数，具有相同的能量本征值。
+
+    将这两个函数组合起来得到一个实函数的方法是
+    \begin{equation}
+        2p_x \equiv \frac{1}{\sqrt{2}}\left(2p_1 + 2p_{-1}\right) = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\sin\theta\cos\phi
+        \label{eq:6.118}
+    \end{equation}
+    其中，我们用到了(\ref{eq:6.112})、(\ref{eq:6.114})和$\mathrm{e}^{\pm \mathrm{i}\phi} = \cos\phi \pm \mathrm{i}\sin\phi$。因子$1/\sqrt{2}$使得波函数$2p_x$归一化：
+    \begin{equation*}
+        \begin{aligned}
+            \int\left|2p_x\right|^2\mathrm{d}\tau & = \frac{1}{2}\left(\int\left|2p_1\right|^2\mathrm{d}\tau + \int\left|2p_{-1}\right|^2\mathrm{d}\tau + \int\left(2p_{-1}\right)^{\ast}2p_1\mathrm{d}\tau + \int\left(2p_{1}\right)^{\ast}2p_{-1}\mathrm{d}\tau\right)\\
+            & = \frac{1}{2}\left(1 + 1 + 0 + 0\right) = 1
+        \end{aligned}
+    \end{equation*}
+    其中我们用到了$2p_1$和$2p_{-1}$是归一化且互相正交的性质，因为
+    \begin{equation*}
+        \int_{0}^{2\pi}\left(\mathrm{e}^{\mathrm{i}\phi}\right)^{\ast}\mathrm{e}^{\mathrm{i}\phi}\mathrm{d}\phi = \int_{0}^{2\pi}\mathrm{e}^{2\mathrm{i}\phi}\mathrm{d}\phi = 0
+    \end{equation*}
+    如果我们注意到 (\ref{eq:5.51}) 给出了 下式，那么 (\ref{eq:6.118}) 的命名$2p_x$就会更加清晰：
+    \begin{equation}
+        2p_x = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}x\mathrm{e}^{-Zr/2a}
+        \label{eq:6.119}
+    \end{equation}
+
+    第二种组合函数的方法是
+    \begin{equation}
+        2p_y \equiv \frac{1}{\mathrm{i}\sqrt{2}}\left(2p_1 - 2p_{-1}\right) = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}r\sin\theta\sin\phi\:\mathrm{e}^{-Zr/2a}
+        \label{eq:6.120}
+    \end{equation}
+    \begin{equation}
+        2p_y = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}y\mathrm{e}^{-Zr/2a}
+        \label{eq:6.121}
+    \end{equation}
+    函数$2p_0$是实数，通常用下式表示：
+    \begin{equation}
+        2p_0 = 2p_z = \frac{1}{\sqrt{\pi}}\left(\frac{Z}{a}\right)^{5/2}z\mathrm{e}^{-Zr/2a}
+        \label{eq:6.122}
+    \end{equation}
+    其中大写的$Z$表示核中的质子数，小写的$z$为电子的$z$坐标。函数$2p_x$、$2p_y$和$2p_z$是互相正交的。注意$2p_z$在$xOy$平面内为零，在该平面上方为正，在下方为负。
+
+    函数$2p_{-1}$和$2p_1$都是算符$\hat{L}^2$的本征函数，其本征值也相同，为$2\hbar^2$。第 3.6 节的推理表明，线性组合 (\ref{eq:6.118}) 和 (\ref{eq:6.120}) 也是 $\hat{L}^2$ 的本征函数，其本征值为 $2\hbar^2$ 。然而，$2p_{-1}$和$2p_1$是$\hat{L}_z$的本征函数，但本征值分别为$-\hbar$和$\hbar$。因此，$2p_x$和$2p_y$不是$\hat{L}_z$的本征函数。
+
+    我们可以推广这一过程，为更高的状态构建实波函数。由于 $m$ 的范围是从 $- l$ 到 $+ l$，对于每个包含因子$\mathrm{e}^{-\mathrm{i}\left|m\right|\phi}$的复函数，都有一个 $n$ 和 $l$ 值相同但包含因子$\mathrm{e}^{+\mathrm{i}\left|m\right|\phi}$的函数，将这些函数相减，得到两个实函数，其中一个具有因子$\cos\left(\left|m\right|\phi\right)$，另一个具有因子$\sin\left(\left|m\right|\phi\right)$。表 \ref{tab:6.2} 列出了类氢原子的实波函数。这些函数的下标来自与 $2p_x$ 、$2p_y$ 和 $2p_z$ 函数类似的考虑。例如，$3d_{x}$ 函数与 $xy$ 成正比（问题 6.37）。
+
+    实类氢波函数由复函数导出，方法如下：当$m \neq 0$时，将$\mathrm{e}^{\mathrm{i}m\phi}/\left(2\pi\right)^{1/2}$替换为$\pi^{-1/2}\cos\left(\left|m\right|\phi\right)$或$\pi^{-1/2}\sin\left(\left|m\right|\phi\right)$；当$m=0$时，对于实函数和复函数，$\phi$因子都为$1/\left(2\pi\right)^{1/2}$。
+
+    在处理分子时，实类氢轨道比复类氢轨道更有用。例如，我们将在第 节中看到，氧原子的实原子轨道 $2p_x$、$2p_y$ 和 $2p_z$具有适当的对称性，可用于构建 \ce{H2O} 分子的波函数，而复数 $2p$ 轨道则不具备这种对称性。
+
+    \begin{table}[htbp]
+        \centering
+        \caption{类氢原子的实波函数}
+        \label{tab:6.2}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{l}
+            \hline
+            $1s = \frac{1}{\pi^{1/2}}\left(\frac{Z}{a}\right)^{3/2}e^{-Zr/a}$ \\[0.5ex]
+            \hline
+            $2s = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{3/2}\left(2 - \frac{Zr}{2a}\right)e^{-Zr/2a}$ \\[0.5ex]
+            \hline
+            $2p_z = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\cos\theta$ \\[0.5ex]
+            \hline
+            $2p_x = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\sin\theta\:\cos\phi$ \\[0.5ex]
+            \hline
+            $2p_y = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\sin\theta\:\sin\phi$ \\[0.5ex]
+            \hline
+            $3s = \frac{1}{81\left(3\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{3/2}\left(27 - 18\frac{Zr}{a} + 2\frac{Z^2r^2}{a^2}\right)e^{-Zr/3a}$ \\[0.5ex]
+            \hline
+            $3p_z = \frac{2^{1/2}}{81\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}\left(6 - \frac{Zr}{a}\right)r\mathrm{e}^{-Zr/3a}\cos\theta$ \\[0.5ex]
+            \hline
+            $3p_x = \frac{2^{1/2}}{81\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}\left(6 - \frac{Zr}{a}\right)r\mathrm{e}^{-Zr/3a}\sin\theta\:\cos\phi$ \\[0.5ex]
+            \hline
+            $3p_y = \frac{2^{1/2}}{81\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}\left(6 - \frac{Zr}{a}\right)r\mathrm{e}^{-Zr/3a}\sin\theta\:\sin\phi$ \\[0.5ex]
+            \hline
+            $3d_{z^2} = \frac{1}{81\left(6\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}\left(3\cos^2\theta - 1\right)$ \\[0.5ex]
+            \hline
+            $3d_{xz} = \frac{2^{1/2}}{81\left(6\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}\sin\theta\:\cos\theta\:\cos\phi$ \\[0.5ex]
+            \hline
+            $3d_{yz} = \frac{2^{1/2}}{81\left(6\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}\sin\theta\:\cos\theta\:\sin\phi$ \\[0.5ex]
+            \hline
+            $3d_{x^2-y^2} = \frac{1}{81\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}\sin^2\theta\:\cos2\phi$ \\[0.5ex]
+            \hline
+            $3d_{xy} = \frac{1}{81\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}\sin^2\theta\:\sin2\phi$ \\[0.5ex]
+        \end{tabular}
+    \end{table}
 
 \section{类氢轨道}
 \label{sec:6.7 Hydrogenlike orbitals}

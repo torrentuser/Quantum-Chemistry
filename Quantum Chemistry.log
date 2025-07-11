@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  10 JUL 2025 20:27
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  11 JUL 2025 16:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1571,31 +1571,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 750--753
 
  []
 
-[101]) (./chapters/07.tex [102]
-Chapter 7.
-) (./chapters/08.tex [103
+[101] [102]
+Underfull \hbox (badness 10000) in paragraph at lines 844--846
 
-] [104
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 857--860
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 865--867
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 881--884
+
+ []
+
+[103]
+File: Figures/6.7.png Graphic file (type bmp)
+<Figures/6.7.png>
+ [104]
+File: Figures/6.8.png Graphic file (type bmp)
+<Figures/6.8.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[105]
+File: Figures/6.9.png Graphic file (type bmp)
+<Figures/6.9.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `fig:6.14' on page 106 undefined on input line 998.
+
+[106]
+Underfull \hbox (badness 10000) in paragraph at lines 1009--1011
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1021
+
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 1022--1023
+[]\TU/SimSun(0)/b/n/10.53937 练 习：|  \TU/SimSun(0)/m/n/10.53937 求 $[][][]$ $[]$ 原 子 中 电 子 与 原 子 核 的 距 离 小 于 $[]$ 的 概 率。|  使 用 积 分 表 或 网 站 \TU/lmr/m/n/10.53937 inte-
+ []
+
+[107] [108]) (./chapters/07.tex [109] [110
+
+]
+Chapter 7.
+) (./chapters/08.tex [111] [112
 
 ]
 Chapter 8.
-) (./chapters/09.tex [105] [106
+) (./chapters/09.tex [113] [114
 
 ]
 Chapter 9.
-) (./chapters/10.tex [107] [108
+) (./chapters/10.tex [115] [116
 
 ]
 Chapter 10.
-) (./chapters/11.tex [109] [110
+) (./chapters/11.tex [117] [118
 
 ]
 Chapter 11.
-) (./chapters/12.tex [111] [112
+) (./chapters/12.tex [119] [120
 
 ]
 Chapter 12.
-) (./chapters/13.tex [113] [114
+) (./chapters/13.tex [121] [122
 
 ]
 Chapter 13.
@@ -1605,11 +1660,7 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 15.05463pt on input line 16.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 16.
+(hyperref)                removing `\mhchem@cee' on input line 16.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1617,15 +1668,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 19.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 19.
+(hyperref)                removing `\mhchem@cee' on input line 19.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1633,111 +1676,87 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 19.
+(hyperref)                removing `\mhchem@cee' on input line 31.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 31.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 31.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 31.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 40.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 40.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 40.
+(hyperref)                removing `\mhchem@cee' on input line 40.
 
 ) (./chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [115]
+ [123]
 Overfull \vbox (69.2806pt too high) has occurred while \output is active []
 
- [116]
+ [124]
 Chapter 14.
-) (./chapters/15.tex [117
+) (./chapters/15.tex [125
 
-] [118
+] [126
 
 ]
 Chapter 15.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
+(hyperref)                removing `\mhchem@cee' on input line 16.
 
 ) (./chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [119]
+ [127]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
- [120]
+ [128]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [121
+ [129
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
- [122]
+ [130]
 Chapter 17.
-[123
+[131
 
-]) (./chapters/appendix.tex [124]
+]) (./chapters/appendix.tex [132]
 附录 A.
-) (./chapters/bibliography.tex [125
+) (./chapters/bibliography.tex [133
 
-] [126
+] [134
 
 ]
 附录 B.
-[127] [128
+[135] [136
 
-]) (./chapters/answers.tex [129] [130
+]) (./chapters/answers.tex [137] [138
 
 ]
 附录 C.
-) (./chapters/index.tex [131] [132
+) (./chapters/index.tex [139] [140
 
 ]
 附录 D.
-) [133] (./Quantum Chemistry.aux)
+) [141] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 39254 strings out of 474773
- 885598 string characters out of 5751499
- 2004842 words of memory out of 5000000
- 60720 multiletter control sequences out of 15000+600000
- 577295 words of font info for 175 fonts, out of 8000000 for 9000
+ 39320 strings out of 474773
+ 886585 string characters out of 5751499
+ 2016842 words of memory out of 5000000
+ 60780 multiletter control sequences out of 15000+600000
+ 577311 words of font info for 177 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,114p,996b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (141 pages).
+Output written on Quantum Chemistry.pdf (149 pages).
