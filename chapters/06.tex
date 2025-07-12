@@ -1269,6 +1269,43 @@
 
 \section{径向薛定谔方程的数值解法}
 \label{sec:6.9 Numerical Solution of the Radial Schrödinger Equation}
+    对于单粒子中心力问题，波函数$\psi = R\left(r\right)Y_l^m\left(\theta,\phi\right)$由(\ref{eq:6.16})给出，径向因子$R\left(r\right)$通过求解径向方程(\ref{eq:6.17})得到。第\ref{sec:4.4 Numerical Solutions of the One-Dimensional Time-Independent Schrödinger Equation}节中的Numerov方法适用于形式为$\psi^{\prime\prime} = G\left(x\right)\psi\left(x\right)$的微分方程[式(\ref{eq:4.66})]，为了应用该方法，我们需要消去(\ref{eq:6.17})中的一阶导数$R^{\prime}$。让我们定义$F\left(r\right) \equiv rR\left(r\right)$，则
+    \begin{equation}
+        R\left(r\right) = r^{-1}F\left(r\right)
+        \label{eq:6.136}
+    \end{equation}
+    因此，$R^{\prime} = -r^{-2}F + r^{-1}F^{\prime}$，$R^{\prime\prime} = -2r^{-3}F + 3r^{-2}F^{\prime} - r^{-1}F^{\prime\prime}$。将这些表达式代入(\ref{eq:6.17})，将径向方程变换为
+    \begin{equation}
+        -\frac{\hbar^2}{2m}F^{\prime\prime}\left(r\right)+\left[V\left(r\right)+\frac{l\left(l+1\right)\hbar^2}{2mr^2}\right]F\left(r\right) = EF\left(r\right)
+        \label{eq:6.137}
+    \end{equation}
+    \begin{equation}
+        F^{\prime\prime}\left(r\right) = G\left(r\right)F\left(r\right), \quad \text{其中}G\left(r\right) \equiv \frac{m}{\hbar^2}\left(2V-2E\right)+ \frac{l\left(l+1\right)}{r^2}
+        \label{eq:6.138}
+    \end{equation}
+    其形式符合了Numerov方法的要求。为了使用数值法解(\ref{eq:6.137})，我们需要分别处理每个$l$的值。方程 (\ref{eq:6.137}) 类似于一维薛定谔方程——$\left(\hbar^2/2m\right)\psi^{\prime\prime}\left(x\right)+V\left(x\right)\psi\left(x\right) = E\psi\left(x\right)$，只不过用$r$（范围是$0 \to \infty$）代替了$x$（范围是$-\infty$到$+\infty$），$F\left(r\right) \equiv rR\left(r\right)$代替了$\psi$，$V\left(r\right) + l\left(l+1\right)\hbar^2/2mr^2$代替了$V\left(x\right)$。我们可以预期，对于每个 $l$ 值，能量最低的解将有 $0$ 个内部节点（即$0<r<\infty$的节点），下一个最低的解将有 $1$ 个内部节点，依此类推。
+
+    回顾式(\ref{eq:6.81})之后的讨论，若$R\left(r\right)$在原点附近表现与$1/r^b$相似，那么如果$b>1$，则$R\left(r\right)$不是平方可积的；值$b=1$是不允许的，如(\ref{eq:6.83})之后所述。因此，当$r=0$时，必须有$F\left(r\right)\equiv rR\left(r\right)$为零。
+
+    对于$l\neq 0$的情况，(\ref{eq:6.138})中的$G\left(r\right)$在$r=0$处发散，这会让大多数电脑感到不爽。为了避免这个问题，我们可以从极小的$r$值开始求解（例如，$10^{-15}$为无量纲的$r_r$）并近似$F\left(r\right)$在该点为零。
+
+    例如，我们将使用 Numerov 方法求解最低束缚态 \ce{H} 原子能量。有$V = -\mathrm{e}^2/4\pi\varepsilon_0r = -\mathrm{e}^{\prime^2}/r$，其中$\mathrm{e}^{\prime} \equiv \mathrm{e}/\left(4\pi\varepsilon_0\hbar^2/m\right)^{1/2}$。径向方程(\ref{eq:6.62})包含三个常数$\mathrm{e}^{\prime}$、$\mu$和$\hbar$，其中$\mathrm{e}^{\prime} \equiv \mathrm{e}/\left(4\pi\varepsilon_0\hbar^2/m\right)^{1/2}$具有国际单位$\mathrm{m}\: \mathrm{N}^{1/2}$（见附录的表A.1），因此，有无量纲的$\left[\mathrm{e}^{\prime}\right] = \mathrm{L}^{3/2}\mathrm{M}^{1/2}\mathrm{T}^{-1}$。按照公式（\ref{eq:4.73}）的推导过程，我们发现 \ce{H} 原子的约化能量和约化径向坐标为（问题 6.47）
+    \begin{equation}
+        E_r = E/\mu \mathrm{e}^{\prime ^4}\hbar^{-2}, \quad r_r = r/B = r/\hbar^2\mu^{-1}\mathrm{e}^{\prime ^{-2}}
+        \label{eq:6.139}
+    \end{equation}
+    使用(\ref{eq:6.139})、(\ref{eq:4.76})和(\ref{eq:4.77})将$\psi$替换为$F$，使用$B = \hbar^2\mu^{-1}\mathrm{e}^{\prime ^{-2}}$将氢原子的式(\ref{eq:6.137})变换为（问题6.47）
+    \begin{equation}
+        F^{\prime\prime}_r = G_rF_r, \quad \text{其中}G_r = l\left(l+1\right)/r_r^2 - 2/r_r -2E_r
+        \label{eq:6.140}
+    \end{equation}
+    其中$F_r = F/B^{-1/2}$。
+
+    氢原子束缚态能量均小于零。假设我们想知道$E_r \leq -0.04$的氢原子束缚态本征值。令该能量等于$V_r$，我们有（问题6.47）$-0.04 = -1/r_r$，而这个能量值的经典允许区域从$r_r = 0$一直延申到$r_r = 25$。进入经典禁区2个单位长度，我们有$r_{r,\max} = 27$并要求$F_r\left(27\right)=0$。我们将$s_r$设为0.1，将0到27均分为270个点（更准确地说，是$10^{-15}$到$27+10^{-15}$）。
+
+    (\ref{eq:6.140})中的$G_r$包含参数$l$，所以必须修改表 4.1 中的程序，以输入 $l$ 的值。设置电子表格时，请在某个单元格中输入 $l$ 值，并在输入定义 $G_r$ 的单元格 B7 的公式时参考该单元格（图 4.9 4.8）。A列的起始位置为$r_r = 1\times 10^{-15}$。电子表格的 C 列将包含 $F_r$ 值，而不是 $\psi_r$ 值，$F_r$ 在 $r_r = 1\times10^{-15}$ 处与零相差很小，可以忽略不计，因此在该点将取为零。
+
+    根据上述选择，我们可以找到（问题 6.48a ）的最低三个$l=0$的 \ce{H} 原子本征值为$E_r = -4970,-0.1246,-0205499$，最低两个$l=1$本征值为$-0.1250$和$-0.05526$。真实值[式(\ref{eq:6.94})和(\ref{eq:6.139})]为$-0.5000,-0.1250,-0.05555$。精度一般的主要原因是 $G\left(r\right)$ 在 $r=0$ 附近的快速变化。如果$s_r$取为$0.025$而不是$1$（得到1080个点），$l=0$的本征值将精确到$-0.4998$、$20.12497$和$-0.05510$。另见问题6.48b。
 
 \section*{总结}
 
