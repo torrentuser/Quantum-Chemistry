@@ -502,7 +502,7 @@
 
     \begin{quote}
         \small
-        我们考虑了库仑定律出现微小偏差的可能性。实验表明，如果将库仑定律力写成与 $r^{-2+s}$ 成正比，那么 $\left|s\right|<10^{-16}$。库仑定律的偏差可以证明光子静止质量不为零。没有证据表明光子的静止质量不为零，而且数据表明，任何这种质量都必须小于 $10^{-51} \: \mathrm{g}$；A. S. Goldhaber and M. M. Nieto, \textit{Rev. Mod. Phys.}, \textbf{82}, 939 (2010) (arxiv.org/abs/0809.1003); G. Spavieri et al., \textit{Eur. Phys. J. D}, \textbf{61}, 531 (2011) (link.springer.com/content/pdf/10.1140/epjd/e2011-10508-7).
+        我们考虑了库仑定律出现微小偏差的可能性。实验表明，如果将库仑定律力写成与 $r^{-2+s}$ 成正比，那么 $\left|s\right|<10^{-16}$。库仑定律的偏差可以证明光子静止质量不为零。没有证据表明光子的静止质量不为零，而且数据表明，任何这种质量都必须小于 $10^{-51} \: \mathrm{g}$；A. S. Goldhaber and M. M. Nieto, \textit{Rev. Mod. Phys.}, \textbf{82}, 939 (2010) (arxiv.org/abs/0809.1003); G. Spavieri et al., \textit{Eur. Phys. J. D}, \textbf{61}, 531 (2011) (\url{link.springer.com/content/pdf/10.1140/epjd/e2011-10508-7}).
     \end{quote}
 
     式(\ref{eq:6.56})中的力是中心力，将其与式(\ref{eq:6.4})相比较，有$\mathrm{d}\left(r\right)/\mathrm{d}r = Z\mathrm{e}^2/4\pi\varepsilon_0r^2$。积分，得出
@@ -1111,6 +1111,88 @@
 
 \section{类氢轨道}
 \label{sec:6.7 Hydrogenlike orbitals}
+    类氢波函数是单电子空间波函数，类氢轨道也是单电子空间波函数（第 \ref{sec:6.5 The Hydrogen Atom} 节）。这些函数是针对单电子原子得出的，我们不能指望用它们来真正准确地表示多电子原子的波函数。第 \ref{chap:11} 章将讨论如何使用轨道概念来近似多电子原子的波函数。现在我们只讨论单电子原子。
+
+    描绘轨道有两种完全不同的方法。一种方法是绘制函数图象；第二种方法是绘制概率密度恒定的等值面。
+
+    首先考虑绘制函数图象。要将 $\psi$ 的变化绘制成三个自变量 $r$、$\theta$ 和 $\phi$ 的函数，我们需要四个维度。我们世界的三维特性使我们无法绘制这样的图表。因此，我们绘制$\psi$中某个因子的图象。绘制$R\left(r\right)$与$r$的关系图，我们得到图 \ref{fig:6.8} 的曲线，其中不包含 $\psi$ 角度变化的任何信息。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/6.10.png}
+        \caption{氢原子波函数中 $s$ 和 $p_z$ 的 $\theta$ 因子的极坐标图。}
+        \label{fig:6.10}
+    \end{figure}
+
+    现在来考虑$S\left(\theta\right)$的图象，由表(\ref{tab:5.1})，我们有
+    \begin{equation*}
+        S_{0,0} = 1/\sqrt{2}, \quad S_{1,0} = \frac{1}{2}\sqrt{6}\cos\theta
+    \end{equation*}
+    我们可以使用二维直角坐标绘制这些函数的图象，在纵轴上绘制 $S$，在横轴上绘制 $\theta$。$S_{0,0}$给出了一条水平直线，而$S_{1,0}$给出了一条余弦曲线。更常见的情况是使用平面极坐标系绘制$S$的图象。变量$\theta$是与$z$轴正半轴的夹角，而$S\left(\theta\right)$是从原点到图上点的距离。对于$S_{0,0}$我们得到了一个圆；对于$S_{1,0}$，我们得到了两个相切的圆(图\ref{fig:6.10})。$S_{1,0}$图像中较低的圆旁边的负号，表示当$\frac{1}{2}\pi < \theta \leq \pi$时，$S_{1,0}$为负值。严格来说，在绘制 $\cos\theta$ 时，我们只得到了较高的圆，它被绘制了两次；要得到两个相切的圆，我们必须绘制 $\left|\cos\theta\right|$ 。
+
+    我们可以绘制一张$\left|S\left(\theta\right)T\left(\phi\right)\right|$与$\theta$和$\phi$的函数关系图，而不是分别绘制角向因子的图象。我们将使用球坐标，从原点到图上点的距离将为$\left|S\left(\theta\right)T\left(\phi\right)\right|$。对于$s$状态，$ST$与角度无关，因此我们得到了一个半径为$1/\left(4\pi\right)^{1/2}$的球面。而对于$p_z$状态，$ST = \frac{1}{2}\left(3/\pi\right)^{1/2}\cos\theta$，$\left|ST\right|$的图象由两个球体组成，球体中心位于 $z$ 轴，并与原点相切（图 \ref{fig:6.11}）。毫无疑问，图 \ref{fig:6.11} 是大家都很熟悉的。有些书上说这给出了 $p_z$ 轨道的形状，这是错误的。图 \ref{fig:6.11} \textit{只是一张波函数 $p_z$ 中的角向因子图。}角向因子 $p_x$ 和 $p_y$ 的图形分别给出了位于 $x$ 和 $y$ 轴上的切线球。如果我们以球面坐标绘制 $S^2T^2$，就会得到具有我们熟悉的八字形截面的表面；重复一遍，这些是图形，而不是轨道形状。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/6.11.png}
+        \caption{
+            $p_z$波函数中角向因子$\left|Y_1^0\left(\theta,\phi\right)\right|$的图象。
+        }
+        \label{fig:6.11}
+    \end{figure}
+
+    现在，考虑绘制概率密度恒定的等值面。我们将在空间中画出曲面，在每个曲面上，概率密度 $\left|\psi\right|^2$ 的值都是恒定的。自然，如果 $\left|\psi\right|^2$ 在给定的曲面上是常数，那么 $\left|\psi\right|$ 在该曲面上也是常数。$\left|\psi\right|^2$ 和 $\left|\psi\right|$ 的等值面是相同的。
+
+    对于$s$轨道，$\psi$只与$r$有关，等值面就是一个恒定 $r$ 的曲面，即以原点为中心的球面。为了确定一个轨道的大小，我们取一个等值面，在这个等值面内找到电子的概率比如说是 $95\%$，因此我们希望$\int_{V}\left|\psi\right|^2\mathrm{d}\tau = 0.95$，其中$V$是轨道等值面所包围的体积。
+
+    让我们来计算类氢轨道 $2p_y$ 在 $yOz$ 平面上的横截面。在该平面上，有$\phi = \pi/2$（图\ref{fig:6.5}）以及$\sin\phi = 1$；因此表 \ref{tab:6.2} 给出了该轨道在 $yOz$ 平面上的情况
+    \begin{equation}
+        \left|2p_y\right| = k^{5/2}\pi^{-1/2}r\mathrm{e}^{-kr}\left|\sin\theta\right|
+        \label{eq:6.123}
+    \end{equation}
+    其中$k = Z/2a$。为了找到轨道横截面，我们使用平面极坐标来绘制 $\psi$ 固定值的 (\ref{eq:6.123}) 图；$r$是到原点的距离，而$\theta$是与 $z$ 轴的夹角。图 \ref{fig:6.12} 显示了典型等值线的结果（问题 6.44）。由于$y\mathrm{e}^{-kr} = y\exp\left[-k\left(x^2+y^2+z^2\right)^{1/2}\right]$，我们可以看到$2p_y$轨道是$y$和$\left(x^2+z^2\right)$的函数。因此，在以 $y$ 轴为中心、平行于 $xOz$ 平面的圆上，$2p_y$是常数。因此，将图 \ref{fig:6.12} 中的横截面绕 $y$ 轴旋转，可以得到一对扭曲的椭圆体，从而形成三维等值面。实际 $2p$ 轨道的形状是两个分离的扭曲椭圆体，而不是两个相切的球体。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.45\textwidth]{Figures/6.12.png}
+        \caption{$2p_y$轨道等值线。}
+        \label{fig:6.12}
+    \end{figure}
+
+    现在来考虑两个复轨道$2p_{\pm 1}$的形状。我们有
+    \begin{equation*}
+        2p_{\pm 1} = k^{5/2}\pi^{-1/2}r\mathrm{e}^{-kr}\sin\theta\:\mathrm{e}^{\pm \mathrm{i}\phi}
+    \end{equation*}
+    \begin{equation}
+        \left|2p_{\pm 1}\right| = k^{5/2}\pi^{-1/2}\mathrm{e}^{-kr}r\left|\sin\theta\right|
+        \label{eq:6.124}
+    \end{equation}
+    这两个轨道有相同的形状。由于 (\ref{eq:6.124}) 和 (\ref{eq:6.123}) 的右边相同，我们得出结论：图 \ref{fig:6.12} 也给出了 $yOz$ 平面上 $2p_{\pm 1}$ 轨道的横截面。由于[式(\ref{eq:5.51})]
+    \begin{equation*}
+        \mathrm{e}^{-kr}r\left|\sin\theta\right| = \exp\left[-k\left(x^2+y^2+z^2\right)^{1/2}\right]\left(x^2+y^2\right)^{1/2}
+    \end{equation*}
+    我们看到$2p_{\pm 1}$轨道是$z$和$\left(x^2+y^2\right)$的函数，因此，我们将图 \ref{fig:6.12} 绕 $z$ 轴旋转，就能得到三维轨道形状。这样就形成了一个甜甜圈状的表面。
+
+    图 6.13 显示了一些类氢轨道面。$2s$ 轨道有一个看不到的球形节点；$3s$ 轨道有两个这样的节点。$3p_z$ 轨道有一个球形节点（虚线表示）和一个节点平面（$xOy$ 平面）。$3d_{z^2}$ 轨道有两个节点锥。$3d_{x^2-y^2}$ 轨道有两个节平面。请注意，不同轨道的视图并不相同。波函数的相对符号已标出。表 \ref{tab:6.2} 中的其他三个实 $3d$ 轨道与 $3d_{x^2-y^2}$ 轨道形状相同，但方向不同。$3d_{xy}$轨道的裂片位于$x$轴和$y$轴之间，它是通过将$3d_{x^2-y^2}$轨道绕$z$轴旋转\ang{45}而得到的。$3d_{yz}$ 和 $3d_{xz}$ 轨道的裂片分别位于 $y$ 轴和 $z$ 轴之间以及 $x$ 轴和 $z$ 轴之间。（真实类氢轨道的在线三维视图见 \url{www.falstad.com/qmatom}；可使用鼠标旋转）
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.65\textwidth]{Figures/6.13.png}
+        \caption{一些氢原子轨道的形状。}
+        \label{fig:6.13}
+    \end{figure}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Figures/6.14.png}
+        \caption{
+                \centering\parbox{\linewidth}{
+                \centering
+                一些氢原子状态的概率密度。\\
+                有关精确的立体图，请参见D. T. Cromer, \textit{J. Chem. Educ.}, \textbf{45}, 626 (1968).
+            }
+        }
+        \label{fig:6.14}
+    \end{figure}
+
+    图 \ref{fig:6.14} 表示各种轨道在 $yOz$ 平面上的概率密度。特定区域中点的数量与该区域中的 $\left|\psi\right|^2$ 值成正比。将这些图表绕垂直（$z$）轴旋转，就得到了三维概率密度。$2s$ 轨道的角度系数是一个常数，因此没有角向节点；对于这个轨道，$n-l-1=1$，表明有一个径向节点。图 \ref{fig:6.14} 显示了 $\psi_{2s}=0$ 的球面。
+
+    薛定谔最初对$\left|\psi\right|^2$的解释是，电子被 “涂抹 ”成电子云。如果我们考虑一个电子从一种介质传递到另一种介质，我们会发现 $\left|\psi\right|^2$ 在两种介质中都不为零。根据电子云的解释，这意味着电子的一部分被反射，一部分被透射。然而，在实验中，我们永远无法检测到电子的一小部分；电子是不可分割的实体。根据玻恩解释，两种介质中的 $\left|\psi\right|^2$ 值给出了反射和透射的\textit{概率}，从而解决了这一难题。我们绘制的轨道形状给出了找到电子的总概率为 $95\%$ 的空间区域。
 
 \section{塞曼效应}
 \label{sec:6.8 Zeeman effect}

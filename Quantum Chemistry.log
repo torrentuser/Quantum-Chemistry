@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  11 JUL 2025 16:35
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  12 JUL 2025 11:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1155,7 +1155,31 @@ Underfull \vbox (badness 1997) has occurred while \output is active []
 
  [1
 
-] [2]
+]
+
+Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "FangSong/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "FangSong/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
+(fontspec)             with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+ [2]
 Overfull \hbox (4.1352pt too wide) in paragraph at lines 42--53
 []\TU/lmr/m/n/10.53937 1907 \TU/SimSun(0)/m/n/10.53937 年，|  爱 因 斯 坦 将 能 量 量 子 化 应 用 于 固 体 元 素 中 原 子 的 振 动。|  假 设 每 个 原 子 在 每 个 方 向 $[]$
  []
@@ -1213,12 +1237,7 @@ File: Figures/2.3.png Graphic file (type bmp)
 <Figures/2.3.png>
 File: Figures/2.4.png Graphic file (type bmp)
 <Figures/2.4.png>
- [21] [22]
-Overfull \hbox (2.285pt too wide) in paragraph at lines 292--298
-[]\TU/SimSun(0)/m/n/10.53937 关 于 粒 子 在 盒 子 中 的 在 线 计 算 机 模 拟，|  请 访 问 \TU/lmr/m/n/10.53937 www.chem.uci.edu/undergraduate/applets/dwell/ 
- []
-
-[23]
+ [21] [22] [23]
 File: Figures/2.5.png Graphic file (type bmp)
 <Figures/2.5.png>
 
@@ -1391,29 +1410,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--382
 [55]
 File: Figures/4.5.png Graphic file (type bmp)
 <Figures/4.5.png>
-
-Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Could not resolve font "FangSong/B" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Could not resolve font "FangSong/I" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
-(fontspec)             with options [Script={CJK}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
 
 Overfull \hbox (15.9104pt too wide) in paragraph at lines 424--444
 \TU/SimSun(0)/m/n/10.53937 函 数、|  概 率 密 度；| $[]$ 和 $[]$ 可 以 改 变） ；| [][]$[][][][][][][][][][][][] [] [][][][][][][] [] [][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
@@ -1608,9 +1604,6 @@ File: Figures/6.9.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `fig:6.14' on page 106 undefined on input line 998.
-
 [106]
 Underfull \hbox (badness 10000) in paragraph at lines 1009--1011
 
@@ -1626,31 +1619,58 @@ Underfull \hbox (badness 1436) in paragraph at lines 1022--1023
 []\TU/SimSun(0)/b/n/10.53937 练 习：|  \TU/SimSun(0)/m/n/10.53937 求 $[][][]$ $[]$ 原 子 中 电 子 与 原 子 核 的 距 离 小 于 $[]$ 的 概 率。|  使 用 积 分 表 或 网 站 \TU/lmr/m/n/10.53937 inte-
  []
 
-[107] [108]) (./chapters/07.tex [109] [110
+[107] [108]
+File: Figures/6.10.png Graphic file (type bmp)
+<Figures/6.10.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[109]
+File: Figures/6.11.png Graphic file (type bmp)
+<Figures/6.11.png>
+ [110]
+File: Figures/6.12.png Graphic file (type bmp)
+<Figures/6.12.png>
+File: Figures/6.13.png Graphic file (type bmp)
+<Figures/6.13.png>
+File: Figures/6.14.png Graphic file (type bmp)
+<Figures/6.14.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[111]
+Underfull \vbox (badness 1708) has occurred while \output is active []
+
+ [112]) (./chapters/07.tex [113] [114
 
 ]
 Chapter 7.
-) (./chapters/08.tex [111] [112
+) (./chapters/08.tex [115] [116
 
 ]
 Chapter 8.
-) (./chapters/09.tex [113] [114
+) (./chapters/09.tex [117] [118
 
 ]
 Chapter 9.
-) (./chapters/10.tex [115] [116
+) (./chapters/10.tex [119] [120
 
 ]
 Chapter 10.
-) (./chapters/11.tex [117] [118
+) (./chapters/11.tex [121] [122
 
 ]
 Chapter 11.
-) (./chapters/12.tex [119] [120
+) (./chapters/12.tex [123] [124
 
 ]
 Chapter 12.
-) (./chapters/13.tex [121] [122
+) (./chapters/13.tex [125] [126
 
 ]
 Chapter 13.
@@ -1685,14 +1705,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [123]
+ [127]
 Overfull \vbox (69.2806pt too high) has occurred while \output is active []
 
- [124]
+ [128]
 Chapter 14.
-) (./chapters/15.tex [125
+) (./chapters/15.tex [129
 
-] [126
+] [130
 
 ]
 Chapter 15.
@@ -1703,60 +1723,56 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [127]
+ [131]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
- [128]
+ [132]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [129
+ [133
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
- [130]
+ [134]
 Chapter 17.
-[131
+[135
 
-]) (./chapters/appendix.tex [132]
+]) (./chapters/appendix.tex [136]
 附录 A.
-) (./chapters/bibliography.tex [133
+) (./chapters/bibliography.tex [137
 
-] [134
+] [138
 
 ]
 附录 B.
-[135] [136
+[139] [140
 
-]) (./chapters/answers.tex [137] [138
+]) (./chapters/answers.tex [141] [142
 
 ]
 附录 C.
-) (./chapters/index.tex [139] [140
+) (./chapters/index.tex [143] [144
 
 ]
 附录 D.
-) [141] (./Quantum Chemistry.aux)
+) [145] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 39320 strings out of 474773
- 886585 string characters out of 5751499
+ 39374 strings out of 474773
+ 887620 string characters out of 5751499
  2016842 words of memory out of 5000000
- 60780 multiletter control sequences out of 15000+600000
- 577311 words of font info for 177 fonts, out of 8000000 for 9000
+ 60827 multiletter control sequences out of 15000+600000
+ 577319 words of font info for 178 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,114p,996b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (149 pages).
+Output written on Quantum Chemistry.pdf (153 pages).
