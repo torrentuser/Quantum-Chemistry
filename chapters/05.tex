@@ -146,7 +146,8 @@
             \langle x \rangle = \frac{a}{2}, \quad \langle x^2 \rangle = \left(\frac{1}{3}-\frac{1}{2\pi^2}\right)a^2, \quad \langle p_x \rangle = 0, \quad \langle p_x^2 \rangle = \frac{h^2}{4a^2}
         \end{equation*}
         使用这些结果证明该系统是否遵守不确定性原理(\ref{eq:5.13})。
-        \\ \\
+        \\ 
+        
         我们有
         \begin{equation*}
             \left(\Delta x\right)^2 = \langle x^2 \rangle - \langle x \rangle^2 = \left(\frac{1}{3}-\frac{1}{2\pi^2}\right)a^2 - \frac{a^2}{4} = \frac{\pi^2-6}{12\pi^2}a^2
@@ -362,9 +363,9 @@
     \end{equation}
 
     矢量符号是表示函数变量的一种便捷方法。双粒子系统的波函数可以写作$\psi\left(x_1,y_1,z_1,x_2,y_2,z_2\right)$，如果矢量$\mathbf{r}_1$从原点指向粒子1，那么$\mathbf{r}_1$就具有$x,y,z$三个方向的分量，指定$\mathbf{r}_1$等同于指定三个坐标$x,y,z$。$\mathbf{r}_2$也是如此。因此，我们可以将波函数写成$\psi\left(\mathbf{r}_1,\mathbf{r}_2\right)$。矢量符号也可以用在积分中，例如式(\ref{eq:3.57})对全空间的积分经常写成$\int \cdots \int\left|\Psi\left(\mathbf{r}_1,\cdots,\mathbf{r}_n\right)\right|^2\mathrm{d}\mathbf{r}_1\cdots\mathrm{d}\mathbf{r}_n$。
-    \\
     
-    \noindent\textbf{$n$维空间的矢量}
+    
+\subsection*{$n$维空间的矢量}
 
     矢量的定义可以推广到三维以上的空间。三维空间中的矢量$\mathbf{A}$可以由其模$\left|\mathbf{A}\right|$和方向来定义；若在笛卡尔坐标系中，还可以用其三个分量$\left(A_x,A_y,A_z\right)$来定义。因此，我们可以把三维矢量定义为按特定顺序排列的三个实数$\left(A_x,A_y,A_z\right)$的集合。$n$ 维实数矢量 “空间”（有时称为超空间）中的矢量 $\mathbf{B}$ 定义为 $n$ 个实数的有序集合$\left(B_1,B_2,\cdots,B_n\right)$，其中$B_1$，$B_2$，$\cdots$，$B_n$是$\mathbf{B}$的\textbf{分量}（components）。不要担心无法将 $n$ 维空间中的矢量可视化。
 
@@ -459,7 +460,7 @@
 
     作用在粒子上的\textit{力矩}（torque）$\tau$定义为力$\mathbf{F}$和位置矢量$\mathbf{r}$的叉积：$\tau \equiv \mathbf{r} \times \mathbf{F}$。可以证明：$\tau = \mathrm{d}\mathbf{L} / \mathrm{d}t$。当没有力矩作用于粒子时，其角动量的变化率为零；也就是说，其角动量是恒定的（或守恒的）。对于绕太阳运行的行星来说，引力是沿径向分布的。由于两个平行矢量的交积为零，因此行星上没有力矩，其角动量是守恒的。
 
-    \subsection*{单粒子轨道角动量算符}
+\subsection*{单粒子轨道角动量算符}
     现在，让我们来看看量子力学的处理方法。量子力学中有两种角动量。\textbf{轨道角动量}（orbital angular momentum）是粒子在空间运动的结果，与经典力学量 $\mathbf{L}$ 类似。\textbf{自旋角动量}（spin angular momentum）（第\ref{chap:10}章）是许多微观粒子的固有属性，与经典力学没有类似之处。我们现在只考虑轨道角动量。将经典方程(\ref{eq:5.39}) 中的坐标和角动量替换为相应的算符[式 (\ref{eq:3.21})-(\ref{eq:3.23})] ，我们就得到了粒子轨道角动量分量的量子力学算符。有
     \begin{equation}
         \hat{L}_x = -\mathrm{i}\hbar\left(y\frac{\partial}{\partial z} - z\frac{\partial}{\partial y}\right)
@@ -667,7 +668,7 @@
 
     虽然角动量算符取决于所有三个直角坐标$x$、$y$和$z$，但它们只涉及两个球面坐标$\theta$和$\phi$。
 
-    \subsection*{单粒子轨道角动量的本征函数和本征值}
+\subsection*{单粒子轨道角动量的本征函数和本征值}
     我们现在希望找到$\hat{L}^2$和$\hat{L}_z$的共同本征函数，记作$Y$。由于这些算符只涉及$\theta$和$\phi$，那么$Y$就是这两个变量的函数：$Y = Y\left(\theta,\phi\right)$（当然，由于这些算符都是线性算符，我们可以用任意一个关于$r$的函数乘以$Y$而不改变$Y$是$\hat{L}^2$和$\hat{L}_z$的本征函数的事实）。我们必须解以下方程：
     \begin{equation}
         \hat{L}_zY\left(\theta,\phi\right) = bY\left(\theta,\phi\right)

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  12 JUL 2025 20:39
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  12 JUL 2025 20:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1349,17 +1349,7 @@ File: Figures/3.4.png Graphic file (type bmp)
 Chapter 4.
 [47
 
-] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-
- []
-
-[49] [50] [51]
+] [48] [49] [50] [51]
 File: Figures/4.1.png Graphic file (type bmp)
 <Figures/4.1.png>
 
@@ -1447,13 +1437,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: Figures/5.3.png Graphic file (type bmp)
 <Figures/5.3.png>
  [70]
-Overfull \hbox (3.75659pt too wide) in paragraph at lines 364--366
+Overfull \hbox (3.75659pt too wide) in paragraph at lines 364--365
 []\TU/SimSun(0)/m/n/10.53937 矢 量 符 号 是 表 示 函 数 变 量 的 一 种 便 捷 方 法。|  双 粒 子 系 统 的 波 函 数 可 以 写 作 $[] []$，|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 364--366
-
  []
 
 [71] [72]
