@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  12 JUL 2025 19:54
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  12 JUL 2025 20:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1150,10 +1150,7 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
 ] (./chapters/01.tex
 Chapter 1.
-
-Underfull \vbox (badness 1997) has occurred while \output is active []
-
- [1
+[1
 
 ]
 
@@ -1180,22 +1177,29 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
  [2]
-Overfull \hbox (4.1352pt too wide) in paragraph at lines 42--53
+Overfull \hbox (4.1352pt too wide) in paragraph at lines 65--66
 []\TU/lmr/m/n/10.53937 1907 \TU/SimSun(0)/m/n/10.53937 年，|  爱 因 斯 坦 将 能 量 量 子 化 应 用 于 固 体 元 素 中 原 子 的 振 动。|  假 设 每 个 原 子 在 每 个 方 向 $[]$
  []
 
-[3] [4]
+[3]
+Underfull \vbox (badness 3354) has occurred while \output is active []
+
+ [4]
 File: Figures/1.1.png Graphic file (type bmp)
 <Figures/1.1.png>
 File: Figures/1.2.png Graphic file (type bmp)
 <Figures/1.2.png>
- [5] [6] [7] [8] [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 276--283
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5] [6] [7] [8] [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 337--344
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--309
+Underfull \hbox (badness 10000) in paragraph at lines 364--370
 
  []
 
@@ -1203,7 +1207,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 303--309
 File: Figures/1.3.png Graphic file (type bmp)
 <Figures/1.3.png>
  [13]
-Overfull \hbox (12.50279pt too wide) in paragraph at lines 398--400
+Overfull \hbox (12.50279pt too wide) in paragraph at lines 463--465
 \TU/SimSun(0)/m/n/10.53937 其 中 电 荷 量 $[][]$ 和 $[][]$ 的 单 位 是 库 仑 \TU/lmr/m/n/10.53937 (C)\TU/SimSun(0)/m/n/10.53937 ，| $[][]$ 是 常 数  |（真 空 介 电 常 数） ，|  其 值 为 $[][][][][] [] [][][][][][][][][]$。 （物
  []
 
@@ -1218,17 +1222,12 @@ File: Figures/2.1.png Graphic file (type bmp)
 File: Figures/2.2.png Graphic file (type bmp)
 <Figures/2.2.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--193
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
 
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 189--193
-[]\TU/SimSun(0)/m/n/10.53937 根 据 能 量 守 恒，|  发 射 光 子 的 能 量 等 于 两 个 定 态 之 间 的 能 量 差 \TU/lmr/m/n/10.53937 [\TU/SimSun(0)/m/n/10.53937 公 式 \TU/lmr/m/n/10.53937 ([][]1.4[][]) \TU/SimSun(0)/m/n/10.53937 ；|  另 见 第 \TU/lmr/m/n/10.53937 9.9
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--204
+Underfull \hbox (badness 10000) in paragraph at lines 207--213
 
  []
 
@@ -1241,7 +1240,7 @@ File: Figures/2.4.png Graphic file (type bmp)
 File: Figures/2.5.png Graphic file (type bmp)
 <Figures/2.5.png>
 
-Overfull \hbox (6.73785pt too wide) in paragraph at lines 325--334
+Overfull \hbox (6.73785pt too wide) in paragraph at lines 356--357
 []\TU/SimSun(0)/m/n/10.53937 我 们 首 先 考 虑 $[] [] [][]$ 的 情 况。|  区 域 \TU/lmr/m/n/10.53937 I \TU/SimSun(0)/m/n/10.53937 和 区 域 \TU/lmr/m/n/10.53937 III \TU/SimSun(0)/m/n/10.53937 的 薛 定 谔 方 程 为 $[][][][][][][] [] [] [] [] []
  []
 
@@ -1253,76 +1252,74 @@ Chapter 3.
 [27
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 84--88
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--98
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--98
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 122--126
+Underfull \hbox (badness 10000) in paragraph at lines 135--137
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--139
+Underfull \hbox (badness 10000) in paragraph at lines 148--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--139
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--158
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 178--181
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--202
-
- []
-
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 219--227
+Underfull \hbox (badness 10000) in paragraph at lines 212--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--227
+Underfull \vbox (badness 2253) has occurred while \output is active []
+
+ [30]
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--253
+Underfull \hbox (badness 10000) in paragraph at lines 236--242
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
 [31] [32] [33] [34]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.0347pt on input line 460.
+(Font)              scaled to size 9.0347pt on input line 487.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 460.
+(Font)              scaled to size 5.00053pt on input line 487.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.03276pt on input line 460.
+(Font)              scaled to size 9.03276pt on input line 487.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 460.
+(Font)              scaled to size 4.99947pt on input line 487.
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--472
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--501
 
  []
 
@@ -1332,25 +1329,16 @@ File: Figures/3.1.png Graphic file (type bmp)
  [37]
 File: Figures/3.2.png Graphic file (type bmp)
 <Figures/3.2.png>
- [38] [39]
+ [38] [39] [40]
 File: Figures/3.3.png Graphic file (type bmp)
 <Figures/3.3.png>
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[40] [41]
-Underfull \hbox (badness 10000) in paragraph at lines 778--784
-
- []
-
-[42] [43]
-Underfull \hbox (badness 10000) in paragraph at lines 893--896
+ [41] [42] [43]
+Underfull \hbox (badness 10000) in paragraph at lines 957--958
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 919--924
+Underfull \hbox (badness 10000) in paragraph at lines 986--987
 
  []
 
@@ -1362,21 +1350,16 @@ Chapter 4.
 [47
 
 ] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 115--119
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--119
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 175--181
-
- []
-
-[50] [51]
+[49] [50] [51]
 File: Figures/4.1.png Graphic file (type bmp)
 <Figures/4.1.png>
 
@@ -1386,50 +1369,36 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [52]
 File: Figures/4.2.png Graphic file (type bmp)
 <Figures/4.2.png>
-File: Figures/4.3.png Graphic file (type bmp)
-<Figures/4.3.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--338
-
- []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+File: Figures/4.3.png Graphic file (type bmp)
+<Figures/4.3.png>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [53] [54]
 File: Figures/4.4.png Graphic file (type bmp)
 <Figures/4.4.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 364--382
-
- []
-
-[55]
+ [55]
 File: Figures/4.5.png Graphic file (type bmp)
 <Figures/4.5.png>
-
-Overfull \hbox (15.9104pt too wide) in paragraph at lines 424--444
+ [56]
+Overfull \hbox (15.9104pt too wide) in paragraph at lines 468--469
 \TU/SimSun(0)/m/n/10.53937 函 数、|  概 率 密 度；| $[]$ 和 $[]$ 可 以 改 变） ；| [][]$[][][][][][][][][][][][] [] [][][][][][][] [] [][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
  []
 
-[56]
+[57]
 File: Figures/4.6.png Graphic file (type bmp)
 <Figures/4.6.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 461--461
-
- []
-
-[57] [58]
-Underfull \hbox (badness 10000) in paragraph at lines 519--522
+ [58]
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 514--534
+Underfull \hbox (badness 10000) in paragraph at lines 569--571
 
  []
 
@@ -1443,24 +1412,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [60]
 File: Figures/4.8.png Graphic file (type bmp)
 <Figures/4.8.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 565--579
-
- []
-
-[61] [62]
-Overfull \hbox (9.63423pt too wide) in paragraph at lines 645--647
+ [61] [62]
+Overfull \hbox (9.63423pt too wide) in paragraph at lines 694--696
 \TU/SimSun(0)/m/n/10.53937 其 中，|  我 们 用 到 了 $[][][][][][] [] [][]$。|  将 式 \TU/lmr/m/n/10.53937 ([][]4.68[][])\TU/SimSun(0)/m/n/10.53937 、| \TU/lmr/m/n/10.53937 ([][]4.77[][]) \TU/SimSun(0)/m/n/10.53937 和 \TU/lmr/m/n/10.53937 ([][]4.79[][]) \TU/SimSun(0)/m/n/10.53937 代 入 薛 定 谔 方 程 $[] [] [] []
  []
 
 
-Overfull \hbox (29.35706pt too wide) in paragraph at lines 653--656
+Overfull \hbox (29.35706pt too wide) in paragraph at lines 705--706
 []\TU/SimSun(0)/m/n/10.53937 更 一 般 地 说，|  让 $[]$ 包 含 一 个 非 无 量 纲 参 数 $[]$。|  例 如，|  我 们 有 $[] [] [][][]$ 或 $[] [] [][][] []$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 668--676
-
  []
 
 [63]) (./chapters/05.tex [64]
@@ -1763,14 +1722,18 @@ Chapter 17.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 39390 strings out of 474773
- 887780 string characters out of 5751499
+ 39369 strings out of 474773
+ 886339 string characters out of 5751499
  2016842 words of memory out of 5000000
- 60843 multiletter control sequences out of 15000+600000
+ 60822 multiletter control sequences out of 15000+600000
  577319 words of font info for 178 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,114p,996b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s

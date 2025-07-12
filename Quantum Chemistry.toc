@@ -1,7 +1,7 @@
 \contentsline {chapter}{\numberline {1}薛定谔方程}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}量子化学}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}量子力学的历史背景}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}不确定性原理}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.3}不确定性原理}{5}{section.1.3}%
 \contentsline {section}{\numberline {1.4}含时薛定谔方程}{6}{section.1.4}%
 \contentsline {section}{\numberline {1.5}定态薛定谔方程}{9}{section.1.5}%
 \contentsline {section}{\numberline {1.6}概率}{11}{section.1.6}%

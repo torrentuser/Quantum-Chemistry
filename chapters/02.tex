@@ -4,20 +4,22 @@
 	单粒子一维系统的定态波函数和能级是通过求解定态薛定谔方程 (\ref{eq:1.19 time-independent Schrödinger Equation}) 得到的。在本章中，我们将求解一个简单系统的定态薛定谔方程，即一维盒子中的粒子（第 2.2 节）。由于薛定谔方程是微分方程，我们首先讨论微分方程。
 \section{微分方程}
 \label{sec:2.1 Differential Equations}
-	本节只讨论常微分方程，即只有一个自变量的方程。[偏微分方程有不止一个自变量。含时薛定谔方程 (\ref{eq:1.16 Time-dependent Schödinger equation}) 就是一个例子，其中 $t$ 和 $x$ 都是自变量。］ 
+	本节只讨论常微分方程，即只有一个自变量的方程。[偏微分方程有不止一个自变量。含时薛定谔方程 (\ref{eq:1.16 Time-dependent Schödinger equation}) 就是一个例子，其中 $t$ 和 $x$ 都是自变量。]
 	常微分方程是自变量 $x$、因变量$y\left(x\right)$和$y$的1、2、$\cdots$、$n$阶导数$y\left(y^{\prime},y^{\prime\prime}, \cdots, y^{\left(n\right)}\right)$之间的关系式。例如
 	\begin{equation}
 		y^{\prime\prime\prime}+2x\left(y^{\prime}\right)^2+y^2\sin x = 3\mathrm{e}^x
 		\label{eq:2.1 an example of differential equation}
 	\end{equation}
-	微分方程的阶数与方程中最高阶导数的阶数相同。因此，方程 (\ref{eq:2.1 an example of differential equation}) 为三阶微分方程。\\
-	\indent \textbf{线性微分方程}是一种特殊的微分方程，其形式为
+	微分方程的阶数与方程中最高阶导数的阶数相同。因此，方程 (\ref{eq:2.1 an example of differential equation}) 为三阶微分方程。
+
+	\textbf{线性微分方程}是一种特殊的微分方程，其形式为
 	\begin{equation}
 		A_n\left(x\right)y^{\left(n\right)}+A_{n-1}\left(x\right)y^{\left(n-1\right)}+A_{n-2}\left(x\right)y^{\left(n-2\right)}+\cdots+A_1\left(x\right)y^{\prime}+A_0\left(x\right)y=g\left(x\right)
 		\label{eq:2.2 linear differential equation}
 	\end{equation}
-	其中所有的$A_i$和$g$ （有些可能为零）只是$x$的函数。在$n$阶线性微分方程(\ref{eq:2.2 linear differential equation})中，$y$及其各阶导数的次幂均为一次。不满足式(\ref{eq:2.2 linear differential equation})的微分方程为\textbf{非线性}微分方程。如果(\ref{eq:2.2 linear differential equation})中的$g\left(x\right)=0$，则线性微分方程是\textbf{齐次}的，否则是\textbf{非齐次}的。一维定态薛定谔方程(\ref{eq:1.19 time-independent Schrödinger Equation})就是二阶线性齐次微分方程。\\
-	\indent 通过除以 $y^{\prime \prime}$ 的系数，我们可以将每一个二阶线性齐次微分方程化为以下形式
+	其中所有的$A_i$和$g$ （有些可能为零）只是$x$的函数。在$n$阶线性微分方程(\ref{eq:2.2 linear differential equation})中，$y$及其各阶导数的次幂均为一次。不满足式(\ref{eq:2.2 linear differential equation})的微分方程为\textbf{非线性}微分方程。如果(\ref{eq:2.2 linear differential equation})中的$g\left(x\right)=0$，则线性微分方程是\textbf{齐次}的，否则是\textbf{非齐次}的。一维定态薛定谔方程(\ref{eq:1.19 time-independent Schrödinger Equation})就是二阶线性齐次微分方程。
+
+	通过除以 $y^{\prime \prime}$ 的系数，我们可以将每一个二阶线性齐次微分方程化为以下形式
 	\begin{equation}
 		y^{\prime\prime}+P\left(x\right)y^{\prime}+Q\left(x\right)y=0
 		\label{eq:2.3 linear homogeneous differential equation}
@@ -36,9 +38,11 @@
 		\end{aligned}
 		\label{eq:2.5}
 	\end{equation}
-	其中我们用到了$y_1$和$y_2$是方程(\ref{eq:2.3 linear homogeneous differential equation})的解。\\
-	\indent $n$ 次微分方程的通解通常有 $n$ 个任意常数。为了确定这些常数，我们可能需要\textbf{定解条件}，即规定 $y$ 或其各阶导数在某一点或多点的值的条件。例如：如果 $y$ 是固定在两点上的振动弦的位移，我们就知道 $y$ 在这两点上必须为零。\\
-	\indent 一个重要的特例是二阶\textbf{常系数}线性齐次微分方程：
+	其中我们用到了$y_1$和$y_2$是方程(\ref{eq:2.3 linear homogeneous differential equation})的解。
+
+	$n$ 次微分方程的通解通常有 $n$ 个任意常数。为了确定这些常数，我们可能需要\textbf{定解条件}，即规定 $y$ 或其各阶导数在某一点或多点的值的条件。例如：如果 $y$ 是固定在两点上的振动弦的位移，我们就知道 $y$ 在这两点上必须为零。
+
+	一个重要的特例是二阶\textbf{常系数}线性齐次微分方程：
 	\begin{equation}
 		y^{\prime\prime}+py^{\prime}+qy=0
 		\label{eq:2.6 constant coefficients in linear homogeneous second-order differential equation}
@@ -71,8 +75,8 @@
 		\caption{\text{一维盒子中粒子的势函数}$\: V\left(x\right)$}
 		\label{fig:2.1}
 	\end{figure}
-	\\
-	\indent 我们需要考虑三个区域。在区域I和III中，势能$V$为无穷大，此处的定态薛定谔方程(\ref{eq:1.19 time-independent Schrödinger Equation})为
+
+	我们需要考虑三个区域。在区域I和III中，势能$V$为无穷大，此处的定态薛定谔方程(\ref{eq:1.19 time-independent Schrödinger Equation})为
 	\begin{equation*}
 		-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2} = \left(E - \infty\right)\psi
 	\end{equation*}
@@ -85,7 +89,8 @@
 		\psi_I=0, \quad \psi_{II} = 0
 		\label{eq:2.9 psi outside the box}
 	\end{equation}
-	\indent 对于区域II，$x$在0和$l$之间时，势能$V$为零，定态薛定谔方程(\ref{eq:1.19 time-independent Schrödinger Equation})为
+
+	对于区域II，$x$在0和$l$之间时，势能$V$为零，定态薛定谔方程(\ref{eq:1.19 time-independent Schrödinger Equation})为
 	\begin{equation}
 		\frac{\mathrm{d}^2\psi_{II}}{\mathrm{d}x^2}+\frac{2m}{\hbar^2}E\psi_{II}=0
 		\label{eq:2.10 schrödinger equation for particle between 0 and l}
@@ -136,7 +141,8 @@
 		\psi_{II}= A \cos\left[\hbar^{-1}\left(2mE\right)^{1/2}x\right]+B \sin\left[\hbar^{-1}\left(2mE\right)^{1/2}x\right]
 		\label{eq:2.15 complete wave function of psi ii}
 	\end{equation}
-	\indent 现在通过定解条件，我们来求出$A$和$B$。假设波函数是连续的，也就是说，它的值不会突然跳变，这似乎是合理的（见图 3.4）。如果$\psi$在$x=0$处连续，那么有$\psi_I$和$\psi_{II}$在$x=0$处的极限相同：
+
+	现在通过定解条件，我们来求出$A$和$B$。假设波函数是连续的，也就是说，它的值不会突然跳变，这似乎是合理的（见图 3.4）。如果$\psi$在$x=0$处连续，那么有$\psi_I$和$\psi_{II}$在$x=0$处的极限相同：
 	\begin{equation*}
 		\begin{aligned}
 			\lim\limits_{x \to 0}\psi_I & = \lim\limits_{x \to 0}\psi_{II} \\
@@ -170,15 +176,18 @@
 		\left(2\pi/h\right)\left(2mE\right)^{1/2}l = \pm n \pi
 		\label{eq:2.19 introduction of n}
 	\end{equation}
-	\indent $n=0$是一种特殊情况。由(\ref{eq:2.19 introduction of n})，$n=0$意味着$E=0$。若$E=0$则特征方程(\ref{eq:2.12})有两个相等的根，且式(\ref{eq:2.13 general solution for particle between zero and l})不是薛定谔方程的完全解。为了找到完全解，我们回到(\ref{eq:2.10 schrödinger equation for particle between 0 and l})，其中$E=0$有$frac{\mathrm{d}^2\psi_{II}}{\mathrm{d}x^2}=0$。积分一次，有$\mathrm{d}\psi_{II}/\mathrm{d}x = c$；再积分一次，有$\psi_{II}=cx+d$，其中$c$和$d$都是常数。由于$x=0$时有$\psi_{II}=0$，所以$d=0$；又由于$x=l$时也有$\psi_{II}=0$，所以$c=0$。因此，$\psi_{II}=0$推出$E=0$，则$E=0$不是允许的能量值。即$n=0$是不允许的。\\
-	\indent 从方程(\ref{eq:2.19 introduction of n})中解出$E$，我们有
+
+	$n=0$是一种特殊情况。由(\ref{eq:2.19 introduction of n})，$n=0$意味着$E=0$。若$E=0$则特征方程(\ref{eq:2.12})有两个相等的根，且式(\ref{eq:2.13 general solution for particle between zero and l})不是薛定谔方程的完全解。为了找到完全解，我们回到(\ref{eq:2.10 schrödinger equation for particle between 0 and l})，其中$E=0$有$frac{\mathrm{d}^2\psi_{II}}{\mathrm{d}x^2}=0$。积分一次，有$\mathrm{d}\psi_{II}/\mathrm{d}x = c$；再积分一次，有$\psi_{II}=cx+d$，其中$c$和$d$都是常数。由于$x=0$时有$\psi_{II}=0$，所以$d=0$；又由于$x=l$时也有$\psi_{II}=0$，所以$c=0$。因此，$\psi_{II}=0$推出$E=0$，则$E=0$不是允许的能量值。即$n=0$是不允许的。
+
+	从方程(\ref{eq:2.19 introduction of n})中解出$E$，我们有
 	\begin{equation}
 		\boxed{
 			E = \frac{n^2h^2}{8ml^2}, \quad n = 1,2,3 \cdots
 		}
 		\label{eq:2.20 energy of one-dimensional box}
 	\end{equation}
-	\indent 只有能量值满足式(\ref{eq:2.20 energy of one-dimensional box})的波函数$\psi$，才能符合在$x=l$处连续的定解条件。定解条件的应用迫使我们得出能量值是量子化的结论（图 2.2）。这与经典结果形成了鲜明对比，经典结果认为盒子中的粒子可以具有任何非负能量。请注意：粒子的能量有一个大于零的最小值。能量最小的状态称为\textbf{基态}。能量高于基态能量的状态为\textbf{激发态}。(在经典力学中，粒子在盒子中的最低能量为零。经典粒子在盒内静止不动时，动能为零，势能为零）。
+
+	只有能量值满足式(\ref{eq:2.20 energy of one-dimensional box})的波函数$\psi$，才能符合在$x=l$处连续的定解条件。定解条件的应用迫使我们得出能量值是量子化的结论（图 2.2）。这与经典结果形成了鲜明对比，经典结果认为盒子中的粒子可以具有任何非负能量。请注意：粒子的能量有一个大于零的最小值。能量最小的状态称为\textbf{基态}。能量高于基态能量的状态为\textbf{激发态}。(在经典力学中，粒子在盒子中的最低能量为零。经典粒子在盒内静止不动时，动能为零，势能为零）。
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.2\textwidth]{Figures/2.2.png}  % 图片路径
@@ -188,8 +197,8 @@
 	\begin{examplebox}
 		\textbf{例题：}\\
 		有一质量为$2.00\times10^{-26}\: \mathrm{g}$的粒子在长度$4.00 \: \mathrm{nm}$的势箱中运动。求该粒子从 $n=3$ 能级进入 $n=2$ 能级时发射光子的频率和波长。\\
-		\\
-		\indent 根据能量守恒，发射光子的能量等于两个定态之间的能量差[公式 (\ref{eq:1.4 Higher state to lower state delta energy}) ；另见第 9.9 节 ]：
+		
+		根据能量守恒，发射光子的能量等于两个定态之间的能量差[公式 (\ref{eq:1.4 Higher state to lower state delta energy}) ；另见第 9.9 节 ]：
 		\begin{equation*}
 			h\nu = E_{upper}-E_{lower}=\frac{n_u^2h^2}{8ml^2} - \frac{n_l^2h^2}{8ml^2}
 		\end{equation*}
@@ -202,13 +211,15 @@
 		对于某个在一维盒子中运动的电子，其能级跃迁的最长波长为400 nm。求盒子的长度。\\
 		\textit{答案：}0.603 nm
 	\end{examplebox}
-	\indent 将(\ref{eq:2.19 introduction of n})带入(\ref{eq:2.17 })，解出波函数为
+
+	将(\ref{eq:2.19 introduction of n})带入(\ref{eq:2.17 })，解出波函数为
 	\begin{equation}
 		\psi_{II} = B\sin\left(\frac{n\pi x}{l}\right), \quad n = 1,2,3\cdots
 		\label{eq:2.21 wavefunction solution of psi ii with b}
 	\end{equation}
-	在 $n\pi$ 前面使用负号并不能得到另一个独立的解。因为 $\sin\left(-\theta\right)=-\sin\theta$，我们只会得到一个常数 -1，乘以带正号的解。\\
-	\indent 公式 (\ref{eq:2.21 wavefunction solution of psi ii with b}) 中的常数 $B$ 仍然是任意的。为了将其确定下来，我们使用公式 (\ref{eq:1.24 the definition of nomalization}) 和 (\ref{eq:1.22 Psi and psi}) 对$\psi_{II}$进行归一化：
+	在 $n\pi$ 前面使用负号并不能得到另一个独立的解。因为 $\sin\left(-\theta\right)=-\sin\theta$，我们只会得到一个常数 -1，乘以带正号的解。
+
+	公式 (\ref{eq:2.21 wavefunction solution of psi ii with b}) 中的常数 $B$ 仍然是任意的。为了将其确定下来，我们使用公式 (\ref{eq:1.24 the definition of nomalization}) 和 (\ref{eq:1.22 Psi and psi}) 对$\psi_{II}$进行归一化：
 	\begin{equation*}
 		\int_{-\infty}^{\infty}\left|\Psi\right|^2\mathrm{d}x = \int_{-\infty}^{\infty}\left|\psi\right|^2\mathrm{d}x = 1
 	\end{equation*}
@@ -223,17 +234,21 @@
 	\begin{equation*}
 		\left|B\right|^2=\left(2/l\right)^{1/2}
 	\end{equation*}
-	\indent 注意我们只求出了$B$的绝对值，但$B$可以取$\pm \left( 2/l\right) ^{1/2}$。此外，$B$也不必是实数，我们可以取任何模为$\left(2/l\right)^{1/2}$的复数。所以，我们可以说$B=\left( 2/l\right) ^{1/2}\mathrm{e}^{\mathrm{i}\alpha}$，其中$\alpha$是$B$的辐角，可以取0到$2\pi$之间的任何值（第 1.7 节）。取辐角为0，则箱中粒子的定态波函数为
+
+	注意我们只求出了$B$的绝对值，但$B$可以取$\pm \left( 2/l\right) ^{1/2}$。此外，$B$也不必是实数，我们可以取任何模为$\left(2/l\right)^{1/2}$的复数。所以，我们可以说$B=\left( 2/l\right) ^{1/2}\mathrm{e}^{\mathrm{i}\alpha}$，其中$\alpha$是$B$的辐角，可以取0到$2\pi$之间的任何值（第 1.7 节）。取辐角为0，则箱中粒子的定态波函数为
 	\begin{equation}
 		\boxed{
 			\psi_{II} = \left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n\pi x}{l}\right), \quad n = 1,2,3\cdots
 		}
 		\label{eq:2.23 stationary state wave function for the particle in a box}
 	\end{equation}
-	波函数和概率密度的图如图 \ref{fig:2.3} 和 \ref{fig:2.4} 所示。\\
-	\indent 能量（\ref{eq:2.20 energy of one-dimensional box}）和波函数（\ref{eq:2.23 stationary state wave function for the particle in a box}）中的数字 $n$ 称为\textbf{量子数}。量子数 $n$ 的每个不同值都会产生不同的波函数和不同的状态。\\
-	\indent 波函数在某些点为零，这些点被称为\textbf{节点}。量子数$n$每增加1，波函数$\psi$就多一个节点。$\psi$和$\left| \psi \right| ^2$ 中节点的存在似乎令人惊讶。因此，图(\ref{fig:2.4})表明：对于$n=2$，在箱的中点$x=2/l$处找到粒子的概率为零。粒子怎么可能从盒子的一侧运动到另一侧，而在任何时候都不会出现在盒子的中心呢？这个明显的悖论产生于我们试图用宏观粒子运动的日常经验来理解微观粒子的运动。然而，正如第 1 章所指出的：电子和其他微观 “粒子 ”无法用宏观世界的经典物理学概念来完整、正确地描述。\\
-	\indent 图 \ref{fig:2.4} 显示，在盒子的不同位置找到粒子的概率与经典结果截然不同。从经典角度看，一个固定能量的粒子在盒子中以恒定的速度在两壁之间弹性地来回弹跳。因此，在盒子中的任何一点发现它的可能性都是相同的；从量子力学角度看，我们会发现在盒子中心的最低能级出现概率最大。随着能级越来越高，节点越来越多，概率的最大值和最小值就会越来越接近，而沿着盒子长度方向的概率变化最终会变得难以察觉。当量子数非常大时，我们就获得了接近于经典的均匀概率密度结果。
+	波函数和概率密度的图如图 \ref{fig:2.3} 和 \ref{fig:2.4} 所示。
+
+	能量（\ref{eq:2.20 energy of one-dimensional box}）和波函数（\ref{eq:2.23 stationary state wave function for the particle in a box}）中的数字 $n$ 称为\textbf{量子数}。量子数 $n$ 的每个不同值都会产生不同的波函数和不同的状态。
+
+	波函数在某些点为零，这些点被称为\textbf{节点}。量子数$n$每增加1，波函数$\psi$就多一个节点。$\psi$和$\left| \psi \right| ^2$ 中节点的存在似乎令人惊讶。因此，图(\ref{fig:2.4})表明：对于$n=2$，在箱的中点$x=2/l$处找到粒子的概率为零。粒子怎么可能从盒子的一侧运动到另一侧，而在任何时候都不会出现在盒子的中心呢？这个明显的悖论产生于我们试图用宏观粒子运动的日常经验来理解微观粒子的运动。然而，正如第 1 章所指出的：电子和其他微观 “粒子 ”无法用宏观世界的经典物理学概念来完整、正确地描述。
+
+	图 \ref{fig:2.4} 显示，在盒子的不同位置找到粒子的概率与经典结果截然不同。从经典角度看，一个固定能量的粒子在盒子中以恒定的速度在两壁之间弹性地来回弹跳。因此，在盒子中的任何一点发现它的可能性都是相同的；从量子力学角度看，我们会发现在盒子中心的最低能级出现概率最大。随着能级越来越高，节点越来越多，概率的最大值和最小值就会越来越接近，而沿着盒子长度方向的概率变化最终会变得难以察觉。当量子数非常大时，我们就获得了接近于经典的均匀概率密度结果。
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.8\textwidth]{Figures/2.3.png}  % 图片路径
@@ -246,8 +261,10 @@
 		\caption{{三种能量最低的盒中粒子状态的} $\left| \psi \right| ^2$ \text{曲线图}}
 		\label{fig:2.4}
 	\end{figure}
-	\indent 这一结果，即在大量子数极限下量子力学与经典力学的关系，被称为\textit{玻尔对应原理}。由于牛顿力学适用于宏观物体（运动速度远小于光速），我们期望非相对论量子力学能给出与经典力学对宏观物体相同的答案。由于普朗克常数极其微小，能量的量子化对于宏观物体来说是不可观测的。由于粒子的质量和盒子长度的平方出现在式 (\ref{eq:2.20 energy of one-dimensional box}) 的分母中，因此在宏观盒子中具有宏观运动能量的宏观物体将具有巨大的 $n$ 值，那么根据对应原理，宏观物体将显示出经典行为。\\
-	\indent 现在，我们有了一整套波函数，每个波函数对应不同的能量，并以量子数 $n$（正整数）为特征。让下标 $i$ 表示量子数为 $n_i$ 的特定波函数：
+
+	这一结果，即在大量子数极限下量子力学与经典力学的关系，被称为\textit{玻尔对应原理}。由于牛顿力学适用于宏观物体（运动速度远小于光速），我们期望非相对论量子力学能给出与经典力学对宏观物体相同的答案。由于普朗克常数极其微小，能量的量子化对于宏观物体来说是不可观测的。由于粒子的质量和盒子长度的平方出现在式 (\ref{eq:2.20 energy of one-dimensional box}) 的分母中，因此在宏观盒子中具有宏观运动能量的宏观物体将具有巨大的 $n$ 值，那么根据对应原理，宏观物体将显示出经典行为。
+
+	现在，我们有了一整套波函数，每个波函数对应不同的能量，并以量子数 $n$（正整数）为特征。让下标 $i$ 表示量子数为 $n_i$ 的特定波函数：
 	\begin{equation*}
 			\psi_i = \left(\frac{2}{l}\right)^{1/2} \sin\left(\frac{n_i\pi x}{l}\right), \quad  0<x<l
 	\end{equation*}
@@ -290,11 +307,15 @@
 		}
 		\label{eq:2.28 definition of kronecker delta}
 	\end{equation}
-	波函数的特性 (\ref{eq:2.27 orthogonal with kronecker delta})) 称为\textbf{正交归一性}。我们只证明了粒子盒内波函数的正交归一性。我们将在第 7.2 节更广泛地证明它。\\
-	\indent 您可能会对式 (\ref{eq:2.26 definition of orthogonal wave functions}) 感到困惑，不明白为什么我们要将一个状态的波函数乘以另一个状态的波函数。我们稍后会看到（例如第 7.3 节），使用包含一个系统所有波函数之和的方程通常很有帮助，而这样的方程会导致像 (\ref{eq:2.26 definition of orthogonal wave functions}) 这样的积分。\\
-	\indent 研究无限深势阱中粒子的一个更严谨的方法是：首先处理粒子在壁箱中的势能有限跃迁，然后当 $V$ 的跃迁变得无限大时求取极限。取极限时的结果与 (\ref{eq:2.20 energy of one-dimensional box}) 和 (\ref{eq:2.23 stationary state wave function for the particle in a box}) 相同（见问题 2.22）。\\
-	\indent 我们只考虑了粒子在一维盒子中的定态。该系统的非稳态示例，请参见第 7.8 节末尾的示例。\\
-	\indent 关于粒子在盒子中的在线计算机模拟，请访问 \url{www.chem.uci.edu/undergraduate/applets/dwell/dwell.htm}（显示了在盒子中间引入高度和宽度可变的屏障时对波函数和能级的影响）；\url{web.williams.edu/wpetc/chemistry/dbingemann/Chem153/particle.html}（通过绘制薛定谔方程在能量变化和盒子长度变化时的解来显示量子化）；以及 \url{falstad.com/qm1d/}（同时显示含时薛定谔方程和定态薛定谔方程；见 7.47）。
+	波函数的特性 (\ref{eq:2.27 orthogonal with kronecker delta})) 称为\textbf{正交归一性}。我们只证明了粒子盒内波函数的正交归一性。我们将在第 7.2 节更广泛地证明它。
+
+	您可能会对式 (\ref{eq:2.26 definition of orthogonal wave functions}) 感到困惑，不明白为什么我们要将一个状态的波函数乘以另一个状态的波函数。我们稍后会看到（例如第 7.3 节），使用包含一个系统所有波函数之和的方程通常很有帮助，而这样的方程会导致像 (\ref{eq:2.26 definition of orthogonal wave functions}) 这样的积分。
+
+	研究无限深势阱中粒子的一个更严谨的方法是：首先处理粒子在壁箱中的势能有限跃迁，然后当 $V$ 的跃迁变得无限大时求取极限。取极限时的结果与 (\ref{eq:2.20 energy of one-dimensional box}) 和 (\ref{eq:2.23 stationary state wave function for the particle in a box}) 相同（见问题 2.22）。
+
+	我们只考虑了粒子在一维盒子中的定态。该系统的非稳态示例，请参见第 7.8 节末尾的示例。
+
+	关于粒子在盒子中的在线计算机模拟，请访问 \url{www.chem.uci.edu/undergraduate/applets/dwell/dwell.htm}（显示了在盒子中间引入高度和宽度可变的屏障时对波函数和能级的影响）；\url{web.williams.edu/wpetc/chemistry/dbingemann/Chem153/particle.html}（通过绘制薛定谔方程在能量变化和盒子长度变化时的解来显示量子化）；以及 \url{falstad.com/qm1d/}（同时显示含时薛定谔方程和定态薛定谔方程；见 7.47）。
 
 \section{一维自由粒子}
 \label{sec:2.3 The Free Particle in One Dimension}
@@ -308,7 +329,8 @@
 		\psi = c_1\mathrm{e}^{\mathrm{i} \left(2mE\right)^{1/2} x /\hbar}+c_2\mathrm{e}^{-\mathrm{i} \left(2mE\right)^{1/2} x /\hbar}
 		\label{eq:2.30}
 	\end{equation}
-	\indent 我们可以使用什么边界条件呢？似乎可以合理地假设（因为 $\psi^{\ast}\psi\mathrm{d}x$ 代表一种概率），当 $x$ 趋于 $\pm \infty$ 时，$\psi$ 将保持有限值。那么如果能量 $E$ 小于零，那么就违反了这个边界条件，因为对于 $E<0$，我们有
+
+	我们可以使用什么边界条件呢？似乎可以合理地假设（因为 $\psi^{\ast}\psi\mathrm{d}x$ 代表一种概率），当 $x$ 趋于 $\pm \infty$ 时，$\psi$ 将保持有限值。那么如果能量 $E$ 小于零，那么就违反了这个边界条件，因为对于 $E<0$，我们有
 	\begin{equation*}
 		\mathrm{i} \left(2mE\right)^{1/2} = \mathrm{i}\left(-2m \left|E\right|\right)^{1/2} = \mathrm{i} \cdot \mathrm{i} \cdot \left(2m \left|E\right|\right)^{1/2} = -\left(2m \left|E\right|\right)^{1/2}
 	\end{equation*}
@@ -317,8 +339,9 @@
 		E \ge 0
 		\label{neq:2.31}
 	\end{equation}
-	波函数是振荡的，是一个正弦项和一个余弦项的线性组合[公式 (\ref{eq:2.15 complete wave function of psi ii}) ]。对于自由粒子，能量没有量子化，所有非负能量都是允许的。在这种情况下，由于我们规定$V=0$，能量 $E$ 全为动能。如果我们想通过归一化的方式求出常数$c_1$和$c_2$，会发现积分$\int_{- \infty}^{\infty} \psi^{\ast}\left(x\right)\psi\left(x\right) \mathrm{d}x$的值为无穷大。换句话说，自由粒子的波函数在通常意义上是不可归一化的。这在物理上是意料之中的，因为当 $x$ 变为 $\pm \infty$  时，找到自由粒子的概率没有理由趋近于零。\\
-	\indent 自由粒子问题是一种不真实的情况，因为我们实际上不可能有一种粒子与宇宙中的任何其他粒子没有相互作用。
+	波函数是振荡的，是一个正弦项和一个余弦项的线性组合[公式 (\ref{eq:2.15 complete wave function of psi ii}) ]。对于自由粒子，能量没有量子化，所有非负能量都是允许的。在这种情况下，由于我们规定$V=0$，能量 $E$ 全为动能。如果我们想通过归一化的方式求出常数$c_1$和$c_2$，会发现积分$\int_{- \infty}^{\infty} \psi^{\ast}\left(x\right)\psi\left(x\right) \mathrm{d}x$的值为无穷大。换句话说，自由粒子的波函数在通常意义上是不可归一化的。这在物理上是意料之中的，因为当 $x$ 变为 $\pm \infty$  时，找到自由粒子的概率没有理由趋近于零。
+
+	自由粒子问题是一种不真实的情况，因为我们实际上不可能有一种粒子与宇宙中的任何其他粒子没有相互作用。
 	
 \section{矩形势阱中的粒子}
 \label{sec:2.4 Particle in a Rectangular Potential Well}
@@ -329,29 +352,34 @@
 		\caption{\text{(a) 一维矩形势阱中粒子的势能。(b) 该势能的基态波函数。(c) 第一激发态的波函数。}}
 		\label{fig:2.5}
 	\end{figure}
-	\\
-	\indent 我们首先考虑$E < V_0$的情况。区域I和区域III的薛定谔方程为$\mathrm{d}^2\psi/\mathrm{d}x^2+\left(2m/\hbar^2\right)\left(E-V_0\right)\psi=0$。这是一个常系数齐次线性微分方程，其特征方程(\ref{eq:2.7 auxiliary equation})为$s^2+\left(2m/\hbar^2\right)\left(E-V_0\right)=0$，特征根为$s = \pm \left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}$。因此，
+
+	我们首先考虑$E < V_0$的情况。区域I和区域III的薛定谔方程为$\mathrm{d}^2\psi/\mathrm{d}x^2+\left(2m/\hbar^2\right)\left(E-V_0\right)\psi=0$。这是一个常系数齐次线性微分方程，其特征方程(\ref{eq:2.7 auxiliary equation})为$s^2+\left(2m/\hbar^2\right)\left(E-V_0\right)=0$，特征根为$s = \pm \left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}$。因此，
 	\begin{equation*}
 		\begin{aligned}
 			\psi_I & = C \exp \left[\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] + D \exp \left[-\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] \\
 			\psi_{III} & = F \exp \left[\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] + G \exp \left[-\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] 
 		\end{aligned}
 	\end{equation*}
-	其中$C$、$D$、$F$和$G$都是常数。\\
-	\indent 如第2.3节所述，当$x \to -\infty$时，我们必须阻止$\psi_I$趋于无穷。由于我们假设$E<V_0$，则$\left(V_0-E\right)^{1/2}$是正实数，当$x \to -\infty$时，为了满足$\psi_I$的值为有限值，我们必须有$D=0$。同样地，当$x \to +\infty$时，为了满足$\psi_{III}$的值为有限值，我们有$F=0$。因此，
+	其中$C$、$D$、$F$和$G$都是常数。
+
+	如第\ref{sec:2.3 The Free Particle in One Dimension}节所述，当$x \to -\infty$时，我们必须阻止$\psi_I$趋于无穷。由于我们假设$E<V_0$，则$\left(V_0-E\right)^{1/2}$是正实数，当$x \to -\infty$时，为了满足$\psi_I$的值为有限值，我们必须有$D=0$。同样地，当$x \to +\infty$时，为了满足$\psi_{III}$的值为有限值，我们有$F=0$。因此，
 	\begin{equation*}
 		\psi_I  = C \exp \left[\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] , \quad \psi_{III}  = G \exp \left[-\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right]
 	\end{equation*}
-	\indent 在区域II中，$V=0$，薛定谔方程与(\ref{eq:2.10 schrödinger equation for particle between 0 and l})一致，其通解为(\ref{eq:2.15 complete wave function of psi ii})
+
+	在区域II中，$V=0$，薛定谔方程与(\ref{eq:2.10 schrödinger equation for particle between 0 and l})一致，其通解为(\ref{eq:2.15 complete wave function of psi ii})
 	\begin{equation}
 		\psi_{II} = A \cos\left[\left(2m\hbar^2\right)^{1/2}E^{1/2}x\right]+B\sin \left[\left(2m\hbar^2\right)^{1/2}E^{1/2}x\right]
 		\label{eq:2.32}
 	\end{equation}
-	\indent 为了完整解决这个问题，我们需要用到定解条件。与无限深势阱中粒子的情况类似，我们需要波函数在$x=0$和$x=l$处连续，则$\psi_I\left(0\right) = \psi_{II}\left(0\right)$，$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$
+
+	为了完整解决这个问题，我们需要用到定解条件。与无限深势阱中粒子的情况类似，我们需要波函数在$x=0$和$x=l$处连续，则$\psi_I\left(0\right) = \psi_{II}\left(0\right)$，$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$
 	波函数有四个任意常数，因此需要的定解条件不止这两个。除了需要$\psi$连续以外，我们还需要其一阶导数$\mathrm{d}\psi/\mathrm{d}x$处处连续。为了证明这一要求的合理性，我们假设如果$\mathrm{d}\psi/\mathrm{d}x$在某点处不连续，则其导数（$\psi$的二阶导数的瞬时变化率）在该点处会趋于无穷。然而，对于矩形势阱中的粒子，其薛定谔方程$\mathrm{d}^2\psi/\mathrm{d}x^2=\left(2m/\hbar^2\right)\left(V-E\right)\psi$
-	的右侧不包含任何趋于无穷的因子。所以$\mathrm{d}^2\psi/\mathrm{d}x^2$不可能趋于无穷[更严谨的论证，见 D. Branson, Am. J. Phys.，47，1000（1979 ）]。因此，我们在$x=0$时有$\mathrm{d}\psi_I/\mathrm{d}x=\mathrm{d}\psi_{II}/\mathrm{d}x$，在$x=l$时有$\mathrm{d}\psi_{II}/\mathrm{d}x=\mathrm{d}\psi_{III}/\mathrm{d}x$。\\
-	\indent 由$\psi_I\left(0\right) = \psi_{II}\left(0\right)$，我们有$C=A$。由$\psi_I^{\prime}\left(0\right) = \psi_{II}^{\prime}\left(0\right)$，我们有$B=\left(V_0-E\right)^{1/2}A/E^{1/2}$。由$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$，我们得到了一个复杂的等式，可以根据 $A$ 求出 $G$。常数$A$由归一化计算求出。\\
-	\indent 用 $\psi^{\prime}_{II}\left(l\right) = \psi^{\prime}_{III}\left(l\right)$除以$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$，再用 $A$ 表示 $B$，就得到下面的能级方程（问题 2.21b）：
+	的右侧不包含任何趋于无穷的因子。所以$\mathrm{d}^2\psi/\mathrm{d}x^2$不可能趋于无穷[更严谨的论证，见 D. Branson, Am. J. Phys.，47，1000（1979 ）]。因此，我们在$x=0$时有$\mathrm{d}\psi_I/\mathrm{d}x=\mathrm{d}\psi_{II}/\mathrm{d}x$，在$x=l$时有$\mathrm{d}\psi_{II}/\mathrm{d}x=\mathrm{d}\psi_{III}/\mathrm{d}x$。
+
+	由$\psi_I\left(0\right) = \psi_{II}\left(0\right)$，我们有$C=A$。由$\psi_I^{\prime}\left(0\right) = \psi_{II}^{\prime}\left(0\right)$，我们有$B=\left(V_0-E\right)^{1/2}A/E^{1/2}$。由$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$，我们得到了一个复杂的等式，可以根据 $A$ 求出 $G$。常数$A$由归一化计算求出。
+
+	用 $\psi^{\prime}_{II}\left(l\right) = \psi^{\prime}_{III}\left(l\right)$除以$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$，再用 $A$ 表示 $B$，就得到下面的能级方程（问题 2.21b）：
 	\begin{equation}
 		\left(2E-V_0\right)\sin\left[\left(2mE\right)^{1/2}/\hbar\right] = 2\left(V_0E-E^2\right)^{1/2}\cos \left[\left(2mE\right)^{1/2}l/\hbar\right]
 		\label{eq:2.33 equation for the energy levels}
@@ -371,34 +399,33 @@
 		N-1 < b/\pi \le N, \quad \text{其中}\: b \equiv \left(2mV_0\right)^{1/2}l /\hbar
 		\label{eq:2.36 requirement for allowed energy levels' number N}
 	\end{equation}
-	例如，如果$V_0 = h^2/ml^2$，那么$b/\pi = 2\left(2^{1/2}\right) = 2.83$，即$N=3$。图 (\ref{fig:2.5})显示了最低两个能级的 $\psi$。波函数在盒内是振荡的，而在盒外则呈指数衰减。事实证明：每提高一个能级，节点数就增加一个。\\
-	\indent 到目前为止，我们只考虑了$E<V_0$的状态。对于$V_0<E$，$\left(V_0-E\right)^{1/2}$是虚数，并且波函数$\psi_I$和$\psi_{III}$在$x \to \pm \infty$时不会趋于零，而是会振荡（类似于自由粒子）。我们也再也没有理由将$\psi_I$中的$D$和$\psi_{III}$中的 $F$设为零了，这些额外的常数可以满足 $\psi$ 和 $\psi^{\prime}$ 的定解条件，
-	我们会发现不需要限制 $E$ 就可以得到符合条件的波函数。因此，上述所有能量都是允许的。\\
-	\indent $x \to \pm \infty$时$\psi \to 0$的状态称为\textbf{束缚态}。对于束缚态，只有在有限的空间区域内才有可能找到粒子。对于\textbf{非束缚态}，当$x \to \pm \infty$时$\psi$不会趋于零，且无法归一化。对于在有限深矩形势阱中的粒子，$E<V_0$的状态是束缚态，而$E>V_0$的状态是非束缚态。而在无限深势阱中的粒子则所有的状态都为束缚态，自由粒子则全为非束缚态。\\
-	\indent 要在线模拟粒子在势阱中的情况，请访问 \url{www.falstad.com/qm1d} ，并在 “设置 ”框中选择 “有限势阱”。您可以改变势阱的宽度和深度，查看对能级和波函数的影响。
+	例如，如果$V_0 = h^2/ml^2$，那么$b/\pi = 2\left(2^{1/2}\right) = 2.83$，即$N=3$。图 (\ref{fig:2.5})显示了最低两个能级的 $\psi$。波函数在盒内是振荡的，而在盒外则呈指数衰减。事实证明：每提高一个能级，节点数就增加一个。
+
+	到目前为止，我们只考虑了$E<V_0$的状态。对于$V_0<E$，$\left(V_0-E\right)^{1/2}$是虚数，并且波函数$\psi_I$和$\psi_{III}$在$x \to \pm \infty$时不会趋于零，而是会振荡（类似于自由粒子）。我们也再也没有理由将$\psi_I$中的$D$和$\psi_{III}$中的 $F$设为零了，这些额外的常数可以满足 $\psi$ 和 $\psi^{\prime}$ 的定解条件，
+	我们会发现不需要限制 $E$ 就可以得到符合条件的波函数。因此，上述所有能量都是允许的。
+
+	$x \to \pm \infty$时$\psi \to 0$的状态称为\textbf{束缚态}。对于束缚态，只有在有限的空间区域内才有可能找到粒子。对于\textbf{非束缚态}，当$x \to \pm \infty$时$\psi$不会趋于零，且无法归一化。对于在有限深矩形势阱中的粒子，$E<V_0$的状态是束缚态，而$E>V_0$的状态是非束缚态。而在无限深势阱中的粒子则所有的状态都为束缚态，自由粒子则全为非束缚态。
+
+	要在线模拟粒子在势阱中的情况，请访问 \url{www.falstad.com/qm1d} ，并在 “设置 ”框中选择 “有限势阱”。您可以改变势阱的宽度和深度，查看对能级和波函数的影响。
 	
 \section{隧穿}
 \label{sec:2.5 Tunneling}
-	对于有限深矩形势阱中的粒子（第2.4节）图(\ref{fig:2.5})，波函数$\psi_I$和$\psi_{III}$表明：就束缚态而言，在粒子总能量 $E$ 小于其势能$V=V_0$的区域 I 和 III 中找到粒子的概率不为零。经典上，这是不允许的。经典方程$E=T+V$且$T \ge 0$，其中$T$是动能，则经典力学中$E$是不可能比$V$小的。\\
-	\indent 考虑一个在有限宽度和深度盒子中作一维运动的粒子，从经典角度看，除非粒子的能量大于势能势垒$V_0$，否则粒子无法逸出。然而，量子力学的处理方法（此处省略）表明，在盒子外发现总能量小于 $V$ 的粒子的概率是不为零的。\\
-	\indent \textbf{隧穿}（tunneling）一词表示粒子穿透经典禁区（如图 \ref{fig:2.5} 所示），或粒子穿过高度超过粒子能量的能垒。由于隧穿是一种量子效应，因此粒子的行为越背离经典力学，其发生的概率就越大。因此，质量小的粒子最容易发生隧穿现象(注意：质量 $m$ 越大，第 2.4 节中的$\psi_I$ 和 $\psi_{II}$ 函数趋于零的速度就越快）。电子很容易发生隧穿。氢原子和离子比更重的原子更容易发生隧穿。放射性原子核发射$\alpha$粒子时，$\alpha$粒子要通过子核与$\alpha$粒子之间的短程核吸引力和库仑斥力所产生的势能势垒才能发生隧穿。$\mathrm{NH_3}$是金字塔形分子，分子反转存在势能障碍，平面构型时势能最大。氢原子可以穿透这个势垒，从而使分子倒转。在乙烷分子中，内旋转存在障碍，在氢的黯淡位置存在势能最大值。氢原子可以从一个交错位置隧穿到下一个位置。电子的隧穿在氧化还原反应和电极过程中非常重要。隧穿通常对涉及氢原子转移的化学反应的速率有很大贡献。参见 R. P. Bell, The Tunnel Effect inChemistry , Chapman $\&$ Hall, 1980。
-		\begin{figure}[h!]
+	对于有限深矩形势阱中的粒子（第2.4节）图(\ref{fig:2.5})，波函数$\psi_I$和$\psi_{III}$表明：就束缚态而言，在粒子总能量 $E$ 小于其势能$V=V_0$的区域 I 和 III 中找到粒子的概率不为零。经典上，这是不允许的。经典方程$E=T+V$且$T \ge 0$，其中$T$是动能，则经典力学中$E$是不可能比$V$小的。
+
+	考虑一个在有限宽度和深度盒子中作一维运动的粒子，从经典角度看，除非粒子的能量大于势能势垒$V_0$，否则粒子无法逸出。然而，量子力学的处理方法（此处省略）表明，在盒子外发现总能量小于 $V$ 的粒子的概率是不为零的。
+
+	\textbf{隧穿}（tunneling）一词表示粒子穿透经典禁区（如图 \ref{fig:2.5} 所示），或粒子穿过高度超过粒子能量的能垒。由于隧穿是一种量子效应，因此粒子的行为越背离经典力学，其发生的概率就越大。因此，质量小的粒子最容易发生隧穿现象(注意：质量 $m$ 越大，第 2.4 节中的$\psi_I$ 和 $\psi_{II}$ 函数趋于零的速度就越快）。电子很容易发生隧穿。氢原子和离子比更重的原子更容易发生隧穿。放射性原子核发射$\alpha$粒子时，$\alpha$粒子要通过子核与$\alpha$粒子之间的短程核吸引力和库仑斥力所产生的势能势垒才能发生隧穿。$\mathrm{NH_3}$是金字塔形分子，分子反转存在势能障碍，平面构型时势能最大。氢原子可以穿透这个势垒，从而使分子倒转。在乙烷分子中，内旋转存在障碍，在氢的黯淡位置存在势能最大值。氢原子可以从一个交错位置隧穿到下一个位置。电子的隧穿在氧化还原反应和电极过程中非常重要。隧穿通常对涉及氢原子转移的化学反应的速率有很大贡献。参见 R. P. Bell, The Tunnel Effect inChemistry , Chapman $\&$ Hall, 1980。
+	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.8\textwidth]{Figures/2.6.png}  % 图片路径
 		\caption{\text{有限高度和宽度的一维盒子中粒子的势能函数}}
 		\label{fig:2.6}
 	\end{figure}
-	\\
-	\indent 某些酶催化反应中会出现 H 原子的隧穿现象；见\textit{《酶催化反应中的量子隧穿》}，R. Allemann 和 N. Scrutton（编），RSCP Publishing 出版社，2009 年。\\
-	\indent  扫描隧穿显微镜发明于 1981 年，它利用电子在极细的金属丝尖端与导电固体表面之间的空间隧穿，生成固体表面单个原子的图像。在固体和金属丝之间施加一个微小的电压，当针尖以几\AA 的高度在表面上移动时，针尖的高度会进行调整，以保持电流恒定。根据针尖高度与位置的关系绘制出表面图像。
-	
-	
-	
-	
-	
-	
-	
 
+	某些酶催化反应中会出现 H 原子的隧穿现象；见\textit{《酶催化反应中的量子隧穿》}，R. Allemann 和 N. Scrutton（编），RSCP Publishing 出版社，2009 年。
+
+	扫描隧穿显微镜发明于 1981 年，它利用电子在极细的金属丝尖端与导电固体表面之间的空间隧穿，生成固体表面单个原子的图像。在固体和金属丝之间施加一个微小的电压，当针尖以几\AA 的高度在表面上移动时，针尖的高度会进行调整，以保持电流恒定。根据针尖高度与位置的关系绘制出表面图像。
+	
 \section*{总结}
 
 \section*{习题}
