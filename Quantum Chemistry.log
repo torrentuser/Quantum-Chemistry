@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  12 JUL 2025 11:58
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  12 JUL 2025 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1646,11 +1646,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [111]
 Underfull \vbox (badness 1708) has occurred while \output is active []
 
- [112]) (./chapters/07.tex [113] [114
-
-]
+ [112] [113]) (./chapters/07.tex [114]
 Chapter 7.
-) (./chapters/08.tex [115] [116
+) (./chapters/08.tex [115
+
+] [116
 
 ]
 Chapter 8.
@@ -1767,10 +1767,10 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 39374 strings out of 474773
- 887620 string characters out of 5751499
+ 39385 strings out of 474773
+ 887730 string characters out of 5751499
  2016842 words of memory out of 5000000
- 60827 multiletter control sequences out of 15000+600000
+ 60838 multiletter control sequences out of 15000+600000
  577319 words of font info for 178 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,114p,996b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
