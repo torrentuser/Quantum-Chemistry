@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  12 JUL 2025 20:45
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  13 JUL 2025 19:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1417,7 +1417,7 @@ Chapter 5.
 [65
 
 ] [66]
-Underfull \hbox (badness 10000) in paragraph at lines 147--151
+Underfull \hbox (badness 10000) in paragraph at lines 147--150
 
  []
 
@@ -1437,7 +1437,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: Figures/5.3.png Graphic file (type bmp)
 <Figures/5.3.png>
  [70]
-Overfull \hbox (3.75659pt too wide) in paragraph at lines 364--365
+Overfull \hbox (3.75659pt too wide) in paragraph at lines 365--366
 []\TU/SimSun(0)/m/n/10.53937 矢 量 符 号 是 表 示 函 数 变 量 的 一 种 便 捷 方 法。|  双 粒 子 系 统 的 波 函 数 可 以 写 作 $[] []$，|
  []
 
@@ -1448,12 +1448,12 @@ File: Figures/5.4.png Graphic file (type bmp)
 File: Figures/5.5.png Graphic file (type bmp)
 <Figures/5.5.png>
  [75] [76] [77] [78] [79]
-Underfull \hbox (badness 10000) in paragraph at lines 902--904
+Underfull \hbox (badness 10000) in paragraph at lines 903--905
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 942--945
+Underfull \hbox (badness 10000) in paragraph at lines 943--946
 
  []
 
@@ -1594,27 +1594,30 @@ Underfull \vbox (badness 1708) has occurred while \output is active []
 
 ]
 Chapter 7.
-) (./chapters/08.tex [117] [118
+[117] [118] [119] [120] [121]) (./chapters/08.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [122] [123] [124
 
 ]
 Chapter 8.
-) (./chapters/09.tex [119] [120
+) (./chapters/09.tex [125] [126
 
 ]
 Chapter 9.
-) (./chapters/10.tex [121] [122
+) (./chapters/10.tex [127] [128
 
 ]
 Chapter 10.
-) (./chapters/11.tex [123] [124
+) (./chapters/11.tex [129] [130
 
 ]
 Chapter 11.
-) (./chapters/12.tex [125] [126
+) (./chapters/12.tex [131] [132
 
 ]
 Chapter 12.
-) (./chapters/13.tex [127] [128
+) (./chapters/13.tex [133] [134
 
 ]
 Chapter 13.
@@ -1649,14 +1652,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [129]
-Overfull \vbox (69.2806pt too high) has occurred while \output is active []
+ [135]
+Overfull \vbox (137.1515pt too high) has occurred while \output is active []
 
- [130]
+ [136]
 Chapter 14.
-) (./chapters/15.tex [131
+) (./chapters/15.tex [137
 
-] [132
+] [138
 
 ]
 Chapter 15.
@@ -1667,60 +1670,56 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [133]
+ [139]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
- [134]
+ [140]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [135
+ [141
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
- [136]
+ [142]
 Chapter 17.
-[137
+[143
 
-]) (./chapters/appendix.tex [138]
+]) (./chapters/appendix.tex [144]
 附录 A.
-) (./chapters/bibliography.tex [139
+) (./chapters/bibliography.tex [145
 
-] [140
+] [146
 
 ]
 附录 B.
-[141] [142
+[147] [148
 
-]) (./chapters/answers.tex [143] [144
+]) (./chapters/answers.tex [149] [150
 
 ]
 附录 C.
-) (./chapters/index.tex [145] [146
+) (./chapters/index.tex [151] [152
 
 ]
 附录 D.
-) [147] (./Quantum Chemistry.aux)
+) [153] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 39369 strings out of 474773
- 886339 string characters out of 5751499
+ 39396 strings out of 474773
+ 886573 string characters out of 5751499
  2016842 words of memory out of 5000000
- 60822 multiletter control sequences out of 15000+600000
+ 60849 multiletter control sequences out of 15000+600000
  577319 words of font info for 178 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,114p,996b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (155 pages).
+Output written on Quantum Chemistry.pdf (161 pages).

@@ -3,9 +3,317 @@
 \label{chap:7}
 \section{符号}
 \label{sec:7.1 Notation}
+    单电子原子的薛定谔方程（第\ref{chap:6}章）是可以精确求解的。然而，由于哈密顿算符中的电子间斥力项，多电子原子和分子的薛定谔方程无法精确求解。因此，我们必须寻求近似的求解方法。第 \ref{chap:8} 章和第 \ref{chap:9} 章将介绍两种主要的近似方法，即变分法和微扰理论。要推导出这些方法，我们必须进一步发展量子力学理论，这就是本章所要做的。
+
+    在开始之前，我们先介绍一些符号。夹在两个函数之间的算符在全空间上的定积分经常出现，并使用各种缩写：
+    \begin{equation}
+        \int f^{\ast}_m\hat{A}f_n\mathrm{d}\tau \equiv \left\langle f_m \middle| \hat{A} \middle| f_n \right\rangle \equiv \left\langle m \middle| \hat{A} \middle| n \right\rangle
+        \label{eq:7.1}
+    \end{equation}
+    其中$f_m$和$f_n$是两个函数。如式(\ref{eq:7.1})所示，若两个函数的含义是明确的，我们就可以只用下标来区分。狄拉克引入的上述符号称为\textbf{括号符号}（bracket notation）（此处为直译，多用狄拉克符号，下同）。另一种符号是
+    \begin{equation}
+        \int f^{\ast}_m\hat{A}f_n\mathrm{d}\tau \equiv A_{mn}
+        \label{eq:7.2}
+    \end{equation}
+    符号$A_{mn}$和$\left\langle m \middle| \hat{A} \middle| n \right\rangle$都表示我们使用字母在前的复函数的复共轭。定积分$\left\langle m \middle| \hat{A} \middle| n \right\rangle$称为算符$\hat{A}$的一个\textbf{矩阵元}（matrix element）。矩阵是数字的矩形数组，遵守一定的组合规则（见第 \ref{sec:7.10 Matrices} 节）。
+
+    我们将对两个函数全空间的定积分写作
+    \begin{equation}
+        \int f^{\ast}_m f_n \mathrm{d}\tau \equiv \left\langle f_m \middle| f_n \right\rangle \equiv \left\langle m \middle| n \right\rangle
+        \label{eq:7.3}
+    \end{equation}
+    注意：
+    \begin{equation*}
+        \left\langle f \middle| \hat{B} \middle| g \right\rangle = \left\langle f \middle| \hat{B} g \right\rangle
+    \end{equation*}
+    其中$f$和$g$是函数。由于$\left(\int f^{\ast}_mf_n\mathrm{d}\tau\right)^{\ast} = \int f^{\ast}_nf_m\mathrm{d}\tau$，我们可以得到
+    \begin{equation}
+        \boxed{
+            \left\langle m \middle| n \right\rangle^{\ast} = \left\langle n \middle| m \right\rangle
+        }
+        \label{eq:7.4}
+    \end{equation}
+    由于取了 (\ref{eq:7.1}) 中 $f_m$ 的复共轭，因此可以得出
+    \begin{equation}
+        \boxed{
+            \left\langle cf \middle| \hat{B} \middle| g \right\rangle = c^{\ast} \left\langle f \middle| \hat{B} \middle| g \right\rangle \quad \text{和} \quad \left\langle f \middle| \hat{B} \middle| cg \right\rangle = c \left\langle f \middle| \hat{B} \middle| g \right\rangle
+        }
+        \label{eq:7.5}
+    \end{equation}
+    其中$\hat{B}$是线性算符，$c$是常数。
 
 \section{厄米算符}
 \label{sec:7.2 Hermitian Operators}
+    代表物理量的量子力学算符都是线性算符（第\ref{sec:3.1 Operators}节）。这些算符必须满足一个额外的要求，我们现在就来讨论这个问题。
+
+\subsection*{厄米算符的定义}
+
+    设$\hat{A}$是对应某个物理量$A$的线性算符。则$A$的平均期望为[式(\ref{eq:3.88})]
+    \begin{equation*}
+        \left\langle A \right\rangle = \int \Psi^{\ast} \hat{A} \Psi \mathrm{d}\tau
+    \end{equation*}
+    其中$\Psi$是系统的态函数。由于物理量的平均值一定是一个实数，我们要求
+    \begin{equation*}
+        \left\langle A \right\rangle = \left\langle A \right\rangle^{\ast}
+    \end{equation*}
+    \begin{equation*}
+        \int \Psi^{\ast} \hat{A} \Psi \mathrm{d}\tau = \left[\int \Psi^{\ast}\hat{A}\Psi\mathrm{d}\tau\right] = \int \left(\Psi^{\ast}\right)^{\ast} \left(\hat{A}\Psi\right)^{\ast}\mathrm{d}\tau
+    \end{equation*}
+    \begin{equation}
+        \int \Psi^{\ast} \hat{A} \Psi \mathrm{d}\tau = \int \Psi  \left(\hat{A}\Psi\right)^{\ast} \mathrm{d}\tau
+        \label{eq:7.6}
+    \end{equation}
+    式(\ref{eq:7.6})必须对每个代表系统可能状态的波函数$\Psi$都成立，也就是说，所有品优函数$\Psi$都必须满足式(\ref{eq:7.6})。对所有品优函数都满足式(\ref{eq:7.6})的算符称为\textbf{厄米算符}（Hermitian operator）（由数学家厄米的名字命名——Charles Hermite）。
+
+    许多教科书将厄米算符定义为对所有品优函数$f$和$g$都满足下式的线性算符：
+    \begin{equation}
+        \int f^{\ast} \hat{A} g \:\mathrm{d}\tau = \int g \:\left(\hat{A} f\right)^{\ast} \mathrm{d}\tau
+        \label{eq:7.7}
+    \end{equation}
+    注意：在(\ref{eq:7.7})的左侧，算符$\hat{A}$作用在函数$g$上；而在右侧，算符$\hat{A}$作用在函数$f$上。对于特例$f=g$，式(\ref{eq:7.7})退化为式(\ref{eq:7.6})。等式 (\ref{eq:7.7}) 显然是比 (\ref{eq:7.6}) 更强的要求，但我们将证明 (\ref{eq:7.7}) 是 (\ref{eq:7.6}) 的结果。因此，两种厄米算符的定义是等价的。
+
+    我们首先在 (\ref{eq:7.6}) 中令 $ \Psi = f+cg$ ，其中 $c$ 是一个任意常数。则
+    \begin{equation*}
+        \int \left(f+cg\right)^{\ast}\hat{A}\left(f+cg\right)\mathrm{d}\tau = \int \left(f+cg\right)\left[\hat{A}\left(f+cg\right)\right]^{\ast}\mathrm{d}\tau
+    \end{equation*}
+    \begin{equation*}
+        \begin{aligned}
+            \int \left(f^{\ast}+c^{\ast}g^{\ast}\right)\hat{A}f\mathrm{d}\tau + \int \left(f^{\ast} +c^{\ast}g^{\ast} \right)&\hat{A}cg \:\mathrm{d}\tau \\
+            & = \int \left(f+c g\right)\left(\hat{A}f\right)^{\ast} \mathrm{d}\tau + \int \left(f+c g\right)\left(\hat{A}cg\right)^{\ast} \mathrm{d}\tau
+        \end{aligned}
+    \end{equation*}
+    \begin{equation*}
+        \begin{aligned}
+            \int f^{\ast} \hat{A} f \:\mathrm{d}\tau + & c^{\ast} \int g^{\ast} \hat{A} f \:\mathrm{d}\tau + c \int f^{\ast} \hat{A} g \:\mathrm{d}\tau + c^{\ast}c \int g^{\ast} \hat{A} g \:\mathrm{d}\tau  \\
+            & =\int f \left(\hat{A}f\right)^{\ast} \mathrm{d}\tau + c \int g \left(\hat{A}f\right)^{\ast} \mathrm{d}\tau + c^{\ast} \int f \left(\hat{A}g\right)^{\ast} \mathrm{d}\tau + cc^{\ast}\int g \left(\hat{A}g\right)^{\ast} \mathrm{d}\tau
+        \end{aligned}
+    \end{equation*}
+    根据 (\ref{eq:7.6})，最后一个等式两边的首项相等；同样，两边的尾项也相等。因此，
+    \begin{equation}
+        c^{\ast} \int g^{\ast} \hat{A} f \:\mathrm{d}\tau + c \int f^{\ast} \hat{A} g \:\mathrm{d}\tau = c \int g \left(\hat{A}f\right)^{\ast} \mathrm{d}\tau + c^{\ast} \int f \left(\hat{A}g\right)^{\ast} \mathrm{d}\tau
+        \label{eq:7.8}
+    \end{equation}
+    在(\ref{eq:7.8})中令$c=1$，我们有
+    \begin{equation}
+        \int g^{\ast} \hat{A} f \:\mathrm{d}\tau + \int f^{\ast} \hat{A} g \:\mathrm{d}\tau = \int g \left(\hat{A}f\right)^{\ast} \mathrm{d}\tau + \int f \left(\hat{A}g\right)^{\ast} \mathrm{d}\tau
+        \label{eq:7.9}
+    \end{equation}
+    在(\ref{eq:7.8})中令$c = \mathrm{i}$，两边同除以$\mathrm{i}$，我们有
+    \begin{equation}
+        - \int g^{\ast} \hat{A} f \:\mathrm{d}\tau + \int f^{\ast} \hat{A} g \:\mathrm{d}\tau = \int g \left(\hat{A}f\right)^{\ast} \mathrm{d}\tau - \int f \left(\hat{A}g\right)^{\ast} \mathrm{d}\tau
+        \label{eq:7.10}
+    \end{equation}
+    将(\ref{eq:7.9})和(\ref{eq:7.10})相加，我们得到了(\ref{eq:7.7})。结论得到了证明。
+
+    因此，\textit{厄米算符$\hat{A}$定义为满足如下条件的线性算符：}
+    \begin{equation}
+        \boxed{
+            \int f^{\ast}_m \hat{A} f_n \:\mathrm{d}\tau = \int f_n \left(\hat{A} f_m\right)^{\ast} \mathrm{d}\tau
+        }
+        \label{eq:7.11}
+    \end{equation}
+    \textit{其中$f_m$和$f_n$是任意的品优函数，积分为对全空间的定积分。}使用狄拉克符号和矩阵元符号，我们将其记作
+    \begin{equation}
+        \boxed{
+            \left\langle f_m \middle| \hat{A} \middle| f_n \right\rangle = \left\langle f_n \middle| \hat{A} \middle| f_m \right\rangle^{\ast}
+        }
+        \label{eq:7.12}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            \left\langle m \middle| \hat{A} \middle| n \right\rangle = \left\langle n \middle| \hat{A} \middle| m \right\rangle^{\ast}
+        }
+        \label{eq:7.13}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+            A_{mn} = \left(A_{nm}\right)^{\ast}
+        }
+        \label{eq:7.14}
+    \end{equation}
+    (\ref{eq:7.12}) 的两边不同之处在于交换了函数并取了复共轭。
+
+\subsection*{厄米算符的例子}
+
+    让我们证明，我们一直在使用的一些算符确实是厄米的。简单起见，我们将从一个维度进行研究。要证明一个算符是厄米的，只需证明它对所有品优函数都满足式（\ref{eq:7.6}）即可。不过，我们将通过证明满足 (\ref{eq:7.11}) 来增加一点难度。
+
+    首先，来考虑单粒子一维势能算符。式(\ref{eq:7.11})的右侧为
+    \begin{equation}
+        \int_{-\infty}^{\infty} f_n\left(x\right)\left[V\left(x\right)f_m\left(x\right)\right]^{\ast} \mathrm{d}x
+        \label{eq:7.15}
+    \end{equation}
+    由于势能是实函数，我们有$V^{\ast} = V$。此外，式(\ref{eq:7.15})中因子的顺序无关紧要。因此，
+    \begin{equation*}
+        \int_{-\infty}^{\infty} f_n\left(Vf_m\right)^{\ast} \mathrm{d}x = \int_{-\infty}^{\infty} f_n V^{\ast} f^{\ast}_m \mathrm{d}x = \int_{-\infty}^{\infty} f_m^{\ast} V f_n \mathrm{d}x
+    \end{equation*}
+    这就证明了$V$是厄米的。
+
+    再考虑动量在$x$方向分量的算符$\hat{p}_x = -\mathrm{i}\hbar \: \mathrm{d}/\mathrm{d}x$[式(\ref{eq:3.23})]。对于这个算符，式(\ref{eq:7.11})的左侧为
+    \begin{equation*}
+        -\mathrm{i}\hbar \int_{-\infty}^{\infty} f_m^{\ast}\left(x\right)\frac{\mathrm{d}f_n\left(x\right)}{\mathrm{d}x} \mathrm{d}x
+    \end{equation*}
+    现在我们使用分部积分法：
+    \begin{equation}
+        \int_{a}^{b}u\left(x\right)\frac{\mathrm{d}v\left(x\right)}{\mathrm{d}x}\mathrm{d}x = \left. u\left(x\right)v\left(x\right)\right|_{a}^{b} - \int_{a}^{b}v\left(x\right)\frac{\mathrm{d}u\left(x\right)}{\mathrm{d}x}\mathrm{d}x
+        \label{eq:7.16}
+    \end{equation}
+    令
+    \begin{equation*}
+        u\left(x\right) \equiv -\mathrm{i}\hbar f_m^{\ast}\left(x\right), \quad v\left(x\right) \equiv f_n\left(x\right)
+    \end{equation*}
+    那么
+    \begin{equation}
+        -\mathrm{i}\hbar f_m^{\ast}\frac{\mathrm{d}f_n}{\mathrm{d}x}\mathrm{d}x = \left. -\mathrm{i}\hbar f_m^{\ast}f_n\right|_{-\infty}^{\infty} + \mathrm{i}\hbar \int_{-\infty}^{\infty} f_n\left(x\right)\frac{\mathrm{d}f_m^{\ast}\left(x\right)}{\mathrm{d}x}\mathrm{d}x
+        \label{eq:7.17}
+    \end{equation}
+    由于$f_m$和$f_n$是品优函数，因此在无穷远处它们的值为（如果它们在无穷远处不为零，则不符合平方可积的要求）。于是，(\ref{eq:7.17})变为
+    \begin{equation*}
+        \int_{-\infty}^{\infty} f_m^{\ast}\left(-\mathrm{i}\hbar \frac{\mathrm{d}f_n}{\mathrm{d}x}\right)\mathrm{d}x = \int_{-\infty}^{\infty} f_n\left(-\mathrm{i}\hbar \frac{\mathrm{d}f_m}{\mathrm{d}x}\right)^{\ast}\mathrm{d}x
+    \end{equation*}
+    与(\ref{eq:7.11})一致，证明了$\hat{p}_x$是厄米的。证明动能算符是厄米的留给读者自行考虑。可以证明，两个厄米算符的和也是厄米的。因此，哈密顿算符$\hat{H} = \hat{T} + \hat{V}$也是厄米的。
+
+\subsection*{厄米算符定理}
+
+    现在我们证明一些有关厄米算符的本征值和本征函数的重要定理。
+
+    由于与物理量 $A$ 相对应的算符 $\hat{A}$ 的本征值是测量 $A$ 的可能结果（第 \ref{sec:3.3 Operators and Quantum Mechanics} 节），因此这些特征值都应该是实数。我们现在证明厄米算符的本征值是实数。
+
+    我们现在知道$\hat{A}$是厄米算符。将这个条件转换为方程，对于所有品优函数$f_m$和$f_n$，我们有[式(\ref{eq:7.11})]
+    \begin{equation}
+        \int f^{\ast}_m \hat{A} f_n \:\mathrm{d}\tau = \int f_n \left(\hat{A} f_m\right)^{\ast} \mathrm{d}\tau
+        \label{eq:7.18}
+    \end{equation}
+    我们希望证明$\hat{A}$的每个本征值都是实数。将其转换为方程，我们希望证明$a_i = a_i^{\ast}$，其中本征值$a_i$满足$\hat{A}g_i = a_i g_i$，其中$g_i$是$\hat{A}$的本征函数。
+
+    为了将本征值$a_i$引入式(\ref{eq:7.18})，我们将(\ref{eq:7.18})写成一个特例，其中$f_m = g_i$和$f_n = g_i$：
+    \begin{equation*}
+        \int g_i^{\ast} \hat{A} g_i \:\mathrm{d}\tau = \int g_i \left(\hat{A} g_i\right)^{\ast} \mathrm{d}\tau
+    \end{equation*}
+    使用$\hat{A} g_i = a_i g_i$，我们有
+    \begin{equation*}
+        a_i \int g_i^{\ast} g_i \:\mathrm{d}\tau = \int g_i \left(a_i g_i\right)^{\ast} \mathrm{d}\tau = a_i^{\ast} \int g_i g_i^{\ast} \:\mathrm{d}\tau
+    \end{equation*}
+    \begin{equation}
+        \left(a_i - a_i^{\ast}\right) \int \left|g_i\right|^2 \:\mathrm{d}\tau = 0
+        \label{eq:7.19}
+    \end{equation}
+    由于对$\left|g_i\right|^2$的积分永远不会为负，因此 (\ref{eq:7.19}) 中积分为零的唯一可能情况是 $g_i$ 在所有坐标值下都为零。然而，基于物理原因，我们总是拒绝将 $g_i=0$ 作为本征函数。因此，式(\ref{eq:7.19})中的积分不能为零。那么只有$\left(a_i - a_i^{\ast}\right) = 0$，即$a_i = a_i^{\ast}$。得证。
+
+    \begin{center}
+        \parbox{0.8\textwidth}{
+            \centering 
+            \textbf{定理1：} 厄米算符的本征值为实数。
+        }
+    \end{center}
+
+    为了帮助读者熟悉狄拉克符号，我们将使用狄拉克符号重新证明定理1。在式(\ref{eq:7.13})中，令$m=i$以及$n=i$，我们得到了$\left\langle i \middle| \hat{A} \middle| i \right\rangle = \left\langle i \middle| \hat{A} \middle| i \right\rangle^{\ast}$。选择下标为$i$的函数作为$\hat{A}$的本征函数，使用本征方程$\hat{A} g_i = a_i g_i$，我们有$\left\langle i \middle| a_i \middle| i \right\rangle = \left\langle i \middle| a_i \middle| i \right\rangle^{\ast}$。因此，$a_i \left\langle i \middle| i \right\rangle = a_i^{\ast} \left\langle i \middle| i \right\rangle^{\ast} = a_i^{\ast}\left\langle i \middle| i \right\rangle$，则$\left(a_i - a_i^{\ast}\right)\left\langle i \middle| i \right\rangle = 0$。所以$a_i = a_i^{\ast}$，其中我们用到了(\ref{eq:7.4})中$m=n$。
+
+    我们已经证明：两个不同的箱中粒子能量本征函数$\Psi_i$和$\Psi_j$是正交的，也就是说对$i \neq j$，有$\int_{-\infty}^{\infty}\Psi_i^{\ast}\Psi_j \mathrm{d}x = 0$[式(\ref{eq:2.26 definition of orthogonal wave functions})]。若两个坐标相同的函数$f_1$和$f_2$满足下式。则它们是\textbf{正交的}（orthogonal）：
+    \begin{equation}
+        \boxed{
+            \int f_1^{\ast} f_2 \:\mathrm{d}\tau = 0
+        }
+        \label{eq:7.20}
+    \end{equation}
+    其中的积分是对坐标的全空间进行定积分。我们现在证明更一般的结论：\textit{厄米算符的本征函数是或可以被选择为相互正交的。}有
+    \begin{equation}
+        \hat{B}F = sF, \quad \hat{B}G = tG
+        \label{eq:7.21}
+    \end{equation}
+    其中$F$和$G$是厄米算符$\hat{B}$的两个线性无关的本征函数，我们希望证明
+    \begin{equation*}
+        \int F^{\ast} G \:\mathrm{d}\tau \equiv \left\langle F \middle| G \right\rangle = 0
+    \end{equation*}
+    我们从 (\ref{eq:7.12}) 开始，它表达了 $\hat{B}$ 的厄米性质：
+    \begin{equation*}
+        \left\langle F \middle| \hat{B} \middle| G \right\rangle = \left\langle G \middle| \hat{B} \middle| F \right\rangle^{\ast}
+    \end{equation*}
+    使用式(\ref{eq:7.21})，我们有
+    \begin{equation*}
+        \left\langle F \middle| t \middle| G \right\rangle = \left\langle G \middle| s \middle| F \right\rangle^{\ast}
+    \end{equation*}
+    \begin{equation*}
+        t \left\langle F \middle| G \right\rangle = s^{\ast} \left\langle G \middle| F \right\rangle
+    \end{equation*}
+    由于厄米算符的本征值为实数（定理1），我们有$s^{\ast} = s$。使用$\left\langle G \middle| F \right\rangle = \left\langle F \middle| G \right\rangle^{\ast}$（式(\ref{eq:7.4})），我们得到
+    \begin{equation*}
+        t \left\langle F \middle| G \right\rangle = s \left\langle F \middle| G \right\rangle
+    \end{equation*}
+    \begin{equation*}
+        \left(t - s\right) \left\langle F \middle| G \right\rangle = 0
+    \end{equation*}
+    若$s \neq t$，则
+    \begin{equation}
+        \left\langle F \middle| G \right\rangle = 0
+        \label{eq:7.22}
+    \end{equation}
+
+    我们已经证明，对应于\textit{不同}本征值的厄米算符的两个本征函数是正交的。现在的问题是：我们能否有两个具有\textit{相同}本征值的独立本征函数？答案是肯定的。在\textit{简并}的情况下，我们有一个以上的本征函数有相同的本征值。因此，只有当厄米算符的两个独立本征函数不对应于一个简并本征值时，我们才能确定它们是正交的。现在我们要证明，在简并的情况下，我们可以\textit{构造}出彼此正交的本征函数。我们将使用第 \ref{sec:3.6 Degeneracy} 节中证明的定理，即任何与简并本征值对应的本征函数线性组合都是具有相同本征值的本征函数。因此，让我们假设 $F$ 和 $G$ 是具有相同本征值的独立本征函数：
+    \begin{equation*}
+        \hat{B}F = sF, \quad \hat{B}G = sG
+    \end{equation*}
+    我们对 $F$ 和 $G$ 进行线性组合，形成两个新的本征函数 $g_1$ 和 $g_2$，它们将相互正交。我们选择
+    \begin{equation*}
+        g_1 \equiv F, \quad g_2 \equiv G + cF
+    \end{equation*}
+    其中常数 $c$ 的选择是为了确保正交性。我们希望
+    \begin{equation*}
+        \int g_1^{\ast} g_2 \:\mathrm{d}\tau = 0
+    \end{equation*}
+    \begin{equation*}
+        \int F^{\ast} \left(G + cF\right) \:\mathrm{d}\tau = \int F^{\ast} G \:\mathrm{d}\tau + c \int F^{\ast} F \:\mathrm{d}\tau = 0
+    \end{equation*}
+    因此，我们选择
+    \begin{equation}
+        c = -\int F^{\ast} G \:\mathrm{d}\tau \Big/ \int F^{\ast} F \:\mathrm{d}\tau
+        \label{eq:7.23}
+    \end{equation}
+    我们有两个与简并本征值相对应的正交本征函数 $g_1$ 和 $g_2$。这个过程[称为\textbf{施密特正交化或格拉姆-施密特正交化}（Schmidt orthogonalization or Gram-Schmidt orthogonalization）]可以推广到$n$重简并的情况，从而得到与简并本征值相对应的$n$个线性无关的正交本征函数。
+
+    因此，虽然不能保证简并本征值的本征函数是正交的，但如果我们愿意，总是可以通过施密特（或其他）正交化方法来选择它们是正交的。事实上，除非另有说明，我们将始终假定本征函数是正交的：
+    \begin{equation}
+        \int g_i^{\ast} g_k \:\mathrm{d}\tau = 0, \quad i \neq k
+        \label{eq:7.24}
+    \end{equation}
+    其中$g_i$和$g_k$是厄米算符的独立本征函数。我们证明了：
+    \begin{center}
+        \parbox{0.8\textwidth}{
+            \centering \textbf{定理2：} 厄米算符 $\hat{B}$ 的两个对应不同本征值的本征函数是正交的。属于简并本征值的 $\hat{B}$ 的本征函数总是可以选择为正交的。
+        }
+    \end{center}
+
+    本征函数通常可以乘以一个常数来归一化，除非另有说明，我们将假定所有本征函数都归一化了：
+    \begin{equation}
+        \int g_i^{\ast} g_i \:\mathrm{d}\tau = 1
+        \label{eq:7.25}
+    \end{equation}
+    例外情况是本征值形成一个连续体，而不是一组离散的值。在这种情况下，本征函数不满足平方可积性。例子有动量本征函数、自由粒子能量本征函数和氢原子连续能量本征函数。
+
+    使用Kronecker三角，定义为$\delta_{jk} \equiv 1$当$j=k$时，$\delta_{jk} \equiv 0$当$j \neq k$[式(\ref{eq:2.28 definition of kronecker delta})]，我们可以将(\ref{eq:7.24})和(\ref{eq:7.25})组合成一个方程：
+    \begin{equation}
+        \int g_i^{\ast}g_k \: \mathrm{d}\tau = \left\langle i \middle| k \right\rangle = \delta_{ik}
+        \label{eq:7.26}
+    \end{equation}
+    其中$g_i$和$g_k$是某厄米算符的本征函数。
+
+    例如，考虑球谐函数。我们希望证明
+    \begin{equation}
+        \int_{0}^{2\pi}\int_{0}^{\pi}\left[Y_l^m\left(\theta,\phi\right)\right]^{\ast}Y_{l'}^{m'}\left(\theta,\phi\right)\sin\theta \:\mathrm{d}\theta \:\mathrm{d}\phi = \delta_{l,l'}\delta_{m,m'}
+        \label{eq:7.27}
+    \end{equation}
+    其中 $\theta$ 因子来自球面坐标中的体积元素，(\ref{eq:5.78}) 。球谐函数是厄米算符$\hat{L}^2$的本征函数[式(\ref{eq:5.104})]。由于属于不同本征值的厄米算符的本征函数是正交的，我们得出：除非$l = l'$，否则(\ref{eq:7.27})中的积分为零。同样地，由于$Y_l^m$系列函数是$\hat{L}_z$的本征函数[式(\ref{eq:5.105})]，因此除非$m = m'$，否则(\ref{eq:7.27})中的积分为零。此外，$Y_l^m$中的乘常数[问题5.34的式(5.147)]可以选择使得球谐函数得到归一化[式(\ref{eq:6.117})]。因此，(\ref{eq:7.27})成立。
+
+    若$f$或$g$是某厄米算符的本征函数，则积分$\left\langle f \middle| \hat{B} \middle| g \right\rangle$可以得到简化。若$\hat{B}g = c g$，其中$c$是常数，则
+    \begin{equation*}
+        \left\langle f \middle| \hat{B} \middle| g \right\rangle = \left\langle f \middle| \hat{B}g \right\rangle = \left\langle f \middle| c g \right\rangle = c \left\langle f \middle| g \right\rangle
+    \end{equation*}
+    若$\hat{B}f = kf$，其中$k$是常数，那么利用 $\hat{B}$ 的厄米特性就可以得到
+    \begin{equation*}
+        \left\langle f \middle| \hat{B} \middle| g \right\rangle = \left\langle g \middle| \hat{B} \middle| f \right\rangle^{\ast} = \left\langle g \middle| \hat{B}f \right\rangle^{\ast} = \left\langle g \middle| kf \right\rangle^{\ast} = k^{\ast} \left\langle g \middle| f \right\rangle^{\ast} = k\left\langle f \middle| g \right\rangle
+    \end{equation*}
+    其中用到了本征值$k$是实数。关系$\left\langle f \middle| \hat{B} \middle| g \right\rangle = k \left\langle f \middle| g \right\rangle$表明厄米算符$\hat{B}$可以在$\left\langle f \middle| \hat{B} \middle| g \right\rangle$向左作用。
+
+    不确定性原理的证明见问题7.60。
 
 \section{用本征函数展开}
 \label{sec:7.3 Expansion in Terms of Eigenfunctions}
