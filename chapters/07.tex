@@ -208,7 +208,7 @@
 
     为了帮助读者熟悉狄拉克符号，我们将使用狄拉克符号重新证明定理1。在式(\ref{eq:7.13})中，令$m=i$以及$n=i$，我们得到了$\left\langle i \middle| \hat{A} \middle| i \right\rangle = \left\langle i \middle| \hat{A} \middle| i \right\rangle^{\ast}$。选择下标为$i$的函数作为$\hat{A}$的本征函数，使用本征方程$\hat{A} g_i = a_i g_i$，我们有$\left\langle i \middle| a_i \middle| i \right\rangle = \left\langle i \middle| a_i \middle| i \right\rangle^{\ast}$。因此，$a_i \left\langle i \middle| i \right\rangle = a_i^{\ast} \left\langle i \middle| i \right\rangle^{\ast} = a_i^{\ast}\left\langle i \middle| i \right\rangle$，则$\left(a_i - a_i^{\ast}\right)\left\langle i \middle| i \right\rangle = 0$。所以$a_i = a_i^{\ast}$，其中我们用到了(\ref{eq:7.4})中$m=n$。
 
-    我们已经证明：两个不同的箱中粒子能量本征函数$\Psi_i$和$\Psi_j$是正交的，也就是说对$i \neq j$，有$\int_{-\infty}^{\infty}\Psi_i^{\ast}\Psi_j \mathrm{d}x = 0$[式(\ref{eq:2.26 definition of orthogonal wave functions})]。若两个坐标相同的函数$f_1$和$f_2$满足下式。则它们是\textbf{正交的}（orthogonal）：
+    我们已经证明：两个不同的箱中粒子能量本征函数$\psi_i$和$\psi_j$是正交的，也就是说对$i \neq j$，有$\int_{-\infty}^{\infty}\psi_i^{\ast}\psi_j \mathrm{d}x = 0$[式(\ref{eq:2.26 definition of orthogonal wave functions})]。若两个坐标相同的函数$f_1$和$f_2$满足下式。则它们是\textbf{正交的}（orthogonal）：
     \begin{equation}
         \boxed{
             \int f_1^{\ast} f_2 \:\mathrm{d}\tau = 0
@@ -317,9 +317,237 @@
 
 \section{用本征函数展开}
 \label{sec:7.3 Expansion in Terms of Eigenfunctions}
+    在上一节中，我们证明了厄米算符本征函数的正交性。现在我们讨论这些函数的另一个重要性质；这一性质使我们可以用这些本征函数来展开一个任意的品优函数。
+
+    我们使用了Taylor级数展开（问题4.1）来将函数表示为$\left(x-a\right)$的非负整数幂的线性组合。除了$1,\left(x-a\right),\left(x-a\right)^2,\ldots$以外，我们还能将函数展开为其他函数集的线性组合吗？答案是肯定的，正如傅里叶（Fourier）在1807年所发现的那样。Fourier级数是将一个函数展开为无数个正弦和余弦函数的线性组合。我们将不再详细介绍Fourier级数，而只是举例说明。
+
+\subsection*{使用箱中粒子的波函数展开函数}
+
+    让我们考虑用箱中粒子的定态波函数来展开一个函数，即[式 (\ref{eq:2.23 stationary state wave function for the particle in a box}) ]
+    \begin{equation}
+        \psi_n = \left(\frac{2}{l}\right)^{1/2} \sin\left(\frac{n\pi x}{l}\right), \quad n = 1,2,3,\ldots
+        \label{eq:7.28}
+    \end{equation}
+    其中$x$介于$0$和$l$之间。用如下形式的级数表示区间$0 \leq x \leq l$内的任意函数$f\left(x\right)$的可能性有多大？
+    \begin{equation}
+        f\left(x\right) = \sum_{n=1}^{\infty} a_n\psi_n = \left(\frac{2}{l}\right)^{1/2} \sum_{n=1}^{\infty} a_n \sin\left(\frac{n\pi x}{l}\right), \quad 0 \leq x \leq l
+        \label{eq:7.29}
+    \end{equation}
+    其中$a_n$等为常数。将$x=0$和$x=l$代入(\ref{eq:7.29})，我们得到限制条件$f\left(0\right)=0$和$f\left(l\right)=0$。也就是说，$f\left(x\right)$必须满足和$\psi_n$相同的边界条件。我们同样假设$f\left(x\right)$的有限、单值以及连续，但不一定可导。根据上述假设，可以证明展开式 (\ref{eq:7.29}) 是成立的。我们将不证明 (\ref{eq:7.29})，而只是说明它在表示函数时的用法。
+
+    在我们对某一特定函数$f\left(x\right)$应用式(\ref{eq:7.29})之前，我们必须推导出展开系数$a_n$的表达式。我们先将(\ref{eq:7.29})两边乘以$\psi_m^{\ast}$：
+    \begin{equation}
+        \psi_m^{\ast} f\left(x\right) = \sum_{n=1}^{\infty} a_n \psi_m^{\ast} \psi_n = \left(\frac{2}{l}\right) \sum_{n=1}^{\infty} a_n \sin\left(\frac{n\pi x}{l}\right) \sin\left(\frac{m\pi x}{l}\right)
+        \label{eq:7.30}
+    \end{equation}
+    现在我们将该方程从$0$到$l$进行积分。假设将积分和无限求和互换是成立的，我们可以得出
+    \begin{equation*}
+        \int_{0}^{l} \psi_m^{\ast} f\left(x\right) \: \mathrm{d}x = \sum_{n=1}^{\infty} a_n \int_{0}^{l} \psi_m^{\ast} \psi_n \: \mathrm{d}x = \sum_{n=1}^{\infty} a_n \left(\frac{2}{l}\right) \int_{0}^{l} \sin\left(\frac{n\pi x}{l}\right) \sin\left(\frac{m\pi x}{l}\right) \: \mathrm{d}x
+    \end{equation*}
+    我们已经证明了箱中粒子波函数的正交性[式(\ref{eq:2.27 orthogonal with kronecker delta})]。因此，最后一个方程变为
+    \begin{equation}
+        \int_{0}^{l} \psi_m^{\ast} f\left(x\right) \: \mathrm{d}x = \sum_{n=1}^{\infty} a_n \delta_{mn}
+        \label{eq:7.31}
+    \end{equation}
+    (\ref{eq:7.31}) 中的求和方式经常出现。将其展开，我们得到
+    \begin{equation*}
+        \begin{aligned}
+            \sum_{n=1}^{\infty}a_n \delta_{mn} &= a_1 \delta_{m,1} + a_2 \delta_{m,2} + \ldots + a_{m-1} \delta_{m,m-1} + a_m \delta_{m,m} + a_{m+1} \delta_{m,m+1} + \ldots \\
+            &= 0 + 0 + \ldots + a_m + 0 + \ldots
+        \end{aligned}
+    \end{equation*}
+    \begin{equation}
+        \sum_{n=1}^{\infty} a_n \delta_{mn} = a_m
+        \label{eq:7.32}
+    \end{equation}
+    因此，除了$n=m$的项以外，$\delta_{mn}$都为零，那么只有一项是保留的，其他项都消失，式(\ref{eq:7.31})变为
+    \begin{equation}
+        a_m = \int_{0}^{l} \psi_m^{\ast} f\left(x\right) \: \mathrm{d}x
+        \label{eq:7.33}
+    \end{equation}
+    这正是希望的系数表达式。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\textwidth]{figures/7.1.png}
+        \caption{按箱中粒子函数展开的函数。}
+        \label{fig:7.1}
+    \end{figure}
+
+    在(\ref{eq:7.33})中将$m$替换为$n$并带入到(\ref{eq:7.29})中，我们得到
+    \begin{equation}
+        f\left(x\right) = \sum_{n=1}^{\infty} \left[\int_{0}^{l} \psi_n^{\ast} f\left(x\right) \: \mathrm{d}x\right] \psi_n\left(x\right)
+        \label{eq:7.34}
+    \end{equation}
+    这是任意函数 $f\left(x\right)$ 作为箱中粒子波函数 $\psi_n$ 的线性组合的展开所需的表达式。注意：定积分$\int_{0}^{l} \psi_n^{\ast} f\left(x\right) \: \mathrm{d}x$ 是一个数，而不是一个关于$x$的函数。
+
+    我们现在使用(\ref{eq:7.29})来代表一个特定的函数，图(\ref{fig:7.1})所示的函数由下式定义：
+    \begin{equation}
+        \begin{cases}
+            f\left(x\right) = 0, & 0 \leq x < \frac{l}{2} \\
+            f\left(x\right) = 1, & \frac{l}{2} \leq x < l
+        \end{cases}
+        \label{eq:7.35}
+    \end{equation}
+    为了找到展开系数$a_n$，我们将(\ref{eq:7.35})和(\ref{eq:7.28})代入(\ref{eq:7.33})中：
+    \begin{equation*}
+        \begin{aligned}
+            a_n &= \int_{0}^{l} \psi_n^{\ast} f\left(x\right) \: \mathrm{d}x = \left(\frac{2}{l}\right)^{1/2} \int_{0}^{l} \sin\left(\frac{n\pi x}{l}\right) f\left(x\right) \: \mathrm{d}x \\
+            a_n &= \left(\frac{2}{l}\right)^{1/2} \int_{0}^{l/2} x\sin\left(\frac{n\pi x}{l}\right) \: \mathrm{d}x + \left(\frac{2}{l}\right)^{1/2} \int_{l/2}^{l} \left(l-x\right)\sin\left(\frac{n\pi x}{l}\right) \: \mathrm{d}x
+        \end{aligned}
+    \end{equation*}
+    使用附录中的积分A.1，我们得到
+    \begin{equation}
+        a_n = \frac{\left(2l\right)^{3/2}}{n^2\pi^2}\sin\left(\frac{n\pi}{2}\right)
+        \label{eq:7.36}
+    \end{equation}
+    将(\ref{eq:7.36})代入(\ref{eq:7.29})，我们得到[由于$\sin\left(n\pi/2\right)$在$n$为奇数时为1或-1，在$n$为偶数时为0]：
+    \begin{equation*}
+        f\left(x\right) = \frac{4l}{\pi^2}\left[\sin\left(\frac{\pi x}{l}\right) - \frac{1}{3^2}\sin\left(\frac{3\pi x}{l}\right) + \frac{1}{5^2}\sin\left(\frac{5\pi x}{l}\right) - \cdots\right]
+    \end{equation*}
+    \begin{equation}
+        f\left(x\right) = \frac{4l}{\pi^2}\sum_{n=1}^{\infty}\left(-1\right)^{n+1}\frac{1}{\left(2n-1\right)^2}\sin\left[\left(2n-1\right)\frac{\pi x}{l}\right]
+        \label{eq:7.37}
+    \end{equation}
+    其中$f\left(x\right)$由(\ref{eq:7.35})给出。让我们检查$x = \frac{1}{2}l$时(\ref{eq:7.37})的值：
+    \begin{equation}
+        f\left(\frac{l}{2}\right) = \frac{4l}{\pi^2}\left(1+\frac{1}{3^2}+\frac{1}{5^2}+\frac{1}{7^2}+\cdots\right)
+        \label{eq:7.38}
+    \end{equation}
+    将 (\ref{eq:7.38}) 的右边作为我们在无穷级数中所取项数的函数列表，我们可以得到
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{c|c|c|c|c|c|c|c}
+            项数 & 1 & 2 & 3 & 4 & 5 & 20 & 100 \\
+            \hline
+            式(\ref{eq:7.38})的右侧 & $0.405l$ & $0.450l$ & $0.467l$ & $0.475l$ & $0.480l$ & $0.495l$ & $0.499l$
+        \end{tabular}
+    \end{table}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\textwidth]{figures/7.2.png}
+        \caption{
+            \centering
+            \parbox{\linewidth}{
+                \centering
+                图 \ref{fig:7.1} 中以粒子箱中波函数展开的函数，展开式分别\\
+                取 1 项和 5 项时，(a) 误差和(b) 百分比误差图。
+            }
+        }
+        \label{fig:7.2}
+    \end{figure}
+
+    \noindent 如果我们取无穷多项，那么级数的和应为$\frac{1}{2}l$，与$f\left(\frac{l}{2}\right)$的值一致。假设级数成立，我们会得到一个有趣的结果，即(\ref{eq:7.38})中右侧括号的求和等于$\pi^2/8$。图7.2显示了$f\left(x\right) - \sum_{n-1}^{k}a_n\psi_n$的图形[其中$f$、$a_n$和$\psi_n$的定义见(\ref{eq:7.35})、(\ref{eq:7.36})和(\ref{eq:7.28})]，其中$k$是取的项数，分别为1和5。随着 $k$（即展开式中的项数）的增加，级数逐渐趋近于 $f\left(x\right)$，而 $f$ 与级数之间的差值逐渐趋于零。
+
+\subsection*{用本征函数展开函数}
+
+     我们已经看到了用一组函数——箱中粒子能量本征函数——来展开一个函数的例子。我们可以使用许多不同的函数集来展开任意函数。如果每个品优函数 $f$ 都服从与 $g_i$ 函数相同的边界条件，并且可以根据以下条件展开为 $g_i$ 的线性组合，则称函数集 $g_1,g_2,\ldots,g_i,\ldots$ 为\textbf{完备集}（complete set）：
+    \begin{equation}
+        f = \sum_{i}a_i g_i
+        \label{eq:7.39}
+    \end{equation}
+    其中 $a_i$ 是常数。当然，我们很容易理解$f$和$g_i$都是同一组自变量的函数。(\ref{eq:7.39}) 中的和省略了极限。不言而喻，这个和包含了完整集合的所有成员。根据Fourier分析定理（我们尚未证明），可以证明粒子箱中的能量本征函数是一个完备集。
+
+    我们现在假设：\textit{表示物理量的每个厄米算符的本征函数集是一个完备集。}（本征函数的完备性在很多情况下都可以证明，但在一般情况下必须假设。）因此，每个满足与本征函数集合相同边界条件的品优函数都可以根据 (\ref{eq:7.39}) 展开。方程 (\ref{eq:7.29}) 就是 (\ref{eq:7.39}) 的一个例子。
+
+    谐振子波函数由厄米多项式$H_v$乘以一个指数因子给出[问题4.21c的式(4.86)]。根据展开公设，任何品优函数 $f\left(x\right)$ 都可以展开为谐振子能量本征函数的线性组合：
+    \begin{equation*}
+        f\left(x\right) = \sum_{n=0}^{\infty}a_n\left(2^nn!\right)^{-1/2}\left(\alpha/\pi\right)^{1/4}H_n\left(\alpha^{1/2}x\right)\mathrm{e}^{-\alpha x^2/2}
+    \end{equation*}
+
+    使用氢原子束缚态波函数来展开任意函数 $f\left(r,\theta,\phi\right)$如何？答案是这些函数并\textit{不}构成一个完备集，我们无法用它们来展开 $f$。要有一个完备集，我们必须使用特定厄米算符的\textit{所有}本征函数。除了氢原子哈密顿的束缚态本征函数外，我们还有与电离态相对应的连续态本征函数。如果将连续本征函数与束缚态本征函数一起包含在内，那么我们就得到了一个完备集。（对于箱中粒子和谐振子来说，连续函数不存在。）等式 (\ref{eq:7.39}) 意味着对连续本征函数（如果有的话）进行积分。因此，若$\psi_{nlm}\left(r,\theta,\phi\right)$是氢原子束缚态函数，$\psi_{Elm}\left(r,\theta,\phi\right)$是连续本征函数，则式(\ref{eq:7.39})变为
+    \begin{equation*}
+        f\left(r,\theta,\phi\right) = \sum_{n=1}^{\infty}\sum_{l=0}^{n-1}\sum_{m=-l}^{l}a_{nlm}\psi_{nlm}\left(r,\theta,\phi\right) + \sum_{l=0}^{\infty}\sum_{m=-l}^{l}\int_{0}^{\infty} a_{lm}\left(E\right) \psi_{Elm}\left(r,\theta,\phi\right) \:\mathrm{d}E
+    \end{equation*}
+
+    另一个例子：考虑算符$\hat{p}_x$的本征函数[式(\ref{eq:3.36})]：
+    \begin{equation*}
+        g_k = \mathrm{e}^{\mathrm{i}kx/\hbar}, \quad -\infty < k < \infty
+    \end{equation*}
+    这里的本征值都是连续的，任意函数 $f$ 的本征函数展开式（\ref{eq:7.39}）变为
+    \begin{equation*}
+        f\left(x\right) = \int_{-\infty}^{\infty} a\left(k\right) \mathrm{e}^{\mathrm{i}kx/\hbar} \:\mathrm{d}k
+    \end{equation*}
+    具有良好数学基础的读者可能会发现，这个积分几乎就是 $a\left(k\right)$ 的Fourier变换。
+
+    让我们对$f=\sum_{i}a_ig_i$ [式 (\ref{eq:7.39}) ] 中的展开系数进行计算，其中的 $g_i$ 函数是厄米算符的本征函数的完备集。这一过程与推导 (\ref{eq:7.33}) 所用的过程相同。我们将$f = \sum_{i}a_ig_i$与$g_k^{\ast}$相乘并对全空间积分：
+    \begin{equation*}
+        g_k^{\ast} f = \sum_{i} a_i g_k^{\ast} g_i
+    \end{equation*}
+    \begin{equation*}
+        \int g_k^{\ast} f \:\mathrm{d}\tau = \sum_{i} a_i \int g_k^{\ast} g_i \:\mathrm{d}\tau = \sum_{i} a_i \delta_{ik} = a_k
+    \end{equation*}
+    \begin{equation}
+        a_k = \int g_k^{\ast} f \:\mathrm{d}\tau
+        \label{eq:7.40}
+    \end{equation}
+    其中我们用到了厄米算符本征函数之间的正交性：$\int g_k^{\ast} g_i \:\mathrm{d}\tau = \delta_{ik}$ [式 (\ref{eq:7.26}) ]。得出（\ref{eq:7.40}）的过程会经常用到，值得记住。将(\ref{eq:7.40})中的$a_i$带入$f = \sum_{i}a_ig_i$中，我们得到
+    \begin{equation}
+        f = \sum_{i}\left[\int g_i^{\ast}f \:\mathrm{d}\tau\right]g_i = \sum_{i}\left\langle g_i \middle| f \right\rangle g_i
+        \label{eq:7.41}
+    \end{equation}
+
+    \begin{examplebox}
+        \textbf{例题：}令
+        \begin{equation*}
+            F\left(x\right) = \begin{cases}
+                x\left(l-x\right), & 0 \leq x \leq l \\
+                0, & \text{elsewhere}
+            \end{cases}
+        \end{equation*}
+        将$F$用箱中粒子能量本征函数$\psi_n = \left(2/l\right)^{1/2}\sin\left(n\pi x/l\right), \: 0 \leq x \leq l$展开。
+        \\
+        
+        注意到$F\left(0\right) = 0$以及$F\left(l\right) = 0$，因此满足与$\psi_n$相同的边界条件。我们可以使用$\psi_n$来展开$F$。展开式为$F = \sum_{n=1}^{\infty} a_n \psi_n$，其中系数$a_n = \int\psi_n^{\ast} F \:\mathrm{d}x$[式(\ref{eq:7.40})和(\ref{eq:7.39})]。因此，
+        \begin{equation*}
+            a_n = \int \psi_{n}^{\ast}F \:\mathrm{d}\tau = \left(\frac{2}{l}\right)^{1/2} \int_{0}^{l} \left(\sin\frac{n\pi x}{l}\right) x\left(l-x\right) \:\mathrm{d}x = \frac{2^{3/2}l^{5/2}}{n^3\pi^3}\left[1-\left(-1\right)^n\right]
+        \end{equation*}
+        其中积分计算的具体细节留作习题（问题7.18）。展开式$F = \sum_{n=1}^{\infty} a_n \psi_n$为
+        \begin{equation*}
+            x\left(l-x\right) = \frac{4l^2}{\pi^3}\sum_{n=1}^{\infty} \frac{1-\left(-1\right)^n}{n^3}\sin\left(\frac{n\pi x}{l}\right), \quad 0 \leq x \leq l
+        \end{equation*}
+        \\
+
+        \textbf{练习：}令
+        \begin{equation*}
+            G\left(x\right) = \begin{cases}
+                1, & 0 \leq x \leq l \\
+                0, & \text{elsewhere}
+            \end{cases}
+        \end{equation*}
+        将$G$用箱中粒子能量本征函数展开。由于 $G$ 在 原点和 $l$ 点不为零，因此展开式在这些点上不表示 $G$，而在其他地方表示 $G$。利用展开式的前 7 项非零项计算 $G$ 在$x = \frac{1}{4}l$处的值。使用前 70 个非零项重复上述步骤（使用可编程计算器）。（\textit{答案：}0.1219，0.9977.）
+    \end{examplebox}
+
+    以下是一条有用的定理：
+    \begin{center}
+        \parbox{0.8\textwidth}{
+            \centering
+            \textbf{定理3：}令$g_1,g_2,\ldots$是厄米算符$\hat{A}$的本征函数完备集，令$F$是$\hat{A}$的本征函数，本征值为$k$（也就是说，$\hat{A}F = kF$）。若$F$展开为$F = \sum_{i}a_ig_i$，则展开式中的非零系数$a_i$仅对应于与$k$相同的本征值的本征函数$g_i$。（由于简并的存在，可能有多个本征函数$g_i$对应于同一本征值$k$。）
+            
+        }
+    \end{center}
+
+    因此，在 $F$ 的展开式中，我们只包括那些与 $F$ 具有相同本征值的本征函数。根据 $a_k = \int g_k^{\ast} f \:\mathrm{d}\tau$[公式 (\ref{eq:7.40}) ] 即可得出定理 3 的证明；若$F$和$g_i$对应于同一厄米算符$\hat{A}$的不同本征值，那它们是正交的[式(\ref{eq:7.22})]，则$a_k$消失。
+
+    我们偶尔会使用一种符号（称为 \textbf{ket} 符号），在这种符号中，函数 $f$ 用以下符号表示$\left| f \right\rangle$。这个符号似乎没有任何意义，但在量子力学的高级公式中，它具有特殊的意义。在ket符号中，式(\ref{eq:7.41})可以写成
+    \begin{equation}
+        \left| f \right\rangle = \sum_{i} \left| g_i\right\rangle \left\langle g_i \middle| f \right\rangle = \sum_i \left| i \right\rangle \left\langle i \middle| f \right\rangle
+        \label{eq:7.42}
+    \end{equation}
+    Ket 符号方便地用于通过列出本征值来指定本征函数。例如，量子数分别为$n$、$l$和$m$的氢原子波函数可以写成$\psi_{nlm} = \left| n,l,m \right\rangle$。
+
+    第\ref{sec:7.2 Hermitian Operators}和\ref{sec:7.3 Expansion in Terms of Eigenfunctions}节的内容可以总结为\textit{厄米算符的本征函数构成一个完整的正交集合，且本征值为实数。}
 
 \section{对易算符的本征函数}
 \label{sec:7.4 Eigenfunctions of Commuting Operators}
+
+
+
+
+
+
+
+
+
 
 \section{宇称}
 \label{sec:7.5 Parity}
