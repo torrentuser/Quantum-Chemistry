@@ -678,6 +678,136 @@
 
 \section{宇称}
 \label{sec:7.5 Parity}
+    某些量子力学算符没有相对应的经典类似量。宇称算符就是一个例子。回想一下，谐振子的波函数要么是奇函数，要么是偶函数。我们将展示这一性质与宇称算符的关系。
+
+    \textbf{宇称算符}（parity operator）$\hat{\Pi}$定义为其对任意函数$f$的以下作用结果：
+    \begin{equation}
+        \boxed{
+            \hat{\Pi}f\left(x,y,z\right) = f\left(-x,-y,-z\right)
+        }
+        \label{eq:7.52}
+    \end{equation}
+    宇称算符将每个直角坐标替换为其负数。例如：$\hat{\Pi}\left(x^2 - z\mathrm{e}^{ay}\right) = x^2 + z\mathrm{e}^{-ay}$。
+
+    与其他任意量子力学算符一样，我们对宇称算符的本征函数$g_i$和本征值$c_i$很感兴趣：
+    \begin{equation}
+        \hat{\Pi}g_i = c_ig_i
+        \label{eq:7.53}
+    \end{equation}
+    问题的关键是求出$\hat{\Pi}$的平方：
+    \begin{equation*}
+        \hat{\Pi}^2f\left(x,y,z\right) = \hat{\Pi}\left[\hat{\Pi}f\left(x,y,z\right)\right] = \hat{\Pi}f\left[-x,-y,-z\right] = f\left(x,y,z\right)
+    \end{equation*}
+    由于$f$是任意给定的函数，我们得到$\hat{\Pi}^2$等于单位算符：
+    \begin{equation}
+        \hat{\Pi}^2 = \hat{1}
+        \label{eq:7.54}
+    \end{equation}
+    
+    我们现在将$\hat{\Pi}$作用到(\ref{eq:7.53})的两边，得到$\hat{\Pi}\hat{\Pi}g_i = \hat{\Pi}c_ig_i$。由于$\hat{\Pi}$是线性算符（问题7.26），我们有$\hat{\Pi}^2g_i = c_i\hat{\Pi}g_i$，则
+    \begin{equation}
+        \hat{\Pi}^2g_i = c_i^2g_i
+        \label{eq:7.55}
+    \end{equation}
+    其中用到了本征方程(\ref{eq:7.53})。由于$\hat{\Pi}^2$是单位算符，式(\ref{eq:7.55})的左侧是$g_i$，那么
+    \begin{equation*}
+        g_i = c_i^2g_i
+    \end{equation*}
+    函数$g_i$不可能处处为零（根据物理原理，零总是被拒绝作为本征函数）。因此，两边除以$g_i$，我们得到$c_i^2 = 1$，即
+    \begin{equation}
+        c_i = \pm 1
+        \label{eq:7.56}
+    \end{equation}
+    算符$\hat{\Pi}$的本征值为$+1$和$-1$。请注意，这一推导适用于其平方为单位算符的任何算符。
+
+    本征方程$g_i$等于什么？本征方程(\ref{eq:7.53})为
+    \begin{equation*}
+        \hat{\Pi}g_i\left(x,y,z\right) = \pm g_i\left(x,y,z\right)
+    \end{equation*}
+    \begin{equation*}
+        g_i\left(-x,-y,-z\right) = \pm g_i\left(x,y,z\right)
+    \end{equation*}
+    若本征值为$+1$，则$g_i\left(-x,-y,-z\right) = g_i\left(x,y,z\right)$，这表明$g_i$是偶函数；若本征值为$-1$，则$g_i\left(-x,-y,-z\right) = -g_i\left(x,y,z\right)$，这表明$g_i$是奇函数。因此，\textit{宇称算符$\hat{\Pi}$的本征函数为可能的品优奇函数和品优偶函数。}
+
+    当宇称算符与哈密顿算符$\hat{H}$可对易时，根据第\ref{sec:7.4 Eigenfunctions of Commuting Operators}节的定理，我们可以为这两个算符选择一组共同的本征函数完全集。$\hat{H}$的本征函数是定态波函数$\psi_i$。因此，若
+    \begin{equation}
+        \left[\hat{\Pi}, \hat{H}\right] = 0
+        \label{eq:7.57}
+    \end{equation}
+    波函数$\psi_i$可以被选择成为$\hat{\Pi}$的本征函数。我们刚刚证明了$\hat{\Pi}$的本征函数是奇函数或偶函数。因此，当(\ref{eq:7.57})成立时，每个波函数可以被选择为奇函数或偶函数。让我们看看宇称算符和哈密顿算符在什么情况下可对易。
+
+    对于单粒子系统，我们有
+    \begin{equation*}
+        \left[\hat{H},\hat{\Pi}\right] = \left[\hat{T},\hat{\Pi}\right] + \left[\hat{V},\hat{\Pi}\right] = -\frac{\hbar^2}{2m}\left(\left[\frac{\partial^2}{\partial x^2},\hat{\Pi}\right] + \left[\frac{\partial^2}{\partial y^2},\hat{\Pi}\right] + \left[\frac{\partial^2}{\partial z^2},\hat{\Pi}\right]\right) + \left[\hat{V},\hat{\Pi}\right]
+    \end{equation*}
+    由于
+    \begin{equation*}
+        \begin{aligned}
+            \hat{\Pi}\left[\frac{\partial^2}{\partial x^2}\left(x,y,z\right)\right] = \frac{\partial}{\partial\left(-x\right)}\frac{\partial}{\partial\left(-x\right)}f\left(-x,-y,-z\right) &= \frac{\partial^2}{\partial x^2}f\left(-x,-y,-z\right) \\
+            &= \frac{\partial^2}{\partial x^2}\hat{\Pi}\left(x,y,z\right)
+        \end{aligned}
+    \end{equation*}
+    其中$f$是任意函数，我们得到
+    \begin{equation*}
+        \left[\frac{\partial^2}{\partial x^2}, \hat{\Pi}\right] = 0
+    \end{equation*}
+    $y$和$z$坐标有类似的方程，则$\left[\hat{H},\hat{\Pi}\right]$变为
+    \begin{equation}
+        \left[\hat{H},\hat{\Pi}\right] = \left[\hat{V},\hat{\Pi}\right]
+        \label{eq:7.58}
+    \end{equation}
+    现在
+    \begin{equation}
+        \hat{\Pi}\left[V\left(x,y,z\right)f\left(x,y,z\right)\right] = V\left(-x,-y,-z\right)f\left(-x,-y,-z\right)
+        \label{eq:7.59}
+    \end{equation}
+    若势能函数为偶函数，即$V\left(-x,-y,-z\right) = V\left(x,y,z\right)$，则(\ref{eq:7.59})变为
+    \begin{equation*}
+        \hat{\Pi}\left[V\left(x,y,z\right)f\left(x,y,z\right)\right] = V\left(x,y,z\right)f\left(-x,-y,-z\right) = V\left(x,y,z\right)\hat{\Pi}f\left(x,y,z\right)
+    \end{equation*}
+    所以$\left[\hat{V},\hat{\Pi}\right] = 0$。因此，当势能函数为偶函数时，宇称算符和哈密顿算符可对易：
+    \begin{equation}
+        \left[\hat{H},\hat{\Pi}\right] = 0 \quad \text{若} V \text{为偶函数}
+        \label{eq:7.60}
+    \end{equation}
+
+    这些结果很容易推广到 $n$ 粒子的情况。对于一个$n$粒子系统，宇称算符定义为
+    \begin{equation}
+        \hat{\Pi}f\left(x_1,y_1,z_1,\ldots,x_n,y_n,z_n\right) = f\left(-x_1,-y_1,-z_1,\ldots,-x_n,-y_n,-z_n\right)
+        \label{eq:7.61}
+    \end{equation}
+    很容易发现，若$V$满足下式
+    \begin{equation}
+        V\left(x_1,y_1,z_1,\ldots,x_n,y_n,z_n\right) = V\left(-x_1,-y_1,-z_1,\ldots,-x_n,-y_n,-z_n\right)
+        \label{eq:7.62}
+    \end{equation}
+    则(\ref{eq:7.57})成立。若$V$满足方程(\ref{eq:7.62})，则称其为$3n$坐标的\textbf{偶函数}（even function of the $3n$ coordinates）。总而言之，我们有
+    \begin{center}
+        \parbox{0.8\textwidth}{
+            \centering
+            \textbf{定理7：}当势能 $V$ 是偶函数时，我们可以选择定态波函数，使每个波函数要么是偶函数，要么是奇函数。
+        }
+    \end{center}
+
+    要么是偶数要么是奇数的函数被称为具有\textit{确定的宇称}（definite parity）。
+
+    如果能级都是非简并能级（在一维问题中通常如此），那么每个能量本征值只对应一个独立的波函数，波函数中没有可选择的元素（除了任意的乘常数）。因此，对于非简并情况，当 $V$ 是偶函数时，定态波函数必须具有确定的宇称。例如，一维谐振子的势能函数为$V = \frac{1}{2}kx^2$，是偶函数，则波函数具有确定的宇称。
+
+    氢原子势能函数是偶函数，类氢轨道可以选择具有确定的宇称（问题 7.22 和 7.29）。
+
+    对于简并的情况，我们在波函数中有一个选择元素，因为与简并能级相对应的函数的任意线性组合是 $\hat{H}$ 的本征函数。对于简并能级，通过适当的线性组合，我们可以选择具有确定奇偶性的波函数，但并不要求它们必须具有确定的奇偶性。
+
+    宇称有助于积分的计算。我们已经证明了当$f\left(x\right)$为奇函数时有$\int_{-\infty}^{\infty}f\left(x\right)\:\mathrm{d}x = 0$。让我们将这一结果推广到 $3n$ 维情况。$3n$ 个变量的\textbf{奇函数}（odd function）满足
+    \begin{equation}
+        g\left(-x_1,-y_1,-z_1,\ldots,-x_n,-y_n,-z_n\right) = -g\left(x_1,y_1,z_1,\ldots,x_n,y_n,z_n\right)
+        \label{eq:7.63}
+    \end{equation}
+    若$g$是$3n$个变量的奇函数，则
+    \begin{equation}
+        \int_{-\infty}^{\infty}\cdots\int_{-\infty}^{\infty}g\left(x_1,\ldots,z_n\right)\:\mathrm{d}x_1\ldots\mathrm{d}z_n = 0
+        \label{eq:7.64}
+    \end{equation}
+    其中的积分是对 $3n$ 个坐标的积分。这个等式成立的原因为：$\left(x_1,y_1,z_1,\ldots,x_n,y_n,z_n\right)$处$g$值对积分的贡献被$\left(-x_1,-y_1,-z_1,\ldots,-x_n,-y_n,-z_n\right)$处的$g$值抵消了。当积分是部分（但不一定是全部）变量的奇函数时，等式 (\ref{eq:7.64}) 也成立。参见问题 7.30 。
 
 
 

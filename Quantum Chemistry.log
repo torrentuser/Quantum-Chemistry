@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  15 JUL 2025 15:03
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  15 JUL 2025 16:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1619,30 +1619,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 507--509
 
  []
 
-[126] [127] [128]) (./chapters/08.tex
-Underfull \vbox (badness 4531) has occurred while \output is active []
+[126] [127] [128] [129]
+Overfull \hbox (19.2113pt too wide) in paragraph at lines 729--731
+\TU/SimSun(0)/m/n/10.53937 若 本 征 值 为 $[][]$，|  则 $[][] [] [] [][] []$，|  这 表 明 $[][]$ 是 偶 函 数；|  若 本 征 值 为 $[][]$，|  则 $[][] [] []
+ []
 
- [129] [130]
+[130]) (./chapters/08.tex [131] [132]
 Chapter 8.
-) (./chapters/09.tex [131
+) (./chapters/09.tex [133
 
-] [132
+] [134
 
 ]
 Chapter 9.
-) (./chapters/10.tex [133] [134
+) (./chapters/10.tex [135] [136
 
 ]
 Chapter 10.
-) (./chapters/11.tex [135] [136
+) (./chapters/11.tex [137] [138
 
 ]
 Chapter 11.
-) (./chapters/12.tex [137] [138
+) (./chapters/12.tex [139] [140
 
 ]
 Chapter 12.
-) (./chapters/13.tex [139] [140
+) (./chapters/13.tex [141] [142
 
 ]
 Chapter 13.
@@ -1677,14 +1679,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [141]
+ [143]
 Overfull \vbox (137.1515pt too high) has occurred while \output is active []
 
- [142]
+ [144]
 Chapter 14.
-) (./chapters/15.tex [143
+) (./chapters/15.tex [145
 
-] [144
+] [146
 
 ]
 Chapter 15.
@@ -1695,42 +1697,42 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [145]
+ [147]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
- [146]
+ [148]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [147
+ [149
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
- [148]
+ [150]
 Chapter 17.
-[149
+[151
 
-]) (./chapters/appendix.tex [150]
+]) (./chapters/appendix.tex [152]
 附录 A.
-) (./chapters/bibliography.tex [151
+) (./chapters/bibliography.tex [153
 
-] [152
+] [154
 
 ]
 附录 B.
-[153] [154
+[155] [156
 
-]) (./chapters/answers.tex [155] [156
+]) (./chapters/answers.tex [157] [158
 
 ]
 附录 C.
-) (./chapters/index.tex [157] [158
+) (./chapters/index.tex [159] [160
 
 ]
 附录 D.
-) [159] (./Quantum Chemistry.aux)
+) [161] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -1739,12 +1741,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 39453 strings out of 474773
- 887861 string characters out of 5751499
+ 39466 strings out of 474773
+ 887978 string characters out of 5751499
  2018842 words of memory out of 5000000
- 60904 multiletter control sequences out of 15000+600000
+ 60917 multiletter control sequences out of 15000+600000
  577319 words of font info for 178 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,114p,996b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (167 pages).
+Output written on Quantum Chemistry.pdf (169 pages).
