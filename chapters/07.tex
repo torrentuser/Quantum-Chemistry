@@ -440,21 +440,21 @@
 
 \subsection*{用本征函数展开函数}
 
-     我们已经看到了用一组函数——箱中粒子能量本征函数——来展开一个函数的例子。我们可以使用许多不同的函数集来展开任意函数。如果每个品优函数 $f$ 都服从与 $g_i$ 函数相同的边界条件，并且可以根据以下条件展开为 $g_i$ 的线性组合，则称函数集 $g_1,g_2,\ldots,g_i,\ldots$ 为\textbf{完备集}（complete set）：
+     我们已经看到了用一组函数——箱中粒子能量本征函数——来展开一个函数的例子。我们可以使用许多不同的函数集来展开任意函数。如果每个品优函数 $f$ 都服从与 $g_i$ 函数相同的边界条件，并且可以根据以下条件展开为 $g_i$ 的线性组合，则称函数集 $g_1,g_2,\ldots,g_i,\ldots$ 为\textbf{完全集}（complete set）：
     \begin{equation}
         f = \sum_{i}a_i g_i
         \label{eq:7.39}
     \end{equation}
-    其中 $a_i$ 是常数。当然，我们很容易理解$f$和$g_i$都是同一组自变量的函数。(\ref{eq:7.39}) 中的和省略了极限。不言而喻，这个和包含了完整集合的所有成员。根据Fourier分析定理（我们尚未证明），可以证明粒子箱中的能量本征函数是一个完备集。
+    其中 $a_i$ 是常数。当然，我们很容易理解$f$和$g_i$都是同一组自变量的函数。(\ref{eq:7.39}) 中的和省略了极限。不言而喻，这个和包含了完整集合的所有成员。根据Fourier分析定理（我们尚未证明），可以证明粒子箱中的能量本征函数是一个完全集。
 
-    我们现在假设：\textit{表示物理量的每个厄米算符的本征函数集是一个完备集。}（本征函数的完备性在很多情况下都可以证明，但在一般情况下必须假设。）因此，每个满足与本征函数集合相同边界条件的品优函数都可以根据 (\ref{eq:7.39}) 展开。方程 (\ref{eq:7.29}) 就是 (\ref{eq:7.39}) 的一个例子。
+    我们现在假设：\textit{表示物理量的每个厄米算符的本征函数集是一个完全集。}（本征函数的完备性在很多情况下都可以证明，但在一般情况下必须假设。）因此，每个满足与本征函数集合相同边界条件的品优函数都可以根据 (\ref{eq:7.39}) 展开。方程 (\ref{eq:7.29}) 就是 (\ref{eq:7.39}) 的一个例子。
 
     谐振子波函数由厄米多项式$H_v$乘以一个指数因子给出[问题4.21c的式(4.86)]。根据展开公设，任何品优函数 $f\left(x\right)$ 都可以展开为谐振子能量本征函数的线性组合：
     \begin{equation*}
         f\left(x\right) = \sum_{n=0}^{\infty}a_n\left(2^nn!\right)^{-1/2}\left(\alpha/\pi\right)^{1/4}H_n\left(\alpha^{1/2}x\right)\mathrm{e}^{-\alpha x^2/2}
     \end{equation*}
 
-    使用氢原子束缚态波函数来展开任意函数 $f\left(r,\theta,\phi\right)$如何？答案是这些函数并\textit{不}构成一个完备集，我们无法用它们来展开 $f$。要有一个完备集，我们必须使用特定厄米算符的\textit{所有}本征函数。除了氢原子哈密顿的束缚态本征函数外，我们还有与电离态相对应的连续态本征函数。如果将连续本征函数与束缚态本征函数一起包含在内，那么我们就得到了一个完备集。（对于箱中粒子和谐振子来说，连续函数不存在。）等式 (\ref{eq:7.39}) 意味着对连续本征函数（如果有的话）进行积分。因此，若$\psi_{nlm}\left(r,\theta,\phi\right)$是氢原子束缚态函数，$\psi_{Elm}\left(r,\theta,\phi\right)$是连续本征函数，则式(\ref{eq:7.39})变为
+    使用氢原子束缚态波函数来展开任意函数 $f\left(r,\theta,\phi\right)$如何？答案是这些函数并\textit{不}构成一个完全集，我们无法用它们来展开 $f$。要有一个完全集，我们必须使用特定厄米算符的\textit{所有}本征函数。除了氢原子哈密顿的束缚态本征函数外，我们还有与电离态相对应的连续态本征函数。如果将连续本征函数与束缚态本征函数一起包含在内，那么我们就得到了一个完全集。（对于箱中粒子和谐振子来说，连续函数不存在。）等式 (\ref{eq:7.39}) 意味着对连续本征函数（如果有的话）进行积分。因此，若$\psi_{nlm}\left(r,\theta,\phi\right)$是氢原子束缚态函数，$\psi_{Elm}\left(r,\theta,\phi\right)$是连续本征函数，则式(\ref{eq:7.39})变为
     \begin{equation*}
         f\left(r,\theta,\phi\right) = \sum_{n=1}^{\infty}\sum_{l=0}^{n-1}\sum_{m=-l}^{l}a_{nlm}\psi_{nlm}\left(r,\theta,\phi\right) + \sum_{l=0}^{\infty}\sum_{m=-l}^{l}\int_{0}^{\infty} a_{lm}\left(E\right) \psi_{Elm}\left(r,\theta,\phi\right) \:\mathrm{d}E
     \end{equation*}
@@ -469,7 +469,7 @@
     \end{equation*}
     具有良好数学基础的读者可能会发现，这个积分几乎就是 $a\left(k\right)$ 的Fourier变换。
 
-    让我们对$f=\sum_{i}a_ig_i$ [式 (\ref{eq:7.39}) ] 中的展开系数进行计算，其中的 $g_i$ 函数是厄米算符的本征函数的完备集。这一过程与推导 (\ref{eq:7.33}) 所用的过程相同。我们将$f = \sum_{i}a_ig_i$与$g_k^{\ast}$相乘并对全空间积分：
+    让我们对$f=\sum_{i}a_ig_i$ [式 (\ref{eq:7.39}) ] 中的展开系数进行计算，其中的 $g_i$ 函数是厄米算符的本征函数的完全集。这一过程与推导 (\ref{eq:7.33}) 所用的过程相同。我们将$f = \sum_{i}a_ig_i$与$g_k^{\ast}$相乘并对全空间积分：
     \begin{equation*}
         g_k^{\ast} f = \sum_{i} a_i g_k^{\ast} g_i
     \end{equation*}
@@ -521,7 +521,7 @@
     \begin{center}
         \parbox{0.8\textwidth}{
             \centering
-            \textbf{定理3：}令$g_1,g_2,\ldots$是厄米算符$\hat{A}$的本征函数完备集，令$F$是$\hat{A}$的本征函数，本征值为$k$（也就是说，$\hat{A}F = kF$）。若$F$展开为$F = \sum_{i}a_ig_i$，则展开式中的非零系数$a_i$仅对应于与$k$相同的本征值的本征函数$g_i$。（由于简并的存在，可能有多个本征函数$g_i$对应于同一本征值$k$。）
+            \textbf{定理3：}令$g_1,g_2,\ldots$是厄米算符$\hat{A}$的本征函数完全集，令$F$是$\hat{A}$的本征函数，本征值为$k$（也就是说，$\hat{A}F = kF$）。若$F$展开为$F = \sum_{i}a_ig_i$，则展开式中的非零系数$a_i$仅对应于与$k$相同的本征值的本征函数$g_i$。（由于简并的存在，可能有多个本征函数$g_i$对应于同一本征值$k$。）
             
         }
     \end{center}
@@ -539,18 +539,157 @@
 
 \section{对易算符的本征函数}
 \label{sec:7.4 Eigenfunctions of Commuting Operators}
+    如果态函数$\Psi$同时是两个算符$\hat{A}$和$\hat{B}$的本征函数，本征值分别为$a_j$和$b_j$，那么对物理量$A$的观测将得到值为$a_j$的结果，对物理量$B$的观测将得到值为$b_j$的结果。因此，当$\Psi$同时是$\hat{A}$和$\hat{B}$的本征函数时，物理量$A$和$B$都具有确定的值。
 
+    在第 \ref{sec:5.1 Simultaneous Specification of Several Properties} 节中，我们对两个算符的同时本征函数做了一些说明。现在我们证明这些陈述。
 
+    首先，我们证明：如果存在两个线性算符本征函数的共同\textit{完全集}，那么这两个算符可对易。令$\hat{A}$和$\hat{B}$是两个线性算符，$g_1,g_2,\ldots$是共同的本征函数完全集：
+    \begin{equation}
+        \hat{A}g_i = a_ig_i, \quad \hat{B}g_i = b_ig_i
+        \label{eq:7.43}
+    \end{equation}
+    其中$a_i$和$b_i$是本征值。我们需要证明
+    \begin{equation}
+        \left[\hat{A},\hat{B}\right] = 0
+        \label{eq:7.44}
+    \end{equation}
+    方程(\ref{eq:7.44})是算符方程。要使两个算符相等，则用其中任何一个算符对任意品优函数 $f$ 运算的结果必须相同。因此我们必须证明
+    \begin{equation*}
+        \left(\hat{A}\hat{B} - \hat{B}\hat{A}\right)f = \hat{0}f = 0
+    \end{equation*}
+    其中$f$是任意函数。首先，我们根据完整的本征函数集$g_i$对 $f$ 进行展开（假设它遵守适当的边界条件）：
+    \begin{equation*}
+        f = \sum_{i}c_i g_i
+    \end{equation*}
+    将算符$\hat{A}\hat{B}-\hat{B}\hat{A}$作用于上述方程，我们得到
+    \begin{equation*}
+        \left(\hat{A}\hat{B} - \hat{B}\hat{A}\right)f = \left(\hat{A}\hat{B} - \hat{B}\hat{A}\right)\sum_{i}c_ig_i
+    \end{equation*}
+    由于算符的积$\hat{A}\hat{B}$和$\hat{B}\hat{A}$是线性算符（问题3.16），我们有
+    \begin{equation*}
+        \left(\hat{A}\hat{B}-\hat{B}\hat{A}\right)f = \sum_{i}c_i\left(\hat{A}\hat{B}-\hat{B}\hat{A}\right)g_i = \sum_{i}\left[\hat{A}\left(\hat{B}g_i\right) - \hat{B}\left(\hat{A}g_i\right)\right]
+    \end{equation*}
+    其中用到了算符和与积的定义。使用本征值方程(\ref{eq:7.43})，我们得到
+    \begin{equation*}
+        \left(\hat{A}\hat{B}-\hat{B}\hat{A}\right)f = \sum_{i}\left[\hat{A}\left(b_ig_i\right)- \hat{B}\left(a_ig_i\right)\right] = \sum_{i}c_i\left(b_ia_ig_i - a_ib_ig_i\right) = 0
+    \end{equation*}
+    这就完成了如下定理的证明：
+    \begin{center}
+        \parbox{0.8\textwidth}{
+            \centering
+            \textbf{定理4：}如果两个线性算符的本征函数完全集是相同的，那么这两个算符可对易。
+        }
+    \end{center}
 
+    有时有人错误地认为：如果 $\hat{A}$ 和 $\hat{B}$ 存在一个共同的本征函数，那么它们就可对易。举一个例子可以说明这种说法是错误的，考虑球谐函数$Y_0^0$，它同时是$\hat{L}_z$和$\hat{L}_x$的本征函数，但显然这两个算符不可对易（第\ref{sec:5.3 Angular Momentum of a One-Particle System}节）。研究一下为这一错误说法提供的所谓证据是很有启发性的。令$g$为共同的本征函数：$\hat{A}g = ag$、$\hat{B}g = bg$。我们有
+    \begin{equation*}
+        \hat{A}\hat{B}g = \hat{A}bg = abg \quad \text{和} \quad \hat{B}\hat{A}g = \hat{B}ag = bag = abg
+    \end{equation*}
+    \begin{equation}
+        \hat{A}\hat{B}g = \hat{B}\hat{A}g
+        \label{eq:7.45}
+    \end{equation}
+    通过从式(\ref{eq:7.45})的两边消去$g$，我们完成了所谓的“证明”：
+    \begin{equation}
+        \hat{A}\hat{B} = \hat{B}\hat{A}\:(?)
+        \label{eq:7.46}
+    \end{equation}
+    错误出现在从(\ref{eq:7.45})导出(\ref{eq:7.46})的过程中。$\hat{A}\hat{B}$和$\hat{B}\hat{A}$对单个函数$g$的作用结果是无法得出$\hat{A}\hat{B} = \hat{B}\hat{A}$的。（例如，当$\mathrm{d}/\mathrm{d}x$和$\mathrm{d}^2/\mathrm{d}x^2$作用于函数$\mathrm{e}^x$时，结果是相同的，但这并不意味着$\mathrm{d}/\mathrm{d}x$和$\mathrm{d}^2/\mathrm{d}x^2$是相等的。）这两个算符在作用于每个品优函数时必须得到相同的结果，我们才能得出它们相等的结论。因此，尽管$\hat{A}$和$\hat{B}$不可对易，但可能存在一个或更多的共同本征函数。然而，我们不可能有两个非对易算符的共同\textit{完整}本征函数集，正如我们在本节前面所证明的那样。
 
+    我们已经证明了：若两个算符$\hat{A}$和$\hat{B}$的本征函数完全集是相同的，那么这两个算符可对易。现在我们证明：
+    \begin{center}
+        \parbox{0.8\textwidth}{
+            \centering
+            \textbf{定理5：}如果两个厄米算符$\hat{A}$和$\hat{B}$可对易，我们可以为它们选择一组共同的完整本征函数。
+        }
+    \end{center}
 
+    证明如下。令$g_i$和$a_i$分别是算符$\hat{A}$的本征函数和本征值：
+    \begin{equation*}
+        \hat{A}g_i = a_ig_i
+    \end{equation*}
+    将$\hat{B}$作用于上述方程，我们得到
+    \begin{equation*}
+        \hat{B}\hat{A}g_i = \hat{B}\left(a_ig_i\right)
+    \end{equation*}
+    由于$\hat{A}$和$\hat{B}$可对易，以及$\hat{B}$是线性算符，我们有
+    \begin{equation}
+        \hat{A}\left(\hat{B}g_i\right) = a_i\left(\hat{B}g_i\right)
+        \label{eq:7.47}
+    \end{equation}
+    该方程表明：函数$\hat{B}g_i$也是算符$\hat{A}$的本征函数，本征值为$a_i$，与$g_i$一致。假设算符$\hat{A}$的本征值都是非简并的，那么对于任何给定的本征值$a_i$，存在唯一的线性无关的本征函数。如果是这样，那么两个对应于同一个本征值的本征函数$\hat{B}g_i$和$g_i$是线性相关的，也就是说，其中一个一定是另一个的简单乘积：
+    \begin{equation}
+        \hat{B}g_i = k_ig_i
+        \label{eq:7.48}
+    \end{equation}
+    其中$k_i$是常数。这个方程说明了$g_i$是$\hat{B}$的本征函数，因此得证。在第 \ref{sec:7.3 Expansion in Terms of Eigenfunctions} 节中，我们假设任何表示物理量的算符的本征函数都构成一个完全集。因此，$g_i$构成一个完全集。
 
+    我们刚才证明了非简并情况下的定理，那么简并情况下呢？设本征值$a_i$是$n$重简并的。由式(\ref{eq:7.47})，$\hat{B}g_i$也是$\hat{A}$的本征函数，本征值为$a_i$。因此，第\ref{sec:7.3 Expansion in Terms of Eigenfunctions}节中的定理3表明：若函数$\hat{B}g_i$可以用算符$\hat{A}$的本征函数完全集展开，那么除了本征值为$a_i$的项以外，其他项的系数均为零。也就是说，$\hat{B}g_i$一定是$n$个本征值为$a_i$的线性无关本征函数的线性组合：
+    \begin{equation}
+        \hat{B}g_i = \sum_{k=1}^{n}c_kg_k, \quad \text{其中} \quad \hat{A}g_k = a_ig_k \quad k = 1,2,\ldots,n
+        \label{eq:7.49}
+    \end{equation}
+    其中$g_1,\ldots,g_n$表示$n$个本征值为$a_i$的算符$\hat{A}$的本征函数。式(\ref{eq:7.49})表明$g_i$不一定是$\hat{B}$的本征函数。然而，通过对$n$个对应于简并本征值$a_i$的线性无关的$\hat{A}$本征函数进行适当的线性组合，我们能构造出一组新的$n$个线性无关的本征函数，他们也将是$\hat{B}$的本征函数。该说法的证明见\textit{Merzbacher}，第8.5节。
 
+    因此，当$\hat{A}$和$\hat{B}$可对易时，我们可以为它们\textit{选择}一组共同的本征函数完全集。例如，考虑一个氢原子，我们已经证明了算符$\hat{L}_z$和$\hat{H}$是可对易的。如果我们愿意，我们可以将$\hat{B}$的本征函数中的$\phi$因子写成$\sin m\phi$和$\cos m\phi$的形式(第\ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions}节)。如果这样做，除了 $m=0$ 的情况以外，我们就不会得到 $\hat{L}_z$ 的本征函数了。然而，根据\ref{sec:3.6 Degeneracy}节的定理，以下线性组合
+    \begin{equation*}
+        R\left(r\right)S\left(\theta\right)\left(\cos m\phi+\mathrm{i}\sin m\phi\right) = RS\mathrm{e}^{\mathrm{i}m\phi}, \quad m = -l,\ldots,l
+    \end{equation*}
+    给出的$\hat{L}_z$的本征函数仍然是$\hat{H}$的本征函数。
 
+    将上述证明推广到两个以上算符的情况表明，当且仅当每个算符都与其他算符可对易时，对于一组厄米算符 $\hat{A},\hat{B},\hat{C},\ldots$，存在一个共同的完整本征函数集。
 
+    与定理5相关的一个有用定理为：
+    \begin{center}
+        \centering
+        \parbox{0.8\textwidth}{
+            \textbf{定理6：}若$g_m$和$g_n$是厄米算符$\hat{A}$的本征函数，但其本征值不同（即$\hat{A}g_m = a_mg_m$和$\hat{A}g_n = a_ng_n$，其中$a_m \neq a_n$），若线性算符$\hat{B}$与$\hat{A}$可对易，那么
+            \begin{equation}
+                \left\langle g_n \middle| \hat{B} \middle| g_m \right\rangle = 0, \quad a_n \neq a_m
+                \label{eq:7.50}
+            \end{equation}
+        }
+    \end{center}
+
+    为了证明(\ref{eq:7.50})，我们从以下式子入手：
+    \begin{equation}
+        \left\langle g_n \middle| \hat{A}\hat{B} \middle| g_m \right\rangle = \left\langle g_n \middle| \hat{B}\hat{A} \middle| g_m \right\rangle
+        \label{eq:7.51}
+    \end{equation}
+    对上式的左侧使用算符$\hat{A}$的厄米性质，有
+    \begin{equation*}
+        \begin{aligned}
+            \left\langle g_n \middle| \hat{A}\hat{B} \middle| g_m \right\rangle = \left\langle g_n \middle| \hat{A} \middle| \hat{B} g_m \right\rangle = \left\langle \hat{B}g_m \middle| \hat{A} \middle| g_n \right\rangle^{\ast} &= \left\langle \hat{B}g_m \middle| a_n \middle| g_n \right\rangle^{\ast} \\
+            &= a_n^{\ast}\left\langle g_n \middle| \hat{B}g_m \right\rangle = a_n\left\langle g_n \middle| \hat{B} \middle| g_m \right\rangle
+        \end{aligned}
+    \end{equation*}
+    式(\ref{eq:7.51})的右侧可以写成
+    \begin{equation*}
+        \left\langle g_n \middle| \hat{B}\hat{A} \middle| g_m \right\rangle = \left\langle g_n \middle| \hat{B} \middle| \hat{A}g_m \right\rangle = a_m\left\langle g_n \middle| \hat{B} \middle| g_m \right\rangle
+    \end{equation*}
+    令(\ref{eq:7.51}) 左右两边的最终表达式相等，我们得到
+    \begin{equation*}
+        a_n \left\langle g_n \middle| \hat{B} \middle| g_m \right\rangle = a_m\left\langle g_n \middle| \hat{B} \middle| g_m \right\rangle
+    \end{equation*}
+    \begin{equation*}
+        \left(a_n - a_m\right)\left\langle g_n \middle| \hat{B} \middle| g_m \right\rangle = 0
+    \end{equation*}
+    由于$a_n \neq a_m$，因此$\left\langle g_n \middle| \hat{B} \middle| g_m \right\rangle = 0$，这就证明了(\ref{eq:7.50})。
 
 \section{宇称}
 \label{sec:7.5 Parity}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{测量和态叠加}
 \label{sec:7.6 Measurement and the Superposition of States}
