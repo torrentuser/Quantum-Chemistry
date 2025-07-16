@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  16 JUL 2025 14:40
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  16 JUL 2025 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1649,27 +1649,33 @@ See the caption package documentation for explanation.
 [134]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [135]) (./chapters/08.tex [136]
+ [135]
+File: Figures/7.4.png Graphic file (type bmp)
+<Figures/7.4.png>
+ [136] [137]
+File: Figures/7.5.png Graphic file (type bmp)
+<Figures/7.5.png>
+) (./chapters/08.tex [138]
 Chapter 8.
-) (./chapters/09.tex [137
+) (./chapters/09.tex [139
 
-] [138
+] [140
 
 ]
 Chapter 9.
-) (./chapters/10.tex [139] [140
+) (./chapters/10.tex [141] [142
 
 ]
 Chapter 10.
-) (./chapters/11.tex [141] [142
+) (./chapters/11.tex [143] [144
 
 ]
 Chapter 11.
-) (./chapters/12.tex [143] [144
+) (./chapters/12.tex [145] [146
 
 ]
 Chapter 12.
-) (./chapters/13.tex [145] [146
+) (./chapters/13.tex [147] [148
 
 ]
 Chapter 13.
@@ -1704,14 +1710,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [147]
+ [149]
 Overfull \vbox (137.1515pt too high) has occurred while \output is active []
 
- [148]
+ [150]
 Chapter 14.
-) (./chapters/15.tex [149
+) (./chapters/15.tex [151
 
-] [150
+] [152
 
 ]
 Chapter 15.
@@ -1722,42 +1728,42 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [151]
+ [153]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
- [152]
+ [154]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [153
+ [155
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
- [154]
+ [156]
 Chapter 17.
-[155
+[157
 
-]) (./chapters/appendix.tex [156]
+]) (./chapters/appendix.tex [158]
 附录 A.
-) (./chapters/bibliography.tex [157
+) (./chapters/bibliography.tex [159
 
-] [158
+] [160
 
 ]
 附录 B.
-[159] [160
+[161] [162
 
-]) (./chapters/answers.tex [161] [162
+]) (./chapters/answers.tex [163] [164
 
 ]
 附录 C.
-) (./chapters/index.tex [163] [164
+) (./chapters/index.tex [165] [166
 
 ]
 附录 D.
-) [165] (./Quantum Chemistry.aux)
+) [167] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -1766,12 +1772,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 39494 strings out of 474773
- 888389 string characters out of 5751499
+ 39532 strings out of 474773
+ 888919 string characters out of 5751499
  2030842 words of memory out of 5000000
- 60944 multiletter control sequences out of 15000+600000
+ 60980 multiletter control sequences out of 15000+600000
  577319 words of font info for 178 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,114p,996b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (173 pages).
+Output written on Quantum Chemistry.pdf (175 pages).

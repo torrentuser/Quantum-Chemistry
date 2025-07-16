@@ -986,9 +986,156 @@
         \label{eq:7.76}
     \end{equation}
 
-\section{坐标本征函数}
+\section{位置本征函数}
 \label{sec:7.7 Position Eigenfunctions}
+    我们推导出了线动量和角动量算符的本征函数。现在我们想知道：位置算符$\hat{x}$的本征函数是什么？
 
+    算符$\hat{x}$表示对函数乘以$x$。将位置本征函数记作$g_a\left(x\right)$，写作
+    \begin{equation}
+        xg_a\left(x\right) = a g_a\left(x\right)
+        \label{eq:7.77}
+    \end{equation}
+    其中的$a$代表可能的本征值。由此可见，
+    \begin{equation}
+        \left(x-a\right)g_a\left(x\right) = 0
+        \label{eq:7.78}
+    \end{equation}
+    由(\ref{eq:7.78})，我们得知：
+    \begin{equation}
+        g_a\left(x\right) = 0, \quad \text{若} \quad x \neq a
+        \label{eq:7.79}
+    \end{equation}
+    此外，由于本征函数处处为零是不可接受的，我们有
+    \begin{equation}
+        g_a\left(x\right) \neq 0, \quad \text{若} \quad x = a
+        \label{eq:7.80}
+    \end{equation}
+    这些结论是有道理的。如果某状态函数是$\hat{x}$的本征函数，本征值为$a$，$\Psi = g_a\left(x\right)$，我们知道（第\ref{sec:7.6 Measurement and the Superposition of States}节）：对$x$的测量一定得到值为$a$的结果。这只在$x \neq a$时有概率密度$\left|\Psi\right|^2$为零时才成立，与(\ref{eq:7.79})一致。
+
+    在更进一步考虑$g_a\left(x\right)$的性质之前，我们先定义\textit{海维赛德阶梯函数}（Heaviside step function）（见图\ref{fig:7.4}）：
+    \begin{equation}
+        \begin{aligned}
+            H\left(x\right) & = 1, \quad x > 0 \\
+            H\left(x\right) & = 0, \quad x < 0 \\
+            H\left(x\right) & = \frac{1}{2}, \quad x = 0
+        \end{aligned}
+        \label{eq:7.81}
+    \end{equation}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/7.4.png}
+        \caption{海维赛德阶梯函数}
+        \label{fig:7.4}
+    \end{figure}
+
+    接下来，我们再定义\textbf{狄拉克$\delta$函数}（Dirac $\delta$ function）$\delta\left(x\right)$为海维赛德阶梯函数的导数：
+    \begin{equation}
+        \delta\left(x\right) \equiv \frac{\mathrm{d}H\left(x\right)}{\mathrm{d}x}
+        \label{eq:7.82}
+    \end{equation}
+    根据(\ref{eq:7.81})和(\ref{eq:7.82})，我们立即得出（另见图\ref{fig:7.4}）：
+    \begin{equation}
+        \delta\left(x\right) = 0, \quad x \neq 0
+        \label{eq:7.83}
+    \end{equation}
+    由于$H\left(x\right)$在$x=0$处的值突然变化，其导数在原点为无穷大：
+    \begin{equation}
+        \delta\left(x\right) = \infty, \quad x = 0
+        \label{eq:7.84}
+    \end{equation}
+
+    我们可以通过设置 $x = t-a$，然后将符号 $t$ 改为 $x$，将这些方程稍作归纳。方程(\ref{eq:7.81})至(\ref{eq:7.84})可以写成
+    \begin{equation}
+        H\left(x-a\right) = 1, \quad x > a
+        \label{eq:7.85}
+    \end{equation}
+    \begin{equation}
+        H\left(x-a\right) = 0, \quad x < a
+        \label{eq:7.86}
+    \end{equation}
+    \begin{equation}
+        H\left(x-a\right) = \frac{1}{2}, \quad x = a
+        \label{eq:7.87}
+    \end{equation}
+    \begin{equation}
+        \delta\left(x-a\right) = \mathrm{d}H\left(x-a\right)/\mathrm{d}x
+        \label{eq:7.88}
+    \end{equation}
+    \begin{equation}
+        \delta\left(x-a\right) = 0, \quad x \neq a \quad \text{以及} \quad \delta\left(x-a\right) = \infty, \quad x = a
+        \label{eq:7.89}
+    \end{equation}
+
+    现在，考虑如下的积分：
+    \begin{equation*}
+        \int_{-\infty}^{\infty}f\left(x\right)\delta\left(x-a\right)\:\mathrm{d}x
+    \end{equation*}
+    我们使用分部积分法计算：
+    \begin{equation*}
+        \int u \mathrm{d}v = uv - \int v \mathrm{d}u
+    \end{equation*}
+    \begin{equation*}
+        u = f\left(x\right), \quad \mathrm{d}v = \delta\left(x-a\right)\:\mathrm{d}x
+    \end{equation*}
+    使用(\ref{eq:7.88})，我们有
+    \begin{equation*}
+        \mathrm{d}u = f'\left(x\right)\:\mathrm{d}x, \quad v = H\left(x-a\right)
+    \end{equation*}
+    \begin{equation*}
+        \int_{-\infty}^{\infty}f\left(x\right)\delta\left(x-a\right)\:\mathrm{d}x = f\left(x\right)H\left(x-a\right)\bigg|_{-\infty}^{\infty} - \int_{-\infty}^{\infty}H\left(x-a\right)f'\left(x\right)\:\mathrm{d}x
+    \end{equation*}
+    \begin{equation}
+        \int_{-\infty}^{\infty}f\left(x\right)\delta\left(x-a\right)\:\mathrm{d}x = f\left(\infty\right) - \int_{-\infty}^{\infty}H\left(x-a\right)f'\left(x\right)\:\mathrm{d}x
+        \label{eq:7.90}
+    \end{equation}
+    其中，我们用到了(\ref{eq:7.85})和(\ref{eq:7.90})。由于$H\left(x-a\right)$在$x < a$时为零，(\ref{eq:7.90})变为
+    \begin{equation*}
+        \begin{aligned}
+            \int_{-\infty}^{\infty}f\left(x\right)\delta\left(x-a\right)\:\mathrm{d}x & = f\left(\infty\right) - \int_{-\infty}^{a}H\left(x-a\right)f'\left(x\right)\:\mathrm{d}x \\
+            & = \left.f\left(\infty\right) - \int_{-\infty}^{a}f'\left(x\right)\:\mathrm{d}x =  f\left(\infty\right) - f\left(x\right) \right|_{a}^{\infty}
+        \end{aligned}
+    \end{equation*}
+    \begin{equation}
+        \int_{-\infty}^{\infty}f\left(x\right)\delta\left(x-a\right)\:\mathrm{d}x = f\left(a\right)
+        \label{eq:7.91}
+    \end{equation}
+    将(\ref{eq:7.91})与方程$\sum_{k}c_k\delta_{ik} = c_i$比较，我们可以看到，狄拉克$\delta$函数在积分中所起的作用与Kronecker三角在求和中所起的作用相同。(\ref{eq:7.91})的一个特例为$f\left(x\right) = 1$：
+    \begin{equation*}
+        \int_{-\infty}^{\infty}\delta\left(x-a\right)\:\mathrm{d}x = 1
+    \end{equation*}
+
+    狄拉克$\delta$函数的性质 (\ref{eq:7.89}) 与位置本征函数 $g_a\left(x\right)$ 的性质 (\ref{eq:7.79}) 和 (\ref{eq:7.80}) 一致。因此，我们暂定
+    \begin{equation}
+        g_a\left(x\right) = \delta\left(x-a\right)
+        \label{eq:7.92}
+    \end{equation}
+    为了证明(\ref{eq:7.92})，我们现在需要证明其符合玻恩假设，即在$a$到$a+\mathrm{d}a$的无穷小区间内观测到$x$值的概率为$\left|\Psi\left(a,t\right)\right|^2\:\mathrm{d}a$。根据(\ref{eq:7.76})，这个概率由下式给出：
+    \begin{equation}
+        \left|\left\langle g_a\left(x\right) \middle| \Psi\left(x,t\right)\right\rangle\right|^2 \: \mathrm{d}a = \left|\int_{-\infty}^{\infty} g_a^{\ast}\left(x-\right)\Psi\left(x,t\right)\:\mathrm{d}x\right|^2 \: \mathrm{d}a
+        \label{eq:7.93}
+    \end{equation}
+    先使用(\ref{eq:7.92})后使用(\ref{eq:7.91})，我们将(\ref{eq:7.93})变为
+    \begin{equation*}
+        \left|\int_{-\infty}^{\infty} \delta\left(x-a\right)\Psi\left(x,t\right)\:\mathrm{d}x\right|^2 \: \mathrm{d}a = \left|\Psi\left(a,t\right)\right|^2 \: \mathrm{d}a
+    \end{equation*}
+    得证。
+
+    由于$\delta\left(x-a\right)$中的$a$可以去任何实数值，那么$\hat{x}$的本征值构成一个连续体：$-\infty < a < \infty$。与连续本征函数一致，$\delta\left(x-a\right)$不是平方可积的（问题7.43）。
+
+    总而言之，位置的本征函数和本征值为
+    \begin{equation}
+        \hat{x}\delta\left(x-a\right) = a\delta\left(x-a\right)
+        \label{eq:7.94}
+    \end{equation}
+    其中$a$是任意实数。
+
+    $\delta$函数不是品优函数，因此我们所做的处理缺乏严谨性，会让数学家不寒而栗。不过，我们可以将$\delta$函数视为在原点处峰值逐渐增大的函数的极限情况，从而对其进行严格的表述（图 7.5）。 $\delta$函数其实不是函数，而是数学家所说的分布（distribution）。（见\url{en.wikipedia.org/wiki/Dirac_delta_function}）
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.3\textwidth]{Figures/7.5.png}
+        \caption{近似 $\delta\left(x\right)$ 函数，精确度依次提高。每条曲线下的面积为 1。}
+        \label{fig:7.5}
+    \end{figure}
 
 
 
