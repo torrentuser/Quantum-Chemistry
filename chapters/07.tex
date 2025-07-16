@@ -201,7 +201,6 @@
 
     \begin{center}
         \parbox{0.8\textwidth}{
-            \centering 
             \textbf{定理1：} 厄米算符的本征值为实数。
         }
     \end{center}
@@ -278,7 +277,7 @@
     其中$g_i$和$g_k$是厄米算符的独立本征函数。我们证明了：
     \begin{center}
         \parbox{0.8\textwidth}{
-            \centering \textbf{定理2：} 厄米算符 $\hat{B}$ 的两个对应不同本征值的本征函数是正交的。属于简并本征值的 $\hat{B}$ 的本征函数总是可以选择为正交的。
+            \textbf{定理2：} 厄米算符 $\hat{B}$ 的两个对应不同本征值的本征函数是正交的。属于简并本征值的 $\hat{B}$ 的本征函数总是可以选择为正交的。
         }
     \end{center}
 
@@ -520,7 +519,6 @@
     以下是一条有用的定理：
     \begin{center}
         \parbox{0.8\textwidth}{
-            \centering
             \textbf{定理3：}令$g_1,g_2,\ldots$是厄米算符$\hat{A}$的本征函数完全集，令$F$是$\hat{A}$的本征函数，本征值为$k$（也就是说，$\hat{A}F = kF$）。若$F$展开为$F = \sum_{i}a_ig_i$，则展开式中的非零系数$a_i$仅对应于与$k$相同的本征值的本征函数$g_i$。（由于简并的存在，可能有多个本征函数$g_i$对应于同一本征值$k$。）
             
         }
@@ -576,7 +574,6 @@
     这就完成了如下定理的证明：
     \begin{center}
         \parbox{0.8\textwidth}{
-            \centering
             \textbf{定理4：}如果两个线性算符的本征函数完全集是相同的，那么这两个算符可对易。
         }
     \end{center}
@@ -599,7 +596,6 @@
     我们已经证明了：若两个算符$\hat{A}$和$\hat{B}$的本征函数完全集是相同的，那么这两个算符可对易。现在我们证明：
     \begin{center}
         \parbox{0.8\textwidth}{
-            \centering
             \textbf{定理5：}如果两个厄米算符$\hat{A}$和$\hat{B}$可对易，我们可以为它们选择一组共同的完整本征函数。
         }
     \end{center}
@@ -641,7 +637,6 @@
 
     与定理5相关的一个有用定理为：
     \begin{center}
-        \centering
         \parbox{0.8\textwidth}{
             \textbf{定理6：}若$g_m$和$g_n$是厄米算符$\hat{A}$的本征函数，但其本征值不同（即$\hat{A}g_m = a_mg_m$和$\hat{A}g_n = a_ng_n$，其中$a_m \neq a_n$），若线性算符$\hat{B}$与$\hat{A}$可对易，那么
             \begin{equation}
@@ -784,7 +779,6 @@
     则(\ref{eq:7.57})成立。若$V$满足方程(\ref{eq:7.62})，则称其为$3n$坐标的\textbf{偶函数}（even function of the $3n$ coordinates）。总而言之，我们有
     \begin{center}
         \parbox{0.8\textwidth}{
-            \centering
             \textbf{定理7：}当势能 $V$ 是偶函数时，我们可以选择定态波函数，使每个波函数要么是偶函数，要么是奇函数。
         }
     \end{center}
@@ -809,23 +803,201 @@
     \end{equation}
     其中的积分是对 $3n$ 个坐标的积分。这个等式成立的原因为：$\left(x_1,y_1,z_1,\ldots,x_n,y_n,z_n\right)$处$g$值对积分的贡献被$\left(-x_1,-y_1,-z_1,\ldots,-x_n,-y_n,-z_n\right)$处的$g$值抵消了。当积分是部分（但不一定是全部）变量的奇函数时，等式 (\ref{eq:7.64}) 也成立。参见问题 7.30 。
 
-
-
-
-
-
-
-
-
-
-
-
-
 \section{测量和态叠加}
 \label{sec:7.6 Measurement and the Superposition of States}
+    量子力学可被视为一种计算测量各种可能结果概率的方法。例如，如果我们知道态函数$\Psi\left(x,t\right)$，那么在时刻$t$时测量粒子的位置位于$x$到$x+\mathrm{d}x$的无穷小区间内的概率为$\left|\Psi\left(x,t\right)\right|^2\mathrm{d}x$。现在，我们考虑对一般性质 $B$ 进行测量。我们的目的是找出如何使用 $\Psi$ 来计算 $B$ 的测量结果中每种可能结果的概率。本节的结果告诉我们状态函数 $\Psi$ 中包含哪些信息，是量子力学的核心所在。
+
+    我们处理一个$n$粒子系统，使用$q$来表示$3n$个坐标。我们推测，算符 $\hat{B}$ 的本征值 $b_i$ 是对属性 $B$ 进行测量的唯一可能结果。使用$g_i$来表示$\hat{B}$的本征函数，我们有
+    \begin{equation}
+        \hat{B}g_i\left(q\right) = b_ig_i\left(q\right)
+        \label{eq:7.65}
+    \end{equation}
+
+    我们在第 \ref{sec:7.3 Expansion in Terms of Eigenfunctions} 节中假设，任何代表物理可观测属性的厄米算符的本征函数都构成一个完全集。由于$g_i$构成一个完全集，我们可以将态函数 $\Psi$ 展开为
+    \begin{equation}
+        \Psi\left(q,t\right) = \sum_{i}c_i\left(t\right)g_i\left(q\right)
+        \label{eq:7.66}
+    \end{equation}
+    为了允许$\Psi$随时间变化，我们在系数$c_i$中引入时间依赖性。
+
+    由于$\left|\Psi\right|^2$表示概率密度，我们要求
+    \begin{equation}
+        \int\Psi^{\ast}\Psi \:\mathrm{d}\tau = 1
+        \label{eq:7.67}
+    \end{equation}
+    将(\ref{eq:7.66})代入归一化条件，并使用式(\ref{eq:1.33 linear properties of complex conjugate })和(\ref{eq:1.32 properties of complex conjugate})，我们得到
+    \begin{equation}
+        1 = \int \sum_{i}c_i^{\ast}g_i^{\ast}\sum_ic_ig_i\:\mathrm{d}\tau = \int\sum_{i}c_i^{\ast}g_i^{\ast}\sum_kc_kg_k \:\mathrm{d}\tau = \int\sum_{i}\sum_{k}c_i^{\ast}c_k g_i^{\ast}g_k\:\mathrm{d}\tau
+        \label{eq:7.68}
+    \end{equation}
+
+    由于 (\ref{eq:7.68}) 中两个和的求和下标不一定具有相同的值，因此这两个下标必须使用不同的符号。例如，考虑如下两个求和的积：
+    \begin{equation*}
+        \sum_{i=1}^{2}s_i\sum_{i=1}^{2}t_i = \left(s_1+s_2\right)\left(t_1+t_2\right) = s_1t_1 + s_1t_2 + s_2t_1 + s_2t_2
+    \end{equation*}
+    如果我们不小心写成了
+    \begin{equation*}
+        \sum_{i=1}^{2}s_i\sum_{i=1}^{2}t_i = \left(\text{错误的}\right)\sum_{i=1}^{2}\sum_{i=1}^{2}s_i t_i = \sum_{i=1}^{2}\left(s_1t_1+s_2t_2\right) = 2\left(s_1t_1+s_2t_2\right)
+    \end{equation*}
+    我们就得到了错误的答案。写乘积的正确方式是
+    \begin{equation*}
+        \sum_{i=1}^{2}s_i\sum_{i=1}^{2}t_i = \sum_{i=1}^{2}s_1\sum_{k=1}^{2}t_k = \sum_{i=1}^{2}\sum_{k=1}^{2}s_i t_k = \sum_{i=1}^{2}\left(s_it_1+s_it_2\right) = s_1t_1 + s_1t_2 + s_2t_1 + s_2t_2
+    \end{equation*}
+    这就得到了正确的结果。
+
+    假定交换 (\ref{eq:7.68}) 中的无限求和与积分是成立的，我们得到
+    \begin{equation*}
+        \sum_{i}\sum_{k}c_i^{\ast}c_k\int g_i^{\ast}g_k\:\mathrm{d}\tau = 1
+    \end{equation*}
+    由于$\hat{B}$是厄米算符，它的本征函数之间应该是正交的[式(\ref{eq:7.26})]；因此
+    \begin{equation*}
+        \sum_i\sum_kc_i^{\ast}c_k\delta_{ik} = 1
+    \end{equation*}
+    \begin{equation}
+        \sum_i\left|c_i\right|^2 = 1
+        \label{eq:7.69}
+    \end{equation}
+    我们很快就会指出 (\ref{eq:7.69}) 的重要性。
+
+    回顾假设（第 \ref{sec:3.7 Average Values} 节），如果 $\Psi$ 是系统的归一化状态函数，那么属性 $B$ 的平均值为
+    \begin{equation*}
+        \left\langle B \right\rangle = \int \Psi^{\ast}\left(q,t\right)\hat{B}\Psi\left(q,t\right)\:\mathrm{d}\tau
+    \end{equation*}
+    将展开式(\ref{eq:7.66})代入上式，我们得到
+    \begin{equation*}
+        \left\langle B \right\rangle = \int\sum_{i}c_i^{\ast}g_i^{\ast}\hat{B}\sum_{k}c_kg_k\:\mathrm{d}\tau = \sum_{i}\sum_{k}c_i^{\ast}c_k\int g_i^{\ast}\hat{B}g_k\:\mathrm{d}\tau
+    \end{equation*}
+    其中我们用到了算符$\hat{B}$的线性性质。使用$\hat{B}g_k = b_kg_k$[式(\ref{eq:7.65})]，我们有
+    \begin{equation*}
+        \left\langle B \right\rangle = \sum_{i}\sum_{k}c_i^{\ast}c_kb_k\int g_i^{\ast}g_k\:\mathrm{d}\tau = \sum_{i}\sum_{k}c_i^{\ast}c_kb_k\delta_{ik}
+    \end{equation*}
+    \begin{equation}
+        \left\langle B \right\rangle = \sum_{i}\left|c_i\right|^2b_i
+        \label{eq:7.70}
+    \end{equation}
+
+    我们如何解释 (\ref{eq:7.70}) ?我们在第 \ref{eq:3.39} 节中假设，当我们测量算符所代表的物理性质时，算符的本征值是我们能得到的唯一可能的数字。在对 $B$ 的任何测量中，我们都会得到其中一个值 $b_i$（假设没有实验误差）。现在回忆式(\ref{eq:3.81})：
+    \begin{equation}
+        \boxed{
+            \left\langle B \right\rangle = \sum_{b_i}P\left(b_i\right)b_i
+        }
+        \label{eq:7.71}
+    \end{equation}
+    其中$P\left(b_i\right)$是对$B$进行测量，得到测量结果为$b_i$的概率。(\ref{eq:7.71}) 中的和涉及不同的本征值 $b_i$，而 (\ref{eq:7.70}) 中的和涉及不同的本征函数 $g_i$，因为展开式 (\ref{eq:7.66}) 涉及的是 $g_i$。如果每个本征值只有一个独立的本征函数，那么本征函数的总和就等于本征值的总和，比较 (\ref{eq:7.71}) 和 (\ref{eq:7.70}) 可以看出，当$\hat{B}$ 本征值没有简并时，$\left| c_i \right|^2$就是在测量属性 $B$ 时得到值 $b_i$ 的概率。请注意，这些值的总和为 1，因为概率的总和必定为1[式 (\ref{eq:7.69}) ]。假设本征值$b_i$是简并的。根据(\ref{eq:7.71})，$P\left(b_i\right)$由与$b_i$相乘的量给出。在简并的情况下，(\ref{eq:7.70})中有不止一项包含$b_i$，所以在测量中获得$b_i$的概率$P\left(b_i\right)$是所有本征值为$b_i$的本征函数对应的$\left| c_i \right|^2$的总和。我们已经证明了如下定理：
+    \begin{center}
+        \parbox{0.8\textwidth}{
+            \textbf{定理8：}若$b_m$是算符$\hat{B}$的一个非简并本征值，$g_m$是对应的归一化本征函数（$\hat{B}g_m = b_mg_m$），那么在量子力学系统中，测量时状态函数为$\Psi$时，对属性$B$的测量得到结果为$b_m$的概率由$\left| c_m \right|^2$给出，其中$c_m$是$g_m$在展开式$\Psi = \sum_{i}c_i g_i$中的系数。若$b_m$是简并本征值，则测量得到结果为$b_m$的概率由所有对应于$b_m$的本征函数的$\left| c_i \right|^2$的总和给出。
+        }
+    \end{center}
+
+    什么时候可以准确预测 $B$ 的测量结果？若展开式$\Psi = \sum_{i}c_i g_i$ 中的系数 $c_i$ 全为零，除了$c_i$等于零，以及对于$ i \neq k$，$c_k \neq 0$的情况外，这是可以做到的。对于这种情况，式(\ref{eq:7.69})表明$\left|c_k\right|^2=1$，我们一定会得到值为$b_k$的结果。在该情况中，态函数$\Psi = \sum_ic_i g_i$简化为$\Psi = g_k$。当$\Psi$是$\hat{B}$的本征函数，本征值为$b_k$时，若我们对$B$进行测量，我们一定会得到值为$b_k$的结果。
+
+    因此，我们可以将展开式$\Psi = \sum_{i}c_i g_i$[式(\ref{eq:7.66})]看作是将一般状态$\Psi$表达为算符$\hat{B}$本征态$g_i$的\textit{态叠加}（superposition）。每个本征态$g_i$对应于物理量$B$的一个可能测量结果$b_i$。任何本征函数$g_i$出现在$\Psi$展开式中的程度由$\left|c_i\right|^2$给出，它决定了在对$B$进行测量时得到结果$b_i$的概率。
+
+    为了得到概率$\left|c_i\right|^2$，我们如何计算出展开系数$c_i$？我们将$g_j^{\ast}$与$\Psi = \sum_{i}c_i g_i$相乘，对全空间进行积分并使用厄米算符$\hat{B}$本征函数的正交性：
+    \begin{equation*}
+        \int g_j^{\ast}\Psi \: \mathrm{d}\tau = \sum_ic_i\int g_j^{\ast} g_i \: \mathrm{d}\tau = \sum_i c_i\delta_{ij}
+    \end{equation*}
+    \begin{equation}
+        c_j = \int g_j^{\ast}\Psi \: \mathrm{d}\tau = \left\langle g_j \middle| \Psi \right\rangle
+        \label{eq:7.72}
+    \end{equation}
+
+    在对性质$B$的测量中，发现非简并本征值$b_j$的概率为
+    \begin{equation}
+        \left|c_j\right|^2 = \left|\int g_j^{\ast}\Psi \: \mathrm{d}\tau\right|^2 = \left|\left\langle g_j \middle| \Psi \right\rangle\right|^2
+        \label{eq:7.73}
+    \end{equation}
+    其中$\hat{B}g_j = b_jg_j$。量$\left\langle g_j \middle| \Psi \right\rangle$称为\textbf{概率幅}（probability amplitude）。
+
+    因此，如果我们知道由状态函数 $\Psi$ 确定的系统状态，我们就可以使用 (\ref{eq:7.73}) 来预测对任何属性 $B$ 进行测量的各种可能结果的概率。确定 $\hat{B}$ 的本征函数 $g_j$ 和本征值 $b_j$ 是一个数学问题。
+
+    为了在实验中确定测量 $B$ 时发现 $g_j$ 的概率，我们需要大量 $n$ 个相同的、无相互作用的系统，每个系统都处于相同的状态 $\Psi$，并测量每个系统中的属性 $B$。如果第$n_j$次测量得到的结果为$b_j$，则$P\left(b_j\right) = n_j/n = \left|\left\langle g_j \middle| \Psi \right\rangle\right|^2$。
+
+    我们可以对定理 8 的第一部分进行如下重述：
+    \begin{center}
+        \parbox{0.8\textwidth}{
+            \textbf{定理9：}若在某量子力学系统中对性质$B$进行测量，测量时的状态为$\Psi$，则观测到算符$\hat{B}$的非简并本征值$b_j$的概率为$\left|\left\langle g_j \middle| \Psi \right\rangle\right|^2$，其中$g_j$是已归一化的，对应于本征值$b_j$的本征函数。
+        }
+    \end{center}
+
+    如果归一化函数 $g_j$ 和 $\Psi$ 非常相似，并且在空间的每个区域都有相似的大小，那么积分 $\left\langle g_j \middle| \Psi \right\rangle = \int g_j^{\ast}\Psi\:\mathrm{d}\tau$ 的绝对值就会很大。若$g_j$和$\Psi$不相似，那么在$g_i$很大而$\Psi$很小的区域中（反之亦然），乘积$g_j^{\ast}\Psi$就会很小，那么积分$\int g_j^{\ast}\Psi\:\mathrm{d}\tau$的绝对值也会很小，即找到$b_j$的概率$\left\langle g_j \middle| \Psi \right\rangle$也会很小。
+
+    \begin{examplebox}
+        \textbf{例题：}假设我们对氢原子核外电子的$L_z$分量进行测量，开始测量时系统的状态为$2p_x$。给出测量的可能结果，并给出每种结果的概率。使用这些概率计算$2p_x$状态的$\left\langle L_z \right\rangle$。
+        \\
+
+        由(\ref{eq:6.118})：
+        \begin{equation*}
+            \Psi = 2p_x = 2^{-1/2}\left(2p_1\right) + 2^{-1/2}\left(2p_{-1}\right)
+        \end{equation*}
+        这个方程将$\Psi$展开为$\hat{L}_z$的本征函数的线性组合。其中唯一两个具有非零系数的项为$2p_1$和$2p_{-1}$，它们的本征值分别为$\hbar$和$-\hbar$。（回想一下，1 和-1 的下标给出了量子数$m$，$\hat{L}_z$ 的本征值为 $m\hbar$。）使用定理8，我们取 $\Psi$ 展开式中系数绝对值的平方来得到概率。因此测量$L_z$时得到$\hbar$的概率为$\left|2^{-1/2}\right|^2 = 0.5$，得到$-\hbar$的概率也是$0.5$。为了从这些概率计算$\left\langle L_z \right\rangle$，我们使用(\ref{eq:7.71})：
+        \begin{equation*}
+            \left\langle L_z \right\rangle = \sum_{L_{z,i}}P\left(L_{z,i}\right)L_{z,i} = 0.5\hbar + 0.5\left(-\hbar\right) = 0
+        \end{equation*}
+        其中$P\left(L_{z,i}\right)$是测量时得到结果$L_{z,i}$的概率，除了两项以外，其他概率都为零。当然，$\left\langle L_z \right\rangle$也可以用平均值方程(\ref{eq:3.88})计算：$\left\langle 2p_x \middle| \hat{L}_z \middle| 2p_x \right\rangle$。
+        \\
+
+        \textbf{练习：}写出满足如下条件的氢原子波函数：对能量$E$测量时得到$n=2$能级的概率为1，对$L^2$测量时得到$2\hbar^2$的概率为1，对$L_z$测量时得到$-\hbar,0,\hbar$的概率相等。是否只有一种可能的答案？（\textit{部分答案：}否。）
+    \end{examplebox}
+    \begin{examplebox}
+        \textbf{例题：}现有一个箱中粒子的系统，箱子长为$l$。对系统的能量进行一次测量，测量时粒子处于非定态$\Psi = 30^{1/2}l^{-5/2}x\left(l-x\right), \quad 0 \leq x \leq l$。给出测量的可能结果，并给出每种结果的概率。
+        \\
+
+        第 3.9 节的假设（$c$）给出了可能的结果，即能量算符 $\hat{H}$ 的本征值。箱中粒子哈密顿算符的本征值为$E = n^2h^2/8ml^2$，其中$n = 1, 2, \ldots$，并且它们是非简并的。概率由$\Psi$对$\hat{H}$的本征函数的展开式给出。即$\Psi = \sum_{n=1}^{\infty}c_n\psi_n$，其中$\psi_n = \left(2/l\right)^{1/2}\sin\left(n\pi x/l\right)$。在(\ref{eq:7.41})之后的例子中，函数$x\left(l-x\right)$是根据箱中粒子能量本征函数展开的。状态函数$30^{1/2}l^{-5/2}x\left(l-x\right)$等于$x\left(l-x\right)$乘以归一化常数$30^{1/2}l^{-5/2}$。因此，因此，将前面例子中的系数乘以 $30^{1/2}l^{-5/2}$，就可以得到展开系数 $c_n$
+        \begin{equation*}
+            c_n = \frac{\left(240\right)^{1/2}}{n^3\pi^3}\left[1-\left(-1\right)^n\right]
+        \end{equation*}
+        观测到能量值$E_n = n^2h^2/8ml^2$的概率$P\left(E_n\right)$等于$\left|c_n\right|^2$：
+        \begin{equation}
+            P\left(E_n\right) = \frac{240}{n^6\pi^6}\left[1-\left(-1\right)^n\right]^2
+            \label{eq:7.74}
+        \end{equation}前几个可能值的概率为
+        \vspace{1em}
+        \begin{center}
+            \renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{c|c|c|c|c|c}
+                 $n$ & 1 & 2 & 3 & 4 & 5 \\
+                \hline
+                $E_n$ & $h^2/8ml^2$ & $4h^2/8ml^2$ & $9h^2/8ml^2$ & $16h^2/8ml^2$ & $25h^2/8ml^2$ \\
+                \hline
+                $P\left(E_n\right)$ & $0.99855$ & $0$ & $0.001370$ & $0$ & $0.000064$
+            \end{tabular}
+        \end{center}
+        \vspace{1em}
+        找到$n=1$能级的概率很高，这对应于抛物线态函数$30^{1/2}l^{-5/2}x\left(l-x\right)$与$n=1$的箱中粒子波函数$\left(2/l\right)^{1/2}\sin\left(\pi x/l\right)$非常相似（图\ref{fig:7.3}）。零概率的能级为$n=2,4,6,\ldots$，这对应于以下事实：若原点与箱子的中心重合，则态函数$\Psi = 30^{1/2}l^{-5/2}x\left(l-x\right)$是偶函数，而$n=2,4,6,\ldots$的箱中粒子波函数是奇函数(图\ref{fig:2.3})，对$\Psi$的展开式没有贡献。当被积函数为奇函数时积分$\left\langle g_n \middle| \Psi \right\rangle$消失。
+        \vspace{1em}
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{Figures/7.3.png}
+            \captionof{figure}{$\Psi = 30^{1/2}l^{-5/2}x\left(l-x\right)$和$n=1$箱中粒子波函数的图象}
+            \label{fig:7.3}
+        \end{center}
+        \vspace{1em}
+    \end{examplebox}
+
+    若性质$B$的本征值可以连续变化（例如：位置，第\ref{sec:7.7 Position Eigenfunctions}节），则对$\Psi$展开式的求和(\ref{eq:7.66})变为对$b$所有可能值的积分：
+    \begin{equation}
+        \Psi = \int c_bg_b\left(q\right)\:\mathrm{d}b
+        \label{eq:7.75}
+    \end{equation}
+    $\left| \left\langle g_b\left(q\right) \middle| \Psi \right\rangle \right|^2$依然是概率密度，也就是说，在位于$b$到$b+\mathrm{d}b$的无穷小区间内测量属性$B$时，得到结果$b$的概率为
+    \begin{equation}
+        \left| \left\langle g_b\left(q\right) \middle| \Psi\left(q,t\right) \right\rangle \right|^2\:\mathrm{d}b
+        \label{eq:7.76}
+    \end{equation}
 
 \section{坐标本征函数}
 \label{sec:7.7 Position Eigenfunctions}
+
+
+
+
+
+
+
+
+
+
 
 \section{量子力学的基本假设}
 \label{sec:7.8 The Postulates of Quantum Mechanics}

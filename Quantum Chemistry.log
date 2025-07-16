@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  15 JUL 2025 16:31
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.28)  16 JUL 2025 14:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1598,7 +1598,7 @@ Chapter 7.
 File: figures/7.1.png Graphic file (type bmp)
 <figures/7.1.png>
 
-Overfull \hbox (19.04718pt too wide) in paragraph at lines 380--382
+Overfull \hbox (19.04718pt too wide) in paragraph at lines 379--381
 \TU/SimSun(0)/m/n/10.53937 这 是 任 意 函 数 $[] []$ 作 为 箱 中 粒 子 波 函 数 $[][]$ 的 线 性 组 合 的 展 开 所 需 的 表 达 式。|  注 意：|  定 积 分 $[][] [][][] []  [][]$
  []
 
@@ -1610,41 +1610,66 @@ File: figures/7.2.png Graphic file (type bmp)
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [124] [125]
-Underfull \hbox (badness 10000) in paragraph at lines 496--499
+Underfull \hbox (badness 10000) in paragraph at lines 495--498
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--509
+Underfull \hbox (badness 10000) in paragraph at lines 506--508
 
  []
 
 [126] [127] [128] [129]
-Overfull \hbox (19.2113pt too wide) in paragraph at lines 729--731
+Overfull \hbox (19.2113pt too wide) in paragraph at lines 724--726
 \TU/SimSun(0)/m/n/10.53937 若 本 征 值 为 $[][]$，|  则 $[][] [] [] [][] []$，|  这 表 明 $[][]$ 是 偶 函 数；|  若 本 征 值 为 $[][]$，|  则 $[][] [] []
  []
 
-[130]) (./chapters/08.tex [131] [132]
-Chapter 8.
-) (./chapters/09.tex [133
+[130] [131] [132] [133]
+Underfull \hbox (badness 10000) in paragraph at lines 927--929
 
-] [134
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 937--940
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 944--946
+
+ []
+
+File: Figures/7.3.png Graphic file (type bmp)
+<Figures/7.3.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 972.
+See the caption package documentation for explanation.
+
+[134]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [135]) (./chapters/08.tex [136]
+Chapter 8.
+) (./chapters/09.tex [137
+
+] [138
 
 ]
 Chapter 9.
-) (./chapters/10.tex [135] [136
+) (./chapters/10.tex [139] [140
 
 ]
 Chapter 10.
-) (./chapters/11.tex [137] [138
+) (./chapters/11.tex [141] [142
 
 ]
 Chapter 11.
-) (./chapters/12.tex [139] [140
+) (./chapters/12.tex [143] [144
 
 ]
 Chapter 12.
-) (./chapters/13.tex [141] [142
+) (./chapters/13.tex [145] [146
 
 ]
 Chapter 13.
@@ -1679,14 +1704,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [143]
+ [147]
 Overfull \vbox (137.1515pt too high) has occurred while \output is active []
 
- [144]
+ [148]
 Chapter 14.
-) (./chapters/15.tex [145
+) (./chapters/15.tex [149
 
-] [146
+] [150
 
 ]
 Chapter 15.
@@ -1697,42 +1722,42 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [147]
+ [151]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
- [148]
+ [152]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [149
+ [153
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
- [150]
+ [154]
 Chapter 17.
-[151
+[155
 
-]) (./chapters/appendix.tex [152]
+]) (./chapters/appendix.tex [156]
 附录 A.
-) (./chapters/bibliography.tex [153
+) (./chapters/bibliography.tex [157
 
-] [154
+] [158
 
 ]
 附录 B.
-[155] [156
+[159] [160
 
-]) (./chapters/answers.tex [157] [158
+]) (./chapters/answers.tex [161] [162
 
 ]
 附录 C.
-) (./chapters/index.tex [159] [160
+) (./chapters/index.tex [163] [164
 
 ]
 附录 D.
-) [161] (./Quantum Chemistry.aux)
+) [165] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -1741,12 +1766,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 39466 strings out of 474773
- 887978 string characters out of 5751499
- 2018842 words of memory out of 5000000
- 60917 multiletter control sequences out of 15000+600000
+ 39494 strings out of 474773
+ 888389 string characters out of 5751499
+ 2030842 words of memory out of 5000000
+ 60944 multiletter control sequences out of 15000+600000
  577319 words of font info for 178 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,114p,996b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (169 pages).
+Output written on Quantum Chemistry.pdf (173 pages).
