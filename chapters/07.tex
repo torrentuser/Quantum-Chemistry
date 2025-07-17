@@ -1279,7 +1279,7 @@
             \label{eq:7.102}
         \end{equation}
 
-        (b)$\left|\Psi\right|^2$中与时间有关的因子为余弦因子(\ref{eq:7.102})。最小正周期为余弦函数的参数函数增加$2\pi$时的时间间隔，即$\left(E_2-E_1\right)T/\hbar = 2\pi$。由于$E_n = n^2h^2/8ml^2$，因此周期为$T = 2\pi\hbar/\left(E_2-E_1\right) = 8ml^2/3h$。
+        (b)$\left|\Psi\right|^2$中与时间有关的因子为余弦因子(\ref{eq:7.102})。最小正周期为余弦函数的参数函数增加$2\pi$的时间间隔，即$\left(E_2-E_1\right)T/\hbar = 2\pi$。由于$E_n = n^2h^2/8ml^2$，因此周期为$T = 2\pi\hbar/\left(E_2-E_1\right) = 8ml^2/3h$。
 
         (c)使用(\ref{eq:7.102})和$\psi_1$、$\psi_2$的表达式，以及$T = 2\pi\hbar/\left(E_2-E_1\right)$，我们有
         \begin{equation}
@@ -1336,22 +1336,154 @@
 
 \section{矩阵}
 \label{sec:7.10 Matrices}
+    矩阵代数是现代分子量子力学计算的重要数学工具。矩阵也为量子力学的许多理论提供了便捷的表述方法。矩阵方法将在后面一些章节中使用，但本书的编写方式是：如果时间不允许，可以省略有关矩阵的材料。
 
+    \textbf{矩阵}（matrix）是由数字组成的矩形数组。组成矩阵的数字称为\textbf{矩阵元素}（matrix elements）。设矩阵$\mathbf{A}$有$m$行$n$列，设$a_{ij}$（$i = 1,2,\ldots,m$；$j = 1,2,\ldots,n$）表示第$i$行第$j$列的元素。那么
+    \begin{equation*}
+        \mathbf{A} = \begin{pmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \cdot & \cdot & \cdots & \cdot \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{pmatrix}
+    \end{equation*}
+    $\mathbf{A}$称为$m$行$n$列矩阵。不要把$\mathbf{A}$和行列式（第\ref{sec:8.3 Determinants}节）混淆，矩阵的行数和列数不一定相等，也不等于一个值。
 
+    一个\textbf{行矩阵}（row matrix）[也称为\textbf{行向量}（row vector）]是一个只有一行的矩阵。一个\textbf{列矩阵}（column matrix）[也称为\textbf{列向量}（column vector）]是一个只有一列的矩阵。
 
+    当且仅当两个矩阵$\mathbf{R}$和$\mathbf{S}$的行数和列数相等，且对应元素也相等时，我们才说它们是\textbf{相等的}（equal）。若$\mathbf{R} = \mathbf{S}$，那么对$j = 1, \ldots, m$和$k = 1, \ldots, n$，都有$r_{jk} = s_{jk}$，其中$m$和$n$是$\mathbf{R}$和$\mathbf{S}$的维数。因此，一个矩阵方程等价于$nm$个标量方程组。
 
+    两个矩阵$\mathbf{A}$和$\mathbf{B}$的\textbf{和}（sum）定义为一个新的矩阵，其各元素为$\mathbf{A}$和$\mathbf{B}$对应元素的和，只有$\mathbf{A}$和$\mathbf{B}$的行数和列数相等时，我们才能定义它们的和。若$\mathbf{P} = \mathbf{A} + \mathbf{B}$，则我们有$mn$个标量方程$p_{jk} = a_{jk} + b_{jk}$，其中$j = 1, \ldots, m$和$k = 1, \ldots, n$。
+    \begin{equation}
+        \boxed{
+            \text{若} \quad \mathbf{P} = \mathbf{A} + \mathbf{B}, \quad \text{则} \quad p_{jk} = a_{jk} + b_{jk}
+        }
+        \label{eq:7.105}
+    \end{equation}
 
+    标量$c$与矩阵$\mathbf{A}$的乘积定义为将$\mathbf{A}$的每个元素乘以$c$：
+    \begin{equation}
+        \boxed{
+            \text{若} \quad \mathbf{D} = c\mathbf{A}, \quad \text{则} \quad d_{jk} = ca_{jk}
+        }
+        \label{eq:7.106}
+    \end{equation}
 
+    若$\mathbf{A}$是$m$行$n$列的矩阵，$\mathbf{B}$是$n$行$p$列的矩阵，则\textbf{矩阵乘积}（matrix product）$\mathbf{A}\mathbf{B}$定义为一个$m$行$p$列的矩阵，其元素为
+    \begin{equation}
+        \boxed{
+            r_{jk} \equiv a_{j1}b_{1k} + a_{j2}b_{2k} + \cdots + a_{jn}b_{nk} = \sum_{i=1}^{n}a_{ji}b_{ik}
+        }
+        \label{eq:7.107}
+    \end{equation}
+    为了计算$r_{jk}$，我们取$\mathbf{A}$的第$j$行（其元素为$a_{j1}, a_{j2}, \ldots, a_{jn}$），将该行的每个元素与对应的$\mathbf{B}$的第$k$列（其元素为$b_{1k}, b_{2k}, \ldots, b_{nk}$）相乘并相加。例如，我们假设
+    \begin{equation*}
+        \mathbf{A} = \begin{pmatrix}
+            -1 & 3 & \frac{1}{2} \\
+            0 & 4 & 1
+        \end{pmatrix}
+        \quad \text{和} \quad
+        \mathbf{B} = \begin{pmatrix}
+            1 & 0 & -2 \\
+            2 & 5 & 6 \\
+            -8 & 3 & 10
+        \end{pmatrix}
+    \end{equation*}
+    $\mathbf{A}$的列数和$\mathbf{B}$的行数相等，因此可以计算它们的乘积。$\mathbf{A}\mathbf{B}$是$2\times 3$矩阵$\mathbf{A}$和$3\times 3$矩阵$\mathbf{B}$的乘积，则$\mathbf{R} \equiv \mathbf{A}\mathbf{B}$是$2\times 3$矩阵。元素$r_{21}$由$\mathbf{A}$的第二行和$\mathbf{B}$的第一列计算得到：$r_{21} = 0\left(1\right) + 4\left(2\right) + 1\left(-8\right) = 0$。再计算其余的元素，我们可以得出
+    \begin{equation*}
+        \mathbf{R} = \begin{pmatrix}
+            1 & 16\frac{1}{2} & 25 \\
+            0 & 23 & 34
+        \end{pmatrix}
+    \end{equation*}
 
+    矩阵乘积是不可对易的，$\mathbf{A}\mathbf{B}$和$\mathbf{B}\mathbf{A}$不一定相等。（在上例中，乘积$\mathbf{B}\mathbf{A}$恰好没有定义。）可以证明，矩阵乘法满足\textbf{结合律}（associative），即$\mathbf{A}\left(\mathbf{B}\mathbf{C}\right) = \left(\mathbf{A}\mathbf{B}\right)\mathbf{C}$，也满足\textbf{分配律}（distributive），即$\left(\mathbf{A} + \mathbf{B}\right)\mathbf{C} = \mathbf{A}\mathbf{C} + \mathbf{B}\mathbf{C}$和$\left(\mathbf{B} + \mathbf{C}\right)\mathbf{D} = \mathbf{B}\mathbf{D} + \mathbf{C}\mathbf{D}$。
 
+    行数和列数相等的矩阵称为\textbf{方阵}（square matrix）。方阵的\textbf{阶}（order）等于其行数。
 
+    若$\mathbf{A}$是一个方阵，则其平方和立方分别定义为$\mathbf{A}^2 \equiv \mathbf{A}\mathbf{A}$和$\mathbf{A}^3 \equiv \mathbf{A}\mathbf{A}\mathbf{A},\ldots$。
 
+    $n$阶方阵的元素$a_{11},a_{22},\ldots,a_{nn}$位于其\textbf{主对角线}（principal diagonal）上。。若一个方阵的所有非对角元素都为零，则称其为\textbf{对角矩阵}（diagonal matrix）。
 
+    方阵的\textbf{迹}（trace）定义为主对角线元素的和。若$\mathbf{A}$是一个$n$阶方阵，则其迹为$\mathrm{Tr} \mathbf{A} = \sum_{i=1}^{n}a_{ii}$。
 
+    对角元素都为1的对角矩阵称为\textbf{单位矩阵}（identity matrix or unit matrix）。单位矩阵的第$\left(j,k\right)$个元素为Kronecker delta函数：$\left(\mathbf{I}\right)_{jk} = \delta_{jk}$，其中$\mathbf{I}$是单位矩阵。例如，一个三阶的单位阵为
+    \begin{equation*}
+        \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1
+        \end{pmatrix}
+    \end{equation*}
+    令$\mathbf{B}$为一个与单位阵$\mathbf{I}$同阶的矩阵，则矩阵积$\mathbf{IB}$的第$\left(j,k\right)$个元素由(\ref{eq:7.107})给出：$\left(\mathbf{IB}\right)_{jk} = \sum_{i}\left(\mathbf{I}\right)_{ji}b_{ik} = \sum_{i}\delta_{ji}b_{ik} = b_{jk}$。由于对于所有的$j$和$k$，$\mathbf{IB}$和$\mathbf{B}$的第$\left(j,k\right)$个元素都相等，我们有$\mathbf{IB} = \mathbf{B}$。同理，$\mathbf{BI} = \mathbf{B}$。因此，任意矩阵与单位矩阵相乘不会产生任何影响。
 
+    所有元素都为零的矩阵称为\textbf{零矩阵}（zero matrix），表示为$\mathbf{0}$。一个\textbf{非零矩阵}（nonzero matrix）是一个至少有一个非零元素的矩阵。这些定义也适用于行向量和列向量。
 
+    量子化学中的大多数矩阵都是方阵或行矩阵或列矩阵。
 
+\subsection*{矩阵和量子力学}
 
+    在\ref{sec:7.1 Notation}节中，积分$\int f_m^{\ast}\hat{A}f_n \: \mathrm{d}\tau$称为$\hat{A}$的一个矩阵元。现在，我们通过证明此类积分遵守矩阵代数规则来证明这一名称的合理性。
+
+    令函数$f_1, f_2, \ldots, f_n$是一个完全且正交的函数集，令$\left\{f_i\right\}$表示这个完全集。则数字$A_{mn} \equiv \left\langle f_m \middle| \hat{A} f_n \right\rangle \equiv \int f_m^{\ast}\hat{A}f_n \: \mathrm{d}\tau$称为\textbf{以$\left\{f_i\right\}$为基的线性算符$\hat{A}$的矩阵元}（matrix element of the linear operator $\hat{A}$ in the basis $\left\{f_i\right\}$）。方阵
+    \begin{equation}
+        \mathbf{A} = \begin{pmatrix}
+            A_{11} & A_{12} & \ldots \\
+            A_{21} & A_{22} & \ldots \\
+            \ldots & \ldots & \ldots 
+        \end{pmatrix}
+        = \begin{pmatrix}
+            \left\langle f_1 \middle| \hat{A} f_1 \right\rangle & \left\langle f_1 \middle| \hat{A} f_2 \right\rangle & \ldots \\
+            \left\langle f_2 \middle| \hat{A} f_1 \right\rangle & \left\langle f_2 \middle| \hat{A} f_2 \right\rangle & \ldots \\
+            \ldots & \ldots & \ldots
+        \end{pmatrix}
+        \label{eq:7.108}
+    \end{equation}
+    称为线性算符$\hat{A}$以$\left\{f_i\right\}$为\textbf{基}的\textbf{矩阵表示}（matrix representative）。因为$\left\{f_i\right\}$通常包含无穷多个函数，所以$\mathbf{A}$通常是一个无穷阶矩阵。
+
+    考虑矩阵元积分的加和。假设$\hat{C} = \hat{A} + \hat{B}$。一个典型的以$\left\{f_i\right\}$为基的$\hat{C}$矩阵元为
+    \begin{equation*}
+        \begin{aligned}
+            C_{mn} &= \left\langle f_m \middle| \hat{C} \middle| f_n \right\rangle = \left\langle f_m \middle| \hat{A} + \hat{B} \middle| f_n \right\rangle = \int f_m^{\ast}\left(\hat{A} + \hat{B}\right)f_n \: \mathrm{d}\tau \\
+            &= f_m^{\ast}\hat{A}f_n\:\mathrm{d}\tau + \int f_m^{\ast}\hat{B}f_n \: \mathrm{d}\tau = A_{mn} + B_{mn}
+        \end{aligned}
+    \end{equation*}
+    因此，若$\hat{C} = \hat{A} + \hat{B}$，则$C_{mn} = A_{mn} + B_{mn}$，这是(\ref{eq:7.105})的矩阵加和形式。因此，若$\hat{C} = \hat{A} + \hat{B}$，则$\mathbf{C} = \mathbf{A} + \mathbf{B}$，其中$\mathbf{A}$、$\mathbf{B}$和$\mathbf{C}$是算符的$\hat{A}$、$\hat{B}$和$\hat{C}$的矩阵表示。
+
+    相似地，若$\hat{P} = c\hat{S}$，其中$c$为常数，则我们得到（问题7.52）$P_{jk} = cS_{jk}$，这是矩阵与标量相乘的规则。
+
+    最后，假设$\hat{R} = \hat{S}\hat{T}$，我们有
+    \begin{equation}
+        R_{mn} = \int f_m^{\ast}\hat{R}f_n \: \mathrm{d}\tau = \int f_m^{\ast}\hat{S}\hat{T}f_n \: \mathrm{d}\tau
+        \label{eq:7.109}
+    \end{equation}
+
+    函数$\hat{T}f_n$可以用完全正交函数集$\left\{f_i\right\}$展开[式(\ref{eq:7.41})]：
+    \begin{equation*}
+        \hat{T}f_n = \sum_{i}c_{i}f_i = \sum_{i}\left\langle f_i \middle| \hat{T}f_n \right\rangle f_i = \sum_{i}\left\langle f_i \middle| \hat{T} \middle| f_n \right\rangle f_i = \sum_{i}T_{in}f_i
+    \end{equation*}
+    则$R_{mn}$变为
+    \begin{equation}
+        R_{mn} = \int f_m^{\ast}\hat{S}\sum_{i}T_{in}f_i \: \mathrm{d}\tau = \sum_{i}\int f_m^{\ast}\hat{S}f_i \: \mathrm{d}\tau T_{in} = \sum_{i}S_{mi}T_{in}
+        \label{eq:7.110}
+    \end{equation}
+
+    方程$R_{mn} = \sum_{i}S_{mi}T_{in}$是(\ref{eq:7.107})的矩阵乘积形式。因此，若$\hat{R} = \hat{S}\hat{T}$，则$\mathbf{R} = \mathbf{S}\mathbf{T}$。
+
+    我们已经证明：\textit{我们已经证明，在一个完整的正交基集中，线性算符的矩阵表示所服从的方程与算符所服从的方程相同。}将(\ref{eq:7.109})与(\ref{eq:7.110})结合起来，我们可以得出有用的结论
+    \begin{equation}
+        \sum_i\left\langle m \middle| \hat{S} \middle| i \right\rangle \left\langle i \middle| \hat{T} \middle| n \right\rangle = \left\langle m \middle| \hat{S}\hat{T} \middle| n \right\rangle
+        \label{eq:7.111}
+    \end{equation}
+
+    假设选择的基函数$\left\{f_i\right\}$为算符$\hat{A}$的本征函数$g_i$的完全正交集，其中$\hat{A}g_i = a_ig_i$。则矩阵元$A_{mn}$表示为
+    \begin{equation*}
+        A_{mn} = \left\langle g_m \middle| \hat{A} \middle| g_n \right\rangle = \left\langle g_m \middle| \hat{A}g_n \right\rangle = \left\langle g_m \middle| a_ng_n \right\rangle = a_n \left\langle g_m \middle| g_n \right\rangle = a_n\delta_{mn}
+    \end{equation*}
+    以$\hat{A}$的本征函数为正交基表示$\hat{A}$的矩阵是一个对角矩阵，其对角元素为$\hat{A}$的本征值$a_n$。相反地，我们可以证明（问题7.53），当某算符$\hat{A}$以其完整正交基表示为对角矩阵时，那么基函数为$\hat{A}$的本征函数，对角元素为$\hat{A}$的本征值。
+
+    我们使用了完全正交基$\left\{f_i\right\}$来将算符$\hat{A}$表示为(\ref{eq:7.108})的矩阵$\mathbf{A}$。这组基还可以用来表示任意函数$u$，如下所示。根据$u = \sum_{i}u_{i}f_i$，用完全集$\left\{f_i\right\}$展开函数$u$，其中展开系数$u_i$由(\ref{eq:7.40})给出：$u_i = \left\langle f_i \middle| u \right\rangle$。展开系数$u_1,u_2,\ldots$构成的集合形成一个列矩阵（列向量），称为$\mathbf{u}$，则$\mathbf{u}$称为函数$u$以$\left\{f_i\right\}$为基的\textbf{矩阵表示}（matrix representative）。若$\hat{A}u =w$，其中$w$是另一个函数，那么我们可以证明（问题7.54）$\mathbf{Au} = \mathbf{w}$，其中$\mathbf{A}$、$\mathbf{u}$和$\mathbf{w}$分别是算符$\hat{A}$、函数$u$和函数$w$以$\left\{f_i\right\}$为基的矩阵表示。因此，若我们知道算符$\hat{A}$的矩阵表示$\mathbf{A}$，那么我们就能得知算符$\hat{A}$作用于任意函数$u$的结果。那么知道了矩阵表示$\mathbf{A}$等价于知道了算符$\hat{A}$。
+    
 \section*{总结}
 
 \section*{习题}
