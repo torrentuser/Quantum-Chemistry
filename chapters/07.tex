@@ -1299,28 +1299,58 @@
 
 \section{测量和量子力学解释}
 \label{sec:7.9 Measurement and the Interpretation of Quantum Mechanics}
+    在量子力学中，系统的状态函数有两种变化方式。[参见 E. P. Wigner, \textit{Am. J. Phys.}, \textbf{31}, 6 (1963).]首先，含时薛定谔方程（\ref{eq:7.97}）给出了随时间发生的连续因果变化。其次，在对系统进行测量时，会发生突然的、不连续的、概率性的变化。这种变化无法准确预测，因为测量结果无法准确预测，只有概率 (\ref{eq:7.73}) 可以预测。由测量引起的 $\Psi$ 的突然变化被称为\textbf{波函数坍缩}（reduction or collapse of the wave function）。\textit{对性质$B$的测量有结果$b_k$，而同时将系统的态函数转变为$g_k$，其中$g_k$是与$b_k$对应的$\hat{B}$的本征函数。}（若$b_k$是简并的，则$\Psi$变为对应于$b_k$的所有本征函数的线性组合。）找到非简并本征值$b_k$的概率由(\ref{eq:7.73})，和定理9的$\left|\left\langle g_k \middle| \Psi \right\rangle\right|^2$给出，则当我们对性质$B$进行测量时，$\left|\left\langle g_k \middle| \Psi \right\rangle\right|^2$是系统从状态$\Psi$转变为$g_k$的概率。
 
+    考虑一个例子。假设在$t$时刻，我们测量粒子的位置。假设$\Psi\left(x,t_-\right)$是粒子测量前一瞬间的状态函数（图\ref{fig:7.6}a）。我们进一步假设，测量的结果是发现粒子位于以下空间的无限小区域内
+    \begin{equation}
+        a < x < a + \mathrm{d}a
+        \label{eq:7.104}
+    \end{equation}
+    我们现在想问：测量后一瞬间粒子的状态函数$\Psi\left(x,t_+\right)$是什么？为了回答这个问题，假设我们在时间 $t_+$ 时对位置进行第二次测量。由于 $t_+$ 与第一次测量的时间 $t$ 相差无穷小，我们仍然必须发现粒子被限制在 (\ref{eq:7.104}) 区域内。如果粒子在无限小的时间内移动了有限的距离，它就会有无限大的速度，这是不可接受的。由于$\left|\Psi\left(x,t_+\right)\right|^2$表示找到连续变量$x$的概率密度，因此我们可以得出在(\ref{eq:7.104})区域外，$\left|\Psi\left(x,t_+\right)\right|^2=0$，其图象一定如图\ref{fig:7.6}b所示。因此，在 $t$ 时刻进行的位置测量将 $Psi$ 从一个遍布整个空间的函数坍缩为一个集中在 (\ref{eq:7.104}) 区域的函数。从$\Psi\left(x,t_-\right)$ 到 $\Psi\left(x,t_+\right)$ 的变化是一种概率变化。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/7.6.png}
+        \caption{对位置的测量导致波函数坍缩示意图}
+        \label{fig:7.6}
+    \end{figure}
 
+    测量过程是量子力学中最具争议的领域之一。至于在测量过程中如何以及在哪个阶段出现坍缩，目前还不清楚。一些物理学家把 $\Psi$ 的坍缩看作是一个额外的量子力学公设，而另一些物理学家则声称这是一个可以从其他公设中推导出来的定理。一些物理学家拒绝接受坍缩的观点[见M. Jammer, \textit{The Philosophy of Quantum Mechanics}, Wiley, 1974, Section 11.4 ; L. E. Ballentine, \textit{Am. J. Phys.}, \textbf{55}, 785 (1987)]。Ballentine 主张爱因斯坦对量子力学的统计集合解释，即波函数并不描述单个系统的状态（如正统解释）（orthodox interpretation），而是对以相同方式制备的大量系统的集合（集合）进行统计描述。在这种解释中，波函数的坍缩就不需要了。[见L. E. Ballentine, \textit{Am. J. Phys.}, \textbf{40}, 1763 (1972); \textit{Rev. Mod. Phys.}, \textbf{42}, 358 (1970).]统计集合解释存在许多严重问题[见 \textit{Whitaker}, pp. 213-217 ；D. Home and M. A. B. Whitaker, \textit{Phys. Rep.}, \textbf{210}, 223 (1992)；问题 10.4 ]，这种解释在很大程度上已被否定。
 
+    “对大多数物理学家来说，找到一个一致的、可信的量子测量理论的问题仍未解决......。关于量子测量......众说纷纭......[是]对整个量子力学解释的根本分歧的反映。”(M. Jammer, \textit{The Philosophy of Quantum Mechanics}, pp. 519, 521).
 
+    量子力学的概率性质困扰了许多物理学家，包括爱因斯坦、德布罗意和薛定谔。这些物理学家和其他物理学家认为，量子力学可能无法完整描述物理现实。相反，量子力学的概率法则可能只是在亚量子力学层面上运行的、涉及 “隐变量”的确定性法则的反映。物理学家博姆（Bohm）用尘埃粒子在空气中的布朗运动作了一个比喻。粒子的位置会发生随机波动，其运动并不完全由其位置和速度决定。当然，布朗运动是气体分子碰撞的结果，是由分子运动层面的变量决定的。同样，电子的运动可能是由存在于亚量子力学层面的隐变量决定的。由海森堡和玻尔提出的量子力学正统解释[通常称为哥本哈根解释（Copenhagen interpretation）]否认隐变量的存在，并断言量子力学定律提供了对物理现实的完整描述。（F. J. Belinfante, \textit{A Survey of  Hidden-Variables Theories}, Pergamon, 1973, 中讨论了隐变量理论。）
 
+    1964 年，J. S. Bell证明，在某些实验中，涉及对原本处于同一空间区域的两个相距甚远的粒子进行测量时，任何可能的局部隐变量理论都必须做出与量子力学不同的预测（见\textit{Ballentine}，Chapter 20）。在\textit{局部理论}（local theory）中，两个相距甚远的系统彼此独立运行。这些实验的结果与量子力学的预言一致，从而为反对所有确定性的局部隐变量理论提供了非常有力的证据，但并不排除非局部隐变量理论。这些实验见 A. Aspect, \textit{in The Wave-Particle Dualism}, S. Diner et al. (eds.), Reidel, 1984, pp. 377-390; A. Shimony, \textit{Scientific American}, Jan. 1988, p. 46; A. Zeilinger, \textit{Rev. Mod. Phys}, \textbf{71}, S288 (1999).
 
+    量子理论预言并经实验证实，当对曾经相互作用但现在被无限距离分开的两个粒子进行测量时，对其中一个粒子的测量结果取决于对第二个粒子的测量结果，而且还取决于测量的是第二个粒子的哪种性质。（这种粒子被称为\textbf{纠缠}（entangled）粒子。有关纠缠的更多信息，请参阅 \url{en.wikipedia.org/wiki/Quantum_entanglement}; chaps.7-10 of J. Baggott, \textit{Beyond Measure}, Oxford, 2004；L. Gilder, \textit{The Age of Entanglement}, Vintage, 2009；Part II of A. Whitaker, \textit{The New Quantum Age}, Oxford, 2012。） 这种瞬时的 “超距作用”（爱因斯坦的说法）用一位物理学家的话说：“量子力学就是魔法”（D. Greenberger，quoted in N. D. Mermin，\textit{Physics Today}, April 1985, p. 38）。
 
+    量子力学与心灵的关系一直是人们猜测的主题。Wigner认为：当测量结果进入观察者的意识时，就会发生波函数的坍缩，因此 “具有意识的存在物在量子力学中的作用一定不同于无生命的测量装置”。他认为，有意识的生命很可能遵守与无生命物体不同的自然法则，并建议科学家寻找意识作用于物质的异常效应。[E. P. Wigner, “Remarks on the Mind–Body Question,” in \textit{The Scientist Speculates}, I. J. Good, ed., Capricorn, 1965, p. 284; \textit{Proc. Amer. Phil. Soc.}, \textbf{113}, 95 (1969); \textit{Found. Phys.}, \textbf{1}, 35 (1970).]
 
+    1952 年，戴维·玻姆（David Bohm）（根据德布罗意在 1927 年提出的建议，即波函数可以作为引导粒子运动的先导波）设计了一种非局部确定性隐变量理论，该理论预言了与量子力学相同的实验结果[D. Bohm, \textit{Phys. Rev.}, \textbf{85}, 166, 180 (1952)]。在玻姆的理论中，粒子在任何一瞬间都有一个确定的位置和动量（尽管这些量是无法观测到的），而且粒子的运动轨迹是确定的。粒子还拥有一个波函数 $\Psi$，其时间变化服从含时薛定谔方程。在玻姆的理论中，波函数是决定粒子运动的真实物理实体。如果我们给定一个粒子在某一特定位置、某一特定波函数、某一特定时间 $t$，那么玻姆理论假定了一个特定的方程，可以让我们根据粒子的波函数和位置计算出粒子在该时间的速度；知道了 $t$ 时的位置和速度，我们就可以求出时间 $t+\mathrm{d}t$ 时的位置，并可以利用含时薛定谔方程求出 $t+\mathrm{d}t$ 时的波函数，然后根据 $t+\mathrm{d}t$ 时的位置和波函数计算出 $t+\mathrm{d}t$ 时的速度，以此类推。因此，可以根据初始位置和波函数（假设我们知道势能）计算出路径。原来，在玻姆的理论中，粒子的位置服从类似牛顿第二定律的方程$m \mathrm{d}^2x/\mathrm{d}t^2 = -\partial V /\partial x$[式(\ref{eq:1.8 Newton's second law})以及(\ref{eq:1.12 Potential energy in classical mechanics})]，只是把势能$V$换作$V+Q$，其中$Q$是量子势，是由波函数以某种方式计算得出的。在玻姆理论中，波函数并没有发生坍缩。相反，系统与测量仪器的相互作用遵循了玻姆理论的方程，但这种相互作用导致系统在测量后以波函数坍缩时的方式演变。
 
+    多年来，博姆的研究在很大程度上被忽视了，但人们对他的理论的兴趣与日俱增。有关博姆理论的更多信息，参见\textit{Whitaker}, Chapter 7 ; D. Bohm and B.J. Hiley, \textit{The Undivided Universe}, Routledge, 1992; D. Z Albert, \textit{Scientific American}, May 1994, p. 58; S. Goldstein, “Bohmian Mechanics,” \url{plato.stanford.edu/entries/qm-bohm}; \url{en.wikipedia.org/wiki/De_Broglie-Bohm_theory}。丽贝卡·戈德斯坦（Rebecca Goldstein）的小说《光的特性》（Properties of Light，Houghton Mifflin 出版社，2000 年）中的一个主要人物部分是以大卫·博姆（David Bohm）为原型创作的。
 
+    一些物理学家认为，波函数仅仅代表了我们对系统状态的认识[哥本哈根观点采用了这种\textit{认识论}（epistemic解释），而另一些物理学家则认为，波函数直接对应于物理现实的一个要素本体论（ontic）解释]。2012 年发表的一篇论文利用某些温和的假设证明了一个结果，作者认为这个结果非常有利于本体论解释；M. F. Pusey, J. Barrett, and T. Rudolph, \textit{Nature Phys.} \textbf{8}, 476 (2012) (\url{arxiv.org/abs/1111.3328})。关于这一结果（称为 \textit{PBR 定理}）的讨论，见 \url{www.aps.org/units/gqi/newsletters/upload/vol6num3.pdf}；mattleifer.info/2011/11/20/can-the-quantum-state-be-interpreted-statistic\\ally。
 
-
-
-
-
-
-
-
-
+    尽管量子力学的实验预测无可争议，但其概念解释仍是激烈争论的主题。 附有相关评论的优秀文献有B. S. DeWitt and R. N. Graham，\textit{Am. J. Phys.}, \textbf{39}, 724 (1971)；L. E. Ballentine, \textit{Am. J. Phys.}, \textbf{55}, 785 (1987). 另见 B. d'Espagnat, \textit{Conceptual Foundations of Quantum Mechanics}, 2nd ed., Benjamin, 1976；M. Jammer, \textit{The Philosophy of Quantum Mechanics}, Wiley, 1974；\textit{Whitaker}, Chapter 8；P. Yam, \textit{Scientific American}, June 1997, p. 124。A. Cabello 关于量子力学基础的在线书目列出了对量子力学的 12 种不同解释 (\url{arxiv.org/abs/quant-ph/0012089})；维基百科的一篇文章列出了对量子力学的 14 种解释 (\url{en.wikipedia.org/wiki/Interpretations_of_quantum_mechanics})。
 
 \section{矩阵}
 \label{sec:7.10 Matrices}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section*{总结}
 
