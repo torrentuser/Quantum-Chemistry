@@ -209,7 +209,40 @@
 
 \section{变分法的推广}
 \label{sec:8.2 Extension of the Variational Method}
+    上一节介绍的变分法只提供了基态能量和波函数的信息。现在我们讨论将变分法推广到激发态。（另请参见第 \ref{sec:8.5 Linear Variational Functions} 节）。
 
+    考虑一下我们可以如何推广变分法，来估算第一激发态的能量。根据能量从低到高：
+    \begin{equation*}
+        E_1 \leq E_2 \leq E_3 \leq \ldots
+    \end{equation*}
+    我们将系统的状态标号为$1,2,3,\ldots$。我们已经证明：对于一个已归一化的变分函数$\phi$，有[式(\ref{eq:8.4})和(\ref{eq:8.6})]
+    \begin{equation*}
+        \int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau = \sum_{k=1}^{\infty} |a_k|^2 E_k \quad \text{和} \quad \int \phi^{\ast} \phi \:\mathrm{d}\tau = \sum_{k=1}^{\infty} |a_k|^2 = 1
+    \end{equation*}
+    其中的$a_k$是展开式$\phi = \sum_{k} a_k \psi_k$中的系数[式(\ref{eq:8.2})]。我们有$a_k = \left\langle \psi_k \middle| \phi \right\rangle$[式(\ref{eq:7.40})]。让我们只讨论与真实基态波函数$\psi$正交的归一化函数$\phi$。那么$a_1 = \left\langle \psi_1 \middle| \phi \right\rangle = 0$，因此
+    \begin{equation}
+        \int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau = \sum_{k=2}^{\infty} |a_k|^2 E_k \quad \text{和} \quad \int \phi^{\ast} \phi \:\mathrm{d}\tau = \sum_{k=2}^{\infty} |a_k|^2 = 1
+        \label{eq:8.16}
+    \end{equation}
+    对于$k \geq 2$，我们有$E_k \geq E_2$和$\left|a_k\right|^2E_k \geq \left|a_k\right|^2E_2$。因此，
+    \begin{equation}
+        \sum_{k=2}^{\infty} \left|a_k\right|^2 E_k \geq \sum_{k=2}^{\infty} \left|a_k\right|^2 E_2 = E_2 \sum_{k=2}^{\infty} \left|a_k\right|^2 = E_2
+        \label{eq:8.17}
+    \end{equation}
+    将(\ref{eq:8.16})和(\ref{eq:8.17})相结合，我们得到了所需的结果：
+    \begin{equation}
+        \int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau \geq E_2, \quad \text{若} \int \psi^{\ast} \phi \:\mathrm{d}\tau = 0 \quad \text{且} \int \phi^{\ast} \phi \:\mathrm{d}\tau = 1
+        \label{eq:8.18}
+    \end{equation}
+    通过不等式 (\ref{eq:8.18}) 我们可以得到第一激发态的能量 $E_2$ 的上限。然而，限制条件$\left\langle \psi_1 \middle| \phi \right\rangle = 0$使得这种方法在应用上会很麻烦。
+
+    对于特定的系统，尽管我们不知道真实基态波函数，但确定$\left\langle \psi_1 \middle| \phi \right\rangle = 0$是可能的。$V$ 是 $x$ 的偶函数的一维问题就是一个例子。在这种情况下，基态波函数总是偶函数，而第一激发态波函数是奇函数。（所有波函数必须具有确定的宇称。基态波函数是无节点的，由于奇函数在原点消失，所以基态波函数必须是偶函数。第一个激发态波函数有一个节点，一定是奇函数。）因此，对于奇函数，$\left\langle \psi_1 \middle| \phi \right\rangle = 0$一定成立，偶函数$\psi_1$乘以一个奇函数$\phi$得到一个奇被积函数，从$-\infty$到$+\infty$的积分为零。
+
+    另一个例子是在中心场中运动的粒子（第 \ref{sec:6.1 The One-Particle Central Force Problem} 节）。势能的形式可能使我们无法求解本征函数中的径向因子 $R(r)$。然而，其中的角度因子 $\psi$ 是球谐函数[式 (\ref{eq:6.16}) ]，而不同 $l$ 值的球谐函数是正交的。因此，我们可以利用试探函数中的因子$Y_l^m$，求出任意给定角动量$l$的最低态能量上限。这一结果取决于将 (\ref{eq:8.18}) 推广到更高的激发态：
+    \begin{equation}
+        \frac{\int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau}{\int \phi^{\ast} \phi \:\mathrm{d}\tau} \geq E_{k+1}, \quad \text{若} \int \psi_1^{\ast} \phi \: \mathrm{d}\tau = \int \psi_2^{\ast} \phi \:\mathrm{d}\tau = \cdots = \int \psi_k^{\ast} \phi \:\mathrm{d}\tau = 0
+        \label{eq:8.19}
+    \end{equation}
 
 
 

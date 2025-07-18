@@ -57,10 +57,10 @@
 \contentsline {chapter}{\numberline {8}变分法}{149}{chapter.8}%
 \contentsline {section}{\numberline {8.1}变分理论}{149}{section.8.1}%
 \contentsline {section}{\numberline {8.2}变分法的推广}{153}{section.8.2}%
-\contentsline {section}{\numberline {8.3}行列式}{153}{section.8.3}%
-\contentsline {section}{\numberline {8.4}联立线性方程组}{153}{section.8.4}%
-\contentsline {section}{\numberline {8.5}线性变分函数}{153}{section.8.5}%
-\contentsline {section}{\numberline {8.6}矩阵、本征值和本征向量}{153}{section.8.6}%
+\contentsline {section}{\numberline {8.3}行列式}{154}{section.8.3}%
+\contentsline {section}{\numberline {8.4}联立线性方程组}{154}{section.8.4}%
+\contentsline {section}{\numberline {8.5}线性变分函数}{154}{section.8.5}%
+\contentsline {section}{\numberline {8.6}矩阵、本征值和本征向量}{154}{section.8.6}%
 \contentsline {chapter}{\numberline {9}微扰理论}{155}{chapter.9}%
 \contentsline {section}{\numberline {9.1}微扰理论}{155}{section.9.1}%
 \contentsline {section}{\numberline {9.2}非简并微扰理论}{155}{section.9.2}%
