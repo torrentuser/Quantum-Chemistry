@@ -3,9 +3,224 @@
 \label{chap:8}
 \section{变分理论}
 \label{sec:8.1 The Variation Theorem}
+    为了处理包含相互作用粒子系统（如原子和分子）的定态薛定谔方程，我们必须使用近似方法。本章讨论变分法，它允许我们在不求解薛定谔方程的情况下近似得到系统的基态能量。变分法基于如下理论：
+    \begin{center}
+        \parbox{0.8\textwidth}{
+            \textbf{变分理论：}
+            
+            给定一个系统，其哈密顿算符$\hat{H}$与时间无关，其最低能量本征值为$E_1$，如果 $\phi$ 是系统粒子坐标的任何满足问题定解条件的已归一化品优函数，那么
+            \begin{equation}
+                \boxed{
+                    \int \phi^{\ast}\hat{H}\:\mathrm{d}\tau \geq E_1, \quad \phi \text{已归一化}
+                }
+                \label{eq:8.1}
+            \end{equation}
+        }
+    \end{center}
+
+    变分理论允许我们计算系统基态能量的最大值。
+
+    为了证明(\ref{eq:8.1})，我们将$\phi$用$\hat{H}$的本征函数完全正交集，即定态本征函数$\psi_k$展开：
+    \begin{equation}
+        \phi = \sum_k a_k \psi_k
+        \label{eq:8.2}
+    \end{equation}
+    其中
+    \begin{equation}
+        \hat{H}\psi_k = E_k \psi_k
+        \label{eq:8.3}
+    \end{equation}
+    注意：展开式(\ref{eq:8.2})要求$\phi$满足与$\psi_k$相同的定解条件。将(\ref{eq:8.2})代入(\ref{eq:8.1})的左侧，我们得到
+    \begin{equation*}
+        \int \phi^{\ast}\hat{H}\phi\:\mathrm{d}\tau = \int \sum_{k}a_k^{\ast} \psi_k^{\ast} \hat{H} \sum_{j} a_j \psi_j \:\mathrm{d}\tau = \int \sum_{k}a_k^{\ast} \psi_k^{\ast} \sum_{j} a_j \hat{H} \psi_j \:\mathrm{d}\tau
+    \end{equation*}
+    利用本征方程 (\ref{eq:8.3})，并假设交换积分和无限求和是成立的，我们可以得到
+    \begin{equation*}
+        \begin{aligned}
+            \int \phi^{\ast}\hat{H}\phi \:\mathrm{d}\tau &= \int \sum_{k} a_k^{\ast} \psi_k^{\ast} \hat{H} \sum_{j} a_j \psi_j \:\mathrm{d}\tau = \int \sum_{k} a_k^{\ast} \psi_k^{\ast} \sum_{j} a_j \hat{H} \psi_j \:\mathrm{d}\tau \\
+            &= \sum_k\sum_{j} a_k^{\ast} a_j E_j \delta_{kj}
+        \end{aligned}
+    \end{equation*}
+    其中用到了本征函数$\psi_k$的正交性。我们对 $j$ 求和，像往常一样，除了 $j=k$ 的项之外，Kronecker $\delta$使所有项都为零，从而得到
+    \begin{equation}
+        \int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau = \sum_{k}a_k^{\ast} a_k E_k = \sum_k |a_k|^2 E_k
+        \label{eq:8.4}
+    \end{equation}
+    
+    由于$E_1$是$\hat{H}$的最低能量本征值，我们有$E_k \geq E_1$，又由于$\left|a_k\right|^2$为非负数，我们可以将不等式$E_k \geq E_1$的左右两侧乘以$|a_k|^2$而不改变不等号的方向，从而得到$|a_k|^2 E_k \geq |a_k|^2 E_1$。因此，$\sum_k |a_k|^2 E_k \geq \sum_k |a_k|^2 E_1$，使用(\ref{eq:8.4})，我们得到
+    \begin{equation}
+        \int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau = \sum_k |a_k|^2 E_k \geq \sum_k |a_k|^2 E_1 = E_1 \sum_k |a_k|^2
+        \label{eq:8.5}
+    \end{equation}
+
+    因为$\phi$已归一化，我们有$\int \phi^{\ast} \phi \: \mathrm{d}\tau = 1$。将展开式(\ref{eq:8.2})代入归一化条件，得到
+    \begin{equation*}
+        1 = \int \phi^{\ast} \phi \: \mathrm{d}\tau = \int \sum_{k} a_k^{\ast} \psi_k^{\ast} \sum_{j} a_j \psi_j \: \mathrm{d}\tau = \sum_{k} \sum_{j} a_k^{\ast} a_j \int \psi_k^{\ast} \psi_j \: \mathrm{d}\tau = \sum_{k} \sum_{j} a_k^{\ast} a_j \delta_{kj}
+    \end{equation*}
+    \begin{equation}
+        1 = \sum_{k} |a_k|^2
+        \label{eq:8.6}
+    \end{equation}
+    [注意，在推导公式 (\ref{eq:8.4}) 和 (\ref{eq:8.6}) 时，我们基本上分别重复了公式 (\ref{eq:7.70}) 和 (\ref{eq:7.69}) 的推导。]
+
+    将(\ref{eq:8.6}) 代入 (\ref{eq:8.5})就得到了变分理论(\ref{eq:8.1})的证明：
+    \begin{equation}
+        \int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau \geq E_1, \quad \phi \text{已归一化}
+        \label{eq:8.7}
+    \end{equation}
+
+    假设我们有一个未归一化的函数$\phi$。为了应用变分理论，我们用一个归一化常数$N$乘以$\phi$使得$N\phi$满足归一化条件。在(\ref{eq:8.7})中，我们将$\phi$替换为$N\phi$，得到
+    \begin{equation}
+        \left|N\right|^2 \int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau \geq E_1
+        \label{eq:8.8}
+    \end{equation}
+    $N$由下式导出：$\int \left(N\phi\right)^{\ast} \left(N\phi\right) \:\mathrm{d}\tau = \left|N\right|^2 \int \phi^{\ast} \phi \:\mathrm{d}\tau = 1$，因此$\left|N\right|^2 = 1/\int \phi^{\ast} \phi \:\mathrm{d}\tau$。将其代入(\ref{eq:8.8})，我们得到
+    \begin{equation}
+        \boxed{
+            \frac{\int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau}{\int \phi^{\ast} \phi \:\mathrm{d}\tau} \geq E_1
+        }
+        \label{eq:8.9}
+    \end{equation}
+    其中$\phi$是满足问题定解条件的任意品优函数（不必归一化）。
+
+    函数$\phi$称为\textbf{试探变分函数}（trial variational function），(\ref{eq:8.1})中的积分[或 (\ref{eq:8.9}) 中的积分之比]称为\textbf{变分积分}（variational integral）。为了获取基态能量$E_1$的良好近似值，我们会尝试许多试探变分函数，并寻找能给出最小变分积分值的函数。由 (\ref{eq:8.1}) 可知，变分积分的值越小，我们对 $E_1$ 的近似就越好。推翻量子力学的一种方法是找到一个试探变分函数，使已知 $E_1$ 的某个系统的变分积分小于 $E_1$。
+
+    令$\psi_1$为系统基态能量的真实波函数：
+    \begin{equation}
+        \hat{H}\psi_1 = E_1 \psi_1
+        \label{eq:8.10}
+    \end{equation}
+    如果我们碰巧幸运地发现了一个等于 $\psi_1$ 的变分函数，那么在 (\ref{eq:8.1}) 中使用 (\ref{eq:8.10}) ，我们可以看到变分积分将等于 $E_1$。因此，基态波函数给出了变分积分的最小值。因此，我们预期变分积分值越小，试探变分函数就越接近真实的基态波函数。然而，事实证明，变分积分接近 $E_1$ 的速度要比试探变分函数接近 $\psi_1$ 的速度快得多，而且有可能用一个相当差的 $\phi$ 得到一个相当好的近似值 $E_1$。
+
+    在实践中，人们通常会在试探函数 $\phi$ 中引入几个参数，然后对这些参数进行变分，从而使变分积分最小化。能否成功使用变分法，取决于能否对试探函数做出正确的选择。
+
+    让我们来看一些变分法的例子。虽然这种方法的真正用途是针对我们不知道确切解的问题，但我们还是要考虑那些完全可解的问题，以便判断我们结果的准确性。
+
+    \begin{examplebox}
+        \textbf{例题：}为长度为 $l$ 的一维势箱中的粒子设计一个试探变分函数。
+        \\
+
+        波函数在势箱外为零，定解条件要求在$x=0$和$x=l$处$\psi=0$。变分函数$\phi$必须满足这些在边界点为零的条件。如公式 (\ref{eq:4.57}) 后所述，基态 $\psi$ 在边界点内部没有节点，因此希望 $\phi$ 也没有内部节点。具有这些性质的一个简单函数为抛物线函数
+        \begin{equation}
+            \phi = x\left(l-x\right), \quad 0 \leq x \leq l
+            \label{eq:8.11}
+        \end{equation}
+        以及在势箱外，有$\phi=0$。由于我们尚未归一化$\phi$，我们使用(\ref{eq:8.9})来计算。势箱内部的哈密顿算符为$-\left(\hbar^2/2m\right)\mathrm{d}^2/\mathrm{d}x^2$。对于 (\ref{eq:8.9}) 的分子和分母，我们可以得出
+        \begin{equation}
+            \int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau = -\frac{\hbar^2}{2m} \int_{0}^{l} \left(lx-x^2\right)\frac{\mathrm{d}^2}{\mathrm{d}x^2} \left(lx-x^2\right) \mathrm{d}x = \frac{\hbar^2}{m} \int_0^l \left(lx-x^2\right) \:\mathrm{d}x = \frac{\hbar^2 l^3}{6m}
+            \label{eq:8.12}
+        \end{equation}
+        \begin{equation}
+            \int \phi^{\ast} \phi \:\mathrm{d}\tau = \int_0^l x^2\left(l-x\right)^2 \:\mathrm{d}x = \frac{l^5}{30}
+            \label{eq:8.13}
+        \end{equation}
+        将它们带入变分理论(\ref{eq:8.9})，我们得到
+        \begin{equation*}
+            E_1 \leq \frac{5h^2}{4\pi^2 ml^2} = 0.1266515\frac{\hbar^2}{ml^2}
+        \end{equation*}
+        根据(\ref{eq:2.20 energy of one-dimensional box})，$E_1$的准确值为$h^2/8ml^2=0.125h^2/8ml^2$，能量的误差约为$1.3\%$。
+
+        由于$\int \left|\phi\right|^2 \: \mathrm{d}\tau = l^5/30$，将(\ref{eq:8.11})归一化为$\left(30/l^5\right)^{1/2} x\left(l-x\right)$。图\ref{fig:7.3}显示，该函数与真正的箱中粒子基态波函数非常相似。
+        \\
+
+        \textbf{练习：}一个单粒子一维系统的势能函数满足
+        \begin{equation*}
+            V = \begin{cases}
+                V_0, & 0 \leq x \leq l \\
+                \infty, & elsewhere
+            \end{cases}
+        \end{equation*}
+        （其中$V_0$是常数）。
+
+        (a)使用试探函数
+        \begin{equation*}
+            \phi = \begin{cases}
+                \sin\left(\pi x/l\right), & 0 \leq x \leq l \\
+                0, & elsewhere
+            \end{cases}
+        \end{equation*}
+        来估算该系统的基态能量；
+
+        (b)解释为什么(a)的结果是该系统的准确基态能量。\textit{提示：见第\ref{chap:4}章的问题之一。}（答案：(a)$V_0 + h^2/8ml^2$。）
+    \end{examplebox}
+
+    上一个例题的试探函数中没有参数。下一个例题有。
+
+    \begin{examplebox}
+        \textbf{例题：}对于一维谐振子，设计一个带有参数的变分函数，并找出参数的最佳值。估计基态能量。
+        \\
+
+        变分函数$\phi$必须平方可积，即当$x \to \pm \infty$时，$\phi \to 0$。函数$\mathrm{e}^{-x}$在$+ \infty$时满足条件，但在$-\infty$时变为无穷大。函数$\mathrm{e}^{-x^2}$在$\pm \infty$时都满足条件。然而，从量纲上看，这种做法并不令人满意，因为$\mathrm{e}$的指数必须是无量纲的。这可以从Taylor级数中看出$\mathrm{e}^z = 1 + z + z^2/2! + z^3/3! + \ldots$[式(\ref{eq:4.44})]。由于该级数中的所有项都必须有相同的量纲，那么$z$的量纲就必须为1，也就是说$\mathrm{e}^z$中的$z$必须是无量纲的。因此，我们将$\mathrm{e}^{-x^2}$替换为$\mathrm{e}^{-cx^2}$，其中$c$的量纲为长度$^{-2}$。我们将$c$作为变分参数。真实的基态$\psi$没有节点。此外，由于$V = \frac{1}{2}kx^2$是偶函数，由于奇函数在原点有节点，那么基态的$\psi$一定具有确定的宇称，也一定是偶函数。试探函数$\mathrm{e}^{-cx^2}$具有我们需要的性质：无节点，且为偶函数。
+
+        对$\hat{H}$使用(\ref{eq:4.30})，再使用附录中的积分，有（问题8.3）
+        \begin{equation*}
+            \begin{aligned}
+                \int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau &= -\frac{\hbar^2}{2m} \int_{-\infty}^{\infty} \mathrm{e}^{-2cx^2} \frac{\mathrm{d}^2\mathrm{e}^{-cx^2}}{\mathrm{d}x^2} \:\mathrm{d}x + 2\pi^2\nu^2m\int_{-\infty}^{\infty} x^2 \mathrm{e}^{-2cx^2} \:\mathrm{d}x \\
+                &= \frac{\hbar^2}{m} \left(\frac{\pi c}{m}\right)^{1/2} + \nu^2m\left(\frac{\pi^5}{8}\right)^{1/2} c^{-3/2}
+            \end{aligned}
+        \end{equation*}
+        \begin{equation*}
+            \int \phi^{\ast} \phi \:\mathrm{d}\tau = \int_{-\infty}^{\infty} \mathrm{e}^{-2cx^2} \:\mathrm{d}x = 2\int_{0}^{\infty} \mathrm{e}^{-2cx^2} \:\mathrm{d}x = \left(\frac{\pi}{2c}\right)^{1/2}
+        \end{equation*}
+        试探积分$W$为
+        \begin{equation}
+            W \equiv \frac{\int \phi^{\ast} \hat{H}\phi \:\mathrm{d}\tau}{\int \phi^{\ast} \phi \:\mathrm{d}\tau} = \frac{\hbar^2c}{2m} + \frac{\pi^2\nu^2m}{2c}
+            \label{eq:8.14}
+        \end{equation}
+        现在，我们通过改变$c$来最小化$W$(\ref{eq:8.14})。$W$最小的必要条件为
+        \begin{equation*}
+            \frac{\mathrm{d} W}{\mathrm{d} c} = 0 = \frac{\hbar^2}{2m} - \frac{\pi^2\nu^2m}{2c^2}
+        \end{equation*}
+        \begin{equation}
+            c = \pm \pi \nu m/\hbar
+            \label{eq:8.15}
+        \end{equation}
+        其中，负根$c = -\pi\nu m/\hbar$应舍去，因其会导致$\phi = \mathrm{e}^{-cx^2}$不满足平方可积的要求。将$c = \pi\nu m/\hbar$代入(\ref{eq:8.14})，我们得到$W = \frac{1}{2}h\nu$。这是一维谐振子基态能量的准确值。当$c = \pi\nu m/\hbar$时，变分函数$\phi$除了未归一化以外，与谐振子基态波函数(\ref{eq:4.53})和(\ref{eq:4.31})完全一致。
+
+        对于归一化的谐振子变分函数$\phi = \left(2c/\pi\right)^{1/4} \mathrm{e}^{-cx^2}$，若$c$的值很大，会导致$\phi$在$x=0$附近从其最大值快速下降。那么概率密度就只在$x=0$附近较大。势函数$V = \frac{1}{2}kx^2$在$x=0$附近也很小，所以较大的$c$值意味着较小的$\left\langle V \right\rangle = \left\langle \phi \middle| V \middle| \phi \right\rangle$。[注意：$\left\langle V \right\rangle$等于(\ref{eq:8.14})右侧的第二项。]然而，由于较大的$c$值使得$\phi$从其最大值快速减小，那么在$x=0$附近$\left|\mathrm{d}\phi/\mathrm{d}x\right|$的值变得很大，根据问题7.7b，大$\left|\mathrm{d}\phi/\mathrm{d}x\right|$意味着大$\left\langle T \right\rangle$[等于(\ref{eq:8.14})右侧的第一项。]$c$的最佳值可以使总和$\left\langle T \right\rangle + \left\langle V \right\rangle = W$最小化。在原子和分子中，真正的波函数是通过将电子限制在低$V$区域（靠近原子核）来最小化$\left\langle V \right\rangle$的趋势与通过允许电子概率密度在大区域内扩散来最小化$\left\langle T \right\rangle$的趋势之间的折衷。
+        \\
+
+        \textbf{练习：}考虑一个单粒子一维系统，其势函数满足
+        \begin{equation*}
+            V = \begin{cases}
+                V = 0, & -\frac{1}{2}l \leq x \leq \frac{1}{2}l \\
+                V = b\hbar^2/ml^2, & elsewhere
+            \end{cases}
+        \end{equation*}
+        其中$b$是正常数（图 \ref{fig:2.5} 中的 $V_0 = b\hbar^2/ml^2$ 和原点发生了偏移）。
+
+        (a)对于变分函数
+        \begin{equation*}
+            \phi = \begin{cases}
+                \left(x-c\right)\left(x+c\right) = x^2 - c^2, & -c \leq x \leq c \\
+                0, & elsewhere
+            \end{cases}
+        \end{equation*}
+        其中变分参数$c > \frac{1}{2}l$。我们发现变分积分$W$由下式给出：
+        \begin{equation*}
+            W = \frac{\hbar^2}{ml^2}\left[\frac{5l^2}{4c^2} + b\left(1-\frac{15l}{16c} + \frac{5l^3}{32c^3} - \frac{3l^5}{256c^5}\right)\right]
+        \end{equation*}
+        在同一幅图上绘制$\phi$和$V$的图象。求使 $W$ 最小的 $c$ 值所满足的方程。
+
+        (b)当$V_0 = 20\hbar^2/ml^2$时，求出$c$的最佳值和$W$的值，将其与基态能量真实值$2.814\hbar^2/ml^2$进行比较（问题4.31c）。（\textit{提示：}可以使用Excel表格求解器或可编程计算器来计算$c/l$的值。）
+
+        （\textit{答案：}(a)$48t^4-24t^2-128t^3/b+3=0$，其中$t \equiv c/l$；(b)$c = 0.6715l$，$W = 3.454\hbar^2/ml^2$。）
+    \end{examplebox}
 
 \section{变分法的推广}
 \label{sec:8.2 Extension of the Variational Method}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{行列式}
 \label{sec:8.3 Determinants}
