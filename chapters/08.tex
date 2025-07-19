@@ -472,25 +472,163 @@
 
 \section{联立线性方程组}
 \label{sec:8.4 Simultaneous Linear Equations}
+    要处理下一节所要讨论的变分函数，我们需要知道联立线性方程组。
 
+    考虑以下关于$n$个未知数的$n$个线性方程系统：
+    \begin{equation}
+        \begin{aligned}
+            a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &= b_1 \\
+            a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &= b_2 \\
+            &\vdots \\
+            a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n &= b_n
+        \end{aligned}
+        \label{eq:8.35}
+    \end{equation}
+    其中的$a$和$b$是已知常数，$x_1,x_2,\ldots,x_n$是未知数。如果至少有一个$b$值为非零，我们得到了一个\textbf{非齐次}（inhomogeneous）方程组。这样的系统可以用Cramer法则（Cramer's rule）求解。（Cramer法则的证明见\textit{Sokolnikoff and Redheffer}, pp. 708。）令$\mathrm{det}\left(a_{ij}\right)$表示(\ref{eq:8.35})中未知数的系数行列式，由Cramer法则，$x_k \: \left(k = 1,2,\ldots,n\right)$的值由下式给出：
+    \begin{equation}
+        x_k = \frac{
+            \begin{vmatrix}
+                a_{11} & a_{12} & \cdots & a_{1,k-1} & b_1 & a_{1,k+1} & \cdots & a_{1n} \\
+                a_{21} & a_{22} & \cdots & a_{2,k-1} & b_2 & a_{2,k+1} & \cdots & a_{2n} \\
+                \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+                a_{n1} & a_{n2} & \cdots & a_{n,k-1} & b_n & a_{n,k+1} & \cdots & a_{nn}
+            \end{vmatrix}
+        }{\mathrm{det}\left(a_{ij}\right)}, \quad k = 1,2,\ldots,n
+        \label{eq:8.36}
+    \end{equation}
+    其中的$\mathrm{det}\left(a_{ij}\right)$由(\ref{eq:8.20})给出，分子中的行列式通过将$\mathrm{det}\left(a_{ij}\right)$的第$k$列替换为$b_1,b_2,\ldots,b_n$来获得。虽然Cramer法则具有理论意义，但不应在数值计算中使用，因为连续消除未知数的效率更高。
 
+    一种广泛使用的连续消元法称为\textbf{高斯消元法}（Gaussian elimination），其过程如下：将第一个方程的两边同除以$x_1$的系数$a_{11}$，使得$x_1$的系数变为1。然后用第二个方程减去第一个方程的$a_{21}$倍，用第三个方程减去第一个方程的$a_{31}$倍，以此类推，直到用第$n$个方程减去第一个方程的$a_{n1}$倍。这就在所有方程中消去了$x_1$（除了第一个方程）。接下来，将第二个方程的两边同除以$x_2$的系数$a_{22}$，使得$x_2$的系数变为1。然后用第三，第四$\cdots$，第$n$个方程减去第二个方程的适当倍数，这就消去了$x_2$（除了第一和第二个方程）。重复这个过程，直到第$n$个方程只包含$x_n$，第$n-1$个方程只包含$x_{n-1}$和$x_n$，等等。通过第$n$个方程解得$x_n$，然后将其代入第$n-1$个方程中解得$x_{n-1}$，将$x_{n-1}$和$x_n$代入第$n-2$个方程中解得$x_{n-2}$，以此类推，直到解出所有未知数。如果在任何阶段，我们想要除以的系数恰好为零，那么零系数的等式就会与后来在所需位置上具有非零系数的等式交换。（高斯消元法也是一种有效的行列式求值方法，见问题 8.25。）
 
+    一种相关的方法是\textbf{高斯-若尔当消元法}（Gauss-Jordan elimination），其过程与高斯消元法类似，但与高斯消元法将$x_2$从方程$3,4,\ldots,n$中消去不同，通过减去第二个方程的适当倍数，我们将$x_2$从方程$1,3,4,\ldots,n$中消去；与将$x_3$从方程$4,5,\ldots,n$中消去不同，我们将$x_3$从方程$1,2,4,5,\ldots,n$中消去，以此类推。最后，方程1只包含$x_1$，方程2只包含$x_2$，方程$n$只包含$x_n$。高斯-若尔当消元法比高斯消元法需要更多的计算量。
 
+    若(\ref{eq:8.35})中所有的$b$都为零，我们得到了一个\textbf{齐次线性方程组}（homogeneous linear equations）：
+    \begin{equation}
+        \begin{aligned}
+            a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &= 0 \\
+            a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &= 0 \\
+            &\vdots \\
+            a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n &= 0
+        \end{aligned}
+        \label{eq:8.37}
+    \end{equation}
+    (\ref{eq:8.37})的一组显而易见的解为$x_1=x_2 = \ldots = x_n=0$，称为\textbf{平凡解}（trivial solution）。若(\ref{eq:8.37})的系数行列式$\mathrm{det}\left(a_{ij}\right)$不为零，我们可以使用Cramer法则(\ref{eq:8.36})来求解未知数，并发现$x_k=0, \: k=1,2,\ldots,n$，因为 (\ref{eq:8.36}) 分子中的行列式有一列所有元素都为零。因此，当$\mathrm{det}\left(a_{ij}\right) \neq 0$时，唯一的解就是平凡解，这没有任何意义。要使关于 $n$ 个未知数的，由$n$个齐次方程组成的线性方程组有一组非平凡解，系数的行列式必须为零。而且，这个条件足以确保非平凡解的存在。因此，我们得到了极为重要的定理：
+    \begin{center}
+        \parbox{0.8\textwidth}{
+            \textit{当且仅当系数行列式为零时，关于 $n$ 个未知数的，由$n$个齐次方程组成的线性方程组有一组非平凡解。}
+        }
+    \end{center}
 
+    假设$\mathrm{det}\left(a_{ij}\right) = 0$，则(\ref{eq:8.37})有一组非平凡解。我们如何找到它呢？由于$\mathrm{det}\left(a_{ij}\right) = 0$，Cramer法则(\ref{eq:8.36})给出$x_k = 0/0, \: k = 1,2,\ldots,n$，这没有任何意义。因此，Cramer法则并不能立即起到帮助作用。注意到，若$x_1=d_1,x_2=d_2,\ldots,x_n=d_n$是(\ref{eq:8.37})的一组解，那么$x_1=cd_1,x_2=cd_2,\ldots,x_n=cd_n$也是(\ref{eq:8.37})的一组解，其中$c$是任意常数。这一点很容易看出，因为
+    \begin{equation*}
+        a_{11}cd_1 + a_{12}cd_2 + \cdots + a_{1n}cd_n = c\left(a_{11}d_1 + a_{12}d_2 + \cdots + a_{1n}d_n\right) = c\cdot 0 = 0
+    \end{equation*}
+    以此类推。因此，线性齐次方程组的解将包含一个任意常数，我们无法为每一个未知数找到一个唯一的值。为了求解(\ref{eq:8.37})，我们给任意一个未知数赋以任意的值，如$x_n=c$，其中$c$是任意常数。确定了$x_n$的值之后，我们将(\ref{eq:8.37})中每个方程的最后一项移到右边，得到
+    \begin{equation}
+        \begin{aligned}
+            a_{11}x_1 + a_{12}x_2 + \cdots + a_{1,n-1}x_{n-1} &= -a_{1n}c \\
+            a_{21}x_1 + a_{22}x_2 + \cdots + a_{2,n-1}x_{n-1} &= -a_{2n}c \\
+            &\vdots \\
+            a_{n-1,1}x_1 + a_{n-1,2}x_2 + \cdots + a_{n-1,n-1}x_{n-1} &= -a_{n-1,n}c \\
+            a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{n,n-1}x_{n-1} &= -a_{nn}c
+        \end{aligned}
+        \label{eq:8.38}
+    \end{equation}
+    我们现在有$n-1$个未知数和$n$个方程，这比我们需要的多了一个。因此，我们删去(\ref{eq:8.38})中的任意一个方程，以最后一个为例。这就得到了关于$n-1$个未知数的，由$n-1$个\textit{非}齐次方程组成的线性方程组。然后就可以用Cramer法则(\ref{eq:8.36})来求解未知数$x_1,x_2,\ldots,x_{n-1}$。因为(\ref{eq:8.38})中，右侧的常数都包含因子$c$，所以根据\ref{sec:8.3 Determinants}节的定理4，$x_1,x_2,\ldots,x_{n-1}$的值也包含因子$c$。因此，(\ref{eq:8.37})的解可以写成
+    \begin{equation}
+        x_1 = ce_1, \quad x_2 = ce_2, \quad \ldots, \quad x_{n-1} = ce_{n-1}, \quad x_n = c
+        \label{eq:8.39}
+    \end{equation}
+    其中$c$是任意常数，$e_1,e_2,\ldots,e_{n-1}$是数字。
 
+    \begin{examplebox}
+        \textbf{例题：}求解：
+        \begin{equation*}
+            \begin{aligned}
+                3x_1 + 4x_2 + x_3 &= 0 \\
+                x_1 + 3x_2 - 2x_3 &= 0 \\
+                x_1 - 2x_2 + 5x_3 &= 0
+            \end{aligned}
+        \end{equation*}
 
+        这是线性齐次方程组，我们先计算系数行列式。得出（见练习）
+        \begin{equation*}
+            \begin{vmatrix}
+                3 & 4 & 1 \\
+                1 & 3 & -2 \\
+                1 & -2 & 5
+            \end{vmatrix} = 0
+        \end{equation*}
+        因此，存在一组非平凡解。我们给$x_3$赋值$c$，删去第三个方程，得到
+        \begin{equation*}
+            \begin{aligned}
+                3x_1 + 4x_2 &= -c \\
+                x_1 + 3x_2 &= 2c
+            \end{aligned}
+        \end{equation*}
+        第一个方程减去第二个方程的三倍，得到$-5x_2 = -7c$，因此$x_2 = \frac{7}{5}c$。带入$x_1+3x_2 = 2c$，得到$x_1 +\frac{21}{5}c = 2c$，因此$x_1 = -\frac{11}{5}c$。因此，通解为$x_1 = -\frac{11}{5}c, \: x_2 = \frac{7}{5}c, \: x_3 = c$。对于那些对分式过敏的人（无意冒犯，译者注），我们定义一个新的任意常数$s \equiv \frac{1}{5}c$，则$x_1 = -11s, \: x_2 = 7s, \: x_3 = 5s$。
+        \\
 
+        \textbf{练习：}
 
+        (a)证明本例中系数行列式的值为零；
 
+        (b)证明：将第二个方程乘以某个常数并与第一个方程相加，就可以得到本例中的第三个方程。
+    \end{examplebox}
 
+    如果 $n-1$ 个未知数中的 $n-1$ 个非均质方程组的行列式 [(\ref{eq:8.38})，最后一个方程省略] 恰好为零，则上述步骤将失效。这样Cramer法则的分母中就有了一个零，也就失去了作用。为了解决这个问题，我们可以先将任意值赋值给另一个未知数，而不是 $x_n$。我们还可以尝试删去 (\ref{eq:8.38}) 的其他方程，而不是最后一个方程。我们要寻找的是一个不会消失的 $n-1$ 阶行列式，它由系统 (\ref{eq:8.37}) 的系数行列式通过删除一行和一列而形成。如果存在这样的行列式，那么按照给出的步骤，正确选择要舍弃的方程，正确选择要赋值的未知数，我们就可以求解方程组，并得到形式为 (\ref{eq:8.39}) 的解。如果不存在这样的行列式，我们就必须给两个未知数任意赋值，并尝试从这里开始求解。因此，(\ref{eq:8.37}) 的解可能包含两个（甚至更多）任意常数。
 
+    求解线性齐次方程组的有效方法是对方程进行高斯-若尔当消元。如果只存在三元解，最终得到的方程组将是 $x_1=0,x_2=0,\ldots,x_n=0$。如果存在非三元解，则至少有一个方程会简化为 $0=0$ 的形式；如果得到 $m$ 个 $0=0$ 形式的方程，我们就为其中的 $m$ 个未知数指定任意常数，并用这 $m$ 个未知数来表示其余的未知数。
 
+    \begin{examplebox}
+        \textbf{例题：}使用高斯-若尔当消元法求解上例中的方程组。
 
+        在使用高斯消元法或高斯-若尔当消元法求解包含$n$个齐次或非齐次方程的方程组时，通过略去变量$x_1,\ldots,x_n$，只写出包含第$n$行和第$\left(n+1\right)$列系数和常数（包含任意零系数）组成的阵列，我们可以省去不必要的过程；然后，我们对每一行的数字进行运算，就好像这一行就是它所代表的等式一样，从而产生下一个阵列。
 
-
+        为了开始除法消元，我们交换第一个方程和第二个方程，从而以 $a_{11} = 1$ 开始。分离系数并进行高斯-若尔当消元，我们得到
+        \begin{equation*}
+            \begin{matrix}
+                1 & 3 & -2 & 0 \\
+                3 & 4 & 1 & 0 \\
+                1 & -2 & 5 & 0
+            \end{matrix} \quad \rightarrow \quad 
+            \begin{matrix}
+                1 & 3 & -2 & 0 \\
+                0 & -5 & 7 & 0 \\
+                0 & -5 & 7 & 0
+            \end{matrix} \quad \rightarrow \quad 
+            \begin{matrix}
+                1 & 3 & -2 & 0 \\
+                0 & -1 & -\frac{7}{5} & 0 \\
+                0 & 0 & 0 & 0
+            \end{matrix} \quad \rightarrow \quad
+            \begin{matrix}
+                1 & 0 & \frac{11}{5} & 0 \\
+                0 & 1 & -\frac{7}{5} & 0 \\
+                0 & 0 & 0 & 0
+            \end{matrix}
+        \end{equation*}
+        第一个阵列是原方程组，但第一个和第二个方程互换。为了将$x_1$从第二和第三个方程中消去，我们将第二个方程乘以$-3$并加到第二个方程上，将第一个方程乘以$-1$并加到第三个方程上，这就得到了第二个阵列。对第二行除以5得到第三个阵列。为了将$x_2$从第一和第三个方程中消去，我们将第二个方程乘以$-3$并加到第一个方程上，将第二个方程乘以$-7/5$并加到第三个方程上，得到第四个阵列。由于第四个阵列中$x_3$的系数为零，我们不能使用第三个方程从第一和第二个方程中消去$x_3$（这原本是高斯-若尔当消元法的下一步）。因此，我们将$0=0$的第三个方程删去，设$x_3=k$，其中$k$是任意常数。最后一个阵列中的第一和第二个方程有$x_1 + \frac{11}{5}x_3 = 0$和$x_2 - \frac{7}{5}x_3 = 0$，或$x_1 = -\frac{11}{5}x_3$和$x_2 = \frac{7}{5}x_3$。因此，通解为$x_1 = -\frac{11}{5}k, \: x_2 = \frac{7}{5}k, \: x_3 = k$。
+    \end{examplebox}
 
 \section{线性变分函数}
 \label{sec:8.5 Linear Variational Functions}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{矩阵、本征值和本征向量}
 \label{sec:8.6 Matrices, Eigenvalues, and Eigenvectors}
