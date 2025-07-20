@@ -578,7 +578,7 @@
 
     如果 $n-1$ 个未知数中的 $n-1$ 个非均质方程组的行列式 [(\ref{eq:8.38})，最后一个方程省略] 恰好为零，则上述步骤将失效。这样Cramer法则的分母中就有了一个零，也就失去了作用。为了解决这个问题，我们可以先将任意值赋值给另一个未知数，而不是 $x_n$。我们还可以尝试删去 (\ref{eq:8.38}) 的其他方程，而不是最后一个方程。我们要寻找的是一个不会消失的 $n-1$ 阶行列式，它由系统 (\ref{eq:8.37}) 的系数行列式通过删除一行和一列而形成。如果存在这样的行列式，那么按照给出的步骤，正确选择要舍弃的方程，正确选择要赋值的未知数，我们就可以求解方程组，并得到形式为 (\ref{eq:8.39}) 的解。如果不存在这样的行列式，我们就必须给两个未知数任意赋值，并尝试从这里开始求解。因此，(\ref{eq:8.37}) 的解可能包含两个（甚至更多）任意常数。
 
-    求解线性齐次方程组的有效方法是对方程进行高斯-若尔当消元。如果只存在三元解，最终得到的方程组将是 $x_1=0,x_2=0,\ldots,x_n=0$。如果存在非三元解，则至少有一个方程会简化为 $0=0$ 的形式；如果得到 $m$ 个 $0=0$ 形式的方程，我们就为其中的 $m$ 个未知数指定任意常数，并用这 $m$ 个未知数来表示其余的未知数。
+    求解线性齐次方程组的有效方法是对方程进行高斯-若尔当消元。如果只存在平凡解，最终得到的方程组将是 $x_1=0,x_2=0,\ldots,x_n=0$。如果存在非平凡解，则至少有一个方程会简化为 $0=0$ 的形式；如果得到 $m$ 个 $0=0$ 形式的方程，我们就为其中的 $m$ 个未知数指定任意常数，并用这 $m$ 个未知数来表示其余的未知数。
 
     \begin{examplebox}
         \textbf{例题：}使用高斯-若尔当消元法求解上例中的方程组。
@@ -613,25 +613,384 @@
 
 \section{线性变分函数}
 \label{sec:8.5 Linear Variational Functions}
+    在分子研究中被广泛使用的一种变分函数为线性变分函数。\textbf{线性变分函数}（linear variational function）是$n$个线性无关函数$f_1,f_2,\ldots,f_n$的线性组合：
+    \begin{equation}
+        \phi = c_1f_1 + c_2f_2 + \cdots + c_nf_n = \sum_{j=1}^{n}c_jf_j
+        \label{eq:8.40}
+    \end{equation}
+    其中$\phi$是试探变分函数，系数$c_j$是待确定使得变分积分最小的参数。函数$f_j$[称为\textbf{基函数}（basis functions）]必须满足问题的定解条件。我们将只讨论实函数$\phi$，则$c_j$和$f_j$分别是实数和实函数。在(\ref{eq:8.40})中，$f_j$是已知函数。
 
+    我们现在应用变分理论(\ref{eq:8.9})。对于线性变分函数，我们有
+    \begin{equation}
+        \int \phi^{\ast} \phi \: \mathrm{d}\tau = \int \sum_{j=1}^{n}c_jf_j \sum_{k=1}^{n}c_kf_k\:\mathrm{d}\tau = \sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_k\int f_jf_k \: \mathrm{d}\tau = \sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kS_{jk}
+        \label{eq:8.41}
+    \end{equation}
+    我们定义\textbf{重叠积分}（overlap integral）$S_{jk}$为
+    \begin{equation}
+        \boxed{
+            S_{jk} \equiv \int f_j^{\ast}f_k \: \mathrm{d}\tau
+        }
+        \label{eq:8.42}
+    \end{equation}
+    注意：$S_{jk}$不一定等于$\delta_{jk}$，因此，没有理由认为函数组$f_j$是相互正交的。它们也不一定是任何一个算符的本征函数。(\ref{eq:8.9})的分母为
+    \begin{equation*}
+        \begin{aligned}
+            \int \phi^{\ast} \hat{H} \phi\:\mathrm{d}\tau &= \int \sum_{j=1}^{n}c_jf_j\hat{H}c_kf_k\:\mathrm{d}\tau \\
+            &= \sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_k\int f_j\hat{H}f_k\:\mathrm{d}\tau = \sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kH_{jk}
+        \end{aligned}
+    \end{equation*}
+    其中，我们定义$H_{jk}$为
+    \begin{equation}
+        \boxed{
+            H_{jk} \equiv \int f_j^{\ast}\hat{H}f_k \: \mathrm{d}\tau
+        }
+        \label{eq:8.43}
+    \end{equation}
 
+    那么变分积分$W$为
+    \begin{equation}
+        W \equiv \frac{\int \phi^{\ast} \hat{H} \phi\:\mathrm{d}\tau}{\int \phi^{\ast} \phi\:\mathrm{d}\tau} = \frac{\sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kH_{jk}}{\sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kS_{jk}}
+        \label{eq:8.44}
+    \end{equation}
+    \begin{equation}
+        W\sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kS_{jk} = \sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kH_{jk}
+        \label{eq:8.45}
+    \end{equation}
+    现在我们将 $W$ 最小化，以尽可能接近 $E_1$($W \geq E_1$)。变分积分$W$是$n$个独立变量$c_1,c_2,\ldots,c_n$的函数：
+    \begin{equation*}
+        W = W\left(c_1,c_2,\ldots,c_n\right)
+    \end{equation*}
+    多个变量的函数 $W$ 的最小值的一个必要条件是：在最小值处，函数 $W$ 对每个变量的偏导数必须为零：
+    \begin{equation}
+        \frac{\partial W}{\partial c_i} = 0, \quad i = 1,2,\ldots,n
+        \label{eq:8.46}
+    \end{equation}
+    我们现在将(\ref{eq:8.45})对每个变量$c_i$求偏导数，获得$n$个方程
+    \begin{equation}
+        \frac{\partial W}{\partial c_i}\sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kS_{jk} + W\frac{\partial}{\partial c_i}\sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kS_{jk} = \frac{\partial}{\partial c_i}\sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kH_{jk}, \quad i = 1,2,\ldots,n
+        \label{eq:8.47}
+    \end{equation}
+    那么
+    \begin{equation*}
+        \frac{\partial}{\partial c_i}\sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kS_{jk} = \sum_{j=1}^{n}\sum_{k=1}^{n}\left[\frac{\partial}{\partial c_i}\left(c_jc_k\right)\right]S_{jk} = \sum_{j=1}^{n}\sum_{k=1}^{n}\left(c_k\frac{\partial c_j}{\partial c_i} + c_j\frac{\partial c_k}{\partial c_i}\right)S_{jk}
+    \end{equation*}
+    $c_j$是独立变量，因此
+    \begin{equation*}
+        \frac{\partial c_j}{\partial c_i} = 0 \quad \text{若} j \neq i, \quad \frac{\partial c_i}{\partial c_i} = 1
+        \quad \text{若} j = i
+    \end{equation*}
+    \begin{equation}
+        \frac{\partial c_j}{\partial c_i} = \delta_{ij}
+        \label{eq:8.48}
+    \end{equation}
+    因此，我们有
+    \begin{equation*}
+        \frac{\partial}{\partial c_i}\sum_{j=1}^{n}\sum_{k=1}^{n} c_jc_kS_{jk} = \sum_{k=1}^{n}\sum_{j=1}^{n}c_k\delta_{ij}S_{jk} + \sum_{j=1}^{n}\sum_{k=1}^{n}c_j\delta_{ik}S_{jk} = \sum_{k=1}^{n}c_kS_{ik} + \sum_{j=1}^{n}c_jS_{ji}
+    \end{equation*}
+    其中，我们利用公式 (\ref{eq:7.32}) 求出了两次求和中的一次。使用(\ref{eq:7.4})，有
+    \begin{equation}
+        S_{ji} = S_{jk}^{\ast} = S_{ij}
+        \label{eq:8.49}
+    \end{equation}
+    其中最后一个等式是因为我们处理的是实函数。因此，
+    \begin{equation}
+        \frac{\partial}{\partial c_i}\sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kS_{jk} = \sum_{k=1}^{n}c_kS_{ik} + \sum_{j=1}^{n}c_jS_{ij} = \sum_{k=1}^{n}c_kS_{ik} + \sum_{k=1}^{n}c_kS_{ik} = 2\sum_{k=1}^{n}c_kS_{ik}
+        \label{eq:8.50}
+    \end{equation}
+    其中使用了$j$只是一个虚拟变量的性质。
 
+    在这些操作中将$S_{jk}$替换为$H_{jk}$，我们得到
+    \begin{equation}
+        \frac{\partial}{\partial c_i}\sum_{j=1}^{n}\sum_{k=1}^{n}c_jc_kH_{jk} = 2\sum_{k=1}^{n}c_kH_{ik}
+        \label{eq:8.51}
+    \end{equation}
+    该结果基于以下事实：
+    \begin{equation}
+        H_{ji} = H_{jk}^{\ast} = H_{ij}
+        \label{eq:8.52}
+    \end{equation}
+    因为$\hat{H}$是厄米算符，$f_i$、$f_j$和$\hat{H}$都是实函数，因此上式成立。
 
+    将(\ref{eq:8.47})、(\ref{eq:8.50})和(\ref{eq:8.51})代入(\ref{eq:8.47})，我们得到
+    \begin{equation*}
+        2W\sum_{k=1}^{n}c_kS_{ik} = 2\sum_{k=1}^{n}c_kH_{ik}, \quad i = 1,2,\ldots,n
+    \end{equation*}
+    \begin{equation}
+        \sum_{k=1}^{n}\left[\left(H_{ik} - S_{ik}W\right)c_k\right] = 0, \quad i = 1,2,\ldots,n
+        \label{eq:8.53}
+    \end{equation}
+    方程(\ref{eq:8.53})是一个关于$c_1,c_2,\ldots,c_n$的线性齐次方程组[线性变分函数(\ref{eq:8.40})中的系数]。例如，若$n=2$则(\ref{eq:8.53})变为
+    \begin{equation}
+        \begin{aligned}
+            \left(H_{11} - S_{11}W\right)c_1 + \left(H_{12} - S_{12}W\right)c_2 &= 0 \\
+            \left(H_{21} - S_{21}W\right)c_1 + \left(H_{22} - S_{22}W\right)c_2 &= 0
+        \end{aligned}
+        \label{eq:8.54}
+    \end{equation}
+    对于有$n$个函数$f_1,\ldots,f_n$的一般情况，(\ref{eq:8.53})为
+    \begin{equation}
+        \boxed{
+            \begin{aligned}
+                \left(H_{11}-S_{11}W\right)c_1 + \left(H_{12}-S_{12}W\right)c_2 + \cdots + \left(H_{1n}-S_{1n}W\right)c_n &= 0 \\
+                \left(H_{21}-S_{21}W\right)c_1 + \left(H_{22}-S_{22}W\right)c_2 + \cdots + \left(H_{2n}-S_{2n}W\right)c_n &= 0 \\
+                \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots & \ldots\\
+                \left(H_{n1}-S_{n1}W\right)c_1 + \left(H_{n2}-S_{n2}W\right)c_2 + \cdots + \left(H_{nn}-S_{nn}W\right)c_n &= 0
+            \end{aligned}
+        }
+        \label{eq:8.55}
+    \end{equation}
 
+    根据第\ref{sec:8.4 Simultaneous Linear Equations}节的定理，若线性齐次方程(\ref{eq:8.55})有平凡解$0=c_1=c_2=\cdots=c_n=0$（这使得变分函数$\phi$为零）以外的解，那么系数行列式必须为零。对于$n=2$的情况，我们有
+    \begin{equation}
+        \begin{vmatrix}
+            H_{11} - S_{11}W & H_{12} - S_{12}W \\
+            H_{21} - S_{21}W & H_{22} - S_{22}W
+        \end{vmatrix} = 0
+        \label{eq:8.56}
+    \end{equation}
+    对于一般情况，有
+    \begin{equation}
+        \boxed{
+            \mathrm{det}\left(H_{ij} - S_{ij}W\right) = 0
+        }
+        \label{eq:8.57}
+    \end{equation}
+    \begin{equation}
+        \begin{vmatrix}
+            H_{11} - S_{11}W & H_{12} - S_{12}W & \cdots & H_{1n} - S_{1n}W \\
+            H_{21} - S_{21}W & H_{22} - S_{22}W & \cdots & H_{2n} - S_{2n}W \\
+            \vdots & \vdots & \ddots & \vdots \\
+            H_{n1} - S_{n1}W & H_{n2} - S_{n2}W & \cdots & H_{nn} - S_{nn}W
+        \end{vmatrix} = 0
+        \label{eq:8.58}
+    \end{equation}
+    将(\ref{eq:8.58})中的行列式展开，我们得到关于未知数$W$的$n$次代数方程。这个方程有$n$个根，可以证明它们都是实数。将这些根按照能量依次递增的顺序排列，我们将其表示为
+    \begin{equation}
+        W_1 \leq W_2 \leq \cdots \leq W_n
+        \label{eq:8.59}
+    \end{equation}
+    如果我们把系统的束缚态按能量递增的顺序排列，就会得出
+    \begin{equation}
+        E_1 \leq E_2 \leq \cdots \leq E_n \leq E_{n+1} \leq \cdots
+        \label{eq:8.60}
+    \end{equation}
+    其中的$E$表示各种状态的真是能量值。根据变分原理，我们知道$E_1 \leq W_1$。此外，可以证明[J. K. L. MacDonald, \textit{Phys. Rev.}, \textbf{43}, 830 (1933); R. H. Young, \textit{Int. J. Quantum Chem.}, \textbf{6}, 596 (1972); 见问题. 8.40]：
+    \begin{equation}
+        E_1 \leq W_1, \quad E_2 \leq W_2, \quad E_3 \leq W_3, \ldots, \quad E_n \leq W_n
+        \label{eq:8.61}
+    \end{equation}
+    因此，线性变分法提供了系统最低 $n$ 个束缚态的能量上限。我们使用$W_1,W_2,\ldots,W_n$来表示最低态能量的近似值。如果需要更多状态的能量近似值，我们可以在试探函数$\phi$中添加更多的$f_k$。可以证明，添加更多的函数 $f_k$ 可以提高（或不改变）先前计算的能量的精确度。若$\phi = \sum_{k}c_kf_k$中的$f_k$构成一个完全集，那么我们就能得到系统的真实波函数。不幸的是，我们通常需要无数个函数才能得到一个完全集。
 
+    量子化学家可能会在线性变分函数中使用几十、几百、几千甚至几百万个项，从而得到分子的精确结果。解(\ref{eq:8.58})[称为\textbf{久期方程}（secular equation）]及相关线性方程(\ref{eq:8.58})的一种有效方法是矩阵法(第\ref{sec:8.6 Matrices, Eigenvalues, and Eigenvectors}节)。
 
+    为了获得基态波函数的近似，我们使用久期方程最小的根$W_1$，将其带入方程组(\ref{eq:8.55})，解得系数$c_1^{\left(1\right)}, c_2^{\left(1\right)}, \ldots, c_n^{\left(1\right)}$，其中我们添加了上标$^{(1)}$来与$W_1$相对应。[如前所述，我们只能确定系数之间的比值。根据$c_1^{\left(1\right)}$的值，我们可以得到$c_2^{\left(1\right)}, c_3^{\left(1\right)}, \ldots, c_n^{\left(1\right)}$的值，再通过归一化条件确定$c_1^{\left(1\right)}$。]找到了$c_k^{\left(1\right)}$之后，我们将$\phi_1 = \sum_{k=1}^{n}c_k^{\left(1\right)}f_k$作为基态波函数的近似。使用(\ref{eq:8.58})中更高的根并带入(\ref{eq:8.55})，可以得到激发态波函数的近似。可以证明，这些近似波函数是正交的（问题8.40）。
 
+    求解 (\ref{eq:8.58}) 和 (\ref{eq:8.55}) 时，可通过使尽可能多的积分等于零来简化。我们可以通过将函数 $f_k$ 选为与$\hat{H}$相乘的某个算符$\hat{A}$的本征函数，使一些对角线外的 $H_{ij}$ 消失。如果 $f_i$ 和 $f_j$ 对应于 $\hat{A}$ 的不同本征值，则 $H_{ij}$ 消失（第 \ref{sec:7.4 Eigenfunctions of Commuting Operators} 节的定理 6 ）。如果函数 $f_k$ 是正交的，则对角线外的 $S_{ij}$ 消失（$S_{ij} = \delta_{ij}$）。如果最初选择的 $f_k$ 不是正交的，我们可以使用施密特（或其他）程序找出这些 $f_k$ 的 $n$ 个正交线性组合，然后使用正交化的函数。
 
+    当取消变分函数为实函数的限制时，方程 (\ref{eq:8.55}) 和 (\ref{eq:8.58}) 也是成立的（问题8.39）。
 
+    \begin{examplebox}
+        \textbf{例题：}给第 \ref{sec:8.1 The Variation Theorem} 节第一个例题中的函数 $x(l-x)$ 添加函数，使其形成粒子在长度为 $l$ 的一维势箱中的线性变分函数，并求出最低四个状态的近似能量和波函数。
 
+        在变分函数$\phi = \sum_{k=1}^{n}c_kf_k$中，我们选择$f_1 = x(l-x)$。由于我们希望知道最低四个状态的近似，$n$应至少为4。有无数种可能的品优函数可以用于$f_2$、$f_3$和$f_4$。函数$x^2\left(l-x\right)^2$满足在$x=0$和$x=l$处消失的定解条件，且对其积分较为简单，所以我们选择$f_2 = x^2\left(l-x\right)^2$。
 
+        如果把原点放在势箱的中心，势能（图 \ref{fig:2.1}）就是偶函数，正如第 \ref{sec:8.2 Extension of the Variational Method} 节所述，波函数在偶函数和奇函数之间交替变化（另见图 \ref{fig:2.3}）。（在本例中，偶函数和奇函数指的是原点位于势箱中心。）函数$f_1 = x\left(l-x\right)$和$f_2 = x^2\left(l-x\right)^2$都是偶函数（见问题8.34）。若我们选择$\phi = c_1x\left(l-x\right) + c_2x^2\left(l-x\right)^2$，我们最终会得到波函数为偶函数的最低两个态的能量上限（$n=1$和$n=3$）并得到这两个状态波函数的近似。由于我们还需要$n=2$和$n=4$状态的近似，我们需要增加两个奇函数。如方程(\ref{eq:4.50})之后所述，奇函数必须在原点为零，所以我们必须要求函数在势箱中点$x=\frac{1}{2}l$处为零，与$x=0$和$x=l$一致。满足这些性质的一个简单函数为$f_3 = x\left(l-x\right)\left(\frac{1}{2}l-x\right)$。为了得到$f_4$，我们将$f_2$乘以$\left(\frac{1}{2}l-x\right)$。因此，由$\phi = \sum_{k=1}^{4}c_kf_k$组成的线性变分函数，其中
+        \begin{equation}
+            f_1 = x\left(l-x\right), \: f_2 = x^2\left(l-x\right)^2, \: f_3 = x\left(l-x\right)\left(\frac{1}{2}l-x\right), \: f_4 = x^2\left(l-x\right)^2\left(\frac{1}{2}l-x\right)
+            \label{eq:8.62}
+        \end{equation}
+        如(\ref{eq:8.40})所假设的那样，$f_1$、$f_2$、$f_3$和$f_4$线性无关。
 
+        因为$f_1$和$f_2$是偶函数，$f_3$和$f_4$是奇函数，所以许多积分都为零。因此，
+        \begin{equation}
+            S_{13} = S_{31} = 0, \quad S_{14} = S_{41} = 0, \quad S_{23} = S_{32} = 0, \quad S_{24} = S_{42} = 0
+            \label{eq:8.63}
+        \end{equation}
+        因为这些重叠积分中的每一个积分的被积函数都是相对于方框中心原点的奇函数。函数$f_1$、$f_2$、$f_3$和$f_4$都是宇称算符$\hat{\Pi}$的本征函数(第\ref{sec:7.5 Parity}节)，其中，偶函数$f_1$和$f_2$对应于本征值$+1$，奇函数$f_3$和$f_4$对应于本征值$-1$。由于$V$是偶函数，所以$\hat{H}$和$\hat{\Pi}$对易，根据(\ref{sec:7.4 Eigenfunctions of Commuting Operators})节的定理6，若$f_i$是奇函数而$f_j$是偶函数时，$H_{ij}$为零，反之亦然。因此，
+        \begin{equation}
+            H_{13} = H_{31} = 0, \quad H_{14} = H_{41} = 0, \quad H_{23} = H_{32} = 0, \quad H_{24} = H_{42} = 0
+            \label{eq:8.64}
+        \end{equation}
 
+        根据(\ref{eq:8.63})和(\ref{eq:8.64})，$n=4$的久期方程(\ref{eq:8.58})变为
+        \begin{equation}
+            \begin{vmatrix}
+                H_{11} - S_{11}W & H_{12} - S_{12}W & 0 & 0 \\
+                H_{21} - S_{21}W & H_{22} - S_{22}W & 0 & 0 \\
+                0 & 0 & H_{33} - S_{33}W & H_{34} - S_{34}W \\
+                0 & 0 & H_{43} - S_{43}W & H_{44} - S_{44}W
+            \end{vmatrix} = 0
+            \label{eq:8.65}
+        \end{equation}
+        久期行列式为块对角行列式，其值等于各个块的乘积[式(\ref{eq:8.34})]：
+        \begin{equation*}
+            \begin{vmatrix}
+                H_{11} - S_{11}W & H_{12} - S_{12}W \\
+                H_{21} - S_{21}W & H_{22} - S_{22}W
+            \end{vmatrix} \times \begin{vmatrix}
+                H_{33} - S_{33}W & H_{34} - S_{34}W \\
+                H_{43} - S_{43}W & H_{44} - S_{44}W
+            \end{vmatrix} = 0
+        \end{equation*}
+        该方程的四个根由以下两个方程给出：
+        \begin{equation}
+            \begin{vmatrix}
+                H_{11} - S_{11}W & H_{12} - S_{12}W \\
+                H_{21} - S_{21}W & H_{22} - S_{22}W
+            \end{vmatrix} = 0
+            \label{eq:8.66}
+        \end{equation}
+        \begin{equation}
+            \begin{vmatrix}
+                H_{33} - S_{33}W & H_{34} - S_{34}W \\
+                H_{43} - S_{43}W & H_{44} - S_{44}W
+            \end{vmatrix} = 0
+            \label{eq:8.67}
+        \end{equation}
+        令(\ref{eq:8.66})的根为$W_1$和$W_2$，它们分别代表$n=1$和$n=3$的近似能量，同样地，令(\ref{eq:8.67})的根为$W_3$和$W_4$。在通过久期方程解出$W$后，我们将其逐一带入方程组(\ref{eq:8.55})以求得变分函数中的系数$c_k$。
+        根据久期方程(\ref{eq:8.65})，带入$W_1$的方程组(\ref{eq:8.55})为
+        \begin{subequations}
+            \label{eq:8.68}
+            \begin{equation}
+                \left. \begin{aligned}
+                    \left(H_{11} - S_{11}W_1\right)c^{\left(1\right)} + \left(H_{12} - S_{12}W_1\right)c^{\left(1\right)} &= 0 \\
+                    \left(H_{21} - S_{21}W_1\right)c^{\left(1\right)} + \left(H_{22} - S_{22}W_1\right)c^{\left(1\right)} &= 0
+                \end{aligned} \right\}
+                \tag{8.68a}
+                \label{eq:8.68a}
+            \end{equation}
+            \begin{equation}
+                \left. \begin{aligned}
+                    \left(H_{33} - S_{33}W_1\right)c^{\left(1\right)} + \left(H_{34} - S_{34}W_1\right)c^{\left(1\right)} &= 0 \\
+                    \left(H_{43} - S_{43}W_1\right)c^{\left(1\right)} + \left(H_{44} - S_{44}W_1\right)c^{\left(1\right)} &= 0
+                \end{aligned} \right\}
+                \tag{8.68b}
+                \label{eq:8.68b}
+            \end{equation}
+        \end{subequations}
+        由于$W_1$是(\ref{eq:8.66})的根，方程组(\ref{eq:8.68a})的系数行列式[即(\ref{eq:8.66})中的行列式]为零。那么(\ref{eq:8.68a})有非平凡解$c_1^{\left(1\right)}$和$c_2^{\left(1\right)}$，然而，$W_1$不是(\ref{eq:8.67})的根，所以方程组(\ref{eq:8.68b})的系数行列式不为零。因此，(\ref{eq:8.68b})只有平凡解$c_3^{\left(1\right)} = c_4^{\left(1\right)} = 0$。则对应于根$W_1$的试探函数$\phi_1$的形式为$\phi_1 = \sum_{k=1}^{4}c_k^{\left(1\right)}f_k = c_1^{\left(1\right)}f_1 + c_2^{\left(1\right)}f_2$。根据同样的理由说明$\phi_3$是$f_1$和$f_2$的线性组合，而$\phi_2$和$\phi_4$分别是$f_3$和$f_4$的线性组合：
+        \begin{equation}
+            \begin{aligned}
+                \phi_1 = c_1^{\left(1\right)}f_1 + c_2^{\left(1\right)}f_2, \quad & \phi_3 = c_1^{\left(3\right)}f_1 + c_2^{\left(3\right)}f_2 \\
+                \phi_2 = c_3^{\left(2\right)}f_3 + c_4^{\left(2\right)}f_4, \quad & \phi_4 = c_3^{\left(4\right)}f_3 + c_4^{\left(4\right)}f_4
+            \end{aligned}
+            \label{eq:8.69}
+        \end{equation}
+        偶波函数$\psi_1$和$\psi_3$使用偶函数$f_1$和$f_2$的线性组合来近似，而奇波函数$\psi_2$和$\psi_4$使用奇函数$f_3$和$f_4$的线性组合来近似。
 
+        \textit{当久期方程为块对角形式时，它可以分解成两个或多个较简单的久期方程，联立方程组(\ref{eq:8.55})也可以分解成两个或多个较简单的方程组。}
 
+        为了从(\ref{eq:8.66})和(\ref{eq:8.67})中解出$W_1$、$W_2$、$W_3$和$W_4$，我们现在必须计算$H_{ij}$和$S_{ij}$。我们有
+        \begin{equation*}
+            H_{11} = \left\langle f_1 \middle| \hat{H} \middle| f_1 \right\rangle = \int_0^l x(l-x)\left(\frac{-\hbar^2}{2m}\right)\frac{\mathrm{d}^2}{\mathrm{d}x^2}\left[x(l-x)\right]\:\mathrm{d}x = \frac{\hbar^2 l^3}{6m}
+        \end{equation*}
+        \begin{equation*}
+            S_{11} = \left\langle f_1 \middle| f_1 \right\rangle = \int_0^l x^2(l-x)^2\:\mathrm{d}x = \frac{l^5}{30}
+        \end{equation*}
+        其中用到了(\ref{eq:8.12})和(\ref{eq:8.13})。使用(\ref{eq:8.62})、(\ref{eq:8.49})和(\ref{eq:8.52})，我们可以计算出剩余的积分（问题8.35）：
+        \begin{equation*}
+            H_{12} = H_{21} = \left\langle f_2 \middle| \hat{H} \middle| f_1 \right\rangle = \hbar^2 l^5/30m, \quad H_{22} = \hbar^2 l^7/105m
+        \end{equation*}
+        \begin{equation*}
+            H_{33} = \hbar^2 l^5/40m, \quad H_{44} = \hbar^2 l^9/1260m, \quad H_{34} = H_{43} = \hbar^2 l^7/280m
+        \end{equation*}
+        \begin{equation*}
+            S_{12} = S_{21} = \left\langle f_1 \middle| f_2 \right\rangle = l^7/140, \quad S_{22} = l^9/630
+        \end{equation*}
+        \begin{equation*}
+            S_{33} = l^7/840, \quad S_{44} = l^{11}/27720, \quad S_{34} = S_{43} = l^9/5040
+        \end{equation*}
+
+        方程(\ref{eq:8.66})变为
+        \begin{equation}
+            \begin{vmatrix}
+                \frac{\hbar^2 l^3}{6m} - \frac{l^5}{30}W & \frac{\hbar^2 l^5}{30m} - \frac{l^7}{140}W \\
+                \frac{\hbar^2 l^5}{30m} - \frac{l^7}{140}W & \frac{\hbar^2 l^7}{105m} - \frac{l^9}{630}W
+            \end{vmatrix} = 0
+            \label{eq:8.70}
+        \end{equation}
+        使用第\ref{sec:8.3 Determinants}节的定理4，为了消去分式，我们将行列式的第一行乘以$420m/l^3$，第二行乘以$1260m/l^5$，右侧乘以相同的因子，得到
+        \begin{equation*}
+            \begin{vmatrix}
+                70\hbar^2 - 14ml^2W & 14\hbar^2 l^2 - 3ml^4W \\
+                42\hbar^2 - 9ml^2W & 12\hbar^2  l^2 - 2ml^4W
+            \end{vmatrix} = 0
+        \end{equation*}
+        \begin{equation*}
+            m^2l^4W^2 - 56ml^2\hbar^2W + 252\hbar^4 = 0
+        \end{equation*}
+        \begin{equation}
+            W = \left(\hbar^2/ml^2\right)\left(28 \pm \sqrt{532}\right) = 0.1250018h^2/ml^2, \quad 1.293495h^2/ml^2
+            \label{eq:8.71}
+        \end{equation}
+        将积分带入(\ref{eq:8.67})，得到根（问题8.36）：
+        \begin{equation}
+            W = \left(\hbar^2/ml^2\right)\left(60 \pm \sqrt{1620}\right) = 0.5002930h^2/ml^2, \quad 2.5393425h^2/ml^2
+            \label{eq:8.72}
+        \end{equation}
+        则$\left(ml^2/h^2\right)W$的近似值为0.1250018、1.293495、0.5002930和2.5393425，与最低四个能级的准确值[方程(\ref{eq:2.20 energy of one-dimensional box})]$\left(ml^2/h^2\right)E = 0.125$、0.5、1.125和$2$相比较。对于$n=1$、2、3和4，百分误差分别为$0.0014\%$、$0.059\%$、$15.0\%$和$27.0\%$。$n=1$和2的近似非常好，而$n=3$和4极差（lousy）。
+
+        我们现在尝试求出对应于这些$W$值的近似波函数。将$W_1 = 0.1250018\hbar^2/ml^2$代入对应于(\ref{eq:8.71})的方程组(\ref{eq:8.68a})，我们得到(同除$h^2$后)
+        \begin{equation}
+            \begin{aligned}
+                0.023095c_1^{\left(1\right)} - 0.020381c_2^{\left(1\right)}l^2 &= 0 \\
+                -0.061144c_1^{\left(1\right)} + 0.053960c_2^{\left(1\right)}l^2 &= 0
+            \end{aligned}
+            \label{eq:8.73}
+        \end{equation}
+        例如，其中的第一个系数由下式求出：
+        \begin{equation*}
+            70\hbar^2 - 14ml^2W_1 = 70h^2/4\pi^2 - 14\left(0.1250018\right) = 0.023095h^2
+        \end{equation*}
+        要求解齐次方程 (\ref{eq:8.73})，我们可以按照第 \ref{sec:8.4 Simultaneous Linear Equations} 节末尾给出的步骤进行。将(\ref{eq:8.73})的第二个方程删去，将$c_2^{\left(1\right)}$项移到等号右边，解出系数的比值，我们得到
+        \begin{equation*}
+            c_1^{\left(1\right)} = k, \quad c_2^{\left(1\right)} = 1.133k/l^{2}
+        \end{equation*}
+        其中的$k$是常数。我们通过归一化条件来求出$k$：
+        \begin{equation*}
+            \begin{aligned}
+                \left\langle \phi_1 \middle| \phi_1 \right\rangle &= 1 = \left\langle kf_1 + 1.133kf_2/l^2 \middle| kf_1 + 1.133kf_2/l^2 \right\rangle \\
+                &= k^2\left(\left\langle f_1 \middle| f_1 \right\rangle + 2.266\left\langle f_1 \middle| f_2 \right\rangle /l^2 + 1.284 \left\langle f_2 \middle| f_2 \right\rangle /l^4\right) \\
+                &= k^2\left(S_{11} + 2.266S_{12}/l^2 + 1.284S_{22}/l^4\right) = 0.05156 k^2l^5
+            \end{aligned}
+        \end{equation*}
+        其中用到了之前求出的重叠积分值。因此$k = 4.404/l^{5/2}$，
+        \begin{equation*}
+            \phi_1 = c_1^{\left(1\right)}f_1 + c_2^{\left(1\right)}f_2 = 4.404f_1/l^{5/2} + 4.990f_2/l^{9/2}
+        \end{equation*}
+        \begin{equation}
+            \phi_1 = l^{-1/2}\left[4.404\left(x/l\right)\left(1-x/l\right) + 4.990\left(x/l\right)^2\left(1-x/l\right)^2\right]
+            \label{eq:8.74}
+        \end{equation}
+        其中用到了(\ref{eq:8.62})。
+
+        在(\ref{eq:8.55})中轮流使用$W_2$、$W_3$和$W_4$，我们可以得到以下归一化线性变分函数（问题8.38），其中$X \equiv x/l$：
+        \begin{equation}
+            \begin{aligned}
+                \phi_2 &= l^{-1/2}\left[16.78X\left(1-X\right)\left(\frac{1}{2} - X\right) + 71.85X^2\left(1-X^2\right)\left(\frac{1}{2} - X\right)\right] \\
+                \phi_3 &= l^{-1/2}\left[28.65X\left(1-X\right) - 132.7X^2\left(1-X\right)^2\right] \\
+                \phi_4 &= l^{-1/2}\left[98.99X\left(1-X\right)\left(\frac{1}{2} - X\right) - 572.3X^2\left(1-X\right)^2\left(\frac{1}{2} - X\right)\right]
+            \end{aligned}
+            \label{eq:8.75}
+        \end{equation}
+    \end{examplebox}
 
 \section{矩阵、本征值和本征向量}
 \label{sec:8.6 Matrices, Eigenvalues, and Eigenvectors}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section*{总结}
 
