@@ -250,7 +250,7 @@
      
     \textbf{行列式}（Determinant）是一个包含 $n^2$ 个量（称为\textbf{元素}（elements））的正方形数组；行列式的值是根据其元素计算出来的，计算方法稍后给出。$n$称为行列式的\textbf{阶}（order）。使用$a_{ij}$来代表一个典型元素，我们有$n$阶行列式
     \begin{equation}
-            \mathrm{det}\left(a_{ij}\right) = \begin{vmatrix}
+            \det\left(a_{ij}\right) = \begin{vmatrix}
                 a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
                 a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\
                 \vdots & \vdots & \vdots & \ddots & \vdots \\
@@ -332,7 +332,7 @@
     \end{equation}
     则三阶行列式的展开式(\ref{eq:8.23})可以写为
     \begin{equation}
-        \mathrm{det}\left(a_{ij}\right) = \begin{vmatrix}
+        \det\left(a_{ij}\right) = \begin{vmatrix}
             a_{11} & a_{12} & a_{13} \\
             a_{21} & a_{22} & a_{23} \\
             a_{31} & a_{32} & a_{33}
@@ -341,11 +341,11 @@
     \end{equation}
     三阶行列式可以用任意一行的元素和相应的代数余子式展开。例如，利用第二行展开三阶行列式，我们可以得出
     \begin{equation}
-        \mathrm{det}\left(a_{ij}\right) = a_{21}C_{21} + a_{22}C_{22} + a_{23}C_{23}
+        \det\left(a_{ij}\right) = a_{21}C_{21} + a_{22}C_{22} + a_{23}C_{23}
         \label{eq:8.27}
     \end{equation}
     \begin{equation}
-        \mathrm{det}\left(a_{ij}\right) = -a_{21}\begin{vmatrix}
+        \det\left(a_{ij}\right) = -a_{21}\begin{vmatrix}
             a_{11} & a_{13} \\
             a_{31} & a_{33}
         \end{vmatrix} + a_{22}\begin{vmatrix}
@@ -359,16 +359,16 @@
     \end{equation}
     二阶行列式的展开式表明 (\ref{eq:8.28}) 等于 (\ref{eq:8.24})。我们也可以使用任意一列的元素和相应的代数余子式来展开行列式，这一点很容易得到验证。因此，对于三阶行列式，我们可以写成
     \begin{equation*}
-        \mathrm{det}\left(a_{ij}\right) = a_{k1}C_{k1} + a_{k2}C_{k2} + a_{k3}C_{k3} = \sum_{l=1}^{3} a_{kl}C_{kl}, \quad k = 1,2,3
+        \det\left(a_{ij}\right) = a_{k1}C_{k1} + a_{k2}C_{k2} + a_{k3}C_{k3} = \sum_{l=1}^{3} a_{kl}C_{kl}, \quad k = 1,2,3
     \end{equation*}
     \begin{equation*}
-        \mathrm{det}\left(a_{ij}\right) = a_{1k}C_{1k} + a_{2k}C_{2k} + a_{3k}C_{3k} = \sum_{l=1}^{3} a_{lk}C_{lk}, \quad k = 1,2,3
+        \det\left(a_{ij}\right) = a_{1k}C_{1k} + a_{2k}C_{2k} + a_{3k}C_{3k} = \sum_{l=1}^{3} a_{lk}C_{lk}, \quad k = 1,2,3
     \end{equation*}
     第一个展开式按某一行展开，第二个则按某一列展开。
 
     我们通过类似的行（或列）展开来定义高阶行列式。对于 $n$ 阶行列式，
     \begin{equation}
-        \mathrm{det}\left(a_{ij}\right) = \sum_{l=1}^{n} a_{kl}C_{kl} = \sum_{l=1}^{n} a_{lk}C_{lk}, \quad k = 1,2,\ldots,n
+        \det\left(a_{ij}\right) = \sum_{l=1}^{n} a_{kl}C_{kl} = \sum_{l=1}^{n} a_{lk}C_{lk}, \quad k = 1,2,\ldots,n
         \label{eq:8.29}
     \end{equation}
 
@@ -484,7 +484,7 @@
         \end{aligned}
         \label{eq:8.35}
     \end{equation}
-    其中的$a$和$b$是已知常数，$x_1,x_2,\ldots,x_n$是未知数。如果至少有一个$b$值为非零，我们得到了一个\textbf{非齐次}（inhomogeneous）方程组。这样的系统可以用Cramer法则（Cramer's rule）求解。（Cramer法则的证明见\textit{Sokolnikoff and Redheffer}, pp. 708。）令$\mathrm{det}\left(a_{ij}\right)$表示(\ref{eq:8.35})中未知数的系数行列式，由Cramer法则，$x_k \: \left(k = 1,2,\ldots,n\right)$的值由下式给出：
+    其中的$a$和$b$是已知常数，$x_1,x_2,\ldots,x_n$是未知数。如果至少有一个$b$值为非零，我们得到了一个\textbf{非齐次}（inhomogeneous）方程组。这样的系统可以用Cramer法则（Cramer's rule）求解。（Cramer法则的证明见\textit{Sokolnikoff and Redheffer}, pp. 708。）令$\det\left(a_{ij}\right)$表示(\ref{eq:8.35})中未知数的系数行列式，由Cramer法则，$x_k \: \left(k = 1,2,\ldots,n\right)$的值由下式给出：
     \begin{equation}
         x_k = \frac{
             \begin{vmatrix}
@@ -493,10 +493,10 @@
                 \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
                 a_{n1} & a_{n2} & \cdots & a_{n,k-1} & b_n & a_{n,k+1} & \cdots & a_{nn}
             \end{vmatrix}
-        }{\mathrm{det}\left(a_{ij}\right)}, \quad k = 1,2,\ldots,n
+        }{\det\left(a_{ij}\right)}, \quad k = 1,2,\ldots,n
         \label{eq:8.36}
     \end{equation}
-    其中的$\mathrm{det}\left(a_{ij}\right)$由(\ref{eq:8.20})给出，分子中的行列式通过将$\mathrm{det}\left(a_{ij}\right)$的第$k$列替换为$b_1,b_2,\ldots,b_n$来获得。虽然Cramer法则具有理论意义，但不应在数值计算中使用，因为连续消除未知数的效率更高。
+    其中的$\det\left(a_{ij}\right)$由(\ref{eq:8.20})给出，分子中的行列式通过将$\det\left(a_{ij}\right)$的第$k$列替换为$b_1,b_2,\ldots,b_n$来获得。虽然Cramer法则具有理论意义，但不应在数值计算中使用，因为连续消除未知数的效率更高。
 
     一种广泛使用的连续消元法称为\textbf{高斯消元法}（Gaussian elimination），其过程如下：将第一个方程的两边同除以$x_1$的系数$a_{11}$，使得$x_1$的系数变为1。然后用第二个方程减去第一个方程的$a_{21}$倍，用第三个方程减去第一个方程的$a_{31}$倍，以此类推，直到用第$n$个方程减去第一个方程的$a_{n1}$倍。这就在所有方程中消去了$x_1$（除了第一个方程）。接下来，将第二个方程的两边同除以$x_2$的系数$a_{22}$，使得$x_2$的系数变为1。然后用第三，第四$\cdots$，第$n$个方程减去第二个方程的适当倍数，这就消去了$x_2$（除了第一和第二个方程）。重复这个过程，直到第$n$个方程只包含$x_n$，第$n-1$个方程只包含$x_{n-1}$和$x_n$，等等。通过第$n$个方程解得$x_n$，然后将其代入第$n-1$个方程中解得$x_{n-1}$，将$x_{n-1}$和$x_n$代入第$n-2$个方程中解得$x_{n-2}$，以此类推，直到解出所有未知数。如果在任何阶段，我们想要除以的系数恰好为零，那么零系数的等式就会与后来在所需位置上具有非零系数的等式交换。（高斯消元法也是一种有效的行列式求值方法，见问题 8.25。）
 
@@ -512,14 +512,14 @@
         \end{aligned}
         \label{eq:8.37}
     \end{equation}
-    (\ref{eq:8.37})的一组显而易见的解为$x_1=x_2 = \ldots = x_n=0$，称为\textbf{平凡解}（trivial solution）。若(\ref{eq:8.37})的系数行列式$\mathrm{det}\left(a_{ij}\right)$不为零，我们可以使用Cramer法则(\ref{eq:8.36})来求解未知数，并发现$x_k=0, \: k=1,2,\ldots,n$，因为 (\ref{eq:8.36}) 分子中的行列式有一列所有元素都为零。因此，当$\mathrm{det}\left(a_{ij}\right) \neq 0$时，唯一的解就是平凡解，这没有任何意义。要使关于 $n$ 个未知数的，由$n$个齐次方程组成的线性方程组有一组非平凡解，系数的行列式必须为零。而且，这个条件足以确保非平凡解的存在。因此，我们得到了极为重要的定理：
+    (\ref{eq:8.37})的一组显而易见的解为$x_1=x_2 = \ldots = x_n=0$，称为\textbf{平凡解}（trivial solution）。若(\ref{eq:8.37})的系数行列式$\det\left(a_{ij}\right)$不为零，我们可以使用Cramer法则(\ref{eq:8.36})来求解未知数，并发现$x_k=0, \: k=1,2,\ldots,n$，因为 (\ref{eq:8.36}) 分子中的行列式有一列所有元素都为零。因此，当$\det\left(a_{ij}\right) \neq 0$时，唯一的解就是平凡解，这没有任何意义。要使关于 $n$ 个未知数的，由$n$个齐次方程组成的线性方程组有一组非平凡解，系数的行列式必须为零。而且，这个条件足以确保非平凡解的存在。因此，我们得到了极为重要的定理：
     \begin{center}
         \parbox{0.8\textwidth}{
             \textit{当且仅当系数行列式为零时，关于 $n$ 个未知数的，由$n$个齐次方程组成的线性方程组有一组非平凡解。}
         }
     \end{center}
 
-    假设$\mathrm{det}\left(a_{ij}\right) = 0$，则(\ref{eq:8.37})有一组非平凡解。我们如何找到它呢？由于$\mathrm{det}\left(a_{ij}\right) = 0$，Cramer法则(\ref{eq:8.36})给出$x_k = 0/0, \: k = 1,2,\ldots,n$，这没有任何意义。因此，Cramer法则并不能立即起到帮助作用。注意到，若$x_1=d_1,x_2=d_2,\ldots,x_n=d_n$是(\ref{eq:8.37})的一组解，那么$x_1=cd_1,x_2=cd_2,\ldots,x_n=cd_n$也是(\ref{eq:8.37})的一组解，其中$c$是任意常数。这一点很容易看出，因为
+    假设$\det\left(a_{ij}\right) = 0$，则(\ref{eq:8.37})有一组非平凡解。我们如何找到它呢？由于$\det\left(a_{ij}\right) = 0$，Cramer法则(\ref{eq:8.36})给出$x_k = 0/0, \: k = 1,2,\ldots,n$，这没有任何意义。因此，Cramer法则并不能立即起到帮助作用。注意到，若$x_1=d_1,x_2=d_2,\ldots,x_n=d_n$是(\ref{eq:8.37})的一组解，那么$x_1=cd_1,x_2=cd_2,\ldots,x_n=cd_n$也是(\ref{eq:8.37})的一组解，其中$c$是任意常数。这一点很容易看出，因为
     \begin{equation*}
         a_{11}cd_1 + a_{12}cd_2 + \cdots + a_{1n}cd_n = c\left(a_{11}d_1 + a_{12}d_2 + \cdots + a_{1n}d_n\right) = c\cdot 0 = 0
     \end{equation*}
@@ -751,7 +751,7 @@
     对于一般情况，有
     \begin{equation}
         \boxed{
-            \mathrm{det}\left(H_{ij} - S_{ij}W\right) = 0
+            \det\left(H_{ij} - S_{ij}W\right) = 0
         }
         \label{eq:8.57}
     \end{equation}
@@ -977,20 +977,385 @@
 
 \section{矩阵、本征值和本征向量}
 \label{sec:8.6 Matrices, Eigenvalues, and Eigenvectors}
+    矩阵代数（第 \ref{sec:7.10 Matrices} 节）是英国数学家阿瑟·凯利（Arthur Cayley）在 1855-1858 年间发展起来的，是处理同时线性方程组和从一组变量到另一组变量的线性变换的简便方法。[在 1860 年获得教授职位之前的 14 年里，凯利一直靠当律师养活自己。在做律师期间，他发表了数百篇数学论文，并经常与他的律师同事约翰·约瑟夫·西尔维斯特（John Joseph Sylvester）讨论数学问题。西尔维斯特为矩形阵列创造了 “矩阵 ”一词（取自拉丁文中 “womb”一词），并于 1855 年获得数学教授职位。] 多年来，大多数物理学家都不知道矩阵代数，当海森堡在 1925 年发现矩阵力学版本的量子力学时，他并没有意识到他所处理的实体是矩阵。当他向玻恩展示自己的研究成果时，受过良好数学训练的玻恩认出海森堡使用的是矩阵。如今，矩阵代数已成为量子化学计算的重要工具，并广泛应用于物理学的大多数分支。
 
+    线性非齐次方程组(\ref{eq:8.55})可以写成矩阵形式：
+    \begin{equation}
+        \begin{pmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{n1} & a_{n2} & \cdots & a_{nn}
+        \end{pmatrix} \begin{pmatrix}
+            x_1 \\
+            x_2 \\
+            \vdots \\
+            x_n
+        \end{pmatrix} = \begin{pmatrix}
+            b_1 \\
+            b_2 \\
+            \vdots \\
+            b_n
+        \end{pmatrix}
+        \label{eq:8.76}
+    \end{equation}
+    \begin{equation}
+        \mathbf{A} \mathbf{x} = \mathbf{b}
+        \label{eq:8.77}
+    \end{equation}
+    其中$\mathbf{A}$是系数矩阵，$\mathbf{x}$和$\mathbf{b}$都是列向量。利用矩阵乘法法则 (\ref{eq:7.107}) 很容易验证 (\ref{eq:8.35}) 和 (\ref{eq:8.76}) 的等价性。
 
+    方阵$\mathbf{A}$的\textbf{行列式}（determinant）是一个所有元素与$\mathbf{A}$的元素完全一致的行列式。若$\det\mathbf{A} \neq 0$，则称矩阵$\mathbf{A}$是\textbf{非奇异的}（nonsingular）。
 
+    $n$阶方阵的\textbf{逆矩阵}（inverse matrix）定义为与$\mathbf{A}$相乘得到单位矩阵的矩阵。将逆矩阵记为$\mathbf{A}^{-1}$，那么
+    \begin{equation}
+        \boxed{
+            \mathbf{A}\mathbf{A}^{-1} = \mathbf{A}^{-1}\mathbf{A} = \mathbf{I}
+        }
+        \label{eq:8.78}
+    \end{equation}
+    其中$\mathbf{I}$是单位阵。可以证明，当且仅当$\det\mathbf{A} \neq 0$时，$\mathbf{A}^{-1}$才存在。（对于求$\mathbf{A}^{-1}$的高效方法，见 \textit{Press et al.}, Section 2.3 ; \textit{Shoup}, Section 3.3；问题8.51。许多电子表格都内置了计算逆矩阵的功能。）
 
+    若(\ref{eq:8.76})中系数矩阵$\mathbf{A}$的$\det \mathbf{A} \neq 0$，则可以通过将$\mathbf{A}^{-1}$乘以(\ref{eq:8.77})的两边来得到$\mathbf{A}^{-1}\mathbf{A}\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}$。由于矩阵乘法满足结合律（第\ref{sec:7.10 Matrices}节），我们得到了$\mathbf{A}^{-1}\left(\mathbf{Ax}\right) = \left(\mathbf{A}^{-1}\mathbf{A}\right)\mathbf{x} = \mathbf{I}\mathbf{x} = \mathbf{x}$。因此，将(\ref{eq:8.77})两边乘以$\mathbf{A}^{-1}$，我们得到$\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}$作为线性非齐次方程组的一组解。
 
+    线性变分法被广泛用于求近似分子波函数，而矩阵代数给出了求解线性变分法方程的计算效率最高的方法。若线性变分函数$\phi = \sum_{k=1}^{n}c_kf_k$中的$f_1,\ldots,f_n$是正交的，那么$S_{ij} = \int f_i^{\ast}f_j\:\mathrm{d}\tau = \delta_{ij}$，则使变分积分最小的系数$c_k$构成的齐次方程组(\ref{eq:8.55})变为
+    \begin{subequations}
+        \label{eq:8.79}
+        \begin{equation}
+            \begin{aligned}
+                H_{11}c_1 + H_{12}c_2 + \cdots + H_{1n}c_n &= Wc_1 \\
+                H_{21}c_1 + H_{22}c_2 + \cdots + H_{2n}c_n &= Wc_2 \\
+                \vdots \\
+                H_{n1}c_1 + H_{n2}c_2 + \cdots + H_{nn}c_n &= Wc_n
+            \end{aligned}
+            \tag{8.79a}
+            \label{eq:8.79a}
+        \end{equation}
+        \begin{equation}
+            \begin{pmatrix}
+                H_{11} & H_{12} & \cdots & H_{1n} \\
+                H_{21} & H_{22}& \cdots & H_{2n} \\
+                \vdots & \vdots & \ddots & \vdots \\
+                H_{n1} & H_{n2} & \cdots & H_{nn}
+            \end{pmatrix} \begin{pmatrix}
+                c_1 \\
+                c_2 \\
+                \vdots \\
+                c_n
+            \end{pmatrix} = W\begin{pmatrix}
+                c_1 \\
+                c_2 \\
+                \vdots \\
+                c_n
+            \end{pmatrix}
+            \tag{8.79b}
+            \label{eq:8.79b}
+        \end{equation}
+        \begin{equation}
+            \mathbf{H}\mathbf{c} = W\mathbf{c}
+            \tag{8.79c}
+            \label{eq:8.79c}
+        \end{equation}
+    \end{subequations}
+    其中$\mathbf{H}$是方阵，其元素为$H_{ij} = \left\langle f_i \middle| \hat{H} \middle| f_j \right\rangle$，$\mathbf{c}$是系数$c_1,\ldots,c_n$组成的列向量。
 
+    若
+    \begin{equation}
+        \boxed{
+            \mathbf{A} \mathbf{c} = \lambda \mathbf{c}
+        }
+        \label{eq:8.80}
+    \end{equation}
+    其中$\mathbf{A}$是方阵，$\mathbf{c}$是至少有一个元素不为零的列向量，$\lambda$是标量，则我们称$\mathbf{c}$为\textbf{本征向量}（eigenvector）或\textbf{特征向量}（characteristic vector），$\lambda$为$\mathbf{A}$的\textbf{本征值}（eigenvalue）或\textbf{特征值}（characteristic value）。
 
+    将(\ref{eq:8.80})与(\ref{eq:8.79c})相比较，求解$S_{ij} = \delta_{ij}$的线性变分问题等价于求解矩阵$\mathbf{H}$的本征值和本征向量。矩阵本征方程$\mathbf{H}\mathbf{c} = W\mathbf{c}$等价于齐次方程组(\ref{eq:8.55})，当且仅当$\det\left(H_{ij} - \delta_{ij}W\right) = 0$时的$c$有非平凡解[$S_{ij} = \delta_{ij}$的方程(\ref{eq:8.57})]。对于一般的$n$阶方阵$\mathbf{A}$，本征值对应满足的方程为
+    \begin{equation}
+        \boxed{
+            \det\left(A_{ij} - \delta_{ij}\lambda\right) = 0
+        }
+        \label{eq:8.81}
+    \end{equation}
+    方程(\ref{eq:8.81})称为矩阵$\mathbf{A}$的\textbf{特征方程}（characteristic equation）。当我们展开(\ref{eq:8.81})中的$n$阶行列式时，就得到了一个$n$次多项式[称为\textbf{特征多项式}（characteristic polynomial）]，其最高次项为$\lambda^n$。特征多项式对$\lambda$有$n$个根（有些可能重合，有些可能为虚数），所以一个$n$阶方阵有$n$个本征值。[方阵$\mathbf{A}$的本征值组有时可以称为$\mathbf{A}$的\textit{谱}（spectrum）。]
 
+    $\mathbf{H}$ 的矩阵方程 (\ref{eq:8.79c}) 与 $\mathbf{A}$ 的矩阵方程 (\ref{eq:8.80}) 相对应。$\mathbf{A}$ 的特征向量元素满足以下方程组，对应于 (\ref{eq:8.79a})：
+    \begin{equation}
+        \begin{aligned}
+            A_{11}c_1 + A_{12}c_2 + \cdots + A_{1n}c_n &= \lambda c_1 \\
+            \vdots \\
+            A_{n1}c_1 + A_{n2}c_2 + \cdots + A_{nn}c_n &= \lambda c_n
+            \label{eq:8.82}
+        \end{aligned}
+    \end{equation}
+    对于每个不同的本征值，我们都有一组不同的方程 (\ref{eq:8.82}) 和一组不同的数 $c_1,c_2,\ldots,c_n$，从而得到一个不同的本征向量。
+    \begin{quote}
+        \small
+        \noindent 如果矩阵的所有本征值都不同，则可以证明求解独立本征向量（见\textit{Strang}, Section 5.2），这里的线性无关是指没有导致 $n$ 个线性本征向量可以写成其他本征向量的线性组合。如果某些本征值相等，那么矩阵的线性无关本征向量可能少于 $n$ 个。量子力学中出现的矩阵通常是厄米矩阵（本节稍后将对这一术语进行定义），即使某些本征值相等，阶数为 $n$ 的厄米矩阵也总是具有 $n$ 个线性无关的本征向量（证明见\textit{Strang}, Section 5.6）。
+    \end{quote}
 
+    若$\mathbf{A}$是对角矩阵(对$i \neq j$有$a_{ij} = 0$)，则(\ref{eq:8.81})中的行列式为对角行列式。对角行列式的值等于其对角元素的乘积[式(\ref{eq:8.33})]，所以对角矩阵的特征方程为
+    \begin{equation*}
+        \left(a_{11} - \lambda\right)\left(a_{22} - \lambda\right)\cdots\left(a_{nn} - \lambda\right) = 0
+    \end{equation*}
+    该方程的根为$\lambda_1 = a_{11}$、$\lambda_2 = a_{22}$、$\ldots$、$\lambda_n = a_{nn}$。\textit{对角矩阵的本征值就是其对角元素。}（对于本征向量，见问题8.46。）
 
+    若$\mathbf{c}$是$\mathbf{A}$的本征向量，很明显，$\mathbf{d} \equiv k\mathbf{c}$也是$\mathbf{A}$的本征向量，其中$k$是任意常数。若我们选择的$k$满足
+    \begin{equation}
+        \boxed{
+            \sum_{i=1}^{n} \left|d_i^2\right| = 1
+        }
+        \label{eq:8.83}
+    \end{equation}
+    则列向量$\mathbf{d}$是\textbf{归一化的}（normalized）。若两个分别有$n$个元素的列向量$\mathbf{b}$和$\mathbf{c}$满足下式，则称它们是\textbf{正交的}（orthogonal）：
+    \begin{equation}
+        \boxed{
+            \sum_{i=1}^{n} b_i^{\ast}c_i = 0
+        }
+        \label{eq:8.84}
+    \end{equation}
 
+    令变分方程(\ref{eq:8.79})中$\mathbf{H}$的$n$个本征值为$W_1,W_2,\ldots,W_n$，对应的本征向量为$\mathbf{c}^{\left(1\right)},\mathbf{c}^{\left(2\right)},\ldots,\mathbf{c}^{\left(n\right)}$。则
+    \begin{equation}
+        \mathbf{H}\mathbf{c}^{\left(i\right)} = W_i\mathbf{c}^{\left(i\right)}, \quad i = 1,2,\ldots,n
+        \label{eq:8.85}
+    \end{equation}
+    其中$\mathbf{c}^{\left(i\right)}$是列向量，其元素为$c_1^{\left(i\right)},c_2^{\left(i\right)},\ldots,c_n^{\left(i\right)}$，基函数$f_1$是正交的。此外，设 $\mathbf{C}$ 为方阵，其列为 $\mathbf{H}$ 的本征向量；设 $\mathbf{W}$ 为对角矩阵，其对角元素为 $\mathbf{H}$ 的本征值：
+    \begin{equation}
+        \mathbf{C} = \begin{pmatrix}
+            c_1^{\left(1\right)} & c_1^{\left(2\right)} & \cdots & c_1^{\left(n\right)} \\
+            c_2^{\left(1\right)} & c_2^{\left(2\right)} & \cdots & c_2^{\left(n\right)} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            c_n^{\left(1\right)} & c_n^{\left(2\right)} & \cdots & c_n^{\left(n\right)}
+        \end{pmatrix}, \quad \mathbf{W} = \begin{pmatrix}
+            W_1 & 0 & \cdots & 0 \\
+            0 & W_2 & \cdots & 0 \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & W_n
+        \end{pmatrix}
+        \label{eq:8.86}
+    \end{equation}
+    则$n$个本征方程组(\ref{eq:8.85})可以写成单个方程：
+    \begin{equation}
+        \mathbf{H}\mathbf{C} = \mathbf{C}\mathbf{W}
+        \label{eq:8.87}
+    \end{equation}
+    为了验证矩阵方程(\ref{eq:8.87})，我们需要证明矩阵$\mathbf{HC}$的每个元素$\left(\mathbf{HC}\right)_{ij}$等于矩阵$\mathbf{CW}$对应的元素$\left(\mathbf{CW}\right)_{ij}$。根据矩阵乘法规则(\ref{eq:7.107})，我们有$\left(\mathbf{HC}\right)_{ij} = \sum_{k}H_{ik}\left(\mathbf{C}\right)_{kj} = \sum_{k}H_{ik}c_k^{\left(j\right)}$。考虑本征方程$\mathbf{H}\mathbf{C} ^{\left(j\right)} = W_j\mathbf{c}^{\left(j\right)}$[式(\ref{eq:8.85})]，$\mathbf{H}\mathbf{c}^{\left(j\right)}$和$W_j\mathbf{c}^{\left(j\right)}$都是列矩阵。利用 (\ref{7.107}) 令每个列矩阵第 $i$ 行中的元素相等，我们有$\sum_{k}H_{ik}c_k^{\left(j\right)} = W_jc_i^{\left(j\right)}$。则
+    \begin{equation*}
+        \left(\mathbf{HC}\right)_{ij} = \sum_{k}H_{ik}c_k^{\left(j\right)} = W_jc_i^{\left(j\right)}, \quad \left(\mathbf{CW}\right)_{ij} = \sum_{k}\left(\mathbf{C}\right)_{ik}\left(\mathbf{W}\right)_{kj} = \sum_{k}c_i^{\left(k\right)}\delta_{kj}W_k = c_i^{\left(j\right)}W_j
+    \end{equation*}
+    则$\left(\mathbf{HC}\right)_{ij} = \left(\mathbf{CW}\right)_{ij}$，从而验证了矩阵方程(\ref{eq:8.87})。
 
+    令矩阵$\mathbf{C}$有逆阵（见下文），我们可以将(\ref{eq:8.87})两边乘以$\mathbf{C}^{-1}$，得到$\mathbf{C}^{-1}\mathbf{HC} = \mathbf{C}^{-1}\left(\mathbf{CW}\right)$。[由于矩阵乘法不可对易，当我们对$\mathbf{HC} = \mathbf{CW}$两边乘以$\mathbf{C}^{-1}$时，必须把因子$\mathbf{C}^{-1}$放在$\mathbf{HC}$和$\mathbf{CW}$的左边（或右边）。] 得到了$\mathbf{C}^{-1}\mathbf{HC} = \mathbf{C}^{-1}\left(\mathbf{CW}\right) = \left(\mathbf{C}^{-1}\mathbf{C}\right)\mathbf{W} = \mathbf{I}\mathbf{W} = \mathbf{W}$：
+    \begin{equation}
+        \mathbf{C}^{-1}\mathbf{HC} = \mathbf{W}
+        \label{eq:8.88}
+    \end{equation}
+    为了化简 (\ref{eq:8.88})，我们必须了解更多关于矩阵的知识。
 
+    若方阵$\mathbf{B}$的所有元素满足$b_{mn} = b_{nm}$，则$\mathbf{B}$为\textbf{对称矩阵}（symmetric matrix）。对称矩阵的元素关于主对角线对称，例如，$b_{12} = b_{21}$。若方阵$\mathbf{D}$的所有元素满足$d_{mn} = d_{nm}^{\ast}$，则$\mathbf{D}$为\textbf{厄米矩阵}（Hermitian matrix）。例如，若
+    \begin{equation}
+        \mathbf{M} = \begin{pmatrix}
+            2 & 5 & 0 \\
+            5 & \mathrm{i} & 2\mathrm{i} \\
+            0 & 2\mathrm{i} & 4
+        \end{pmatrix}, \quad \mathbf{N} = \begin{pmatrix}
+            6 & 1 + 2\mathrm{i} & 8 \\
+            1 - 2\mathrm{i} & -1 & -\mathrm{i} \\
+            8 & \mathrm{i} & 0
+        \end{pmatrix}
+        \label{eq:8.89}
+    \end{equation}
+    则$\mathbf{M}$是对称矩阵，$\mathbf{N}$是厄米矩阵。（注意：厄米矩阵的对角元素一定是实数：$d_{mm} = d_{mm}^{\ast}$。）\textbf{实矩阵}（real matrix）是指所有元素都是实数的矩阵。实厄米矩阵是对称矩阵。
 
+    矩阵的\textbf{转置}（transpose）$\mathbf{A}^{\mathrm{T}}$（也写作$\tilde{\mathbf{A}}$）是通过交换 $\mathbf{A}$ 的行和列，使第 1 列变为第 1 行，第 2 列变为第 2 行，以此类推而形成的矩阵。矩阵$\mathbf{A}^{\mathrm{T}}$的元素$a_{mn}^{\mathrm{T}}$与$\mathbf{A}$的元素关系为$a_{mn}^{\mathrm{T}} = a_{nm}$。对于方阵，转置是通过将元素关于主对角线反映得到的。对称矩阵的转置等于其本身。因此，对于(\ref{eq:8.89})中的矩阵$\mathbf{M}$，我们有$\mathbf{M}^{\mathrm{T}} = \mathbf{M}$。
+
+    矩阵$\mathbf{A}$的\textbf{复共轭}（complex conjugate）$\mathbf{A}^{\ast}$（国内主要写为$\bar{\mathbf{A}}$，译者注，下同）是通过将$\mathbf{A}$的每个元素取复共轭得到的矩阵。矩阵$\mathbf{A}$的\textbf{共轭转置}（conjugate transpose）$\mathbf{A}^{\dagger}$（国内主要写为$\mathbf{A}^H$）是通过将$\mathbf{A}^{\ast}$转置得到的矩阵，因此$\mathbf{A}^{\dagger} = \left(\mathbf{A}^{\ast}\right)^{\mathrm{T}}$以及
+    \begin{equation}
+        a_{mn}^{\dagger} = a_{nm}^{\ast}
+        \label{eq:8.90}
+    \end{equation}
+    [物理学家将$\mathbf{A}^{\dagger}$称为$\mathbf{A}$的\textit{伴随矩阵}（adjoint matrix），是数学家用来表示一种完全不同的矩阵的名称。]例如，
+    \begin{equation*}
+        \mathbf{B} = \begin{pmatrix}
+            2 & 3 + \mathrm{i} \\
+            0 & 4\mathrm{i}
+        \end{pmatrix}, \quad \mathbf{B}^{\mathrm{T}} = \begin{pmatrix}
+            2 & 0 \\
+            3 + \mathrm{i} & 4\mathrm{i}
+        \end{pmatrix}, \quad \mathbf{B}^{\dagger} = \begin{pmatrix}
+            2 & 0 \\
+            3 - \mathrm{i} & -4\mathrm{i}
+        \end{pmatrix}
+    \end{equation*}
+
+    对于厄米矩阵$\mathbf{A}$，根据(\ref{eq:8.90})，我们有$a_{mn}^{\dagger} = a_{nm}$，因此$\left(\mathbf{A}^{\dagger}\right)_{mn} = \left(\mathbf{A}\right)_{mn}$以及$\mathbf{A}^{\dagger} = \mathbf{A}$。因此，厄米矩阵的共轭转置等于它本身。[物理学家通常使用术语\textit{自伴随}（self-adjoint）来描述厄米矩阵。] 
+
+    方阵的逆矩阵等于其转置的矩阵称为\textbf{正交矩阵}（orthogonal matrix）：
+    \begin{equation}
+        \mathbf{A}^{-1} = \mathbf{A}^{\mathrm{T}} \quad \text{若} \mathbf{A} \text{是正交矩阵}
+        \label{eq:8.91}
+    \end{equation}
+
+    方阵的逆矩阵等于其共轭转置的矩阵称为\textbf{酉矩阵}（unitary matrix）：
+    \begin{equation}
+        \mathbf{U}^{-1} = \mathbf{U}^{\dagger} \quad \text{若} \mathbf{U} \text{是酉矩阵}
+        \label{eq:8.92}
+    \end{equation}
+    根据定义(\ref{eq:8.92})，我们得出：若$\mathbf{U}$是酉矩阵，则$\mathbf{U}^{\dagger}\mathbf{U} = \mathbf{I}$。令$\left(\mathbf{U}^{\dagger}\mathbf{U}\right)_{mn} = \left(\mathbf{I}\right)_{mn}$，对于酉矩阵的$n$和$m$列，我们得到（问题8.43）：
+    \begin{equation}
+        \sum_{k} u_{km}^{\ast}u_{kn} = \delta_{mn}
+        \label{eq:8.93}
+    \end{equation}
+    因此，根据 (\ref{eq:8.84}) 和 (\ref{eq:8.83}) 的定义，酉矩阵的各列（视为列向量）是正交和归一化（正交）的。相反地，若对所有的列都有(\ref{eq:8.93})成立，则$\mathbf{U}$是酉矩阵。若$\mathbf{U}$是实酉矩阵，则$\mathbf{U}^{\dagger} = \mathbf{U}^{\mathrm{T}}$，那么$\mathbf{U}$是正交矩阵。
+
+    我们可以证明，厄米矩阵 $\mathbf{H}$ 对应不同本征值的两个本征向量是正交的（见\textit{Strang}, Section 5.5）。对于对应同一本征值的 $\mathbf{H}$ 的本征向量，可以取它们的线性组合，这些线性组合将成为 $\mathbf{H}$ 的正交本征向量。此外，本征向量的元素可以乘以一个常数，使本征向量归一化。因此，\textit{可以选择厄米矩阵的本征向量为正交向量，}那么(\ref{eq:8.86})中的本征向量矩阵$\mathbf{C}$是酉矩阵，则$\mathbf{C}^{-1} = \mathbf{C}^{\dagger}$。因此，(\ref{eq:8.88})可以写成
+    \begin{equation}
+        \mathbf{C}^{\dagger}\mathbf{H}\mathbf{C} = \mathbf{W} \quad \text{若} \mathbf{H} \text{是厄米矩阵}
+        \label{eq:8.94}
+    \end{equation}
+    对于$\mathbf{H}$是实厄米矩阵（$\mathbf{H}$是实对称矩阵）的常见情况，(\ref{eq:8.79a})中的$c$都是实数（由于$W$和$H_{ij}$都是实数），$\mathbf{C}$是实酉矩阵，即$\mathbf{C}^{-1} = \mathbf{C}^{\mathrm{T}}$，则$\mathbf{C}$是正交的。那么(\ref{eq:8.94})可以写成
+    \begin{equation}
+        \mathbf{C}^{\mathrm{T}}\mathbf{H}\mathbf{C} = \mathbf{W} \quad \text{若} \mathbf{H} \text{是实对称矩阵}
+        \label{eq:8.95}
+    \end{equation}
+    可以证明，厄米矩阵的本征值是实数（\textit{Strang}, Section 5.5）。
+
+    \begin{examplebox}
+        \textbf{例题：}通过求解代数方程，求以下厄米矩阵的本征值和归一化本征向量。并证明$\mathbf{C}^{\dagger}\mathbf{A}\mathbf{C}$是对角矩阵，其中$\mathbf{C}$是本征向量矩阵。
+        \begin{equation*}
+            \mathbf{A} = \begin{pmatrix}
+                3 & 2\mathrm{i} \\
+                -2\mathrm{i} & 0
+            \end{pmatrix}
+        \end{equation*}
+        \\
+
+        求本征值$\lambda$的特征方程(\ref{eq:8.81})为$\det(a_{ij} - \delta_{ij}\lambda) = 0$，带入，有
+        \begin{equation*}
+            \begin{vmatrix}
+                3 - \lambda & 2\mathrm{i} \\
+                -2\mathrm{i} & 0 - \lambda
+            \end{vmatrix} = 0
+        \end{equation*}
+        \begin{equation*}
+            \lambda^2 - 3\lambda - 4 = 0
+        \end{equation*}
+        \begin{equation*}
+            \lambda_1 = 4, \quad \lambda_2 = -1
+        \end{equation*}
+        检查本征值计算的一个有用定理如下（\textit{Strang}, Exercise 5.1.9）：$n$阶方阵$\mathbf{A}$的本征值$\lambda_i$之和等于对角元素之和，即$\sum_{i=1}^{n}\lambda_i = \sum_{i=1}^{n}a_{ii}$。在本例中，$\sum_i a_{ii} = 3 + 0$等于本征值的和$4 - 1 = 3$。
+
+        对于$\lambda_1=4$，联立方程组(\ref{eq:8.82})，得到
+        \begin{equation*}
+            \begin{aligned}
+                \left(3-\lambda_1\right)c_1^{\left(1\right)} + 2\mathrm{i}c_2^{\left(1\right)} &= 0 \\
+                -2\mathrm{i}c_1^{\left(1\right)} - \lambda_1 c_2^{\left(1\right)} &= 0
+            \end{aligned}
+        \end{equation*}
+        或
+        \begin{equation*}
+            \begin{aligned}
+                -c_1^{\left(1\right)} + 2\mathrm{i}c_2^{\left(1\right)} &= 0 \\
+                -2\mathrm{i}c_1^{\left(1\right)} - 4c_2^{\left(1\right)} &= 0
+            \end{aligned}
+        \end{equation*}
+        将这些方程的任意一个删去，我们得到
+        \begin{equation*}
+            c_1^{\left(1\right)} = 2\mathrm{i}c_2^{\left(1\right)}
+        \end{equation*}
+        根据归一化条件，有
+        \begin{equation*}
+            1 = |c_1^{\left(1\right)}|^2 + |c_2^{\left(1\right)}|^2 = 4|c_2^{\left(1\right)}|^2 + |c_2^{\left(1\right)}|^2
+        \end{equation*}
+        \begin{equation*}
+            \left|c_2^{\left(1\right)}\right|^2 = 1/\sqrt{5}, \quad c_2^{\left(1\right)} = 1/\sqrt{5}
+        \end{equation*}
+        \begin{equation*}
+            c_1^{\left(1\right)} = 2\mathrm{i}c_2^{\left(1\right)} = 2\mathrm{i}/\sqrt{5}
+        \end{equation*}
+        其中我们选择$c_2^{\left(1\right)}$的相位为零。
+
+        同样地，对于$\lambda_2 = -1$，我们得到（问题8.49）：
+        \begin{equation*}
+            c_1^{\left(2\right)} = -\mathrm{i}/\sqrt{5}, \quad c_2^{\left(2\right)} = 2/\sqrt{5}
+        \end{equation*}
+        归一化本征向量为
+        \begin{equation*}
+            \mathbf{c}^{\left(1\right)} = \begin{pmatrix}
+                2\mathrm{i}/\sqrt{5} \\
+                1/\sqrt{5}
+            \end{pmatrix}, \quad \mathbf{c}^{\left(2\right)} = \begin{pmatrix}
+                -\mathrm{i}/\sqrt{5} \\
+                2/\sqrt{5}
+            \end{pmatrix}
+        \end{equation*}
+
+        由于厄米矩阵的两个本征值$\lambda_1$和$\lambda_2$不同，因此它们的本征向量$\mathbf{c}^{\left(1\right)}$和$\mathbf{c}^{\left(2\right)}$是正交的（需要你证明）。同样，$\mathbf{c}^{\left(1\right)}$和$\mathbf{c}^{\left(2\right)}$是归一化的。因此，$\mathbf{C}$是酉矩阵，$\mathbf{C}^{-1} = \mathbf{C}^{\dagger}$。构造$\mathbf{C}$及其共轭转置，我们有
+        \begin{equation*}
+            \begin{aligned}
+                \mathbf{C}^{-1} \mathbf{AC} = \mathbf{C}^{\dagger} \mathbf{A} \mathbf{C} &= \begin{pmatrix}
+                    2\mathrm{i}/\sqrt{5} & 1/\sqrt{5} \\
+                    1/\sqrt{5} & 2/\sqrt{5}
+                \end{pmatrix} \begin{pmatrix}
+                    3 & 2\mathrm{i} \\
+                    -2\mathrm{i} & 0
+                \end{pmatrix} \begin{pmatrix}
+                    2\mathrm{i}/\sqrt{5} & -\mathrm{i}/\sqrt{5} \\
+                    1/\sqrt{5} & 2/\sqrt{5}
+                \end{pmatrix} \\
+                &= \begin{pmatrix}
+                    -2\mathrm{i}/\sqrt{5} & 1/\sqrt{5} \\
+                    \mathrm{i}/\sqrt{5} & 2/\sqrt{5}
+                \end{pmatrix} \begin{pmatrix}
+                    8\mathrm{i}/\sqrt{5} & \mathrm{i}/\sqrt{5} \\
+                    4/\sqrt{5} & -2/\sqrt{5}
+                \end{pmatrix}  = \begin{pmatrix}
+                    4 & 0 \\
+                    0 & -1
+                \end{pmatrix}
+            \end{aligned}
+        \end{equation*}
+        这是本征向量的对角矩阵。
+    \end{examplebox}
+
+    我们已经证明：若$\mathbf{H}$是实对称矩阵，本征值为$W_i$，正交本征向量为$\mathbf{c}^{\left(i\right)}$（即$\mathbf{Hc}^{\left(i\right)} = W_i\mathbf{c}^{\left(i\right)}$, $i = 1,2,\ldots,n$），则$\mathbf{C}^{\mathrm{T}}\mathbf{H}\mathbf{C} = \mathbf{W}$[式(\ref{eq:8.95})]，其中$\mathbf{C}$是实正交矩阵，其列为$\mathbf{c}^{\left(i\right)}$，$\mathbf{W}$是本征值$W_i$的对角矩阵。该定理的逆定理很容易证明：若$\mathbf{H}$是实对称矩阵，$\mathbf{B}$是实正交阵，且$\mathbf{B}^{\mathrm{T}}\mathbf{H}\mathbf{B} = \mathbf{\Lambda}$，则$\mathbf{B}$的列是$\mathbf{H}$的本征向量，$\mathbf{\Lambda}$的对角元素是$\mathbf{H}$的本征值。
+
+    为了求$n$阶厄米矩阵的本征值和本征向量，我们可以使用以下任一步骤：(1)求特征方程$\det\left(H_{ij}\right.$ \\ $\left. - \delta_{ij}W\right) = 0$[式(\ref{eq:8.81})]，得到本征值$W_1,\ldots,W_n$。然后将每个$W_k$带入代数方程组(\ref{eq:8.79a})，解出第$k$个本征向量的元素$c_1^{\left(k\right)},c_2^{\left(k\right)},\ldots,c_n^{\left(k\right)}$。(2)寻找酉矩阵$\mathbf{C}$，使得$\mathbf{C}^{\dagger}\mathbf{H}\mathbf{C}$成为对角矩阵。$\mathbf{C}^{\dagger}\mathbf{H}\mathbf{C}$的对角元素是$\mathbf{H}$的本征值，$\mathbf{C}$的列是$\mathbf{H}$的正交本征向量。对于量子化学中出现的大型矩阵，步骤（2）[称为\textbf{矩阵对角化}（matrix diagonalization）]的计算速度比（1）快得多。
+    \begin{quote}
+        \small
+        \noindent 展开特征行列式并求解特征方程不是求大矩阵本征值的好方法，原因之一是，对于大矩阵，特征多项式中一个系数的极小变化可能会导致本征值的巨大变化（见问题 8.54）。因此，我们可能需要将特征多项式中的系数计算到小数点后几百或几千位，才能得到精确到小数点后几位的本征值。虽然对于某些矩阵来说，矩阵元素值的微小变化可能会导致本征值的巨大变化，但我们可以证明：对于厄米矩阵来说，矩阵元素的微小变化始终只会导致本征值的微小变化。因此，上一段的方法（2）是获得准确本征值的正确方法。
+    \end{quote}
+
+    实对称矩阵 $\mathbf{H}$ 对角化的系统方法如下。构造一个正交阵$\mathbf{O}_1$使得矩阵$\mathbf{H}_1 \equiv \mathbf{O}_1^{\mathrm{T}}\mathbf{H}\mathbf{O}_1$在$\mathbf{H}$的$H_{12}$和$H_{21}$的对角元素为零。（由于$\mathbf{H}$是对称的，我们有$H_{12} = H_{21}$。同样地，变换后的矩阵$\mathbf{H}_1, \mathbf{H}_2 ,\ldots$也是对称的。）然后构造一个正交阵$\mathbf{O}_2$使得矩阵$\mathbf{H}_2 \equiv \mathbf{O}_2^{\mathrm{T}}\mathbf{H}_1\mathbf{O}_2$在$\mathbf{H}_1 = \mathbf{O}_2^{\mathrm{T}}\mathbf{O}_1^{\mathrm{T}}\mathbf{H}\mathbf{O}_1\mathbf{O}_2$的$\mathbf{H}_1$对角元素$\left(\mathbf{H}_1\right)_{13}$和$\left(\mathbf{H}_1\right)_{31}$为零，以此类推。不幸的是，当某对角元素在某一步中归零后，在前一步中归零的一些对角元素很可能会变成非零，因此我们必须返回并反复循环对角元素。一般来说，要使所有非对角元素都等于零，需要无限多的步骤。在实际操作中，如果在该步骤中归零的非对角元素的绝对值小于某个极小数，则跳过该步骤；如果所有非对角元素的绝对值都小于某个极小数，则停止该步骤。本征值就是变换后的矩阵$\ldots \mathbf{O}_3^{\mathrm{T}}\mathbf{O}_2^{\mathrm{T}}\mathbf{O}_1^{\mathrm{T}}\mathbf{H}\mathbf{O}_1\mathbf{O}_2\mathbf{O}_3\ldots$的对角元素，本征向量矩阵是乘积$\mathbf{O}_1\mathbf{O}_2\mathbf{O}_3\ldots$。该方法[称为\textit{循环雅可比法}（cyclic Jacobi method）]，在串行计算机上运行时，它处理大型矩阵的效率不高，但在并行计算机上运行时效率很高。
+
+    \begin{quote}
+        \small
+        \noindent 与雅可比方法相比，更有效的实对称矩阵对角化方法首先是进行一系列正交变换，将原始矩阵 $\mathbf{H}$ 变换为对称三对角矩阵 $\mathbf{T}$。三对角矩阵是指除了主对角线上的元素（元素 $t_{ii}$）和主对角线上下对角线上的元素（分别为元素 $t_{i-1,i}$ 和 $t_{i+1,i}$）外，其他元素均为零的矩阵。$\mathbf{T}$ 与 $\mathbf{H}$ 之间的关系为 $\mathbf{T} = \mathbf{O}^{\mathrm{T}}\mathbf{TO}$，其中 $\mathbf{O}$ 是实正交矩阵，是从 $\mathbf{H}$ 到 $\mathbf{T}$ 的各个步骤中使用的正交矩阵的乘积。求对称三对角矩阵本征值的有效方法是 \textbf{QR} 法。在这里，$\mathbf{T}$ 表示为正交矩阵 $\mathbf{Q}$ 和上三角矩阵 $\mathbf{R}$（主对角线以下元素均为零）的乘积。通过一系列迭代步骤，矩阵收敛到一个对角矩阵，其对角元素是 $\mathbf{T}$ 的本征值，等于 $\mathbf{H}$ 的本征值（问题 8.55）。经过一定的改进，\textbf{QR} 方法是一种非常有效的寻找本征值和本征向量的方法（详见 \textit{Strang}, Section 5.3 and 7.3）。
+    \end{quote}
+
+    有关矩阵对角化程序和计算机程序的详细信息，见\textit{Press et al.}, Chapter 11 ; \textit{Acton}, Chapters 8 and 13 ; \textit{Shoup}, Chapter 4 .
+    
+    \textit{Press et al.}是科学和工程计算程序和计算机程序的主要汇编；该书旧版本的文本可在线免费查阅，网址是 \url{www.nr.com}。有关本书旧版本的评论，见 \url{amath.colorado.edu/computing/Fortran/numrec.html}。
+
+    数学和科学计算程序可在 \url{www.netlib.org} 和 \url{gams.nist.gov} 网站上找到。可在 \url{archives.math.utk.edu} 下载免费的个人电脑数学软件以及 Mathcad 和 Maple 等商业软件的演示软件。
+
+    使用矩阵代数求解非正交基函数时的线性变分方程的步骤见问题 8.57。
+
+    Excel 电子表格可用于查找本征值和本征向量；见问题8.53。
+
+    计算机代数系统，如 Maple、Mathematica 和 Mathcad 以及一些电子计算器都有内置命令，可以轻松找到本征值和本征向量。
+
+    本节讨论的寻找矩阵本征值和本征向量的方法适用于阶次不超过 $10 ^3$ 的矩阵。在某些量子化学计算中会出现阶数不超过 $10^ 9$ 的矩阵，使用特殊方法可以求出这些矩阵的最低几个本征值和相应的本征向量（见第 \ref{sec:16.2 Configuration Interaction} 节）。
+
+    如(\ref{eq:8.80})之后所述，对于以正交函数$f_i$为基的线性变分函数$\sum_{i=1}^{n}c_if_i$，由矩阵元素$\left\langle f_i \middle| \hat{H} \middle| \right\rangle$组成的矩阵$\mathbf{H}$的本征值是久期方程的根，对应于本征值$W_m$的本征向量给出了对应于$W_m$的线性变分函数的系数。问题 8.60 至 8.65 将线性变分法应用于双势阱和谐振子等问题，使用箱中粒子波函数作为基函数，并使用 Mathcad 等计算机代数程序求出 $\mathbf{H}$ 矩阵的本征值和本征向量。
+
+    我们已经在线性变分法中讨论了矩阵对角化的问题。然而，\textit{找到任意厄米算符的本征值$a_k$和本征函数$g_k$ $\left(\hat{A}g_k = a_kg_k\right)$可以表述为一个矩阵对角化问题。}如果我们选择一个完全正交基函数组$\left\{f_i\right\}$，将本征函数展开为$g_k = \sum_{i}c_i^{\left(k\right)}f_i$，则（问题8.59）元素由$a_{ij} = \left\langle f_i \middle| \hat{A} \middle| f_j \right\rangle$组成的矩阵$\mathbf{A}$的本征值$a_k$也是算符$\hat{A}$的本征值，$\mathbf{A}$的本征向量$\mathbf{c}^{\left(k\right)}$的元素$c_i^{\left(k\right)}$是本征函数$g_k$在基函数$f_i$上的展开系数。
+
+    本节材料进一步强调了线性算符与矩阵之间的对应关系，以及函数与列向量之间的对应关系 ( 第 \ref{sec:7.10 Matrices} 节 )。
+
+    \begin{quote}
+        \small
+        \noindent  谷歌收录的网页的页面排名（PageRanks）是由谷歌通过构建某个矩阵（称为谷歌矩阵）并找到其对应本征值 1 的本征向量计算得出的。谷歌矩阵的阶数等于被索引网页的数量，在 2012 年介于 $10^{10.5}$ 和 $10^{11}$ 之间。本征向量的分量为 PageRanks。见 \url{www.ams.org/samplings/ featurecolumn/fcarc-pagerank}。
+    \end{quote}
 
 \section*{总结}
 
