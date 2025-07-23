@@ -3,9 +3,72 @@
 \label{chap:9}
 \section{微扰理论}
 \label{sec:9.1 Perturbation Theory}
+    本章讨论第二种主要的量子力学近似方法——微扰理论。
+
+    假设我们有一个系统，其定态哈密顿量为$\hat{H}$，我们无法通过求解薛定谔方程
+    \begin{equation}
+        \hat{H} \psi_n = E_n \psi_n
+        \label{eq:9.1}
+    \end{equation}
+    来获得其束缚态本征函数和本征值。再假设：哈密顿量$\hat{H}$与某一满足以下我们可解的薛定谔方程系统的哈密顿量$\hat{H}^0$之间只存在微小的差异：
+    \begin{equation}
+        \hat{H}^0 \psi_n^{\left(0\right)} = E_n^{\left(0\right)} \psi_n^{\left(0\right)}
+        \label{eq:9.2}
+    \end{equation}
+    一维非谐振子的哈密顿量就是一个例子：
+    \begin{equation}
+        \hat{H} = -\frac{\hbar^2}{2m} \frac{\mathrm{d}^2}{\mathrm{d}x^2} + \frac{1}{2}kx^2 + cx^3 + dx^4
+        \label{eq:9.3}
+    \end{equation}
+    其哈密顿量(\ref{eq:9.3})与以下谐振子的哈密顿量十分接近：
+    \begin{equation}
+        \hat{H}^0 = -\frac{\hbar^2}{2m} \frac{\mathrm{d}^2}{\mathrm{d}x^2} + \frac{1}{2}kx^2
+        \label{eq:9.4}
+    \end{equation}
+    若(\ref{eq:9.3})中的常数$c$和$d$很小，我们可以预测非谐振子的本征函数和本征值与谐振子的非常接近。
+
+    我们称具有哈密顿量$\hat{H}^0$的系统为\textbf{未扰动系统}（unperturbed system），具有哈密顿量$\hat{H}$的系统为\textbf{扰动系统}（perturbed system）。二哈密顿量之间的不同$\hat{H}'$称为\textbf{微扰}（perturbation），记为：
+    \begin{equation}
+        \hat{H}' \equiv \hat{H} - \hat{H}^0
+        \label{eq:9.5}
+    \end{equation}
+    \begin{equation}
+        \boxed{
+        \hat{H} = \hat{H}^0 + \hat{H}'
+        }
+        \label{eq:9.6}
+    \end{equation}
+    （符号$\prime$不表示微分。）对于具有哈密顿量(\ref{eq:9.3})的非谐振子，对相关的谐振子的微扰为$\hat{H}' = cx^3 + dx^4$。
+
+    在$\hat{H}^0 \psi_n^{\left(0\right)} = E_n^{\left(0\right)} \psi_n^{\left(0\right)}$[式(\ref{eq:9.2})]中，$E_n^{\left(0\right)}$和$\psi_n^{\left(0\right)}$分别称为状态$n$的\textbf{未扰动能量}（unperturbed energy）和\textbf{未扰动波函数}（unperturbed wave function）。若$\hat{H}^0$为谐振子的哈密顿量(\ref{eq:9.4})，则$E_n^{\left(0\right)} = \left(n + \frac{1}{2}\right)h\nu$[式(\ref{eq:4.45})]，其中的$n$是非负整数。（我们使用$n$代替$v$为了与微扰理论符号保持一致。）上标$^{(0)}$不表示基态。微扰理论可以应用于任何状态。下标$n$表示我们正在处理的状态。而上标$^{(0)}$表示未扰动系统的状态。
+
+    我们的目标是将扰动系统位置的本征函数和本征值与未扰动系统已知的本征函数和本征值联系起来。为此，我们假定扰动是逐渐增加的，从未扰动系统到扰动系统的变化是连续的。在数学上，这相当于在哈密顿量中插入了一个参数$\lambda$，使得
+    \begin{equation}
+        \hat{H} = \hat{H}^0 + \lambda \hat{H}'
+        \label{eq:9.7}
+    \end{equation}
+    当$\lambda$为零时，系统为未扰动系统。随着$\lambda$的增加，扰动逐渐变大，在$\lambda=1$时，扰动完全“被打开”。我们插入$\lambda$是为了将扰动本征函数和未扰动本征函数关联起来，最终设定$\lambda=1$并删去它。
+
+    第9.1-9.7节处理定态哈密顿量和定态系统，第\ref{sec:9.8 Time-dependent Perturbation Theory}节处理含时微扰理论。
 
 \section{非简并微扰理论}
 \label{sec:9.2 Nondegenerate Perturbation Theory}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{微扰理论求解基态氦原子}
 \label{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}
