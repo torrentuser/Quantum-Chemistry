@@ -53,22 +53,299 @@
 
 \section{非简并微扰理论}
 \label{sec:9.2 Nondegenerate Perturbation Theory}
+    微扰理论处理简并和非简并能级的方式不同。本节将研究微扰对非简并能级的影响。若某未扰动系统的能级是简并的，而另一些是非简并的，那么本节的处理方法将只适用于非简并能级。
 
+\subsection*{非简并微扰理论}
+    令$\psi_n^{\left(0\right)}$为能量为$E_n^{\left(0\right)}$的某个非简并未扰动系统的波函数。再令$\psi_n$为扰动系统的波函数，在施加扰动后，$\psi_n^{\left(0\right)}$变为$\psi_n$。由(\ref{eq:9.1})和(\ref{eq:9.7})，扰动态的薛定谔方程为
+    \begin{equation}
+        \hat{H}\psi_n = \left(\hat{H}^0 + \lambda \hat{H}'\right)\psi_n = E_n \psi_n
+        \label{eq:9.8}
+    \end{equation}
+    由于(\ref{eq:9.8})中的哈密顿量与参数$\lambda$有关，本征函数$\psi_n$和本征值$E_n$也将与$\lambda$有关：
+    \begin{equation*}
+        \psi_n = \psi_n\left(\lambda, q\right), \quad E_n = E_n\left(\lambda\right)
+    \end{equation*}
+    其中$q$表示粒子的坐标。我们现在使用$\lambda$的Taylor级数（问题4.1）展开$\psi_n$和$E_n$：
+    \begin{equation}
+        \psi_n = \left. \psi_n \right|_{\lambda=0} + \left. \frac{\partial \psi_n}{\partial \lambda} \right|_{\lambda=0}\lambda + \left. \frac{\partial^2 \psi_n}{\partial \lambda^2} \right|_{\lambda=0}\frac{\lambda^2}{2!} + \cdots
+        \label{eq:9.9}
+    \end{equation}
+    \begin{equation}
+        E_n = \left. E_n \right|_{\lambda=0} + \left. \frac{\mathrm{d} E_n}{\mathrm{d} \lambda} \right|_{\lambda=0}\lambda + \left. \frac{\mathrm{d}^2 E_n}{\mathrm{d} \lambda^2} \right|_{\lambda=0}\frac{\lambda^2}{2!} + \cdots
+        \label{eq:9.10}
+    \end{equation}
+    根据假设，当$\lambda \to 0$时，$\psi_n$和$E_n$分别趋近于$\psi_n^{\left(0\right)}$和$E_n^{\left(0\right)}$：
+    \begin{equation}
+        \left. \psi_n \right|_{\lambda=0} = \psi_n^{\left(0\right)}, \quad \left. E_n \right|_{\lambda=0} = E_n^{\left(0\right)}
+        \label{eq:9.11}
+    \end{equation}
+    我们引入以下缩写：
+    \begin{equation}
+        \psi_n^{\left(k\right)} \equiv \frac{1}{k!} \left. \frac{\partial^k \psi_n}{\partial \lambda^k} \right|_{\lambda=0}, \quad E_n^{\left(k\right)} \equiv \frac{1}{k!} \left. \frac{\mathrm{d}^k E_n}{\mathrm{d} \lambda^k} \right|_{\lambda=0}, \quad k = 0, 1, 2, \ldots
+        \label{eq:9.12}
+    \end{equation}
+    则(\ref{eq:9.9})和(\ref{eq:9.10})变为
+    \begin{equation}
+        \psi_n = \psi_n^{\left(0\right)} + \lambda \psi_n^{\left(1\right)} + \lambda^2 psi_n^{\left(2\right)} + \cdots + \lambda^k \psi_n^{\left(k\right)} + \cdots
+        \label{eq:9.13}
+    \end{equation}
+    \begin{equation}
+        E_n = E_n^{\left(0\right)} + \lambda E_n^{\left(1\right)} + \lambda^2 E_n^{\left(2\right)} + \cdots + \lambda^k E_n^{\left(k\right)} + \cdots
+        \label{eq:9.14}
+    \end{equation}
+    对于$k = 1,2,3,\ldots$，我们称$\psi_n^{\left(k\right)}$和$E_n^{\left(k\right)}$分别为波函数和能量的\textbf{$k$级校正}（$k$th-order correction）。我们假设级数(\ref{eq:9.13})和(\ref{eq:9.14})在$\lambda=1$处收敛，我们希望，对于小扰动，只取级数的前几项就能很好地逼近真实的能量和波函数。（通常，微扰理论的级数并不收敛，尽管如此，不收敛级数的前几项也能给出有用的近似值。）
 
+    令$\psi_n^{\left(0\right)}$归一化：$\left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(0\right)} \right\rangle = 1$。与令$\psi_n$归一化不同，我们要求$\psi_n$满足
+    \begin{equation}
+        \left\langle \psi_n^{\left(0\right)} \middle| \psi_n \right\rangle = 1
+        \label{eq:9.15}
+    \end{equation}
+    若$\psi_n$不满足该方程，则将常数$1/\left\langle \psi_n^{\left(0\right)} \middle| \psi_n \right\rangle$乘到$\psi_n$上，得到一个满足该性质的微扰波函数。条件(\ref{eq:9.15})，称为\textbf{中间归一化}（intermediate normalization），它简化了推导过程。注意：将$\psi_n$与一个常数相乘并不会改变薛定谔方程$\hat{H} \psi_n = E_n \psi_n$中的能量，所以应用中间归一化不会影响能量校正的结果。 如果需要，在计算结束时，可以将中间归一化的 $\psi_n$ 乘以一个常数，使其在通常意义上归一化。
 
+    将(\ref{eq:9.13})带入$1 = \left\langle \psi_n^{\left(0\right)} \middle| \psi_n \right\rangle$[式(\ref{eq:9.15})]，得到
+    \begin{equation*}
+        1 = \left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(0\right)} \right\rangle + \lambda \left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle + \lambda^2 \left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(2\right)} \right\rangle + \cdots
+    \end{equation*}
+    由于该方程对介于$0$和$1$之间的任意$\lambda$都成立，如(\ref{eq:4.11})之后所证明的，方程两边 $\lambda$ 同次幂的系数必须相等。令$\lambda^0$的系数相等，我们有$1 = \left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(0\right)} \right\rangle$，由于$\psi_n^{\left(0\right)}$归一化，上式显然成立。令$\lambda^1$、$\lambda^2$等的系数相等，我们有
+    \begin{equation}
+        \left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle = 0, \quad \left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(2\right)} \right\rangle = 0, \quad \text{etc.}
+        \label{eq:9.16}
+    \end{equation}
+    使用中间归一化时，波函数的校正与 $\psi_n^{\left(0\right)}$ 正交。
 
+    将(\ref{eq:9.13})和(\ref{eq:9.14})代入薛定谔方程(\ref{eq:9.8})，得到
+    \begin{equation*}
+        \begin{aligned}
+            \left(\hat{H}^0 + \lambda\hat{H}'\right)&\left(\psi_n^{\left(0\right)} + \lambda\psi_n^{\left(1\right)} + \lambda^2\psi_n^{\left(2\right)}+\cdots\right) \\
+            &= \left(E_n^{\left(0\right)} + \lambda E_n^{\left(1\right)} + \lambda^2 E_n^{\left(2\right)}+\cdots\right)\left(\psi_n^{\left(0\right)} + \lambda\psi_n^{\left(1\right)} + \lambda^2\psi_n^{\left(2\right)}+\cdots\right)
+        \end{aligned}
+    \end{equation*}
+    将$\lambda$的同次幂进行归并，我们得到
+    \begin{equation}
+        \begin{aligned}
+            \hat{H}^0 \psi_n^{\left(0\right)} &+ \lambda \left(\hat{H}'\psi_n^{\left(0\right)} + \hat{H}^0\psi_n^{\left(1\right)}\right) + \lambda^2 \left(\hat{H}^0\psi_n^{\left(2\right)} + \hat{H}'\psi_n^{\left(1\right)}\right) + \cdots \\
+            &= E_n^{\left(0\right)} \psi_n^{\left(0\right)} + \lambda \left(E_n^{\left(1\right)} \psi_n^{\left(0\right)} + E_n^{\left(0\right)} \psi_n^{\left(1\right)}\right) + \lambda^2 \left(E_n^{\left(2\right)} \psi_n^{\left(0\right)} + E_n^{\left(1\right)} \psi_n^{\left(1\right)} + E_n^{\left(0\right)} \psi_n^{\left(2\right)}\right) + \cdots
+        \end{aligned}
+        \label{eq:9.17}
+    \end{equation}
+    现在（假设收敛性合适），要使 (\ref{eq:9.17}) 两边的两个级数对所有 $\lambda$ 值都相等，两个级数中 $\lambda$ 的同次幂的系数必须相等。
 
+    令$\lambda^0$项的系数相等，我们得到$\hat{H}^0 \psi_n^{\left(0\right)} = E_n^{\left(0\right)} \psi_n^{\left(0\right)}$，这是未扰动系统的薛定谔方程(\ref{eq:9.2})，没有给我们有用的信息。
 
+    令$\lambda^1$项的系数相等，我们得到
+    \begin{equation*}
+        \hat{H}'\psi_n^{\left(0\right)} + \hat{H}^0\psi_n^{\left(1\right)} = E_n^{\left(1\right)} \psi_n^{\left(0\right)} + E_n^{\left(0\right)} \psi_n^{\left(1\right)}
+    \end{equation*}
+    \begin{equation}
+        \hat{H}^0\psi_n^{\left(1\right)} - E_n^{\left(0\right)} \psi_n^{\left(1\right)} = E_n^{\left(1\right)} \psi_n^{\left(0\right)} - \hat{H}'\psi_n^{\left(0\right)}
+        \label{eq:9.18}
+    \end{equation}
 
+\subsection*{一级能量校正}
 
+    为了求出$E_n^{\left(1\right)}$，我们将(\ref{eq:9.18})两边乘以$\psi_n^{\left(0\right)\ast}$并对全空间积分，有
+    \begin{equation}
+        \left\langle \psi_m^{\left(0\right)} \middle| \hat{H} \middle| \psi_n^{\left(1\right)} \right\rangle - E_n^{\left(0\right)} \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle = E_n^{\left(1\right)} \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(0\right)} \right\rangle - \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle
+        \label{eq:9.19}
+    \end{equation}
+    其中用到了狄拉克符号[式(\ref{eq:7.1})和(\ref{eq:7.3})]。$\hat{H}^0$是厄米算符，使用厄米算符的性质(\ref{eq:7.12})，(\ref{eq:9.19})左侧的第一项变为
+    \begin{equation}
+        \begin{aligned}
+            \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}^0 \middle| \psi_n^{\left(1\right)} \right\rangle &= \left\langle \psi_m^{\left(1\right)} \middle| \hat{H}^0 \middle| \psi_n^{\left(0\right)} \right\rangle^{\ast} = \left\langle \psi_m^{\left(1\right)} \middle| \hat{H}^0 \psi_n^{\left(0\right)} \right\rangle^{\ast} \\
+            &= \left\langle \psi_m^{\left(1\right)} \middle| E_n^{\left(m\right)} \psi_n^{\left(0\right)} \right\rangle^{\ast} = E_m^{\left(0\right)\ast} \left\langle \psi_n^{\left(1\right)} \middle| \psi_m^{\left(0\right)} \right\rangle^{\ast} = E_m^{\left(0\right)} \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle
+        \end{aligned}
+        \label{eq:9.20}
+    \end{equation}
+    其中我们用到了未扰动薛定谔方程$\hat{H}^0 \psi_m^{\left(0\right)} = E_m^{\left(0\right)} \psi_m^{\left(0\right)}$、$E_m^{\left(0\right)}$是实数以及(\ref{eq:7.4})。将(\ref{eq:9.20})代入(\ref{eq:9.19})，对未扰动本征函数使用正交方程$\left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(0\right)} \right\rangle = \delta_{mn}$，我们得到
+    \begin{equation}
+        \left(E_m^{\left(0\right)} - E_n^{\left(0\right)}\right)\left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle = E_n^{\left(1\right)}\delta_{mn} - \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle
+        \label{eq:9.21}
+    \end{equation}
+    若$m=n$，则(\ref{eq:9.21})的左侧为零，(\ref{eq:9.21})变为
+    \begin{equation}
+        \boxed{
+            E_n^{\left(1\right)} = \left\langle \psi_n^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle = \int \psi_n^{\left(0\right)\ast} \hat{H}' \psi_n^{\left(0\right)} \:\mathrm{d}\tau
+        }
+        \label{eq:9.22}
+    \end{equation}
+    \textit{通过对作用于适当未扰动波函数的扰动 $\hat{H}'$ 求平均值，可以求出能量的一级校正。}
 
+    在(\ref{eq:9.14})中令$\lambda=1$，我们得到
+    \begin{equation}
+        E_n \approx E_n^{\left(0\right)} + E_n^{\left(1\right)} = E_n^{\left(0\right)} + \int \psi_n^{\left(0\right)\ast} \hat{H}' \psi_n^{\left(0\right)} \:\mathrm{d}\tau
+        \label{eq:9.23}
+    \end{equation}
 
+    \begin{examplebox}
+        \textbf{例题：}对于具有哈密顿量(\ref{eq:9.3})的非谐振子，若未扰动系统取为谐振子，求基态的$E^{(1)}$。
+        \\
 
+        微扰由(\ref{eq:9.3})至(\ref{eq:9.5})给出：
+        \begin{equation*}
+            \hat{H}' = \hat{H} - \hat{H}^0 = cx^3 + dx^4
+        \end{equation*}
+        具有量子数为$v$状态的一级能量校正由(\ref{eq:9.22})给出：$E_v^{(1)} = \left\langle \psi_v^{(0)} \middle| cx^3 + dx^4 \middle| \psi_v^{(0)} \right\rangle$，其中$\psi_v^{(0)}$是状态$v$的谐振子波函数。对于$v=0$的基态，使用式$\psi_0^{\left(0\right)} = \left(\alpha /\pi\right)^{1/4} \mathrm{e}^{-\alpha x^2 / 2}$[式(\ref{eq:4.53})]，有
+        \begin{equation*}
+            E_0^{\left(1\right)} = \left\langle \psi_0^{\left(0\right)} \middle| cx^3 + dx^4 \middle| \psi_0^{\left(0\right)} \right\rangle = \left(\frac{\alpha}{\pi}\right)^{1/2} \int_{-\infty}^{\infty} \mathrm{e}^{-\alpha x^2} \left(cx^3 + dx^4\right) \:\mathrm{d}x
+        \end{equation*}
+        从$-\infty$到$\infty$对奇函数$cx^3\mathrm{e}^{-\alpha x^2}$积分为零。使用附录（A.10）中的积分，令$n=2$；再对$\alpha$使用(\ref{eq:4.31})，得到
+        \begin{equation*}
+            E_0^{\left(1\right)} = 2d\left(\frac{\alpha}{\pi}\right)^{1/2} \int_{0}^{\infty} \mathrm{e}^{-\alpha x^2} x^4 \:\mathrm{d}x = \frac{3d}{4\alpha^2} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
+        \end{equation*}
+        未扰动基态能量为$E_0^{\left(0\right)} = \frac{1}{2}h\nu$，$E_0^{\left(0\right)} + E_0^{\left(1\right)} = \frac{1}{2}h\nu + \frac{3dh^2}{64\pi^4 \nu^2 m^2}$。
+        \\
 
+        \textbf{练习：}考虑一个单粒子一维系统，其势能函数满足
+        \begin{equation*}
+            V = \begin{cases}
+                \infty, & x < 0 \\
+                V = cx, & 0 \leq x < l \\
+                \infty, & x \geq l
+            \end{cases}
+        \end{equation*}
+        其中$c$是常数。
 
+        (a)当$c>0$时，画出$V$的图象。
 
+        (b)将该系统看作箱中粒子系统的微扰，求量子数为$n$状态的$E_n^{(1)}$。使用式 (\ref{eq:3.88}) 说明得到的答案是符合预期的。
 
+        (\textit{部分答案：}(b)$\frac{1}{2}cl$。)
+    \end{examplebox}
 
+\subsection*{一级波函数校正}
+
+    对于$m \neq n$，式(\ref{eq:9.21})为
+    \begin{equation}
+        \left(E_m^{\left(0\right)} - E_n^{\left(0\right)}\right)\left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle = - \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle, \quad m \neq n
+        \label{eq:9.24}
+    \end{equation}
+    为了求出$\psi_n^{\left(1\right)}$，我们将其用厄米算符$\hat{H}^0$的未扰动本征函数$\psi_m^{\left(0\right)}$完整正交集展开：
+    \begin{equation}
+        \psi_n^{\left(1\right)} = \sum_{m} a_m \psi_m^{\left(0\right)}, \quad \text{其中} \quad a_m = \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle
+        \label{eq:9.25}
+    \end{equation}
+    其中(\ref{eq:7.41})用于计算展开系数$a_m$。在(\ref{eq:9.24})中使用$a_m = \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle$，我们得到
+    \begin{equation*}
+        \left(E_m^{\left(0\right)} - E_n^{\left(0\right)}\right)a_m = - \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle, \quad m \neq n
+    \end{equation*}
+    根据假设，能级$E_n^{\left(0\right)}$是非简并的，因此若$m \neq n$，有$E_m^{\left(0\right)} - E_n^{\left(0\right)} \neq 0$。两边同除以$\left(E_m^{\left(0\right)} - E_n^{\left(0\right)}\right)$，我们得到
+    \begin{equation}
+        a_m = \frac{\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle}{E_n^{\left(0\right)} - E_m^{\left(0\right)}}, \quad m \neq n
+        \label{eq:9.26}
+    \end{equation}
+    除了$\psi_n^{\left(0\right)}$的系数$a_n$外，$\psi_n^{\left(1\right)}$展开式(\ref{eq:9.25})的系数$a_m$都可以用(\ref{eq:9.26})求出。根据(\ref{eq:9.25})的第二个方程，$a_n = \left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle$。回忆我们为$\psi_n$选择的中间归一化条件使得$\left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle = 0$[式(\ref{eq:9.16})]。因此$a_n = \left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle = 0$，方程(\ref{eq:9.25})和(\ref{eq:9.26})给出了波函数的一级校正：
+    \begin{equation}
+        \psi_n^{\left(1\right)} = \sum_{m \neq n} \frac{\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} \psi_m^{\left(0\right)}
+        \label{eq:9.27}
+    \end{equation}
+    符号$\sum_{m \neq n}$表示对所有未扰动的状态求和，除了状态$n$。
+
+    在(\ref{eq:9.13})中令$\lambda=1$，仅使用波函数的一级校正，我们得到了微扰波函数的近似：
+    \begin{equation}
+        \psi_n \approx \psi_n^{\left(0\right)} + \sum_{m \neq n} \frac{\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} \psi_m^{\left(0\right)}
+        \label{eq:9.28}
+    \end{equation}
+    有关$\psi_n^{\left(2\right)}$及$\psi$的归一化，见\textit{Kemble}, Chapter XI。
+
+\subsection*{二级能量校正}
+
+    令$\lambda^2$项的系数相等，我们得到
+    \begin{equation}
+        \hat{H}^0\psi_n^{\left(2\right)} - E_n^{\left(0\right)} \psi_n^{\left(2\right)} = E_n^{\left(2\right)} \psi_n^{\left(0\right)} + E_n^{\left(1\right)} \psi_n^{\left(1\right)} - \hat{H}' \psi_n^{\left(1\right)}
+        \label{eq:9.29}
+    \end{equation}
+    乘以$\psi_m^{\left(0\right)\ast}$并对全空间积分，我们得到
+    \begin{equation}
+        \begin{aligned}
+            \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}^0 \middle| \psi_n^{\left(2\right)} \right\rangle - E_n^{\left(0\right)}& \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(2\right)} \right\rangle \\
+            &= E_n^{\left(2\right)} \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(0\right)} \right\rangle + E_n^{\left(1\right)} \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle - \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(1\right)} \right\rangle
+        \end{aligned}
+        \label{eq:9.30}
+    \end{equation}
+    该方程中的积分$\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}^0 \middle| \psi_n^{\left(2\right)} \right\rangle$与(\ref{eq:9.20})中的积分相同，除了$\psi_n^{\left(2\right)}$代替了$\psi_n^{\left(1\right)}$。在(\ref{eq:9.20})中用$\psi_n^{\left(2\right)}$代替$\psi_n^{\left(1\right)}$，我们得到
+    \begin{equation}
+        \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}^0 \middle| \psi_n^{\left(2\right)} \right\rangle = E_m^{\left(0\right)} \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(2\right)} \right\rangle
+        \label{eq:9.31}
+    \end{equation}
+    利用 (\ref{eq:9.31}) 和 (\ref{eq:9.30}) 中未扰动函数的正交性，可以得出
+    \begin{equation}
+        \left(E_m^{\left(0\right)} - E_n^{\left(0\right)}\right)\left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(2\right)} \right\rangle = E_n^{\left(2\right)} \delta_{mn} + E_n^{\left(1\right)} \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle - \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(1\right)} \right\rangle
+        \label{eq:9.32}
+    \end{equation}
+    若$m=n$，则(\ref{eq:9.32})的左侧为零，得到
+    \begin{equation*}
+        E_n^{\left(2\right)} = - E_n^{\left(1\right)} \left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle + \left\langle \psi_n^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(1\right)} \right\rangle 
+    \end{equation*}
+    \begin{equation}
+        E_n^{\left(2\right)} = \left\langle \psi_n^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(1\right)} \right\rangle
+        \label{eq:9.33}
+    \end{equation}
+    因为$\left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle = 0$[式(\ref{eq:9.16})]。从(\ref{eq:9.33})可知，要找到能量的\textit{二}级校正，我们只需要直到波函数的\textit{一}级校正。事实上，可以证明：知道$\psi_n^{\left(1\right)}$也足以确定$E_n^{\left(3\right)}$。
+
+    一般地，可以证明：\textit{若我们知道波函数的$k$级校正，则可以确定能量的$2k+1$级校正。}（见\textit{Bates}, Vol. I, p. 184。）
+
+    将(\ref{eq:9.27})中的$\psi_n^{\left(1\right)}$代入(\ref{eq:9.33})，我们得到
+    \begin{equation}
+        E_n^{\left(2\right)} = \sum_{m \neq n} \frac{\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} \left\langle \psi_n^{\left(0\right)} \middle| \hat{H}' \middle| \psi_m^{\left(0\right)} \right\rangle
+        \label{eq:9.34}
+    \end{equation}
+    由于展开系数$a_m$[式(\ref{eq:9.26})]是常数，可以提到积分外面。由于$\hat{H}'$是厄米算符，我们有
+    \begin{equation*}
+        \begin{aligned}
+            \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle \left\langle \psi_n^{\left(0\right)} \middle| \hat{H}' \middle| \psi_m^{\left(0\right)} \right\rangle &= \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle^{\ast} \\
+            &= \left|\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle\right|^2
+        \end{aligned}
+    \end{equation*}
+    则(\ref{eq:9.34})变为
+    \begin{equation}
+        E_n^{\left(2\right)} = \sum_{m \neq n} \frac{\left|\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle\right|^2}{E_n^{\left(0\right)} - E_m^{\left(0\right)}}
+        \label{eq:9.35}
+    \end{equation}
+    这正是我们需要的，用未扰动波函数和能量表示的$E_n^{\left(2\right)}$。
+
+    将$E_n^{\left(2\right)}$和$\lambda=1$代入(\ref{eq:9.14})，可以得到微扰态能量的近似值为
+    \begin{equation}
+        E_n \approx E_n^{\left(0\right)} + H'_{nn} + \sum_{m \neq n} \frac{\left|\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle\right|^2}{E_n^{\left(0\right)} - E_m^{\left(0\right)}}
+        \label{eq:9.36}
+    \end{equation}
+    其中的积分是对未扰动归一化波函数的积分。
+
+    有关高阶能量修正的公式，请参见\textit{Bates}，Volume I，pages 181-185 。本节提出的微扰理论形式称为\textit{瑞利-薛定谔微扰理论}（Rayleigh-Schrödinger perturbation theory）；还存在其他方法。
+
+\subsection*{讨论}
+
+    方程(\ref{eq:9.28})表明：作用在波函数$\psi_n^{\left(0\right)}$上的的微扰相当于“掺和”进了其他状态$\psi_m^{\left(0\right)},\:m \neq n$的贡献。由于因子$1/\left(E_n^{\left(0\right)} - E_m^{\left(0\right)}\right)$，对微扰波函数最重要的贡献来源于（除了$\psi_n^{\left(0\right)}$之外）能量最接近$n$的状态。
+
+    要计算能量的一级校正，我们必须只计算单积分 $H'_{nn}$，而要计算能量的二级校正，我们必须计算第 $n$ 个状态和所有其他状态 $m$ 之间的 $\hat{H}'$ 矩阵元素，然后执行 (\ref{eq:9.35}) 中的无限求和。在很多情况下，二级校正难以准确计算。处理三级和更高的就更难了。
+
+    (\ref{eq:9.28}) 和 (\ref{eq:9.36}) 中的和是不同状态的和，而不是不同能量值的和。如果某些能级（第 $n$ 个能级除外）是简并的，我们必须在总和中为简并能级对应的每个线性无关波函数加入某个项。
+
+    我们在 (\ref{eq:9.28}) 和 (\ref{eq:9.36}) 中对状态求和，是因为我们需要一组完整的函数来展开 (\ref{eq:9.25}) ，因此我们必须在求和中包含所有线性无关的波函数。如果未扰动问题具有连续的波函数（例如氢原子），我们还必须对连续波函数进行积分，这样才能得到一组完整的波函数。若$\psi_E^{\left(0\right)}$是能量为$E$的未扰动连续波函数，则(\ref{eq:9.27})和(\ref{eq:9.35})变为
+    \begin{equation*}
+        \psi_n^{\left(1\right)} = \sum_{m \neq n} \frac{H'_{nn}}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} \psi_m^{\left(0\right)} + \int \frac{H'_{E,n}}{E_n^{\left(0\right)} - E^{\left(0\right)}} \psi_E^{\left(0\right)} \:\mathrm{d}E^{\left(0\right)}
+    \end{equation*}
+    \begin{equation}
+        E_n^{\left(2\right)} = \sum_{m \neq n} \frac{\left|H'_{mn}\right|^2}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} + \int \frac{\left|H'_{E,n}\right|^2}{E_n^{\left(0\right)} - E^{\left(0\right)}} \:\mathrm{d}E^{\left(0\right)}
+        \label{eq:9.37}
+    \end{equation}
+    其中$H'_{E,n} = \left\langle \psi_E^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle$。这些方程中的积分是在连续态能量范围内进行的（例如，氢原子的能量从零到无穷大）。未扰动问题中连续态的存在使得 $E_n^{\left(2\right)}$ 的计算变得更加困难。
+
+\subsection*{变分法和微扰法的比较}
+
+    微扰法适用于系统的所有束缚态。虽然第 \ref{sec:8.1 The Variation Theorem} 节所述的变分原理只适用于给定对称性的最低态，但我们可以用线性变分法来处理束缚激发态。
+
+    由于需要计算二级和高级能量校正中出现的离散态的无限和以及连续态的积分，微扰计算通常很难进行。
+
+    在微扰法中，能量的计算（$2k+1$ 级）比波函数的计算（$k$ 级）要精确得多。在变分法中也存在同样的情况，我们可以用一个相当不准确的波函数得到一个相当好的能量。如果计算能量以外的其他性质，结果通常不如计算出的能量可靠。
+
+\subsection*{变分-微扰法}
+
+    通过变分-微扰法，我们可以精确地估算出系统基态的 $E^{\left(2\right)}$ 和高级扰动理论能量校正，而无需计算 (\ref{eq:9.36}) 中的无限和。该方法基于以下不等式：
+    \begin{equation}
+        \left\langle u \middle| \hat{H}^0 - E_g^{\left(0\right)} \middle| u \right\rangle + \left\langle u \middle| \hat{H}' - E_g^{\left(1\right)} \middle| \psi_g^{\left(0\right)} \right\rangle + \left\langle \psi_g^{\left(0\right)} \middle| \hat{H}' - E_g^{\left(1\right)} \middle| u \right\rangle \geq E_g^{\left(2\right)}
+        \label{eq:9.38}
+    \end{equation}
+    其中$u$是任意满足定解条件的品优函数，下标$g$表示基态。(\ref{eq:9.38})的证明，参见\textit{Hameka}, Section 7-9。把 $u$ 看作一个试探函数，我们改变参数，使 (\ref{eq:9.38}) 左侧最小化，就可以估算出$E_g^{\left(2\right)}$。函数$u$原来就是$\psi_g^{\left(1\right)}$的近似——基态波函数的一级校正，$u$还可以用来估算$E_g^{\left(3\right)}$。类似的变分法可用于找到对基态能量和波函数的高级校正。
 
 \section{微扰理论求解基态氦原子}
 \label{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}
