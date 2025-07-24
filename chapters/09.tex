@@ -349,6 +349,144 @@
 
 \section{微扰理论求解基态氦原子}
 \label{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}
+    氦原子有两个电子，其原子核带$+2\mathrm{e}$的电荷。我们将认为原子核处于静止状态（第 \ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions} 节），并将坐标系的原点放在原子核上。电子1和2的坐标分别为$\left(x_1,y_1,z_1\right)$和$\left(x_2,y_2,z_2\right)$；见图\ref{fig:9.1}。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/9.1.png}
+        \caption{氦原子中的粒子间距。}
+        \label{fig:9.1}
+    \end{figure}
+
+    如果我们把核电荷数记为$+Z\mathrm{e}$而不是$+2\mathrm{e}$，就能处理类氦离子\ce{H^-}、\ce{Li^+}和\ce{Be^2+}。哈密顿算符为
+    \begin{equation}
+        \hat{H} = -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_1} - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_2} + \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}
+        \label{eq:9.39}
+    \end{equation}
+    其中$m_{\mathrm{e}}$是电子的质量，$r_1$和$r_2$分别是电子1和电子2到原子核的距离，$r_{12}$是两个电子之间的距离。前两项为电子动能的算符[式(\ref{eq:3.48})]。第三项和第四项是电子与原子核之间的吸引势。最后一项是电子间的排斥势[式(\ref{eq:6.58})]。请注意，相互作用粒子系统的势能不能写成单个粒子的势能之和。势能是整个系统的属性。
+
+    薛定谔方程涉及六个独立变量，每个电子有三个坐标。在球坐标系中，$\psi = \psi\left(r_1,\theta_1,\phi_1,r_2,\theta_2,\phi_2\right)$。
+
+    算符$\nabla_1^2$由将(\ref{eq:6.6})中的$r,\theta,\phi$替换为$r_1,\theta_1,\phi_1$给出。变量$r_{12}$为$r_{12} = \left[\left(x_1 - x_2\right)^2 + \left(y_1 - y_2\right)^2\right.$\\$\left. + \left(z_1 - z_2\right)^2\right]^{1/2}$，使用球坐标系和直角坐标系之间的关系，我们可以用$r_1,r_2,\theta_1,\theta_2,\phi_1,\phi_2$来表示$r_{12}$。
+
+    由于$\mathrm{e}^2 / 4\pi \varepsilon_0r_{12}$项的存在，氦原子的薛定谔方程在任何坐标系中都无法分离变量，因此我们必须使用近似方法。微扰法将哈密顿算符(\ref{eq:9.39})分为两个部分，$\hat{H}^0$和$\hat{H}'$，其中$\hat{H}^0$是一个可精确求解系统的哈密顿算符。若我们选择s
+    \begin{equation}
+        \hat{H}^0 = -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_1} - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_2}
+        \label{eq:9.40}
+    \end{equation}
+    \begin{equation}
+        \hat{H}' = \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}
+        \label{eq:9.41}
+    \end{equation}
+    那么$\hat{H}^0$是两个类氢哈密顿算符的加和，每个算符各有一个电子：
+    \begin{equation}
+        \hat{H}^0 = \hat{H}_1^0 + \hat{H}_2^0
+        \label{eq:9.42}
+    \end{equation}
+    \begin{equation}
+        \hat{H}_1^0 \equiv -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_1}, \quad \hat{H}_2^0 \equiv -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_2}
+        \label{eq:9.43}
+    \end{equation}
+    未受扰动的系统是两个电子互不施力的氦原子。虽然这样的系统并不存在，但这并不妨碍我们将微扰理论应用于这一系统。
+
+    由于未扰动哈密顿算符（\ref{eq:9.42}）是两个独立粒子的哈密顿算符之和，我们可以利用公式 (\ref{eq:6.18}) 至 (\ref{eq:6.24}) 的变量分离结果得出结论：未扰动波函数的形式为
+    \begin{equation}
+        \psi^{\left(0\right)}\left(r_1,\theta_1,\phi_1,r_2,\theta_2,\phi_2\right) = F_1\left(r_1,\theta_1,\phi_1\right) F_2\left(r_2,\theta_2,\phi_2\right)
+        \label{eq:9.44}
+    \end{equation}
+    未扰动能量为
+    \begin{equation}
+        E^{\left(0\right)} = E_1 + E_2
+        \label{eq:9.45}
+    \end{equation}
+    \begin{equation}
+        \hat{H}_1^0 F_1 = E_1 F_1, \quad \hat{H}_2^0 F_2 = E_2 F_2
+        \label{eq:9.46}
+    \end{equation}
+    由于$\hat{H}_1^0$和$\hat{H}_2^0$是类氢哈密顿算符，(\ref{eq:9.46})的解为类氢本征函数和本征值。根据(\ref{eq:6.94})，我们有
+    \begin{equation}
+        E_1 = -\frac{Z^2}{n_1^2}\frac{m_{\mathrm{e}}e^4}{8\pi^2\varepsilon_0a_0}, \quad E_2 = -\frac{Z^2}{n_2^2}\frac{m_{\mathrm{e}}e^4}{8\pi^2\varepsilon_0a_0}
+        \label{eq:9.47}
+    \end{equation}
+    \begin{equation}
+        E^{\left(0\right)} = -Z^2\left(\frac{1}{n_1^2} + \frac{1}{n_2^2}\right)\frac{\mathrm{e}^2}{8\pi\varepsilon_0a_0}, \quad \begin{aligned}
+            n_1 = & 1, 2, 3, \ldots \\
+            n_2 = & 1, 2, 3, \ldots
+        \end{aligned}
+        \label{eq:9.48}
+    \end{equation}
+    其中$a_0$是玻尔半径。公式 (\ref{eq:9.48}) 给出了两个电子都与原子核结合的状态的零级能量。\ce{He} 原子也有连续态。
+
+    最低能级满足$n_1 = 1,\: n_2 = 1$，其零级波函数[式(\ref{eq:6.104})]为
+    \begin{equation}
+        \psi_{1s^2}^{\left(0\right)} = \frac{1}{\pi^{1/2}}\left(\frac{Z}{a_0}\right)^{3/2} \mathrm{e}^{-Zr_1/a_0} \cdot \frac{1}{\pi^{1/2}}\left(\frac{Z}{a_0}\right)^{3/2} \mathrm{e}^{-Zr_2/a_0} = 1s\left(1\right)1s\left(2\right)
+        \label{eq:9.49}
+    \end{equation}
+    其中$1s\left(1\right)1s\left(2\right)$表示电子1和2的类氢$1s$波函数的乘积，下标表示两个电子都在类氢$1s$轨道中。（请注意，将电子分配到轨道并将原子波函数写成单电子轨道函数的乘积的过程只是一种\textit{近似}。）该未扰动基态能量为
+    \begin{equation}
+        E^{\left(0\right)}_{1s^2} = -Z^2\left(2\right)\frac{\mathrm{e}^2}{8\pi\varepsilon_0a_0}
+        \label{eq:9.50}
+    \end{equation}
+    $-\mathrm{e}^2 / 8\pi\varepsilon_0a_0$是氢原子的基态能量（假设原子核无限重）等于$213.606 \: \mathrm{eV}$[式(\ref{eq:6.105})-(\ref{eq:6.108})]。若$a_0$中电子的质量$m_{\mathrm{e}}$被替换为\ce{He}原子的折合质量，则$-\mathrm{e}^2 / 8\pi\varepsilon_0a_0$的值变为$-13.604 \: \mathrm{eV}$，我们将用这个数字来（部分地）校正 \ce{He} 中的核运动。对于氦原子，$Z=2$，(\ref{eq:9.50})为$-8\left(13.604 \: \mathrm{eV}\right) = -108.83 \: \mathrm{eV}$：
+    \begin{equation}
+        E^{\left(0\right)}_{1s^2} = -108.83 \: \mathrm{eV}
+        \label{eq:9.51}
+    \end{equation}
+
+    这个零级能量与真正的氦原子基态能量相比如何？\ce{He}原子第一电离能的实验值为$24.587 \: \mathrm{eV}$。\ce{He} 的第二电离能很容易从理论上计算出来，因为它是类氢离子\ce{He^+}的电离能，等于$2^2\left(13.604 \: \mathrm{eV}\right) = 54.416 \: \mathrm{eV}$。如果我们选择完全电离原子的能量为零[这一选择隐含在 (\ref{eq:9.39}) 中]，那么氦原子的基态能量为$-\left(24.587 + 54.416\right) \: \mathrm{eV} = -79.00 \: \mathrm{eV}$。零级能量 (\ref{eq:9.51}) 的误差为 $38\%$。我们本应预料到如此大的误差，因为微扰项$\mathrm{e}^2 / 4\pi\varepsilon_0r_{12}$并不小。
+
+    下一步是计算能量的一级微扰校正。未扰动基态是非简并的，使用(\ref{eq:9.22})和(\ref{eq:9.49})，得到
+    \begin{equation*}
+        E^{\left(1\right)} = \left\langle \psi^{\left(0\right)} \middle| \hat{H}' \middle| \psi^{\left(0\right)} \right\rangle
+    \end{equation*}
+    \begin{equation}
+        \begin{aligned}
+            E^{\left(1\right)} = \frac{Z^6\mathrm{e}^2}{\left(4\pi\varepsilon_0\right)\pi^2a_0^6} \int_{0}^{2\pi} \int_{0}^{2\pi} \int_{0}^{\pi} \int_{0}^{\pi} \int_{0}^{\infty} & \int_{0}^{\infty}  \mathrm{e}^{-2Zr_1/a_0} \mathrm{e}^{-2Zr_2/a_0} \frac{1}{r_{12}}r_1^2 \sin\theta_1 \\
+            & \times r^2 _2 \sin\theta_2 \:\mathrm{d}r_1 \:\mathrm{d}r_2 \:\mathrm{d}\theta_1 \:\mathrm{d}\theta_2 \:\mathrm{d}\phi_1 \:\mathrm{d}\phi_2
+        \end{aligned}
+        \label{eq:9.52}
+    \end{equation}
+    这个双电子问题的体积微元包含两个电子的坐标；$\mathrm{d}\tau \equiv \mathrm{d}\tau_1 \mathrm{d}\tau_2$。(\ref{eq:9.52})中的积分可以用球谐函数对$1/r_{12}$进行展开来计算，如问题9.14所述。可以发现，
+    \begin{equation}
+        E^{\left(1\right)} = \frac{5Z}{8}\left(\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0}\right)
+        \label{eq:9.53}
+    \end{equation}
+    回忆一下，当我们使用\ce{He}的折合质量时，$\frac{1}{2}\mathrm{e}^2/4\pi\varepsilon_0a_0$的值为$13.604 \: \mathrm{eV}$，再令$Z=2$，我们得到了氦原子基态能量的一级校正：
+    \begin{equation*}
+        E^{\left(1\right)} = \frac{10}{4}\left(13.604 \: \mathrm{eV}\right) = 34.01 \: \mathrm{eV}
+    \end{equation*}
+
+    现在能量的近似值为
+    \begin{equation}
+        E^{\left(0\right)} + E^{\left(1\right)} = -108.83 \: \mathrm{eV} + 34.01 \: \mathrm{eV} = -74.82 \: \mathrm{eV}
+        \label{eq:9.54}
+    \end{equation}
+    与实验值$-79.00 \: \mathrm{eV}$相比，误差为$5.3\%$。
+
+    要计算对波函数的一级校正和对能量的高级校正，需要计算未扰动的基态和所有激发态（包括连续态）之间的 $1/r_{12}$ 矩阵元素，并进行适当的求和与积分。目前还没有人知道如何直接计算 $E^{\left(1\right)}$ 的所有贡献。请注意，$\psi^{\left(1\right)}$ 的作用是将 $1s^2$ 以外其他构型的贡献混入波函数。对氦的真实基态波函数贡献最大的是 $1s^2$ 构型，即未扰动（零阶）波函数。
+
+    氦原子基态的$E^{\left(2\right)}$值已使用变分-微扰法(\ref{eq:9.38})得到计算结果。Scherr和Knight使用 100 项的试探函数，得到了六级波函数校正极其精确的近似值，从而得到了十三级能量校正的近似值[C. W. Scherr and R. E. Knight, \textit{Rev. Mod. Phys.}, \textbf{35}, 436 (1963)]。有关计算401级能量校正，见J. D. Baker et al., \textit{Phys. Rev. A}, \textbf{41}, 1247 (1990)。二级校正$E^{\left(2\right)}$的值为$-4.29 \: \mathrm{eV}$，$E^{\left(3\right)}$为$+0.12 \: \mathrm{eV}$。根据三级校正，我们得到基态能量为
+    \begin{equation*}
+        E \approx -108.83 \: \mathrm{eV} + 34.01 \: \mathrm{eV} - 4.29 \: \mathrm{eV} + 0.12 \: \mathrm{eV} = -78.99 \: \mathrm{eV}
+    \end{equation*}
+    与实验值$-79.00 \: \mathrm{eV}$很接近了。通过引入十三级校正，Scherr和Knight得到了基态氦原子能量为$-2.90372433 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$，与将在下一节讲述的纯变分计算获得的结果$-2.90372438 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$非常接近。
+
+    可以证明氦原子能量的微扰理论级数展开是收敛的。见[R. Ahlrichs, \textit{Phys. Rev. A}, \textbf{5}, 605 (1972)]。
+
+    \begin{quote}
+        \small
+        \noindent 我们无法找到双电子基态 \ce{He} 原子的精确波函数和能量，但值得注意的是，我们已经找到了双电子问题的薛定谔方程的基态精确解。这是一个假想原子[称为\textit{胡克定律原子或谐波原子}（Hooke's-law atom or harmonium）]，其哈密顿算符为
+        \begin{equation*}
+            \hat{H} = -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 + \frac{1}{2}k\left(r_1^2 + r_2^2\right) + \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}
+        \end{equation*}
+        其中$r_1$和$r_2$是电子到原点的距离。对于力常数$k$的特定值，可以精确解得基态波函数和能量。见\url{en.wikipedia.org/wiki/Hooke’s_atom}。
+    \end{quote}
+
+
+
+
+
+
+
 
 \section{变分法求解基态氦}
 \label{sec:9.4 Variational Treatments of the Ground State of Helium}
