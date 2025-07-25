@@ -481,18 +481,132 @@
         其中$r_1$和$r_2$是电子到原点的距离。对于力常数$k$的特定值，可以精确解得基态波函数和能量。见\url{en.wikipedia.org/wiki/Hooke’s_atom}。
     \end{quote}
 
-
-
-
-
-
-
-
 \section{变分法求解基态氦}
 \label{sec:9.4 Variational Treatments of the Ground State of Helium}
+    在上节中，我们将氦原子的哈密顿算符写作$\hat{H} = \hat{H}^0 + \hat{H}'$，其中$\hat{H}^0$的基态本征函数$\psi_g^{\left(0\right)}$由(\ref{eq:9.49})给出。若我们在变分积分中，用零级微扰理论基态波函数$\psi_g^{\left(0\right)}$作为变分函数$\phi$会发生什么呢？变分积分$\left\langle \phi \middle| \hat{H} \middle| \phi \right\rangle = \left\langle \phi \middle| \hat{H} \phi \right\rangle$将变为
+    \begin{equation}
+        \begin{aligned}
+            \left\langle \phi \middle| \hat{H} \middle| \phi \right\rangle &= \left\langle \psi_g^{\left(0\right)} \middle| \hat{H}^0 + \hat{H}' \middle| \psi_g^{\left(0\right)} \right\rangle = \left\langle \psi_g^{\left(0\right)} \middle| \hat{H}^0\psi_g^{\left(0\right)} + \hat{H}' \psi_g^{\left(0\right)} \right\rangle \\
+            &= \left\langle \psi_g^{\left(0\right)} \middle| E_g^{\left(0\right)}\psi_g^{\left(0\right)} \right\rangle + \left\langle \psi_g^{\left(0\right)} \middle| \hat{H}' \psi_g^{\left(0\right)} \right\rangle = E_g^{\left(0\right)} + E_g^{\left(1\right)}
+        \end{aligned}
+        \label{eq:9.55}
+    \end{equation}
+    因为$\hat{H}\psi_g^{\left(0\right)} = E_g^{\left(0\right)}\psi_g^{\left(0\right)}$、$\left\langle \psi_g^{\left(0\right)} \middle| \psi_g^{\left(0\right)} \right\rangle = 1$，以及$E_g^{\left(1\right)} = \left\langle \psi_g^{\left(0\right)} \middle| \hat{H}' \middle| \psi_g^{\left(0\right)} \right\rangle$[式(\ref{eq:9.22})]。使用$\psi_g^{\left(0\right)}$作为变分函数得到了与一级变分理论相同的结果。
+
+    现在，考虑氦原子基态的变分函数。如果我们使用$\psi_n^{\left(0\right)}$[式(\ref{eq:9.49})]作为试探函数，会得到一级微扰结果$-74.82 \: \mathrm{eV}$。为了改进这一结果，我们在(\ref{eq:9.49})中引入一个变分参数。我们尝试归一化函数
+    \begin{equation}
+        \phi = \frac{1}{\pi} \left(\frac{\zeta}{a_0}\right)^3 \mathrm{e}^{-\zeta r_1/a_0} \mathrm{e}^{-\zeta r_2/a_0}
+        \label{eq:9.56}
+    \end{equation}
+    该函数通过将(\ref{eq:9.49})中真实核电荷数$Z$替换为试探参数$\zeta$（Zeta）而得。$\zeta$有一个简单的物理解释。由于一个电子往往会将另一个电子屏蔽在原子核之外，因此每个电子所带的有效核电荷略小于全核电荷 $Z$。如果一个电子将另一个电子完全屏蔽在原子核之外，我们就会得到 $Z-1$ 的有效核电荷。由于两个电子位于同一轨道，它们只能部分地相互屏蔽。因此，我们希望$\zeta$介于 $Z-1$ 和 $Z$ 之间。
+
+    现在我们来计算变分积分。为了方便起见，我们将氦哈密顿算符（\ref{eq:9.39}）重写为
+    \begin{equation}
+        \hat{H} = \left[-\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{\zeta\mathrm{e}^2}{4\pi\varepsilon_0r_1} - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{\zeta\mathrm{e}^2}{4\pi\varepsilon_0r_2} \right] + \left(\zeta - Z\right)\frac{e^2}{4\pi\varepsilon_0r_{1}} + \left(\zeta - Z\right)\frac{e^2}{4\pi\varepsilon_0r_{2}} + \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}
+        \label{eq:9.57}
+    \end{equation}
+    其中涉及 $\zeta$ 的项被相加和相减。(\ref{eq:9.57}) 中括号内的项是有效核电荷 $\zeta$ 的两个类氢哈密顿量的总和。此外，试探函数 (\ref{eq:9.56}) 是核电荷 $\zeta$ 的两个类氢 $1s$ 函数的乘积。因此，当这些项作用于 $\phi$ 时，我们就得到了一个本征方程，本征值是核电荷 $\zeta$ 的两个类氢 $1s$ 的能量之和：
+    \begin{equation}
+        \left[-\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{\zeta\mathrm{e}^2}{4\pi\varepsilon_0r_1} - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{\zeta\mathrm{e}^2}{4\pi\varepsilon_0r_2} \right] \phi = -\zeta^2\left(2\right)\frac{\mathrm{e}^2}{8\pi\varepsilon_0a_0}\phi
+        \label{eq:9.58}
+    \end{equation}
+    使用(\ref{eq:9.57})和(\ref{eq:9.58})，我们可以计算变分积分
+    \begin{equation}
+        \begin{aligned}
+            \int \phi^* \hat{H} \phi \:\mathrm{d}\tau = &-\zeta^2\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0} \int \phi^* \phi \:\mathrm{d}\tau + \frac{\left(\zeta - Z\right)\mathrm{e}^2}{4\pi\varepsilon_0} \int \frac{\phi^*\phi}{r_1} \:\mathrm{d}\tau \\
+            &+ \frac{\left(\zeta - Z\right)\mathrm{e}^2}{4\pi\varepsilon_0} \int \frac{\phi^*\phi}{r_2} \:\mathrm{d}\tau + \frac{\mathrm{e}^2}{4\pi\varepsilon_0}\int \frac{\phi^*\phi}{r_{12}} \:\mathrm{d}\tau
+        \end{aligned}
+        \label{eq:9.59}
+    \end{equation}
+
+    设$f_1$表示核电荷为$\zeta$的类氢$1s$轨道，由电子1占据。设$f_2$为电子2的类似函数，则
+    \begin{equation}
+        f_1 = \frac{1}{\pi^{1/2}}\left(\frac{\zeta}{a_0}\right)^{3/2} \mathrm{e}^{-\zeta r_1/a_0}, \quad f_2 = \frac{1}{\pi^{1/2}}\left(\frac{\zeta}{a_0}\right)^{3/2} \mathrm{e}^{-\zeta r_2/a_0}
+        \label{eq:9.60}
+    \end{equation}
+    注意到$\phi = f_1 f_2$，现在我们来计算积分(\ref{eq:9.59})：
+    \begin{equation*}
+        \begin{aligned}
+            \int \phi^* \phi \: \mathrm{d}\tau = \int \int f_1^* f_2^* f_1 f_2 \: \mathrm{d}\tau_1 \: \mathrm{d}\tau_2 = \int f_1^* f_1 \: \mathrm{d}\tau_1 \int f_2^* f_2 \: \mathrm{d}\tau_2 = 1 \\
+            \int \frac{\phi^* \phi}{r_1} \: \mathrm{d}\tau = \int \frac{f_1^*f_1}{r_1} \: \mathrm{d}\tau_1 \int f_2^* f_2 \: \mathrm{d}\tau_2 = \int \frac{f_1^* f_1}{r_1} \: \mathrm{d}\tau_1 \\
+            = \frac{1}{\pi}\frac{\zeta^3}{a_0^3}\int_{0}^{\infty} \mathrm{e}^{-2\zeta r_1/a_0} \frac{r_1^2}{r_1} \:\mathrm{d}r_1 \int_{0}^{\pi} \sin\theta_1 \:\mathrm{d}\theta_1 \int_{0}^{2\pi} \:\mathrm{d}\phi_1 = \frac{\zeta}{a_0}
+        \end{aligned}
+    \end{equation*}
+    其中用到了附录中的积分（A.8）。同样地，
+    \begin{equation*}
+        \int \frac{\phi^* \phi}{r_2} \: \mathrm{d}\tau = \int \frac{f_2^*f_2}{r_2}\: \mathrm{d}\tau_2 = \int \frac{f_1^*f_1}{r_1} \: \mathrm{d}\tau_1 = \frac{\zeta}{a_0}
+    \end{equation*}
+    因为在定积分中，虚拟变量的下标是 1 还是 2 并不重要。最终，我们必须计算积分$\left(\mathrm{e}^2 / 4\pi\varepsilon_0\right)$\\$ \int \left(\phi^* \phi / r_{12}\right) \: \mathrm{d}\tau$。除了$Z$被替换为$\zeta$外，该积分与微扰法处理中的积分(\ref{eq:9.52})相同。因此，根据(\ref{eq:9.53})，我们有
+    \begin{equation*}
+        \frac{\mathrm{e}^2}{4\pi\varepsilon_0}\int \frac{\phi^* \phi}{r_{12}} \: \mathrm{d}\tau = \frac{5\zeta\mathrm{e}^2}{32\pi\varepsilon_0a_0}
+    \end{equation*}
+
+    因此，变分积分(\ref{eq:9.59})的值为
+    \begin{equation}
+        \int \phi^* \hat{H} \phi \: \mathrm{d}\tau = \left(\zeta^2 - 2Z\zeta + \frac{5}{8}\zeta\right)\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0}
+        \label{eq:9.61}
+    \end{equation}
+    检查一下，如果我们在(\ref{eq:9.61})中令$\zeta = Z$，就会得到一级微扰结果，即(\ref{eq:9.50})加上(\ref{eq:9.53})。
+
+    现在我们来改变$\zeta$的值，使得变分积分最小化：
+    \begin{equation*}
+        \frac{\partial}{\partial \zeta} \int \phi^* \hat{H} \phi \: \mathrm{d}\tau = \left(2\zeta - 2Z + \frac{5}{8}\right)\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0} = 0
+    \end{equation*}
+    \begin{equation}
+        \zeta = Z - \frac{5}{16}
+        \label{eq:9.62}
+    \end{equation}
+    正如预期的那样，有效核电荷介于$Z$和$Z-1$之间。使用(\ref{eq:9.62})和(\ref{eq:9.61})，我们得到：
+    \begin{equation}
+        \int \phi^* \hat{H} \phi \: \mathrm{d}\tau = \left(-Z^2 + \frac{5}{8}Z - \frac{25}{256}\right)\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0} = -\left(Z - \frac{5}{16}\right)^2\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0}
+        \label{eq:9.63}
+    \end{equation}
+    令$Z=2$，我们得到氦原子基态能量的近似值$-\left(27/16\right)^2\left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$=$-\left(729/256\right)2\left(13.604 \: \mathrm{eV}\right)$\\=$-77.48 \: \mathrm{eV}$，与实验值$-79.00 \: \mathrm{eV}$相比。使用$\zeta$代替$Z$将误差从$5.3\%$减少到$1.9\%$。与变分原理一致，基态能量的真实值小于变分积分。
+
+
+    如何改进我们的变分结果？我们可以试试具有 (\ref{eq:9.56}) 一般形式的函数，即两个函数的乘积，每个电子一个函数：
+    \begin{equation}
+        \phi = u\left(1\right)u\left(2\right)
+        \label{eq:9.64}
+    \end{equation}
+    不过，我们可以尝试在 (\ref{eq:9.64}) 中使用各种函数 $u$，而不是 (\ref{eq:9.56}) 中使用的单一指数函数。我们将在第 \ref{sec:11.1 The Hartree-Fock Self-Consistent-Field Method} 节中讨论如何系统地找到能给出最小变分值的函数 $u$ 。这一过程表明，在 (\ref{eq:9.64}) 中选择最佳 $u$ 时，变分积分等于 $-77.86 \:\mathrm{eV}$，误差仍为 $1.5\%$。我们可能会问，无论我们用什么形式来表示 $u$，为什么 (\ref{eq:9.64}) 不能给出真正的基态能量。答案是：当我们把试探函数写成每个电子的单独函数的乘积时，我们是在做近似计算。由于哈密顿算符中的$\mathrm{e}^2 / 4\pi\varepsilon_0r_{12}$项，氦原子薛定谔方程无法分离变量，则基态波函数不能写成每个电子单独函数的乘积。要获得真正的基态能量，我们必须超越形式为 (\ref{eq:9.64}) 的函数。
+
+    玻尔模型给出了氢原子的正确能量，但应用于氦原子时却失败了。因此，在量子力学的早期，证明新理论能够准确地处理氦原子是非常重要的。关于氦基态的开创性工作是由 Hylleraas 在 1928-1930 年间完成的。为了考虑一个电子对另一个电子运动的影响，Hylleraas 使用了包含电子间距 $r_{12}$ 的变分函数。他使用的其中一个函数为
+    \begin{equation}
+        \phi = N\left[\mathrm{e}^{-\zeta r_1/a_0} \mathrm{e}^{-\zeta r_2/a_0}\left(1 + br_{12}\right)\right]
+        \label{eq:9.65}
+    \end{equation}
+    其中$N$是归一化常数，$\zeta$和$b$是变分参数。由于
+    \begin{equation}
+        r_{12} = \left[\left(x_2 - x_1\right)^2 + \left(y_2 - y_1\right)^2 + \left(z_2 - z_1\right)^2\right]^{1/2}
+        \label{eq:9.66}
+    \end{equation}
+    函数 (\ref{eq:9.65}) 超越了简单的乘积形式 (\ref{eq:9.64})。对含参数的变分积分求最小值，得到$\zeta = 1.849$，$b = 0.364/a_0$，基态能量为$-78.7 \:\mathrm{eV}$，误差为$0.3 \: \mathrm{eV}$。$1+br_{12}$项的引入使得波函数的值在大$r_{12}$值时变大。这是理所应当的，因为电子之间的斥力使得电子在能量上更有利于避开对方。使用包含 $r_{12}$ 的更复杂的六项试探函数，Hylleraas 得到的能量仅比真实的基态能量高出 0.01 eV。
+
+    其他人对 Hylleraas 的工作进行了扩展。Pekeris 使用 1078 项的变分函数，求出基态能量为$-2.903724375\left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$[C. L. Pekeris, \textit{Phys. Rev.}, \textbf{115}, 1216 (1959)]。加上相对论修正和核运动修正，得出了氦的电离能 $E_i$，$E_i/hc = 198310.69 \: \mathrm{cm}^{-1}$，与实验值 $E_i/hc = 198310.67 \: \mathrm{cm}^{-1}$ 相比较。通过获得能量为$-2.90372437703 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$，Frankowski 和 Pekeris 改进了Pekeris的结果[K. Frankowski and C. L. Pekeris, \textit{Phys. Rev.}, \textbf{146}, 46 (1966)]。Drake 和 Yan 使用含有 $r_{12}$ 的线性变分函数计算了 \ce{He} 的基态能量和许多激发态能量，其精确度被认为可以达到 $1/10^{14}$ 或更高 [G. W. F. Drake and Z-C. Yan, \textit{Chem. Phys. Lett.}, \textbf{229}, 486 (1994); \textit{Phys. Rev. A}, \textbf{46}, 2378 (1992)]。这些工作者同样计算出了\ce{Li}基态和两个激发态的变分能量，精确度达到或超过 $1/10^9$[Z-C. Yan and G. W. F. Drake, \textit{Phys. Rev. A}, \textbf{52}, 3711 (1995)]。加上相对论和核运动修正，Drake 和 Yan 发现理论计算和实验光谱之间的氦和锂转变频率非常吻合。通过对变异函数中不断增加的项数进行一系列变异计算，并推导到无限项数的极限，Drake 和合作者发现了以下非相对论、无限核质量 \ce{He} 的基态能量：$-2.90372437703411959831 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$，据信精确到21位有效数字[G. W. F. Drake et al., \textit{Phys. Rev. A}, \textbf{65}, 054501 (2002)]。
 
 \section{能量简并的微扰理论}
 \label{sec:9.5 Perturbation Theory for a Degenerate Energy Level}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{久期方程的简化}
 \label{sec:9.6 Simplification of the Duration Equation}
