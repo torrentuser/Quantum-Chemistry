@@ -755,21 +755,89 @@
 \section{久期方程的简化}
 \label{sec:9.6 Simplification of the Duration Equation}
 
+    若久期行列式的某些非对角元素为零，则久期方程(\ref{eq:9.83})可以简化。在最有利的情况下，所有非对角元素都为零，久期方程变为
+    \begin{equation}
+        \begin{vmatrix}
+            H'_{11} - E_n^{\left(1\right)} & 0 & \cdots & 0 \\
+            0 & H'_{22} - E_n^{\left(1\right)} & \cdots & 0 \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & H'_{dd} - E_n^{\left(1\right)}
+        \end{vmatrix} = 0
+        \label{eq:9.88}
+    \end{equation}
+    \begin{equation*}
+        \left(H'_{11} - E_n^{\left(1\right)}\right)\left(H'_{22} - E_n^{\left(1\right)}\right)\cdots\left(H'_{dd} - E_n^{\left(1\right)}\right) = 0
+    \end{equation*}
+    \begin{equation}
+        E_1^{\left(1\right)} = H'_{11}, \quad E_2^{\left(1\right)} = H'_{22}, \quad \ldots, \quad E_d^{\left(1\right)} = H'_{dd}
+        \label{eq:9.89}
+    \end{equation}
+    现在我们想知道零级校正波函数。假设(\ref{eq:9.89})的根都是不同的。对于根$E_n^{\left(1\right)} = H'_{11}$方程组(\ref{eq:9.81})为
+    \begin{equation*}
+        \begin{aligned}
+            0 &= 0 \\
+            \left(H'_{22} - H'_{11}\right) c_2 &= 0 \\
+            \ldots\ldots\ldots\ldots & \ldots \\
+            \left(H'_{dd} - H'_{11}\right) c_d &= 0
+        \end{aligned}
+    \end{equation*}
+    由于我们假设所有根都不相等，则$H'_{22} - H'_{11}, H'_{33} - H'_{11}, \ldots, H'_{dd} - H'_{11}$都不为零，因此$c_2 = c_3 = \ldots = c_d = 0$。归一化条件(\ref{eq:9.85})给出$c_1 = 1$。对应于能量一级微扰校正$H'_{11}$的零级校正波函数为[式(\ref{eq:9.73})]$\phi_1^{\left(0\right)} = \psi_1^{\left(0\right)}$。对于根$H'_{22}$，同样的理由给出$\phi_2^{\left(0\right)} = \psi_2^{\left(0\right)}$。\textit{若久期行列式为对角行列式，则最初假设的波函数$\psi_1^{\left(0\right)}, \psi_2^{\left(0\right)}, \ldots, \psi_d^{\left(0\right)}$就是微扰$\hat{H}'$的零级校正波函数。}
 
+    反之亦然。若最初假设的波函数是零级校正波函数，则久期行列式的非对角元素为零。具体情况如下。由$\phi_1^{\left(0\right)} = \psi_1^{\left(0\right)}$我们得知，展开式$\phi_1^{\left(0\right)} = \sum_{i=1}^{d}c_i\psi_i^{\left(0\right)}$中，$c_1 = 1$，$c_2 = c_3 = \ldots = c_d = 0$，所以若$n=1$，则方程组(\ref{eq:9.81})变为
+    \begin{equation*}
+        H'_{11}c_1 - E_1^{\left(1\right)} = 0, \quad H'_{21} = 0, \quad \ldots, \quad H'_{d1} = 0
+    \end{equation*}
+    将同样地推理应用于剩余的函数$\phi_n^{\left(0\right)}$，得出对$i \neq m$，有$H'_{mi} = 0$。因此，零级校正波函数的使用使得久期行列式得以对角化。还需要注意的是，通过对零级校正波函数的微扰求平均值，可以得到能量的一级校正：
+    \begin{equation}
+        E_n^{\left(1\right)} = H'_{nn} = \left\langle \phi_n^{\left(0\right)} \middle| \hat{H}' \middle| \phi_n^{\left(0\right)} \right\rangle
+        \label{eq:9.90}
+    \end{equation}
 
+    通常，久期行列式不是对角形式，而是块对角形式。例如，我们可能有
+    \begin{equation}
+        \begin{vmatrix}
+            H'_{11} - E_n^{\left(1\right)} & H'_{12} & 0 & 0 \\
+            H'_{21} & H'_{22} - E_n^{\left(1\right)} & 0 & 0 \\
+            0 & 0 & H'_{33} - E_n^{\left(1\right)} & H'_{34} \\
+            0 & 0 & H'_{43} & H'_{44} - E_n^{\left(1\right)}
+        \end{vmatrix} = 0
+        \label{eq:9.91}
+    \end{equation}
+    (\ref{eq:9.91})中的久期行列式与带有$S_{ij} = \delta_{ij}$的线性变分久期方程(\ref{eq:8.65})中久期行列式的形式相同。根据同样的推理过程，可以得出：两个变分函数是$f_1$和$f_2$的线性组合，两个是$f_3$和$f_4$的线性组合，因此两个零级校正波函数是$\psi_1^{\left(0\right)}$和$\psi_2^{\left(0\right)}$的线性组合，另两个是$\psi_3^{\left(0\right)}$和$\psi_4^{\left(0\right)}$的线性组合：
+    \begin{equation*}
+        \phi_1^{\left(0\right)} = c_1\psi_1^{\left(0\right)} + c_2\psi_2^{\left(0\right)}, \quad \phi_2^{\left(0\right)} = c_1'\psi_1^{\left(0\right)} + c_2'\psi_2^{\left(0\right)}
+    \end{equation*}
+    \begin{equation*}
+        \phi_3^{\left(0\right)} = c_3\psi_3^{\left(0\right)} + c_4\psi_4^{\left(0\right)}, \quad \phi_4^{\left(0\right)} = c_3'\psi_3^{\left(0\right)} + c_4'\psi_4^{\left(0\right)}
+    \end{equation*}
+    其中$'$符号用于表示不同的系数。
 
+    \textit{ 当简并微扰理论的久期行列式为块对角形式时，久期方程会分解为两个或多个较小的久期方程，系数$c_i$的联立方程组（\ref{eq:9.81}）也会分解为两个或多个较小的联立方程组。}
 
+    相反地，如果我们有一个四重简并的未扰动能级，且恰好知道$\phi_1^{\left(0\right)}$和$\phi_2^{\left(0\right)}$都只是$\psi_1^{\left(0\right)}$和$\psi_2^{\left(0\right)}$的线性组合，而$\phi_3^{\left(0\right)}$和$\phi_4^{\left(0\right)}$只是$\psi_3^{\left(0\right)}$和$\psi_4^{\left(0\right)}$的线性组合，则我们处理的是两个二阶久期行列式，而不是一个四阶久期行列式。
 
-
-
-
-
-
-
-
+    如何事先选择正确的零级波函数，从而简化久期方程？假设有一算符$\hat{A}$同时与$\hat{H}^0$和$\hat{H}'$对易。我们可以选择未扰动波函数为$\hat{A}$的本征函数。由于$\hat{A}$与$\hat{H}^0$对易，若$\psi_i^{\left(0\right)}$和$\psi_j^{\left(0\right)}$对应于算符$\hat{A}$的不同本征值[见式(\ref{eq:7.50})]，则未扰动函数的选择将使积分$H'_{ij}$消失。因此，若$\hat{A}$的本征函数$\psi_1^{\left(0\right)}, \psi_2^{\left(0\right)}, \ldots, \psi_d^{\left(0\right)}$对应于不同的本征值，则久期行列式为对角形式，我们就得到了正确的零级波函数。若$\hat{A}$的某些本征值是相同的，我们就得到了块对角而不是纯对角形式的久期行列式。一般来说，正确的零级函数将是具有相同 $\hat{A}$ 本征值的未扰动函数的线性组合。（这是意料之中的，因为$\hat{H}$与$\hat{H} = \hat{H}^0 + \lambda\hat{H}'$对易，所以$\hat{H}$的微扰本征函数可以选择成为$\hat{A}$的本征函数。）例子见问题9.23。
 
 \section{微扰理论求解第一激发态的氦原子}
 \label{sec:9.7 Perturbation Treatment of the First Excited State of Helium}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{含时微扰理论}
 \label{sec:9.8 Time-dependent Perturbation Theory}
