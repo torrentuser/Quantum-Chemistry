@@ -1105,8 +1105,110 @@
 \section{含时微扰理论}
 \label{sec:9.8 Time-dependent Perturbation Theory}
 
+    在光谱学中，我们从一个处于某种定态的系统开始，将其置于电磁辐射（光）之下，然后观察该系统是否过渡到了另一定态。辐射会在哈密顿中引入一个随时间变化的势能项，因此我们必须使用含时薛定谔方程。这里最方便的方法是一种近似方法，称为含时微扰理论。
+
+    令系统（原子或分子）在没有辐射（或其他随时间变化的扰动）的情况下具有定态哈密顿量$\hat{H}^0$，视$\hat{H}'\left(t\right)$为含时微扰。未扰动系统的定态薛定谔方程为
+    \begin{equation}
+        \hat{H}^0 \psi_k^0 = E_k^0 \psi_k^0
+        \label{eq:9.112}
+    \end{equation}
+    其中$E_k^0$和$\psi_k^0$分别是未扰动系统的能量和波函数。无辐射作用下的含时薛定谔方程(\ref{eq:7.97})为
+    \begin{equation}
+        -\frac{\hbar}{\mathrm{i}}\frac{\partial \Psi}{\partial t} = \left(\hat{H}^0 + \hat{H}'\right) \Psi
+        \label{eq:9.113}
+    \end{equation}
+    其中态函数$\Psi$取决于与时间相关的空间坐标和自旋坐标（用$q$表示）：$\Psi = \Psi\left(q,t\right)$。（见第\ref{chap:10}章，关于自旋的讨论。）
+
+    首先，我们不考虑$\hat{H}'\left(t\right)$。未扰动含时薛定谔方程为
+    \begin{equation}
+        -\left(\hbar/\mathrm{i}\right)\partial \Psi^0/\partial t = \hat{H}^0 \Psi^0
+        \label{eq:9.114}
+    \end{equation}
+    系统可能的定态函数由(\ref{eq:7.99})给出：$\Psi^0_k = \exp\left(-\mathrm{i}E_k^0t/\hbar\right)\psi_k^0$，其中$\psi_k^0$是算符$\hat{H}^0$的本征函数[式(\ref{eq:9.112})]。每个$\Psi^0_k$都是(\ref{eq:9.114})的解。此外，线性组合
+    \begin{equation}
+        \Psi^0 = \sum_k c_k \Psi^0_k = \sum_k c_k \exp\left(-\mathrm{i}E_k^0t/\hbar\right)\psi_k^0
+        \label{eq:9.115}
+    \end{equation}
+    （其中$c_k$是任意与时间无关的常数）也是含时薛定谔方程(\ref{eq:9.114})的解，正如导出(\ref{eq:7.100})时的讨论。函数组$\Psi_k^0$构成一个完备集（因为它们是厄米算符$\hat{H}^0$的本征函数），因此任何(\ref{eq:9.114})的解都可以写成(\ref{eq:9.115})的形式。那么(\ref{eq:9.115})就是(\ref{eq:9.114})的通解，其中$\hat{H}^0$与时间无关。
+
+    现在，我们引入$\hat{H}'\left(t\right)$。则(\ref{eq:9.115})不再是含时薛定谔方程的解了。然而，由于未扰动函数组$\Psi_k^0$构成一个完备集，在任意时刻的真实态函数$\Psi$可以根据$\Psi = \sum_k b_k \Psi_k^0$来展开为$\Psi_k^0$函数组的线性组合。因为$\hat{H}$与时间无关，$\Psi$随时间变化，那么展开系数$b_k$也会随时间变化。因此，
+    \begin{equation}
+        \Psi = \sum_k b_k\left(t\right) \exp\left(-\mathrm{i}E_k^0t/\hbar\right)\psi_k^0
+        \label{eq:9.116}
+    \end{equation}
+    在极限$\hat{H}'\left(t\right) \to 0$时，展开式(\ref{eq:9.116})退化为(\ref{eq:9.115})。
+
+    将(\ref{eq:9.116})代入含时薛定谔方程(\ref{eq:9.113})，并使用式(\ref{eq:9.112})，我们得到
+    \begin{equation*}
+        \begin{aligned}
+            \frac{-\hbar}{\mathrm{i}} \sum_k \frac{\mathrm{d} b_k}{\mathrm{d}t} \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) \psi_k^0 &+ \sum_k E_k^0 b_k \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) \psi_k^0 \\
+            &= \sum_k b_k \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) E_k^0 \psi_k^0 + \sum_k b_k \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) \hat{H}'\psi_k^0
+        \end{aligned}
+    \end{equation*}
+    \begin{equation*}
+        - \frac{\hbar}{\mathrm{i}}\sum_k \frac{\mathrm{d} b_k}{\mathrm{d}t} \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) \psi_k^0 = \sum_k b_k \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) \hat{H}'\psi_k^0
+    \end{equation*}
+
+
+    将其乘以$\psi_m^{0\ast}$并对空间和自旋坐标全部积分。使用正交方程$\left\langle \psi_m^0 \middle| \psi_k^0 \right\rangle = \delta_{mk}$，我们得到
+    \begin{equation*}
+        -\frac{\hbar}{\mathrm{i}}\sum_k\frac{\mathrm{d}b_k}{\mathrm{d}t}\exp\left(-\mathrm{i}E_k^0t/\hbar\right)\delta_{mk} = \sum_kb_k\exp\left(-\mathrm{i}E_k^0t/\hbar\right)\left\langle\psi_m^0|\hat{H}'\middle|\psi_k^0\right\rangle
+    \end{equation*}
+    由于因子$\delta_{mk}$，左侧求和中只有一项不为零，其他都为零，左侧等于$-\left(\hbar/\mathrm{i}\right) \left(\mathrm{d} b_m/\mathrm{d}t\right) \exp\left(-\mathrm{i}E_m^0t/\hbar\right)$。因此，我们得到
+    \begin{equation}
+        \frac{\mathrm{d}b_m}{\mathrm{d}t} = -\frac{\mathrm{i}}{\hbar}\sum_k b_k\exp\left[\mathrm{i}(E_m^0-E_k^0)t/\hbar\right]\left\langle\psi_m^0\middle|\hat{H}'\middle|\psi_k^0\right\rangle
+        \label{eq:9.117}
+    \end{equation}
+
+    假设在$t=0$时刻应用微扰$\hat{H}'\left(t\right)$，在微扰作用于系统之前，系统处于状态$n$，能量为$E_n^{\left(0\right)}$。则$t=0$时刻的态函数为$\Psi = \exp{(-\mathrm{i}E_n^0t/\hbar)}\psi_n^0$[式(\ref{eq:7.99})]，因此，$t=0$时刻(\ref{eq:9.116})的展开系数为$b_n\left(0\right) = 1$，$k \neq n$的其他系数为零：
+    \begin{equation}
+        b_k\left(0\right) = \delta_{kn}
+        \label{eq:9.118}
+    \end{equation}
+
+    我们假设微扰项$\hat{H}'$很小，且作用时间很短。在这些条件下，在施加扰动时，展开系数$b_k$与其初始值相比的变化将很小。近似地，我们可以将 (\ref{eq:9.117}) 右侧的膨胀系数替换为它们的初始值 (\ref{eq:9.118}) 。由此得出
+    \begin{equation}
+        \frac{\mathrm{d}b_m}{\mathrm{d}t} \approx 2\frac{\mathrm{i}}{\hbar}\exp\left[\mathrm{i}\left(E_m^0-E_n^0\right)t/\hbar\right]\left\langle\psi_m^0\middle|\hat{H}'\middle|\psi_n^0\right\rangle
+        \label{eq:9.119}
+    \end{equation}
+
+    令微扰$\hat{H}'$从$t=0$时刻开始作用到$t=t'$时刻。将(\ref{eq:9.119})两侧对$t$从$0$到$t'$积分，我们得到
+    \begin{equation}
+        b_{m}\left(t'\right) \approx \delta_{m n}-\frac{\mathrm{i}}{\hbar}\int_{0}^{t'} \exp\left[\mathrm{i}\left(E_{m}^{0}-E_{n}^{0}\right)t/\hbar\right]\left\langle\psi_{m}^{0}\left|\hat{H}'\right| \psi_{n}^{0}\right\rangle \mathrm{d} t
+        \label{eq:9.120}
+    \end{equation}
+    如果在 $t=0$ 时对处于定态 $n$ 的系统施加含时微扰 $\hat{H}'$，使用 (\ref{eq:9.120}) 的近似结果可以得到 (\ref{eq:9.116}) 中展开系数在 $t'$ 时刻的态函数近似值。[与定态微扰理论一样，我们也可以采用高阶近似方法。（见\textit{Fong}, pp. 234-244）。]
+
+    在$t'$时刻以后，微扰的作用停止，即$\hat{H}'=0$。对于$t > t'$，方程(\ref{eq:9.117})给出$\mathrm{d}b_m /\mathrm{d}t = 0$，所以在$t \geq t'$时，$b_m = b_m\left(t'\right)$。因此，微扰作用后，态函数$\Psi$为[式(\ref{eq:9.116})]：
+    \begin{equation}
+        \Psi = \sum_mb_m\left(t'\right)\exp\left(-\mathrm{i}E_m^0t/\hbar\right)\psi_m^0, \quad t \geq t'
+        \label{eq:9.121}
+    \end{equation}
+    其中$b_m\left(t'\right)$由(\ref{eq:9.120})给出。在(\ref{eq:9.121})中，$\Psi$是能量算符$\hat{H}^0$本征函数组$\psi_m^0$的态叠加，展开系数为$b_m\exp\left(-\mathrm{i}E_m^0t/\hbar\right)$。[将(\ref{eq:9.121})与(\ref{eq:7.66})相比较。]第\ref{sec:7.4 Eigenfunctions of Commuting Operators}节的工作告诉我们，在$t'$时刻后对系统能量进行的测量将得到能量函数$\hat{H}^0$的本征值之一$E_m^0$，概率等于与$\psi_m^0$相关的展开系数的绝对值的平方，即$\left|b_m\left(t'\right)\exp\left(-\mathrm{i}E_m^0t/\hbar\right)\right|^2 = \left|b_m\left(t'\right)\right|^2$。
+    
+    含时微扰将系统的态函数从$\exp\left(-\mathrm{i}E_n^0t/\hbar\right)\psi_n^0$变为叠加态(\ref{eq:9.121})。对能量的测量将$\Psi$变为能量本征函数之一$\exp\left(-\mathrm{i}E_m^0t/\hbar\right)\psi_m^0$（波函数的坍缩，第\ref{sec:7.9 Measurement and the Interpretation of Quantum Mechanics}节）。净结果是将系统从状态$n$转变到$m$，发生这样转变的概率为$\left|b_m\left(t'\right)\right|^2$。
+
 \section{辐射和物质的相互作用}
 \label{sec:9.9 Interaction of Radiation and Matter}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section*{总结}
 
