@@ -1186,27 +1186,70 @@
     \end{equation}
     其中$b_m\left(t'\right)$由(\ref{eq:9.120})给出。在(\ref{eq:9.121})中，$\Psi$是能量算符$\hat{H}^0$本征函数组$\psi_m^0$的态叠加，展开系数为$b_m\exp\left(-\mathrm{i}E_m^0t/\hbar\right)$。[将(\ref{eq:9.121})与(\ref{eq:7.66})相比较。]第\ref{sec:7.4 Eigenfunctions of Commuting Operators}节的工作告诉我们，在$t'$时刻后对系统能量进行的测量将得到能量函数$\hat{H}^0$的本征值之一$E_m^0$，概率等于与$\psi_m^0$相关的展开系数的绝对值的平方，即$\left|b_m\left(t'\right)\exp\left(-\mathrm{i}E_m^0t/\hbar\right)\right|^2 = \left|b_m\left(t'\right)\right|^2$。
     
-    含时微扰将系统的态函数从$\exp\left(-\mathrm{i}E_n^0t/\hbar\right)\psi_n^0$变为叠加态(\ref{eq:9.121})。对能量的测量将$\Psi$变为能量本征函数之一$\exp\left(-\mathrm{i}E_m^0t/\hbar\right)\psi_m^0$（波函数的坍缩，第\ref{sec:7.9 Measurement and the Interpretation of Quantum Mechanics}节）。净结果是将系统从状态$n$转变到$m$，发生这样转变的概率为$\left|b_m\left(t'\right)\right|^2$。
+    含时微扰将系统的态函数从$\exp\left(-\mathrm{i}E_n^0t/\hbar\right)\psi_n^0$变为叠加态(\ref{eq:9.121})。对能量的测量将$\Psi$变为能量本征函数之一$\exp\left(-\mathrm{i}E_m^0t/\hbar\right)\psi_m^0$（波函数的坍缩，第\ref{sec:7.9 Measurement and the Interpretation of Quantum Mechanics}节）。净结果是将系统从状态$n$跃迁到$m$，发生这样跃迁的概率为$\left|b_m\left(t'\right)\right|^2$。
 
 \section{辐射和物质的相互作用}
 \label{sec:9.9 Interaction of Radiation and Matter}
 
+    我们现在考虑电磁辐射和原子或分子之间的相互作用。正确的量子力学方法会对原子和辐射都进行量子力学处理，但我们将简化处理，把光作为由振荡电场和磁场组成的电磁波的经典图景。
 
+    我们省略的一项详细研究表明，辐射磁场与原子电荷之间的相互作用通常比辐射电场与电荷之间的相互作用要弱得多，因此我们将只考虑后一种相互作用（在NMR谱图中，重要的相互作用是原子核的磁偶极矩与辐射磁场之间的相互作用。我们将忽略这种情况。）
 
+    令电磁波的电场$\mathscr{E}$只指向$x$方向。（称为平面偏振辐射。）电场的定义为单位电荷所受的力，则电荷$Q_i$所受的力为$F = -Q_i \mathscr{E}_x = -\mathrm{d}V /\mathrm{d}x$，其中用到了(\ref{eq:4.24})。积分后，辐射电场与电荷之间的相互作用势为$V = -Q_i \mathscr{E}_xx$，我们把任意积分常量定为零。对于有多个电荷的系统，$V = -\sum_i Q_i x_i \mathscr{E}_x$。这是含时微扰项$\hat{H}'\left(t\right)$。波长为 $\lambda$ 、频率为 $\nu$ 的电磁波沿 $z$ 方向传播时，其电场随空间和时间变化的函数由 $\mathscr{E}_x = \mathscr{E}_0\sin\left(2\pi\nu t - 2\pi z/\lambda\right)$ 给出（见一年级物理课本），其中$\mathscr{E}_0$ 是电场$\mathscr{E}_x$的最大值（振幅）。因此，
+    \begin{equation*}
+        \hat{H}'\left(t\right) = -\mathscr{E}_0\sum_i Q_i x_i \sin\left(2\pi\nu t - 2\pi z/\lambda\right)
+    \end{equation*}
+    其中的求和包括原子或分子的所有电子和原子核。
 
+    定义$\omega$和$\omega_{mn}$为
+    \begin{equation}
+        \omega = 2\pi\nu, \quad \omega_{mn} = \left(E_m^0 - E_n^0\right)/\hbar
+        \label{eq:9.122}
+    \end{equation}
+    将$\hat{H}'\left(t\right)$代入(\ref{eq:9.120})，我们得到态函数$\Psi$展开式(\ref{eq:9.116})中展开系数的近似值：
+    \begin{equation*}
+        b_m \approx \delta_{mn} + \frac{\mathrm{i}\mathscr{E}_0}{\hbar}\int_{0}^{t'} \exp\left(\mathrm{i}\omega_{mn}t\right)\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \sin\left(\omega t - 2\pi z/\lambda\right) \middle| \psi_n^0 \right\rangle \:\mathrm{d}t
+    \end{equation*}
 
+    该方程中的积分$\left\langle \psi_m^0 \middle| \sum_i\cdots \middle| \psi_n^0 \right\rangle$是对全空间积分，但是只有$\psi_m^0$和$\psi_n^0$大小相当的区域才会对该积分值产生较大影响。在原子或分子以外的区域，$\psi_m^0$和$\psi_n^0$的值都非常小，这些区域可以忽略不计。我们将坐标原点放置在原子或分子内部。由于原子以外的区域可以忽略，可以认为坐标$z_i$最大值的数量级约为$1\:\mathrm{nm}$。对于紫外光，其波长$\lambda$的数量级为$10^2\:\mathrm{nm}$。对于可见、红外、微波、射频辐射，其波长甚至更长。因此$2\pi z_i/\lambda$很小，可以忽略不计，积分中只剩下了$\sum_i Q_i x_i \sin \omega t$。
 
+    使用性质（问题1.29）$\sin \omega t = \left(\mathrm{e}^{\mathrm{i}\omega t} - \mathrm{e}^{-\mathrm{i}\omega t}\right)/2\mathrm{i}$，我们得到
+    \begin{equation*}
+        b_m\left(t'\right) \approx \delta_{mn} + \frac{\mathscr{E}_0}{2\hbar}\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \middle| \psi_n^0 \right\rangle \int_{0}^{t'} \left[\mathrm{e}^{\mathrm{i}\left(\omega_{mn}+\omega\right)t} - \mathrm{e}^{\mathrm{i}\left(\omega_{mn}-\omega\right)t}\right]\:\mathrm{d}t
+    \end{equation*}
+    使用$\int_{0}^{t'} \mathrm{e}^{at}\:\mathrm{d}t = a^{-1}\left(\mathrm{e}^{at'} - 1\right)$，我们得到
+    \begin{equation}
+        b_m\left(t'\right) \approx \delta_{mn} + \frac{\mathscr{E}_0}{2\hbar\mathrm{i}}\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \middle| \psi_n^0 \right\rangle \left[\frac{\mathrm{e}^{\mathrm{i}\left(\omega_{mn}+\omega\right)t'} - 1}{\left(\omega_{mn}+\omega\right)} - \frac{\mathrm{e}^{\mathrm{i}\left(\omega_{mn}-\omega\right)t'} - 1}{\left(\omega_{mn}-\omega\right)}\right]
+        \label{eq:9.123}
+    \end{equation}
+    若$m \neq n$，则$\delta_{mn}$一项为零。
 
+    如第\ref{sec:9.8 Time-dependent Perturbation Theory}节的末尾所述，$\left|b_m\left(t'\right)\right|^2$给出了系统从状态$n$跃迁到状态$m$的概率。在两种情况下，这种概率会变得很大。若$\omega_{mn} = \omega$，则括号中第二个分式的分母为零，该分式的绝对值很大（不是无穷，见问题9.27）。若$\omega_{mn} = -\omega$，则第一个分式的分母为零，绝对值很大。
 
+    若$\omega_{mn} = \omega$，方程(\ref{eq:9.122})给出了$E_m^0 - E_n^0 = h\nu$。给原子施加频率为$\nu$的辐射使得系统从状态$n$跃迁到$m$，其中（因为$\nu$是正数）$E_m^0 > E_n^0$。我们假设该该跃迁的能量来源于系统吸收了一个能量为$h\nu$的光子。这一推测得到了完全量子力学处理方法[称为\textit{量子场论}（quantum field theory）]的证实，在量子场论中，辐射被量子力学而非经典地处理。因此，系统\textbf{吸收}（absorption）辐射，能量随之增加。
 
+    若$\omega_{mn} = -\omega$，则$E_n^0 - E_m^0 = h\nu$。暴露于频率为$\nu$的辐射使得系统从状态$n$跃迁到$m$，其中（因为$\nu$是正数）$E_n^0 > E_m^0$。系统到了一个更低的能级，量子场理论处理表明：在该过程中系统发射了一个能量为$h\nu$的光子。这就是辐射的\textbf{受激发射}（stimulated emission）。受激发射发生在激光中。
 
+    我们的处理方法有一个缺陷，那就是它无法预测\textbf{自发发射}（spontaneous emission），即一个系统在没有受到辐射的情况下发射出光子，系统在此过程中下降到一个较低的能级。量子场论的确可以预测自发发射。
 
+    由(\ref{eq:9.123})可知，吸收的概率与$\left|\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \middle| \psi_n^0 \right\rangle\right|^2$成正比。量$\sum_iQ_ix_i$称为系统电偶极矩算符$\hat{\mathbf{\mu}}$的$x$分量（详见第\ref{sec:14.2 Dipole Moments}节），它们是[式(14.14)和(14.15)]
+    %此处记得改引用！！！！！
+    %加粗的$\hat{\mathbf{\mu}}$无法在unicode-math中显示
+    $\hat{\mathbf{\mu}} = \mathbf{i}\sum_i Q_i x_i + \mathbf{j}\sum_i Q_i y_i + \mathbf{k}\sum_i Q_i z_i = \mathbf{i}\hat{\mu}_x + \mathbf{j}\hat{\mu}_y + \mathbf{k}\hat{\mu}_z$，其中$\mathbf{i}$、$\mathbf{j}$和$\mathbf{k}$是三个坐标轴方向上的单位向量，$\hat{\mu}_x$、$\hat{\mu}_y$和$\hat{\mu}_z$是$\mathbf{\hat{\mu}}$的分量。我们假设电场的偏振辐射只在$x$方向。如果辐射在 y 和 z 方向也有电场分量，那么吸收概率将与以下公式成正比
+    \begin{equation*}
+        \left|\left\langle \psi_m^0 \middle| \hat{\mu}_x \middle| \psi_n^0 \right\rangle\right|^2 + \left|\left\langle \psi_m^0 \middle| \hat{\mu}_y \middle| \psi_n^0 \right\rangle\right|^2 + \left|\left\langle \psi_m^0 \middle| \hat{\mu}_z \middle| \psi_n^0 \right\rangle\right|^2 = \left|\left\langle \psi_m^0 \middle| \hat{\mathbf{\mu}} \middle| \psi_n^0 \right\rangle\right|^2
+    \end{equation*}
+    其中用到了方程(\ref{eq:5.25})。积分$\left\langle \psi_m^0 \middle| \mathbf{\hat{\mu}} \middle| \psi_n^0 \right\rangle = \mathbf{\mu}_{mn}$称为\textbf{跃迁（偶极）矩}（transition dipole moment）。
 
+    当$\mathbf{\mu}_{mn} = 0$时，状态$m$和$n$之间通过吸收或发射辐射的跃迁称为\textbf{禁阻的}（forbidden）。\textbf{允许的}（allowed）跃迁是指$\mathbf{\mu}_{mn} \neq 0$的跃迁。由于在推导(\ref{eq:9.123})时采用了近似的计算，禁阻的跃迁会有小概率发生。
 
+    例如，考虑一维势箱中的粒子（第\ref{sec:2.2 Particle in a One-Dimensional Box}节）。其跃迁偶极矩为$\left\langle \psi_m^0 \middle| Qx \middle| \psi_n^0 \right\rangle$，其中$Q$是粒子的电荷，$x$是其坐标，$\psi_m^0 = \left(2/l\right)^{1/2}\sin\left(m\pi x/l\right)$和$\psi_n^0 = \left(2/l\right)^{1/2}\sin\left(n\pi x/l\right)$。计算该积分（问题9.28）表明：只有$m - n = \pm 1, \pm 3, \pm 5, \ldots$时不为零，而在$m - n = 0, \pm 2,\ldots$是为零。一维势箱中带电粒子跃迁的\textbf{选律}（selection rule）为吸收或发射辐射时，量子数的变化必须为奇数。
 
+    计算谐振子的跃迁偶极矩，得出双粒子的刚性转子模型选律为$\Delta v = \pm 1$，$\Delta J = \pm 1$，在第\ref{sec:4.3 Vibrations of Diatomic Molecules}和第\ref{sec:6.4 The Two-Particle Rigid Rotor}节中已有说明。
 
+    (\ref{eq:9.123})中的量$\left|b_m\right|^2$在$\omega = \omega_{mn}$和$\omega = -\omega_{mn}$处急剧达到峰值，但当$\omega$和$\left| \omega_{mn} \right|$并不精确相等时，发生跃迁的概率也不为零，即$h\nu$不和$\left|E_m^0 - E_n^0\right|$完全相等。这一事实与能量-时间不确定性关系 (\ref{eq:5.15}) 有关。寿命有限的状态，其能量具有不确定性。
 
-
+    辐射并不是导致能级跃迁的唯一含时微扰。当一个原子或分子接近另一个原子或分子时，会受到含时微扰，从而改变其状态。针对辐射跃迁的选律不一定适用于碰撞过程，因为两过程的$\hat{H}'\left(t\right)$不同。
 
 
 
