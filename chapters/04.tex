@@ -293,7 +293,7 @@
         }
         \label{eq:4.45}
     \end{equation}
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.2\textwidth]{Figures/4.1.png}
         \caption{\text{一维谐振子最低的五个能级图}}
@@ -317,7 +317,7 @@
         \label{eq:4.47}
     \end{equation}
     其中任意常数$A$与$B$可被包含在$c_0$和$c_1$中，因此可以略去。$c_0$和$c_1$之后的系数可以通过递推关系式(\ref{eq:4.46})计算得到。由于量子数$v$出现在了递推关系中，对于不同的$v$值，我们可以得到一组不同的系数$c_i$。例如，$\psi_4$中的$c_2$与$\psi_2$中的$c_2$是不同的。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.75\textwidth]{Figures/4.2.png}
         \caption{
@@ -335,7 +335,7 @@
     与盒中粒子一样，波函数必须是品优波函数的要求迫使我们将能量量子化。对于不满足式(\ref{eq:4.45})的能量，$\psi$不是平方可积的。例如，图\ref{fig:4.2}显示了能量分别满足$E = 0.499h\nu$、$E = 0.500h\nu$和$E = 0.501h\nu$。当 $E = 0.500h\nu$ 时，式(\ref{eq:4.40})中的$\psi$，其中我们用到了递推关系(\ref{eq:4.39})来计算系数$c_n$（另见问题4.23）。图\ref{fig:4.2}显示了这些曲线在$\alpha^{1/2}x$附近区域的放大图。
 
     谐振子的基态能量不为零。这个能量$\frac{1}{2}h\nu$被称为\textbf{零点能量}（zero-point energy）。这是在绝对零度的温度下，谐振子集合中谐振子的振动能量。零点能可以由不确定性原理来理解。如果最低态的能量为零，那么它的势能和动能（均为非负值）都必须为零。动能为零则意味着动量也为零，那么$\Delta p_x = 0$。势能为零则意味着粒子始终处于原点，则$\Delta x = 0$。但我们不能同时让$\Delta p_x = 0$和$\Delta x = 0$，因此，基态能量必须大于零。零点能（ZPE）的定义为$E_{ZPE}=E_{gs} - V_{min}$，其中$E_{gs}$是基态能量，$V_{min}$是势能的最小值。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.75\textwidth]{Figures/4.3.png}
         \caption{
@@ -373,7 +373,7 @@
         }
         \label{eq:4.51}
     \end{equation}
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.75\textwidth]{Figures/4.4.png}
         \caption{
@@ -440,7 +440,7 @@
     注意：$\psi_2$中的$c_0$和$\psi_0$中的$c_0$是不同的。
 
     波函数节点的个数与量子数$v$相同。可以证明（见《Messiah》，第 109-110 页）：\textit{对于一维定态束缚态问题，若$\psi$处于基态，则边界点内部的节点数为零；而对于每一个连续的激发态，节点数都会增加一个。}
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.65\textwidth]{Figures/4.5.png}
         \caption{
@@ -476,7 +476,7 @@
     二原子分子的内部运动包括\textbf{振动}和\textbf{转动}，前者与两个原子核之间距离 $R$ 的变化相对应，后者与原子核连接线空间方向的变化相对应。通常可以近似地将振动和转动分开处理。转动能级见第 \ref{sec:6.4 The Two-Particle Rigid Rotor} 节。 此处我们考虑振动能级。
 
     双原子分子振动的薛定谔方程有一个质量为$m_1m_2/\left(m_1+m_2\right)$假设粒子的动能算符和一个由$U\left(R\right)$给出的势能项。如果我们将原点与图 13.1 中$U$曲线的最低点重合，并将该最低点的能量取为势能的零点，那么 $U(R)$ 曲线的下半部分将与具有适当力常数 $k$ 的谐振子的势能曲线几乎重合（见图 \ref{fig:4.6} 和问题 4.28）。$U(R)$ 曲线的最小值出现在\textbf{平衡核间距}（equilibrium distance）$R_e$的位置。在图 \ref{fig:4.6} 中，$x$ 是核间距与平衡核间距的偏差：$x \equiv R - R_e$。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.7\textwidth]{Figures/4.6.png}
         \caption{
@@ -587,7 +587,7 @@
         \psi^{\prime\prime} = G\psi, \quad \text{其中} \quad G \equiv m\hbar^{-2}\left[2V\left(x\right)-2E\right]
         \label{eq:4.66}
     \end{equation}
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.8\textwidth]{figures/4.7.png}
         \caption{一维单粒子系统的$V$关于$x$的图象}
@@ -606,7 +606,7 @@
     其中$G_n \equiv G\left(x_n\right) \equiv m\hbar^{-2}\left[2V\left(x_n\right)-2E\right]$[式(\ref{eq:4.66})和\ref{eq:4.65}]。如果知道$\psi_n$和$\psi_{n-1}$，即$\psi$在$x_n$和$x_n-s$处的值，方程(\ref{eq:4.67})允许我们计算$\psi_{n+1}$，即$\psi$在点$x_{n+s}$处的值。
 
     我们如何使用式(\ref{eq:4.67})来求解薛定谔方程？我们首先猜测一个能量本征值$E_{guess}$。我们从左侧经典禁区（图 \ref{fig:4.7}）中的一点 $x_0$ 开始，此处$\psi$的值很小，我们假设$\psi$在该点处的值为零：$\psi_0 \equiv \psi\left(x_0\right) = 0$。同样地，我们也在经典禁区（此处$\psi$的值也很小）的右侧点 $x_{max}$ 处假设 $\psi\left(x_{max}\right)$ 的值为零。我们为连续点之间的间隔 $s$ 选取一个较小的数值，在$x_0+s$处，我们将$\psi$的值设为一个较小的数值，例如0.0001：$\psi_1 \equiv \psi\left(x_1\right) \equiv \psi\left(x_0+s\right) = 0.0001$。$\psi_1$ 的值对找到的本征值不会有任何影响。如果我们令$\psi_1$为0.001，而不是0.0001，公式 (\ref{eq:4.67}) 表明，这只需将后续点上的所有 $\psi$ 值乘以 10 即可（问题 4.41）。这不会影响本征值[见公式 (\ref{eq:3.14 definition of eigenfunctions and eigenvalues}) 后的示例]。在找到每个本征值后，可以对波函数进行归一化处理。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.8\textwidth]{Figures/4.8.png}
         \caption{Numerov 方法求解的节点数与能量 $E_{guess}$ 的函数关系。}

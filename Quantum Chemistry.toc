@@ -41,7 +41,7 @@
 \contentsline {section}{\numberline {6.5}氢原子}{96}{section.6.5}%
 \contentsline {section}{\numberline {6.6}束缚态氢原子波函数}{102}{section.6.6}%
 \contentsline {section}{\numberline {6.7}类氢轨道}{109}{section.6.7}%
-\contentsline {section}{\numberline {6.8}塞曼效应}{113}{section.6.8}%
+\contentsline {section}{\numberline {6.8}塞曼效应}{112}{section.6.8}%
 \contentsline {section}{\numberline {6.9}径向薛定谔方程的数值解法}{114}{section.6.9}%
 \contentsline {chapter}{\numberline {7}量子力学理论}{117}{chapter.7}%
 \contentsline {section}{\numberline {7.1}符号}{117}{section.7.1}%

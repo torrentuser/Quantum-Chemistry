@@ -206,7 +206,7 @@
     氢原子包含两个粒子——质子和电子。对于一个双粒子系统（粒子1的坐标为$\left(x_1,y_1,z_1\right)$，粒子2的坐标为$\left(x_2,y_2,z_2\right)$），粒子间相互作用的势能通常只是粒子相对坐标$x_2-x_1$、$y_2-y_1$和$z_2-z_1$的函数。在这种情况中，双粒子问题可以简化为两个单粒子问题，正如我们现在所要证明的。
 
     先考虑经典力学处理两个相互作用粒子的情况，令其质量分别为$m_1$和$m_2$。我们用从直角坐标系原点出发的半径矢量$\mathbf{r}_1$和$\mathbf{r}_2$来指定它们的位置（图\ref{fig:6.1}）。粒子1和2的坐标分别为$\left(x_1,y_1,z_1\right)$和$\left(x_2,y_2,z_2\right)$。我们从粒子1到粒子2画出矢量$\mathbf{r} = \mathbf{r}_2 - \mathbf{r}_1$，并用$x$、$y$和$z$表示其分量：
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.4\textwidth]{Figures/6.1.png}
         \caption{质心位于$C$的双粒子系统}
@@ -378,7 +378,7 @@
         m_1\rho_1 = m_2\rho_2
         \label{eq:6.49}
     \end{equation}
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.4\textwidth]{Figures/6.2.png}
         \caption{
@@ -433,7 +433,7 @@
         \label{eq:6.55}
     \end{equation}
     $B$称为分子的\textbf{转动常数}（rotational constant）。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.4\textwidth]{Figures/6.3.png}
         \caption{双粒子刚性转子的坐标系}
@@ -441,7 +441,7 @@
     \end{figure}
 
     在室温下，具有较低$J$值的双粒子旋转能级间隔通常小于$kT$或与$kT$处于同一数量级，因此，玻尔兹曼分布律(\ref{eq:4.63})表明：室温下许多转动能级可以被显著占据。$J=0$的双原子分子吸收辐射后会产生一条频率为$2B$的谱线（对应$J = 0 \to 1$的跃迁），$J=1$的分子吸收辐射后会产生一条频率为$4B$的谱线（对应$J = 1 \to 2$的跃迁），$J=2$的分子吸收辐射后会产生一条频率为$6B$的谱线（对应$J = 2 \to 3$的跃迁），依此类推。见图\ref{fig:6.4}。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.4\textwidth]{Figures/6.4.png}
         \caption{双粒子刚性转子吸收跃迁}
@@ -891,7 +891,7 @@
         \label{eq:6.109}
     \end{equation}
     图 \ref{fig:6.7} 显示了 (\ref{eq:6.109}) 沿 $x$ 轴的变化情况。尽管$\psi_{100}$在原点处连续，但曲线切线的斜率在原点左侧为正，而在原点右侧为负。因此$\partial \psi/\partial x$在原点处不连续。我们说波函数在原点处有一个\textit{尖点}（cusp）。尖顶的出现是因为势能$V = -Z\mathrm{e}^2/4\pi\varepsilon_0r$在原点处变得无限大。回想一下，箱中粒子波函数在箱壁上的斜率是不连续的。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.4\textwidth]{Figures/6.7.png}
         \caption{氢原子基态波函数中的尖点}
@@ -953,7 +953,7 @@
     \end{table}
 
     表 \ref{tab:6.1} 列出了类氢波函数中的一些归一化径向因子。图 \ref{fig:6.8} 是一些径向函数的示意图。除了$s$状态以外，因子$r^l$使得径向函数在$r=0$处为零。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.9\textwidth]{Figures/6.8.png}
         \caption{
@@ -988,7 +988,7 @@
         \label{eq:6.117}
     \end{equation}
     从 (\ref{eq:5.72}) 和 (\ref{eq:5.80}) 可以看出。函数$R^2\left(r\right)r^2$决定了在距离原子核 $r$ 处找到电子的概率，称为\textbf{径向分布函数}（radial distribution function）；见图 \ref{fig:6.9}。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.5\textwidth]{Figures/6.9.png}
         \caption{氢原子径向分布函数$\left[R_{nl}\left(r\right)\right]^2r^2$的图象。}
@@ -1116,7 +1116,7 @@
     描绘轨道有两种完全不同的方法。一种方法是绘制函数图象；第二种方法是绘制概率密度恒定的等值面。
 
     首先考虑绘制函数图象。要将 $\psi$ 的变化绘制成三个自变量 $r$、$\theta$ 和 $\phi$ 的函数，我们需要四个维度。我们世界的三维特性使我们无法绘制这样的图表。因此，我们绘制$\psi$中某个因子的图象。绘制$R\left(r\right)$与$r$的关系图，我们得到图 \ref{fig:6.8} 的曲线，其中不包含 $\psi$ 角度变化的任何信息。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.5\textwidth]{Figures/6.10.png}
         \caption{氢原子波函数中 $s$ 和 $p_z$ 的 $\theta$ 因子的极坐标图。}
@@ -1130,7 +1130,7 @@
     我们可以使用二维直角坐标绘制这些函数的图象，在纵轴上绘制 $S$，在横轴上绘制 $\theta$。$S_{0,0}$给出了一条水平直线，而$S_{1,0}$给出了一条余弦曲线。更常见的情况是使用平面极坐标系绘制$S$的图象。变量$\theta$是与$z$轴正半轴的夹角，而$S\left(\theta\right)$是从原点到图上点的距离。对于$S_{0,0}$我们得到了一个圆；对于$S_{1,0}$，我们得到了两个相切的圆(图\ref{fig:6.10})。$S_{1,0}$图像中较低的圆旁边的负号，表示当$\frac{1}{2}\pi < \theta \leq \pi$时，$S_{1,0}$为负值。严格来说，在绘制 $\cos\theta$ 时，我们只得到了较高的圆，它被绘制了两次；要得到两个相切的圆，我们必须绘制 $\left|\cos\theta\right|$ 。
 
     我们可以绘制一张$\left|S\left(\theta\right)T\left(\phi\right)\right|$与$\theta$和$\phi$的函数关系图，而不是分别绘制角向因子的图象。我们将使用球坐标，从原点到图上点的距离将为$\left|S\left(\theta\right)T\left(\phi\right)\right|$。对于$s$状态，$ST$与角度无关，因此我们得到了一个半径为$1/\left(4\pi\right)^{1/2}$的球面。而对于$p_z$状态，$ST = \frac{1}{2}\left(3/\pi\right)^{1/2}\cos\theta$，$\left|ST\right|$的图象由两个球体组成，球体中心位于 $z$ 轴，并与原点相切（图 \ref{fig:6.11}）。毫无疑问，图 \ref{fig:6.11} 是大家都很熟悉的。有些书上说这给出了 $p_z$ 轨道的形状，这是错误的。图 \ref{fig:6.11} \textit{只是一张波函数 $p_z$ 中的角向因子图。}角向因子 $p_x$ 和 $p_y$ 的图形分别给出了位于 $x$ 和 $y$ 轴上的切线球。如果我们以球面坐标绘制 $S^2T^2$，就会得到具有我们熟悉的八字形截面的表面；重复一遍，这些是图形，而不是轨道形状。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.4\textwidth]{Figures/6.11.png}
         \caption{
@@ -1149,7 +1149,7 @@
         \label{eq:6.123}
     \end{equation}
     其中$k = Z/2a$。为了找到轨道横截面，我们使用平面极坐标来绘制 $\psi$ 固定值的 (\ref{eq:6.123}) 图；$r$是到原点的距离，而$\theta$是与 $z$ 轴的夹角。图 \ref{fig:6.12} 显示了典型等值线的结果（问题 6.44）。由于$y\mathrm{e}^{-kr} = y\exp\left[-k\left(x^2+y^2+z^2\right)^{1/2}\right]$，我们可以看到$2p_y$轨道是$y$和$\left(x^2+z^2\right)$的函数。因此，在以 $y$ 轴为中心、平行于 $xOz$ 平面的圆上，$2p_y$是常数。因此，将图 \ref{fig:6.12} 中的横截面绕 $y$ 轴旋转，可以得到一对扭曲的椭圆体，从而形成三维等值面。实际 $2p$ 轨道的形状是两个分离的扭曲椭圆体，而不是两个相切的球体。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.45\textwidth]{Figures/6.12.png}
         \caption{$2p_y$轨道等值线。}
@@ -1171,13 +1171,13 @@
     我们看到$2p_{\pm 1}$轨道是$z$和$\left(x^2+y^2\right)$的函数，因此，我们将图 \ref{fig:6.12} 绕 $z$ 轴旋转，就能得到三维轨道形状。这样就形成了一个甜甜圈状的表面。
 
     图 6.13 显示了一些类氢轨道面。$2s$ 轨道有一个看不到的球形节点；$3s$ 轨道有两个这样的节点。$3p_z$ 轨道有一个球形节点（虚线表示）和一个节点平面（$xOy$ 平面）。$3d_{z^2}$ 轨道有两个节点锥。$3d_{x^2-y^2}$ 轨道有两个节平面。请注意，不同轨道的视图并不相同。波函数的相对符号已标出。表 \ref{tab:6.2} 中的其他三个实 $3d$ 轨道与 $3d_{x^2-y^2}$ 轨道形状相同，但方向不同。$3d_{xy}$轨道的裂片位于$x$轴和$y$轴之间，它是通过将$3d_{x^2-y^2}$轨道绕$z$轴旋转\ang{45}而得到的。$3d_{yz}$ 和 $3d_{xz}$ 轨道的裂片分别位于 $y$ 轴和 $z$ 轴之间以及 $x$ 轴和 $z$ 轴之间。（真实类氢轨道的在线三维视图见 \url{www.falstad.com/qmatom}；可使用鼠标旋转）
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.65\textwidth]{Figures/6.13.png}
         \caption{一些氢原子轨道的形状。}
         \label{fig:6.13}
     \end{figure}
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.6\textwidth]{Figures/6.14.png}
         \caption{

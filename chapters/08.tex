@@ -1317,7 +1317,7 @@
         这是本征向量的对角矩阵。
     \end{examplebox}
 
-    我们已经证明：若$\mathbf{H}$是实对称矩阵，本征值为$W_i$，正交本征向量为$\mathbf{c}^{\left(i\right)}$（即$\mathbf{Hc}^{\left(i\right)} = W_i\mathbf{c}^{\left(i\right)}$, $i = 1,2,\ldots,n$），则$\mathbf{C}^{\mathrm{T}}\mathbf{H}\mathbf{C} = \mathbf{W}$[式(\ref{eq:8.95})]，其中$\mathbf{C}$是实正交矩阵，其列为$\mathbf{c}^{\left(i\right)}$，$\mathbf{W}$是本征值$W_i$的对角矩阵。该定理的逆定理很容易证明：若$\mathbf{H}$是实对称矩阵，$\mathbf{B}$是实正交阵，且$\mathbf{B}^{\mathrm{T}}\mathbf{H}\mathbf{B} = \mathbf{\Lambda}$，则$\mathbf{B}$的列是$\mathbf{H}$的本征向量，$\mathbf{\Lambda}$的对角元素是$\mathbf{H}$的本征值。
+    我们已经证明：若$\mathbf{H}$是实对称矩阵，本征值为$W_i$，正交本征向量为$\mathbf{c}^{\left(i\right)}$（即$\mathbf{Hc}^{\left(i\right)} = W_i\mathbf{c}^{\left(i\right)}$, $i = 1,2,\ldots,n$），则$\mathbf{C}^{\mathrm{T}}\mathbf{H}\mathbf{C} = \mathbf{W}$[式(\ref{eq:8.95})]，其中$\mathbf{C}$是实正交矩阵，其列为$\mathbf{c}^{\left(i\right)}$，$\mathbf{W}$是本征值$W_i$的对角矩阵。该定理的逆定理很容易证明：若$\mathbf{H}$是实对称矩阵，$\mathbf{B}$是实正交阵，且$\mathbf{B}^{\mathrm{T}}\mathbf{H}\mathbf{B} = \symbf{\Lambda}$，则$\mathbf{B}$的列是$\mathbf{H}$的本征向量，$\symbf{\Lambda}$的对角元素是$\mathbf{H}$的本征值。
 
     为了求$n$阶厄米矩阵的本征值和本征向量，我们可以使用以下任一步骤：(1)求特征方程$\det\left(H_{ij}\right.$ \\ $\left. - \delta_{ij}W\right) = 0$[式(\ref{eq:8.81})]，得到本征值$W_1,\ldots,W_n$。然后将每个$W_k$带入代数方程组(\ref{eq:8.79a})，解出第$k$个本征向量的元素$c_1^{\left(k\right)},c_2^{\left(k\right)},\ldots,c_n^{\left(k\right)}$。(2)寻找酉矩阵$\mathbf{C}$，使得$\mathbf{C}^{\dagger}\mathbf{H}\mathbf{C}$成为对角矩阵。$\mathbf{C}^{\dagger}\mathbf{H}\mathbf{C}$的对角元素是$\mathbf{H}$的本征值，$\mathbf{C}$的列是$\mathbf{H}$的正交本征向量。对于量子化学中出现的大型矩阵，步骤（2）[称为\textbf{矩阵对角化}（matrix diagonalization）]的计算速度比（1）快得多。
     \begin{quote}
