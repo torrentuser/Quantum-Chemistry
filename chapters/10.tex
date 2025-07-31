@@ -130,19 +130,33 @@
 \section{自旋和氢原子}
 \label{sec:10.2 Spin and the Hydrogen Atom}
 
+    具体说明电子状态的波函数不仅取决于$x$、$y$和$z$坐标，还取决于电子的自旋状态。这对氢原子的波函数和能级有什么影响？
 
-
-
-
-
-
-
-
-
-
+    在很好的近似条件下，电子系统的哈密顿算符不涉及自旋变量，而只是空间坐标和关于空间坐标的导数的函数。因此，我们可以将单个电子的定态波函数分离为空间和自旋部分的乘积：
+    \begin{equation*}
+        \psi\left(x,y,z\right)g\left(m_s\right)
+    \end{equation*}
+    其中的$g\left(m_s\right)$是$\alpha$或$\beta$的其中之一，取决于$m_s = +\frac{1}{2}$或$m_s = -\frac{1}{2}$。[更一般地，$g\left(m_s\right)$可以是$\alpha$和$\beta$的线性组合；$g\left(m_s\right) = c_1 \alpha + c_2\beta$。]由于哈密顿算符对自旋波函数没有作用，我们有
+    \begin{equation*}
+        \hat{H} \left[\psi\left(x, y, z\right) g\left(m_s\right)\right] = g\left(m_s\right) \hat{H} \psi\left(x, y, z\right) = E \left[\psi\left(x, y, z\right) g\left(m_s\right)\right]
+    \end{equation*}
+    我们得到了与之前未考虑自旋时相同的能量。引入自旋唯一的不同是使得可能的状态数翻倍。与状态$\psi\left(x, y, z\right)$不同，我们有两个可能的状态$\psi\left(x, y, z\right) \alpha$和$\psi\left(x, y, z\right) \beta$。当我们考虑自旋时，氢原子能级的简并度是$2n^2$而不是$n^2$。
 
 \section{自旋-统计定理}
 \label{sec:10.3 Spin-Statistics Theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{氦原子}
 \label{sec:10.4 Th Helium Atom}

@@ -73,7 +73,7 @@
 \contentsline {section}{\numberline {9.9}辐射和物质的相互作用}{196}{section.9.9}%
 \contentsline {chapter}{\numberline {10}电子自旋和自旋-统计定理}{199}{chapter.10}%
 \contentsline {section}{\numberline {10.1}电子自旋}{199}{section.10.1}%
-\contentsline {section}{\numberline {10.2}自旋和氢原子}{202}{section.10.2}%
+\contentsline {section}{\numberline {10.2}自旋和氢原子}{201}{section.10.2}%
 \contentsline {section}{\numberline {10.3}自旋-统计定理}{202}{section.10.3}%
 \contentsline {section}{\numberline {10.4}氦原子}{202}{section.10.4}%
 \contentsline {section}{\numberline {10.5}Pauli不相容原理}{202}{section.10.5}%
