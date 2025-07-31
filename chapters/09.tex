@@ -350,7 +350,7 @@
 \section{微扰理论求解基态氦原子}
 \label{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}
     氦原子有两个电子，其原子核带$+2\mathrm{e}$的电荷。我们将认为原子核处于静止状态（第 \ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions} 节），并将坐标系的原点放在原子核上。电子1和2的坐标分别为$\left(x_1,y_1,z_1\right)$和$\left(x_2,y_2,z_2\right)$；见图\ref{fig:9.1}。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.5\textwidth]{Figures/9.1.png}
         \caption{氦原子中的粒子间距。}
@@ -607,7 +607,7 @@
         \label{eq:9.70}
     \end{equation}
     随着$\lambda$趋于零，(\ref{eq:9.69})的本征值趋于(\ref{eq:9.67})的本征值，我们有$\lim_{\lambda \to 0} E_n = E_n^{\left(0\right)}$。图\ref{fig:9.2}显示了一个假设的，具有六种状态和三重简并的未扰动系统。注意：微扰会导致简并能级的分裂。在某些情况下，微扰可能对简并没有影响，或只能部分消除简并现象。
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.4\textwidth]{Figures/9.2.png}
         \caption{微扰对能级的作用。}
@@ -1059,7 +1059,7 @@
         \label{eq:9.111}
     \end{equation}
     其中$Z=2$，$\mathrm{e}^2/4\pi\varepsilon_0 a_0 = 13.606 \:\mathrm{eV}$。回忆$E^{\left(0\right)} = -68.03 \:\mathrm{eV}$，我们得到(图\ref{fig:9.3})：
-    \begin{figure}[h!]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.5\textwidth]{Figures/9.3.png}
         \caption{氦原子第一激发态。}
@@ -1232,16 +1232,16 @@
 
     我们的处理方法有一个缺陷，那就是它无法预测\textbf{自发发射}（spontaneous emission），即一个系统在没有受到辐射的情况下发射出光子，系统在此过程中下降到一个较低的能级。量子场论的确可以预测自发发射。
 
-    由(\ref{eq:9.123})可知，吸收的概率与$\left|\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \middle| \psi_n^0 \right\rangle\right|^2$成正比。量$\sum_iQ_ix_i$称为系统电偶极矩算符$\hat{\mathbf{\mu}}$的$x$分量（详见第\ref{sec:14.2 Dipole Moments}节），它们是[式(14.14)和(14.15)]
+    由(\ref{eq:9.123})可知，吸收的概率与$\left|\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \middle| \psi_n^0 \right\rangle\right|^2$成正比。量$\sum_iQ_ix_i$称为系统电偶极矩算符$\hat{\symbf{\mu}}$的$x$分量（详见第\ref{sec:14.2 Dipole Moments}节），它们是[式(14.14)和(14.15)]
     %此处记得改引用！！！！！
     %加粗的$\hat{\mathbf{\mu}}$无法在unicode-math中显示
-    $\hat{\mathbf{\mu}} = \mathbf{i}\sum_i Q_i x_i + \mathbf{j}\sum_i Q_i y_i + \mathbf{k}\sum_i Q_i z_i = \mathbf{i}\hat{\mu}_x + \mathbf{j}\hat{\mu}_y + \mathbf{k}\hat{\mu}_z$，其中$\mathbf{i}$、$\mathbf{j}$和$\mathbf{k}$是三个坐标轴方向上的单位向量，$\hat{\mu}_x$、$\hat{\mu}_y$和$\hat{\mu}_z$是$\mathbf{\hat{\mu}}$的分量。我们假设电场的偏振辐射只在$x$方向。如果辐射在 y 和 z 方向也有电场分量，那么吸收概率将与以下公式成正比
+    $\hat{\symbf{\mu}} = \mathbf{i}\sum_i Q_i x_i + \mathbf{j}\sum_i Q_i y_i + \mathbf{k}\sum_i Q_i z_i = \mathbf{i}\hat{\mu}_x + \mathbf{j}\hat{\mu}_y + \mathbf{k}\hat{\mu}_z$，其中$\mathbf{i}$、$\mathbf{j}$和$\mathbf{k}$是三个坐标轴方向上的单位向量，$\hat{\mu}_x$、$\hat{\mu}_y$和$\hat{\mu}_z$是$\symbf{\hat{\mu}}$的分量。我们假设电场的偏振辐射只在$x$方向。如果辐射在 $y$ 和 $z$ 方向也有电场分量，那么吸收概率将与以下公式成正比
     \begin{equation*}
-        \left|\left\langle \psi_m^0 \middle| \hat{\mu}_x \middle| \psi_n^0 \right\rangle\right|^2 + \left|\left\langle \psi_m^0 \middle| \hat{\mu}_y \middle| \psi_n^0 \right\rangle\right|^2 + \left|\left\langle \psi_m^0 \middle| \hat{\mu}_z \middle| \psi_n^0 \right\rangle\right|^2 = \left|\left\langle \psi_m^0 \middle| \hat{\mathbf{\mu}} \middle| \psi_n^0 \right\rangle\right|^2
+        \left|\left\langle \psi_m^0 \middle| \hat{\mu}_x \middle| \psi_n^0 \right\rangle\right|^2 + \left|\left\langle \psi_m^0 \middle| \hat{\mu}_y \middle| \psi_n^0 \right\rangle\right|^2 + \left|\left\langle \psi_m^0 \middle| \hat{\mu}_z \middle| \psi_n^0 \right\rangle\right|^2 = \left|\left\langle \psi_m^0 \middle| \hat{\symbf{\mu}} \middle| \psi_n^0 \right\rangle\right|^2
     \end{equation*}
-    其中用到了方程(\ref{eq:5.25})。积分$\left\langle \psi_m^0 \middle| \mathbf{\hat{\mu}} \middle| \psi_n^0 \right\rangle = \mathbf{\mu}_{mn}$称为\textbf{跃迁（偶极）矩}（transition dipole moment）。
+    其中用到了方程(\ref{eq:5.25})。积分$\left\langle \psi_m^0 \middle| \symbf{\hat{\mu}} \middle| \psi_n^0 \right\rangle = \symbf{\mu}_{mn}$称为\textbf{跃迁（偶极）矩}（transition dipole moment）。
 
-    当$\mathbf{\mu}_{mn} = 0$时，状态$m$和$n$之间通过吸收或发射辐射的跃迁称为\textbf{禁阻的}（forbidden）。\textbf{允许的}（allowed）跃迁是指$\mathbf{\mu}_{mn} \neq 0$的跃迁。由于在推导(\ref{eq:9.123})时采用了近似的计算，禁阻的跃迁会有小概率发生。
+    当$\symbf{\mu}_{mn} = 0$时，状态$m$和$n$之间通过吸收或发射辐射的跃迁称为\textbf{禁阻的}（forbidden）。\textbf{允许的}（allowed）跃迁是指$\symbf{\mu}_{mn} \neq 0$的跃迁。由于在推导(\ref{eq:9.123})时采用了近似的计算，禁阻的跃迁会有小概率发生。
 
     例如，考虑一维势箱中的粒子（第\ref{sec:2.2 Particle in a One-Dimensional Box}节）。其跃迁偶极矩为$\left\langle \psi_m^0 \middle| Qx \middle| \psi_n^0 \right\rangle$，其中$Q$是粒子的电荷，$x$是其坐标，$\psi_m^0 = \left(2/l\right)^{1/2}\sin\left(m\pi x/l\right)$和$\psi_n^0 = \left(2/l\right)^{1/2}\sin\left(n\pi x/l\right)$。计算该积分（问题9.28）表明：只有$m - n = \pm 1, \pm 3, \pm 5, \ldots$时不为零，而在$m - n = 0, \pm 2,\ldots$是为零。一维势箱中带电粒子跃迁的\textbf{选律}（selection rule）为吸收或发射辐射时，量子数的变化必须为奇数。
 
