@@ -145,32 +145,135 @@
 \section{自旋-统计定理}
 \label{sec:10.3 Spin-Statistics Theorem}
 
+    假设我们有一个由多个全同粒子组成的系统。在经典力学中，粒子的全同性不会导致特殊的后果。例如，考虑一下在台球桌上滚动的完全相同的台球。我们可以跟踪任何一个球的运动，比如通过拍摄系统的运动图像。我们可以说，一号球沿着某条轨迹运动，二号球沿着另一条确定的轨迹运动，以此类推，这些轨迹是由牛顿运动定律决定的。因此，虽然这些球是相同的，但我们可以通过指定每个球的运动轨迹来区分它们。球的特性对它们的运动没有特殊的影响。
 
+    在量子力学中，不确定性原理告诉我们，我们无法追踪微观“粒子”的确切路径。如果系统中的微观粒子都具有不同的质量、电荷或自旋，我们就可以利用其中的一个特性来区分粒子。但如果它们都是相同的，那么我们在经典力学中区分它们的一种方法——即指定它们的路径——在量子力学中就会因为不确定性原理而丧失。因此，由相互作用的全同粒子组成的系统的波函数一定无法区分不同的粒子。例如，在第\ref{chap:9}章微扰理论处理氦原子激发态时，我们看见函数$1s\left(1\right)2s\left(2\right)$（说明电子1在$1s$轨道而电子2在$2s$轨道）不是一个正确的零级波函数。相反地，我们不得不使用函数$2^{-1/2}\left[1s\left(1\right)2s\left(2\right) \pm 1s\left(2\right)2s\left(1\right)\right]$，它无法指明电子在哪个轨道上。（如果相同的粒子彼此分离得很好，使它们的波函数不重叠，它们就可以被视为是可区分的。）
 
+    现在，我们来推导量子力学中全同粒子的不可区分性对波函数的限制。由 $n$ 个相同微观粒子组成的系统的波函数取决于粒子的空间变量和自旋变量。对于粒子1，这些变量为$x_1$、$y_1$、$z_1$和$m_{s1}$。令$q_1$表示所有这四个变量。则$\psi = \psi\left(q_1, q_2, \ldots, q_n\right)$。
 
+    我们定义交换两个粒子1和2所有坐标的算符$\hat{P}_{12}$为\textbf{交换算符}或\textbf{置换算符}（exchange or permutation operator）：
+    \begin{equation}
+        \boxed{
+            \hat{P}_{12} f\left(q_1, q_2, q_3, \ldots, q_n\right) = f\left(q_2, q_1, q_3, \ldots, q_n\right)
+        }
+        \label{eq:10.14}
+    \end{equation}
+    例如，对某表示电子1在$1s$轨道自旋向上而电子2在$3s$轨道自旋向下的函数，算符$\hat{P}_{12}$的作用为
+    \begin{equation}
+        \hat{P}_{12}\left[1s\left(1\right)\alpha\left(1\right)3s\left(2\right)\beta\left(2\right)\right] = 1s\left(2\right)\alpha\left(2\right)3s\left(1\right)\beta\left(1\right)
+        \label{eq:10.15}
+    \end{equation}
 
+    $\hat{P}_{12}$的本征函数是什么？将$\hat{P}_{12}$作用两次，我们得到了原函数：
+    \begin{equation*}
+        \hat{P}_{12} \hat{P}_{12} f\left(q_1, q_2, \ldots, q_n\right) = \hat{P}_{12} f\left(q_2, q_1, \ldots, q_n\right) = f\left(q_1, q_2, ..., q_n\right)
+    \end{equation*}
+    因此，$\hat{P}_{12}^2 = \hat{1}$。设$\hat{P}_{12}$的本征函数和本征值分别为$w_i$和$c_i$。我们有$\hat{P}_{12} w_i = c_i w_i$。作用两次后，我们得到$\hat{P}_{12}^2 w_i = c_1 P_{12} w_i$。将$\hat{P}_{12}^2 = \hat{1}$和$\hat{P}_{12} w_i = c_i w_i$代入$\hat{P}_{12}^2 w_i = c_1 P_{12} w_i$，我们得到$w_i = c_i^2 w_i$。由于零不能作为本征函数，我们可以在两边同时除以$w_i$，得到$c_i^2 = 1$。因此，$c_i = \pm 1$。$\hat{P}_{12}$（以及任何平方为单位算符的线性算符）的本征值是$+1$和$-1$。
 
+    若$w_+$是$\hat{P}_{12}$的本征函数，对应于本征值$+1$，则
+    \begin{equation*}
+        \hat{P}_{12}w_{+}\left(q_1, q_2, \ldots, q_n\right) = \left(+1\right)w_{+}\left(q_1, q_2, \ldots, q_n\right)
+    \end{equation*}
+    \begin{equation}
+        \boxed{
+            w_{+}\left(q_{2}, q_{1}, \ldots, q_{n}\right) = w_{+}\left(q_{1}, q_{2}, \ldots, q_{n}\right)
+        }
+        \label{eq:10.16}
+    \end{equation}
+    当粒子 1 和粒子 2 相互交换时，具有不变性质（\ref{eq:10.16}）的函数（如 $w_+$）被称为与粒子 1 和粒子 2 相互交换\textbf{对称}（symmetric）的函数。对于本征值$-1$，我们有
+    \begin{equation}
+        \boxed{
+            w_{-}\left(q_{2}, q_{1}, \ldots, q_{n}\right) = -w_{-}\left(q_{1}, q_{2}, \ldots, q_{n}\right)
+        }
+        \label{eq:10.17}
+    \end{equation}
+    （\ref{eq:10.17}）的函数（如 $w_-$）被称为与粒子 1 和粒子 2 相互交换\textbf{反对称}（antisymmetric）的函数，这意味着将$w_-$乘以$-1$会得到交换后的函数。任意函数$f\left(q_1, q_2, \ldots, q_n\right)$对粒子1和2交换对称或是交换反对称无关紧要。
 
+    不要混淆粒子互换的对称或非对称性质与空间反转的偶函数或奇函数性质。对于粒子1和2的交换，函数$x_1 + x_2$是交换对称的，它是$x_1$和$x_2$的奇函数。函数$x_1^2 + x_2^2$是交换对称的，但它是$x_1$和$x_2$的偶函数。
 
+    算符$\hat{P}_{ik}$定义为
+    \begin{equation}
+        \hat{P}_{ik} f \left(q_1, \ldots, q_i, \ldots, q_k, \ldots, q_n\right) = f \left(q_1, \ldots, q_k, \ldots, q_i, \ldots, q_n\right)
+        \label{eq:10.18}
+    \end{equation}
+    与$\hat{P}_{12}$类似，$\hat{P}_{ik}$的本征值为$+1$和$-1$。
 
+    现在我们来看看由 $n$ 个相同的微观粒子组成的系统的波函数。由于粒子是无法区分的，我们给它们贴标签的方式不会影响系统的状态。因此，两个波函数
+    \begin{equation*}
+        \psi\left(q_1, \ldots, q_i, \ldots, q_k, \ldots, q_n\right) \quad \text{和} \quad \psi\left(q_1, \ldots, q_k, \ldots, q_i, \ldots, q_n\right)
+    \end{equation*}
+    必须对应于系统的相同状态。对应同一状态的两个波函数最多只能相差一个乘法常数。因此
+    \begin{equation*}
+        \begin{aligned}
+            \psi\left(q_1, \ldots, q_k, \ldots, q_i, \ldots, q_n\right) &= c \psi\left(q_1, \ldots, q_i, \ldots, q_k, \ldots, q_n\right) \\
+            \hat{P}_{ik} \psi\left(q_1, \ldots, q_i, \ldots, q_k, \ldots, q_n\right) &= c \psi\left(q_1, \ldots, q_i, \ldots, q_k, \ldots, q_n\right)
+        \end{aligned}
+    \end{equation*}
+    最后一个方程表明$\psi$是算符$\hat{P}_{ik}$的本征函数。但是我们知道$\hat{P}_{ik}$的本征值只能是$+1$或$-1$。我们得出结论：由 $n$ 个全同粒子组成的系统，其波函数必须与任意两个全同粒子 $i$ 和 $k$ 的互换对称或反对称。由于 $n$ 个粒子都是相同的，我们不可能让波函数与某些互换对称，而与其他互换反对称。因此，$n$ 个完全相同的粒子的波函数必须要么与每一种可能的交换对称，要么与两个粒子的每一种可能的交换反对称。[刚才的论证并不严谨。完全相同的粒子系统的波函数对于两个粒子的互换必须是完全对称或完全反对称的说法称为\textit{对称化假设}（symmetrization postulate）。]
 
+    我们已经看到，全同粒子系统的波函数有两种可能的情况，即对称和非对称情况。实验证据（如稍后讨论的元素周期表）表明，对于电子来说，只有反对称情况才会出现。因此，我们有了量子力学的另一个假设，即\textit{电子系统的波函数在任意两个电子互换时必须是反对称的}。
 
+    1926 年，狄拉克根据理论研究和实验数据得出结论：电子要求反对称波函数，光子要求对称波函数。然而，狄拉克和其他物理学家在 1926 年错误地认为所有物质粒子都要求反对称波函数。1930 年，实验数据表明，$\alpha$ 粒子（$s=0$）要求对称波函数；物理学家最终认识到，决定一个全同粒子系统要求对称波函数还是反对称波函数的是粒子的自旋性质。具有半整数自旋量子数($s = \frac{1}{2}, \frac{3}{2}$，等等)的粒子要求反对称波函数，而具有整数自旋量子数($s = 0, 1, 2$，等等)的粒子要求对称波函数。1940 年，物理学家沃尔夫冈·泡利（Wolfgang Pauli）利用相对论量子场论证明了这一结果。要求反对称波函数的粒子，如电子，被称为\textbf{费米子}（fermions）（以 E. Fermi 命名），而要求对称波函数的粒子，如离子，则被称为\textbf{玻色子}（bosons）（以 S. N. Bose 命名）。在非相对论量子力学中，我们必须假设，如果粒子具有半整数自旋量子数，则全同粒子系统的波函数在任意两个粒子互换时必须是反对称的；如果粒子具有整数自旋量子数，则波函数在互换时必须是对称的。这句话被称为\textbf{自旋-统计定理}（spin-statistics theorem）（因为玻色子系统的统计力学与费米子系统的统计力学不同）。
 
+    自旋统计定理有许多不同有效性的证明；见 I. Duck and E. C. G. Sudurshan, \textit{Pauli and the Spin-Statistics Theorem}, World Scientific, 1997；\textit{Am. J. Phys.}, \textbf{66}, 284 (1998); Sudurshan and Duck, \textit{Pramana-J. Phys.}, \textbf{61}, 645 (2003) (见 \url{www.ias.ac.in/pramana/v61/p645/fulltext.pdf})。一些实验以极高的精度证实了自旋统计定理的有效性；见 G. M. Tino, \textit{Fortschr. Phys.}, \textbf{48}, 537 (2000) (可查阅 \url{arxiv.org/abs/quant-ph/9907028})。
 
+    自旋-统计定理对完全相同的费米子系统有一个重要的影响。反对称要求意味着
+    \begin{equation}
+        \psi\left(q_1, q_2, q_3, \ldots, q_n\right) = -\psi\left(q_2, q_1, q_3, \ldots, q_n\right)
+        \label{eq:10.19}
+    \end{equation}
+    考虑当电子1和2有相同坐标时$\psi$的值，即$x_1 = x_2$，$y_1 = y_2$，$z_1 = z_2$，$m_{s1} = m_{s2}$。在(\ref{eq:10.19})中令$q_2 = q_1$，我们得到
+    \begin{equation*}
+        \begin{aligned}
+            \psi\left(q_1, q_1, q_3, \ldots, q_n\right) &= -\psi\left(q_1, q_1, q_3, \ldots, q_n\right) \\
+            2\psi &= 0
+        \end{aligned}
+    \end{equation*}
+    \begin{equation}
+        \psi\left(q_1, q_1, q_3, \ldots, q_n\right) = 0
+        \label{eq:10.20}
+    \end{equation}
+    因此，两个自旋相同的电子在三维空间的同一点出现的概率为零。（“自旋相同”意味着$m_s$值相等。）由于$\psi$是连续函数，方程(\ref{eq:10.20})说明在空间中发现两个自旋相同的电子彼此靠近的概率非常小。因此，反对称要求迫使自旋相同的电子彼此分开。为了描述这一点，人们常说这种电子之间存在\textbf{泡利斥力}（Pauli repulsion）。这种 “斥力”并不是一种真正的物理力，而是电子波函数在交换时必须是反对称的这一事实的反映。
+
+    对称或反对称波函数的要求也适用于两个或多个全同复合粒子的系统。例如，考虑分子\ce{^16 O2}。\ce{^16 O}的核由8个质子和8个中子组成。每个质子和中子都满足$s = \frac{1}{2}$，都是费米子。因此，交换两个\ce{O}原子核相当于交换16个费米子的坐标，需要将分子的波函数乘以$\left(-1\right)^{16} = 1$。因此，分子\ce{^16 O2}的波函数在核坐标交换时是对称的。对相同原子核交换对称性或反对称性的要求会影响分子波函数的简并性，并导致转动配分函数中的对称数[见\textit{McQuarrie} (2000), pp. 104-105]。
+
+    对于包含 $m$ 个全同玻色子和 $n$ 个全同费米子的两个相同复合粒子的交换，波函数需乘以$\left(+1\right)^m$\\$\left(-1\right)^n = \left(-1\right)^n$。
+
+    因此，如果复合粒子包含奇数个费米子，那么它就是费米子，否则就是玻色子。
+
+    当使用变分原理（第 \ref{sec:8.1 The Variation Theorem} 节）来获取原子和分子的近似电子波函数时，要求试探函数具有良好的稳定性，其中包括要求它具有反对称性。
 
 \section{氦原子}
 \label{sec:10.4 Th Helium Atom}
 
-\section{Pauli不相容原理}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{泡利不相容原理}
 \label{sec:10.5 The Pauli Exclusion Principle}
 
-\section{Slater行列式}
+\section{斯莱特行列式}
 \label{sec:10.6 Slater Determinants}
 
-\section{微扰理论求解基态锂原子}
+\section{微扰理论处理基态锂原子}
 \label{sec:10.7 Perturbation Treatment of the Lithium Ground State}
 
-\section{变分法求解基态锂原子}
+\section{变分法处理基态锂原子}
 \label{sec:10.8 Variation Treatments of the Lithium Ground State}
 
 \section{自旋磁矩}
