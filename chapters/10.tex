@@ -325,30 +325,178 @@
 \section{泡利不相容原理}
 \label{sec:10.5 The Pauli Exclusion Principle}
 
+    到目前为止，我们还没有看到电子自旋和不对称要求带来任何非常惊人的后果。在氢原子和氦原子中，波函数中的自旋因子和不对称性要求只是影响了能级的简并性，而不会（除了稍后要考虑的非常小的影响）影响之前得到的能量。锂的情况则完全不同。
 
+    假设我们把锂原子中的电子间斥力看作是对哈密顿其余项的微扰。按照处理氦的相同步骤，未扰动波函数是三个类氢函数的乘积。对于基态
+    \begin{equation}
+        \psi^{\left(0\right)} = 1s\left(1\right)1s\left(2\right)1s\left(3\right)
+        \label{eq:10.31}
+    \end{equation}
+    零级（未扰动）能量为[方程(\ref{eq:9.48})及(\ref{eq:9.50})之后的段落]
+    \begin{equation*}
+        E^{\left(0\right)} = -\left(\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{1^2}\right)\left(\frac{Z^2\mathrm{e}^2}{8\pi \varepsilon_0a_0}\right) = -27 \left(\frac{\mathrm{e}^2}{8\pi \varepsilon_0a_0}\right) = -27  \left(13.606 \: \mathrm{eV}\right) = -367.4 \: \mathrm{eV}
+    \end{equation*}
 
+    能量的一级校正为$E^{\left(1\right)} = \left\langle \psi^{\left(0\right)} \middle| \hat{H}' \middle| \psi^{\left(0\right)} \right\rangle$，其中微扰项$\hat{H}'$包含了电子间斥力，则
+    \begin{equation*}
+        \begin{aligned}
+            E^{\left(1\right)} = \int \left|1s\left(1\right)\right|^2 \left|1s\left(2\right)\right|^2 \left|1s\left(3\right)\right|^2 \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{12}} \:\mathrm{d}v &+ \int \left|1s\left(1\right)\right|^2 \left|1s\left(2\right)\right|^2 \left|1s\left(3\right)\right|^2 \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{23}} \:\mathrm{d}v \\
+            &+ \int \left|1s\left(1\right)\right|^2 \left|1s\left(2\right)\right|^2 \left|1s\left(3\right)\right|^2 \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{13}} \:\mathrm{d}v
+        \end{aligned}
+    \end{equation*}
+    在这些定积分中，我们给虚拟积分变量贴标签的方式不会影响它们的值。如果我们互换第二个积分中变量的标号 1 和 3，它就会转换成第一个积分。因此，这两个积分相等。将第三个积分中的标号 2 和 3 互换后，它也等于第一个积分。因此
+    \begin{equation*}
+        E^{\left(1\right)} = 3 \int \int \left|1s\left(1\right)\right|^2 \left|1s\left(2\right)\right|^2 \frac{\mathrm{e}^2}{4\pi \varepsilon_0 r_{12}} \:\mathrm{d}v_1\: \mathrm{d}v_2 \int \left|1s\left(3\right)\right|^2 \:\mathrm{d}v_3
+    \end{equation*}
+    对电子3积分的值为1（归一化）。电子 1 和电子 2 的积分是在氦的微扰处理中计算得到的，以及[式(\ref{eq:9.52})和(\ref{eq:9.53})]
+    \begin{equation*}
+        E^{\left(1\right)} = 3\left(\frac{5Z}{4}\right)\left(\frac{\mathrm{e}^2}{8\pi \varepsilon_0a_0}\right) = \frac{45}{4} \left(13.606 \: \mathrm{eV}\right) = 153.1 \: \mathrm{eV}
+    \end{equation*}
+    \begin{equation*}
+        E^{\left(0\right)} + E^{\left(1\right)} = -214.3 \: \mathrm{eV}
+    \end{equation*}
 
+    因为我们可以把零级扰动波函数作为试探函数（回顾第 \ref{sec:9.4 Variational Treatments of the Ground State of Helium} 节开头的讨论），根据变分原理，$E^{\left(0\right)} + E^{\left(1\right)}$等于或大于真实基态能量。锂基态能量的实验值通过将第一、第二和第三电离能相加得到，即[C. E. Moore, “Ionization Potentials and Ionization Limits,” publication NSRDS-NBS 34 of the National Bureau of Standards (1970); available at \url{www.nist.gov/data/nsrds/NSRDSNBS34.pdf}]
+    \begin{equation*}
+        -\left(5.39 + 75.64 + 122.45\right) \: \mathrm{eV} = -203.5 \: \mathrm{eV}
+    \end{equation*}
+    因此，此时我们的$E^{\left(0\right)} + E^{\left(1\right)}$比基态能量真实值低，这违反了变分原理。例外，假设的锂原子基态组态$1s^3$与第一电离势的低值和所有化学证据不符。如果我们继续这样做，原子序数为 $Z$ 的元素就会出现 $1s^Z$ 基态构型。我们不会得到众所周知的元素周期性行为。
 
+    当然，我们的错误在于没有考虑自旋和反对称要求。假设的零级波函数$1s\left(1\right)1s\left(2\right)1s\left(3\right)$对于任意两个电子的互换是对称的。如果我们要有一个反对称函数$\psi^{\left(0\right)}$，我们必须将该空间交换对称函数与一个交换反对称自旋函数相乘。为三个电子构建完全对称的自旋函数非常容易，例如$\alpha\left(1\right)\alpha\left(2\right)\alpha\left(3\right)$。然而，要为三个电子构建一个完全反对称的自旋函数是不可能的。
 
+    让我们考虑一下如何系统地构建三个电子的反对称函数。我们将使用 $f$、$g$ 和 $h$ 来表示电子坐标的三个函数，但并不指明我们考虑的是空间坐标还是自旋坐标，抑或两者兼而有之。我们从以下函数开始：
+    \begin{equation}
+        f\left(1\right)g\left(2\right)h\left(3\right)
+        \label{eq:10.32}
+    \end{equation}
+    这显然不满足交换反对称。我们想要的反对称函数必须通过每一个置换算符$\hat{P}_{12}$、$\hat{P}_{13}$和$\hat{P}_{23}$转换成它的负值。将每个算符轮流作用到$f\left(1\right)g\left(2\right)h\left(3\right)$上，我们得到
+    \begin{equation}
+        f\left(2\right)g\left(1\right)h\left(3\right), \quad f\left(3\right)g\left(2\right)h\left(1\right), \quad f\left(1\right)g\left(3\right)h\left(2\right)
+        \label{eq:10.33}
+    \end{equation}
+    我们可以尝试将反对称函数构造成四个函数 (\ref{eq:10.32}) 和 (\ref{eq:10.33}) 的线性组合，但这一尝试会失败。将$\hat{P}_{12}$作用于(\ref{eq:10.33})中的后两个函数，得到
+    \begin{equation}
+        f\left(3\right)g\left(1\right)h\left(2\right) \quad \text{和} \quad f\left(2\right)g\left(3\right)h\left(1\right)
+        \label{eq:10.34}
+    \end{equation}
+    它不在(\ref{eq:10.32})和(\ref{eq:10.33})中。因此，我们必须将所有六个函数 (\ref{eq:10.32}) 至 (\ref{eq:10.34}) 纳入所需的反对称线性组合中。这六个函数是三个电子在 $f$、$g$ 和 $h$ 三个函数中的六$\left(3 \cdot 2 \cdot 1\right)$种可能排列。若$f\left(1\right)g\left(2\right)h\left(3\right)$是薛定谔方程的解，本征值为$E$，那么由于粒子的特性，(\ref{eq:10.32}) 至 (\ref{eq:10.34}) 的每个函数都是薛定谔方程的解，本征值相同（交换简并），以及这些函数的任意线性组合也是本征值为$E$的本征函数。
 
+    反对称线性组合应具有如下形式：
+    \begin{equation}
+        \begin{aligned}
+            c_1 f\left(1\right)g\left(2\right)h\left(3\right) + c_2 f\left(2\right)g\left(1\right)h\left(3\right) &+ c_3 f\left(3\right)g\left(2\right)h\left(1\right) + c_4 f\left(1\right)g\left(3\right)h\left(2\right) \\
+            &+ c_5 f\left(3\right)g\left(1\right)h\left(2\right) + c_6 f\left(2\right)g\left(3\right)h\left(1\right)
+        \end{aligned}
+        \label{eq:10.35}
+    \end{equation}
+    因为$f\left(2\right)g\left(1\right)h\left(3\right) = \hat{P}_{12} f\left(1\right)g\left(2\right)h\left(3\right)$，为了使得(\ref{eq:10.35})成为$\hat{P}_{12}$的本征值为$-1$的本征函数，我们必须有$c_2 = -c_1$。同样地，$f\left(3\right)g\left(2\right)h\left(1\right) = \hat{P}_{13} f\left(1\right)g\left(2\right)h\left(3\right)$以及$f\left(1\right)g\left(3\right)h\left(2\right) = \hat{P}_{23} f\left(1\right)g\left(2\right)h\left(3\right)$，因此$c_3 = -c_1$和$c_4 = -c_1$。又因为$f\left(3\right)g\left(1\right)h\left(2\right) = \hat{P}_{12} f\left(1\right)g\left(3\right)h\left(2\right)$，我们必须有$c_5 = -c_3 = c_1$。同样地，有$c_6 = c_1$。因此，我们得出了线性组合
+    \begin{equation}
+        \begin{aligned}
+            c_1 \left[ f\left(1\right)g\left(2\right)h\left(3\right) - f\left(2\right)g\left(1\right)h\left(3\right) - f\left(3\right)g\left(2\right)h\left(1\right) - f\left(1\right)g\left(3\right)h\left(2\right) \right. \\
+            \left. + f\left(3\right)g\left(1\right)h\left(2\right) + f\left(2\right)g\left(3\right)h\left(1\right) \right]
+        \end{aligned}
+        \label{eq:10.36}
+    \end{equation}
+    容易证明，上式在交换$1-2$、$1-3$或$2-3$时都满足交换反对称。[将(\ref{eq:10.36})中的所有符号都变为$+$号，我们将得到一个完全对称的函数。]
 
+    假设$f$、$g$和$h$互相正交，选择$c_1$的合适值使得(\ref{eq:10.36})归一化。将(\ref{eq:10.36})与其复共轭相乘，我们得到了很多项，但由于假设的正交性，涉及 (\ref{eq:10.36}) 中两个不同项的所有乘积的积分都消失了。例如，
+    \begin{equation*}
+        \begin{aligned}
+            \int \left[f\left(1\right)g\left(2\right)h\left(3\right)\right]^*&f\left(2\right)g\left(1\right)h\left(3\right) \:\mathrm{d}\tau \\
+            &= \int f^*\left(1\right)g\left(1\right)\:\mathrm{d}\tau_1 \int g^*\left(2\right)f\left(2\right)\:\mathrm{d}\tau_2 \int h^*\left(3\right)h\left(3\right)\:\mathrm{d}\tau_3 = 0 \cdot 0 \cdot 1 = 0
+        \end{aligned}
+    \end{equation*}
+    由于 $f$、$g$和$h$已归一化，因此涉及 (\ref{eq:10.36}) 项与其自身复共轭的乘积的积分等于 1。因此，
+    \begin{equation*}
+        1 = \int \left|10.36\right|^2 \:\mathrm{d}\tau = \left|c_1\right|^2 \left(1+1+1+1+1+1\right)
+    \end{equation*}
+    \begin{equation*}
+        c_1 = 1 / \sqrt{6}
+    \end{equation*}
+    我们可以按原样处理 (\ref{eq:10.36})，但如果我们将其视为以下三阶行列式的展开式 [式 (\ref{eq:8.24}) ]，则最容易发现其性质：
+    \begin{equation}
+        \boxed{ 
+            \frac{1}{\sqrt{6}}\begin{vmatrix}
+                f\left(1\right) & g\left(1\right) & h\left(1\right) \\
+                f\left(2\right) & g\left(2\right) & h\left(2\right) \\
+                f\left(3\right) & g\left(3\right) & h\left(3\right)
+            \end{vmatrix}
+        }
+        \label{eq:10.37}
+    \end{equation}
+    （另见问题8.22）。反对称性质在 (\ref{eq:10.37}) 中成立，因为交换两个电子相当于交换行列式的两行，行列式乘以$-1$。
 
+    现在我们利用（\ref{eq:10.37}）来证明不可能为三个电子构建一个反对称自旋函数。函数$f$、$g$和$h$可能是$\alpha$或$\beta$。若我们取$f = \alpha$、$g = \beta$和$h = \alpha$，则(\ref{eq:10.37})变为
+    \begin{equation}
+        \frac{1}{\sqrt{6}}\begin{vmatrix}
+            \alpha\left(1\right) & \beta\left(1\right) & \alpha\left(1\right) \\
+            \alpha\left(2\right) & \beta\left(2\right) & \alpha\left(2\right) \\
+            \alpha\left(3\right) & \beta\left(3\right) & \alpha\left(3\right)
+        \end{vmatrix}
+        \label{eq:10.38}
+    \end{equation}
+    虽然(\ref{eq:10.38})是一个反对称函数，但它的值为零，我们必须舍去它。行列式的第一列和第三列相同，所以（第\ref{sec:8.3 Determinants}节）行列式的值为零。无论我们怎么取$f$、$g$和$h$，行列式至少有两列是相同的，所以我们无法构建一个非零的三电子交换反对称自旋函数。
 
+    现在我们利用（\ref{eq:10.37}）来构建锂的零级基态波函数，包括空间和自旋变量。函数 $f$、$g$ 和 $h$ 将同时涉及空间变量和自旋变量。我们选择
+    \begin{equation}
+        f\left(1\right) = 1s\left(1\right)\alpha\left(1\right)
+        \label{eq:10.39}
+    \end{equation}
+    我们称具有(\ref{eq:10.39})形式的函数\textbf{自旋轨道}（spin-orbital）。\textit{自旋轨道是单电子空间轨道和单电子自旋函数的乘积。}
 
+    若我们取$g\left(1\right) = 1s\left(1\right)\alpha\left(1\right)$，这使得(\ref{eq:10.37})的第一列和第二列相同，因此行列式的值为零。这是\textbf{泡利不相容原理}（Pauli Exclusion Principle）的一个特例：\textit{两个电子不能占据同一个自旋轨道。}另一种说法是，原子中不可能有两个电子的所有量子数具有相同的值。泡利不相容原理是由相同的自旋$-\frac{1}{2}$ 粒子组成的系统的波函数的更一般的反对称要求的结果，它不如反对称声明令人满意，因为不相容原理是基于近似（零阶）波函数的。
 
+    因此，我们取$g\left(1\right) = 1s\left(1\right)\beta\left(1\right)$，从而使得$1s$轨道中的两个电子自旋相反。对于自旋轨道$h$，我们既不能取$1s\left(1\right)\alpha\left(1\right)$，也不能取$1s\left(1\right)\beta\left(1\right)$，因为这些选择会使行列式的值为零。我们取$h\left(1\right) = 2s\left(1\right)\alpha\left(1\right)$，从而得到了熟悉的\ce{Li}基态组态$1s^22s$，零级波函数为
+    \begin{equation}
+        \psi^{\left(0\right)} = \frac{1}{\sqrt{6}}\begin{vmatrix}
+            1s\left(1\right)\alpha\left(1\right) & 1s\left(1\right)\beta\left(1\right) & 2s\left(1\right)\alpha\left(1\right) \\
+            1s\left(2\right)\alpha\left(2\right) & 1s\left(2\right)\beta\left(2\right) & 2s\left(2\right)\alpha\left(2\right) \\
+            1s\left(3\right)\alpha\left(3\right) & 1s\left(3\right)\beta\left(3\right) & 2s\left(3\right)\alpha\left(3\right)
+        \end{vmatrix}
+        \label{eq:10.40}
+    \end{equation}
+    特别要注意的是，(\ref{eq:10.40}) 并不是简单的空间和自旋部分的乘积（就像我们发现的 \ce{H} 和 \ce{He} 一样），而是多个项的线性组合，每个项都是空间和自旋部分的乘积。
 
+    同样地，我们也可以取$h\left(1\right) = 2s\left(1\right)\beta\left(1\right)$，那么与氢一样，锂的基态是二重简并的，对应于 $2s$ 电子自旋的两种可能方向。我们可以使用轨道图来表明这点：
+    \begin{equation*}
+        \begin{matrix}
+            1s & 2s \\
+            \underline{\uparrow \downarrow} & \underline{\uparrow}
+        \end{matrix} \qquad \text{和} \qquad \begin{matrix}
+            1s & 2s \\
+            \underline{\uparrow \downarrow} & \underline{\downarrow}
+        \end{matrix}
+    \end{equation*}
+    每个空间轨道，例如$1s$或$2p_0$，可以容纳两个自旋相反的电子。一个自旋轨道，例如$2s\alpha$，只能容纳一个电子。
 
+    虽说组态$1s^22p$与$1s^22s$具有相同的未扰动能量$E^{\left(0\right)}$，但当我们在计算$E^{\left(1\right)}$以及更高级的校正时引入了电子斥力，就会发现 $1s^22s$ 组态的能量较低，原因与氦的情况相同。
 
+    考虑一下关于泡利不相容原理的一些观点，我们重述如下：\textit{在一个由相同费米子组成的系统中，没有两个粒子可以占据相同的状态。}如果我们有一个由 $n$ 个相互作用粒子组成的系统（例如原子），那么整个系统只有一个波函数（涉及 $4n$ 个变量）。由于粒子间的相互作用，波函数不能写成单个粒子波函数的乘积。因此，严格来说，我们不能谈论单个粒子的状态，只能谈论整个系统的状态。不过，如果粒子之间的相互作用不太大，那么作为初始近似，我们可以忽略它们，将系统的零阶波函数写成单个粒子波函数的乘积。在这个零阶波函数中，没有两个费米子的波函数（状态）是相同的。
 
+    由于玻色子要求一个交换对称波函数，因此对给定状态下的玻色子数量没有限制。
 
+    1925 年，爱因斯坦证明，在非相互作用玻色子的理想气体中，存在一个非常低的温度 $T_c$（称为凝结温度），高于这个温度时，基态玻色子的分数$f$可以忽略不计，但低于这个温度时，$f$ 会变得可观，并随着绝对温度 $T$ 变为 0 而变为 1。立方体中非相互作用玻色子的$f$满足的方程为$f = 1 - \left(T/T_c\right)^{3/2}, \: T < T_c$[\textit{McQuarrie} (2000), Section 10-4]。大量玻色子落入基态的现象被称为\textit{玻色-爱因斯坦凝聚}（Bose-Einstein condensation）。玻色-爱因斯坦凝聚对于确定超流体液体（其原子是玻色子）的性质非常重要，但液体\ce{He}中的原子间相互作用使理论分析变得困难。
 
-
-
-
-
+    1995 年，物理学家成功地在气体中产生了玻色-爱因斯坦凝聚[\textit{Physics Today}, August 1995, p. 17; C. E. Wieman, \textit{Am. J. Phys.}, \textbf{64}, 847 (1996)]。他们使用了\ce{^37_87Rb}原子的气体。一个\ce{Rb}原子含有87个核子和37个电子，由于它具有偶数(124)个费米子，因此是玻色子。在激光、外加不均匀磁场和外加射频辐射的共同作用下，样品中的$10^4$ \ce{^87Rb}原子被冷却到$10^{-7} \: \mathrm{K}$，从而使相当一部分原子凝结成基态。然后，利用射频辐射去除大部分处于激发态的原子，留下由 2000 个原子组成的凝聚态，其中几乎所有原子都处于基态。实验中的每个\ce{Rb}都受到原子总自旋磁矩与外加磁场相互作用产生的势能函数$V\left(x,y,z\right)$的影响（第 \ref{sec:6.8 Zeeman effect} 节和第 \ref{sec:10.9 Spin Magnetic Moment} 节）。不均匀的外加磁场使得势能 $V$ 为三维谐振子（见问题4.20）的势能加上一个常数。玻色-爱因斯坦凝聚态中的\ce{Rb}原子处于这个谐振子势能的基态。
 
 \section{斯莱特行列式}
 \label{sec:10.6 Slater Determinants}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{微扰理论处理基态锂原子}
 \label{sec:10.7 Perturbation Treatment of the Lithium Ground State}
