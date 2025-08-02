@@ -246,26 +246,106 @@
 \section{氦原子}
 \label{sec:10.4 Th Helium Atom}
 
+    现在，我们从电子自旋和反对称要求的角度重新考虑氦原子。在第\ref{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}节对氦原子进行微扰处理时，我们发现基态的零级波函数为$1s\left(1\right)1s\left(2\right)$。为了引入自旋，我们必须将该空间波函数与自旋本征函数相乘。因此，我们考虑两个电子可能的自旋本征函数。使用符号$\alpha\left(1\right)\alpha\left(2\right)$表示电子1和电子2的自旋向上状态，$\alpha\left(1\right)$代表了$\alpha\left(m_{s1}\right)$。因为每个电子都有两种可能的自旋状态，因此我们一眼就能看到四种可能的自旋函数：
+    \begin{equation*}
+        \alpha\left(1\right)\alpha\left(2\right), \quad \beta\left(1\right)\beta\left(2\right), \quad \alpha\left(1\right)\beta\left(2\right), \quad \alpha\left(2\right)\beta\left(1\right)
+    \end{equation*}
+    前两个函数没有任何问题，但第三和第四个函数违反了全同粒子不可区分的原则。例如，第三个函数表明电子1自旋向上而电子2自旋向下，这确实区分了电子1和2。更正式的说法是，如果我们将$\hat{P}_{12}$作用于这些函数，会发现前两个函数满足交换对称的要求，而后两个既不满足交换对称也不满足交换反对称，因此是不可接受的。
 
+    现在怎么办？回想一下，我们在处理氦激发态时也遇到了基本相同的情况（第 \ref{sec:9.7 Perturbation Treatment of the First Excited State of Helium} 节），我们从函数$1s\left(1\right)2s\left(2\right)$和$2s\left(1\right)1s\left(2\right)$开始。我们发现这些区分了电子1和2的函数不是零级校正波函数，正确的零级校正波函数为$2^{-1/2}\left[1s\left(1\right)2s\left(2\right) \pm 2s\left(1\right)1s\left(2\right)\right]$。这一结果强烈表明，我们需要用下式来代替$\alpha\left(1\right)\beta\left(2\right)$和$\beta\left(1\right)\alpha\left(2\right)$：
+    \begin{equation}
+        2^{-1/2}\left[\alpha\left(1\right)\beta\left(2\right) \pm \beta\left(1\right)\alpha\left(2\right)\right]
+        \label{eq:10.21}
+    \end{equation}
+    这些函数是$\alpha\left(1\right)\beta\left(2\right)$和$\beta\left(1\right)\alpha\left(2\right)$的归一化线性组合，也是$\hat{P}_{12}$的本征函数。它们是交换对称或反对称的。当电子1和电子2交换时，$2^{-1/2}\left[\alpha\left(1\right)\beta\left(2\right) + \beta\left(1\right)\alpha\left(2\right)\right]$变为了$2^{-1/2}\left[\alpha\left(2\right)\beta\left(1\right) + \beta\left(2\right)\right.$\\$\left.\alpha\left(1\right)\right]$，与原函数一致。相反地，$2^{-1/2}\left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right]$变为$-2^{-1/2}\left[\alpha\left(2\right)\beta\left(1\right) - \beta\left(2\right)\alpha\left(1\right)\right]$，等于$-1$与原函数相乘。为了证明(\ref{eq:10.21})是归一化的，我们有
+    \begin{equation*}
+        \begin{aligned}
+            \sum_{m_{s1}} & \sum_{m_{s2}} \frac{1}{\sqrt{2}} \left[\alpha\left(1\right) \beta\left(2\right) \pm \beta\left(1\right) \alpha\left(2\right)\right]^* \frac{1}{\sqrt{2}} \left[\alpha\left(1\right) \beta\left(2\right) \pm \beta\left(1\right) \alpha\left(2\right)\right] \\
+            & = \frac{1}{2} \sum_{m_{s1}} \left|\alpha\left(1\right)\right|^{2} \sum_{m_{s2}} \left|\beta\left(2\right)\right|^{2} \pm \frac{1}{2} \sum_{m_{s1}} \alpha^{*}\left(1\right) \beta\left(1\right) \sum_{m_{s2}} \beta^{*}\left(2\right) \alpha\left(2\right) \\
+            & \pm \frac{1}{2} \sum_{m_{s1}} \beta^{*}\left(1\right)\alpha\left(1\right) \sum_{m_{s2}} \alpha^{*}\left(2\right)\beta\left(2\right) + \frac{1}{2} \sum_{m_{s1}} \left|\beta\left(1\right)\right|^{2} \sum_{m_{s2}} \left|\alpha\left(2\right)\right|^{2} = 1
+        \end{aligned}
+    \end{equation*}
+    其中我们用到了正交关系(\ref{eq:10.11})和(\ref{eq:10.12})。
 
+    因此，具有正确交换性质的四个归一化双电子自旋本征函数是
+    \begin{empheq}[box=\fbox, left={\text{对称：}\empheqlbrace}]{align}
+        &\alpha\left(1\right)\alpha\left(2\right) \label{eq:10.22}\\
+        &\beta\left(1\right)\beta\left(2\right) \label{eq:10.23}\\
+        &\left[\alpha\left(1\right)\beta\left(2\right) + \beta\left(1\right)\alpha\left(2\right)\right] / \sqrt{2} \label{eq:10.24}
+    \end{empheq}
+    \begin{equation}
+        \boxed{
+            \text{反对称：}\left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right] / \sqrt{2}
+        }
+        \label{eq:10.25}
+    \end{equation}
 
+    我们现在将自旋引入\ce{He}的基态零级校正波函数中。函数$1s\left(1\right)1s\left(2\right)$满足交换对称。包括自旋在内的完全电子波函数必须是交换反对称的。因此，我们必须将某个交换反对称的自旋波函数与交换对称的空间波函数$1s\left(1\right)1s\left(2\right)$相乘。只有一个反对称双电子自旋函数，因此氦原子的基态零阶波函数（包括自旋）为
+    \begin{equation}
+        \psi^{\left(0\right)} = 1s\left(1\right)1s\left(2\right) \cdot 2^{-1/2}\left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right]
+        \label{eq:10.26}
+    \end{equation}
+    $\psi^{\left(0\right)}$是$\hat{P}_{12}$的本征函数，对应于本征值$-1$。
 
+    在很好的近似条件下，哈密顿量不包含自旋项，因此在基态波函数中引入自旋因子不会影响能量。而且，当考虑自旋时，氦的基态仍然是非简并的。
 
+    为了进一步证明自旋因子并不影响能量，我们假设正在使用试探函数$\phi = f\left(r_1, r_2, r_{12}\right)2^{-1/2}$\\$ \left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right]$对 \ce{He} 的基态进行变分计算，其中$f$是满足两电子坐标交换对称的归一化函数。变分积分为
+    \begin{equation*}
+        \begin{aligned}
+            \int \phi^* \hat{H} \phi \: \mathrm{d}\tau =& \sum_{m_{s1}} \sum_{m_{s2}} \int \int f^* \left(r_1, r_2, r_{12}\right) \frac{1}{\sqrt{2}} \left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right]^* \\
+            & \times \hat{H} f \left(r_1, r_2, r_{12}\right) \frac{1}{\sqrt{2}} \left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right] \: \mathrm{d}v_1 \: \mathrm{d}v_2
+        \end{aligned}
+    \end{equation*}
+    因为$\hat{H}$对自旋波函数没有作用，所以变分积分变为
+    \begin{equation*}
+        \int \int f^* \hat{H} f \:\mathrm{d} v_1 \: \mathrm{d} v_2 \sum_{m_{s1}} \sum_{m_{s2}} \frac{1}{2} \left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right]^2
+    \end{equation*}
+    又因为自旋函数(\ref{eq:10.25})是归一化的，所以变分积分简化为$\int \int f^* \hat{H} f \:\mathrm{d} v_1 \: \mathrm{d} v_2$，这就是我们引入自旋之前的变分积分。
 
-
-
-
-
-
-
-
-
-
-
-
+    现在，我们来考虑\ce{He}的激发态。我们知道，最低激发态的零级空间波函数为$2^{-1/2}\left[1s\left(1\right)2s\left(2\right) \right.$\\$\left. - 2s\left(1\right)1s\left(2\right)\right]$[式(\ref{eq:9.103})]。因为空间函数是交换反对称的，我们必须乘上一个交换对称的自旋函数。我们可以使用三个交换对称的双电子自旋函数中的任意一个，因此我们得到的不是之前发现的非简并能级，而是一个具有三个零级波函数的三重简并能级
+    \begin{equation}
+        2^{-1/2}\left[1s\left(1\right)2s\left(2\right) - 2s\left(1\right)1s\left(2\right)\right]\alpha\left(1\right)\alpha\left(2\right)
+        \label{eq:10.27}
+    \end{equation}
+    \begin{equation}
+        2^{-1/2}\left[1s\left(1\right)2s\left(2\right) - 2s\left(1\right)1s\left(2\right)\right]\beta\left(1\right)\beta\left(2\right)
+        \label{eq:10.28}
+    \end{equation}
+    \begin{equation}
+        2^{-1/2}\left[1s\left(1\right)2s\left(2\right) - 2s\left(1\right)1s\left(2\right)\right]2^{-1/2}\left[\alpha\left(1\right)\beta\left(2\right) + \beta\left(1\right)\alpha\left(2\right)\right]
+        \label{eq:10.29}
+    \end{equation}
+    对于下一个激发态，由于要求完全波函数具有交换反对称性，因此会产生零阶波函数
+    \begin{equation}
+        2^{-1/2}\left[1s\left(1\right)2s\left(2\right) + 2s\left(1\right)1s\left(2\right)\right]2^{-1/2}\left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right]
+        \label{eq:10.30}
+    \end{equation}
+    同样的考虑也适用于 $1s2p$ 状态。
 
 \section{泡利不相容原理}
 \label{sec:10.5 The Pauli Exclusion Principle}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{斯莱特行列式}
 \label{sec:10.6 Slater Determinants}
