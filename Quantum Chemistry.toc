@@ -80,8 +80,8 @@
 \contentsline {section}{\numberline {10.6}斯莱特行列式}{209}{section.10.6}%
 \contentsline {section}{\numberline {10.7}微扰理论处理基态锂原子}{210}{section.10.7}%
 \contentsline {section}{\numberline {10.8}变分法处理基态锂原子}{211}{section.10.8}%
-\contentsline {section}{\numberline {10.9}自旋磁矩}{211}{section.10.9}%
-\contentsline {section}{\numberline {10.10}电子自旋的梯度算符}{211}{section.10.10}%
+\contentsline {section}{\numberline {10.9}自旋磁矩}{212}{section.10.9}%
+\contentsline {section}{\numberline {10.10}电子自旋的梯度算符}{212}{section.10.10}%
 \contentsline {chapter}{\numberline {11}多电子原子}{213}{chapter.11}%
 \contentsline {section}{\numberline {11.1}Hartree-Fock自洽场方法}{213}{section.11.1}%
 \contentsline {section}{\numberline {11.2}轨道和元素周期表}{213}{section.11.2}%

@@ -596,24 +596,48 @@
     \end{equation*}
     一级微扰能量为$-192.0 \: \mathrm{eV}$，与\ce{Li}基态真实值$-203.5 \: \mathrm{eV}$相比较。为了改进该结果，我们可以计算更高级的波函数和能量校正。这将混入涉及 $1s^22s$ 以外组态的斯莱特行列式的波函数贡献中（组态相互作用）。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{变分法处理基态锂原子}
 \label{sec:10.8 Variation Treatments of the Lithium Ground State}
 
+    零级校正微扰波函数(\ref{eq:10.40})使用了\ce{Li}$1s$和$2s$轨道的完整核电荷（$Z=3$）。我们预计，被两个 $1s$ 电子部分屏蔽在原子核外的 $2s$ 电子的有效核电荷将远小于3。即使是 $1s$ 电子也会部分地相互屏蔽（回顾一下氦基态的处理）。根据这一推理，可以在 (\ref{eq:10.40}) 中引入两个变分参数 $b_1$ 和 $b_2$。
+
+    不使用表\ref{tab:6.2}中$Z=3$的$1s$函数，我们令
+    \begin{equation}
+        f \equiv \frac{1}{\pi^{1/2}}\left(\frac{b_1}{a_0}\right)^{3/2} \mathrm{e}^{-b_1r/a_0}
+        \label{eq:10.52}
+    \end{equation}
+    其中，$b_1$ 是一个变分参数，代表 $1s$ 电子的有效核电荷。不使用表\ref{tab:6.2}中 $Z=3$ 的 $2s$ 函数，我们令
+    \begin{equation}
+        g = \frac{1}{4\left(2\pi\right)^{1/2}} \left( \frac{b_2}{a_0} \right)^{3/2} \left( 2 - \frac{b_2 r}{a_0} \right) \mathrm{e}^{-b_2 r/2a_0}
+        \label{eq:10.53}
+    \end{equation}
+    则我们的试探变分函数为
+    \begin{equation}
+        \phi = \frac{1}{\sqrt{6}} \begin{vmatrix}
+            f\left(1\right)\alpha\left(1\right) & f\left(1\right)\beta\left(1\right) & g\left(1\right)\alpha\left(1\right) \\
+            f\left(2\right)\alpha\left(2\right) & f\left(2\right)\beta\left(2\right) & g\left(2\right)\alpha\left(2\right) \\
+            f\left(3\right)\alpha\left(3\right) & f\left(3\right)\beta\left(3\right) & g\left(3\right)\alpha\left(3\right)
+        \end{vmatrix}
+        \label{eq:10.54}
+    \end{equation}
+    由于我们对$1s$和$2s$轨道的电荷进行了$b_1$和$b_2$的修改，则它们不再正交，因此(\ref{eq:10.54})尚未归一化。变分参数的最佳值通过令$\partial W / \partial b_1 = 0$和$\partial W / \partial b_2 = 0$来确定，其中变分积分$W$由(\ref{eq:8.9})的左侧给出。结果为[E. B. Wilson, Jr., \textit{J. Chem. Phys.}, \textbf{1}, 210 (1933)]$b_1 = 2.686$，$b_2 = 1.776$，$W = -201.2 \: \mathrm{eV}$。与上一节的结果$-192.0 \: \mathrm{eV}$相比，这个变分结果更接近锂基态的真实能量$-203.5 \: \mathrm{eV}$。$b_2$ 的值表明 $1s$ 电子对 $2s$ 电子的屏蔽作用很强，但并不完全。
+
+    除了（\ref{eq:10.52}）和（\ref{eq:10.53}）之外，我们还可以尝试其他形式的轨道来改进试探函数。然而，无论我们尝试何种轨道函数，如果我们将自己限制在 (\ref{eq:10.54}) 形式的试探函数中，我们就永远无法得到真正的基态能量。为此，我们可以在试函数中引入 $r_{12}$、$r_{23}$ 和 $r_{13}$，或者使用与各种构型相对应的几个斯莱特行列式的线性组合（组态相互作用）。
+
 \section{自旋磁矩}
 \label{sec:10.9 Spin Magnetic Moment}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{电子自旋的梯度算符}
 \label{sec:10.10 Ladder Operators for Electron Spin}
