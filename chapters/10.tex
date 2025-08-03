@@ -553,9 +553,48 @@
 \section{微扰理论处理基态锂原子}
 \label{sec:10.7 Perturbation Treatment of the Lithium Ground State}
 
+    让我们对锂原子的基态进行微扰处理。定义$\mathrm{e}' \equiv \mathrm{e} / 4\pi \varepsilon_0$，我们有
+    \begin{equation*}
+        \hat{H}^0 = \frac{-\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_3^2 - \frac{Z\mathrm{e}'^2}{r_{1}} - \frac{Z\mathrm{e}'^2}{r_{2}} - \frac{Z\mathrm{e}'^2}{r_{3}}, \quad \hat{H}' = \frac{\mathrm{e}'^2}{r_{12}} + \frac{\mathrm{e}'^2}{r_{13}} + \frac{\mathrm{e}'^2}{r_{23}}
+    \end{equation*}
+    在\ref{sec:10.5 The Pauli Exclusion Principle}节中，我们已经知道：为了满足反对称要求，基态组态必须为$1s^22s$。零级校正波函数为(\ref{eq:10.40})：
+    \begin{equation}
+        \begin{aligned}
+            \psi^{\left(0\right)} = &6^{-1/2} \left[1s\left(1\right)1s\left(2\right)2s\left(3\right)\alpha\left(1\right)\beta\left(2\right)\alpha\left(3\right) - 1s\left(1\right)2s\left(2\right)1s\left(3\right)\alpha\left(1\right)\alpha\left(2\right)\beta\left(3\right)\right. \\
+            &- 1s\left(1\right)1s\left(2\right)2s\left(3\right)\beta\left(1\right)\alpha\left(2\right)\alpha\left(3\right) + 1s\left(1\right)2s\left(2\right)1s\left(3\right)\beta\left(1\right)\alpha\left(2\right)\alpha\left(3\right) \\
+            &\, \left. + 2s\left(1\right)1s\left(2\right)1s\left(3\right)\alpha\left(1\right)\alpha\left(2\right)\beta\left(3\right) - 2s\left(1\right)1s\left(2\right)1s\left(3\right)\alpha\left(1\right)\beta\left(2\right)\alpha\left(3\right)\right]
+            \label{eq:10.48}
+        \end{aligned}
+    \end{equation}
 
+    $E^{\left(0\right)}$是什么？$\psi^{\left(0\right)}$中的每一项都是两个$1s$类氢函数、一个$2s$类氢函数与一个自旋因子的乘积。$\hat{H}^0$是三个类氢哈密顿量之和，每个电子一个，且不包含自旋。则$\psi^{\left(0\right)}$是本征值为$E_{1s}^{\left(0\right)} + E_{1s}^{\left(0\right)} + E_{2s}^{\left(0\right)}$的本征函数的线性组合，其中这些能量是类氢能量。那么$\psi^{\left(0\right)}$是$\hat{H}^0$的本征函数，其本征值为$E^{\left(0\right)} = 2E_{1s}^{\left(0\right)} + E_{2s}^{\left(0\right)}$。则[式(\ref{eq:6.94})]
+    \begin{equation}
+        E^{\left(0\right)} = -\left(\frac{1}{1^2} + \frac{1}{1^2} + \frac{1}{2^2}\right) \left(\frac{Z^2\mathrm{e}'^2}{2a_0}\right) = -\frac{81}{4}\left(13.606 \: \mathrm{eV} \right) = -275.5 \: \mathrm{eV}
+        \label{eq:10.49}
+    \end{equation}
+    
 
-
+    $E^{\left(1\right)} = \left\langle \psi^{\left(0\right)} \left| \hat{H}' \right| \psi^{\left(0\right)} \right\rangle$的计算概述于问题10.15.可以得出：
+    \begin{equation}
+        \begin{aligned}
+            E^{\left(1\right)} = 2\int \int 1s^2\left(1\right)2s^2\left(2\right) \frac{\mathrm{e}'^2}{r_{12}} \: \mathrm{d}v_1 \: \mathrm{d}v_2 &+ \int \int 1s^2\left(1\right)1s^2\left(2\right) \frac{\mathrm{e}'^2}{r_{12}} \: \mathrm{d}v_1 \: \mathrm{d}v_2 \\
+            &- \int \int 1s\left(1\right)2s\left(2\right)1s\left(2\right)2s\left(1\right) \frac{\mathrm{e}'^2}{r_{12}} \: \mathrm{d}v_1 \: \mathrm{d}v_2
+        \end{aligned}
+        \label{eq:10.50}
+    \end{equation}
+    这些积分是库伦积分和交换积分：
+    \begin{equation}
+        E^{\left(1\right)} = 2J_{1s2s} + J_{1s1s} - K_{1s2s}
+        \label{eq:10.51}
+    \end{equation}
+    我们有[式(\ref{eq:9.52})、(\ref{eq:9.53})和(\ref{eq:9.111})]：
+    \begin{equation*}
+        J_{1s1s} = \frac{5}{8} \frac{Z\mathrm{e}'^2}{a_0}, \quad J_{1s2s} = \frac{17}{81} \frac{Z\mathrm{e}'^2}{a_0}, \quad K_{1s2s} = \frac{16}{729} \frac{Z\mathrm{e}'^2}{a_0}
+    \end{equation*}
+    \begin{equation*}
+        E^{\left(1\right)} = \frac{5965}{972}\left(\frac{\mathrm{e}'^2}{2a_0}\right) = 83.5 \: \mathrm{eV}
+    \end{equation*}
+    一级微扰能量为$-192.0 \: \mathrm{eV}$，与\ce{Li}基态真实值$-203.5 \: \mathrm{eV}$相比较。为了改进该结果，我们可以计算更高级的波函数和能量校正。这将混入涉及 $1s^22s$ 以外组态的斯莱特行列式的波函数贡献中（组态相互作用）。
 
 
 
