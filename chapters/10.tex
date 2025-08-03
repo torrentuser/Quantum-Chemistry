@@ -482,24 +482,93 @@
 \section{斯莱特行列式}
 \label{sec:10.6 Slater Determinants}
 
+    斯莱特（Slater）在 1929 年指出，形式为 (\ref{eq:10.40}) 的行列式满足多电子原子的反对称要求。类似 (\ref{eq:10.40}) 的行列式称为\textbf{斯莱特行列式}（Slater Determinants）。斯莱特行列式的某一列中的所有元素都涉及相同的自旋轨道，而同一行中的所有元素都涉及相同的电子。（由于交换行列并不影响行列式的值，我们可以用另一种等价形式来书写斯莱特行列式）。
 
+    考虑一下我们之前导出的零级氦波函数如何写成斯莱特行列式。对于基态组态$1s^2$，我们有自旋轨道$1s\alpha$和$1s\beta$。因此，斯莱特行列式为
+    \begin{equation}
+        \frac{1}{\sqrt{2}}\begin{vmatrix}
+            1s\left(1\right)\alpha\left(1\right) & 1s\left(1\right)\beta\left(1\right) \\
+            1s\left(2\right)\alpha\left(2\right) & 1s\left(2\right)\beta\left(2\right)
+        \end{vmatrix} = 1s\left(1\right)1s\left(2\right) \frac{1}{\sqrt{2}}\left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right]
+        \label{eq:10.41}
+    \end{equation}
+    与(\ref{eq:10.26})一致。对于与激发构型 $1s2s$ 相对应的态，我们有以下可能的自旋轨道$1s\alpha$、$1s\beta$、$2s\alpha$和$2s\beta$。因此，斯莱特行列式为
+    \begin{equation*}
+        \begin{aligned}
+            D_1 &= \frac{1}{\sqrt{2}}\begin{vmatrix}
+                1s\left(1\right)\alpha\left(1\right) & 2s\left(1\right)\alpha\left(1\right) \\
+                1s\left(2\right)\alpha\left(2\right) & 2s\left(2\right)\alpha\left(2\right)
+            \end{vmatrix}  \quad D_2 = \frac{1}{\sqrt{2}}\begin{vmatrix}
+                1s\left(1\right)\alpha\left(1\right) & 2s\left(1\right)\beta\left(1\right) \\
+                1s\left(2\right)\alpha\left(2\right) & 2s\left(2\right)\beta\left(2\right)
+            \end{vmatrix} \\
+            D_3 &= \frac{1}{\sqrt{2}}\begin{vmatrix}
+                1s\left(1\right)\beta\left(1\right) & 2s\left(1\right)\alpha\left(1\right) \\
+                1s\left(2\right)\beta\left(2\right) & 2s\left(2\right)\alpha\left(2\right)
+            \end{vmatrix} \quad D_4 = \frac{1}{\sqrt{2}}\begin{vmatrix}
+                1s\left(1\right)\beta\left(1\right) & 2s\left(1\right)\beta\left(1\right) \\
+                1s\left(2\right)\beta\left(2\right) & 2s\left(2\right)\beta\left(2\right)
+            \end{vmatrix}
+        \end{aligned}
+    \end{equation*}
+    与 (\ref{eq:10.27}) 至 (\ref{eq:10.30}) 的比较表明，$1s2s$ 零阶波函数与这四个斯莱特行列式的关系如下：
+    \begin{equation}
+        2^{-1/2} \left[1s\left(1\right)2s\left(2\right) - 2s\left(1\right)1s\left(2\right)\right]\alpha\left(1\right)\alpha\left(2\right) = D_1
+        \label{eq:10.42}
+    \end{equation}
+    \begin{equation}
+        2^{-1/2} \left[1s\left(1\right)2s\left(2\right) - 2s\left(1\right)1s\left(2\right)\right]\beta\left(1\right)\beta\left(2\right) = D_4
+        \label{eq:10.43}
+    \end{equation}
+    \begin{equation}
+        2^{-1/2} \left[1s\left(1\right)2s\left(2\right) - 2s\left(1\right)1s\left(2\right)\right]2^{-1/2} \left[\alpha\left(1\right)\beta\left(2\right) + \beta\left(1\right)\alpha\left(2\right)\right] = 2^{-1/2} \left(D_2 + D_3\right)
+        \label{eq:10.44}
+    \end{equation}
+    \begin{equation}
+        2^{-1/2} \left[1s\left(1\right)2s\left(2\right) + 2s\left(1\right)1s\left(2\right)\right]2^{-1/2} \left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right] = 2^{-1/2} \left(D_2 - D_3\right)
+        \label{eq:10.45}
+    \end{equation}
+    （要得到一个自旋和轨道角动量算子的特征函数的零级函数，我们有时必须对组态的斯莱特行列式进行线性组合；见第 \ref{chap:11} 章。）
 
+    接下来，我们来看看斯莱特行列式的一些符号。与用$\alpha$和$\beta$表示自旋函数不同，人们通常在空间函数上加一横杠，表示自旋函数 $\beta$，而没有横杠的空间函数则表示自旋因子 $\alpha$。根据这种符号，(\ref{eq:10.40})可以写成
+    \begin{equation}
+        \psi^{\left(0\right)} = \frac{1}{\sqrt{6}}\begin{vmatrix}
+            1s\left(1\right) & \overline{1s}\left(1\right) & 2s\left(1\right) \\
+            1s\left(2\right) & \overline{1s}\left(2\right) & 2s\left(2\right) \\
+            1s\left(3\right) & \overline{1s}\left(3\right) & 2s\left(3\right)
+        \end{vmatrix}
+        \label{eq:10.46}
+    \end{equation}
+    有了电子占据的自旋轨道，我们就可以很容易地构建斯莱特行列式。因此，斯莱特行列式通常使用简记符号，只需指定自旋轨道即可。在这种符号中，(\ref{eq:10.46}) 通常写为
+    \begin{equation}
+        \boxed{
+            \psi^{\left(0\right)} = \left|1s \overline{1s}2s\right|
+        }
+        \label{eq:10.47}
+    \end{equation}
+    其中竖线表示行列式并乘以 $1/\sqrt{6}$。
 
-
-
-
-
-
-
-
-
-
-
-
-
+    我们已经证明，因子 $1/\sqrt{6}$ 使由正交函数构成的三阶斯莱特行列式归一化。$n$阶行列式的展开式有$n!$项（问题8.20）。对于由正交轨道构成的$n$阶斯莱特行列式，与三阶行列式相同的推理表明：归一化常数为$1/\sqrt{n!}$。因此，在定义$n$阶斯莱特行列式时，我们总是加上因子$1/\sqrt{n!}$。
 
 \section{微扰理论处理基态锂原子}
 \label{sec:10.7 Perturbation Treatment of the Lithium Ground State}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{变分法处理基态锂原子}
 \label{sec:10.8 Variation Treatments of the Lithium Ground State}
