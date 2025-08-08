@@ -722,6 +722,101 @@
 \section{电子自旋的梯度算符}
 \label{sec:10.10 Ladder Operators for Electron Spin}
 
+    自旋角动量算符满足第\ref{sec:5.4 The Ladder-Operator Method for Angular Momentum}节中给出的角动量对易关系，且常使用自旋角动量阶梯算符进行计算。
+
+    根据式(\ref{eq:5.110})和(\ref{eq:5.111})，自旋角动量算符的阶梯算符为
+    \begin{equation}
+        \hat{S}_+ = \hat{S}_x + \mathrm{i}\hat{S}_y, \quad \hat{S}_- = \hat{S}_x - \mathrm{i}\hat{S}_y
+        \label{eq:10.63}
+    \end{equation}
+    再根据式(\ref{eq:5.112})和(\ref{eq:5.113})，有
+    \begin{equation}
+        \hat{S}_+\hat{S}_- = \hat{S}^2 - \hat{S}_z^2 + \hbar\hat{S}_z
+        \label{eq:10.64}
+    \end{equation}
+    \begin{equation}
+        \hat{S}_-\hat{S}_+ = \hat{S}^2 - \hat{S}_z^2 - \hbar\hat{S}_z
+        \label{eq:10.65}
+    \end{equation}
+
+    自旋函数$\alpha$和$\beta$是$\hat{S}_z$的本征函数，其本征值分别为$+\frac{1}{2}\hbar$和$-\frac{1}{2}\hbar$。由于$\hat{S}_+$是升算符，则函数$\hat{S}_+\beta$是$\hat{S}_z$的本征函数，本征值为$+\frac{1}{2}\hbar$。具有该本征值的$\hat{S}_z$最一般的本征函数为任意常数乘以$\alpha$。因此，
+    \begin{equation}
+        \hat{S}_+\beta = c\alpha
+        \label{eq:10.66}
+    \end{equation}
+    其中$c$是任意常数。为了求出$c$，我们使用归一化条件[式(\ref{eq:10.11})]：
+    \begin{equation*}
+        1 = \sum_{m_s} \left[\alpha\left(m_s\right)\right]^*\alpha\left(m_s\right) = \sum \left(\hat{S}_+\beta/c\right)^* \left(\hat{S}_+\beta/c\right)
+    \end{equation*}
+    \begin{equation*}
+        \left|c\right|^2 = \sum \left(\hat{S}_+\beta\right) ^* \left(\hat{S}_+\beta\right) = \sum \left(\hat{S}_+\beta\right)^* \left(\hat{S}_x + \mathrm{i}\hat{S}_y\right)\beta
+    \end{equation*}
+    \begin{equation}
+        \left|c\right|^2 = \sum \left(\hat{S}_+\beta\right)^* \hat{S}_x\beta + \mathrm{i} \sum \left(\hat{S}_+\beta\right)^* \hat{S}_y\beta
+        \label{eq:10.67}
+    \end{equation}
+    我们现在使用算符$\hat{S}_x$和$\hat{S}_y$的厄米性。对于作用在任意连续变量$x$上的算符$\hat{A}$，厄米性为
+    \begin{equation*}
+        \int_{-\infty}^{\infty} f^*\left(x\right)\hat{A}g\left(x\right) \: \mathrm{d}x = \int_{-\infty}^{\infty} g\left(x\right) \left[\hat{A}f\left(x\right)\right]^* \: \mathrm{d}x
+    \end{equation*}
+    对于作用于具有离散值的变量$m_s$的算符，例如$\hat{S}_x$，则厄米性为
+    \begin{equation}
+        \sum_{m_s} f^*(m_s)\hat{S}_x g(m_s) = \sum_{m_s} g(m_s)\left[\hat{S}_x f(m_s)\right]^*
+        \label{eq:10.68}
+    \end{equation}
+    令$f = \hat{S}_+\beta$和$g = \beta$，则我们将(\ref{eq:10.67})写作
+    \begin{equation*}
+        c ^* c = \sum \beta (\hat{S}_x\hat{S}_+ \beta) ^* + \mathrm{i} \sum \beta (\hat{S}_y\hat{S}_+ \beta)^*
+    \end{equation*}
+    取该方程的复共轭，使用(\ref{eq:10.63})和(\ref{eq:10.65})，我们得到
+    \begin{equation*}
+        \begin{aligned}
+            cc^* &= \sum \beta ^* \hat{S}_x\hat{S}_+ \beta - \mathrm{i} \sum \beta ^* \hat{S}_y\hat{S}_+ \beta \\
+            |c|^2 &= \sum \beta ^* \left(\hat{S}_x - \mathrm{i}\hat{S}_y  \right)\hat{S}_+\beta = \sum \beta ^* \hat{S}_-\hat{S}_+\beta \\
+            |c|^2 &= \sum \beta ^* \left(\hat{S}^2 - \hat{S}_z^2 - \hbar\hat{S}_z  \right)\beta \\
+            |c|^2 &= \sum \beta ^* \left(\frac{3}{4}\hbar^2 -\frac{1}{4}\hbar^2 + \frac{1}{2}\hbar^2  \right)\beta = \hbar^2 \sum \beta ^* \beta = \hbar^2 \sum \beta^* \beta = \hbar
+        \end{aligned}
+    \end{equation*}
+    \begin{equation*}
+        \left|c\right| = \hbar
+    \end{equation*}
+    
+    令$c$的相位为零，我们有$c = \hbar$，则(\ref{eq:10.66})变为
+    \begin{equation}
+        \hat{S}_+ \beta = \hbar \alpha
+        \label{eq:10.69}
+    \end{equation}
+    相似的计算给出
+    \begin{equation}
+        \hat{S}_- \alpha = \hbar \beta
+        \label{eq:10.70}
+    \end{equation}
+    因为$\alpha$是具有最大$m_s$可能值的本征函数，所以$\hat{S}_+$作用于$\alpha$时应得零[式(\ref{eq:5.135})]：
+    \begin{equation*}
+        \hat{S}_+ \alpha = 0
+    \end{equation*}
+    同样地，
+    \begin{equation*}
+        \hat{S}_- \beta = 0
+    \end{equation*}
+    根据最后这四个方程，我们得到
+    \begin{equation}
+        \left(\hat{S}_+ + \hat{S}_-\right)\beta = \hbar \alpha, \quad \left(\hat{S}_+ + \hat{S}_-\right)\alpha = \hbar \beta
+        \label{eq:10.71}
+    \end{equation}
+    将(\ref{eq:10.63})带入(\ref{eq:10.71})，得到
+    \begin{equation}
+        \hat{S}_x \beta = \frac{1}{2}\hbar \alpha, \quad \hat{S}_x \alpha = \frac{1}{2}\hbar \beta
+        \label{eq:10.72}
+    \end{equation}
+    同样地，有
+    \begin{equation}
+        \hat{S}_x \alpha = \frac{1}{2}\hbar \beta, \quad \hat{S}_y \alpha = \frac{1}{2}\mathrm{i}\hbar \beta
+        \label{eq:10.73}
+    \end{equation}
+    
+    自旋算符的矩阵表示在问题10.28中讨论。
+
 \section*{总结}
 
 \section*{习题}
