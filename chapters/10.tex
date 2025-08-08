@@ -627,17 +627,97 @@
 \section{自旋磁矩}
 \label{sec:10.9 Spin Magnetic Moment}
 
+    回忆：电子的轨道角动量$\mathbf{L}$有一磁矩$-\left(\mathrm{e}/2m_{\mathrm{e}}\right)\mathbf{L}$与之相关联[式(\ref{eq:6.128})]，其中$-\mathrm{e}$是电子的电荷。我们很自然地假设也有磁矩$\mathbf{m}_S$与电子的自旋$\mathbf{S}$相关联。猜测$\mathbf{m}_S$为$-\left(\mathrm{e}/2m_{\mathrm{e}}\right)$乘以$\mathbf{S}$。然而，自旋是一个相对论现象，我们不能希望$\mathbf{m}_S$与$\mathbf{S}$的关系和$\mathbf{L}$与$\mathbf{S}$的关系完全一致。事实上，狄拉克对电子的相对论处理得出了以下结果（使用SI单位制）
+    \begin{equation}
+        \mathbf{m}_S = -g_{\mathrm{e}} \frac{\mathrm{e}}{2m_{\mathrm{e}}} \mathbf{S}
+        \label{eq:10.55}
+    \end{equation}
+    对于\textit{电子的$g$因子$g_{\mathrm{e}}$}，狄拉克得出$g_{\mathrm{e}} = 2$。在狄拉克的研究之后，理论和实验研究表明$g_{\mathrm{e}}$实际上略大于2，$g_{\mathrm{e}} = 2\left(1 + \alpha/2\pi + \ldots\right) = 2.0023$，其中的省略表示含$\alpha$更高次幂的项，其中\textit{精细结构常数}（fine-structure constant）$\alpha$为
+    \begin{equation}
+        \alpha \equiv \frac{\mathrm{e}^2}{4\pi\varepsilon_0\hbar c} = 0.00729735257
+        \label{eq:10.56}
+    \end{equation}
+    对$g_{\mathrm{e}}$的测量结果异常精确[D. Hanneke et al., \textit{Phys. Rev. A}, \textbf{83}, 052122 (2011); available at \url{arxiv.org/abs/1009.4831}]：$g_{\mathrm{e}} = 2.002319304361$。[有些工作者倾向于省略 (\ref{eq:10.55}) 中的负号，而采用 $g_{\mathrm{e}}$ 为负数的惯例；见\url{www.stanford.edu/group/Zarelab/publinks/zarepub642.pdf}。]
 
+    电子自旋磁矩的大小为（采用SI单位制）
+    \begin{equation}
+        \left|\mathbf{m}_{S}\right| = g_{\mathrm{e}} \frac{\mathrm{e}}{2m_{\mathrm{e}}} \left|\mathbf{S}\right| = g_{\mathrm{e}} \sqrt{\frac{3}{4}} \frac{\mathrm{e}\hbar}{2m_{\mathrm{e}}}
+        \label{eq:10.57}
+    \end{equation}
 
+    铁的铁磁性是由电子的磁矩引起的。
 
+    在外加磁场中，电子自旋及其相关自旋磁矩相对于轴的两种可能取向会产生两种能级。在电子自旋共振（ESR）光谱学中，人们可以观察到这两个能级之间的跃迁。ESR 光谱法适用于自由基和过渡金属离子等具有一个或多个非配对电子自旋的物质，因此它们的总电子自旋和自旋磁矩都不为零。
 
+\subsection*{核磁共振（NMR）谱}
 
+    许多原子核具有不为零的自旋角动量 $\mathbf{I}$。与(\ref{eq:10.4})和(\ref{eq:10.5})类似，$\mathbf{I}$的模为$\left[I\left(I+1\right)\right]^{1/2}\hbar$，其中核自旋量子数$I$可以为$0$、$\frac{1}{2}$、$1$等；$\mathbf{I}$的$z$方向分量为$M_I\hbar$，其中$M_I = -I, -I+1, \ldots, I$。一些$I$值如下：质子数和中子数为偶数的核为零（例如\ce{^16_8O}和\ce{^12_6C}）；\ce{H}、\ce{^13_6C}、\ce{^19_9F}、\ce{^31_15P}为$\frac{1}{2}$；\ce{^2_1H}和\ce{^14_7N}为1；\ce{^11_5B}、\ce{^23_11Na}、\ce{^35_17Cl}为$\frac{3}{2}$。若$I \neq 0$，则原子核的自旋磁矩$\mathbf{m}_I$由与(\ref{eq:10.55})类似的关系给出：
+    \begin{equation}
+        \mathbf{m}_I = g_N\left(\mathrm{e} / 2m_p\right)\mathbf{I} \equiv \gamma \mathbf{I}
+        \label{eq:10.58}
+    \end{equation}
+    其中$m_p$是质子质量，\textit{核的$g$因子$g_N$}的值与核有关。$\gamma$称为\textbf{磁旋比}（magnetogyric ratio），定义为$\gamma \equiv \mathbf{m}_{I}/\mathbf{I} = g_{N}\mathrm{e}/2m_{p}$。某些核的$I$、$g_N$和$\gamma$值如下表所示：
+    \begin{table}[htbp]
+        \centering
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{lcccccc}
+            \hline
+            核 & \ce{^1H} & \ce{^12C} & \ce{^13C} & \ce{^15N} & \ce{^19F} & \ce{^31P} \\
+            \hline
+            $I$ & $\frac{1}{2}$ & 0 & $\frac{1}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}$ \\
+            \hline
+            $g_N$ & 5.58569 &  & 1.10482 & -0.56638 & 5.25773 & 2.2632 \\
+            \hline
+            $\gamma$/(MHZ/T) & 267.522 &  & 67.283 & -27.126 & 251.815 & 108.39 \\
+            \hline          
+        \end{tabular}
+        \label{tab:10.1}
+    \end{table}
 
+    在核磁共振（NMR）光谱学中，人们可以观察到外加磁场中核自旋能级之间的跃迁。将样品（最常见的是所研究化合物的稀释溶液）置于强磁铁的两极之间。孤立的核自旋磁矩 $\mathbf{m}_I$ 在外部磁场 $\mathbf{B}$ 中的相互作用能量由公式 (\ref{eq:6.131}) 得出为$E = -\mathbf{m}_I \cdot \mathbf{B}$。将$\mathbf{m}_I$用(\ref{eq:10.58})代替，并取$\mathbf{B}$沿$z$轴方向，则能量为
+    \begin{equation*}
+        E = -\mathbf{m}_{I} \cdot \mathbf{B} = -\gamma \left(I_{x}\mathbf{i} + I_{y}\mathbf{j} + I_{z}\mathbf{k}\right) \cdot \left(B\mathbf{k}\right) = -\gamma B I_{z}
+    \end{equation*}
+    我们将经典量 $I_z$ 替换为 $\hat{I}_z$，从而将这一经典能量表达式转换为哈密顿算符。因此，$\hat{H} = -\gamma B \hat{I}_z$。令$\left| M_I \right\rangle$表示同时是算符$\hat{I}^2$（为核自旋角动量大小的平方）和$\hat{I}_z$的本征函数。我们有
+    \begin{equation}
+        \hat{H} \left| M_I \right\rangle = - \gamma B \hat{I_z} \left| M_I \right\rangle = - \gamma B M_I \hbar \left| M_I \right\rangle
+        \label{eq:10.59}
+    \end{equation}
+    因此，(\ref{eq:10.59}) 得出外加磁场中孤立核自旋的能级为
+    \begin{equation*}
+        E = -\gamma \hbar B M_I, \quad M_I = -I, -I+1, \ldots, I
+    \end{equation*}
+    在 NMR 光谱中，样品暴露在电磁辐射下，电磁辐射会诱导核自旋能级之间的跃迁。选律为$\Delta M_I = \pm 1$。因此，NMR 的跃迁频率如下所示：
+    \begin{equation*}
+        h\nu = \left|\Delta E\right| = \left|\gamma \middle| \hbar B \middle| \Delta M_I\right| = \left|\gamma \right| \hbar B
+    \end{equation*}
+    \begin{equation}
+        \nu = \left(\left|\gamma\right|/2\pi\right)B = \left|g_N\right| \left(\mathrm{e}/4\pi m_p\right)B
+        \label{eq:10.60}
+    \end{equation}
+    $\gamma$的值因核的不同而异，而在任何一次实验中，人们研究的都是一种原子核的核磁共振谱。研究最广泛的核是质子\ce{^1H}。第二广泛的是\ce{^13C}。\ce{^13C}同位素在碳元素中的丰度约为$1\%$。
 
+    公式 (\ref{eq:10.60}) 适用于除外部磁场 $\mathbf{B}$ 存在外与外界隔绝的原子核。对于分子中的原子核，我们还必须考虑分子电子对每个原子核所受到的磁场的贡献。在大多数基态分子中，电子自旋都是成对的，没有电子轨道角动量。由于没有电子自旋或轨道角动量，电子不会对每个原子核受到的磁场产生影响。然而，外部外加磁场 $\mathbf{B}$ 会扰动分子电子波函数，从而对每个原子核的磁场产生电子贡献。这种电子贡献与外部磁场 $B$ 的大小成正比，方向通常与 $B$ 相反。因此，核$i$受到分子中磁场的贡献为$B - \sigma_iB = \left(1 - \sigma_i\right)B$，其中比例常数$\sigma_i$称为核$I$的\textbf{屏蔽常数}（screening constant or shielding constant），且远小于1。对于分子中的原子核，公式 (\ref{eq:10.60}) 变为
+    \begin{equation}
+        \nu_i = \left(\left|\gamma_i\right|/2\pi\right)\left(1 - \sigma_i\right)B
+        \label{eq:10.61}
+    \end{equation}
+    分子中电子环境相同核的$\sigma_i$值相同。例如，在分子\ce{CH3CH2OH}中，\ce{CH3}中的三个质子有相同的$\sigma_i$值，\ce{CH2}中的两个质子有相同的$\sigma_i$值。（乙烷交叉构象的Newman投影式表明：\ce{CH3}中有两个氢原子比另一个更接近官能团\ce{OH}，但乙醇内旋转能垒较低，因此三个甲基氢可以在室温下迅速转换，从而使这三个氢的电子环境相同。）
 
+    因此，我们希望乙烷的\ce{^1H} NMR谱图有三个峰——一个是\ce{CH3}中的三个质子的峰，一个是\ce{CH2}中的两个质子的峰，还有一个是\ce{OH}中的一个质子的峰，这些峰的相对强度为3:2:1。然而，还存在一种称为\textit{自旋-自旋耦合}（spin-spin coupling）的额外效应，其中一个碳原子上的质子核自旋会影响相邻碳原子上质子受到的的磁场。一个碳原子上质子自旋的不同可能取向会在相邻碳原子上的质子处产生不同的磁场，从而使相邻碳原子上质子的核磁共振（NMR）跃迁发生分裂。例如，两个\ce{CH2}质子有以下四种可能的核自旋方向：
+    \begin{equation}
+        \uparrow\uparrow \qquad \uparrow\downarrow \qquad \downarrow\uparrow \qquad \downarrow\downarrow
+        \label{eq:10.62}
+    \end{equation}
+    其中向上和向下的箭头分别表示$M_I = \frac{1}{2}$和$M_I = -\frac{1}{2}$。[实际上，由于全同粒子的不可区分性，式（\ref{eq:10.62}）中的中间两个自旋态必须用这两个态的线性组合来替换，从而得到与电子自旋函数（\ref{eq:10.22}）至（\ref{eq:10.25}）相似的核自旋态。]式(\ref{eq:10.62})中的中间两个自旋态对\ce{CH3}质子所感受到的磁场具有相同的影响，因此式(\ref{eq:10.62})中的四个自旋态在\ce{CH3}质子处产生三个不同的磁场，从而将\ce{CH3}质子的NMR谱线裂分为三条相对强度为1:2:1的紧密相邻谱线，这对应于产生每个磁场的\ce{CH2}质子自旋态的数量。人们可能会预测\ce{CH2}质子也会使\ce{OH}质子的核磁共振吸收线发生分裂。然而，即使乙醇中存在微量水分，也会催化\ce{OH}质子在不同乙醇分子间快速交换，从而消除\ce{OH}吸收线的分裂现象。
 
+    对\ce{CH3}质子可能的取向进行类似分析（问题10.22）表明，\ce{CH3}质子将乙醇\ce{CH2}质子的NMR谱线裂分为四条谱线，相对强度比为1:3:3:1。一般规则是，\textit{原子上的一组$n$个等价质子会将相邻原子上质子的NMR谱线裂分为$n+1$条谱线}。自旋-自旋裂分（通过化学键传递）过于微弱，无法影响与分裂质子相隔超过三个化学键的质子的NMR谱线。在\ce{CH3CH2(O)H}的\ce{^1H} NMR谱中，\ce{CH3}质子将\ce{CH2}质子谱线裂分为4条，而每条谱线又被\ce{C(O)H}质子裂分为两条，因此\ce{CH2}核磁共振谱线最终裂分为8条。（乙醇中分子间质子交换阻止了\ce{OH}质子对\ce{CH2}质子NMR吸收的分裂作用。）
 
+    $I=0$的核（例如\ce{^14C}，\ce{^16O}）不会裂分\ce{^1H} NMR谱线。可以证明$I > \frac{1}{2}$的核（例如\ce{^35Cl}、\ce{^37Cl}核\ce{^14N}）一般也不会裂分\ce{^1H} NMR谱线。核\ce{^19F}满足$I = \frac{1}{2}$但会导致谱线裂分。此外，量子力学分析表明，等价质子之间的自旋-自旋相互作用不会影响NMR谱。
 
+    刚才进行的处理（称为\textit{一阶分析}）实际上是一种近似方法，其有效性取决于自旋-自旋裂分能远小于所有化学非等价核之间的NMR频率差。在非常大的分子中，可能会存在化学非等价核，它们处于略有不同的电子环境中，因此它们之间的NMR频率差将非常小，一阶分析将不再成立。通过增强施加的磁场强度，可以增大化学上不等价核之间的NMR频率差，从而使谱图趋于一阶分析，这更便于分析。此外，随着磁场强度的增加，信号强度也会增强。因此，人们尽量使用尽可能高的磁场。当前NMR研究谱仪的磁场强度对应于\ce{^1H} NMR频率在300至1000 MHz的范围。
+
+    NMR光谱学是有机化学中首屈一指的结构研究工具，而特殊NMR技术则能够借助NMR技术确定小分子蛋白质的结构。
 
 \section{电子自旋的梯度算符}
 \label{sec:10.10 Ladder Operators for Electron Spin}
