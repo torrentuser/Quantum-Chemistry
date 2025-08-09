@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  8 AUG 2025 21:37
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  9 AUG 2025 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1535,7 +1535,7 @@ File: Figures/4.5.png Graphic file (type bmp)
 [55]
 
 [56]
-Overfull \hbox (15.9104pt too wide) in paragraph at lines 468--469
+Overfull \hbox (15.9104pt too wide) in paragraph at lines 466--467
 \TU/SimSun(0)/m/n/10.53937 函 数、|  概 率 密 度；| $[]$ 和 $[]$ 可 以 改 变） ；| [][]$[][][][][][][][][][][][] [] [][][][][][][] [] [][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
  []
 
@@ -1547,12 +1547,12 @@ File: Figures/4.6.png Graphic file (type bmp)
 
 
 [58]
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+Underfull \hbox (badness 10000) in paragraph at lines 554--555
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 569--571
+Underfull \hbox (badness 10000) in paragraph at lines 566--568
 
  []
 
@@ -1571,12 +1571,12 @@ File: Figures/4.8.png Graphic file (type bmp)
 [61]
 
 [62]
-Overfull \hbox (9.63423pt too wide) in paragraph at lines 694--696
+Overfull \hbox (9.63423pt too wide) in paragraph at lines 691--693
 \TU/SimSun(0)/m/n/10.53937 其 中，|  我 们 用 到 了 $[][][][][][] [] [][]$。|  将 式 \TU/lmr/m/n/10.53937 ([][]4.68[][])\TU/SimSun(0)/m/n/10.53937 、| \TU/lmr/m/n/10.53937 ([][]4.77[][]) \TU/SimSun(0)/m/n/10.53937 和 \TU/lmr/m/n/10.53937 ([][]4.79[][]) \TU/SimSun(0)/m/n/10.53937 代 入 薛 定 谔 方 程 $[] [] [] []
  []
 
 
-Overfull \hbox (29.35706pt too wide) in paragraph at lines 705--706
+Overfull \hbox (29.35706pt too wide) in paragraph at lines 702--703
 []\TU/SimSun(0)/m/n/10.53937 更 一 般 地 说，|  让 $[]$ 包 含 一 个 非 无 量 纲 参 数 $[]$。|  例 如，|  我 们 有 $[] [] [][][]$ 或 $[] [] [][][] []$
  []
 
@@ -1708,12 +1708,12 @@ File: Figures/6.4.png Graphic file (type bmp)
 
 
 [94]
-Underfull \hbox (badness 10000) in paragraph at lines 461--465
+Underfull \hbox (badness 10000) in paragraph at lines 460--464
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 478--482
+Underfull \hbox (badness 10000) in paragraph at lines 477--481
 
  []
 
@@ -1734,7 +1734,7 @@ File: Figures/6.5.png Graphic file (type bmp)
 [98]
 
 [99]
-Underfull \hbox (badness 10000) in paragraph at lines 722--725
+Underfull \hbox (badness 10000) in paragraph at lines 721--724
 
  []
 
@@ -1744,7 +1744,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 722--725
 File: Figures/6.6.png Graphic file (type bmp)
 <Figures/6.6.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 750--753
+Underfull \hbox (badness 10000) in paragraph at lines 749--752
 
  []
 
@@ -1753,22 +1753,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 750--753
 [101]
 
 [102]
-Underfull \hbox (badness 10000) in paragraph at lines 844--846
+Underfull \hbox (badness 10000) in paragraph at lines 843--845
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 857--860
+Underfull \hbox (badness 10000) in paragraph at lines 856--859
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 865--867
+Underfull \hbox (badness 10000) in paragraph at lines 864--866
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 881--884
+Underfull \hbox (badness 10000) in paragraph at lines 880--883
 
  []
 
@@ -1790,17 +1790,17 @@ File: Figures/6.9.png Graphic file (type bmp)
 
 
 [106]
-Underfull \hbox (badness 10000) in paragraph at lines 1009--1011
+Underfull \hbox (badness 10000) in paragraph at lines 1006--1008
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1021
+Underfull \hbox (badness 10000) in paragraph at lines 1015--1018
 
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 1022--1023
+Underfull \hbox (badness 1436) in paragraph at lines 1019--1020
 []\TU/SimSun(0)/b/n/10.53937 练 习：|  \TU/SimSun(0)/m/n/10.53937 求 $[][][]$ $[]$ 原 子 中 电 子 与 原 子 核 的 距 离 小 于 $[]$ 的 概 率。|  使 用 积 分 表 或 网 站 \TU/lmr/m/n/10.53937 inte-
  []
 
@@ -1871,12 +1871,12 @@ File: figures/7.2.png Graphic file (type bmp)
 [124]
 
 [125]
-Underfull \hbox (badness 10000) in paragraph at lines 495--498
+Underfull \hbox (badness 10000) in paragraph at lines 494--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--508
+Underfull \hbox (badness 10000) in paragraph at lines 505--507
 
  []
 
@@ -1889,7 +1889,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 506--508
 [128]
 
 [129]
-Overfull \hbox (19.2113pt too wide) in paragraph at lines 724--726
+Overfull \hbox (19.2113pt too wide) in paragraph at lines 723--725
 \TU/SimSun(0)/m/n/10.53937 若 本 征 值 为 $[][]$，|  则 $[][] [] [] [][] []$，|  这 表 明 $[][]$ 是 偶 函 数；|  若 本 征 值 为 $[][]$，|  则 $[][] [] []
  []
 
@@ -1902,17 +1902,17 @@ Overfull \hbox (19.2113pt too wide) in paragraph at lines 724--726
 [132]
 
 [133]
-Underfull \hbox (badness 10000) in paragraph at lines 927--929
+Underfull \hbox (badness 10000) in paragraph at lines 926--928
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 937--940
+Underfull \hbox (badness 10000) in paragraph at lines 936--939
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 944--946
+Underfull \hbox (badness 10000) in paragraph at lines 943--945
 
  []
 
@@ -1920,7 +1920,7 @@ File: Figures/7.3.png Graphic file (type bmp)
 <Figures/7.3.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 972.
+(caption)                particular \caption on input line 971.
 See the caption package documentation for explanation.
 
 
@@ -1941,34 +1941,34 @@ File: Figures/7.4.png Graphic file (type bmp)
 File: Figures/7.5.png Graphic file (type bmp)
 <Figures/7.5.png>
 
-Overfull \hbox (3.61923pt too wide) in paragraph at lines 1149--1150
+Overfull \hbox (3.61923pt too wide) in paragraph at lines 1148--1149
  [] 
  []
 
 
 
 [138]
-Overfull \hbox (3.61923pt too wide) in paragraph at lines 1159--1160
+Overfull \hbox (3.61923pt too wide) in paragraph at lines 1158--1159
  [] 
  []
 
 
-Overfull \hbox (3.61923pt too wide) in paragraph at lines 1173--1174
+Overfull \hbox (3.61923pt too wide) in paragraph at lines 1172--1173
  [] 
  []
 
 
-Overfull \hbox (3.61923pt too wide) in paragraph at lines 1183--1184
+Overfull \hbox (3.61923pt too wide) in paragraph at lines 1182--1183
  [] 
  []
 
 
-Overfull \hbox (3.61923pt too wide) in paragraph at lines 1203--1204
+Overfull \hbox (3.61923pt too wide) in paragraph at lines 1202--1203
  [] 
  []
 
 
-Overfull \hbox (3.61923pt too wide) in paragraph at lines 1222--1223
+Overfull \hbox (3.61923pt too wide) in paragraph at lines 1221--1222
  [] 
  []
 
@@ -1977,7 +1977,7 @@ Overfull \hbox (3.61923pt too wide) in paragraph at lines 1222--1223
 [139]
 
 [140]
-Underfull \hbox (badness 10000) in paragraph at lines 1266--1268
+Underfull \hbox (badness 10000) in paragraph at lines 1265--1267
 
  []
 
@@ -2219,21 +2219,32 @@ File: Figures/10.1.png Graphic file (type bmp)
 
 [216]
 Chapter 11.
-) (./chapters/12.tex
+
 
 [217
 
 ]
 
-[218
-
-]
-Chapter 12.
-) (./chapters/13.tex
+[218]
 
 [219]
 
-[220
+[220]
+File: Figures/11.1.png Graphic file (type bmp)
+<Figures/11.1.png>
+
+
+[221]) (./chapters/12.tex
+
+[222]
+Chapter 12.
+) (./chapters/13.tex
+
+[223
+
+]
+
+[224
 
 ]
 Chapter 13.
@@ -2274,20 +2285,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[221]
+[225]
 Overfull \vbox (137.1515pt too high) has occurred while \output is active []
 
 
 
-[222]
+[226]
 Chapter 14.
 ) (./chapters/15.tex
 
-[223
+[227
 
 ]
 
-[224
+[228
 
 ]
 Chapter 15.
@@ -2300,70 +2311,70 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[225]
+[229]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
 
-[226]
+[230]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[227
+[231
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
 
-[228]
+[232]
 Chapter 17.
 
 
-[229
+[233
 
 ]) (./chapters/appendix.tex
 
-[230]
+[234]
 附录 A.
 ) (./chapters/bibliography.tex
 
-[231
+[235
 
 ]
 
-[232
+[236
 
 ]
 附录 B.
 
 
-[233]
+[237]
 
-[234
+[238
 
 ]) (./chapters/answers.tex
 
-[235]
+[239]
 
-[236
+[240
 
 ]
 附录 C.
 ) (./chapters/index.tex
 
-[237]
+[241]
 
-[238
+[242
 
 ]
 附录 D.
 )
 
-[239] (./Quantum Chemistry.aux)
+[243] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -2380,12 +2391,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 42753 strings out of 473832
- 962463 string characters out of 5726732
- 1573529 words of memory out of 5000000
- 65079 multiletter control sequences out of 15000+600000
+ 42838 strings out of 473832
+ 966860 string characters out of 5726732
+ 1574505 words of memory out of 5000000
+ 65163 multiletter control sequences out of 15000+600000
  571128 words of font info for 159 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,25n,111p,1243b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (247 pages).
+Output written on Quantum Chemistry.pdf (251 pages).

@@ -84,87 +84,87 @@
 \contentsline {section}{\numberline {10.10}电子自旋的梯度算符}{214}{section.10.10}%
 \contentsline {chapter}{\numberline {11}多电子原子}{217}{chapter.11}%
 \contentsline {section}{\numberline {11.1}Hartree-Fock自洽场方法}{217}{section.11.1}%
-\contentsline {section}{\numberline {11.2}轨道和元素周期表}{217}{section.11.2}%
-\contentsline {section}{\numberline {11.3}电子相关}{217}{section.11.3}%
-\contentsline {section}{\numberline {11.4}角动量的叠加}{217}{section.11.4}%
-\contentsline {section}{\numberline {11.5}多电子原子的角动量}{217}{section.11.5}%
-\contentsline {section}{\numberline {11.6}自旋-轨道耦合}{217}{section.11.6}%
-\contentsline {section}{\numberline {11.7}原子哈密顿算符}{217}{section.11.7}%
-\contentsline {section}{\numberline {11.8}Condon-Slater规则}{217}{section.11.8}%
-\contentsline {chapter}{\numberline {12}分子对称性}{219}{chapter.12}%
-\contentsline {section}{\numberline {12.1}对称元素和对称操作}{219}{section.12.1}%
-\contentsline {section}{\numberline {12.2}分子点群}{219}{section.12.2}%
-\contentsline {chapter}{\numberline {13}双原子分子的电子结构}{221}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Born-Oppenheimer近似}{222}{section.13.1}%
-\contentsline {section}{\numberline {13.2}双原子分子核的运动}{222}{section.13.2}%
-\contentsline {section}{\numberline {13.3}原子单位制}{222}{section.13.3}%
-\contentsline {section}{\numberline {13.4}氢分子离子}{222}{section.13.4}%
-\contentsline {section}{\numberline {13.5}\ce {H^2+}离子基态的近似解}{222}{section.13.5}%
-\contentsline {section}{\numberline {13.6}\ce {H^2+}离子激发态的分子轨道}{222}{section.13.6}%
-\contentsline {section}{\numberline {13.7}同核双原子分子的分子轨道构型}{222}{section.13.7}%
-\contentsline {section}{\numberline {13.8}双原子分子的分子光谱项}{222}{section.13.8}%
-\contentsline {section}{\numberline {13.9}氢分子}{222}{section.13.9}%
-\contentsline {section}{\numberline {13.10}价键理论求解\ce {H2}}{222}{section.13.10}%
-\contentsline {section}{\numberline {13.11}分子轨道理论和价键理论的比较}{222}{section.13.11}%
-\contentsline {section}{\numberline {13.12}同核双原子分子的分子轨道理论和价键理论波函数}{222}{section.13.12}%
-\contentsline {section}{\numberline {13.13}\ce {H2}分子的激发态}{222}{section.13.13}%
-\contentsline {section}{\numberline {13.14}双原子分子的自洽场方法波函数}{222}{section.13.14}%
-\contentsline {section}{\numberline {13.15}分子轨道理论处理异核双原子分子}{222}{section.13.15}%
-\contentsline {section}{\numberline {13.16}价键理论处理异核双原子分子}{222}{section.13.16}%
-\contentsline {section}{\numberline {13.17}价电子近似}{222}{section.13.17}%
-\contentsline {chapter}{\numberline {14}分子量子力学理论}{223}{chapter.14}%
-\contentsline {section}{\numberline {14.1}电子概率密度}{223}{section.14.1}%
-\contentsline {section}{\numberline {14.2}偶极矩}{223}{section.14.2}%
-\contentsline {section}{\numberline {14.3}分子的Hartree-Fock方法}{223}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Virial理论}{223}{section.14.4}%
-\contentsline {section}{\numberline {14.5}Virial理论和化学键}{223}{section.14.5}%
-\contentsline {section}{\numberline {14.6}Hellmann-Feynman理论}{223}{section.14.6}%
-\contentsline {section}{\numberline {14.7}静电力定理}{223}{section.14.7}%
-\contentsline {chapter}{\numberline {15}分子的电子结构}{225}{chapter.15}%
-\contentsline {section}{\numberline {15.1}从头计算、密度泛函、半经验和分子力学方法}{226}{section.15.1}%
-\contentsline {section}{\numberline {15.2}多原子分子的分子光谱项}{226}{section.15.2}%
-\contentsline {section}{\numberline {15.3}自洽场方法、分子轨道理论求解多原子分子}{226}{section.15.3}%
-\contentsline {section}{\numberline {15.4}基函数}{226}{section.15.4}%
-\contentsline {section}{\numberline {15.5}自洽场方法、分子轨道理论求解\ce {H2O}分子}{226}{section.15.5}%
-\contentsline {section}{\numberline {15.6}布居分析和键级}{226}{section.15.6}%
-\contentsline {section}{\numberline {15.7}分子静电势、分子表面和原子电荷}{226}{section.15.7}%
-\contentsline {section}{\numberline {15.8}定域分子轨道}{226}{section.15.8}%
-\contentsline {section}{\numberline {15.9}自洽场方法、分子轨道理论求解甲烷、乙烷和乙烯}{226}{section.15.9}%
-\contentsline {section}{\numberline {15.10}分子结构学}{226}{section.15.10}%
-\contentsline {section}{\numberline {15.11}构象搜寻}{226}{section.15.11}%
-\contentsline {section}{\numberline {15.12}分子振动频率}{226}{section.15.12}%
-\contentsline {section}{\numberline {15.13}热力学定律}{226}{section.15.13}%
-\contentsline {section}{\numberline {15.14}从头计算方法的量子化学程序}{226}{section.15.14}%
-\contentsline {section}{\numberline {15.15}进行从头计算}{226}{section.15.15}%
-\contentsline {section}{\numberline {15.16}快速Hartree-Fock计算方法}{226}{section.15.16}%
-\contentsline {section}{\numberline {15.17}溶剂效应}{226}{section.15.17}%
-\contentsline {chapter}{\numberline {16}电子关联方法}{227}{chapter.16}%
-\contentsline {section}{\numberline {16.1}关联能}{228}{section.16.1}%
-\contentsline {section}{\numberline {16.2}组态相互作用}{228}{section.16.2}%
-\contentsline {section}{\numberline {16.3}多体微扰理论}{228}{section.16.3}%
-\contentsline {section}{\numberline {16.4}耦合簇方法}{228}{section.16.4}%
-\contentsline {section}{\numberline {16.5}密度泛函理论}{228}{section.16.5}%
-\contentsline {section}{\numberline {16.6}能量计算的复合方法}{228}{section.16.6}%
-\contentsline {section}{\numberline {16.7}扩散量子Monte Carlo法}{228}{section.16.7}%
-\contentsline {section}{\numberline {16.8}非共价相互作用}{228}{section.16.8}%
-\contentsline {section}{\numberline {16.9}NMR屏蔽常数}{228}{section.16.9}%
-\contentsline {section}{\numberline {16.10}碎裂法}{228}{section.16.10}%
-\contentsline {section}{\numberline {16.11}相对论效应}{228}{section.16.11}%
-\contentsline {section}{\numberline {16.12}价键理论求解多原子分子}{228}{section.16.12}%
-\contentsline {section}{\numberline {16.13}GVB（广义价键波函数）、VBSCF（价键自洽场）、BOVB（呼吸轨道价键）方法}{228}{section.16.13}%
-\contentsline {section}{\numberline {16.14}化学反应}{228}{section.16.14}%
-\contentsline {chapter}{\numberline {17}半经验和分子力学方法求解分子}{229}{chapter.17}%
-\contentsline {section}{\numberline {17.1}半经验分子轨道求解平面共轭分子}{229}{section.17.1}%
-\contentsline {section}{\numberline {17.2}Hückel分子轨道理论}{229}{section.17.2}%
-\contentsline {section}{\numberline {17.3}PPP方法}{229}{section.17.3}%
-\contentsline {section}{\numberline {17.4}一般的半经验分子轨道和密度泛函方法}{229}{section.17.4}%
-\contentsline {section}{\numberline {17.5}分子力学方法}{229}{section.17.5}%
-\contentsline {section}{\numberline {17.6}经验和半经验方法处理溶剂效应}{229}{section.17.6}%
-\contentsline {section}{\numberline {17.7}化学反应}{229}{section.17.7}%
-\contentsline {section}{\numberline {17.8}量子化学的未来}{229}{section.17.8}%
-\contentsline {chapter}{\numberline {A}附录}{231}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Complex Numbers}{231}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Calculus Formulas}{231}{section.A.2}%
-\contentsline {chapter}{\numberline {B}参考文献}{233}{appendix.B}%
-\contentsline {chapter}{\numberline {C}部分习题答案}{237}{appendix.C}%
-\contentsline {chapter}{\numberline {D}索引}{239}{appendix.D}%
+\contentsline {section}{\numberline {11.2}轨道和元素周期表}{222}{section.11.2}%
+\contentsline {section}{\numberline {11.3}电子相关}{222}{section.11.3}%
+\contentsline {section}{\numberline {11.4}角动量的叠加}{222}{section.11.4}%
+\contentsline {section}{\numberline {11.5}多电子原子的角动量}{222}{section.11.5}%
+\contentsline {section}{\numberline {11.6}自旋-轨道耦合}{222}{section.11.6}%
+\contentsline {section}{\numberline {11.7}原子哈密顿算符}{222}{section.11.7}%
+\contentsline {section}{\numberline {11.8}Condon-Slater规则}{222}{section.11.8}%
+\contentsline {chapter}{\numberline {12}分子对称性}{223}{chapter.12}%
+\contentsline {section}{\numberline {12.1}对称元素和对称操作}{223}{section.12.1}%
+\contentsline {section}{\numberline {12.2}分子点群}{223}{section.12.2}%
+\contentsline {chapter}{\numberline {13}双原子分子的电子结构}{225}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Born-Oppenheimer近似}{226}{section.13.1}%
+\contentsline {section}{\numberline {13.2}双原子分子核的运动}{226}{section.13.2}%
+\contentsline {section}{\numberline {13.3}原子单位制}{226}{section.13.3}%
+\contentsline {section}{\numberline {13.4}氢分子离子}{226}{section.13.4}%
+\contentsline {section}{\numberline {13.5}\ce {H^2+}离子基态的近似解}{226}{section.13.5}%
+\contentsline {section}{\numberline {13.6}\ce {H^2+}离子激发态的分子轨道}{226}{section.13.6}%
+\contentsline {section}{\numberline {13.7}同核双原子分子的分子轨道构型}{226}{section.13.7}%
+\contentsline {section}{\numberline {13.8}双原子分子的分子光谱项}{226}{section.13.8}%
+\contentsline {section}{\numberline {13.9}氢分子}{226}{section.13.9}%
+\contentsline {section}{\numberline {13.10}价键理论求解\ce {H2}}{226}{section.13.10}%
+\contentsline {section}{\numberline {13.11}分子轨道理论和价键理论的比较}{226}{section.13.11}%
+\contentsline {section}{\numberline {13.12}同核双原子分子的分子轨道理论和价键理论波函数}{226}{section.13.12}%
+\contentsline {section}{\numberline {13.13}\ce {H2}分子的激发态}{226}{section.13.13}%
+\contentsline {section}{\numberline {13.14}双原子分子的自洽场方法波函数}{226}{section.13.14}%
+\contentsline {section}{\numberline {13.15}分子轨道理论处理异核双原子分子}{226}{section.13.15}%
+\contentsline {section}{\numberline {13.16}价键理论处理异核双原子分子}{226}{section.13.16}%
+\contentsline {section}{\numberline {13.17}价电子近似}{226}{section.13.17}%
+\contentsline {chapter}{\numberline {14}分子量子力学理论}{227}{chapter.14}%
+\contentsline {section}{\numberline {14.1}电子概率密度}{227}{section.14.1}%
+\contentsline {section}{\numberline {14.2}偶极矩}{227}{section.14.2}%
+\contentsline {section}{\numberline {14.3}分子的Hartree-Fock方法}{227}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Virial理论}{227}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Virial理论和化学键}{227}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Hellmann-Feynman理论}{227}{section.14.6}%
+\contentsline {section}{\numberline {14.7}静电力定理}{227}{section.14.7}%
+\contentsline {chapter}{\numberline {15}分子的电子结构}{229}{chapter.15}%
+\contentsline {section}{\numberline {15.1}从头计算、密度泛函、半经验和分子力学方法}{230}{section.15.1}%
+\contentsline {section}{\numberline {15.2}多原子分子的分子光谱项}{230}{section.15.2}%
+\contentsline {section}{\numberline {15.3}自洽场方法、分子轨道理论求解多原子分子}{230}{section.15.3}%
+\contentsline {section}{\numberline {15.4}基函数}{230}{section.15.4}%
+\contentsline {section}{\numberline {15.5}自洽场方法、分子轨道理论求解\ce {H2O}分子}{230}{section.15.5}%
+\contentsline {section}{\numberline {15.6}布居分析和键级}{230}{section.15.6}%
+\contentsline {section}{\numberline {15.7}分子静电势、分子表面和原子电荷}{230}{section.15.7}%
+\contentsline {section}{\numberline {15.8}定域分子轨道}{230}{section.15.8}%
+\contentsline {section}{\numberline {15.9}自洽场方法、分子轨道理论求解甲烷、乙烷和乙烯}{230}{section.15.9}%
+\contentsline {section}{\numberline {15.10}分子结构学}{230}{section.15.10}%
+\contentsline {section}{\numberline {15.11}构象搜寻}{230}{section.15.11}%
+\contentsline {section}{\numberline {15.12}分子振动频率}{230}{section.15.12}%
+\contentsline {section}{\numberline {15.13}热力学定律}{230}{section.15.13}%
+\contentsline {section}{\numberline {15.14}从头计算方法的量子化学程序}{230}{section.15.14}%
+\contentsline {section}{\numberline {15.15}进行从头计算}{230}{section.15.15}%
+\contentsline {section}{\numberline {15.16}快速Hartree-Fock计算方法}{230}{section.15.16}%
+\contentsline {section}{\numberline {15.17}溶剂效应}{230}{section.15.17}%
+\contentsline {chapter}{\numberline {16}电子关联方法}{231}{chapter.16}%
+\contentsline {section}{\numberline {16.1}关联能}{232}{section.16.1}%
+\contentsline {section}{\numberline {16.2}组态相互作用}{232}{section.16.2}%
+\contentsline {section}{\numberline {16.3}多体微扰理论}{232}{section.16.3}%
+\contentsline {section}{\numberline {16.4}耦合簇方法}{232}{section.16.4}%
+\contentsline {section}{\numberline {16.5}密度泛函理论}{232}{section.16.5}%
+\contentsline {section}{\numberline {16.6}能量计算的复合方法}{232}{section.16.6}%
+\contentsline {section}{\numberline {16.7}扩散量子Monte Carlo法}{232}{section.16.7}%
+\contentsline {section}{\numberline {16.8}非共价相互作用}{232}{section.16.8}%
+\contentsline {section}{\numberline {16.9}NMR屏蔽常数}{232}{section.16.9}%
+\contentsline {section}{\numberline {16.10}碎裂法}{232}{section.16.10}%
+\contentsline {section}{\numberline {16.11}相对论效应}{232}{section.16.11}%
+\contentsline {section}{\numberline {16.12}价键理论求解多原子分子}{232}{section.16.12}%
+\contentsline {section}{\numberline {16.13}GVB（广义价键波函数）、VBSCF（价键自洽场）、BOVB（呼吸轨道价键）方法}{232}{section.16.13}%
+\contentsline {section}{\numberline {16.14}化学反应}{232}{section.16.14}%
+\contentsline {chapter}{\numberline {17}半经验和分子力学方法求解分子}{233}{chapter.17}%
+\contentsline {section}{\numberline {17.1}半经验分子轨道求解平面共轭分子}{233}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Hückel分子轨道理论}{233}{section.17.2}%
+\contentsline {section}{\numberline {17.3}PPP方法}{233}{section.17.3}%
+\contentsline {section}{\numberline {17.4}一般的半经验分子轨道和密度泛函方法}{233}{section.17.4}%
+\contentsline {section}{\numberline {17.5}分子力学方法}{233}{section.17.5}%
+\contentsline {section}{\numberline {17.6}经验和半经验方法处理溶剂效应}{233}{section.17.6}%
+\contentsline {section}{\numberline {17.7}化学反应}{233}{section.17.7}%
+\contentsline {section}{\numberline {17.8}量子化学的未来}{233}{section.17.8}%
+\contentsline {chapter}{\numberline {A}附录}{235}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Complex Numbers}{235}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Calculus Formulas}{235}{section.A.2}%
+\contentsline {chapter}{\numberline {B}参考文献}{237}{appendix.B}%
+\contentsline {chapter}{\numberline {C}部分习题答案}{241}{appendix.C}%
+\contentsline {chapter}{\numberline {D}索引}{243}{appendix.D}%

@@ -1001,19 +1001,20 @@
 	\begin{equation*}
 		N = \left(\int \left|\psi\right|^2\mathrm{d}\tau\right)^{-1/2}
 	\end{equation*}
-	\begin{figure}[h!]
+
+	只有当$\psi$处处为零时，定积分$\int \left|\psi\right|^2\mathrm{d}\tau$才为零。然而，$\psi$不可能处处为零（这意味着没有粒子存在）。因此，这个积分一定不会为零。若$\int \left|\psi\right|^2\mathrm{d}\tau$为无穷大，则$\left|N\right|$为零，$\psi$就无法归一化。当且仅当$\int \left|\psi\right|^2\mathrm{d}\tau$具有有限而非无限值时，我们才能对$\psi$进行归一化。如果对全空间的积分$\int \left|\psi\right|^2\mathrm{d}\tau$为有限值，我们说$\psi$是\textbf{平方可积的}（quadratically integrable）。因此，我们一般要求$\psi$是平方可积的。一个最重要的例外不处于束缚态的粒子。因此，粒子在势阱中（第 2.4 节）的非束缚态和自由粒子的波函数都不是平方可积的。
+	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.5\textwidth]{Figures/3.4.png}  % 图片路径
-		\caption{\centering\parbox{\linewidth}{
-   		 \centering
-    	函数(a)是连续函数，其一阶导数也连续； \\
-    	函数(b)是连续函数，但其一阶导数不连续； \\
-    	函数(c)不是连续函数
-}}
-		\vspace{-6pt}
+		\includegraphics[width=0.6\textwidth]{Figures/3.4.png}  % 图片路径
+		\caption{
+			\centering
+			\parbox{0.4\linewidth}{
+   		 		\noindent
+    			函数(a)是连续函数，其一阶导数也连续；函数(b)是连续函数，但其一阶导数不连续；函数(c)不是连续函数。
+			}
+		}
 		\label{fig:3.4}
 	\end{figure}
-	只有当$\psi$处处为零时，定积分$\int \left|\psi\right|^2\mathrm{d}\tau$才为零。然而，$\psi$不可能处处为零（这意味着没有粒子存在）。因此，这个积分一定不会为零。若$\int \left|\psi\right|^2\mathrm{d}\tau$为无穷大，则$\left|N\right|$为零，$\psi$就无法归一化。当且仅当$\int \left|\psi\right|^2\mathrm{d}\tau$具有有限而非无限值时，我们才能对$\psi$进行归一化。如果对全空间的积分$\int \left|\psi\right|^2\mathrm{d}\tau$为有限值，我们说$\psi$是\textbf{平方可积的}（quadratically integrable）。因此，我们一般要求$\psi$是平方可积的。一个最重要的例外不处于束缚态的粒子。因此，粒子在势阱中（第 2.4 节）的非束缚态和自由粒子的波函数都不是平方可积的。
 
 	由于$\psi^{\ast}\psi$是概率密度，因此波函数一定是单值的。如果我们的理论对在某一点发现粒子的概率给出了两个不同的值，那就太尴尬了。如果我们要求$\psi$是单值的，那么显然$\psi^{\ast}\psi$也是单值的。$\psi$可能会有多个值[例如，$\psi\left(q\right) = -1,1,\mathrm{i}$]，但$\psi^{\ast}\psi$只能有一个值。然而，我们仍要求$\psi$是单值的。
 

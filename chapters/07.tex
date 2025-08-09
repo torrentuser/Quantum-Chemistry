@@ -426,10 +426,9 @@
         \includegraphics[width=0.6\textwidth]{figures/7.2.png}
         \caption{
             \centering
-            \parbox{\linewidth}{
-                \centering
-                图 \ref{fig:7.1} 中以粒子箱中波函数展开的函数，展开式分别\\
-                取 1 项和 5 项时，(a) 误差和(b) 百分比误差图。
+            \parbox{0.5\linewidth}{
+                \noindent
+                图 \ref{fig:7.1} 中以粒子箱中波函数展开的函数，展开式分别取 1 项和 5 项时，(a) 误差和(b) 百分比误差图。
             }
         }
         \label{fig:7.2}
@@ -439,21 +438,21 @@
 
 \subsection*{用本征函数展开函数}
 
-     我们已经看到了用一组函数——箱中粒子能量本征函数——来展开一个函数的例子。我们可以使用许多不同的函数集来展开任意函数。如果每个品优函数 $f$ 都服从与 $g_i$ 函数相同的边界条件，并且可以根据以下条件展开为 $g_i$ 的线性组合，则称函数集 $g_1,g_2,\ldots,g_i,\ldots$ 为\textbf{完全集}（complete set）：
+     我们已经看到了用一组函数——箱中粒子能量本征函数——来展开一个函数的例子。我们可以使用许多不同的函数集来展开任意函数。如果每个品优函数 $f$ 都服从与 $g_i$ 函数相同的边界条件，并且可以根据以下条件展开为 $g_i$ 的线性组合，则称函数集 $g_1,g_2,\ldots,g_i,\ldots$ 为\textbf{完备集}（complete set）：
     \begin{equation}
         f = \sum_{i}a_i g_i
         \label{eq:7.39}
     \end{equation}
-    其中 $a_i$ 是常数。当然，我们很容易理解$f$和$g_i$都是同一组自变量的函数。(\ref{eq:7.39}) 中的和省略了极限。不言而喻，这个和包含了完整集合的所有成员。根据Fourier分析定理（我们尚未证明），可以证明粒子箱中的能量本征函数是一个完全集。
+    其中 $a_i$ 是常数。当然，我们很容易理解$f$和$g_i$都是同一组自变量的函数。(\ref{eq:7.39}) 中的和省略了极限。不言而喻，这个和包含了完整集合的所有成员。根据Fourier分析定理（我们尚未证明），可以证明粒子箱中的能量本征函数是一个完备集。
 
-    我们现在假设：\textit{表示物理量的每个厄米算符的本征函数集是一个完全集。}（本征函数的完备性在很多情况下都可以证明，但在一般情况下必须假设。）因此，每个满足与本征函数集合相同边界条件的品优函数都可以根据 (\ref{eq:7.39}) 展开。方程 (\ref{eq:7.29}) 就是 (\ref{eq:7.39}) 的一个例子。
+    我们现在假设：\textit{表示物理量的每个厄米算符的本征函数集是一个完备集。}（本征函数的完备性在很多情况下都可以证明，但在一般情况下必须假设。）因此，每个满足与本征函数集合相同边界条件的品优函数都可以根据 (\ref{eq:7.39}) 展开。方程 (\ref{eq:7.29}) 就是 (\ref{eq:7.39}) 的一个例子。
 
     谐振子波函数由厄米多项式$H_v$乘以一个指数因子给出[问题4.21c的式(4.86)]。根据展开公设，任何品优函数 $f\left(x\right)$ 都可以展开为谐振子能量本征函数的线性组合：
     \begin{equation*}
         f\left(x\right) = \sum_{n=0}^{\infty}a_n\left(2^nn!\right)^{-1/2}\left(\alpha/\pi\right)^{1/4}H_n\left(\alpha^{1/2}x\right)\mathrm{e}^{-\alpha x^2/2}
     \end{equation*}
 
-    使用氢原子束缚态波函数来展开任意函数 $f\left(r,\theta,\phi\right)$如何？答案是这些函数并\textit{不}构成一个完全集，我们无法用它们来展开 $f$。要有一个完全集，我们必须使用特定厄米算符的\textit{所有}本征函数。除了氢原子哈密顿的束缚态本征函数外，我们还有与电离态相对应的连续态本征函数。如果将连续本征函数与束缚态本征函数一起包含在内，那么我们就得到了一个完全集。（对于箱中粒子和谐振子来说，连续函数不存在。）等式 (\ref{eq:7.39}) 意味着对连续本征函数（如果有的话）进行积分。因此，若$\psi_{nlm}\left(r,\theta,\phi\right)$是氢原子束缚态函数，$\psi_{Elm}\left(r,\theta,\phi\right)$是连续本征函数，则式(\ref{eq:7.39})变为
+    使用氢原子束缚态波函数来展开任意函数 $f\left(r,\theta,\phi\right)$如何？答案是这些函数并\textit{不}构成一个完备集，我们无法用它们来展开 $f$。要有一个完备集，我们必须使用特定厄米算符的\textit{所有}本征函数。除了氢原子哈密顿的束缚态本征函数外，我们还有与电离态相对应的连续态本征函数。如果将连续本征函数与束缚态本征函数一起包含在内，那么我们就得到了一个完备集。（对于箱中粒子和谐振子来说，连续函数不存在。）等式 (\ref{eq:7.39}) 意味着对连续本征函数（如果有的话）进行积分。因此，若$\psi_{nlm}\left(r,\theta,\phi\right)$是氢原子束缚态函数，$\psi_{Elm}\left(r,\theta,\phi\right)$是连续本征函数，则式(\ref{eq:7.39})变为
     \begin{equation*}
         f\left(r,\theta,\phi\right) = \sum_{n=1}^{\infty}\sum_{l=0}^{n-1}\sum_{m=-l}^{l}a_{nlm}\psi_{nlm}\left(r,\theta,\phi\right) + \sum_{l=0}^{\infty}\sum_{m=-l}^{l}\int_{0}^{\infty} a_{lm}\left(E\right) \psi_{Elm}\left(r,\theta,\phi\right) \:\mathrm{d}E
     \end{equation*}
@@ -468,7 +467,7 @@
     \end{equation*}
     具有良好数学基础的读者可能会发现，这个积分几乎就是 $a\left(k\right)$ 的Fourier变换。
 
-    让我们对$f=\sum_{i}a_ig_i$ [式 (\ref{eq:7.39}) ] 中的展开系数进行计算，其中的 $g_i$ 函数是厄米算符的本征函数的完全集。这一过程与推导 (\ref{eq:7.33}) 所用的过程相同。我们将$f = \sum_{i}a_ig_i$与$g_k^{\ast}$相乘并对全空间积分：
+    让我们对$f=\sum_{i}a_ig_i$ [式 (\ref{eq:7.39}) ] 中的展开系数进行计算，其中的 $g_i$ 函数是厄米算符的本征函数的完备集。这一过程与推导 (\ref{eq:7.33}) 所用的过程相同。我们将$f = \sum_{i}a_ig_i$与$g_k^{\ast}$相乘并对全空间积分：
     \begin{equation*}
         g_k^{\ast} f = \sum_{i} a_i g_k^{\ast} g_i
     \end{equation*}
@@ -519,7 +518,7 @@
     以下是一条有用的定理：
     \begin{center}
         \parbox{0.8\textwidth}{
-            \textbf{定理3：}令$g_1,g_2,\ldots$是厄米算符$\hat{A}$的本征函数完全集，令$F$是$\hat{A}$的本征函数，本征值为$k$（也就是说，$\hat{A}F = kF$）。若$F$展开为$F = \sum_{i}a_ig_i$，则展开式中的非零系数$a_i$仅对应于与$k$相同的本征值的本征函数$g_i$。（由于简并的存在，可能有多个本征函数$g_i$对应于同一本征值$k$。）
+            \textbf{定理3：}令$g_1,g_2,\ldots$是厄米算符$\hat{A}$的本征函数完备集，令$F$是$\hat{A}$的本征函数，本征值为$k$（也就是说，$\hat{A}F = kF$）。若$F$展开为$F = \sum_{i}a_ig_i$，则展开式中的非零系数$a_i$仅对应于与$k$相同的本征值的本征函数$g_i$。（由于简并的存在，可能有多个本征函数$g_i$对应于同一本征值$k$。）
             
         }
     \end{center}
@@ -541,7 +540,7 @@
 
     在第 \ref{sec:5.1 Simultaneous Specification of Several Properties} 节中，我们对两个算符的同时本征函数做了一些说明。现在我们证明这些陈述。
 
-    首先，我们证明：如果存在两个线性算符本征函数的共同\textit{完全集}，那么这两个算符可对易。令$\hat{A}$和$\hat{B}$是两个线性算符，$g_1,g_2,\ldots$是共同的本征函数完全集：
+    首先，我们证明：如果存在两个线性算符本征函数的共同\textit{完备集}，那么这两个算符可对易。令$\hat{A}$和$\hat{B}$是两个线性算符，$g_1,g_2,\ldots$是共同的本征函数完备集：
     \begin{equation}
         \hat{A}g_i = a_ig_i, \quad \hat{B}g_i = b_ig_i
         \label{eq:7.43}
@@ -574,7 +573,7 @@
     这就完成了如下定理的证明：
     \begin{center}
         \parbox{0.8\textwidth}{
-            \textbf{定理4：}如果两个线性算符的本征函数完全集是相同的，那么这两个算符可对易。
+            \textbf{定理4：}如果两个线性算符的本征函数完备集是相同的，那么这两个算符可对易。
         }
     \end{center}
 
@@ -593,7 +592,7 @@
     \end{equation}
     错误出现在从(\ref{eq:7.45})导出(\ref{eq:7.46})的过程中。$\hat{A}\hat{B}$和$\hat{B}\hat{A}$对单个函数$g$的作用结果是无法得出$\hat{A}\hat{B} = \hat{B}\hat{A}$的。（例如，当$\mathrm{d}/\mathrm{d}x$和$\mathrm{d}^2/\mathrm{d}x^2$作用于函数$\mathrm{e}^x$时，结果是相同的，但这并不意味着$\mathrm{d}/\mathrm{d}x$和$\mathrm{d}^2/\mathrm{d}x^2$是相等的。）这两个算符在作用于每个品优函数时必须得到相同的结果，我们才能得出它们相等的结论。因此，尽管$\hat{A}$和$\hat{B}$不可对易，但可能存在一个或更多的共同本征函数。然而，我们不可能有两个非对易算符的共同\textit{完整}本征函数集，正如我们在本节前面所证明的那样。
 
-    我们已经证明了：若两个算符$\hat{A}$和$\hat{B}$的本征函数完全集是相同的，那么这两个算符可对易。现在我们证明：
+    我们已经证明了：若两个算符$\hat{A}$和$\hat{B}$的本征函数完备集是相同的，那么这两个算符可对易。现在我们证明：
     \begin{center}
         \parbox{0.8\textwidth}{
             \textbf{定理5：}如果两个厄米算符$\hat{A}$和$\hat{B}$可对易，我们可以为它们选择一组共同的完整本征函数。
@@ -618,16 +617,16 @@
         \hat{B}g_i = k_ig_i
         \label{eq:7.48}
     \end{equation}
-    其中$k_i$是常数。这个方程说明了$g_i$是$\hat{B}$的本征函数，因此得证。在第 \ref{sec:7.3 Expansion in Terms of Eigenfunctions} 节中，我们假设任何表示物理量的算符的本征函数都构成一个完全集。因此，$g_i$构成一个完全集。
+    其中$k_i$是常数。这个方程说明了$g_i$是$\hat{B}$的本征函数，因此得证。在第 \ref{sec:7.3 Expansion in Terms of Eigenfunctions} 节中，我们假设任何表示物理量的算符的本征函数都构成一个完备集。因此，$g_i$构成一个完备集。
 
-    我们刚才证明了非简并情况下的定理，那么简并情况下呢？设本征值$a_i$是$n$重简并的。由式(\ref{eq:7.47})，$\hat{B}g_i$也是$\hat{A}$的本征函数，本征值为$a_i$。因此，第\ref{sec:7.3 Expansion in Terms of Eigenfunctions}节中的定理3表明：若函数$\hat{B}g_i$可以用算符$\hat{A}$的本征函数完全集展开，那么除了本征值为$a_i$的项以外，其他项的系数均为零。也就是说，$\hat{B}g_i$一定是$n$个本征值为$a_i$的线性无关本征函数的线性组合：
+    我们刚才证明了非简并情况下的定理，那么简并情况下呢？设本征值$a_i$是$n$重简并的。由式(\ref{eq:7.47})，$\hat{B}g_i$也是$\hat{A}$的本征函数，本征值为$a_i$。因此，第\ref{sec:7.3 Expansion in Terms of Eigenfunctions}节中的定理3表明：若函数$\hat{B}g_i$可以用算符$\hat{A}$的本征函数完备集展开，那么除了本征值为$a_i$的项以外，其他项的系数均为零。也就是说，$\hat{B}g_i$一定是$n$个本征值为$a_i$的线性无关本征函数的线性组合：
     \begin{equation}
         \hat{B}g_i = \sum_{k=1}^{n}c_kg_k, \quad \text{其中} \quad \hat{A}g_k = a_ig_k \quad k = 1,2,\ldots,n
         \label{eq:7.49}
     \end{equation}
     其中$g_1,\ldots,g_n$表示$n$个本征值为$a_i$的算符$\hat{A}$的本征函数。式(\ref{eq:7.49})表明$g_i$不一定是$\hat{B}$的本征函数。然而，通过对$n$个对应于简并本征值$a_i$的线性无关的$\hat{A}$本征函数进行适当的线性组合，我们能构造出一组新的$n$个线性无关的本征函数，他们也将是$\hat{B}$的本征函数。该说法的证明见\textit{Merzbacher}，第8.5节。
 
-    因此，当$\hat{A}$和$\hat{B}$可对易时，我们可以为它们\textit{选择}一组共同的本征函数完全集。例如，考虑一个氢原子，我们已经证明了算符$\hat{L}_z$和$\hat{H}$是可对易的。如果我们愿意，我们可以将$\hat{B}$的本征函数中的$\phi$因子写成$\sin m\phi$和$\cos m\phi$的形式(第\ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions}节)。如果这样做，除了 $m=0$ 的情况以外，我们就不会得到 $\hat{L}_z$ 的本征函数了。然而，根据\ref{sec:3.6 Degeneracy}节的定理，以下线性组合
+    因此，当$\hat{A}$和$\hat{B}$可对易时，我们可以为它们\textit{选择}一组共同的本征函数完备集。例如，考虑一个氢原子，我们已经证明了算符$\hat{L}_z$和$\hat{H}$是可对易的。如果我们愿意，我们可以将$\hat{B}$的本征函数中的$\phi$因子写成$\sin m\phi$和$\cos m\phi$的形式(第\ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions}节)。如果这样做，除了 $m=0$ 的情况以外，我们就不会得到 $\hat{L}_z$ 的本征函数了。然而，根据\ref{sec:3.6 Degeneracy}节的定理，以下线性组合
     \begin{equation*}
         R\left(r\right)S\left(\theta\right)\left(\cos m\phi+\mathrm{i}\sin m\phi\right) = RS\mathrm{e}^{\mathrm{i}m\phi}, \quad m = -l,\ldots,l
     \end{equation*}
@@ -724,7 +723,7 @@
     \end{equation*}
     若本征值为$+1$，则$g_i\left(-x,-y,-z\right) = g_i\left(x,y,z\right)$，这表明$g_i$是偶函数；若本征值为$-1$，则$g_i\left(-x,-y,-z\right) = -g_i\left(x,y,z\right)$，这表明$g_i$是奇函数。因此，\textit{宇称算符$\hat{\Pi}$的本征函数为可能的品优奇函数和品优偶函数。}
 
-    当宇称算符与哈密顿算符$\hat{H}$可对易时，根据第\ref{sec:7.4 Eigenfunctions of Commuting Operators}节的定理，我们可以为这两个算符选择一组共同的本征函数完全集。$\hat{H}$的本征函数是定态波函数$\psi_i$。因此，若
+    当宇称算符与哈密顿算符$\hat{H}$可对易时，根据第\ref{sec:7.4 Eigenfunctions of Commuting Operators}节的定理，我们可以为这两个算符选择一组共同的本征函数完备集。$\hat{H}$的本征函数是定态波函数$\psi_i$。因此，若
     \begin{equation}
         \left[\hat{\Pi}, \hat{H}\right] = 0
         \label{eq:7.57}
@@ -813,7 +812,7 @@
         \label{eq:7.65}
     \end{equation}
 
-    我们在第 \ref{sec:7.3 Expansion in Terms of Eigenfunctions} 节中假设，任何代表物理可观测属性的厄米算符的本征函数都构成一个完全集。由于$g_i$构成一个完全集，我们可以将态函数 $\Psi$ 展开为
+    我们在第 \ref{sec:7.3 Expansion in Terms of Eigenfunctions} 节中假设，任何代表物理可观测属性的厄米算符的本征函数都构成一个完备集。由于$g_i$构成一个完备集，我们可以将态函数 $\Psi$ 展开为
     \begin{equation}
         \Psi\left(q,t\right) = \sum_{i}c_i\left(t\right)g_i\left(q\right)
         \label{eq:7.66}
@@ -1178,12 +1177,12 @@
     \begin{center}
         \fbox{
             \parbox{\dimexpr\textwidth-3\fboxsep-3\fboxrule}{
-            \textbf{假设4：}若算符$\hat{B}$代表某个物理可观测量的线性厄米算符，那么其本征函数$g_i$构成一个完全集。
+            \textbf{假设4：}若算符$\hat{B}$代表某个物理可观测量的线性厄米算符，那么其本征函数$g_i$构成一个完备集。
         }
     }
     \end{center}
 
-    有些厄米算符的本征函数并不构成一个完全集（见\textit{Griffiths}, pp. 99, 106; \textit{Messiah}, p. 188; \textit{Ballentine}, Sec. 1.3）。完备性要求对于发展量子力学理论至关重要，因此有必要假设所有与可观测性质相对应的厄米算符都有一组完备的本征函数。假设 4 使我们能够将任何状态的波函数展开为任何量子力学算符的正交本征函数的叠加：
+    有些厄米算符的本征函数并不构成一个完备集（见\textit{Griffiths}, pp. 99, 106; \textit{Messiah}, p. 188; \textit{Ballentine}, Sec. 1.3）。完备性要求对于发展量子力学理论至关重要，因此有必要假设所有与可观测性质相对应的厄米算符都有一组完备的本征函数。假设 4 使我们能够将任何状态的波函数展开为任何量子力学算符的正交本征函数的叠加：
     \begin{equation}
         \Psi = \sum_{i}c_ig_i = \sum_{i}\left| g_i \right\rangle \left\langle g_i \middle| \Psi \right\rangle
         \label{eq:7.95}
@@ -1425,7 +1424,7 @@
 
     在\ref{sec:7.1 Notation}节中，积分$\int f_m^{\ast}\hat{A}f_n \: \mathrm{d}\tau$称为$\hat{A}$的一个矩阵元。现在，我们通过证明此类积分遵守矩阵代数规则来证明这一名称的合理性。
 
-    令函数$f_1, f_2, \ldots, f_n$是一个完全且正交的函数集，令$\left\{f_i\right\}$表示这个完全集。则数字$A_{mn} \equiv \left\langle f_m \middle| \hat{A} f_n \right\rangle \equiv \int f_m^{\ast}\hat{A}f_n \: \mathrm{d}\tau$称为\textbf{以$\left\{f_i\right\}$为基的线性算符$\hat{A}$的矩阵元}（matrix element of the linear operator $\hat{A}$ in the basis $\left\{f_i\right\}$）。方阵
+    令函数$f_1, f_2, \ldots, f_n$是一个完全且正交的函数集，令$\left\{f_i\right\}$表示这个完备集。则数字$A_{mn} \equiv \left\langle f_m \middle| \hat{A} f_n \right\rangle \equiv \int f_m^{\ast}\hat{A}f_n \: \mathrm{d}\tau$称为\textbf{以$\left\{f_i\right\}$为基的线性算符$\hat{A}$的矩阵元}（matrix element of the linear operator $\hat{A}$ in the basis $\left\{f_i\right\}$）。方阵
     \begin{equation}
         \mathbf{A} = \begin{pmatrix}
             A_{11} & A_{12} & \ldots \\
@@ -1482,7 +1481,7 @@
     \end{equation*}
     以$\hat{A}$的本征函数为正交基表示$\hat{A}$的矩阵是一个对角矩阵，其对角元素为$\hat{A}$的本征值$a_n$。相反地，我们可以证明（问题7.53），当某算符$\hat{A}$以其完整正交基表示为对角矩阵时，那么基函数为$\hat{A}$的本征函数，对角元素为$\hat{A}$的本征值。
 
-    我们使用了完全正交基$\left\{f_i\right\}$来将算符$\hat{A}$表示为(\ref{eq:7.108})的矩阵$\mathbf{A}$。这组基还可以用来表示任意函数$u$，如下所示。根据$u = \sum_{i}u_{i}f_i$，用完全集$\left\{f_i\right\}$展开函数$u$，其中展开系数$u_i$由(\ref{eq:7.40})给出：$u_i = \left\langle f_i \middle| u \right\rangle$。展开系数$u_1,u_2,\ldots$构成的集合形成一个列矩阵（列向量），称为$\mathbf{u}$，则$\mathbf{u}$称为函数$u$以$\left\{f_i\right\}$为基的\textbf{矩阵表示}（matrix representative）。若$\hat{A}u =w$，其中$w$是另一个函数，那么我们可以证明（问题7.54）$\mathbf{Au} = \mathbf{w}$，其中$\mathbf{A}$、$\mathbf{u}$和$\mathbf{w}$分别是算符$\hat{A}$、函数$u$和函数$w$以$\left\{f_i\right\}$为基的矩阵表示。因此，若我们知道算符$\hat{A}$的矩阵表示$\mathbf{A}$，那么我们就能得知算符$\hat{A}$作用于任意函数$u$的结果。那么知道了矩阵表示$\mathbf{A}$等价于知道了算符$\hat{A}$。
+    我们使用了完全正交基$\left\{f_i\right\}$来将算符$\hat{A}$表示为(\ref{eq:7.108})的矩阵$\mathbf{A}$。这组基还可以用来表示任意函数$u$，如下所示。根据$u = \sum_{i}u_{i}f_i$，用完备集$\left\{f_i\right\}$展开函数$u$，其中展开系数$u_i$由(\ref{eq:7.40})给出：$u_i = \left\langle f_i \middle| u \right\rangle$。展开系数$u_1,u_2,\ldots$构成的集合形成一个列矩阵（列向量），称为$\mathbf{u}$，则$\mathbf{u}$称为函数$u$以$\left\{f_i\right\}$为基的\textbf{矩阵表示}（matrix representative）。若$\hat{A}u =w$，其中$w$是另一个函数，那么我们可以证明（问题7.54）$\mathbf{Au} = \mathbf{w}$，其中$\mathbf{A}$、$\mathbf{u}$和$\mathbf{w}$分别是算符$\hat{A}$、函数$u$和函数$w$以$\left\{f_i\right\}$为基的矩阵表示。因此，若我们知道算符$\hat{A}$的矩阵表示$\mathbf{A}$，那么我们就能得知算符$\hat{A}$作用于任意函数$u$的结果。那么知道了矩阵表示$\mathbf{A}$等价于知道了算符$\hat{A}$。
     
 \section*{总结}
 
