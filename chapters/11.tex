@@ -180,16 +180,16 @@
     若$Z > 1$，则具有相同$n$但不同$l$值的轨道能量不同。例如，对于$n=3$轨道能量，我们有当$Z>1$时$\varepsilon_{3s} < \varepsilon_{3p} < \varepsilon_{3d}$。这些在氢原子中简并的能级的裂分，来自电子间排斥势。（回忆第\ref{sec:9.7 Perturbation Treatment of the First Excited State of Helium}节中对氦的微扰处理。）在极限$Z \to \infty$时，具有相同$n$值轨道又是简并的，因为与核-电子吸引势相比，电子间排斥势就显得微不足道了。
 
     随着原子序数$Z$的变化，某些轨道的位置也会发生变化。因此，在氢原子中，$3d$轨道位于$4s$轨道下方，但对于原子序数在7到20之间的元素，$4s$轨道位于$3d$轨道下方。当原子序数较大时，$3d$轨道又会位于下方。当$Z = 19$时，$4s$轨道能量更低，因此\ce{_19K}的基态组态为$1s^2 2s^2 2p^6 3s^2 3p^6 4s$。需要指出的是，$s$轨道比$p$轨道或$d$轨道具有更强的穿透力；这使得在某些原子序数（$Z$）的值下，$4s$轨道位于$3d$轨道之下。注意$3d$能级在$Z=21$处突然下降，此时$3d$轨道开始被填充。$3d$轨道中的电子彼此屏蔽作用不强，因此$3d$轨道的能量突然下降。其他轨道也出现类似的能量下降现象。
-    \begin{figure}[ht]
+    \begin{figure}[htbp]
         \centering
         \includegraphics[width=0.8\textwidth]{Figures/11.2.png}
         \caption{
             \centering
-            \parbox{0.45\linewidth}{
+            \parbox{0.4\linewidth}{
                 \noindent
                 原子轨道能作为原子序数的中性原子的函数，由Latter计算得出。\\
                 \small
-                 [Reprinted figure with permission from R. Latter, redrawn by M. Kasha, Physical Review Series II, 90, 510, 1955. Copyright 1955 by the American Physical Society.] Note the logarithmic scales. $E_H$ is the ground-state hydrogen-atom energy, $ −13.6 \:\mathrm{eV}$.
+                [Reprinted figure with permission from R. Latter, redrawn by M. Kasha, Physical Review Series II, 90, 510, 1955. Copyright 1955 by the American Physical Society.] Note the logarithmic scales. $E_H$ is the ground-state hydrogen-atom energy, $ −13.6 \:\mathrm{eV}$.
             }
         }
         \label{fig:11.2}
@@ -216,25 +216,71 @@
 \section{电子相关}
 \label{sec:11.3 Electron Correlation}
 
+    用Hartree–Fock方法计算的能量对于轻原子来说，通常会有大约$\frac{1}{2}\%$的误差。从绝对值来看，这并不算大，但对于化学家来说这个误差太大了。例如，碳原子的总能量约为 $-1000 \:\mathrm{eV}$，其 $\frac{1}{2}\%$ 为 $5 \:\mathrm{eV}$。化学单键能量约为 $5 \:\mathrm{eV}$。通过计算 Hartree–Fock 分子能与原子能之间的差值来计算键能，对于轻原子而言，这种计算方法会产生几电子伏特的误差，因此不可靠。我们必须寻找一种方法来改进Hartree–Fock 波函数和能量。（我们的讨论将适用于分子和原子。）
 
+    Hartree–Fock SCF 波函数仅以平均方式考虑了电子之间的相互作用。实际上，我们必须考虑电子之间的瞬时相互作用。由于电子相互排斥，它们往往会相互避让。例如，在氦中，如果一个电子在给定时刻靠近原子核，那么另一个电子在该时刻远离原子核在能量上更有利。人们有时会提到原子中每个电子周围存在一个\textit{库仑空穴}（Coulomb hole）。这是一个找到另一个电子的概率较小的区域。电子的运动是相互关联的，我们称之为\textbf{电子相关}（electron correlation）。我们必须找到一种方法，将瞬时电子相关引入波函数中。
 
+    实际上，Hartree–Fock 波函数确实具有一些瞬时电子相关性。Hartree–Fock 函数满足反称性要求。因此 【方程 (\ref{eq:10.20}) 】，当两个自旋相同的电子具有相同的空间坐标时，它就会消失。对于 Hartree–Fock 函数，在同一空间区域找到自旋相同的电子的概率很小，因此 Hartree–Fock 函数具有自旋相同的电子运动的一些相关性。这使得 Hartree–Fock 能量低于 Hartree 能量。人们有时会提到 Hartree–Fock 波函数中每个电子周围的费米空穴，以此来表示找到另一个具有相同自旋的电子的概率很小的区域。
 
+    \textbf{关联能}$E_{\text{corr}}$（correlation energy）是非相对论能量精确值$E_{\text{normal}}$与（非相对论）Hartree-Fock能量$E_{\text{HF}}$之间的差值：
+    \begin{equation}
+        E_{\text{corr}} \equiv E_{\text{normal}} - E_{\text{HF}}
+        \label{eq:11.16}
+    \end{equation}
+    其中$E_{\text{normal}}$和$E_{\text{HF}}$都应同时包含对核运动的校正或同时省略这些校正。对于\ce{He}原子，未校正核运动（非相对论）Hartree-Fock能量为$-2.86168 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$【E. Clementi and C. Roetti, \textit{At. Data Nucl. Data Tables}, \textbf{14}, 177 (1974)】，使用变分计算（第\ref{sec:9.4 Variational Treatments of the Ground State of Helium}节）可以得到未校正核运动的非相对论能量精确值为$-2.90372 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$。因此，$E_{\text{corr, He}} = -2.90372 \left(\mathrm{e}^2/4\pi\epsilon_0 a_0\right) + 2.86168 \left(\mathrm{e}^2/4\pi\epsilon_0 a_0\right) = -0.04204 \left(\mathrm{e}^2/4\pi\epsilon_0 a_0\right) = -1.14 \:\mathrm{eV}$。对$E_{\text{normal}}$无法精确计算的原子和分子来说，我们可以将实验能量与相对论和核运动修正的估计值相结合，得到$E_{\text{normal}}$。对于中性基态原子，$\left|E_{\text{corr}}\right|$被发现与电子数 $n$ 呈近似线性关系：
+    \begin{equation*}
+        E_{corr} \approx -0.0170 n^{1.31} \left(\mathrm{e}^{2} / 4 \pi \varepsilon_{0} a_{0}\right)=-0.0170 n^{1.31}(27.2 \: \mathrm{eV})
+    \end{equation*}
+    【E. Clementi and G. Corongiu, \textit{Int. J. Quantum Chem.}, \textbf{62}, 571 (1997)】。百分比$\left(E_{\text{corr}} / E_{\text{normal}}\right) \times 100 \%$随着原子虚数的增加而减小。一些值如下：\ce{Li}为$0.6\%$，\ce{C}为$0.2\%$，\ce{Na}为$0.2\%$以及\ce{K}为$0.1\%$。
 
+    我们已经指出了两种实现瞬时电子相关的方法。一种方法是将电子间距离 $r_{ij}$ 引入波函数（第 \ref{sec:9.4 Variational Treatments of the Ground State of Helium} 节）。
 
+    另一种方法是组态相互作用。我们发现，（第\ref{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}和\ref{sec:9.4 Variational Treatments of the Ground State of Helium}节）氦原子$1s^2$基态的零级波函数为$1s\left(1\right)$\\$1s\left(2\right)\left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right]/\sqrt{2}$。我们指出，波函数的一阶和高阶修正将混合来自激发组态的贡献，产生\textbf{组态相互作用}（configuration interaction, CI），也称为\textbf{组态混合}（configuration mixing, CM）。
 
+    对原子或分子进行组态相互作用计算最常见的方法是使用变分法。首先选择一个电子函数 $\chi_i$ 的基函数集。原则上，该基函数集应该是完备的。但在实践中，基函数集的大小是有限的。人们希望，选择合适的基函数能够很好地近似完备的基函数集。对于原子计算，常选择STO基函数【式(\ref{eq:11.14})】作为基函数。
 
+    SCF 原子（或分子）轨道 $\phi_i$ 写成基函数集元素的线性组合 【参见 (\ref{eq:11.13})】，并求解 Hartree–Fock 方程 (\ref{eq:11.12}) 以得出这些线性组合中的系数。获得的原子（或分子）轨道数等于所用基函数的数量。能量最低的轨道是基态的占据轨道。剩余的未占据轨道称为\textbf{虚轨道}（virtual orbitals）。
 
+    使用一组被占用的和虚自旋轨道，可以形成具有不同轨道占用的反对称多电子函数。例如，对于氦，我们可以构造与电子组态$1s^2$、$1s2s$、$1s2p$、$2s^2$、$2s2p$、$2p^2$、$1s3s$等相对应的函数。此外，一个给定的电子组态可以对应多个函数。回顾一下与氦 $1s2s$ 组态相对应的函数 (\ref{eq:10.27}) 至 (\ref{eq:10.30}) 多电子函数 $\Phi_i$。每个函数都是Slater行列式或几个Slater行列式的线性组合。某些开壳层函数【如 (\ref{eq:10.44}) 和 (\ref{eq:10.45})】需要使用多个Slater行列式。每个$\Phi_i$称为\textbf{组态状态函数}（configuration state function, CSF）或\textbf{组态函数}（configuration function）或简单的“组态”。（最后这个名字不太好，因为它会让人把电子组态如$1s^2$和组态函数如$\left|1s\overline{1s}\right|$搞混。）
 
+    正如我们在微扰理论中看到的那样，原子（或分子）的真实波函数$\phi$包含除对 $\phi$ 有主要贡献的组态之外的其他组态的贡献，所以我们将$\phi$表示为组态函数$\Phi_i$的线性组合：
+    \begin{equation}
+        \phi = \sum_i c_i \Phi_i
+        \label{eq:11.17}
+    \end{equation}
+    然后，我们将(\ref{eq:11.17})视作线性变分函数（第\ref{sec:8.5 Linear Variational Functions}节）。通过调整系数$c_i$使得变分积分最小化，得到方程
+    \begin{equation}
+        \det\left(H_{ij} - ES_{ij}\right) = 0
+        \label{eq:11.18}
+    \end{equation}
+    其中$H_{ij} \equiv \left\langle \Phi_i \middle| \hat{H} \middle| \Phi_j \right\rangle$，$S_{ij} \equiv \left\langle \Phi_i \middle| \Phi_j \right\rangle$。一般来说，$\Phi_i$是正交归一的；若它们不正交，可以使用Schmidt法使其正交化。【只有角动量本征值与状态$\psi$相同的组态函数才在展开式(\ref{eq:11.17})中出现，见第\ref{sec:11.5 Angular momentum in Many-Electron Atoms}节。】
 
+    因为多电子组态函数$\Phi_i$最终基于形成完备集的单电子基函数组，所以所有可能组态函数的集合是多电子问题的完备集：任何反对称多电子函数（包括精确波函数）都可以表示为$\Phi_i$函数的线性组合。（证明见\textit{Szabo and Ostlund}, Section 2.2.7。）因此，如果从完整的单电子基函数集开始，并包括所有可能的组态函数，则组态相互作用计算将给出所考虑状态的精确原子（或分子）波函数$\psi$。实际上，人们只能使用有限的、不完整的基函数集，而不是无限的、完整的基函数集。此外，即使使用中等大小的基函数集，可能的组态函数的数量也非常庞大，人们通常不会包括所有可能的组态函数。组态相互作用方法的一部分“艺术”在于选择那些贡献最大的组态。
 
+    由于通常需要许多组态函数才能得到真正准确的波函数，因此，即使使用超级计算机，对电子数超过少数几个的系统进行组态相互作用计算也非常耗时。第 \ref{chap:16} 章讨论了其他考虑电子相关性的方法。
 
+    总之，为了进行组态相互作用计算，我们选择一组单电子基函数$\chi_i$，通过迭代法求解Hartree-Fock方程(\ref{eq:11.12})，将单电子原子（或分子）轨道的$\phi_i$表示为基函数的线性组合，再使用轨道$\phi_i$构造多电子组态函数$\Phi_i$，将波函数$\psi$表示为这些组态函数的线性组合，通过求解(\ref{eq:11.18})确定能量，并通过求解关联线性方程组求出(\ref{eq:11.17})中的系数$c_i$。【在实际应用中，(\ref{eq:11.18}) 及其关联方程组通常通过矩阵方法求解；详见第 \ref{sec:8.6 Matrices, Eigenvalues, and Eigenvectors} 节。】
 
+    以铍的基态为例。Hartree–Fock SCF 方法将找到Slater行列式$\left|1s\overline{1s}2s\overline{2s}\right|$中 $1s$ 和 $2s$ 轨道的最佳形式，并将其用于基态波函数。【我们使用方程 (\ref{eq:10.47}) 的符号。】 超越 Hartree-Fock 方法，我们将激发组态函数（例如$\left|1s\overline{1s}3s\overline{3s}\right|$）对基态线性变化函数的贡献也包括在内。Bunge 使用 650 个组态函数的线性组合对铍基态进行了组态相互作用计算。【C. F. Bunge, \textit{Phys. Rev. A}, \textbf{14}, 1965 (1976)】。Hartree-Fock能量为$-14.5730\left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$，Bunge的组态相互作用计算结果为$-14.6669\left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$，非相对论能量真实值为$-14.5730\left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$。Bunge 获得了 $99.5\%$ 的相关能。
 
-
-
+    第 \ref{sec:16.2 Configuration Interaction} 节详细介绍了氦原子的组态相互作用计算。
 
 \section{角动量的叠加}
 \label{sec:11.4 Addition of Angular Momenta}
+
+    对于多电子原子，电子的各个角动量算符与哈密顿算符不可对易，但它们的和却可对易。因此，我们需要学习如何将角动量相加。
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{多电子原子的角动量}
 \label{sec:11.5 Angular momentum in Many-Electron Atoms}
