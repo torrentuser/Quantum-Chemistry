@@ -171,21 +171,67 @@
 \section{轨道和元素周期表}
 \label{sec:11.2 Orbitals and the Periodic Table}
 
+    轨道概念和泡利不相容原理使我们能够理解元素周期表。轨道是一个电子的空间波函数。我们使用轨道来获得多电子原子的近似波函数，将波函数写成一个电子自旋轨道的Slater行列式。在最粗略的近似中，我们忽略了所有电子之间的排斥力，得到了类氢轨道。最好的轨道是 Hartree–Fock SCF 函数。我们通过将电子填入这些轨道来构建元素周期表，每个轨道都可以容纳一对自旋相反的电子。
 
+    Latter 【R. Latter, \textit{Phys. Rev.}, \textbf{99}, 510 (1955)】通过用Thomas-Fermi-Dirac方法获得的一个更简单的函数代替 Hartree–Fock 径向方程中 Hartree–Fock 势能的复杂表达式，计算出了周期表中原子的大致轨道能。Thomas-Fermi-Dirac方法利用统计力学原理，获得电子和原子中电子密度函数的有效势能函数的近似值（\textit{Bethe and Jackiw}，Chapter 5）。图 \ref{fig:11.2} 显示了 Latter 计算出的中性基态原子的轨道能量。这些 AO 能量与 Hartree–Fock 以及实验得出的轨道能量非常吻合（见J. C. Slater, \textit{Quantum Theory of Matter}, 2nd ed., McGraw-Hill, 1968, pp. 146, 147, 325, 326）。
 
+    轨道能量随原子序数$Z$的变化而变化。随着$Z$的增加，轨道能量会降低，这是因为原子核与电子之间的吸引力增强。这种降低在内层轨道中最为显著，因为这些轨道受到原子核的屏蔽作用较弱。
 
+    若$Z > 1$，则具有相同$n$但不同$l$值的轨道能量不同。例如，对于$n=3$轨道能量，我们有当$Z>1$时$\varepsilon_{3s} < \varepsilon_{3p} < \varepsilon_{3d}$。这些在氢原子中简并的能级的裂分，来自电子间排斥势。（回忆第\ref{sec:9.7 Perturbation Treatment of the First Excited State of Helium}节中对氦的微扰处理。）在极限$Z \to \infty$时，具有相同$n$值轨道又是简并的，因为与核-电子吸引势相比，电子间排斥势就显得微不足道了。
 
+    随着原子序数$Z$的变化，某些轨道的位置也会发生变化。因此，在氢原子中，$3d$轨道位于$4s$轨道下方，但对于原子序数在7到20之间的元素，$4s$轨道位于$3d$轨道下方。当原子序数较大时，$3d$轨道又会位于下方。当$Z = 19$时，$4s$轨道能量更低，因此\ce{_19K}的基态组态为$1s^2 2s^2 2p^6 3s^2 3p^6 4s$。需要指出的是，$s$轨道比$p$轨道或$d$轨道具有更强的穿透力；这使得在某些原子序数（$Z$）的值下，$4s$轨道位于$3d$轨道之下。注意$3d$能级在$Z=21$处突然下降，此时$3d$轨道开始被填充。$3d$轨道中的电子彼此屏蔽作用不强，因此$3d$轨道的能量突然下降。其他轨道也出现类似的能量下降现象。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Figures/11.2.png}
+        \caption{
+            \centering
+            \parbox{0.45\linewidth}{
+                \noindent
+                原子轨道能作为原子序数的中性原子的函数，由Latter计算得出。\\
+                \small
+                 [Reprinted figure with permission from R. Latter, redrawn by M. Kasha, Physical Review Series II, 90, 510, 1955. Copyright 1955 by the American Physical Society.] Note the logarithmic scales. $E_H$ is the ground-state hydrogen-atom energy, $ −13.6 \:\mathrm{eV}$.
+            }
+        }
+        \label{fig:11.2}
+    \end{figure}
 
+    为了帮助解释过渡元素及其离子的电子配置，Vanquickenborne 及其同事计算了 $Z=1$ 到 $Z=29$ 的原子和离子的 Hartree–Fock $3d$ 和 $4s$ 轨道能【L. G. Vanquickenborne et al., \textit{Inorg. Chem.}, \textbf{28}, 1805 (1989); \textit{J. Chem. Educ.}, \textbf{71}, 469 (1994)】。
 
+    一个复杂之处在于，给定的电子组态可能产生多种状态。【例如，回顾氦原子$1s2s$和$1s2p$组态的多个状态（第\ref{sec:9.7 Perturbation Treatment of the First Excited State of Helium}节和第\ref{sec:10.4 Th Helium Atom}节）。】 为了避免这种复杂情况，Vanquickenborne 及其同事通过最小化给定电子组态状态的平均能量 $E_{av}$ 来计算 Hartree–Fock 轨道和轨道能量，而不是通过最小化组态的每个单独状态的能量来计算。获得的平均轨道与给定组态状态的真实 Hartree–Fock 轨道只有微小的差异。
 
+    对于从\ce{_1H}到\ce{_19K}的每个原子，Vanquickenborne 及其同事计算了将一个电子从基态电子组态中最高占据轨道移出并置于$3d$轨道时的$3d$平均轨道能$\varepsilon_{3d}$；他们以类似的方式计算了这些原子的$\varepsilon_{4s}$。他们发现：若中性原子满足$Z<6$时，有$\varepsilon_{3d}<\varepsilon_{4s}$；而当$Z$介于7和19之间时，有$\varepsilon_{4s} < \varepsilon_{3d}$，与图\ref{fig:11.2}一致。
 
+    对于讨论原子序数从21到29的过渡元素，图\ref{fig:11.2}是不够的，因为它只给出了每个元素的$\varepsilon_{3d}$的单一值，而对于给定的原子，$\varepsilon_{3d}$（和$\varepsilon_{4s}$）取决于哪些轨道被占据。这是因为电子受到的电场取决于哪些轨道被占据。Vanquickenborne及其同事计算了每个价电子配置$3d^n4s^2$、$3d^{n+1}4s^1$和$3d^{n+2}4s^0$的$\varepsilon_{3d}$和$\varepsilon_{4s}$的值，发现这些过渡元素\ce{_21Sc}至\ce{_29Cu}（即图\ref{fig:11.2}中所示的顺序）的中性原子与$+1$和$+2$价离子的每个组态都满足$\varepsilon_{3d} < \varepsilon_{4s}$。
 
+    $Z$大于20时，因为$3d$能级能量低于$4s$能级，所以我们可能想知道如\ce{_21Sc}的基态组态为什么是$3d^14s^2$而不是$3d^3$。虽然这些每个组态都满足$\varepsilon_{3d} < \varepsilon_{4s}$，但这并不意味着$3d^3$组态的轨道总能量之和更低。当一个电子从$4s$轨道移动到$3d$轨道时，$\varepsilon_{4s}$和$\varepsilon_{3d}$都增加了。轨道能是通过求解单电子 Hartree–Fock 方程得出的，该方程包含轨道 $i$ 中的电子与原子中其他电子之间的平均排斥势能项，因此 $\varepsilon_i$ 取决于这些排斥势的值，从而取决于哪些轨道被占据。对于第一过渡系元素，$4s$轨道能量比$3d$轨道高得多。例如，Vanquickenborne及其同事计算了\ce{Sc}中如下的$\left\langle r \right\rangle$值：对于组态$3d^14s^2$，$\left\langle r \right\rangle _{3d} = 0.89$ \AA，$\left\langle r \right\rangle _{4s} = 2.09$ \AA；对于组态$3d^24s^1$，$\left\langle r \right\rangle _{3d} = 1.11$ \AA，$\left\langle r \right\rangle _{4s} = 2.29$ \AA。由于这种尺寸差异，涉及$4s$电子的排斥作用远小于涉及$3d$电子的排斥作用，因此，我们有$\left(4s, 4s\right) < \left(4s, 3d\right) < \left(3d, 3d\right)$，其中$\left(4s, 3d\right)$表示分布于$3d$轨道电子与$4s$轨道电子之间的平均排斥势。（这些排斥势可以用库伦积分和交换积分给出。）当一个电子从$4s$轨道移动到$3d$轨道时，由上述不等式导致的电子间排斥力增大，使得轨道能$\varepsilon_{3d}$和$\varepsilon_{4s}$升高。例如，对于\ce{_21Sc}的组态$3d^14s^2$有$\varepsilon_{3d} = -9.35 \:\mathrm{eV}$，$\varepsilon_{4s} = -5.72 \:\mathrm{eV}$；而组态$3d^24s^1$则有$\varepsilon_{3d} = -5.23 \:\mathrm{eV}$，$\varepsilon_{4s} = -5.06 \:\mathrm{eV}$。对于组态$3d^14s^2$，价电子能量之和为$- 9.35 \:\mathrm{eV} + 2\left(-5.72 \:\mathrm{eV}\right) = -20.79 \:\mathrm{eV}$，而组态$3d^24s^1$的能量之和为$2\left(-5.23 \:\mathrm{eV}\right) - 5.06 \:\mathrm{eV} = -15.52 \:\mathrm{eV}$。因此，尽管每个组态都满足$\varepsilon_{3d} < \varepsilon_{4s}$，但将电子从$4s$转移到$3d$使得\ce{Sc}中价电子轨道能量总和升高。【正如我们在方程（\ref{eq:11.10}）中看到 Hartree 方法，以及将在第 \ref{sec:14.3 The Hartree-Fock Method for Molecules} 节中看到的 Hartree–Fock 方法一样，Hartree 和 Hartree–Fock 方法对原子能量的表达式除了轨道能量之和之外还包含其他项，因此我们必须考虑轨道能量之和之外的因素，才能确定哪种组态最稳定。】
 
+    对于过渡金属的$+2$价离子，由于屏蔽效应的减弱，价电子（$3d$和$4s$电子）所受到的有效核电荷$Z_{\text{eff}}$比中性原子的更大。类比氢原子方程$E = - \left(Z^2 / n^2\right)\left(\mathrm{e}^2 / 8\pi\varepsilon_0a\right)$【式(\ref{eq:6.94})】，轨道能量$\varepsilon_{3d}$和$\varepsilon_{4s}$都大致与$Z^2_{\text{eff}}$成正比，能级差$\varepsilon_{4s} - \varepsilon_{3d}$也大致与$Z^2_{\text{eff}}$成正比。所以过渡金属离子的能级差$\varepsilon_{4s} - \varepsilon_{3d}$远大于中性原子；价电子排斥力的增加已不足以使 $4s$ 到 $3d$ 的转移在能量上变得不利；$+2$ 价离子具有没有 $4s$ 电子的基态组态。
 
+    关于电子组态的进一步讨论，请参阅W. H. E. Schwarz, \textit{J. Chem. Educ.}, \textbf{87}, 444 (2010); Schwarz and R. L. Rich, \textit{ibid.}, \textbf{87}, 435。
 
+    图\ref{fig:11.2}显示，$ns$轨道与$np$轨道之间的间隔远小于$np$轨道与$nd$轨道之间的间隔，从而形成了熟悉的$ns^2np^6$八电子稳定结构。
+
+    轨道概念是大多数关于原子和分子化学的定性讨论的基础。然而，轨道的使用是一种近似。要得到真正的波函数，我们必须超越自旋轨道的Slater行列式。
 
 \section{电子相关}
 \label{sec:11.3 Electron Correlation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{角动量的叠加}
 \label{sec:11.4 Addition of Angular Momenta}

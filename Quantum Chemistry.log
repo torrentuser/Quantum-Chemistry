@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  9 AUG 2025 21:41
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  10 AUG 2025 15:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1244,11 +1244,6 @@ Package fontspec Info:
 
 
 [2]
-Overfull \hbox (4.1352pt too wide) in paragraph at lines 65--66
-[]\TU/lmr/m/n/10.53937 1907 \TU/SimSun(0)/m/n/10.53937 年，|  爱 因 斯 坦 将 能 量 量 子 化 应 用 于 固 体 元 素 中 原 子 的 振 动。|  假 设 每 个 原 子 在 每 个 方 向 $[]$
- []
-
-
 
 [3]
 Underfull \vbox (badness 3354) has occurred while \output is active []
@@ -1344,11 +1339,6 @@ File: Figures/2.4.png Graphic file (type bmp)
 [23]
 File: Figures/2.5.png Graphic file (type bmp)
 <Figures/2.5.png>
-
-Overfull \hbox (6.73785pt too wide) in paragraph at lines 356--357
-[]\TU/SimSun(0)/m/n/10.53937 我 们 首 先 考 虑 $[] [] [][]$ 的 情 况。|  区 域 \TU/lmr/m/n/10.53937 I \TU/SimSun(0)/m/n/10.53937 和 区 域 \TU/lmr/m/n/10.53937 III \TU/SimSun(0)/m/n/10.53937 的 薛 定 谔 方 程 为 $[][][][][][][] [] [] [] [] []
- []
-
 
 
 [24]
@@ -1535,11 +1525,6 @@ File: Figures/4.5.png Graphic file (type bmp)
 [55]
 
 [56]
-Overfull \hbox (15.9104pt too wide) in paragraph at lines 466--467
-\TU/SimSun(0)/m/n/10.53937 函 数、|  概 率 密 度；| $[]$ 和 $[]$ 可 以 改 变） ；| [][]$[][][][][][][][][][][][] [] [][][][][][][] [] [][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
- []
-
-
 
 [57]
 File: Figures/4.6.png Graphic file (type bmp)
@@ -1571,16 +1556,6 @@ File: Figures/4.8.png Graphic file (type bmp)
 [61]
 
 [62]
-Overfull \hbox (9.63423pt too wide) in paragraph at lines 691--693
-\TU/SimSun(0)/m/n/10.53937 其 中，|  我 们 用 到 了 $[][][][][][] [] [][]$。|  将 式 \TU/lmr/m/n/10.53937 ([][]4.68[][])\TU/SimSun(0)/m/n/10.53937 、| \TU/lmr/m/n/10.53937 ([][]4.77[][]) \TU/SimSun(0)/m/n/10.53937 和 \TU/lmr/m/n/10.53937 ([][]4.79[][]) \TU/SimSun(0)/m/n/10.53937 代 入 薛 定 谔 方 程 $[] [] [] []
- []
-
-
-Overfull \hbox (29.35706pt too wide) in paragraph at lines 702--703
-[]\TU/SimSun(0)/m/n/10.53937 更 一 般 地 说，|  让 $[]$ 包 含 一 个 非 无 量 纲 参 数 $[]$。|  例 如，|  我 们 有 $[] [] [][][]$ 或 $[] [] [][][] []$
- []
-
-
 
 [63]) (./chapters/05.tex
 
@@ -1614,11 +1589,6 @@ File: Figures/5.3.png Graphic file (type bmp)
 
 
 [70]
-Overfull \hbox (3.75659pt too wide) in paragraph at lines 365--366
-[]\TU/SimSun(0)/m/n/10.53937 矢 量 符 号 是 表 示 函 数 变 量 的 一 种 便 捷 方 法。|  双 粒 子 系 统 的 波 函 数 可 以 写 作 $[] []$，|
- []
-
-
 
 [71]
 
@@ -1678,11 +1648,6 @@ Chapter 6.
 [87
 
 ]
-Overfull \hbox (12.40309pt too wide) in paragraph at lines 119--120
-[]\TU/SimSun(0)/m/n/10.53937 我 们 已 经 证 明：|  \TU/SimSun(0)/m/it/10.53937 对 于 任 意 势 能 函 数 $[] []$ 是 球 对 称 的 单 粒 子 问 题，|  定 态 波 函 数 为 $[] [] [] [] [][] []$，|
- []
-
-
 
 [88]
 
@@ -1734,41 +1699,31 @@ File: Figures/6.5.png Graphic file (type bmp)
 [98]
 
 [99]
-Underfull \hbox (badness 10000) in paragraph at lines 721--724
-
- []
-
-
 
 [100]
 File: Figures/6.6.png Graphic file (type bmp)
 <Figures/6.6.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 749--752
-
- []
-
-
 
 [101]
 
 [102]
-Underfull \hbox (badness 10000) in paragraph at lines 843--845
+Underfull \hbox (badness 10000) in paragraph at lines 841--843
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 856--859
+Underfull \hbox (badness 10000) in paragraph at lines 854--857
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 864--866
+Underfull \hbox (badness 10000) in paragraph at lines 862--864
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 880--883
+Underfull \hbox (badness 10000) in paragraph at lines 878--881
 
  []
 
@@ -1782,38 +1737,34 @@ File: Figures/6.7.png Graphic file (type bmp)
 [104]
 File: Figures/6.8.png Graphic file (type bmp)
 <Figures/6.8.png>
-
-
-[105]
 File: Figures/6.9.png Graphic file (type bmp)
 <Figures/6.9.png>
 
 
+[105]
+Underfull \hbox (badness 10000) in paragraph at lines 1004--1006
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1016
+
+ []
+
+
+
 [106]
-Underfull \hbox (badness 10000) in paragraph at lines 1006--1008
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1015--1018
-
- []
-
-
-Underfull \hbox (badness 1436) in paragraph at lines 1019--1020
-[]\TU/SimSun(0)/b/n/10.53937 练 习：|  \TU/SimSun(0)/m/n/10.53937 求 $[][][]$ $[]$ 原 子 中 电 子 与 原 子 核 的 距 离 小 于 $[]$ 的 概 率。|  使 用 积 分 表 或 网 站 \TU/lmr/m/n/10.53937 inte-
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [107]
 
 [108]
-File: Figures/6.10.png Graphic file (type bmp)
-<Figures/6.10.png>
-
 
 [109]
+File: Figures/6.10.png Graphic file (type bmp)
+<Figures/6.10.png>
 File: Figures/6.11.png Graphic file (type bmp)
 <Figures/6.11.png>
 
@@ -1837,13 +1788,13 @@ File: Figures/6.14.png Graphic file (type bmp)
 
 [115]
 
-[116
-
-]
+[116]
 Chapter 7.
 
 
-[117]
+[117
+
+]
 
 [118]
 
@@ -1856,11 +1807,6 @@ Chapter 7.
 [122]
 File: figures/7.1.png Graphic file (type bmp)
 <figures/7.1.png>
-
-Overfull \hbox (19.04718pt too wide) in paragraph at lines 379--381
-\TU/SimSun(0)/m/n/10.53937 这 是 任 意 函 数 $[] []$ 作 为 箱 中 粒 子 波 函 数 $[][]$ 的 线 性 组 合 的 展 开 所 需 的 表 达 式。|  注 意：|  定 积 分 $[][] [][][] []  [][]$
- []
-
 
 
 [123]
@@ -1889,11 +1835,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 505--507
 [128]
 
 [129]
-Overfull \hbox (19.2113pt too wide) in paragraph at lines 723--725
-\TU/SimSun(0)/m/n/10.53937 若 本 征 值 为 $[][]$，|  则 $[][] [] [] [][] []$，|  这 表 明 $[][]$ 是 偶 函 数；|  若 本 征 值 为 $[][]$，|  则 $[][] [] []
- []
-
-
 
 [130]
 
@@ -2077,10 +2018,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 568--571
 
 [167]
 
-LaTeX Warning: Reference `7.107' on page 168 undefined on input line 1141.
-
-
-
 [168]
 Underfull \hbox (badness 10000) in paragraph at lines 1229--1231
 
@@ -2234,17 +2171,31 @@ File: Figures/11.1.png Graphic file (type bmp)
 <Figures/11.1.png>
 
 
-[221]) (./chapters/12.tex
+[221]
+File: Figures/11.2.png Graphic file (type bmp)
+<Figures/11.2.png>
 
-[222]
+
+[222]) (./chapters/12.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[223]
+
+[224]
+
+[225]
+
+[226
+
+]
 Chapter 12.
 ) (./chapters/13.tex
 
-[223
+[227]
 
-]
-
-[224
+[228
 
 ]
 Chapter 13.
@@ -2285,20 +2236,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[225]
+[229]
 Overfull \vbox (137.1515pt too high) has occurred while \output is active []
 
 
 
-[226]
+[230]
 Chapter 14.
 ) (./chapters/15.tex
 
-[227
+[231
 
 ]
 
-[228
+[232
 
 ]
 Chapter 15.
@@ -2311,70 +2262,70 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[229]
+[233]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
 
-[230]
+[234]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[231
+[235
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
 
-[232]
+[236]
 Chapter 17.
 
 
-[233
+[237
 
 ]) (./chapters/appendix.tex
 
-[234]
+[238]
 附录 A.
 ) (./chapters/bibliography.tex
 
-[235
+[239
 
 ]
 
-[236
+[240
 
 ]
 附录 B.
 
 
-[237]
+[241]
 
-[238
+[242
 
 ]) (./chapters/answers.tex
 
-[239]
+[243]
 
-[240
+[244
 
 ]
 附录 C.
 ) (./chapters/index.tex
 
-[241]
+[245]
 
-[242
+[246
 
 ]
 附录 D.
 )
 
-[243] (./Quantum Chemistry.aux)
+[247] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -2384,19 +2335,16 @@ L3 programming layer <2022/07/14>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.65625pt have occurred.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 42838 strings out of 473832
- 966860 string characters out of 5726732
- 1574505 words of memory out of 5000000
- 65163 multiletter control sequences out of 15000+600000
+ 42856 strings out of 473832
+ 967664 string characters out of 5726732
+ 1578847 words of memory out of 5000000
+ 65180 multiletter control sequences out of 15000+600000
  571128 words of font info for 159 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 102i,25n,111p,1243b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,25n,111p,1743b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (251 pages).
+Output written on Quantum Chemistry.pdf (255 pages).

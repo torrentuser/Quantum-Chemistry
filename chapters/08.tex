@@ -1138,7 +1138,7 @@
         \mathbf{H}\mathbf{C} = \mathbf{C}\mathbf{W}
         \label{eq:8.87}
     \end{equation}
-    为了验证矩阵方程(\ref{eq:8.87})，我们需要证明矩阵$\mathbf{HC}$的每个元素$\left(\mathbf{HC}\right)_{ij}$等于矩阵$\mathbf{CW}$对应的元素$\left(\mathbf{CW}\right)_{ij}$。根据矩阵乘法规则(\ref{eq:7.107})，我们有$\left(\mathbf{HC}\right)_{ij} = \sum_{k}H_{ik}\left(\mathbf{C}\right)_{kj} = \sum_{k}H_{ik}c_k^{\left(j\right)}$。考虑本征方程$\mathbf{H}\mathbf{C} ^{\left(j\right)} = W_j\mathbf{c}^{\left(j\right)}$[式(\ref{eq:8.85})]，$\mathbf{H}\mathbf{c}^{\left(j\right)}$和$W_j\mathbf{c}^{\left(j\right)}$都是列矩阵。利用 (\ref{7.107}) 令每个列矩阵第 $i$ 行中的元素相等，我们有$\sum_{k}H_{ik}c_k^{\left(j\right)} = W_jc_i^{\left(j\right)}$。则
+    为了验证矩阵方程(\ref{eq:8.87})，我们需要证明矩阵$\mathbf{HC}$的每个元素$\left(\mathbf{HC}\right)_{ij}$等于矩阵$\mathbf{CW}$对应的元素$\left(\mathbf{CW}\right)_{ij}$。根据矩阵乘法规则(\ref{eq:7.107})，我们有$\left(\mathbf{HC}\right)_{ij} = \sum_{k}H_{ik}\left(\mathbf{C}\right)_{kj} = \sum_{k}H_{ik}c_k^{\left(j\right)}$。考虑本征方程$\mathbf{H}\mathbf{C} ^{\left(j\right)} = W_j\mathbf{c}^{\left(j\right)}$[式(\ref{eq:8.85})]，$\mathbf{H}\mathbf{c}^{\left(j\right)}$和$W_j\mathbf{c}^{\left(j\right)}$都是列矩阵。利用 (\ref{eq:7.107}) 令每个列矩阵第 $i$ 行中的元素相等，我们有$\sum_{k}H_{ik}c_k^{\left(j\right)} = W_jc_i^{\left(j\right)}$。则
     \begin{equation*}
         \left(\mathbf{HC}\right)_{ij} = \sum_{k}H_{ik}c_k^{\left(j\right)} = W_jc_i^{\left(j\right)}, \quad \left(\mathbf{CW}\right)_{ij} = \sum_{k}\left(\mathbf{C}\right)_{ik}\left(\mathbf{W}\right)_{kj} = \sum_{k}c_i^{\left(k\right)}\delta_{kj}W_k = c_i^{\left(j\right)}W_j
     \end{equation*}
