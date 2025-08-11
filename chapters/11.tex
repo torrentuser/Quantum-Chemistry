@@ -270,20 +270,258 @@
 
     对于多电子原子，电子的各个角动量算符与哈密顿算符不可对易，但它们的和却可对易。因此，我们需要学习如何将角动量相加。
 
+    假设我们有一个系统，包含两个角动量矢量$\mathbf{M_1}$和$\mathbf{M_2}$。它们可能是某原子中两个电子的轨道角动量矢量，也可能是两个电子的自旋角动量矢量，还可能一个是自旋角动量，另一个是单电子的轨道角动量。$\hat{M}_1^2$、$\hat{M}_2^2$、$\hat{M}_{1z}$和$\hat{M}_{2z}$的本征值分别为$j_1\left(j_1 + 1\right)\hbar^2$、$j_2\left(j_2 + 1\right)\hbar^2$、$m_1\hbar$和$m_2\hbar$，其中的量子数遵循一般的限制。$\hat{\mathbf{M}}_1$和$\hat{\mathbf{M}}_2$遵循角动量对易关系【式(\ref{eq:5.46})、(\ref{eq:5.48})和(\ref{eq:5.107})】
+    \begin{equation}
+        \left[\hat{M}_{1x}, \hat{M}_{1y}\right] = \mathrm{i}\hbar \hat{M}_{1z}, \: \text{etc.} \quad \left[\hat{M}_{2x}, \hat{M}_{2y}\right] = \mathrm{i}\hbar \hat{M}_{2z}, \: \text{etc.}
+        \label{eq:11.19}
+    \end{equation}
+    我们定义系统的\textbf{总轨道角动量}（total angular momentum）$\mathbf{M}$为矢量和
+    \begin{equation}
+        \mathbf{M} = \mathbf{M_1} + \mathbf{M_2}
+        \label{eq:11.20}
+    \end{equation}
+    矢量$\mathbf{M}$有三个分量：
+    \begin{equation}
+        \mathbf{M} = M_x \mathbf{i} + M_y \mathbf{j} + M_z \mathbf{k}
+        \label{eq:11.21}
+    \end{equation}
+    矢量方程(\ref{eq:11.20})等价于三个标量方程：
+    \begin{equation}
+        M_x = M_{1x} + M_{2x}, \quad M_y = M_{1y} + M_{2y}, \quad M_z = M_{1z} + M_{2z}
+        \label{eq:11.22}
+    \end{equation}
+    对于算符$\hat{M}^2$，我们有
+    \begin{align}
+        \hat{M}^2 &= \hat{\mathbf{M}} \cdot \hat{\mathbf{M}} = \hat{M}_x^2 + \hat{M}_y^2 + \hat{M}_z^2 \label{eq:11.23} \\
+        \hat{M}^2 &= \left(\hat{\mathbf{M}}_1 + \hat{\mathbf{M}}_2\right) \cdot \left(\hat{\mathbf{M}}_1 + \hat{\mathbf{M}}_2\right) \nonumber \\
+        \hat{M}^2 &= \hat{M}_1^2 + \hat{M}_2^2 + \hat{\mathbf{M}}_1 \cdot \hat{\mathbf{M}}_2 + \hat{\mathbf{M}}_2 \cdot \hat{\mathbf{M}}_1 \label{eq:11.24}
+    \end{align}
+    若$\hat{\mathbf{M}}_1$和$\hat{\mathbf{M}}_2$指的是不同的电子，则它们可对易，因为每个算符仅影响一个电子的坐标函数，而不影响另一个电子的坐标函数。即使$\hat{\mathbf{M}}_1$和$\hat{\mathbf{M}}_2$指的是同一个电子的自旋和轨道角动量，它们也可对易，因为其中一个只影响坐标函数，而另一个只影响自旋函数。则(\ref{eq:11.24})变为
+    \begin{equation}
+        \hat{M}^2 = \hat{M}_1^2 + \hat{M}_2^2 + 2\hat{\mathbf{M}}_1 \cdot \hat{\mathbf{M}}_2
+        \label{eq:11.25}
+    \end{equation}
+    \begin{equation}
+        \hat{M}^2 = \hat{M}_1^2 + \hat{M}_2^2 + 2\left(\hat{M}_{1x}\hat{M}_{2x} + \hat{M}_{1y}\hat{M}_{2y} + \hat{M}_{1z}\hat{M}_{2z}\right)
+        \label{eq:11.26}
+    \end{equation}
 
+    我们现在证明，总角动量的各分量满足一般的角动量对易关系。我们有【式(\ref{eq:5.4})】
+    \begin{equation*}
+        \begin{aligned}
+            \left[\hat{M}_x, \hat{M}_y\right] &= \left[\hat{M}_{1x} + \hat{M}_{2x}, \hat{M}_{1y} + \hat{M}_{2y}\right] \\
+            &= \left[\hat{M}_{1x}, \hat{M}_{1y} + \hat{M}_{2y}\right] + \left[\hat{M}_{2x}, \hat{M}_{1y} + \hat{M}_{2y}\right] \\
+            &= \left[\hat{M}_{1x}, \hat{M}_{1y}\right] + \left[\hat{M}_{1x}, \hat{M}_{2y}\right] + \left[\hat{M}_{2x}, \hat{M}_{1y}\right] + \left[\hat{M}_{2x}, \hat{M}_{2y}\right]
+        \end{aligned}
+    \end{equation*}
+    由于$\hat{\mathbf{M}}_1$的所有分量和$\hat{\mathbf{M}}_2$均可对易，我们有
+    \begin{equation*}
+        \left[\hat{M}_x, \hat{M}_y\right] = \left[\hat{M}_{1x}, \hat{M}_{1y}\right] + \left[\hat{M}_{2x}, \hat{M}_{2y}\right] = \mathrm{i}\hbar \hat{M}_{1z} + \mathrm{i}\hbar \hat{M}_{2z}
+    \end{equation*}
+    \begin{equation}
+        \left[\hat{M}_x, \hat{M}_y\right] = \mathrm{i}\hbar \hat{M}_z
+        \label{eq:11.27}
+    \end{equation}
+    对$x$、$y$和$z$进行循环置换得到
+    \begin{equation}
+        \left[\hat{M}_y, \hat{M}_z\right] = \mathrm{i}\hbar \hat{M}_x, \quad \left[\hat{M}_z, \hat{M}_x\right] = \mathrm{i}\hbar \hat{M}_y
+        \label{eq:11.28}
+    \end{equation}
+    用于推导(\ref{eq:5.109})的同一交换子代数给出
+    \begin{equation}
+        \left[\hat{M}^2, \hat{M}_x\right] = \left[\hat{M}^2, \hat{M}_y\right] = \left[\hat{M}^2, \hat{M}_z\right] = 0
+        \label{eq:11.29}
+    \end{equation}
+    因此，我们可以同时确定$M^2$及其一个分量，例如$M_z$。由于总角动量的各分量满足角动量对易关系，第\ref{sec:5.4 The Ladder-Operator Method for Angular Momentum}节的推导表明，$\hat{M}^2$的本征值为
+    \begin{equation}
+        \boxed{
+            J\left(J + 1\right)\hbar^2, \quad J = 0, \: \frac{1}{2}, \: 1, \: \frac{3}{2}, \: 2, \: \ldots
+        }
+        \label{eq:11.30}
+    \end{equation}
+    以及$\hat{M}_z$的本征值为
+    \begin{equation}
+        \boxed{
+            M_J\hbar, \quad M_J = -J, \: -J + 1, \: \ldots, \: J - 1, \: J
+        }
+        \label{eq:11.31}
+    \end{equation}
 
+    我们希望找到：总角动量量子数$J$和$M_J$是如何与我们在(\ref{eq:11.20})中添加的两个角动量对应的量子数$j_1$、$j_2$、$m_1$和$m_2$关联起来的。我们也想知道$\hat{M}^2$和$\hat{M}_z$的本征函数是什么。这些本征函数由量子数$J$和$M_J$来描述，使用ket符号（第\ref{sec:7.3 Expansion in Terms of Eigenfunctions}节），我们将它们记作$\left| JM_J \right\rangle$。同样地，令$\left|j_1m_i\right\rangle$表示$\hat{M}_1^2$和$\hat{M}_{1z}$的本征函数，$\left|j_2m_j\right\rangle$表示$\hat{M}_2^2$和$\hat{M}_{2z}$的本征函数。现在，很容易证明（问题11.10）
+    \begin{equation}
+        \left[\hat{M}_{x},\hat{M}_{1}^{2}\right]=\left[\hat{M}_{y},\hat{M}_{1}^{2}\right]=\left[\hat{M}_{z},\hat{M}_{1}^{2}\right]=\left[\hat{M}^{2},\hat{M}_{1}^{2}\right]=0
+        \label{eq:11.32}
+    \end{equation}
+    将$\hat{M}_1^2$替换为$\hat{M}_2^2$可以得到类似的方程。因此，我们有了同时是四个算符$\hat{M}_1^2$、$\hat{M}_2^2$、$\hat{M}^2$和$\hat{M}_z$的本征函数集合，本征函数$\left| J M_J \right\rangle$可以写作$\left| j_1 j_2 J M_J \right\rangle$。然而，可以发现$\hat{M}^2$不与$\hat{M}_{1z}$或$\hat{M}_{2z}$对易（问题11.12），所以本征函数$\left| j_1 j_2 J M_J \right\rangle$不一定是$\hat{M}_{1z}$和$\hat{M}_{2z}$的本征函数。
 
+    如果我们取离子1的函数$\left| j_1 m_1 \right\rangle$完备集，和离子2的$\left| j_2 m_2 \right\rangle$完备集，构造形式为$\left| j_1 m_1 \right\rangle \left| j_2 m_2 \right\rangle$的所有可能乘积，我们将得到两个粒子的函数完备集。每个未知的本征函数$\left| j_1 j_2 J M_J \right\rangle$可以用该完备集展开：
+    \begin{equation}
+        \left| j_1 j_2 J M_J \right\rangle = \sum C \left(j_1 j_2 J M_J; \, m_1 m_2\right)\left| j_1 m_1 \right\rangle \left| j_2 m_2 \right\rangle
+        \label{eq:11.33}
+    \end{equation}
+    其中的展开系数为$C\left(j_1 \, \cdots \, m_2\right)$。函数$\left| j_1 j_2 J M_J \right\rangle$是对易算符$\hat{M}_1^2$、$\hat{M}_2^2$、$\hat{M}^2$和$\hat{M}_z$的本征函数，本征值如下：
+    \begin{table*}[htbp]
+        \centering
+        \begin{tabular}{c|c|c|c}
+            $\hat{M}_1^2$ & $\hat{M}_2^2$ & $\hat{M}^2$ & $\hat{M}_z$ \\
+            \hline
+            $j_1\left(j_1 + 1\right)\hbar^2$ & $j_2\left(j_2 + 1\right)\hbar^2$ & $J\left(J + 1\right)\hbar^2$ & $M_J \hbar$
+        \end{tabular}
+    \end{table*} \\
+    而函数$\left| j_1 m_1 \right\rangle \left| j_2 m_2 \right\rangle$是对易算符$\hat{M}_1^2$、$\hat{M}_2^2$、$\hat{M}_{1z}$和$\hat{M}_{2z}$的本征函数，本征值如下：
+    \begin{table*}[htbp]
+        \centering
+        \begin{tabular}{c|c|c|c}
+            $\hat{M}_1^2$ & $\hat{M}_{1z}$ & $\hat{M}_2^2$ & $\hat{M}_{2z}$ \\
+            \hline
+            $j_1\left(j_1 + 1\right)\hbar^2$ & $m_1 \hbar$ & $j_2\left(j_2 + 1\right)\hbar^2$ & $m_2 \hbar$
+        \end{tabular}
+    \end{table*}
 
+    因为展开为(\ref{eq:11.33})的函数$\left| j_1 j_2 J M_J \right\rangle$是$\hat{M}_1^2$的本征函数，本征值为$j_1 \left(j_1 + 1\right)\hbar^2$，所以我们可以在求和中只留下与函数$\left| j_1 j_2 M M_J \right\rangle$相同$j_1$值的项（见第\ref{sec:7.3 Expansion in Terms of Eigenfunctions}节最后的定理3）。同样地，只有与$\left| j_1 j_2 M M_J \right\rangle$相同$j_2$值的项才会出现在求和中。因此，求和就只包含了所有的$m_1$和$m_2$的值。同样地，使用$\hat{M}_z = \hat{M}_{1z} + \hat{M}_{2z}$，我们可以可以证明（问题11.11）：除非$m_1$和$m_2$满足下式，否则系数$C$为零：
+    \begin{equation}
+        \boxed{
+            m_1 + m_2 = M_J
+        }
+        \label{eq:11.34}
+    \end{equation}
+    为了找到总角动量本征函数，我们必须计算(\ref{eq:11.33})中的系数。这些系数称为\textit{Clebsch-Gordan or Wigner or vector addition coefficients}。对于它们的计算，见\textit{Merzbacher}，Section 16.6。
 
+    所以，每个总角动量本征函数$\left| j_1 j_2 J M_J \right\rangle$都可以用$m$值满足$m_1 + m_2 = M_J$的乘积函数$\left| j_1 m_1 \right\rangle $\\$\left| j_2 m_2 \right\rangle$的线性组合来表示。
 
+    我们现在确定总角动量量子数$J$的可能取值，这些取值来源于具有各自角动量量子数$j_1$和$j_2$的角动量的叠加。
 
+    在考虑一般情况之前，先考虑一个$j_1 = 1$和$j_2 = 2$的例子。$m_1$的可能值为$-1, \: 0, \: 1$，$m_2$的可能值为$-2, \: -1, \: 0, \: 1, \: 2$。如果我们使用量子数$j_1$、$j_2$、$m_1$和$m_2$来描述这个系统，那么共有15种可能的状态，对应于$m_1$的三个不同值和$m_2$的五个不同值。相反，我们可以使用量子数$j_1$、$j_2$、$J$和$M_J$来描述该系统，并且在这种描述中必须具有相同数量的状态。我们将$M_J$的15种取值用(\ref{eq:11.34})列成表格：
+    \begin{table*}[htbp]
+        \centering
+        \begin{tabular}{rcc|l}
+            $m_1 = -1$ & $0$ & $1$ & \\
+            \hline
+            $-3$ & $-2$ & $-1$ & $-2 = m_2$ \\
+            $-2$ & $-1$ & $0$ & $1$ \\
+            $-1$ & $0$ & $1$ & $0$ \\
+            $0$ & $1$ & $2$ & $1$ \\
+            $1$ & $2$ & $3$ & $2$
+        \end{tabular}
+    \end{table*} \\
+    表中每个$M_J$的值都是第一行$m_1$的值和第四列$m_2$的值之和。每个$M_J$值出现的次数为
+    \begin{table*}[htbp]
+        \centering
+        \begin{tabular}{l|c|c|c|c|c|c|c}
+            $M_J$的值 & $3$ & $2$ & $1$ & $0$ & $-1$ & $-2$ & $-3$ \\
+            \hline
+            出现的次数 & $1$ & $2$ & $3$ & $3$ & $3$ & $2$ & $1$  
+        \end{tabular}
+    \end{table*} \\
+    $M_J$最大值为$+3$。由于$M_J$的值介于$-J$和$+J$之间，因此$J$的最大值为$3$。与$J=3$对应，有$7$个介于$-3$和$+3$之间的$M_J$值。将这$7$个值删去，留下
+    \begin{table*}[htbp]
+        \centering
+        \begin{tabular}{l|c|c|c|c|c}
+            $M_J$的值 & $2$ & $1$ & $0$ & $-1$ & $-2$ \\
+            \hline
+            出现的次数 & $1$ & $2$ & $2$ & $2$ & $1$
+        \end{tabular}
+    \end{table*} \\
+    剩余$M_J$的最大值为$2$，对应于$J=2$。对于$J=2$，有$5$个可能的$M_J$值。将这$5$个值删去，留下
+    \begin{table*}[h!]
+        \centering
+        \begin{tabular}{l|c|c|c}
+            $M_J$的值 & $1$ & $0$ & $-1$ \\
+            \hline
+            出现的次数 & $1$ & $1$ & $1$
+        \end{tabular}
+    \end{table*} \\
+    显然，剩余的$M_J$值对应于$J = 1$。因此，对于独立的角动量量子数$j_1 = 1$和$j_2 = 2$，总角动量量子数$J$的可能取值为$3, \: 2, \: 1$。
 
+    现在，我们来考虑一般的情况。假设$m_1$有$2j_1+1$个值（从$-j_1$到$j_1$），$m_2$有$2j_2+1$个值（从$-j_2$到$j_2$）。因此，对给定的的$j_1$和$j_2$值，有$\left(2j_1+1\right)\left(2j_2+1\right)$个可能的状态$\left|j_1m_1\right\rangle\left|j_2m_2\right\rangle$。$m_1$和$m_2$的最大值分别为$j_1$和$j_2$。因此，$M_J = m_1 + m_2$的最大值为$j_1 + j_2$【式(\ref{eq:11.34})】。因为$M_J$的值介于$-J$和$+J$之间，所以总角动量量子数$J$的最大值为$j_1 + j_2$：
+    \begin{equation}
+        J_{\max} = j_1 + j_2
+        \label{eq:11.35}
+    \end{equation}
+    $M_J$第二高的值为$j_1 + j_2 - 1$，可以由两种方式得到：$m_1 = j_1 - 1$，$m_2 = j_2$或$m_1 = j_1$，$m_2 = j_2 - 1$。这两种状态的线性组合一定会给出两种状态，其一满足$J = j_1 + j_2$，$M_J = j_1 + j_2 - 1$，其二满足$J = j_1 + j_2 - 1$，$M_J = j_1 + j_2 - 1$。按照这种方式继续，我们发现$J$的可能取值为
+    \begin{equation*}
+        j_1 + j_2, \quad j_1 + j_2 - 1, \quad j_1 + j_2 - 2, \quad \ldots, \quad J_{\min}
+    \end{equation*}
+    其中$J_{\min}$为$J$的最小值。
 
+    我们使用总状态数为$\left(2j_1+1\right)\left(2j_2+1\right)$的要求来确定$J_{\min}$。对于一个给定的$J$值，有$2J+1$个可能的$M_J$值，那么有$2J+1$个状态与每个$J$值对应。对于给定的$j_1$和$j_2$，状态$\left| j_1 j_2 JM_J\right\rangle$的总数通过将$J$从$J_{\min}$到$J_{\max}$的所有可能状态数$2J+1$相加得到：
+    \begin{equation}
+        \text{状态数} = \sum_{J = J_{\min}}^{J_{\max}} \left(2J + 1\right)
+        \label{eq:11.36}
+    \end{equation}
+    该求和从$J_{\min}$到$J_{\max}$。现在，我们将求和下限取为$J=0$而不是$J_{\min}$。这个变化在求和中添加了$J$值为$0,\:1,\:2,\:\ldots,\:J_{\min}-1$的项。为了弥补，我们必须减去从$J = 0$到$J = J_{\min} - 1$的对应的求和。因此，(\ref{eq:11.36})变为
+    \begin{equation*}
+        \text{状态数} = \sum_{J=0}^{J_{\max}} \left(2J + 1\right) - \sum_{J=0}^{J_{\min}-1} \left(2J + 1\right)
+    \end{equation*}
+    根据问题6.16，我们有$\sum_{l=0}^{n-1}\left(2l+1\right) = n^2$。将$n-1$替换为$b$，我们得到了$\sum_{j=0}^{b}\left(2J+1\right) = \left(b+1\right)^2$。因此，
+    \begin{equation*}
+        \text{状态数} = \left(J_{\max}+1\right)^{2}-J_{\min}^{2}=J_{\max}^{2}+2J_{\max}+1-J_{\min}^{2}
+    \end{equation*}
+    将$J_{\max}$替换为$j_1 + j_2$【式(\ref{eq:11.35})】，令状态数等于$\left(2j_1 + 1\right)\left(2j_2 + 1\right) = 4j_1j_2 + 2j_1 + 2j_2 + 1$，我们有
+    \begin{equation*}
+        \left(j_1 + j_2\right)^2 + 2\left(j_1 + j_2\right) + 1 - J_{\min}^2 = 4 j_1 j_2 + 2 j_1 + 2 j_2 + 1
+    \end{equation*}
+    \begin{equation*}
+        J_{\min}^2 = j_1^2 - 2j_1j_2 + j_2^2 = \left(j_1 - j_2\right)^2
+    \end{equation*}
+    \begin{equation}
+        J_{\min} = \pm \left(j_1 - j_2\right)
+        \label{eq:11.37}
+    \end{equation}
+    若$j_1 = j_2$，则$J_{\min} = 0$。若$j_1 \neq j_2$，则(\ref{eq:11.37})中的一个值为负，应舍去【式(\ref{eq:11.30})】。因此，
+    \begin{equation}
+        J_{\min} = \left| j_1 - j_2 \right|
+        \label{eq:11.38}
+    \end{equation}
 
+    综上所述，我们已经证明：\textit{两个由量子数$j_1$和$j_2$描述的角动量相加，会产生一个总角动量，其量子数$J$可能取以下值}：
+    \begin{equation}
+        \boxed{
+            J = j_1 + j_2, \:j_1 + j_2 - 1, \:\ldots, \:\left|j_1 - j_2\right|
+        }
+        \label{eq:11.39}
+    \end{equation}
 
+    \begin{examplebox}
+        \textbf{例题：}求解角动量量子数为$j_1 = 2$和$j_2 = 3$的角动量相加所得的总角动量量子数的可能值。
+        \\
+
+        $J$的最大和最小值由(\ref{eq:11.39})给出，有$j_1 + j_2 = 5$和$\left| j_1 - j_2 \right| = \left|2-3\right| = 1$。因此，$J$的可能取值(\ref{eq:11.39})为$J = 5,\:4,\:3,\:2,\:1$。
+        \\
+
+        \textbf{练习：}求解角动量量子数为$j_1 = 3$和$j_2 = \frac{3}{2}$的角动量相加所得的总角动量量子数的可能值。（\textit{答案：} $J = \frac{9}{2}, \: \frac{7}{2}, \: \frac{5}{2}, \: \frac{3}{2}$。）
+    \end{examplebox}
+    \begin{examplebox}
+        \textbf{例题：}求解角动量量子数为$j_1 = 1$、$j_2 = 2$和$j_3 = 3$的角动量相加所得的总角动量量子数的可能值。
+
+        为了将大于两个角动量相加，我们重复使用(\ref{eq:11.39})。将$j_1=1$和$j_2=2$叠加，得到量子数可能值为$3$、$2$和$1$。将$j_3$加到每个值上，得到总角动量量子数为
+        \begin{equation}
+            6,\:5,\:4,\:3,\:2,\:1,\:0; \quad 5,\:4,\:3,\:2,\:1; \quad 4,\:3,\:2
+            \label{eq:11.40}
+        \end{equation}
+        我们有一组总角动量量子数为$6$的状态，两组$J=5$的状态，以及三组$J=4$的状态，以此类推。
+        \\
+
+        \textbf{练习：}求解角动量量子数为$j_1 = 1$、$j_2 = 1$和$j_3 = 1$的角动量相加所得的总角动量量子数的可能值。（\textit{答案：}$J = 3,\:2,\:2,\:1,\:1,\:1,\:0$。）
+    \end{examplebox}
 
 \section{多电子原子的角动量}
 \label{sec:11.5 Angular momentum in Many-Electron Atoms}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{自旋-轨道耦合}
 \label{sec:11.6 Spin-Orbit Interaction}
