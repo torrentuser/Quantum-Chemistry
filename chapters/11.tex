@@ -905,21 +905,84 @@
 \section{自旋-轨道耦合}
 \label{sec:11.6 Spin-Orbit Interaction}
 
+    原子哈密顿量（\ref{eq:11.17}）不涉及电子自旋。实际上，自旋的存在为哈密顿量增加了额外的项，通常该项很小。该项被称为\textbf{自旋-轨道耦合}（spin-orbit interaction），将原子谱项裂分为多个支项。自旋-轨道耦合是一种相对论效应，可使用狄拉克对电子的相对论处理方法正确推导出。本节对自旋轨道耦合的来源进行了定性讨论。
+
+    如果我们想象自己骑在原子中的电子上，从我们的角度来看，原子核围绕着电子运动（就像太阳围绕着地球运动一样）。原子核的这种表观运动产生了一个磁场，与电子的固有（自旋）磁矩发生耦合，从而产生了哈密顿量中的自旋-轨道耦合项。磁矩 $\mathbf{m}$ 与磁场 $\mathbf{B}$ 的耦合能由 (\ref{eq:6.131}) 给出，即 $-\mathbf{m}\cdot\mathbf{B}$。电子的自旋磁矩$\mathbf{m}_S$正比于其自旋角动量$\mathbf{S}$【式(\ref{eq:10.57})】，而由核的视运动产生的磁场与电子的轨道角动量$\mathbf{L}$成正比。因此，自旋-轨道耦合与$\mathbf{L}\cdot\mathbf{S}$成正比。$\mathbf{L}$与$\mathbf{S}$的数量积取决于这两个矢量的相对方向。而电子总角动量$\mathbf{J}=\mathbf{L}+\mathbf{S}$也与$\mathbf{L}$和$\mathbf{S}$的相对方向有关，那么自旋-轨道耦合的能量依赖于$J$。【式(\ref{eq:11.67})】
+
+    当对原子哈密顿量中的自旋-轨道耦合项$\hat{H}_{\text{S.O.}}$进行适当的相对论推导时，会发现对于单电子原子（见\textit{Bethe and Jackiw}, Chapter 8 and 23）：
+    \begin{equation}
+        \hat{H}_{\text{S.O.}} = \frac{1}{2m_{\mathrm{e}}^2 c^2} \frac{1}{r} \frac{\mathrm{d}V}{\mathrm{d}r} \hat{\mathbf{L}} \cdot \hat{\mathbf{S}}
+        \label{eq:11.63}
+    \end{equation}
+    其中$V$是原子中电子受到的势能，$c$为光速。一种计算多电子原子$\hat{H}_{\text{S.O.}}$的方式是首先忽略$\hat{H}_{\text{S.O.}}$项，使用中心场近似来得到把其他电子视为电子云时在原子核产生的场中每个电子$i$的有效势能$V_i\left(r_i\right)$【式(\ref{eq:11.7})和(\ref{eq:11.8})】来进行SCF计算（第\ref{sec:11.1 The Hartree-Fock Self-Consistent-Field Method}节）。然后将（\ref{eq:11.63}）对电子求和，得到
+    \begin{equation}
+        \hat{H}_{\text{S.O.}} \approx \frac{1}{2m_{\mathrm{e}}^2c^2} \sum_i \frac{1}{r_i} \frac{\mathrm{d}V_i(r_i)}{\mathrm{d}r_i} \hat{\mathbf{L}}_i \cdot \hat{\mathbf{S}}_i = \sum_i \xi_i(r_i) \hat{\mathbf{L}}_i \cdot \hat{\mathbf{S}}_i
+        \label{eq:11.64}
+    \end{equation}
+    其中$\xi_i\left(r_i\right)$的定义不言自明，$\hat{\mathbf{L}}_i$和$\hat{\mathbf{S}}_i$分别为电子$i$的轨道和自旋角动量算符。
 
 
+    通过寻找算符$\hat{H}_{\text{(11.1)}}+\hat{H}_{\text{S.O.}}$的本征函数和本征值，我们可以计算自旋-轨道耦合能$E_{\text{S.O.}}$，其中$\hat{H}_{\text{(11.1)}}$是(\ref{eq:11.1})的原子哈密顿量，但这很困难。因此，我们通常使用微扰理论来估计$E_{\text{S.O.}}$的值。除了重原子以外，与$\hat{H}_{\text{(11.1)}}$的影响相比，$\hat{H}_{\text{S.O.}}$的影响较小，一级微扰理论足以估计$E_{\text{S.O.}}$。
 
+    (\ref{eq:9.22})给出了$E_{\text{S.O.}} \approx \left\langle \psi \middle| \hat{H}_{\text{S.O.}} \middle| \psi \right\rangle$，其中$\psi$是$\hat{H}_{\text{(11.1)}}$的本征函数。对于单电子原子，有
+    \begin{equation}
+        E_{\text{S.O.}} \approx \left\langle \psi \middle| \xi\left(r\right) \hat{\mathbf{L}} \cdot \hat{\mathbf{S}} \middle| \psi \right\rangle
+        \label{eq:11.65}
+    \end{equation}
+    因为未扰动$\psi$是$\hat{L}^2$、$\hat{S}^2$和$\hat{J}^2$的本征函数，所以我们有
+    \begin{equation*}
+        \begin{aligned}
+            \mathbf{J} \cdot \mathbf{J} &= \left(\mathbf{L} + \mathbf{S}\right) \cdot \left(\mathbf{L} + \mathbf{S}\right) = L^2 + S^2 + 2 \mathbf{L} \cdot \mathbf{S} \\
+            \mathbf{L} \cdot \mathbf{S} &= \frac{1}{2}\left(J^2 - L^2 - S^2\right) \\
+            \left(\hat{\mathbf{L}} \cdot \hat{\mathbf{S}}\right)\psi = \frac{1}{2} \left(\hat{J}^{2} - \hat{L}^{2} - \hat{S}^{2}\right) \psi &= \frac{1}{2} \left[J\left(J+1\right) - L\left(L+1\right) - S\left(S+1\right)\right]\hbar^{2}\psi
+        \end{aligned}
+    \end{equation*}
+    因此，
+    \begin{equation}
+        E_{\text{S.O.}} \approx \frac{1}{2} \langle \xi \rangle \hbar^2 \left[ J\left(J+1\right) - L\left(L+1\right) - S\left(S+1\right) \right]
+        \label{eq:11.66}
+    \end{equation}
+    对于多电子原子，可以证明，（\textit{Bethe and Jackiw}, p. 164）自旋-轨道耦合能为
+    \begin{equation}
+        E_{\text{S.O.}} \approx \frac{1}{2}A\hbar^2\left[ J\left(J+1\right) - L\left(L+1\right) - S\left(S+1\right) \right]
+        \label{eq:11.67}
+    \end{equation}
+    其中 $A$ 是给定谱项的常数；也就是说，$A$ 取决于 $L$ 和 $S$，但不取决于 $J$。方程 (\ref{eq:11.67}) 表明，当我们考虑自旋-轨道耦合时，原子态的能量取决于其电子总角动量 $J$。因此，每个原子谱项被分为多个支项，每个支项都有不同的 $J$ 值。例如，钠原子组态$1s^22s^22p^63p$产生单谱项$^2P$，由两个支项$^2P_{3/2}$和$^2P_{1/2}$组成。这些支项的分裂产生了钠$D$线的观测到的\textit{精细结构}（fine structure）（图\ref{fig:11.5}）。给定谱项的支项被认为构成其\textit{多重态结构}（multiplet structure）。
 
+    给定谱项中支项的顺序是什么呢？因为这些支项的$L$和$S$值相同，所以根据式(\ref{eq:11.67})，它们的相对能量由$AJ\left(J+1\right)$决定。如果$A$为正值，则$J$值最低的支项能量最低，该多重态被称为\textbf{常规}（regular）多重态。如果$A$为负值，则$J$值最高的支项能量最低，该多重态被称为\textbf{反转}（inverted）多重态。以下规则通常适用于只有一个部分填充的亚壳层的组态：\textit{如果该亚壳层填充量小于一半，则该多重态为常规多重态；如果该亚壳层填充量大于一半，则该多重态为反转多重态。}（存在一些例外情况。）对于半满的情况，请参阅问题 11.28。
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/11.5.png}
+        \caption{钠$D$线的精细结构。}
+        \label{fig:11.5}
+    \end{figure}
 
+    \begin{examplebox}
+        \textbf{例题：}求氧原子的基态光谱支项。
+        \\
 
+        基态电子组态为$1s^22s^22p^4$。根据表\ref{tab:11.2}，该组态产生谱项$^1S$、$^1D$和$^3P$。根据洪特规则，$^3P$是能量最低的谱项。【或者，可以使用类似（\ref{eq:11.48}）的图表来得出$^3P$是最低谱项的结论。】$^3P$谱项有$L=1$和$S=1$，则$J$的可能值为$2,\:1,\:0$。因此，基态光谱支项为$^3P_2$、$^3P_1$和$^3P_0$。$2p$亚层超过了半满填充，则预测多重态为反转多重态，那么$^3P_2$为最低的支项。此即为\ce{O}的基态光谱支项。
+        \\
 
-
-
-
-
-
+        \textbf{练习：}求\ce{Cl}原子的基态光谱支项。（\textit{答案：}$^2P_{3/2}$。）
+    \end{examplebox}
 
 \section{原子哈密顿算符}
 \label{sec:11.7 The Atomic Hamiltonian}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Condon-Slater规则}
 \label{sec:11.8 The Condon-Slater Rules}

@@ -88,9 +88,9 @@
 \contentsline {section}{\numberline {11.3}电子相关}{225}{section.11.3}%
 \contentsline {section}{\numberline {11.4}角动量的叠加}{227}{section.11.4}%
 \contentsline {section}{\numberline {11.5}多电子原子的角动量}{231}{section.11.5}%
-\contentsline {section}{\numberline {11.6}自旋-轨道耦合}{241}{section.11.6}%
-\contentsline {section}{\numberline {11.7}原子哈密顿算符}{241}{section.11.7}%
-\contentsline {section}{\numberline {11.8}Condon-Slater规则}{241}{section.11.8}%
+\contentsline {section}{\numberline {11.6}自旋-轨道耦合}{240}{section.11.6}%
+\contentsline {section}{\numberline {11.7}原子哈密顿算符}{242}{section.11.7}%
+\contentsline {section}{\numberline {11.8}Condon-Slater规则}{242}{section.11.8}%
 \contentsline {chapter}{\numberline {12}分子对称性}{243}{chapter.12}%
 \contentsline {section}{\numberline {12.1}对称元素和对称操作}{243}{section.12.1}%
 \contentsline {section}{\numberline {12.2}分子点群}{243}{section.12.2}%

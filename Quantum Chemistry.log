@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  13 AUG 2025 16:02
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  13 AUG 2025 17:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2268,22 +2268,32 @@ File: Figures/11.4.png Graphic file (type bmp)
 <Figures/11.4.png>
 
 
-[239]) (./chapters/12.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+[239]
 
 [240]
+File: Figures/11.5.png Graphic file (type bmp)
+<Figures/11.5.png>
+
 
 [241]
+Underfull \hbox (badness 10000) in paragraph at lines 961--963
 
-[242
+ []
 
-]
+
+Underfull \hbox (badness 10000) in paragraph at lines 964--966
+
+ []
+
+) (./chapters/12.tex
+
+[242]
 Chapter 12.
 ) (./chapters/13.tex
 
-[243]
+[243
+
+]
 
 [244
 
@@ -2429,10 +2439,10 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 42987 strings out of 473832
- 972226 string characters out of 5726732
- 1598086 words of memory out of 5000000
- 65309 multiletter control sequences out of 15000+600000
+ 43003 strings out of 473832
+ 972486 string characters out of 5726732
+ 1598339 words of memory out of 5000000
+ 65324 multiletter control sequences out of 15000+600000
  571128 words of font info for 159 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,25n,111p,1743b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
