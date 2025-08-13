@@ -861,8 +861,7 @@
     \end{equation}
     我们有$\hat{J}^2\psi = J\left(J+1\right)\hbar^2\psi$。
 
-    对于原子哈密顿量  (\ref{eq:11.17}) ，属于同一谱项的所有状态具有相同的能量。然而，当我们在$\hat{H}$中引入自旋-轨道耦合（第\ref{sec:11.6 Spin-Orbit Interaction}节）后，人们发现，量子数$J$的值会对能量产生微小影响。属于同一谱项且 $J$ 值相同的状态集合构成一个原子\textbf{光谱支项}（level）。属于同一谱项的不同能级的能量略有不同。（参见第 \ref{sec:11.7 The Atomic Hamiltonian} 节中的图 11.6。）为了表示能级，我们将$J$值添加到谱项符号的右下标中。每个能级都是$\left(2J+1\right)$重简并的，对应于$M_J$的$2J+1$个值，其中$M_J\hbar$为电子总角动量$\mathbf{J}$在$z$方向的分量。每个能级包含$2J+1$个等能\textbf{状态}（states）。
-    %记得改图片引用！！！！！
+    对于原子哈密顿量  (\ref{eq:11.17}) ，属于同一谱项的所有状态具有相同的能量。然而，当我们在$\hat{H}$中引入自旋-轨道耦合（第\ref{sec:11.6 Spin-Orbit Interaction}节）后，人们发现，量子数$J$的值会对能量产生微小影响。属于同一谱项且 $J$ 值相同的状态集合构成一个原子\textbf{光谱支项}（level）。属于同一谱项的不同能级的能量略有不同。（参见第 \ref{sec:11.7 The Atomic Hamiltonian} 节中的图 \ref{fig:11.6}。）为了表示能级，我们将$J$值添加到谱项符号的右下标中。每个能级都是$\left(2J+1\right)$重简并的，对应于$M_J$的$2J+1$个值，其中$M_J\hbar$为电子总角动量$\mathbf{J}$在$z$方向的分量。每个能级包含$2J+1$个等能\textbf{状态}（states）。
 
     \begin{examplebox}
         \textbf{例题：}求谱项为$^3P$的支项，并给出每个支项的简并度。
@@ -877,8 +876,7 @@
 
     $2S+1$称为谱项的\textbf{电子自旋多重度}（electron-spin multiplicity or \textit{multiplicity}）。若$L \geq S$，则(\ref{eq:11.62})中$J$值介于$L+S$和$L-S$之间，共有$2S+1$个不同的值。当$L \geq S$时，自旋多重度给出了由给定谱项产生的支项数。若$L<S$，则(\ref{eq:11.62})中$J$值介于$L+S$和$S-L$之间，共有$2L+1$个不同的值。在这种情况下，自旋多重度大于光谱支项数。例如，若$L=0$而$S=1$（$^3S$谱项），自旋多重度为$3$，但$J$只有一个可能值，即$J=1$。对于$2S+1=1,\:2,\:3,\:4,\:5,\:6,\:\ldots,$我们使用\textbf{单重、双重、三重、四重、五重、六重}（singlet，doublet，triplet，quartet，quintet，sextet）等来描述谱项的自旋多重度。光谱支项$^3P_1$读作“三重$P$一”（triplet P one）。
     
-    对于轻原子，自旋-轨道耦合非常小，光谱支项之间的差异非常小。注意，在第\ref{sec:11.7 The Atomic Hamiltonian}节的图11.6中，氦原子$1s2p$的谱项$^3P$所属支项$^3P_0$、$^3P_1$和$^3P_2$之间的差异要远小于$1s2p$组态产生的$^1P$和$^3P$谱项之间的差异。
-    %记得改引用！！！！！
+    对于轻原子，自旋-轨道耦合非常小，光谱支项之间的差异非常小。注意，在第\ref{sec:11.7 The Atomic Hamiltonian}节的图\ref{fig:11.6}中，氦原子$1s2p$的谱项$^3P$所属支项$^3P_0$、$^3P_1$和$^3P_2$之间的差异要远小于$1s2p$组态产生的$^1P$和$^3P$谱项之间的差异。
 
 \subsection*{氢和氦的原子光谱项与光谱支项}
 
@@ -970,22 +968,97 @@
 \section{原子哈密顿算符}
 \label{sec:11.7 The Atomic Hamiltonian}
 
+    原子的哈密顿算符可以分为三部分：
+    \begin{equation}
+        \hat{H} = \hat{H}^0 + \hat{H}_{\text{rep}} + \hat{H}_{\text{S.O.}}
+        \label{eq:11.68}
+    \end{equation}
+    其中$\hat{H}^0$是类氢哈密顿量之和：
+    \begin{equation}
+        \hat{H}^0 = \sum_{i=1}^{n}\left(-\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_i^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_i}\right)
+        \label{eq:11.69}
+    \end{equation}
+    $\hat{H}_{\text{rep}}$是电子间排斥势：
+    \begin{equation}
+        \hat{H}_{\text{rep}} = \sum_i \sum_{j>i} \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{ij}}
+        \label{eq:11.70}
+    \end{equation}
+    以及$\hat{H}_{\text{S.O.}}$是自旋-轨道耦合项（\ref{eq:11.64}）：
+    \begin{equation}
+        \hat{H}_{\text{S.O.}} = \sum_{i=1}^{n} \xi_i \hat{\mathbf{L}}_i \cdot \hat{\mathbf{S}}_i
+        \label{eq:11.71}
+    \end{equation}
+    如果我们只考虑$\hat{H}^0$，则所有对应于同一电子\textit{组态}的原子态都是简并的。引入$\hat{H}_{\text{rep}}$后，组态之间的简并被打破。引入$\hat{H}_{\text{rep}}$后，我们消除不同 $L$ 或 $S$ 或两者均不同的状态之间的简并，从而将每个组态分为多个\textit{谱项}。随后，再引入$\hat{H}_{\text{S.O.}}$后，谱项被分为多个\textit{支项}。每个支项对应于一个原子能级。每个能级由$J$值相同的\textit{状态}组成，且是$\left(2J+1\right)$重简并的，对应于$M_J$的可能取值。
 
+    通过施加外磁场（\textit{塞曼效应}），我们可以消除每个支项的简并性。若将施加的磁场设为$\mathbf{B}$，则我们在哈密顿量【式(\ref{eq:6.131})】中引入了额外的项：
+    \begin{equation}
+        \hat{H}_B = -\hat{\mathbf{m}} \cdot \mathbf{B} = -\left(\hat{\mathbf{m}}_L + \hat{\mathbf{m}}_S\right) \cdot \mathbf{B}
+        \label{eq:11.72}
+    \end{equation}
+    其中包含了轨道角动量和自旋角动量。使用$\mathbf{m}_L = -\left(\mathrm{e} / 2m_{\mathrm{e}}\right)\mathbf{L}$、$\mathbf{m}_S = -\left(\mathrm{e} / 2m_{\mathrm{e}}\right)\mathbf{S}$以及$\mu_B \equiv \mathrm{e}\hbar / 2m_{\mathrm{e}}$【式(\ref{eq:6.128})、(\ref{eq:10.55})中令$g_{\mathrm{e}} \approx 2$和(\ref{eq:6.130})】，我们有
+    \begin{equation}
+        \hat{H}_B = \mu_B \hbar^{-1}\left(\hat{\mathbf{L}} + 2\hat{\mathbf{S}}\right) \cdot \mathbf{B} = \mu_B\hbar^{-1} \left(\hat{\mathbf{J}} + \hat{\mathbf{S}}\right) \cdot \mathbf{B} = \mu_BB\hbar^{-1}\left(\hat{J}_z + \hat{S}_z\right)
+        \label{eq:11.73}
+    \end{equation}
+    其中$\mu_B$为玻尔磁子，且$z$轴沿着磁场方向延伸。如果外部磁场强度较弱，其影响将小于自旋-轨道耦合的影响，因此可以使用一级微扰理论来计算磁场的影响。因为$\hat{J}_z\psi = M_J\hbar\psi$，所以与所施加磁场耦合的能量为
+    \begin{equation*}
+        E_B = \left\langle \psi \middle| \hat{H}_B \middle| \psi \right\rangle = \mu_BBM_J + \mu_BB\hbar^{-1}\left\langle S_z \right\rangle
+    \end{equation*}
+    计算$\left\langle S_z \right\rangle$（\textit{Bethe and Jackiw}, p. 169）得到弱场的最终结果：
+    \begin{equation}
+        E_B = \mu_BgBM_J
+        \label{eq:11.74}
+    \end{equation}
+    其中的$g$（\textit{朗德$g$因子，the Landé $g$ factor}）由下式给出：
+    \begin{equation}
+        g = 1 + \frac{
+            \left[J\left(J+1\right) - L\left(L+1\right) + S\left(S+1\right)\right]
+        }{2J\left(J+1\right)}
+        \label{eq:11.75}
+    \end{equation}
+    因此，外加的磁场将每个光谱支项裂分为$2J+1$个状态，每个状态都有不同的$M_J$值。
 
+    图 11.6  以氦的 $1s2p$ 组态为例，展示了原子中连续耦合的情况。
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.65\textwidth]{Figures/11.6.png}
+        \caption{
+            \centering
+            \parbox{0.4\textwidth}{
+                \noindent
+                在 $1s2p$氦原子组态的原子哈密顿量中加入连续谱项的影响。$\hat{H}_B$ 不是原子哈密顿量的一部分，而是由施加磁场而产生的。
+            }
+        }
+        \label{fig:11.6}
+    \end{figure}
 
+    我们基于以下方案展开讨论：首先将各电子的轨道角动量相加形成总轨道角动量矢量，随后对自旋进行同样的操作：$\mathbf{L} = \sum_i \mathbf{L}_i$，$\mathbf{S} = \sum_i \mathbf{S}_i$。然后将这两个矢量组合来得到$\mathbf{J}$。该过程称为\textbf{拉塞尔-桑德斯耦合}（Russell-Saunders coupling）或\textbf{$LS$耦合}（$LS$ coupling），当自旋-轨道耦合能与电子间排斥能相比很小时是合适的。算符$\hat{\mathbf{L}}$和$\hat{\mathbf{S}}$与原子哈密顿算符$\hat{H}^0 + \hat{H}_{\text{rep}}$对易，但当我们在哈密顿中引入$\hat{H}_{\text{S.O.}}$时，$\hat{\mathbf{L}}$和$\hat{\mathbf{S}}$不再与$\hat{H}$对易。（$\hat{\mathbf{J}}$与哈密顿$\hat{H}^0 + \hat{H}_{\text{rep}} + \hat{H}_{\text{S.O.}}$可对易。）若自旋-轨道耦合项很小，那么$\hat{\mathbf{L}}$和$\hat{\mathbf{S}}$“几乎”与$\hat{H}$可对易，则$L-S$耦合成立。
 
+    随着原子序数的增加，电子的平均速度$v$也增加。随着$v/c$的增大，相对论效应（如自旋-轨道耦合）增强。对于原子序数非常高的原子，自旋-轨道耦合超过了电子间排斥势，我们不能再认为$\hat{\mathbf{L}}$和$\hat{\mathbf{S}}$与$\hat{H}$可对易；然而，算符$\hat{\mathbf{J}}$仍与$\hat{H}$可对易。在这种情况下，我们先引入$\hat{H}_{\text{S.O.}}$，然后再引入$\hat{H}_{\text{rep}}$。这对应于首先将每个电子的自旋角动量和轨道角动量相结合，从而得到每个电子的总角动量$\mathbf{j}_i = \mathbf{L}_i + \mathbf{S}_i$，然后将所有电子的总角动量相加得到$\mathbf{J} = \sum_i \mathbf{j}_i$。该过程称为\textit{j-j耦合}（$j-j$ coupling）。对于大多数重原子而言，其情况介于$j–j$耦合与$L–S$耦合之间，且计算难度较大。
 
+    原子哈密顿量中还应包括其他一些效应。原子核的有限尺寸和核运动会略微改变能量（\textit{Bethe and Salpeter}，pp. 102, 166, 351）。由于电子自旋磁矩之间的耦合（\textit{自旋-自旋耦合，spin-spin coupling}），存在一个微小的相对论项。我们还应考虑电子质量随速度变化的相对论效应。重原子内层电子的这一效应尤为显著，因为其平均电子速度与光速相比已不再可忽略。
 
-
-
-
-
-
-
-
+    如果原子核的自旋不为零，则核自旋磁矩与电子自旋和轨道磁矩发生耦合，从而产生原子\textit{超精细结构，hyperfine structure}。\textit{核自旋角动量}$\mathbf{I}$与电子总角动量$\mathbf{J}$矢量相加，得到\textit{原子的总角动量}$\mathbf{F}$：$\mathbf{F} = \mathbf{I} + \mathbf{J}$。例如，考虑氢原子基态。质子的自旋为$\frac{1}{2}$，则$I = \frac{1}{2}$，同样$J = \frac{1}{2}$。那么量子数$F$可以为$0$或$1$，对应于质子和电子自旋相同或相反。跃迁$F = 1 \to 0$发射一条频率为$1420 \:\mathrm{MHz}$的谱线，即氢原子在太空中发出的$21\:\mathrm{cm}$波长线。Ewen和Purcell将一个喇叭形天线伸出哈佛大学物理实验室的窗外，并检测到了这条谱线。氢原子基态的超精细分裂频率是目前测量精度最高的物理常数之一：$1420.405751768 \pm 0.000000002 \: \mathrm{MHz}$。【S. G. Karshenboim, \textit{Can. J. Phys.}, \textbf{78}, 639 (2000); \url{arxiv.org/abs/physics/0008051}】。
 
 \section{Condon-Slater规则}
 \label{sec:11.8 The Condon-Slater Rules}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section*{总结}
 
