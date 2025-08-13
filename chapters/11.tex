@@ -508,23 +508,415 @@
 \section{多电子原子的角动量}
 \label{sec:11.5 Angular momentum in Many-Electron Atoms}
 
+\subsection*{电子总轨道和自旋角动量}
 
+    $n$电子原子的\textbf{电子总轨道角动量}（total electronic orbital angular momentum）定义为各个电子轨道角动量的矢量和：
+    \begin{equation}
+        \mathbf{L} = \sum_{i=1}^{n} \mathbf{L}_i
+        \label{eq:11.41}
+    \end{equation}
+    虽然独立的轨道角动量算符$\hat{\mathbf{L}}_i$与原子哈密顿算符(\ref{eq:11.1})不可对易，但可以证明（\textit{Bethe and Jackiw}, pp. 102-103）$\hat{\mathbf{L}}_i$与原子哈密顿算符可对易【在忽略自旋-轨道耦合（第\ref{sec:11.6 Spin-Orbit Interaction}节）的情况下】。因此，我们可以使用量子数$L$来描述一个原子状态，其中$L\left(L+1\right)\hbar^2$为电子总轨道角动量大小的平方。原子的电子波函数$\psi$满足$\hat{L}^2\psi = L\left(L+1\right)\hbar^2\psi$。原子的电子总轨道角动量量子数$L$由一个代码字母表示，具体如下：
+    \begin{equation}
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $L$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ \\
+            \hline
+            字母 & $S$ & $P$ & $D$ & $F$ & $G$ & $H$ & $I$ & $K$ & $L$ \\
+            \hline
+        \end{tabular}
+        \label{eq:11.42}
+    \end{equation}
+    总轨道角动量用大写字母表示，而单个电子的轨道角动量则用小写字母表示。
 
+    \begin{examplebox}
+        \textbf{例题：}找出电子组态为 $1s^22s^22p3d$ 的碳原子状态的量子数 $L$ 的可能值。
+        \\
 
+        $s$电子的轨道角动量为零，因此对总轨道角动量没有贡献。$2p$电子有$l=1$，$3d$电子有$l=2$。根据角动量叠加规则(\ref{eq:11.39})，总轨道角动量量子数介于$1+2=3$和$|1-2|=1$之间，因此$L$的可能值为$L=3,\:2,\:1$。组态$1s^22s^22p3d$对应于状态$P,D,F$。【Hartree-Fock中心场近似认为每个电子都在中心场势能中运动，$V = V\left(r\right)$。因此，在这种近似情况下，各个电子轨道角动量是恒定的，从而产生了一个由指定各个轨道角动量的单一组态组成的波函数。当我们超越 SCF 中心场近似时，我们会混合其他组态，因此不再精确指定各个轨道角动量。即使如此，我们仍然可以使用规则 (\ref{eq:11.39}) 来找出总轨道角动量的可能值。】
+        \\
 
+        \textbf{练习：}找出电子组态为 $1s^22s^22p^63s^23p4p$ 状态的量子数 $L$ 的可能值。（\textit{答案}：$2,\:1,\:0$。）
+    \end{examplebox}
 
+    原子的\textbf{电子总自旋角动量}（total electronic spin angular momentum）$\mathbf{S}$定义为各电子自旋的矢量和：
+    \begin{equation}
+        \mathbf{S} = \sum_{i=1}^{n} \mathbf{S}_i
+        \label{eq:11.43}
+    \end{equation}
+    (\ref{eq:11.1})的原子哈密顿量（忽略了自旋-轨道耦合）不包含自旋，因此与总自旋算符$\hat{S}^2$和$\hat{S}_z$可对易。$\hat{S}^2$与$\hat{H}$可对易的事实并不足以证明原子波函数$\psi$就是$\hat{S}^2$的本征函数。波函数交换反对称的要求表明每个$\psi$必须是交换算符$\hat{P}_{ik}$的本征函数，本征值为$-1$（第\ref{sec:10.3 Spin-Statistics Theorem}节）。因此，若我们想找到$\hat{H}$、$\hat{S}^2$和$\hat{P}_{ik}$的共同本征函数，$\hat{S}^2$与$\hat{P}_{ik}$必须可对易。问题11.19证明了$\left[\hat{S}^2, \hat{P}_{ik}\right] = 0$，则原子波函数是$\hat{S}^2$的本征函数。我们有$\hat{S}^2\psi = S\left(S+1\right)\hbar^2\psi$，原子的每个状态都可以用一个电子总自旋量子数$S$来指定。
 
+    \begin{examplebox}
+        \textbf{例题：}找出电子组态 $1s^22s^22p3d$ 对应状态的量子数 $S$ 的可能值。
+        \\
 
+        首先，考虑两个$1s$电子。为了满足不相容原理，其中一个电子必须满足$m_s = \frac{1}{2}$而另一个满足$m_s = -\frac{1}{2}$。如果$M_S$是指定$1s$电子总自旋$z$分量的量子数，那么$M_S$的唯一可能值为$\frac{1}{2} - \frac{1}{2} = 0$【式(\ref{eq:11.34})】。$M_S$值的唯一性清楚表明两个$1s$电子的总自旋角动量为零。因此，尽管在一般情况下，当我们根据规则（\ref{eq:11.39}）将两个电子的自旋$s_1=\frac{1}{2}$和$s_2=\frac{1}{2}$相加时，我们得到了两个可能值$S=0$和$S=1$，然而泡利原理引入的限制在该例子中舍去了$S=1$，只留下了$S=0$。同样地，$2s$电子的总自旋角动量为零不相容原理未限制$2p$和$3d$电子的$m_s$值。对$2p$和$3d$电子的自旋$s_1 = \frac{1}{2}$和$s_2 = \frac{1}{2}$使用规则(\ref{eq:11.39})，得到$S=0$和$S=1$。这些是总自旋量子数的可能取值，因为$1s$和$2s$电子不参与$S$的贡献。
+        \\
 
+        \textbf{练习：}找出电子组态 $1s^22s^22p^63s^23p4p$ 对应状态的量子数 $S$ 的可能值。（\textit{答案}：$0$和$1$。）
+    \end{examplebox}
 
+\subsection*{原子光谱项}
 
+    给定的电子组态通常会产生几种不同的原子态，有些具有相同的能量，有些具有不同的能量，这取决于这些态之间的电子间斥力是否相同或不同。例如，氦的 $1s2s$ 组态会产生四种状态：三个具有零级波函数 (\ref{eq:10.27}) 至 (\ref{eq:10.29}) 的状态都具有相同的能量；单个状态 (\ref{eq:10.30}) 具有不同的能量。电子组态$1s2p$会产生12种状态：其中九种通过将(\ref{eq:10.27})至(\ref{eq:10.29})中的$2s$替换为$2p_x$、$2p_y$和$2p_z$而获得，且具有相同能量；另外三个通过将(\ref{eq:10.30})中的$2s$替换为$2p_x$、$2p_y$和$2p_z$而获得，也具有相同能量，但与前九个不同。
 
+    因此，由给定电子组态产生的原子态可以分为具有相同能量的态组。可以证明，由相同电子组态产生且具有相同能量（忽略自旋-轨道耦合）的态将具有相同的 $L$ 值和相同的 $S$ 值（参见 \textit{Kemble}，Section 63a）。由相同的电子组态产生、具有相同 $L$ 值和 $S$ 值的一组等能原子态构成一个\textbf{原子（光谱）项}（atomic term）。对于一个给定的$L$值，量子数$M_L$（其中$M_L\hbar$是电子总轨道角动量在$z$方向的分量）从$-L$到$+L$可以取$2L+1$个值。对于一个给定的$S$值，$M_S$有$2S+1$个可能值。原子能量不取决于$M_L$和$M_S$，则每个项包含$\left(2L+1\right)\left(2S+1\right)$个等能原子态。每个原子光谱项的简并度为$\left(2L+1\right)\left(2S+1\right)$（忽略自旋-轨道耦合）。
 
+    每个原子光谱项由一个\textbf{谱项符号}（term symbol）表示，该符号将$2S +1$的数值作为左上标写在表示$L$值的代码字母（\ref{eq:11.42}）上。例如，某谱项满足$L=2$且$S=1$，则其谱项符号为$^3D$，因为$2S+1=3$。
+
+    \begin{examplebox}
+        \textbf{例题：}求以下电子组态产生的光谱项：\\
+        (a)$1s2p$；\\
+        (b)$1s^22s^22p3d$。\\
+        并求每项的简并度。
+
+        (a)$1s$电子满足$l=0$而$2p$电子满足$l=1$。叠加规则(\ref{eq:11.39})给出了唯一的$L$值为$1$。$L=1$对应的谱项为$P$每个电子都有$s = \frac{1}{2}$，由(\ref{eq:11.39})，$S$的可能取值为$0$和$1$，那么$2S+1$的取值为$1$和$3$。可能的谱项即为$^1P$和$^3P$。$^3P$项的量子数为$L=1$、$S=1$，简并度为$\left(2L+1\right)\left(2S+1\right)=3\left(3\right)=9$。$^1P$项的量子数为$L=1$、$S=0$，简并度为$\left(2L+1\right)\left(2S+1\right)=3\left(1\right)=3$。【$^3P$中的九个状态通过将(\ref{eq:10.27})至(\ref{eq:10.29})中的$2s$替换为$2p_x$、$2p_y$和$2p_z$而获得。$^1P$中的三个状态通过将(\ref{eq:10.30})中的$2s$替换为$2p$而获得。】 \\
+        (b)在本节的前两例中，我们已经知道组态$1s^22s^22p3d$的总轨道角动量量子数$L$的可能值为$3, \: 2, \: 1$，$S$的可能值为$0$和$1$。与这些$L$值相对应的符号为$F$、$D$、$P$，则谱项为
+        \begin{equation}
+            ^1P, \quad ^3P, \quad ^1D, \quad ^3D, \quad ^1F, \quad ^3F
+            \label{eq:11.44}
+        \end{equation}
+        简并度采用与(a)相同的方式求出，分别为$3$，$9$，$5$，$15$，$7$，$21$。
+    \end{examplebox}
+
+\subsection*{原子光谱项的导出}
+
+    现在，我们来探讨如何从给定的电子组态中系统地推导出原子光谱项。
+
+    首先，考虑只包含只包含闭壳层的组态。在这些组态中，若有一个电子满足$m_s = +\frac{1}{2}$，则必有另一个电子满足$m_s = -\frac{1}{2}$。将描述电子总自旋角动量在$z$方向分量的量子数设为$M_S$。那么$M_S$的唯一可能值为零（$M_S = \sum_{i}m_{si} = 0$）。那么$S$一定为零。对于闭壳层中每个磁量子数为$m$的电子，一定有一个磁量子数为$-m$的电子与它对应。例如，在组态$2p^6$中，两个电子满足$m = +1$，两个$m = -1$，还有两个满足$m=0$。将描述电子总轨道角动量在$z$方向分量的量子数设为$M_L$，则$M_L = \sum_{i}m_{li} = 0$。因此，$L$为零。总而言之，闭壳层组态只有一个谱项：$^1S$。对于同时包含闭壳层和开壳层的组态，闭壳层对$L$和$S$的贡献为零，因此在谱项的导出中可以忽略。
+
+    现在，我们来考虑不同壳层中的两个电子，这样的电子称为\textbf{非等价电子或非同科电子}（nonequivalent electrons）。非等价电子具有不同的$n$值或$l$值或两者皆有，当我们推导谱项时不需要担心泡利不相容原理的限制。只需按照(\ref{eq:11.39})，从$l_1$和$l_2$的值中找到$L$的可能值，再将$s_1$和$s_2$组合，得到$S = 0,\:1$。我们之前已经计算出了 $pd$ 的情况，得到了（\ref{eq:11.44}）中的项。如果我们有两个以上的非等价电子，我们将各个 $l$ 组合起来找到 $L$ 的值，并将各个 $s$ 组合起来找到 $S$ 的值。例如，考虑一个 $pd$f 组态。$L$ 的可能值由（\ref{eq:11.40}）给出。将三个自旋角动量组合起来，每个都为$\frac{1}{2}$，则$S = \frac{3}{2},\:\frac{1}{2},\:\frac{1}{2}$。(\ref{eq:11.40})中每个$L=3$的三种可能都可以与$S = \frac{1}{2}$的两种状态相组合，得到六个$^2F$谱项。继续这样做，我们发现以下谱项来自 $pdf$ 组态：$^2S\left(2\right)$、$^2P\left(4\right)$、$^2D\left(6\right)$、$^2F\left(6\right)$、$^2G\left(6\right)$、$^2H\left(4\right)$、$^2I\left(2\right)$、$^4S$、$^4P\left(2\right)$、$^4D\left(3\right)$、$^4F\left(3\right)$、$^4G\left(3\right)$、$^4H\left(2\right)$、$^4I$，每个项出现的次数用括号中的数字表示。
+
+    再考虑位于同一壳层中的两个电子，称为\textbf{等价电子或同科电子}（equivalent electrons）。等价电子的$n$和$l$值相同，由于必须避免两个电子具有相同的四个量子数，情况变得更加复杂。因此，并非所有针对非等价电子推导出的项都是可取的。以两个等价的$p$电子为例，考虑由它们产生的谱项——一个$np^2$组态。（碳原子基态组态为$1s^22s^22p^2$。）两个电子允许的$m$和$m_s$值和导出的$M_L$、$M_S$列于表\ref{tab:11.1}中。
+
+    请注意，此表中缺少某些组合。例如，因为违反了泡利原理，组合$m_1=1$、$m_{s1} = \frac{1}{2}$，$m_2=1$，$m_{2s} = \frac{1}{2}$是禁止的。另一个缺少的组合是$m_1=1$、$m_{s1} = -\frac{1}{2}$，$m_2=1$，$m_{2s} = -\frac{1}{2}$。该组合与$m_1=1$、$m_{s1} = \frac{1}{2}$，$m_2=1$，$m_{2s} = -\frac{1}{2}$（第一行）不同，区别仅在于电子1和2的交换。表\ref{tab:11.1}中的每一行代表一个Slater行列式，展开后包含所有可能的电子在自旋轨道之间的交换项。两行仅因两个电子的交换而不同的情况对应于同一个Slater行列式，我们在表中仅列出其中一行。
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            $m_1$ & $m_{s1}$ & $m_2$ & $m_{s2}$ & $M_L = m_1 + m_2$ & $M_S = m_{s1} + m_{s2}$ \\
+            \hline
+            $1$ & $\frac{1}{2}$ & $1$ & $-\frac{1}{2}$ & $2$ & $0$ \\
+            \hline
+            $1$ & $\frac{1}{2}$ & $0$ & $\frac{1}{2}$ & $1$ & $1$ \\
+            \hline
+            $1$ & $\frac{1}{2}$ & $0$ & $-\frac{1}{2}$ & $1$ & $0$ \\
+            \hline
+            $1$ & $-\frac{1}{2}$ & $0$ & $\frac{1}{2}$ & $1$ & $0$ \\
+            \hline
+            $1$ & $-\frac{1}{2}$ & $0$ & $-\frac{1}{2}$ & $1$ & $-1$ \\
+            \hline
+            $1$ & $\frac{1}{2}$ & $-1$ & $\frac{1}{2}$ & $0$ & $1$ \\
+            \hline
+            $1$ & $\frac{1}{2}$ & $-1$ & $-\frac{1}{2}$ & $0$ & $0$ \\
+            \hline
+            $1$ & $-\frac{1}{2}$ & $-1$ & $\frac{1}{2}$ & $0$ & $0$ \\
+            \hline
+            $1$ & $-\frac{1}{2}$ & $-1$ & $-\frac{1}{2}$ & $0$ & $-1$ \\
+            \hline
+            $0$ & $\frac{1}{2}$ & $0$ & $-\frac{1}{2}$ & $0$ & $0$ \\
+            \hline
+            $0$ & $\frac{1}{2}$ & $-1$ & $\frac{1}{2}$ & $-1$ & $1$ \\
+            \hline
+            $0$ & $\frac{1}{2}$ & $-1$ & $-\frac{1}{2}$ & $-1$ & $0$ \\
+            \hline
+            $0$ & $-\frac{1}{2}$ & $-1$ & $\frac{1}{2}$ & $-1$ & $0$ \\
+            \hline
+            $0$ & $-\frac{1}{2}$ & $-1$ & $-\frac{1}{2}$ & $-1$ & $-1$ \\
+            \hline
+            $-1$ & $\frac{1}{2}$ & $-1$ & $-\frac{1}{2}$ & $-2$ & $0$ \\
+            \hline
+        \end{tabular}
+        \caption{两个等价$p$电子的量子数}
+        \label{tab:11.1}
+    \end{table}
+
+    表\ref{tab:11.1}中$M_L$的最大值为2，必须对应于$L=2$的谱项，即$D$项。$M_L=2$只在$M_S=0$时出现，因此$S=0$。则我们有对应于五个状态的$^1D$谱项
+    \begin{equation}
+        \centering
+        \begin{tabular}{ccccc}
+            $M_L = 2$ & $1$ & $0$ & $-1$ & $-2$ \\
+            $M_S = 0$ & $0$ & $0$ & $0$ & $0$
+        \end{tabular}
+        \label{eq:11.45}
+    \end{equation}
+    表\ref{tab:11.1}中$M_S$的最大值为1，即对应于$S=1$的谱项。$M_S = 1$在$M_L = 1,\:0,\:-1$时出现，即$P$谱项。因此，有对应于九个状态的$^3P$谱项
+    \begin{equation}
+        \centering
+        \begin{tabular}{ccccccccc}
+            $M_L = 1$ & $1$ & $1$ & $0$ & $0$ & $0$ & $-1$ & $-1$ & $-1$ \\
+            $M_S = 1$ & $0$ & $-1$ & $0$ & $-1$ & $1$ & $1$ & $0$ & $-1$
+        \end{tabular}
+        \label{eq:11.46}
+    \end{equation}
+    将(\ref{eq:11.45})和(\ref{eq:11.46})包含的状态从表\ref{tab:11.1}中删去，只剩下了一个状态，即$M_L = 0$和$M_S = 0$。这对应于谱项$^1S$。因此，组态$p^2$产生的谱项为$^1S$、$^3P$和$^1D$。（相反地，两个非等价电子产生六个谱项：$^1S$、$^3S$、$^1P$、$^3P$、$^1D$和$^3D$。）
+
+    表 \ref{tab:11.2}a 列出了等价电子的各种组态所产生的谱项。这些谱项可能可以使用与我们导出$p^2$组态谱项相同的方法导出，但这一流程可能变得相当复杂。为了求出$f^7$组态的谱项，我们需要一个3432行的表格。更多高效的方法参见【R. F. Curl and J. E. Kilpatrick, \textit{Am. J. Phys.}, \textbf{28}, 357 (1960); K. E. Hyde, \textit{J. Chem. Educ.}, \textbf{52}, 87 (1975)】。
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{|l|l|}
+            \hline
+            组态 & 谱项 \\
+            \hline
+            (a)等价电子 & \\
+            \hline
+            $s^2,\:p^6$、$d^{10}$ & $^1S$ \\
+            \hline
+            $p,\:p^5$ & $^2P$ \\
+            \hline
+            $p^2,\:p^4$ & $^3P,\: ^1D,\: ^1S$ \\
+            \hline
+            $p^3$ & $^4S,\: ^2D,\: ^2P$ \\
+            \hline
+            $d,\:d^9$ & $^2D$ \\
+            \hline
+            $d^2,\:d^8$ & $^3F,\: ^3P,\: ^1G,\: ^1D,\: ^1S$ \\
+            \hline
+            $d^3,\:d^7$ & $^4F,\: ^4P,\: ^2H,\: ^2G,\: ^2F,\: ^2D\left(2\right),\: ^2P$ \\
+            \hline
+            $d^4,\:d^6$ & $\begin{cases}
+                ^5D,\: ^3H,\: ^3G,\: ^3F\left(2\right),\: ^3D,\: ^3P\left(2\right) \\
+                ^1I,\: ^1G\left(2\right),\: ^1F,\: ^1D\left(2\right),\: ^1S\left(2\right)
+                \end{cases}$ \\
+            \hline
+            $d^5$ & $\begin{cases}
+                ^6S,\: ^4G,\: ^4F,\: ^4D,\: ^4P,\: ^2I,\: ^2H,\: ^2G\left(2\right) \\
+                ^1I,\: ^1G\left(2\right),\: ^1F,\: ^1D\left(2\right),\: ^1S\left(2\right)
+            \end{cases}$ \\
+            \hline
+            (b)非等价电子 & \\
+            \hline
+            $ss$ & $^1S,\: ^3S$ \\
+            \hline
+            $sp$ & $^1P,\: ^3P$ \\
+            \hline
+            $sd$ & $^1D,\: ^3D$ \\
+            \hline
+            $pp$ & $^3D,\: ^1D,\: ^3P,\: ^1P,\: ^3S,\: ^1S$ \\
+            \hline
+        \end{tabular}
+        \caption{各种电子组态产生的谱项}
+        \label{tab:11.2}
+    \end{table}
+
+    如表\ref{tab:11.2}a所示，含有$N$个电子的亚层产生的项与缺少$N$个电子而未满的亚层产生的谱项相同。例如，$p^2$和$p^4$的谱项相同。我们可以将闭亚壳层的电子分为两组，并找出每组的谱项。由于闭亚壳层只产生 $^1S$ 谱项，因此这两组的谱项必须相同。表 \ref{tab:11.2}b 给出了某些非等价电子组态产生的谱项。
+
+    为了处理包含等价和非等价电子的组态，我们首先分别找出非等价电子的谱项和等价电子的谱项。然后，我们取这两组谱项的 $L$ 和 $S$ 值的所有可能组合。例如，考虑一个 $sp^3$ 组态。从 $s$ 电子中，我们得到 $^2S$ 谱项，从三个等价的 $p$ 电子中，我们得到 $^2P$、$^2D$、$^4S$ 谱项（表 \ref{tab:11.2}a）。将这些谱项的 $L$ 和 $S$ 值组合起来，我们得到 $sp^3$ 组态的谱项
+    \begin{equation}
+        ^3P,\: ^1P,\: ^3D,\: ^1D,\: ^5S,\: ^3S
+        \label{eq:11.47}
+    \end{equation}
+
+\subsection*{洪特规则}
+
+    为了确定给定电子组态产生的项中哪个能量最低，我们使用\textbf{洪特经验规则}（Hund's Rule）：\textit{对于来自相同电子组态的项，$S$ 值最大的项能量最低。如果有多个 $S$ 值最大的项，则 $S$ 值和 $L$ 值最大的项能量最低。}
+
+    \begin{examplebox}
+        \textbf{例题：}使用表\ref{tab:11.2}预测以下组态能量最低的谱项：\\
+        (a)碳原子基态$1s^22s^22p^2$；\\
+        (b)组态$1s^22s^22p^63d^24s^2$。
+        \\
+
+        (a)表\ref{tab:11.2}a给出了由组态$p^2$产生的谱项$^3P$、$^1D$和$^1S$。具有最高$S$值的项，其上标$2S+1$也最大。洪特规则预测$^3P$为能量最低的谱项。\\
+        (b)表\ref{tab:11.2}a给出了由组态$3d^2$产生的谱项$^3F$、$^3P$、$^1G$、$^1D$和$^1S$。在这些谱项中，$^3F$和$^3P$具有最高的$S$值。由于$^3F$的$L=3$大于$^3P$的$L=1$，因此洪特规则预测$^3F$为能量最低的谱项。
+        \\
+
+        \textbf{练习：}使用(\ref{eq:11.47})预测组态为$1s^22s2p^3$的能量最低的谱项。（\textit{答案：}$^5S$。）
+    \end{examplebox}
+
+    基态组态非常符合洪特规则，但有时激发态会偏离洪特规则（问题 11.30）。
+
+    洪特规则只给出组态的最低谱项，不适用于决定其余谱项的顺序。例如，对于碳原子的组态$1s^22s2p^3$，观测到的谱项顺序为
+    \begin{equation*}
+        \left. ^5S \right. < \left. ^3D \right. < \left. ^3P \right. < \left. ^1D \right. < \left. ^3S \right. < \left. ^1P \right.
+    \end{equation*}
+    $^3S$谱项高于$^1D$，尽管$^3S$的自旋$S$值更高。
+
+    无需参考表 \ref{tab:11.2}a来查找部分填充的亚壳层组态的最低谱项。我们只需将电子放在轨道中，以获得最大的平行自旋数即可。例如，对于组态$d^3$，我们有
+    \begin{equation}
+        m : \quad \frac{\uparrow}{+2} \quad \frac{\uparrow}{+1} \quad \frac{\uparrow}{0} \quad \frac{}{-1} \quad \frac{}{-2}
+        \label{eq:11.48}
+    \end{equation}
+    因此，最低的谱项有三个自旋平行的电子，那么$S = \frac{3}{2}$，得到$2S + 1 = 4$。$M_L$的最大值为$3$，对应于$L=3$，即谱项$F$。洪特规则预测组态$d^3$的最低谱项为$^4F$。
+
+    洪特规则的传统解释如下：自旋相同的电子倾向于彼此避开（回想一下费米空穴的概念），从而最大限度地减少它们之间的库仑斥力。因此，平行自旋数量最多（即 $S$ 值最大）的谱项能量最低。例如，氦 $1s2s$ 组态的 $^3S$ 谱项具有反对称空间函数，当两个电子的空间坐标相等时，该函数为零。因此，$^3S$ 谱项低于 $^1S$ 谱项。
+
+    这种传统的解释在大多数情况下都是错误的。的确，对于氦 $^3S$ $1s2s$ 谱项而言，两个电子非常接近的概率比 $^1S$ $1s2s$ 谱项要小。然而，使用精确的波函数进行计算表明，两个电子相距很远的概率在 $^3S$ 谱项中也较小。最终结果是，$^3S$ 谱项中两个电子之间的平均距离略小于 $^1S$ 谱项，而 $^3S$ 谱项中的电子间斥力略大于 $^1S$ 谱项。计算表明，由于 $^3S$ 项中的电子与原子核的吸引力远大于 $^1S$ 项，因此 $^3S$ 项低于 $^1S$ 项。铍和碳原子的谱项也得到了类似的结果。【见J. Katriel and R. Pauncz, \textit{Adv. Quantum Chem.}, \textbf{10}, 143 (1977).】以下是对这些结果的解释。【I. Shim and J. P. Dahl, \textit{Theor. Chim. Acta}, \textbf{48}, 165 (1978).】自旋相同的电子之间的泡利“排斥力”使 $^3S$ 谱项中两个电子半径向量之间的平均角度大于$^1S$ 谱项中的平均角度。这减少了核的电子屏蔽，使电子在 $^3S$ 谱项中更接近核，从而使 $^3S$ 谱项中的电子与核的吸引力更大。【另见R. E. Boyd, \textit{Nature}, \textbf{310}, 480 (1984); T. Oyamada et al., \textit{J. Chem. Phys.}, \textbf{133}, 164113 (2010).】
+
+\subsection*{双电子自旋函数的本征值}
+
+    氦原子组态$1s2s$产生简并度为$\left(2S+1\right)\left(2L+1\right)=1\left(3\right)=3$的$^3S$谱项和简并度为$1\left(1\right)=1$的$^1S$谱项。三个零级氦波函数(\ref{eq:10.27})至(\ref{eq:10.29})必须对应于三重简并的$^3S$谱项，单函数(\ref{eq:10.30})必须对应于$^1S$谱项。因为$^3S$谱项有$S=1$和$M_S = 1,\:0,\:-1$，所以(\ref{eq:10.27})至(\ref{eq:10.29})的三个自旋函数应是$\hat{S}^2$的本征函数，本征值为$S\left(S+1\right)\hbar^2 = 2\hbar^2$，也是$\hat{S}_z$的本征函数，本征值为$M_S\hbar = \hbar$、$0$和$-\hbar$。在本例中，(\ref{eq:10.30})中的自旋函数应也是$\hat{S}^2$和$\hat{S}_z$的本征函数，但本征值为$0$，因为$S=0$和$M_S=0$。我们现在对这些论点进行验证。
+
+    根据式(\ref{eq:11.43})，电子总自旋算符为每个电子自旋算符的和：
+    \begin{equation}
+        \hat{\mathbf{S}} = \hat{\mathbf{S}}_1 + \hat{\mathbf{S}}_2
+        \label{eq:11.49}
+    \end{equation}
+    取(\ref{eq:11.49})在$z$方向的分量，我们有
+    \begin{equation}
+        \hat{S}_z = \hat{S}_{1z} + \hat{S}_{2z}
+        \label{eq:11.50}
+    \end{equation}
+    \begin{align}
+        \hat{S}_z \alpha(1)\alpha(2) &= \hat{S}_{1z} \alpha(1)\alpha(2) + \hat{S}_{2z} \alpha(1)\alpha(2) \nonumber\\
+        &=\alpha(2)\hat{S}_{1z}\alpha(1) + \alpha(1)\hat{S}_{2z}\alpha(2) \nonumber\\
+        &= \frac{1}{2}\hbar\alpha(1)\alpha(2) + \frac{1}{2}\hbar\alpha(1)\alpha(2) \nonumber \\
+        \hat{S}_z \alpha (1) \alpha (2) &= \hbar \alpha (1) \alpha (2) \label{eq:11.51}
+    \end{align}
+    其中用到了式(\ref{eq:10.7})。同样地，我们有
+    \begin{equation}
+        \hat{S}_z \beta(1)\beta(2) = -\hbar \beta(1)\beta(2)
+        \label{eq:11.52}
+    \end{equation}
+    \begin{equation}
+        \hat{S}_z \left[\alpha (1)\beta (2) + \beta (1)\alpha (2)\right] = 0
+        \label{eq:11.53}
+    \end{equation}
+    \begin{equation}
+        \hat{S}_{z} \left[\alpha (1) \beta (2) - \beta (1)\alpha (2)\right] = 0
+        \label{eq:11.54}
+    \end{equation}
+    现在考虑$\hat{S}^2$，我们有【式(\ref{eq:11.26})】
+    \begin{equation}
+        \hat{S}^2 = (\hat{S}_1 + \hat{S}_2) \cdot (\hat{S}_1 + \hat{S}_2) = \hat{S}_1^2 + \hat{S}_2^2 + 2 (\hat{S}_{1x} \hat{S}_{2x} + \hat{S}_{1y} \hat{S}_{2y} + \hat{S}_{1z} \hat{S}_{2z})
+        \label{eq:11.55}
+    \end{equation}
+    \begin{equation*}
+        \begin{aligned}
+            \hat{S}^2 \alpha(1)\alpha(2) = \alpha(2)\hat{S}_1^2\alpha(1) + \alpha(1)\hat{S}_2^2\alpha(2) &+ 2\hat{S}_{1x}\alpha(1)\hat{S}_{2x}\alpha(2) \\
+            + 2\hat{S}_{1y}\alpha(1)\hat{S}_{2y}\alpha(2) &+ 2\hat{S}_{1z}\alpha(1)\hat{S}_{2z}\alpha(2)
+        \end{aligned}
+    \end{equation*}
+    使用方程(\ref{eq:10.7})至(\ref{eq:10.9})、(\ref{eq:10.72})和(\ref{eq:10.73})，我们有
+    \begin{equation}
+        \hat{S}^{2}\alpha(1)\alpha(2)=2\hbar^{2}\alpha(1)\alpha(2)
+        \label{eq:11.56}
+    \end{equation}
+    因此$\alpha\left(1\right)\alpha\left(2\right)$是$\hat{S}^2$的本征函数，对应于$S=1$。同样地，我们有
+    \begin{equation*}
+        \begin{aligned}
+            \hat{S}^2 \beta(1)\beta(2) &= 2\hbar^2 \beta(1)\beta(2) \\
+            \hat{S}^{2} [\alpha (1) \beta (2) + \beta (1) \alpha (2)] &= 2\hbar^{2} [\alpha (1) \beta (2) + \beta (1) \alpha (2)] \\
+            \hat{S}^2 [\alpha(1)\beta(2) - \beta(1)\alpha(2)] &= 0
+        \end{aligned}
+    \end{equation*}
+    因此，式（\ref{eq:10.27}）至（\ref{eq:10.30}）中的自旋本征函数对应于总自旋量子数以下的值：
+    \begin{equation*}
+        \phantom{\alpha(1)\alpha(2)\alpha(1)\alpha(2)\alpha(1)\alpha(2)\alpha(1)\alpha(2)} \qquad \phantom{1} \qquad\quad S \quad \phantom{1} \qquad \qquad M_S
+    \end{equation*}
+    \begin{empheq}[left={\text{triplet}\empheqlbrace}]{align}
+        &\alpha(1)\alpha(2)          && 1 && 1  \label{eq:11.57}\\
+        &2^{-1/2}[\alpha(1)\beta(2) + \beta(1)\alpha(2)] && 1 && 0 \label{eq:11.58}\\
+        &\beta(1)\beta(2)            && 1 && -1 \label{eq:11.59}
+    \end{empheq}
+    \begin{empheq}[left={\text{singlet }\empheqlbrace}]{align}
+        &2^{-1/2}[\alpha(1)\beta(2) - \beta(1)\alpha(2)] && 0 && 0 \label{eq:11.60}
+    \end{empheq}
+    【在第\ref{sec:11.4 Addition of Angular Momenta}节的记号中，我们正在处理两个量子数分别为$j_1 = \frac{1}{2}$和$j_2 = \frac{1}{2}$的自旋角动量的叠加，从而得到具有量子数$J=1$和$J=0$的总角动量本征函数。式(\ref{eq:11.57})至(\ref{eq:11.60})中的系数对应于式(\ref{eq:11.33})中的系数$C$，是Clebsch-Gordan系数的例子。】
+
+    图\ref{fig:11.3}展示了矢量$\mathbf{S}_1$与$\mathbf{S}_2$的矢量和$\mathbf{S}$。可能令人惊讶的是，在自旋函数（\ref{eq:11.58}）中，两个电子的自旋的$z$分量指向相反方向，却能够具有总自旋量子数$S=1$。图\ref{fig:11.3}展示了这是如何实现的。
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.65\textwidth]{Figures/11.3.png}
+        \caption{
+            \centering
+            \parbox{0.4\textwidth}{
+                \noindent 两个电子自旋的矢量和。对于$\alpha(1)\alpha(2)$和$\beta(1)\beta(2)$，$\mathbf{S}_1$和$\mathbf{S}_2$在$xOy$平面上的投影彼此成$90°$角（问题11.18c）。
+            }
+        }
+        \label{fig:11.3}
+    \end{figure}
+
+    一个原子光谱项的每个波函数都是$\hat{L}^2$、$\hat{S}^2$、$\hat{L}_z$和$\hat{S}_z$的本征函数。因此，当我们进行组态相互作用计算时，只有与所考虑的状态具有相同$\hat{L}^2$、$\hat{S}^2$、$\hat{L}_z$和$\hat{S}_z$本征值的组态函数才会在展开式(\ref{eq:11.17})中出现。例如，氦$1s^2$的基态谱项为$^1S$，有$L=0$和$S=0$。电子组态$1s2p$产生谱项$^1P$和$^3P$，仅产生具有$L=1$的状态。在氦原子基态的组态相互作用波函数（\ref{eq:11.17}）中，不会出现由 $1s2p$ 组态产生的组态相互作用。
+
+\subsection*{原子态的宇称}
+
+    考虑原子哈密顿(\ref{eq:11.1})。在\ref{sec:7.5 Parity}节中，我们已经证明了宇称算符$\hat{\Pi}$与动能算符可对易。(\ref{eq:11.1})中的$1/r_1$为$r_{i}^{-1} = \left(x_{i}^{2} + y_{i}^{2} + z_{i}^{2}\right)^{-1/2}$。将每个坐标用其相反数代替，$1/r_1$没有变化。以及，
+    \begin{equation*}
+        r_{ij}^{-1} = \left[ (x_i - x_j)^2 + (y_i - y_j)^2 + (z_i - z_j)^2 \right]^{-1/2}
+    \end{equation*}
+    反演也对$1/r_{ij}$没有影响。因此$\hat{\Pi}$与原子哈密顿算符可对易，我们可以选择具有确定宇称的原子波函数。
+
+    对于单电子原子，空间波函数为$\psi = R\left(r\right)Y_l^m\left(\theta, \phi\right)$。径向因子在反演后保持不变，而奇偶性由角向因子决定。在问题7.29中，我们已经证明了当$l$为偶数时$Y_l^m$是偶函数，而当$l$为奇数时$Y_l^m$是奇函数。因此，单电子原子的能级状态根据$l$为偶数或奇数，而呈现偶数或奇数的宇称。
+
+    现在考虑一个 $n$ 电子原子。在Hartree-Fock中心场近似中，我们将波函数写成自旋轨道的Slater行列式（或Slater行列式的线性组合）。波函数是谱项的总和，每个谱项中的空间因子具有以下形式
+    \begin{equation*}
+        R_1(r_1) \ldots R_n(r_n) Y_{l_1}^{m_1}(\theta_1, \phi_1) \ldots Y_{l_n}^{m_n}(\theta_n, \phi_n)
+    \end{equation*}
+    该乘积的宇称由球谐函数因子决定。可以看到，该乘积所得函数的奇偶性由加和$l_1+l_2+\ldots+l_n$的奇偶性决定。因此，原子状态的宇称是通过将产生该状态的电子组态中的电子的 $l$ 值相加来确定的：若$\sum_il_i$为偶数，则$\psi$为偶函数；若$\sum_il_i$为奇数，则$\psi$为奇函数。举个例子，组态$1s^22s2p^3$有$\sum_il_i = 0 + 0 + +0 + 1 + 1 + 1 = 3$，因此该组态的宇称为奇函数。组态$1s^22s^22p^2$有$\sum_il_i = 0 + 0 + 1 + 1 = 2$，由此电子组态产生的所有状态均为奇宇称。（我们的讨论基于对$\psi$的SCF近似，但结论对真实$\psi$也成立。）
+
+\subsection*{电子总角动量和原子能级}
+
+    原子的\textbf{电子总角动量$J$}（total electronic angular momentum）是电子总轨道角动量和总自旋角动量的矢量和：
+    \begin{equation}
+        \boxed{
+            \mathbf{J} = \mathbf{L} + \mathbf{S}
+        }
+        \label{eq:11.61}
+    \end{equation}
+    电子总角动量算符$\hat{\mathbf{J}}$与原子哈密顿算符可对易，我们可以用量子数J来描述一个原子态，其可能取值为【式(\ref{eq:11.39})】：
+    \begin{equation}
+        L+S, \quad L+S-1, \quad \ldots, \quad |L-S|
+        \label{eq:11.62}
+    \end{equation}
+    我们有$\hat{J}^2\psi = J\left(J+1\right)\hbar^2\psi$。
+
+    对于原子哈密顿量  (\ref{eq:11.17}) ，属于同一谱项的所有状态具有相同的能量。然而，当我们在$\hat{H}$中引入自旋-轨道耦合（第\ref{sec:11.6 Spin-Orbit Interaction}节）后，人们发现，量子数$J$的值会对能量产生微小影响。属于同一谱项且 $J$ 值相同的状态集合构成一个原子\textbf{光谱支项}（level）。属于同一谱项的不同能级的能量略有不同。（参见第 \ref{sec:11.7 The Atomic Hamiltonian} 节中的图 11.6。）为了表示能级，我们将$J$值添加到谱项符号的右下标中。每个能级都是$\left(2J+1\right)$重简并的，对应于$M_J$的$2J+1$个值，其中$M_J\hbar$为电子总角动量$\mathbf{J}$在$z$方向的分量。每个能级包含$2J+1$个等能\textbf{状态}（states）。
+    %记得改图片引用！！！！！
+
+    \begin{examplebox}
+        \textbf{例题：}求谱项为$^3P$的支项，并给出每个支项的简并度。
+        \\
+
+        对于$^3P$谱项，$2S+1=3$即$S=1$，同时根据(\ref{eq:11.42})，$L=1$。由(\ref{eq:11.62})可知，$J = 2,\:1,\:0$。因此，$^3P$的支项为$^3P_2$、$^3P_1$和$^3P_0$。\\
+        三个支项$^3P_2$、$^3P_1$和$^3P_0$的总状态数为$5+3+1=9$。当我们忽略自旋-轨道耦合时，我们有一个$^3P$谱项，包含$\left(2L+1\right)\left(2S+1\right)=3\left(3\right)=9$个等能原子态。考虑自旋-轨道耦合后，九重简并的谱项裂分为三个空间接近的支项：包含五个状态的$^3P_2$、包含三个状态的$^3P_1$和只有一个状态的$^3P_0$。谱项$^3P$的总状态数与该谱项产生的三个支项相同。
+        \\
+
+        \textbf{练习：}求谱项为$^3D$的支项，并给出每个支项的简并度。（\textit{答案：}$^2D_{5/2},\:^2D_{3/2}$，简并度分别为$6$和$4$。）
+    \end{examplebox}
+
+    $2S+1$称为谱项的\textbf{电子自旋多重度}（electron-spin multiplicity or \textit{multiplicity}）。若$L \geq S$，则(\ref{eq:11.62})中$J$值介于$L+S$和$L-S$之间，共有$2S+1$个不同的值。当$L \geq S$时，自旋多重度给出了由给定谱项产生的支项数。若$L<S$，则(\ref{eq:11.62})中$J$值介于$L+S$和$S-L$之间，共有$2L+1$个不同的值。在这种情况下，自旋多重度大于光谱支项数。例如，若$L=0$而$S=1$（$^3S$谱项），自旋多重度为$3$，但$J$只有一个可能值，即$J=1$。对于$2S+1=1,\:2,\:3,\:4,\:5,\:6,\:\ldots,$我们使用\textbf{单重、双重、三重、四重、五重、六重}（singlet，doublet，triplet，quartet，quintet，sextet）等来描述谱项的自旋多重度。光谱支项$^3P_1$读作“三重$P$一”（triplet P one）。
+    
+    对于轻原子，自旋-轨道耦合非常小，光谱支项之间的差异非常小。注意，在第\ref{sec:11.7 The Atomic Hamiltonian}节的图11.6中，氦原子$1s2p$的谱项$^3P$所属支项$^3P_0$、$^3P_1$和$^3P_2$之间的差异要远小于$1s2p$组态产生的$^1P$和$^3P$谱项之间的差异。
+    %记得改引用！！！！！
+
+\subsection*{氢和氦的原子光谱项与光谱支项}
+
+    氢原子有一个电子。因此$L=l$，$S=s=\frac{1}{2}$。$J$的可能值为$L+\frac{1}{2}$和$L-\frac{1}{2}$，除了$L=0$时，只有唯一的$J=\frac{1}{2}$。每个电子组态只产生一个谱项，若$L=0$则只有一个支项，若$L \neq 0$则有两个支项。基态组态产生的谱项为$^2S$，对应于单支项$^2S_{1/2}$；该支项是两重简并的（$M_J = -\frac{1}{2},\:\frac{1}{2}$）。$2s$组态也产生$^2S_{1/2}$支项。$2p$组态产生支项$^2P_{3/2}$和$^2P_{1/2}$，支项$^2P_{3/2}$是四重简并的，而$^2P_{1/2}$是两重简并的。当$n=2$时，有$2+4+2=8$种状态，与我们之前的工作相符。
+
+    氦原子基态组态$1s^2$为闭壳层，只产生一个支项$^1S_0$，且是非简并的（$M_J=0$）。激发态$1s2s$产生两个谱项$^1S$和$^3S$，每个都有一个支项。支项$^1S_0$非简并，$^3S_1$为三重简并。$1s2p$组态产生谱项$^1P$和$^3P$。$^3P$的支项为$^3P_2$、$^3P_1$和$^3P_0$，$^1P$有一个支项$^1P_1$。
+
+\subsection*{原子能级表}
+
+    原子序数小于90的原子的能级，其光谱测定值见C. E. Moore等人所著的表格中：C. E. Moore, \textit{Atomic Energy Levels}, National Bureau of Standards Circular 467, vols. I, II, and III, 1949, 1952, and 1958, Washington D.C.; these have been reprinted as Natl. Bur. Stand. Publ. NSRDSNBS 35, 1971; W. C. Martin et al., \textit{Atomic Energy Levels—The Rare-Earth Elements}, Natl. Bur. Stand. Publ. NSRDS-NBS 60, Washington, D.C., 1978。Moore表格及其后续修订版中的原子能级数据，可通过美国国家标准与技术研究院（NIST）原子光谱数据库在线获取，网址为：\url{www.nist.gov/pml/data/asd.cfm}。这些表格还列出了许多原子离子的能级。光谱学家使用符号I表示中性原子，符号II表示一次离子化原子，以此类推。要查看NIST在线数据库中\ce{C^2+}离子的能级数据，请点击“能级”，然后在“光谱”后输入“C III”。
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Figures/11.4.png}
+        \caption{碳原子某些谱项的能量。}
+        \label{fig:11.4}
+    \end{figure}
+
+    这些表格以原子的最低能级为基准，将最低能级的能量值设定为零，将支项的能量$E_i$表示为$E_i/hc$，单位为$\mathrm{cm}^{-1}$，其中$h$和$c$分别为Planck常数和光速。两支项之间$E/hc$值的差异给出了不同支项之间光谱跃迁从波束【式(\ref{eq:4.64})】（假设给定的跃迁允许）。能量$E$为$1\:\mathrm{eV}$对应于$E/hc = 8065.544\:\mathrm{cm}^{-1}$（问题11.29）。
+
+    图 \ref{fig:11.4} 显示了碳原子的部分谱项能量。由于各谱项支项之间的间隔太小，因此无法在图中看到。
 
 
 
 \section{自旋-轨道耦合}
 \label{sec:11.6 Spin-Orbit Interaction}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{原子哈密顿算符}
 \label{sec:11.7 The Atomic Hamiltonian}
