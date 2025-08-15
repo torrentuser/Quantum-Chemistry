@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  14 AUG 2025 14:08
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  15 AUG 2025 10:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2306,13 +2306,46 @@ File: Figures/11.6.png Graphic file (type bmp)
 
 ]
 Chapter 12.
-) (./chapters/13.tex
+File: Figures/12.1.png Graphic file (type bmp)
+<Figures/12.1.png>
+File: Figures/12.2.png Graphic file (type bmp)
+<Figures/12.2.png>
+File: Figures/12.3.png Graphic file (type bmp)
+<Figures/12.3.png>
+File: Figures/12.4.png Graphic file (type bmp)
+<Figures/12.4.png>
+
 
 [249]
+File: Figures/12.5.png Graphic file (type bmp)
+<Figures/12.5.png>
+File: Figures/12.6.png Graphic file (type bmp)
+<Figures/12.6.png>
 
-[250
 
-]
+[250]
+
+[251]
+File: Figures/12.7.png Graphic file (type bmp)
+<Figures/12.7.png>
+File: Figures/12.8.png Graphic file (type bmp)
+<Figures/12.8.png>
+
+
+[252]
+
+[253]
+File: Figures/12.9.png Graphic file (type bmp)
+<Figures/12.9.png>
+File: Figures/12.10.png Graphic file (type bmp)
+<Figures/12.10.png>
+
+
+[254]) (./chapters/13.tex
+
+[255]
+
+[256]
 Chapter 13.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 15.05785pt on input line 16.
@@ -2351,20 +2384,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[251]
+[257
+
+]
 Overfull \vbox (137.1515pt too high) has occurred while \output is active []
 
 
 
-[252]
+[258]
 Chapter 14.
 ) (./chapters/15.tex
 
-[253
+[259
 
 ]
 
-[254
+[260
 
 ]
 Chapter 15.
@@ -2377,70 +2412,70 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[255]
+[261]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
 
-[256]
+[262]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[257
+[263
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
 
-[258]
+[264]
 Chapter 17.
 
 
-[259
+[265
 
 ]) (./chapters/appendix.tex
 
-[260]
+[266]
 附录 A.
 ) (./chapters/bibliography.tex
 
-[261
+[267
 
 ]
 
-[262
+[268
 
 ]
 附录 B.
 
 
-[263]
+[269]
 
-[264
+[270
 
 ]) (./chapters/answers.tex
 
-[265]
+[271]
 
-[266
+[272
 
 ]
 附录 C.
 ) (./chapters/index.tex
 
-[267]
+[273]
 
-[268
+[274
 
 ]
 附录 D.
 )
 
-[269] (./Quantum Chemistry.aux)
+[275] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -2454,12 +2489,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 43061 strings out of 473832
- 974894 string characters out of 5726732
- 1600267 words of memory out of 5000000
- 65381 multiletter control sequences out of 15000+600000
+ 43175 strings out of 473832
+ 977506 string characters out of 5726732
+ 1601200 words of memory out of 5000000
+ 65485 multiletter control sequences out of 15000+600000
  571128 words of font info for 159 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,25n,111p,1743b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (277 pages).
+Output written on Quantum Chemistry.pdf (283 pages).
