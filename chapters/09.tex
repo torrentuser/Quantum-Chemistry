@@ -27,7 +27,7 @@
     \end{equation}
     若(\ref{eq:9.3})中的常数$c$和$d$很小，我们可以预测非谐振子的本征函数和本征值与谐振子的非常接近。
 
-    我们称具有哈密顿量$\hat{H}^0$的系统为\textbf{未扰动系统}（unperturbed system），具有哈密顿量$\hat{H}$的系统为\textbf{扰动系统}（perturbed system）。二哈密顿量之间的不同$\hat{H}'$称为\textbf{微扰}（perturbation），记为：
+    我们称具有哈密顿量$\hat{H}^0$的系统为\textbf{无扰系统}（unperturbed system），具有哈密顿量$\hat{H}$的系统为\textbf{受扰系统}（perturbed system）。二哈密顿量之间的不同$\hat{H}'$称为\textbf{微扰}（perturbation），记为：
     \begin{equation}
         \hat{H}' \equiv \hat{H} - \hat{H}^0
         \label{eq:9.5}
@@ -40,23 +40,23 @@
     \end{equation}
     （符号$\prime$不表示微分。）对于具有哈密顿量(\ref{eq:9.3})的非谐振子，对相关的谐振子的微扰为$\hat{H}' = cx^3 + dx^4$。
 
-    在$\hat{H}^0 \psi_n^{\left(0\right)} = E_n^{\left(0\right)} \psi_n^{\left(0\right)}$[式(\ref{eq:9.2})]中，$E_n^{\left(0\right)}$和$\psi_n^{\left(0\right)}$分别称为状态$n$的\textbf{未扰动能量}（unperturbed energy）和\textbf{未扰动波函数}（unperturbed wave function）。若$\hat{H}^0$为谐振子的哈密顿量(\ref{eq:9.4})，则$E_n^{\left(0\right)} = \left(n + \frac{1}{2}\right)h\nu$[式(\ref{eq:4.45})]，其中的$n$是非负整数。（我们使用$n$代替$v$为了与微扰理论符号保持一致。）上标$^{(0)}$不表示基态。微扰理论可以应用于任何状态。下标$n$表示我们正在处理的状态。而上标$^{(0)}$表示未扰动系统的状态。
+    在$\hat{H}^0 \psi_n^{\left(0\right)} = E_n^{\left(0\right)} \psi_n^{\left(0\right)}$[式(\ref{eq:9.2})]中，$E_n^{\left(0\right)}$和$\psi_n^{\left(0\right)}$分别称为状态$n$的\textbf{无扰能量}（unperturbed energy）和\textbf{无扰波函数}（unperturbed wave function）。若$\hat{H}^0$为谐振子的哈密顿量(\ref{eq:9.4})，则$E_n^{\left(0\right)} = \left(n + \frac{1}{2}\right)h\nu$[式(\ref{eq:4.45})]，其中的$n$是非负整数。（我们使用$n$代替$v$为了与微扰理论符号保持一致。）上标$^{(0)}$不表示基态。微扰理论可以应用于任何状态。下标$n$表示我们正在处理的状态。而上标$^{(0)}$表示无扰系统的状态。
 
-    我们的目标是将扰动系统位置的本征函数和本征值与未扰动系统已知的本征函数和本征值联系起来。为此，我们假定扰动是逐渐增加的，从未扰动系统到扰动系统的变化是连续的。在数学上，这相当于在哈密顿量中插入了一个参数$\lambda$，使得
+    我们的目标是将受扰系统位置的本征函数和本征值与无扰系统已知的本征函数和本征值联系起来。为此，我们假定微扰是逐渐增加的，从无扰系统到受扰系统的变化是连续的。在数学上，这相当于在哈密顿量中插入了一个参数$\lambda$，使得
     \begin{equation}
         \hat{H} = \hat{H}^0 + \lambda \hat{H}'
         \label{eq:9.7}
     \end{equation}
-    当$\lambda$为零时，系统为未扰动系统。随着$\lambda$的增加，扰动逐渐变大，在$\lambda=1$时，扰动完全“被打开”。我们插入$\lambda$是为了将扰动本征函数和未扰动本征函数关联起来，最终设定$\lambda=1$并删去它。
+    当$\lambda$为零时，系统为无扰系统。随着$\lambda$的增加，微扰逐渐变大，在$\lambda=1$时，微扰完全“被打开”。我们插入$\lambda$是为了将受扰本征函数和无扰本征函数关联起来，最终设定$\lambda=1$并删去它。
 
     第9.1-9.7节处理定态哈密顿量和定态系统，第\ref{sec:9.8 Time-dependent Perturbation Theory}节处理含时微扰理论。
 
 \section{非简并微扰理论}
 \label{sec:9.2 Nondegenerate Perturbation Theory}
-    微扰理论处理简并和非简并能级的方式不同。本节将研究微扰对非简并能级的影响。若某未扰动系统的能级是简并的，而另一些是非简并的，那么本节的处理方法将只适用于非简并能级。
+    微扰理论处理简并和非简并能级的方式不同。本节将研究微扰对非简并能级的影响。若某无扰系统的能级是简并的，而另一些是非简并的，那么本节的处理方法将只适用于非简并能级。
 
 \subsection*{非简并微扰理论}
-    令$\psi_n^{\left(0\right)}$为能量为$E_n^{\left(0\right)}$的某个非简并未扰动系统的波函数。再令$\psi_n$为扰动系统的波函数，在施加扰动后，$\psi_n^{\left(0\right)}$变为$\psi_n$。由(\ref{eq:9.1})和(\ref{eq:9.7})，扰动态的薛定谔方程为
+    令$\psi_n^{\left(0\right)}$为能量为$E_n^{\left(0\right)}$的某个非简并无扰系统的波函数。再令$\psi_n$为受扰系统的波函数，在施加微扰后，$\psi_n^{\left(0\right)}$变为$\psi_n$。由(\ref{eq:9.1})和(\ref{eq:9.7})，受扰态的薛定谔方程为
     \begin{equation}
         \hat{H}\psi_n = \left(\hat{H}^0 + \lambda \hat{H}'\right)\psi_n = E_n \psi_n
         \label{eq:9.8}
@@ -93,7 +93,7 @@
         E_n = E_n^{\left(0\right)} + \lambda E_n^{\left(1\right)} + \lambda^2 E_n^{\left(2\right)} + \cdots + \lambda^k E_n^{\left(k\right)} + \cdots
         \label{eq:9.14}
     \end{equation}
-    对于$k = 1,2,3,\ldots$，我们称$\psi_n^{\left(k\right)}$和$E_n^{\left(k\right)}$分别为波函数和能量的\textbf{$k$级校正}（$k$th-order correction）。我们假设级数(\ref{eq:9.13})和(\ref{eq:9.14})在$\lambda=1$处收敛，我们希望，对于小扰动，只取级数的前几项就能很好地逼近真实的能量和波函数。（通常，微扰理论的级数并不收敛，尽管如此，不收敛级数的前几项也能给出有用的近似值。）
+    对于$k = 1,2,3,\ldots$，我们称$\psi_n^{\left(k\right)}$和$E_n^{\left(k\right)}$分别为波函数和能量的\textbf{$k$级校正}（$k$th-order correction）。我们假设级数(\ref{eq:9.13})和(\ref{eq:9.14})在$\lambda=1$处收敛，我们希望，对于小微扰，只取级数的前几项就能很好地逼近真实的能量和波函数。（通常，微扰理论的级数并不收敛，尽管如此，不收敛级数的前几项也能给出有用的近似值。）
 
     令$\psi_n^{\left(0\right)}$归一化：$\left\langle \psi_n^{\left(0\right)} \middle| \psi_n^{\left(0\right)} \right\rangle = 1$。与令$\psi_n$归一化不同，我们要求$\psi_n$满足
     \begin{equation}
@@ -130,7 +130,7 @@
     \end{equation}
     现在（假设收敛性合适），要使 (\ref{eq:9.17}) 两边的两个级数对所有 $\lambda$ 值都相等，两个级数中 $\lambda$ 的同次幂的系数必须相等。
 
-    令$\lambda^0$项的系数相等，我们得到$\hat{H}^0 \psi_n^{\left(0\right)} = E_n^{\left(0\right)} \psi_n^{\left(0\right)}$，这是未扰动系统的薛定谔方程(\ref{eq:9.2})，没有给我们有用的信息。
+    令$\lambda^0$项的系数相等，我们得到$\hat{H}^0 \psi_n^{\left(0\right)} = E_n^{\left(0\right)} \psi_n^{\left(0\right)}$，这是无扰系统的薛定谔方程(\ref{eq:9.2})，没有给我们有用的信息。
 
     令$\lambda^1$项的系数相等，我们得到
     \begin{equation*}
@@ -156,7 +156,7 @@
         \end{aligned}
         \label{eq:9.20}
     \end{equation}
-    其中我们用到了未扰动薛定谔方程$\hat{H}^0 \psi_m^{\left(0\right)} = E_m^{\left(0\right)} \psi_m^{\left(0\right)}$、$E_m^{\left(0\right)}$是实数以及(\ref{eq:7.4})。将(\ref{eq:9.20})代入(\ref{eq:9.19})，对未扰动本征函数使用正交方程$\left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(0\right)} \right\rangle = \delta_{mn}$，我们得到
+    其中我们用到了无扰薛定谔方程$\hat{H}^0 \psi_m^{\left(0\right)} = E_m^{\left(0\right)} \psi_m^{\left(0\right)}$、$E_m^{\left(0\right)}$是实数以及(\ref{eq:7.4})。将(\ref{eq:9.20})代入(\ref{eq:9.19})，对无扰本征函数使用正交方程$\left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(0\right)} \right\rangle = \delta_{mn}$，我们得到
     \begin{equation}
         \left(E_m^{\left(0\right)} - E_n^{\left(0\right)}\right)\left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle = E_n^{\left(1\right)}\delta_{mn} - \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle
         \label{eq:9.21}
@@ -168,7 +168,7 @@
         }
         \label{eq:9.22}
     \end{equation}
-    \textit{通过对作用于适当未扰动波函数的扰动 $\hat{H}'$ 求平均值，可以求出能量的一级校正。}
+    \textit{通过对作用于适当无扰波函数的微扰 $\hat{H}'$ 求平均值，可以求出能量的一级校正。}
 
     在(\ref{eq:9.14})中令$\lambda=1$，我们得到
     \begin{equation}
@@ -177,7 +177,7 @@
     \end{equation}
 
     \begin{examplebox}
-        \textbf{例题：}对于具有哈密顿量(\ref{eq:9.3})的非谐振子，若未扰动系统取为谐振子，求基态的$E^{(1)}$。
+        \textbf{例题：}对于具有哈密顿量(\ref{eq:9.3})的非谐振子，若无扰系统取为谐振子，求基态的$E^{(1)}$。
         \\
 
         微扰由(\ref{eq:9.3})至(\ref{eq:9.5})给出：
@@ -192,7 +192,7 @@
         \begin{equation*}
             E_0^{\left(1\right)} = 2d\left(\frac{\alpha}{\pi}\right)^{1/2} \int_{0}^{\infty} \mathrm{e}^{-\alpha x^2} x^4 \:\mathrm{d}x = \frac{3d}{4\alpha^2} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
         \end{equation*}
-        未扰动基态能量为$E_0^{\left(0\right)} = \frac{1}{2}h\nu$，$E_0^{\left(0\right)} + E_0^{\left(1\right)} = \frac{1}{2}h\nu + \frac{3dh^2}{64\pi^4 \nu^2 m^2}$。
+        无扰基态能量为$E_0^{\left(0\right)} = \frac{1}{2}h\nu$，$E_0^{\left(0\right)} + E_0^{\left(1\right)} = \frac{1}{2}h\nu + \frac{3dh^2}{64\pi^4 \nu^2 m^2}$。
         \\
 
         \textbf{练习：}考虑一个单粒子一维系统，其势能函数满足
@@ -219,7 +219,7 @@
         \left(E_m^{\left(0\right)} - E_n^{\left(0\right)}\right)\left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle = - \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle, \quad m \neq n
         \label{eq:9.24}
     \end{equation}
-    为了求出$\psi_n^{\left(1\right)}$，我们将其用厄米算符$\hat{H}^0$的未扰动本征函数$\psi_m^{\left(0\right)}$完整正交集展开：
+    为了求出$\psi_n^{\left(1\right)}$，我们将其用厄米算符$\hat{H}^0$的无扰本征函数$\psi_m^{\left(0\right)}$完整正交集展开：
     \begin{equation}
         \psi_n^{\left(1\right)} = \sum_{m} a_m \psi_m^{\left(0\right)}, \quad \text{其中} \quad a_m = \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle
         \label{eq:9.25}
@@ -238,7 +238,7 @@
         \psi_n^{\left(1\right)} = \sum_{m \neq n} \frac{\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} \psi_m^{\left(0\right)}
         \label{eq:9.27}
     \end{equation}
-    符号$\sum_{m \neq n}$表示对所有未扰动的状态求和，除了状态$n$。
+    符号$\sum_{m \neq n}$表示对所有无扰的状态求和，除了状态$n$。
 
     在(\ref{eq:9.13})中令$\lambda=1$，仅使用波函数的一级校正，我们得到了微扰波函数的近似：
     \begin{equation}
@@ -267,7 +267,7 @@
         \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}^0 \middle| \psi_n^{\left(2\right)} \right\rangle = E_m^{\left(0\right)} \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(2\right)} \right\rangle
         \label{eq:9.31}
     \end{equation}
-    利用 (\ref{eq:9.31}) 和 (\ref{eq:9.30}) 中未扰动函数的正交性，可以得出
+    利用 (\ref{eq:9.31}) 和 (\ref{eq:9.30}) 中无扰函数的正交性，可以得出
     \begin{equation}
         \left(E_m^{\left(0\right)} - E_n^{\left(0\right)}\right)\left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(2\right)} \right\rangle = E_n^{\left(2\right)} \delta_{mn} + E_n^{\left(1\right)} \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle - \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(1\right)} \right\rangle
         \label{eq:9.32}
@@ -301,14 +301,14 @@
         E_n^{\left(2\right)} = \sum_{m \neq n} \frac{\left|\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle\right|^2}{E_n^{\left(0\right)} - E_m^{\left(0\right)}}
         \label{eq:9.35}
     \end{equation}
-    这正是我们需要的，用未扰动波函数和能量表示的$E_n^{\left(2\right)}$。
+    这正是我们需要的，用无扰波函数和能量表示的$E_n^{\left(2\right)}$。
 
     将$E_n^{\left(2\right)}$和$\lambda=1$代入(\ref{eq:9.14})，可以得到微扰态能量的近似值为
     \begin{equation}
         E_n \approx E_n^{\left(0\right)} + H'_{nn} + \sum_{m \neq n} \frac{\left|\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle\right|^2}{E_n^{\left(0\right)} - E_m^{\left(0\right)}}
         \label{eq:9.36}
     \end{equation}
-    其中的积分是对未扰动归一化波函数的积分。
+    其中的积分是对无扰归一化波函数的积分。
 
     有关高阶能量修正的公式，请参见\textit{Bates}，Volume I，pages 181-185 。本节提出的微扰理论形式称为\textit{瑞利-薛定谔微扰理论}（Rayleigh-Schrödinger perturbation theory）；还存在其他方法。
 
@@ -320,7 +320,7 @@
 
     (\ref{eq:9.28}) 和 (\ref{eq:9.36}) 中的和是不同状态的和，而不是不同能量值的和。如果某些能级（第 $n$ 个能级除外）是简并的，我们必须在总和中为简并能级对应的每个线性无关波函数加入某个项。
 
-    我们在 (\ref{eq:9.28}) 和 (\ref{eq:9.36}) 中对状态求和，是因为我们需要一组完整的函数来展开 (\ref{eq:9.25}) ，因此我们必须在求和中包含所有线性无关的波函数。如果未扰动问题具有连续的波函数（例如氢原子），我们还必须对连续波函数进行积分，这样才能得到一组完整的波函数。若$\psi_E^{\left(0\right)}$是能量为$E$的未扰动连续波函数，则(\ref{eq:9.27})和(\ref{eq:9.35})变为
+    我们在 (\ref{eq:9.28}) 和 (\ref{eq:9.36}) 中对状态求和，是因为我们需要一组完整的函数来展开 (\ref{eq:9.25}) ，因此我们必须在求和中包含所有线性无关的波函数。如果无扰问题具有连续的波函数（例如氢原子），我们还必须对连续波函数进行积分，这样才能得到一组完整的波函数。若$\psi_E^{\left(0\right)}$是能量为$E$的无扰连续波函数，则(\ref{eq:9.27})和(\ref{eq:9.35})变为
     \begin{equation*}
         \psi_n^{\left(1\right)} = \sum_{m \neq n} \frac{H'_{nn}}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} \psi_m^{\left(0\right)} + \int \frac{H'_{E,n}}{E_n^{\left(0\right)} - E^{\left(0\right)}} \psi_E^{\left(0\right)} \:\mathrm{d}E^{\left(0\right)}
     \end{equation*}
@@ -328,7 +328,7 @@
         E_n^{\left(2\right)} = \sum_{m \neq n} \frac{\left|H'_{mn}\right|^2}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} + \int \frac{\left|H'_{E,n}\right|^2}{E_n^{\left(0\right)} - E^{\left(0\right)}} \:\mathrm{d}E^{\left(0\right)}
         \label{eq:9.37}
     \end{equation}
-    其中$H'_{E,n} = \left\langle \psi_E^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle$。这些方程中的积分是在连续态能量范围内进行的（例如，氢原子的能量从零到无穷大）。未扰动问题中连续态的存在使得 $E_n^{\left(2\right)}$ 的计算变得更加困难。
+    其中$H'_{E,n} = \left\langle \psi_E^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle$。这些方程中的积分是在连续态能量范围内进行的（例如，氢原子的能量从零到无穷大）。无扰问题中连续态的存在使得 $E_n^{\left(2\right)}$ 的计算变得更加困难。
 
 \subsection*{变分法和微扰法的比较}
 
@@ -340,7 +340,7 @@
 
 \subsection*{变分-微扰法}
 
-    通过变分-微扰法，我们可以精确地估算出系统基态的 $E^{\left(2\right)}$ 和高级扰动理论能量校正，而无需计算 (\ref{eq:9.36}) 中的无限和。该方法基于以下不等式：
+    通过变分-微扰法，我们可以精确地估算出系统基态的 $E^{\left(2\right)}$ 和高级微扰理论能量校正，而无需计算 (\ref{eq:9.36}) 中的无限和。该方法基于以下不等式：
     \begin{equation}
         \left\langle u \middle| \hat{H}^0 - E_g^{\left(0\right)} \middle| u \right\rangle + \left\langle u \middle| \hat{H}' - E_g^{\left(1\right)} \middle| \psi_g^{\left(0\right)} \right\rangle + \left\langle \psi_g^{\left(0\right)} \middle| \hat{H}' - E_g^{\left(1\right)} \middle| u \right\rangle \geq E_g^{\left(2\right)}
         \label{eq:9.38}
@@ -386,14 +386,14 @@
         \hat{H}_1^0 \equiv -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_1}, \quad \hat{H}_2^0 \equiv -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_2}
         \label{eq:9.43}
     \end{equation}
-    未受扰动的系统是两个电子互不施力的氦原子。虽然这样的系统并不存在，但这并不妨碍我们将微扰理论应用于这一系统。
+    未受微扰的系统是两个电子互不施力的氦原子。虽然这样的系统并不存在，但这并不妨碍我们将微扰理论应用于这一系统。
 
-    由于未扰动哈密顿算符（\ref{eq:9.42}）是两个独立粒子的哈密顿算符之和，我们可以利用公式 (\ref{eq:6.18}) 至 (\ref{eq:6.24}) 的变量分离结果得出结论：未扰动波函数的形式为
+    由于无扰哈密顿算符（\ref{eq:9.42}）是两个独立粒子的哈密顿算符之和，我们可以利用公式 (\ref{eq:6.18}) 至 (\ref{eq:6.24}) 的变量分离结果得出结论：无扰波函数的形式为
     \begin{equation}
         \psi^{\left(0\right)}\left(r_1,\theta_1,\phi_1,r_2,\theta_2,\phi_2\right) = F_1\left(r_1,\theta_1,\phi_1\right) F_2\left(r_2,\theta_2,\phi_2\right)
         \label{eq:9.44}
     \end{equation}
-    未扰动能量为
+    无扰能量为
     \begin{equation}
         E^{\left(0\right)} = E_1 + E_2
         \label{eq:9.45}
@@ -421,7 +421,7 @@
         \psi_{1s^2}^{\left(0\right)} = \frac{1}{\pi^{1/2}}\left(\frac{Z}{a_0}\right)^{3/2} \mathrm{e}^{-Zr_1/a_0} \cdot \frac{1}{\pi^{1/2}}\left(\frac{Z}{a_0}\right)^{3/2} \mathrm{e}^{-Zr_2/a_0} = 1s\left(1\right)1s\left(2\right)
         \label{eq:9.49}
     \end{equation}
-    其中$1s\left(1\right)1s\left(2\right)$表示电子1和2的类氢$1s$波函数的乘积，下标表示两个电子都在类氢$1s$轨道中。（请注意，将电子分配到轨道并将原子波函数写成单电子轨道函数的乘积的过程只是一种\textit{近似}。）该未扰动基态能量为
+    其中$1s\left(1\right)1s\left(2\right)$表示电子1和2的类氢$1s$波函数的乘积，下标表示两个电子都在类氢$1s$轨道中。（请注意，将电子分配到轨道并将原子波函数写成单电子轨道函数的乘积的过程只是一种\textit{近似}。）该无扰基态能量为
     \begin{equation}
         E^{\left(0\right)}_{1s^2} = -Z^2\left(2\right)\frac{\mathrm{e}^2}{8\pi\varepsilon_0a_0}
         \label{eq:9.50}
@@ -434,7 +434,7 @@
 
     这个零级能量与真正的氦原子基态能量相比如何？\ce{He}原子第一电离能的实验值为$24.587 \: \mathrm{eV}$。\ce{He} 的第二电离能很容易从理论上计算出来，因为它是类氢离子\ce{He^+}的电离能，等于$2^2\left(13.604 \: \mathrm{eV}\right) = 54.416 \: \mathrm{eV}$。如果我们选择完全电离原子的能量为零[这一选择隐含在 (\ref{eq:9.39}) 中]，那么氦原子的基态能量为$-\left(24.587 + 54.416\right) \: \mathrm{eV} = -79.00 \: \mathrm{eV}$。零级能量 (\ref{eq:9.51}) 的误差为 $38\%$。我们本应预料到如此大的误差，因为微扰项$\mathrm{e}^2 / 4\pi\varepsilon_0r_{12}$并不小。
 
-    下一步是计算能量的一级微扰校正。未扰动基态是非简并的，使用(\ref{eq:9.22})和(\ref{eq:9.49})，得到
+    下一步是计算能量的一级微扰校正。无扰基态是非简并的，使用(\ref{eq:9.22})和(\ref{eq:9.49})，得到
     \begin{equation*}
         E^{\left(1\right)} = \left\langle \psi^{\left(0\right)} \middle| \hat{H}' \middle| \psi^{\left(0\right)} \right\rangle
     \end{equation*}
@@ -462,7 +462,7 @@
     \end{equation}
     与实验值$-79.00 \: \mathrm{eV}$相比，误差为$5.3\%$。
 
-    要计算对波函数的一级校正和对能量的高级校正，需要计算未扰动的基态和所有激发态（包括连续态）之间的 $1/r_{12}$ 矩阵元素，并进行适当的求和与积分。目前还没有人知道如何直接计算 $E^{\left(1\right)}$ 的所有贡献。请注意，$\psi^{\left(1\right)}$ 的作用是将 $1s^2$ 以外其他构型的贡献混入波函数。对氦的真实基态波函数贡献最大的是 $1s^2$ 构型，即未扰动（零阶）波函数。
+    要计算对波函数的一级校正和对能量的高级校正，需要计算无扰的基态和所有激发态（包括连续态）之间的 $1/r_{12}$ 矩阵元素，并进行适当的求和与积分。目前还没有人知道如何直接计算 $E^{\left(1\right)}$ 的所有贡献。请注意，$\psi^{\left(1\right)}$ 的作用是将 $1s^2$ 以外其他构型的贡献混入波函数。对氦的真实基态波函数贡献最大的是 $1s^2$ 构型，即无扰（零阶）波函数。
 
     氦原子基态的$E^{\left(2\right)}$值已使用变分-微扰法(\ref{eq:9.38})得到计算结果。Scherr和Knight使用 100 项的试探函数，得到了六级波函数校正极其精确的近似值，从而得到了十三级能量校正的近似值[C. W. Scherr and R. E. Knight, \textit{Rev. Mod. Phys.}, \textbf{35}, 436 (1963)]。有关计算401级能量校正，见J. D. Baker et al., \textit{Phys. Rev. A}, \textbf{41}, 1247 (1990)。二级校正$E^{\left(2\right)}$的值为$-4.29 \: \mathrm{eV}$，$E^{\left(3\right)}$为$+0.12 \: \mathrm{eV}$。根据三级校正，我们得到基态能量为
     \begin{equation*}
@@ -587,7 +587,7 @@
 
 \section{简并能级的微扰理论}
 \label{sec:9.5 Perturbation Theory for a Degenerate Energy Level}
-    我们现在考虑对简并度为$d$的能级进行微扰处理。我们有$d$个线性无关的未扰动本征函数对应于简并能级。使用标签$1,2,\ldots$来标记这些简并态，但这并不意味着它们是能量最低的状态。未扰动薛定谔方程为
+    我们现在考虑对简并度为$d$的能级进行微扰处理。我们有$d$个线性无关的无扰本征函数对应于简并能级。使用标签$1,2,\ldots$来标记这些简并态，但这并不意味着它们是能量最低的状态。无扰薛定谔方程为
     \begin{equation}
         \hat{H}^0\psi_n^{\left(0\right)} = E_n^{\left(0\right)}\psi_n^{\left(0\right)}
         \label{eq:9.67}
@@ -606,7 +606,7 @@
         \hat{H} = \hat{H}^0 + \lambda\hat{H}'
         \label{eq:9.70}
     \end{equation}
-    随着$\lambda$趋于零，(\ref{eq:9.69})的本征值趋于(\ref{eq:9.67})的本征值，我们有$\lim_{\lambda \to 0} E_n = E_n^{\left(0\right)}$。图\ref{fig:9.2}显示了一个假设的，具有六种状态和三重简并的未扰动系统。注意：微扰会导致简并能级的分裂。在某些情况下，微扰可能对简并没有影响，或只能部分消除简并现象。
+    随着$\lambda$趋于零，(\ref{eq:9.69})的本征值趋于(\ref{eq:9.67})的本征值，我们有$\lim_{\lambda \to 0} E_n = E_n^{\left(0\right)}$。图\ref{fig:9.2}显示了一个假设的，具有六种状态和三重简并的无扰系统。注意：微扰会导致简并能级的分裂。在某些情况下，微扰可能对简并没有影响，或只能部分消除简并现象。
     \begin{figure}[ht]
         \centering
         \includegraphics[width=0.4\textwidth]{Figures/9.2.png}
@@ -619,7 +619,7 @@
         c_1\psi_1^{\left(0\right)} + c_2\psi_2^{\left(0\right)} + \ldots + c_d\psi_d^{\left(0\right)}
         \label{eq:9.71}
     \end{equation}
-    都是(\ref{eq:9.67})的解，本征值也为(\ref{eq:9.68})。线性无关的归一化函数集 $\psi_1^{\left(0\right)}, \psi_2^{\left(0\right)},\ldots,\psi_d^{\left(0\right)}$（我们将其用作对应于简并能级的本征函数）并不是唯一的。利用 (\ref{eq:9.71}) ，我们可以为简并能级构造出无穷多组由 $d$ 个线性无关的归一化特征函数构成的函数组。就未扰动问题而言，这样的集合与其他集合一样好。例如，对于氢原子三重简并的$2p$态，我们可以使用$2p_1$、$2p_0$和$2p_{-1}$作为基态函数，也可以使用$2p_x$、$2p_y$和$2p_z$，或其他一些由三个线性无关的函数组成的集合，这些函数是由前述集合的元素线性组合而成的。对于与 $d$ 重简并未扰动能级相对应的微扰本征函数，我们只能说，当 $\lambda$ 接近零时，它们各自接近非扰动特征函数的线性组合：
+    都是(\ref{eq:9.67})的解，本征值也为(\ref{eq:9.68})。线性无关的归一化函数集 $\psi_1^{\left(0\right)}, \psi_2^{\left(0\right)},\ldots,\psi_d^{\left(0\right)}$（我们将其用作对应于简并能级的本征函数）并不是唯一的。利用 (\ref{eq:9.71}) ，我们可以为简并能级构造出无穷多组由 $d$ 个线性无关的归一化特征函数构成的函数组。就无扰问题而言，这样的集合与其他集合一样好。例如，对于氢原子三重简并的$2p$态，我们可以使用$2p_1$、$2p_0$和$2p_{-1}$作为基态函数，也可以使用$2p_x$、$2p_y$和$2p_z$，或其他一些由三个线性无关的函数组成的集合，这些函数是由前述集合的元素线性组合而成的。对于与 $d$ 重简并无扰能级相对应的微扰本征函数，我们只能说，当 $\lambda$ 接近零时，它们各自接近无扰本征函数的线性组合：
     \begin{equation}
         \lim_{\lambda \to 0} \psi_n = \sum_{i=1}^{d}c_1\psi_i^{\left(0\right)}, \quad 1 \leq n \leq d
         \label{eq:9.72}
@@ -658,7 +658,7 @@
         \hat{H}^{\left(0\right)}\psi_n^{\left(1\right)} - E_d^{\left(0\right)}\psi_n^{\left(1\right)} = E_n^{\left(1\right)}\phi_n^{\left(0\right)} - \hat{H}'\phi_n^{\left(0\right)}, \quad n = 1,2,\ldots,d
         \label{eq:9.76}
     \end{equation}
-    将(\ref{eq:9.76})两边乘上$\phi_m^{\left(0\right)*}$并对全空间积分，其中，$m$ 是与所考虑的 $d$ 重简并未扰动能级相对应的状态之一；即$1 \leq m \leq d$。我们得到
+    将(\ref{eq:9.76})两边乘上$\phi_m^{\left(0\right)*}$并对全空间积分，其中，$m$ 是与所考虑的 $d$ 重简并无扰能级相对应的状态之一；即$1 \leq m \leq d$。我们得到
     \begin{equation}
         \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle - E_d^{\left(0\right)} \left\langle \psi_m^{\left(0\right)} \middle| \psi_n^{\left(1\right)} \right\rangle = E^{\left(1\right)}\left\langle \psi_m^{\left(0\right)} \middle| \phi_n^{\left(0\right)} \right\rangle - \left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \phi_n^{\left(0\right)} \right\rangle, \quad n = 1,2,\ldots,d
         \label{eq:9.77}
@@ -712,7 +712,7 @@
         \label{eq:9.83}
     \end{equation}
 
-    \textbf{久期方程}(\ref{eq:9.83})（secular equation）是关于$E_n^{\left(1\right)}$的$d$次代数方程。它有$d$个根，$E_1^{\left(1\right)}, E_2^{\left(1\right)}, \ldots, E_d^{\left(1\right)}$，是对 $d$ 重简并未扰动能级能量的一级校正。如果所有根都不同，那么微扰的一级校正就把 $d$ 重简并的未扰动能级分成了 $d$ 个不同的扰动能级（通过一级校正）：
+    \textbf{久期方程}(\ref{eq:9.83})（secular equation）是关于$E_n^{\left(1\right)}$的$d$次代数方程。它有$d$个根，$E_1^{\left(1\right)}, E_2^{\left(1\right)}, \ldots, E_d^{\left(1\right)}$，是对 $d$ 重简并无扰能级能量的一级校正。如果所有根都不同，那么微扰的一级校正就把 $d$ 重简并的无扰能级分成了 $d$ 个不同的受扰能级（通过一级校正）：
     \begin{equation*}
         E_d^{\left(0\right)} + E_1^{\left(1\right)}, \quad E_d^{\left(0\right)} + E_2^{\left(1\right)}, \quad \ldots, \quad E_d^{\left(0\right)} + E_d^{\left(1\right)}
     \end{equation*}
@@ -739,7 +739,7 @@
 
     利用与非简并情况类似的步骤，我们现在可以找到对校正零阶波函数的一级校正和二级能量校正。结果见\textit{Bates}, Volume I, pages 197–198; \textit{Hameka}, pages 230–231。
 
-    举一个例子，考虑微扰项$\hat{H}'$作用于立方势箱中粒子最低的简并能级。我们有三个状态与该能级相对应：$\psi_{211}^{\left(0\right)}$、$\psi_{121}^{\left(0\right)}$和$\psi_{112}^{\left(0\right)}$。这些未扰动波函数是正交的，久期方程(\ref{eq:9.83})为
+    举一个例子，考虑微扰项$\hat{H}'$作用于立方势箱中粒子最低的简并能级。我们有三个状态与该能级相对应：$\psi_{211}^{\left(0\right)}$、$\psi_{121}^{\left(0\right)}$和$\psi_{112}^{\left(0\right)}$。这些无扰波函数是正交的，久期方程(\ref{eq:9.83})为
     \begin{equation}
         \begin{vmatrix}
             \left\langle 211 \middle| \hat{H}' \middle| 211 \right\rangle - E_n^{\left(1\right)} & \left\langle 211 \middle| \hat{H}' \middle| 121 \right\rangle & \left\langle 211 \middle| \hat{H}' \middle| 112 \right\rangle \\
@@ -748,7 +748,7 @@
         \end{vmatrix} = 0
         \label{eq:9.87}
     \end{equation}
-    解出该方程，我们得到一级能量校正：$E_1^{\left(1\right)}$、$E_2^{\left(1\right)}$和$E_3^{\left(1\right)}$。三重简并的未扰动能级分裂为三个不同的能级（通过第一顺序）：$\left(6h^2/8ma^2\right) + E_1^{\left(1\right)}$、$\left(6h^2/8ma^2\right) + E_2^{\left(1\right)}$、$\left(6h^2/8ma^2\right) + E_3^{\left(1\right)}$。分别使用根$E_1^{\left(1\right)}$、$E_2^{\left(1\right)}$和$E_3^{\left(1\right)}$，我们可以得到不同的方程组(\ref{eq:9.81})。求出每个方程，我们得到三组系数，它们决定了三个校正零级波函数。
+    解出该方程，我们得到一级能量校正：$E_1^{\left(1\right)}$、$E_2^{\left(1\right)}$和$E_3^{\left(1\right)}$。三重简并的无扰能级分裂为三个不同的能级（通过第一顺序）：$\left(6h^2/8ma^2\right) + E_1^{\left(1\right)}$、$\left(6h^2/8ma^2\right) + E_2^{\left(1\right)}$、$\left(6h^2/8ma^2\right) + E_3^{\left(1\right)}$。分别使用根$E_1^{\left(1\right)}$、$E_2^{\left(1\right)}$和$E_3^{\left(1\right)}$，我们可以得到不同的方程组(\ref{eq:9.81})。求出每个方程，我们得到三组系数，它们决定了三个校正零级波函数。
 
     如果您对矩阵代数比较熟悉，可以注意到：求解(\ref{eq:9.83})和(\ref{eq:9.81})等价于求元素为$\left\langle \psi_m^{\left(0\right)} \middle| \hat{H}' \middle| \psi_i^{\left(0\right)} \right\rangle$的矩阵的本征值和本征向量。
 
@@ -814,19 +814,19 @@
 
     \textit{ 当简并微扰理论的久期行列式为块对角形式时，久期方程会分解为两个或多个较小的久期方程，系数$c_i$的联立方程组（\ref{eq:9.81}）也会分解为两个或多个较小的联立方程组。}
 
-    相反地，如果我们有一个四重简并的未扰动能级，且恰好知道$\phi_1^{\left(0\right)}$和$\phi_2^{\left(0\right)}$都只是$\psi_1^{\left(0\right)}$和$\psi_2^{\left(0\right)}$的线性组合，而$\phi_3^{\left(0\right)}$和$\phi_4^{\left(0\right)}$只是$\psi_3^{\left(0\right)}$和$\psi_4^{\left(0\right)}$的线性组合，则我们处理的是两个二阶久期行列式，而不是一个四阶久期行列式。
+    相反地，如果我们有一个四重简并的无扰能级，且恰好知道$\phi_1^{\left(0\right)}$和$\phi_2^{\left(0\right)}$都只是$\psi_1^{\left(0\right)}$和$\psi_2^{\left(0\right)}$的线性组合，而$\phi_3^{\left(0\right)}$和$\phi_4^{\left(0\right)}$只是$\psi_3^{\left(0\right)}$和$\psi_4^{\left(0\right)}$的线性组合，则我们处理的是两个二阶久期行列式，而不是一个四阶久期行列式。
 
-    如何事先选择正确的零级波函数，从而简化久期方程？假设有一算符$\hat{A}$同时与$\hat{H}^0$和$\hat{H}'$对易。我们可以选择未扰动波函数为$\hat{A}$的本征函数。由于$\hat{A}$与$\hat{H}^0$对易，若$\psi_i^{\left(0\right)}$和$\psi_j^{\left(0\right)}$对应于算符$\hat{A}$的不同本征值[见式(\ref{eq:7.50})]，则未扰动函数的选择将使积分$H'_{ij}$消失。因此，若$\hat{A}$的本征函数$\psi_1^{\left(0\right)}, \psi_2^{\left(0\right)}, \ldots, \psi_d^{\left(0\right)}$对应于不同的本征值，则久期行列式为对角形式，我们就得到了正确的零级波函数。若$\hat{A}$的某些本征值是相同的，我们就得到了块对角而不是纯对角形式的久期行列式。一般来说，正确的零级函数将是具有相同 $\hat{A}$ 本征值的未扰动函数的线性组合。（这是意料之中的，因为$\hat{H}$与$\hat{H} = \hat{H}^0 + \lambda\hat{H}'$对易，所以$\hat{H}$的微扰本征函数可以选择成为$\hat{A}$的本征函数。）例子见问题9.23。
+    如何事先选择正确的零级波函数，从而简化久期方程？假设有一算符$\hat{A}$同时与$\hat{H}^0$和$\hat{H}'$对易。我们可以选择无扰波函数为$\hat{A}$的本征函数。由于$\hat{A}$与$\hat{H}^0$对易，若$\psi_i^{\left(0\right)}$和$\psi_j^{\left(0\right)}$对应于算符$\hat{A}$的不同本征值[见式(\ref{eq:7.50})]，则无扰函数的选择将使积分$H'_{ij}$消失。因此，若$\hat{A}$的本征函数$\psi_1^{\left(0\right)}, \psi_2^{\left(0\right)}, \ldots, \psi_d^{\left(0\right)}$对应于不同的本征值，则久期行列式为对角形式，我们就得到了正确的零级波函数。若$\hat{A}$的某些本征值是相同的，我们就得到了块对角而不是纯对角形式的久期行列式。一般来说，正确的零级函数将是具有相同 $\hat{A}$ 本征值的无扰函数的线性组合。（这是意料之中的，因为$\hat{H}$与$\hat{H} = \hat{H}^0 + \lambda\hat{H}'$对易，所以$\hat{H}$的微扰本征函数可以选择成为$\hat{A}$的本征函数。）例子见问题9.23。
 
 \section{微扰理论处理氦原子第一激发态}
 \label{sec:9.7 Perturbation Treatment of the First Excited State of Helium}
 
-    第\ref{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}节中，我们已经使用微扰理论处理了氦原子基态。现在我们将处理氦原子第一激发态。未扰动能量由(\ref{eq:9.48})给出。最低未扰动激发态满足$n_1 = 1, n_2 = 2$或$n_1 = 2, n_2 = 1$，带入(\ref{eq:9.48})，我们得到
+    第\ref{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}节中，我们已经使用微扰理论处理了氦原子基态。现在我们将处理氦原子第一激发态。无扰能量由(\ref{eq:9.48})给出。最低无扰激发态满足$n_1 = 1, n_2 = 2$或$n_1 = 2, n_2 = 1$，带入(\ref{eq:9.48})，我们得到
     \begin{equation}
         E_n^{\left(0\right)} = -\frac{5Z^2}{8}\left(\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0}\right) = -\frac{20}{8}2\left(\frac{\mathrm{e}^2}{8\pi\varepsilon_0a_0}\right) = -5\left(13.606 \:\mathrm{eV}\right) = -68.03 \:\mathrm{eV}
         \label{eq:9.92}
     \end{equation}
-    回忆：类氢原子的$n=2$能级是四重简并的，$2s$和三个$2p$态都具有相同的能量值。\ce{He}原子第一未扰动激发态的能级是八重简并的。八个未扰动波函数为[式(\ref{eq:9.44})]：
+    回忆：类氢原子的$n=2$能级是四重简并的，$2s$和三个$2p$态都具有相同的能量值。\ce{He}原子第一无扰激发态的能级是八重简并的。八个无扰波函数为[式(\ref{eq:9.44})]：
     \begin{equation}
         \begin{aligned}
             \psi_1^{\left(0\right)} &= 1s\left(1\right)2s\left(2\right), \quad \psi_2^{\left(0\right)} = 2s\left(1\right)1s\left(2\right), \quad \psi_3^{\left(0\right)} = 1s\left(1\right)2p_x\left(2\right), \quad \psi_4^{\left(0\right)} = 2p_x\left(1\right)1s\left(2\right) \\
@@ -840,7 +840,7 @@
     \end{equation*}
     我们选择使用实$2p$类氢轨道，而不是其他复函数轨道。
 
-    由于未扰动能级是简并的，我们必须求解久期方程。久期方程(\ref{eq:9.83})假设函数$\psi_1^{\left(0\right)}, \psi_2^{\left(0\right)}, \ldots, \psi_8^{\left(0\right)}$是正交的。该条件已经满足。例如，
+    由于无扰能级是简并的，我们必须求解久期方程。久期方程(\ref{eq:9.83})假设函数$\psi_1^{\left(0\right)}, \psi_2^{\left(0\right)}, \ldots, \psi_8^{\left(0\right)}$是正交的。该条件已经满足。例如，
     \begin{equation*}
         \begin{aligned}
             \int \psi_1^{\left(0\right)*}\psi_1^{\left(0\right)}\mathrm{d}\tau &= \int\int 1s\left(1\right)^*2s\left(2\right)^*1s\left(1\right)2s\left(2\right)\:\mathrm{d}\tau_1\:\mathrm{d}\tau_2 \\
@@ -1048,7 +1048,7 @@
         \label{eq:9.110}
     \end{equation}
 
-    电子间排斥势$\mathrm{e}^2/4\pi\varepsilon_0 r_{12}$部分消除了简并的现象。假设的八重简并未扰动能级裂分为与组态$1s2s$相关的两个非简并能级和两个与组态$2s2p$相关的三重简并能级。人们可能认为，高级能量校正会进一步解决简并问题。事实上，要完全消除简并，需要施加外磁场。由于微扰$\mathrm{e}/4\pi\varepsilon_0a_0$项未完全消除简并，任何$\phi_3^{\left(0\right)},\phi_5^{\left(0\right)},\phi_7^{\left(0\right)}$的归一化线性组合和$\phi_4^{\left(0\right)},\phi_6^{\left(0\right)},\phi_8^{\left(0\right)}$的归一化线性组合都可以是零级校正波函数。
+    电子间排斥势$\mathrm{e}^2/4\pi\varepsilon_0 r_{12}$部分消除了简并的现象。假设的八重简并无扰能级裂分为与组态$1s2s$相关的两个非简并能级和两个与组态$2s2p$相关的三重简并能级。人们可能认为，高级能量校正会进一步解决简并问题。事实上，要完全消除简并，需要施加外磁场。由于微扰$\mathrm{e}/4\pi\varepsilon_0a_0$项未完全消除简并，任何$\phi_3^{\left(0\right)},\phi_5^{\left(0\right)},\phi_7^{\left(0\right)}$的归一化线性组合和$\phi_4^{\left(0\right)},\phi_6^{\left(0\right)},\phi_8^{\left(0\right)}$的归一化线性组合都可以是零级校正波函数。
 
     为了计算(\ref{eq:9.102})和(\ref{eq:9.108})中的库仑积分和交换积分，我们使用问题9.14中给出的$1/r_{12}$的展开式。结果为
     \begin{equation}
@@ -1106,19 +1106,19 @@
 
     在光谱学中，我们从一个处于某种定态的系统开始，将其置于电磁辐射（光）之下，然后观察该系统是否过渡到了另一定态。辐射会在哈密顿中引入一个随时间变化的势能项，因此我们必须使用含时薛定谔方程。这里最方便的方法是一种近似方法，称为含时微扰理论。
 
-    令系统（原子或分子）在没有辐射（或其他随时间变化的扰动）的情况下具有定态哈密顿量$\hat{H}^0$，视$\hat{H}'\left(t\right)$为含时微扰。未扰动系统的定态薛定谔方程为
+    令系统（原子或分子）在没有辐射（或其他随时间变化的微扰）的情况下具有定态哈密顿量$\hat{H}^0$，视$\hat{H}'\left(t\right)$为含时微扰。无扰系统的定态薛定谔方程为
     \begin{equation}
         \hat{H}^0 \psi_k^0 = E_k^0 \psi_k^0
         \label{eq:9.112}
     \end{equation}
-    其中$E_k^0$和$\psi_k^0$分别是未扰动系统的能量和波函数。无辐射作用下的含时薛定谔方程(\ref{eq:7.97})为
+    其中$E_k^0$和$\psi_k^0$分别是无扰系统的能量和波函数。无辐射作用下的含时薛定谔方程(\ref{eq:7.97})为
     \begin{equation}
         -\frac{\hbar}{\mathrm{i}}\frac{\partial \Psi}{\partial t} = \left(\hat{H}^0 + \hat{H}'\right) \Psi
         \label{eq:9.113}
     \end{equation}
     其中态函数$\Psi$取决于与时间相关的空间坐标和自旋坐标（用$q$表示）：$\Psi = \Psi\left(q,t\right)$。（见第\ref{chap:10}章，关于自旋的讨论。）
 
-    首先，我们不考虑$\hat{H}'\left(t\right)$。未扰动含时薛定谔方程为
+    首先，我们不考虑$\hat{H}'\left(t\right)$。无扰含时薛定谔方程为
     \begin{equation}
         -\left(\hbar/\mathrm{i}\right)\partial \Psi^0/\partial t = \hat{H}^0 \Psi^0
         \label{eq:9.114}
@@ -1130,7 +1130,7 @@
     \end{equation}
     （其中$c_k$是任意与时间无关的常数）也是含时薛定谔方程(\ref{eq:9.114})的解，正如导出(\ref{eq:7.100})时的讨论。函数组$\Psi_k^0$构成一个完备集（因为它们是厄米算符$\hat{H}^0$的本征函数），因此任何(\ref{eq:9.114})的解都可以写成(\ref{eq:9.115})的形式。那么(\ref{eq:9.115})就是(\ref{eq:9.114})的通解，其中$\hat{H}^0$与时间无关。
 
-    现在，我们引入$\hat{H}'\left(t\right)$。则(\ref{eq:9.115})不再是含时薛定谔方程的解了。然而，由于未扰动函数组$\Psi_k^0$构成一个完备集，在任意时刻的真实态函数$\Psi$可以根据$\Psi = \sum_k b_k \Psi_k^0$来展开为$\Psi_k^0$函数组的线性组合。因为$\hat{H}$与时间无关，$\Psi$随时间变化，那么展开系数$b_k$也会随时间变化。因此，
+    现在，我们引入$\hat{H}'\left(t\right)$。则(\ref{eq:9.115})不再是含时薛定谔方程的解了。然而，由于无扰函数组$\Psi_k^0$构成一个完备集，在任意时刻的真实态函数$\Psi$可以根据$\Psi = \sum_k b_k \Psi_k^0$来展开为$\Psi_k^0$函数组的线性组合。因为$\hat{H}$与时间无关，$\Psi$随时间变化，那么展开系数$b_k$也会随时间变化。因此，
     \begin{equation}
         \Psi = \sum_k b_k\left(t\right) \exp\left(-\mathrm{i}E_k^0t/\hbar\right)\psi_k^0
         \label{eq:9.116}
@@ -1165,7 +1165,7 @@
         \label{eq:9.118}
     \end{equation}
 
-    我们假设微扰项$\hat{H}'$很小，且作用时间很短。在这些条件下，在施加扰动时，展开系数$b_k$与其初始值相比的变化将很小。近似地，我们可以将 (\ref{eq:9.117}) 右侧的膨胀系数替换为它们的初始值 (\ref{eq:9.118}) 。由此得出
+    我们假设微扰项$\hat{H}'$很小，且作用时间很短。在这些条件下，在施加微扰时，展开系数$b_k$与其初始值相比的变化将很小。近似地，我们可以将 (\ref{eq:9.117}) 右侧的膨胀系数替换为它们的初始值 (\ref{eq:9.118}) 。由此得出
     \begin{equation}
         \frac{\mathrm{d}b_m}{\mathrm{d}t} \approx 2\frac{\mathrm{i}}{\hbar}\exp\left[\mathrm{i}\left(E_m^0-E_n^0\right)t/\hbar\right]\left\langle\psi_m^0\middle|\hat{H}'\middle|\psi_n^0\right\rangle
         \label{eq:9.119}
