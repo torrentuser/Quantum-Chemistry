@@ -222,9 +222,121 @@
     \end{equation*}
     若两个对称操作$\hat{R}\hat{S}$的乘积为$\hat{T}$，则它们以$x,\:y,\:z$为基的矩阵以相同的方式相乘；即：若$\hat{R}\hat{S} = \hat{T}$，则$\mathbf{R}\mathbf{S} = \mathbf{T}$。（证明见\textit{Schonland}, pp. 56-57.）。
 
-\section{分子点群}
-\label{sec:12.2 Molecular Point Groups}
+\section{对称点群}
+\label{sec:12.2 Symmetry Point Groups}
 
+    现在，我们来考虑对称元素可能的组合。分子中不能出现对称元素的任意组合。例如，假设某分子有且仅有一根$C_3$轴。任何对称操作都必须使该轴保持不变。因此，该分子不能有与$C_3$轴呈任意角度的反映面，任何反映面必须包含该轴或与该轴垂直。（\ce{BF_3}中有三个$\sigma_v$面和一个$\sigma_h$面。）某对称轴与$C_3$轴不重合的唯一可能是与$C_3$轴垂直的$C_2$轴。对应的$\hat{C}_2$操作使$C_3$轴保持不变。因为$\hat{C}_3$和$\hat{C}_3^2$是对称操作，若有一根垂直于$C_3$轴的$C_2$轴，则必须同时有六根$C_2$轴（与\ce{BF_3}中的情况相同）。
+
+    分子中所有的对称操作构成一个数学意义上的群。\textbf{群}（group）是一个由实体【称为群的\textbf{元素}（elements）或\textbf{成员}（members）】组成的集合，以及一条将群中的任意两个元素结合以形成这些元素的积的规则，使得某些要求得到满足。令$A,\:B,\:C,\:D,\:\ldots$（假设互不相等）为某群的元素，令$B \ast C$为$B$与$C$的积。乘积$B \ast C$不一定与$C \ast B$相等。群的元素必须满足以下要求：(1)任意两个元素的乘积（包括某元素与其自身）都必须是该群的元素之一【\textbf{封闭性}（closure）】；(2)群中必须存在\textbf{恒等元素}（identity element），使得对群中的每个元素$K$都有$K \ast I = K$和$I \ast K = K$；(3)群中每个元素$K$必须有一个\textbf{逆元素}（inverse element）$K^{-1}$，使得$K \ast K^{-1} = I$和$K^{-1} \ast K = I$，其中$I$为恒等元素；(4)群的乘积满足\textbf{结合律}（associative），即对任意群都有$\left(B \ast D\right) \ast G = B \ast \left(D \ast G\right)$。
+
+    群中元素的个数称为群的\textbf{阶}（order）。若对群中任意两个元素都有$B \ast C = C \ast B$，则称该群为\textbf{交换群或阿贝尔群}（commutative or Abelian group）。
+
+    群的一个例子是所有整数（正数、负数和零）的集合，其运算规则为普通的加法。因为两个整数的和仍是整数，所以封闭性成立。其恒等元素是$0$。整数$n$的逆元素为$-n$。以及加法满足结合律。该群是一个无穷阶阿贝尔群。
+
+    在$\hat{R}$和$\hat{S}$的组合为连续应用$\hat{R}$和$\hat{S}$的规则下，三维物体的所有对称操作集合构成一个群。因为两个对称操作的乘积一定是对称操作，则封闭性成立。该群的恒等元素为恒等操作$\hat{E}$，即不作任何操作。结合律也满足【式(\ref{eq:3.6 law of multiplication for operators})】。对称操作$\hat{R}$的逆元素为撤销$\hat{R}$的操作，例如，因为$\hat{i}\hat{i} = \hat{E}$，则反演操作$\hat{i}$的逆元素就是它本身。逆时针旋转$120°$操作$\hat{C}_3$的逆元素是顺时针旋转$120°$操作，等价于逆时针旋转$240°$，则$\hat{C}_3^{-1} = \hat{C}_3^2$以及$\hat{C}_3\hat{C}_3^2 = \hat{E}$。\textit{请注意，该群的成员（元素）是分子的对称操作（而不是对称元素）。}我们在第\ref{sec:15.2 Electronic Terms of Polyatomic Molecules}节中将使用一些群论知识，但群论的完整发展及其应用在此省略（参见\textit{Cotton}或\textit{Schonland}）。
+
+    对分子所作的任何对称操作，质心点都保持不变。因此，孤立分子的对称群被称为\textbf{点群}（point group）。对于无限大的晶体，我们可以进行对称操作（例如平移），但这些操作不会使任何点保持不变，从而产生\textit{空间群}（space group）。本书省略了对空间群的讨论。
+
+    每个分子都属于我们现在列出的对称点群之一。为了方便起见，点群已被分为四个类别。花体字母表示点群。
+
+    \begin{center}
+        I. \textit{不具有$C_n$轴的点群：$\mathscr{C}_1$、$\mathscr{C}_s$和$\mathscr{C}_i$。}
+    \end{center}
+    \begin{enumerate}
+        \item $\mathscr{C}_1$：若某分子不具有任何对称元素，则它属于该点群。唯一的对称操作为$\hat{E}$（也是$\hat{C}_1$旋转操作）。分子\ce{CHFClBr}属于点群$\mathscr{C}_1$。
+        \item $\mathscr{C}_s$：具有唯一对称元素为反映面的分子属于该点群。对称操作为$\hat{E}$和$\hat{\sigma}$。一个例子为\ce{HOCl}（图\ref{fig:12.11}）。
+        \item $\mathscr{C}_i$：具有唯一对称元素为对称中心的分子属于该点群。对称操作为$\hat{E}$和$\hat{i}$。
+    \end{enumerate}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.65\textwidth]{Figures/12.11.png}
+        \caption{不具有$C_n$轴的分子。}
+        \label{fig:12.11}
+    \end{figure}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Figures/12.12.png}
+        \caption{只有一根$C_n$轴的分子。}
+        \label{fig:12.12}
+    \end{figure}
+
+    \begin{center}
+        II. \textit{只有一根$C_n$轴的点群：$\mathscr{C}_n$、$\mathscr{C}_{nh}$和$\mathscr{C}_{nv}$和$\mathscr{S}_{2n}$。}
+    \end{center}
+    \begin{enumerate}
+        \item $\mathscr{C}_n, \: n = 2,\:3,\:4,\:\ldots$：只具有一根$C_n$旋转轴的分子属于该点群。对称操作为$\hat{C}_n,\: \hat{C}_n^2,\:\ldots,\:\hat{C}_n^{n-1},\:\hat{E}$。属于$\mathscr{C}_2$点群的分子如图\ref{fig:12.12}所示。
+        \item $\mathscr{C}_{nh}, \: n = 2,\:3,\:4,\:\ldots$：若我们添加一个垂直于$C_n$轴的反映面，则得到了属于该点群的分子。因为$\hat{\sigma}_h\hat{C}_n = \hat{S}_n$，所欲对称轴$C_n$也是$S_n$轴。若$n$为偶数，则$C_n$轴也是$C_2$轴，分子具有对称操作$\hat{\sigma}_h\hat{C}_2 = \hat{S}_2 = \hat{i}$。因此，若$n$为偶数，则属于$\mathscr{C}_{nh}$点群的分子具有对称中心。（群$\mathscr{C}_{1h}$即之前讨论过的群$\mathscr{C}_s$。）属于点群$\mathscr{C}_{2h}$和$\mathscr{C}_{3h}$的分子如图\ref{fig:12.12}所示。
+        \item $\mathscr{C}_{nv}, \: n = 2,\:3,\:4,\:\ldots$：属于该点群的分子有一根$C_n$轴，以及$n$个通过$C_n$轴的垂直反映面。（群$\mathscr{C}_{1v}$为群$\mathscr{C}_s$。）\ce{H_2O}具有一根$C_2$轴和两个通过该轴的反映面，属于$\mathscr{C}_{2v}$点群。\ce{NH_3}分子属于$\mathscr{C}_{3v}$点群。（见图\ref{fig:12.12}。）
+        \item $\mathscr{S}_n, \: n = 4,\:6,\:8,\:\ldots$：$\mathscr{S}_n$点群是与$S_n$轴有关的点群。首先考虑$n$为级数的情况。我们有$\hat{S}_n = \hat{\sigma}_h\hat{C}_n$。操作$\hat{C}_n$只影响$x$和$y$坐标，而$\hat{\sigma}_h$操作只影响$z$坐标。因此，这些操作可以对易，我们有
+        \begin{equation*}
+            \hat{S}_{n}^{n} = (\hat{\sigma}_{h} \hat{C}_{n})^{n} = \hat{\sigma}_{h} \hat{C}_{n} \hat{\sigma}_{h} \hat{C}_{n} g \hat{\sigma}_{h} \hat{C}_{n} = \hat{\sigma}_{h}^{n} \hat{C}_{n}^{n}
+        \end{equation*}
+        现在$\hat{C}_{n}^{n} = \hat{E}$，以及对奇数$n$，有$\hat{\sigma}_{h}^{n} = \hat{\sigma}_{h}$。因此对于奇数$n$，对称操作$\hat{S}_n^n$等价于$\hat{\sigma}_h$，以及点群$\mathscr{S}_n$具有水平反映面。同样地，
+        \begin{equation*}
+            \hat{S}_{n+1} = \hat{S}_{n}\hat{S}_{n} = \hat{\sigma}_{h} \hat{S}_{n} = \hat{\sigma}_{h} \hat{\sigma}_{h} \hat{C}_{n} = \hat{C}_{n}, \quad n \text{ odd}
+        \end{equation*}
+        所以若$n$为奇数，则分子具有一根$C_2$轴。因此，若$n$为奇数，$\mathscr{S}_n$群等价于$\mathscr{C}_{nh}$群。再考虑$n$为偶数的情况。因为$\hat{S}_2=\hat{i}$，则群$\mathscr{S}_2$等价于$\mathscr{C}_i$。因此只有当$n = 4,\:6,\:8,\:\ldots$时，$\mathscr{S}_n$群才是一个新的点群。$S_{2n}$轴也是$C_n$轴：$\hat{S}_{2n}^2 = \hat{\sigma}_h^2 \hat{C}_{2n}^2 = \hat{E}\hat{C}_n = \hat{C}_n$。
+    \end{enumerate}
+
+    \begin{center}
+        III. \textit{具有一根$C_n$轴和$n$个$C_2$轴的点群：$\mathscr{D}_n$、$\mathscr{D}_{nh}$和$\mathscr{D}_{nd}$。}
+    \end{center}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/12.13.png}
+        \caption{具有一根$C_n$轴和$n$个$C_2$轴的分子。}
+        \label{fig:12.13}
+    \end{figure}
+    \begin{enumerate}
+        \item $\mathscr{D}_n, \: n = 2,\:3,\:4,\:\ldots$：具有一根$C_n$轴和$n$根与$C_n$轴垂直的$C_2$轴（不存在反映面）的分子属于该点群。相邻$C_2$轴之间的夹角为$\pi/n$弧度。$\mathscr{D}_2$点群有三根互相垂直的$C_2$轴，对称操作为$\hat{E}, \:\hat{C}_2(x), \:\hat{C}_2(y), \:\hat{C}_2(z)$。
+        \item $\mathscr{D}_{nh}, \: n = 2,\:3,\:4,\:\ldots$：具有一根$C_n$轴、$n$根$C_2$轴和一个垂直于$C_n$轴的反映面$\sigma_h$的分子属于该点群。与$\mathscr{C}_{nh}$一致，$C_n$轴也是$S_n$轴。若$n$为偶数，则$C_n$轴也是$C_2$轴和$S_2$轴，分子具有对称中心。$\mathscr{D}_{nh}$群中的分子也有$n$个反映面，每个都穿过$C_n$轴和其中一根$C_2$轴。（证明见问题12.29。）\ce{BF_3}分子属于$\mathscr{D}_{3h}$点群；\ce{PtCl_4^2-}属于$\mathscr{D}_{4h}$点群；苯属于$\mathscr{D}_{6h}$点群（图\ref{fig:12.13}）。
+        \item $\mathscr{D}_{nd}, \: n = 2,\:3,\:4,\:\ldots$：具有一根$C_n$轴、$n$根$C_2$轴和$n$个通过$C_n$轴且平分相邻$C_2$轴夹角的反映面的分子属于该点群。$n$个垂直反映面称为\textbf{等分}（diagonal）平面，用$\sigma_d$表示。可以证明，$C_n$轴也是$S_{2n}$轴。乙烷交叉构象是$\mathscr{D}_{3d}$点群的典型例子（图\ref{fig:12.13}）。【具有内旋转的分子（例如乙烷）的对称性实际上需要特别考虑；见H. C. Longuet-Higgins, \textit{Mol. Phys.}, \textbf{6}, 445 (1963).】
+    \end{enumerate}
+
+    \begin{center}
+        IV. \textit{具有多根$C_n$轴的点群，$n>2$：$\mathscr{T}_d,\: \mathscr{T},\: \mathscr{T}_h,\: \mathscr{O}_h,\: \mathscr{O},\: \mathscr{I}_h,\: \mathscr{I},\: \mathscr{K}_h$。}
+    \end{center}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.7\textwidth]{Figures/12.14.png}
+        \caption{
+            \centering
+            \parbox{0.5\textwidth}{
+                \noindent
+                具有多根$C_n$轴的点群，$n>2$。（对于\ce{B_12H_12^2-}，为了清晰起见，氢原子省略了。）
+            }
+        }
+        \label{fig:12.14}
+    \end{figure}
+    这些立体与柏拉图立体的对称性有关，即由全等正多边形围成的立体，且具有全等的多面体角。共有五种这样的立体：四面体有四个三角形面，立方体有六个正方形面，八面体有八个三角形面，五角十二面体有十二个五边形面，二十面体有二十个三角形面。
+    \begin{enumerate}
+        \item $\mathscr{T}_d$：正四面体的对称操作构成了这个群。最典型的例子是\ce{CH_4}。甲烷的对称元素为四根$C_3$轴（每根\ce{C-H}键）、三根同时是$C_2$轴的$S_4$轴（图\ref{fig:12.5}）以及六个反映面，每个包含两根\ce{C-H}键。（从4个事物中每次取2个的组合数为$4!/2!\:2! = 6$。）
+        \item $\mathscr{O}_h$：立方体或正八面体的对称操作构成了这个群。立方体和八面体被称为彼此的\textit{对偶}（dual）体；如果我们将立方体相邻面的中点连接起来，就会得到一个八面体，反之亦然。因此，立方体和八面体具有相同的对称元素和操作。立方体有六个面、八个顶点和十二条边。它的对称元素如下：一个对称中心、三根穿过立方体相对两面中心点的$C_4$轴（同时也是$S_4$和$C_2$轴）、四根穿过立方体对角的$C_3$轴（同时也是$S_6$轴）、六根连接一对相对边中点的$C_2$轴，三个与一对相对面平行的反映面以及六个通过一对相对边中点的反映面。八面体分子例如\ce{SF_6}属于$\mathscr{O}_h$点群。
+        \item $\mathscr{I}_h$：正五角十二面体或正二十面体（彼此对偶）的对称操作构成了这个群。离子\ce{B_12H_12^2-}属于点群$\mathscr{I}_h$。十二个硼原子位于正二十面体的顶点上（图\ref{fig:12.14}）。足球形状的分子\ce{C_60}（富勒烯）也属于该点群。其形状为截角二十面体，通过切除正二十面体（图\ref{fig:12.14}）的12个顶点而成，从而生成一个具有12个五边形面（每个原二十面体的顶点处有5个面相交）、20个六边形面（由原正二十面体的20个三角形面形成），以及$12\times5=60$个顶点（切除原正二十面体的一个顶点后会产生5个新顶点）的图形。
+        \item $\mathscr{K}_h$：这是球体的对称操作群。（\textit{Kugel}在德语中“球体”的意思。）原子属于这个群。
+    \end{enumerate}
+
+    完整起见，我们提及了与柏拉图立体相关的其他群，这些群在化学上并不重要。群$\mathscr{T}$、$\mathscr{O}$和$\mathscr{I}$分别是四面体、立方体和二十面体的正旋转对称群。这些群没有这些立体的对称反射和非正常旋转，也没有立方体和二十面体的反演操作。群$\mathscr{T}_h$包含四面体的对称旋转、反演操作以及某些反射和非正常旋转。
+
+    线性分子属于什么群呢？围绕线性分子的核间轴进行任意角度的旋转是一种对称操作。$n$正多边形具有一根$C_n$轴，取极限$n \to \infty$，我们就得到了圆，圆有一根$C_{\infty}$轴。因此，线性分子的核间轴为$C_{\infty}$轴。任何包含此轴的面都是反映面。若线性分子不具有对称中心（例如\ce{CO}，\ce{HCN}），它属于点群$C_{\infty v}$。若线性分子具有对称中心（例如\ce{H_2}，\ce{C_2H_2}），则它具有$\sigma_h$反映面，即无穷多根垂直于分子主轴的$C_2$轴，因此属于点群$D_{\infty h}$。
+
+    我们如何寻找分子所属点群？一种方法是找出所有的对称元素，与上述列出的点群进行比较。另一种更系统的方法如图\ref{fig:12.15}所述。【J. B. Calvert, \textit{Am. J. Phys.}, \textbf{31}, 659 (1963)。】该方法基于点群的四个分类。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.7\textwidth]{Figures/12.15.png}
+        \caption{确定分子所属点群步骤示意图。}
+        \label{fig:12.15}
+    \end{figure}
+
+    首先，判断分子是否为线性分子。根据线性分子是否有对称中心，可以分为$\mathscr{D}_{\infty h}$和$\mathscr{C}_{\infty v}$两类。若分子不是线性分子，则寻找是否有大于等于两根的三重或更高阶对称轴。若存在，该分子被归类于与正多面体对称性相关的点群之一（第IV组）。若这些轴不存在，我们寻找任意一根$C_n$轴。若不存在任何$C_n$轴，则分子属于点群$\mathscr{C}_s$、$\mathscr{C}_i$和$\mathscr{C}_1$之一（第I组）。若至少存在一根$C_n$轴，在进行下一步之前，先选择最高阶的$C_n$轴为主对称轴。（如果有三根互相垂直的$C_2$轴，可以任取一根为主轴。）接下来，我们检查与主$C_n$轴垂直的$n$根$C_2$副轴。若它们存在，则分子属于点群组III；若不存在，则属于点群组II。如果我们找到了$n$根$C_2$轴，再寻找与主$C_n$轴垂直的反映面。若存在，则点群为$\mathscr{D}_{nh}$；若不存在，寻找包含主$C_n$轴的$n$个反映面（若分子有三根互相垂直的$C_2$轴，那么在寻找两个$\sigma_v$面时，我们必须将每根轴作为主轴进行测试；在点群$\mathscr{D}_{nh}$和$\mathscr{D}_{n}$中，这三根$C_2$轴是等价的，但在$\mathscr{D}_{nd}$中不是。）若我们找到了$n$个$\sigma_v$面，则点群为$\mathscr{D}_{nd}$；否则为$\mathscr{D}_n$。若分子不具有与$C_n$轴垂直的$n$根$C_2$副轴，通过首先寻找$\sigma_h$反映面，然后$n$个$\sigma_v$反映面，若它们都没有，那么最终检查$C_n$轴是否也为$S_{2n}$轴，我们将其分类到点群$\mathscr{C}_{nh}$、$\mathscr{C}_{nv}$、$\mathscr{S}_{2n}$或$\mathscr{C}_n$中。图\ref{fig:12.15}所示的步骤并不能确定所有对称元素。在对分子进行分类后，需确认所有必要的对称元素确实存在。尽管上述步骤看似复杂，但实际上非常简单且易于记忆。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Figures/12.16.png}
+        \caption{联烯的两种视图。\ce{C=C=C}轴垂直于图(a)中纸张的平面。}
+        \label{fig:12.16}
+    \end{figure}
+
+    学生在对分子进行归类时最常见的错误是忽略了属于$\mathscr{D}_{nd}$点群分子垂直于$C_n$主轴的$n$根$C_2$副轴。例如，我们很容易发现，联烯的\ce{C=C=C}轴是一根$C_2$轴，但另外两根$C_2$轴却很容易被忽视（图\ref{fig:12.16}）。具有两个相等且相互错开的半部分的分子通常属于$\mathscr{D}_{nd}$点群。例如，\ce{C_2H_2}分子具有两个$C_2$轴（图\ref{fig:12.16}）。模型可能对那些在可视化方面有困难的人有所帮助。
 
 \section*{总结}
 
