@@ -1,8 +1,111 @@
 % ===== CHAPTER 13 =====
 \chapter{双原子分子的电子结构}
 \label{chap:13}
-\section{Born-Oppenheimer近似}
+\section{玻恩-奥本海默近似}
 \label{sec:13.1 The Born-Oppenheimer Approximation}
+
+    现在，我们开始学习分子量子力学。如果我们假设原子核和电子是指点，并忽略自旋-轨道耦合和其他相对论相互作用（第 \ref{sec:11.6 Spin-Orbit Interaction} 和 \ref{sec:11.7 The Atomic Hamiltonian} 节），那么分子哈密顿算符为
+    \begin{equation}
+        \hat{H} = -\frac{\hbar^2}{2}\sum_{\alpha} \frac{1}{m_{\alpha}}\nabla_{\alpha}^2 - \frac{\hbar^2}{2m_{\mathrm{e}}}\sum_i \nabla_i^2 + \sum_{\alpha}\sum_{\beta>\alpha} \frac{Z_{\alpha}Z_{\beta}\mathrm{e}^2}{4\pi\varepsilon_0 r_{\alpha\beta}} - \sum_{\alpha}\sum_i \frac{Z_{\alpha}\mathrm{e}^2}{4\pi\varepsilon_0 r_{i\alpha}} + \sum_j\sum_{i>j} \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{ij}}
+        \label{eq:13.1}
+    \end{equation}
+    其中$\alpha$和$\beta$代表原子，$i$和$j$代表电子。(\ref{eq:13.1})中的第一项为原子核的动能算符。第二项为电子的动能算符。第三项为核间排斥势，$r_{\alpha\beta}$为核$\alpha$和$\beta$之间的距离，核电荷数分别为$Z_{\alpha}$和$Z_{\beta}$。第四项为核-电子吸引势，$r_{i\alpha}$为电子$i$和核$\alpha$之间的距离。最后一项为电子间排斥势，$r_{ij}$为电子$i$和$j$之间的距离。对于（\ref{eq:13.1}）式而言，势能的零点对应于所有电荷（电子和原子核）彼此相距无限远的情况。
+
+    例如，考虑\ce{H2}分子。令$\alpha$和$\beta$分别表示两个质子，1和2表示两个电子，$m_p$表示质子的质量。则氢分子\ce{H2}的哈密顿算符为
+    \begin{equation}
+        \begin{aligned}
+            \hat{H} = -&\frac{\hbar^2}{2m_p} \nabla^2_{\alpha}- \frac{\hbar^2}{2m_p} \nabla^2_{\beta}- \frac{\hbar^2}{2m_\mathrm{e}} \nabla^2_1 - \frac{\hbar^2}{2m_\mathrm{e}} \nabla^2_2 \\
+            &+ \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{\alpha\beta}} - \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{1\alpha}} - \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{1\beta}} - \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{2\alpha}} + \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{12}}
+        \end{aligned}
+        \label{eq:13.2}
+    \end{equation}
+
+    分子的波函数和能量可通过薛定谔方程求得：
+    \begin{equation}
+        \hat{H}\psi\left(q_i,q_{\alpha}\right) = E\psi\left(q_i,q_{\alpha}\right)
+        \label{eq:13.3}
+    \end{equation}
+    其中$q_i$和$q_{\alpha}$分别表示电子和原子核的坐标。分子哈密顿算符（\ref{eq:13.1}）之复杂，足以令任何量子化学家望而生畏。幸运的是，存在一个非常准确且简化的近似方法。因为原子核的质量远大于电子（$m_{\alpha} \gg m_{\mathrm{e}}$），则电子的运动速度远大于原子核。因此，就电子而言，我们可以近似地认为原子核是固定的，而电子在运动。从经典力学的角度来看，在电子运动的一个周期内，原子核的组态变化可以忽略不计。因此，将原子核视为固定不动，我们可以在（\ref{eq:13.1}）中忽略原子核的动能项，从而得到描述电子运动的薛定谔方程：
+    \begin{equation}
+        \boxed{
+            \left(\hat{H}_{\text{el}} + V_{NN}\right)\psi_{\text{el}} = U\psi_{\text{el}}
+        }
+        \label{eq:13.4}
+    \end{equation}
+    其中的\textbf{纯电子哈密顿算符}（purely electronic Hamiltonian）$\hat{H}_{\text{el}}$为
+    \begin{equation}
+        \hat{H}_{el} = - \frac{\hbar^2}{2m_{\mathrm{e}}} \sum_i \nabla_i^2 - \sum_{\alpha} \sum_{i} \frac{Z_{\alpha} \mathrm{e}^2}{4 \pi \varepsilon_0 r_{i\alpha}} + \sum_j \sum_{i>j} \frac{\mathrm{e}^2}{4 \pi \varepsilon_0 r_{ij}}
+        \label{eq:13.5}
+    \end{equation}
+    包含了核间排斥势的电子哈密顿量为$\hat{H}_{\text{el}} + V_{NN}$。核间排斥项$V_{NN}$为
+    \begin{equation}
+        V_{NN} = \sum_{\alpha} \sum_{\beta>\alpha} \frac{Z_{\alpha}Z_{\beta}\mathrm{e}^2}{4\pi\varepsilon_0 r_{\alpha\beta}}
+        \label{eq:13.6}
+    \end{equation}
+    (\ref{eq:13.4})中的能量$U$为\textbf{包含核间排斥势的电子能量}（electronic energy including nuclear repulsion）。(\ref{eq:13.4})中的核间距$r_{\alpha\beta}$不是变量，而每个值都为一个固定的常数。当然，可能的核组态有无限多种，对于每一种组态，我们都可以求解电子薛定谔方程（\ref{eq:13.4}）以得到一组电子波函数及其对应的电子能级。该组中的每个成员对应于不同的分子电子态。因此，电子波函数和能级在参数上依赖于核坐标：
+    \begin{equation*}
+        \psi_{\text{el}} = \psi_{\text{el}, n} \left( q_i ; q_{\alpha} \right) \quad \text{以及} \quad U = U_n \left( q_{\alpha} \right)
+    \end{equation*}
+    其中$n$表示电子量子数。
+
+    电子薛定谔方程(\ref{eq:13.4})中的变量为电子的坐标。对于给定的核组态，$V_{NN}$与这些坐标无关。现在很容易证明（问题4.52）：在哈密顿量中省略常数项$C$不会影响波函数，而仅仅使每个能量本征值都减小$C$。因此，若我们在(\ref{eq:13.4})中省略$V_{NN}$，将得到
+    \begin{equation}
+        \hat{H}_{\text{el}}\psi_{\text{el}} = U_{\text{el}}\psi_{\text{el}}
+        \label{eq:13.7}
+    \end{equation}
+    其中\textbf{纯电子能量}（purely electronic energy）$E_{\text{el}}\left(q_{\alpha}\right)$（在参数上取决于核坐标$q_{\alpha}$）与包含核间排斥势的电子能量之间关系为
+    \begin{equation}
+        U = E_{\text{el}} + V_{NN}
+        \label{eq:13.8}
+    \end{equation}
+    因此，我们可以从电子薛定谔方程中省略核间排斥势。通过求解（\ref{eq:13.7}），我们首先确定特定核组态下的电子势能$E_{\text{el}}$，随后利用（\ref{eq:13.8}）计算$U$，其中常数项$V_{NN}$可通过假设的核位置从（\ref{eq:13.6}）中轻松得出。
+
+    对于具有两个质子和固定核间距$r_{\alpha\beta}$的\ce{H2}分子，纯电子能量由(\ref{eq:13.2})给出，其中第一、二和第五项被忽略。核间排斥势$V_{NN}$等于$\mathrm{e}^2/4\pi\varepsilon_0R$。纯电子哈密顿算符包含作为变量的六个电子坐标$x_1,\:y_1,\:z_1,\:x_2,\:y_2,\:z_2$，也包括作为参数的核坐标。
+
+    电子薛定谔方程（\ref{eq:13.4}）可通过后文将讨论的近似方法进行处理。  若将双原子分子束缚态的电子能（含核间排斥势）关于核间距$R$作图，我们将得到如图\ref{fig:13.1}所示的曲线。当$R=0$时，核间排斥势使势能$U$趋于无穷大。该曲线中能量最低点处的核间距离称为\textbf{平衡核间距}$R_e$（equilibrium internuclear distance）。$U$在无限核间距离处的极限值与$R$处的值之差称为\textbf{平衡解离能}（equilibrium dissociation energy）（\textit{或从势能最低点解离的能量}）$D_e$：
+    \begin{equation}
+        D_e \equiv U\left(\infty\right) - U\left(R_e\right)
+        \label{eq:13.9}
+    \end{equation}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/13.1.png}
+        \caption{电子能（包括核间排斥势）为核间距$R$的函数，适用于双原子分子电子束缚态。}
+        \label{fig:13.1}
+    \end{figure}
+
+    当我们考虑核运动（第\ref{sec:13.2 Nuclear Motion in Diatomic Molecules}节）时会发现：平衡核间距$D_e$与分子基态振动解离能$D_0$有差异。核运动最低态具有零转动能【正如式(\ref{eq:6.47})所示】和非零振动能——零点能。若我们使用谐振子模型来近似双原子分子的振动（第\ref{sec:4.3 Vibrations of Diatomic Molecules}节），则该零点能为$\frac{1}{2}h\nu$。该零点能使得核运动基态能量$\frac{1}{2}h\nu$高于$U\left(R\right)$曲线中的最小值，则$D_0$小于$D_e$：$D_0 \approx D_e - \frac{1}{2}h\nu$。相同分子的不同电子态具有不同的$U\left(R\right)$曲线（图13.5和13.19），以及不同的$R_e$、$D_e$、$D_0$和$\nu$值。
+    %记得改引用！！！！！！
+
+    考虑由双原子分子\ce{AB}组成的理想气体。在趋于绝对零度的近似中，所有的分子\ce{AB}都处于电子和核运动的基态，则$D_0N_A$（其中$N_A$为阿伏伽德罗常数，$D_0$为\ce{AB}分子的基态解离能）为将1摩尔\ce{AB}分子完全解离带来的热力学内能$U$和焓$H$的变化值：$N_AD_0 = \Delta U^°_0 = \Delta H^°_0$，\ce{AB(g) -> A(g) + B(g)}。
+
+    对于某些双原子分子的电子态，解电子薛定谔方程得到的$U\left(R\right)$曲线没有最小值。此类态不具束缚性，分子将发生解离。例如图13.5中所示的某些态。
+    %记得改引用！！！！！！
+
+    假设我们已经解出了电子薛定谔方程，则下一步该考虑核运动了。根据我们的近似，电子的运动远快于核运动。当核的组态稍微变化时（设为$q'_{\alpha}$到$q''_{\alpha}$），电子可以迅速对核组态变化做出响应，其中电子波函数从$\psi_{\text{el}}\left(q_i;q'_{\alpha}\right)$变为$\psi_{\text{el}}\left(q_i;q''_{\alpha}\right)$而电子能量从$U\left(q'_{\alpha}\right)$变为$U\left(q''_{\alpha}\right)$。因此，随着原子核的运动，电子能随着定义核组态参数的函数而连续变化，而$U\left(q\right)$实际上成为核运动的势能。电子就像连接原子核的弹簧。随着原子核之间的距离变化，弹簧中储存的能量也会发生变化。因此，描述原子核运动的薛定谔方程是
+    \begin{equation}
+        \boxed{
+            \hat{H}_N\psi_N = E\psi_N
+        }
+        \label{eq:13.10}
+    \end{equation}
+    \begin{equation}
+        \hat{H}_{N} = -\frac{\hbar^{2}}{2}\sum_{\alpha}\frac{1}{m_{\alpha}}\nabla_{\alpha}^{2} + U\left(q_{\alpha}\right)
+        \label{eq:13.11}
+    \end{equation}
+    核薛定谔方程中的变量为核坐标，用$q_{\alpha}$表示。因为哈密顿算符(\ref{eq:13.11})同时包括了核能量和电子能量，所以(\ref{eq:13.10})中的能量本征值$E$为分子的\textit{总}能量。$E$仅仅是一个数值，与任何坐标都无关。需要注意的是，对于分子的每个电子态，我们必须求解不同的核薛定谔方程，因为势能 $U$ 在不同态之间是不同的。在本章中，我们将重点讨论电子薛定谔方程（\ref{eq:13.4}）。
+
+    在\ref{sec:13.2 Nuclear Motion in Diatomic Molecules}节中，我们将证明双原子分子某电子态的总能量近似等于平动能、转动能、振动能和电子能的和：$E \approx E_{\text{elec}} + E_{\text{vib}} + E_{\text{rot}} + E_{\text{tr}}$，其中常量$E_{\text{elec}}$【不要与(\ref{eq:13.7})中的$E_{\text{el}}$混淆】由$E_{\text{elec}} = U\left(R_e\right)$给出。
+
+    将电子运动与核运动分离的近似方法称为\textbf{玻恩-奥本海默近似}（Born-Oppenheimer approximation），它是量子化学的基础。【美国物理学家J·罗伯特·奥本海默（J. Robert Oppenheimer）（1904–1967）于1927年成为玻恩的研究生。在第二次世界大战期间，奥本海默领导了研发原子弹的洛斯·阿拉莫斯实验室（Los Alamos laboratory）。】玻恩和奥本海默的数学处理表明，若$\left(m_{\mathrm{e}}/m_{\alpha}\right)^{1/4} \ll 1$，则分子的真实波函数可以近似表示为
+    \begin{equation}
+        \psi\left(q_{i}, q_{\alpha}\right)=\psi_{\text{el}}\left(q_{i} ; q_{\alpha}\right) \psi_{N}\left(q_{\alpha}\right)
+        \label{eq:13.12}
+    \end{equation}
+    玻恩-奥本海默近似对双原子分子的基态电子态引入的误差很小。对激发态电子状态的修正比对基态的修正更大，但与用于求解多电子分子的电子薛定谔方程的近似所引入的误差相比，通常仍然很小。因此，我们无需担心对玻恩-奥本海默近似的修正。关于玻恩-奥本海默近似的进一步讨论，请参见J. Goodisman, \textit{Diatomic Interaction Potential Theory}, Academic Press, 1973, Volume 1, Chapter 1 .
+
+    玻恩和奥本海默在 1927 年发表的证明玻恩-奥本海默近似的论文严重缺乏严谨性。随后的研究更好地证明了玻恩-奥本海默近似值的正确性，但仍然存在重大问题：“核运动和电子运动的耦合问题目前尚无合理的解决方案，……这是未来可以且必须开展大量研究的一个领域”【B. T. Sutcliffe, \textit{J. Chem. Soc. Faraday Trans.}, \textbf{89}, 2321 (1993); see also B. T. Sutcliffe and R. G. Woolley, \textit{Phys. Chem. Chem. Phys.}, \textbf{7}, 3664 (2005), and Sutcliffe and Woolley, \url{arxiv.org/abs/1206.4239}】。
+
 
 \section{双原子分子核的运动}
 \label{sec:13.2 Nuclear Motion in Diatomic Molecules}
