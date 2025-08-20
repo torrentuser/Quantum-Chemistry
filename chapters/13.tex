@@ -107,11 +107,208 @@
     玻恩和奥本海默在 1927 年发表的证明玻恩-奥本海默近似的论文严重缺乏严谨性。随后的研究更好地证明了玻恩-奥本海默近似值的正确性，但仍然存在重大问题：“核运动和电子运动的耦合问题目前尚无合理的解决方案，……这是未来可以且必须开展大量研究的一个领域”【B. T. Sutcliffe, \textit{J. Chem. Soc. Faraday Trans.}, \textbf{89}, 2321 (1993); see also B. T. Sutcliffe and R. G. Woolley, \textit{Phys. Chem. Chem. Phys.}, \textbf{7}, 3664 (2005), and Sutcliffe and Woolley, \url{arxiv.org/abs/1206.4239}】。
 
 
-\section{双原子分子核的运动}
+\section{双原子分子中的核运动}
 \label{sec:13.2 Nuclear Motion in Diatomic Molecules}
+
+    本章的绝大部分内容都在处理双原子分子的电子薛定谔方程，但本节将考察双原子分子电子处于束缚态的核运动。根据(\ref{eq:13.10})和(\ref{eq:13.11})，双原子分子电子束缚态的核运动薛定谔方程为
+    \begin{equation}
+        \left[-\frac{\hbar^2}{2m_{\alpha}}\nabla_{\alpha}^2 - \frac{\hbar^2}{2m_{\beta}}\nabla_{\beta}^2 + U\left(R\right)\right]\psi_N = E\psi_N
+        \label{eq:13.13}
+    \end{equation}
+    其中$\alpha$和$\beta$为原子核，核运动波函数$\psi_N$为核坐标$x_{\alpha},\:y_{\alpha},\:z_{\alpha},\:x_{\beta},\:y_{\beta},\:z_{\beta}$的函数。
+
+    势能函数$U\left(R\right)$只是两核相对坐标的函数，根据第\ref{sec:6.3 Reduction of the Two-Particle Problem to Two One-Particle Problems}节的工作，我们知道双粒子薛定谔方程(\ref{eq:13.13})可以简化为两个单粒子薛定谔方程——一个关于分子整体平动，而另一个关于核的相对运动，我们有
+    \begin{equation}
+        \psi_{N} = \psi_{N,\text{tr}} \psi_{N,\text{int}} \quad \text{和} \quad E = E_{\text{tr}} + E_{\text{int}}
+        \label{eq:13.14}
+    \end{equation}
+    平动能级可视为三维势箱中单粒子的能级，其中势箱的尺寸与限制双原子分子气体容器的尺寸一致。
+
+    $\psi_{N,\text{int}}$的薛定谔方程为【式(\ref{eq:6.43})】：
+    \begin{equation}
+        \left[-\frac{\hbar^2}{2\mu}\nabla^2 + U\left(R\right)\right]\psi_{N,\text{int}} = E_{N,\text{int}}\psi_{N,\text{int}}, \quad \mu \equiv m_{\alpha}m_{\beta}/\left(m_{\alpha} + m_{\beta}\right)
+        \label{eq:13.15}
+    \end{equation}
+    其中$\psi_{N,\text{int}}$为一核关于另一核的相对坐标的函数。最佳坐标系应采用一个核相对于另一个核的球坐标系（图\ref{fig:6.5}，其中用$m_{\alpha}$取代$m_N$，$m_{\beta}$取代$m_{\mathrm{e}}$）。相对球坐标中的半径$r$为核间距$R$，我们将相对角向坐标表示为$\theta_N$和$\phi_N$。因为(\ref{eq:13.15})中的势能仅依赖于$R$，这是一个中心力问题，根据第(\ref{sec:6.1 The One-Particle Central Force Problem})节的结论，有
+    \begin{equation}
+        \psi_{N,\text{int}} = P\left(R\right)Y_J^M\left(\theta_N,\phi_N\right), \quad J = 0,\:1,\:2,\:\ldots, \quad M = -J,\: \ldots,\: J
+        \label{eq:13.16}
+    \end{equation}
+    其中函数$Y_J^M$是量子数分别为$J$和$M$的球谐函数。
+
+    根据(\ref{eq:6.17})径向函数$P\left(R\right)$通过下式求出：
+    \begin{equation}
+        -\frac{\hbar^2}{2\mu}\left[P''\left(R\right) + \frac{2}{R}P'\left(R\right)\right] + \frac{J\left(J+1\right)\hbar^2}{2\mu R^2}P\left(R\right) + U\left(R\right)P\left(R\right) = E_{\text{int}}P\left(R\right)
+        \label{eq:13.17}
+    \end{equation}
+    通过定义如下函数$F\left(R\right)$，微分方程可以得到简化：
+    \begin{equation}
+        F\left(R\right) \equiv R P\left(R\right)
+        \label{eq:13.18}
+    \end{equation}
+    将$P = F/R$代入(\ref{eq:13.17})，我们得到【式(\ref{eq:6.137})】：
+    \begin{equation}
+        -\frac{\hbar^2}{2\mu}F''\left(R\right) + \left[U\left(R\right) + \frac{J\left(J+1\right)\hbar^2}{2\mu R^2}\right]F\left(R\right) = E_{\text{int}}F\left(R\right)
+        \label{eq:13.19}
+    \end{equation}
+    这是一个有效势能为$U\left(R\right) + J\left(J+1\right)\hbar^2/2\mu R^2$的单粒子薛定谔方程。
+
+    求解(\ref{eq:13.19})的最基本方法如下所示：(a)在几个不同的$R$值下求解电子薛定谔方程(\ref{eq:13.7})，获得我们感兴趣的电子态能量$E_{\text{el}}$；(b)将$Z_{\alpha}Z_{\beta}\mathrm{e}^2/4\pi\varepsilon_0 R$与$E_{\text{el}}$相加，得到这些$R$值对应的$U$；(c)设计一个数学函数 $U\left(R\right)$，其参数经过调整，以使计算得到的 $U$ 值得到良好的拟合；(d)将(c)中得到的函数$U\left(R\right)$代入核运动径向薛定谔方程(\ref{eq:13.19})，并采用数值方法求解(\ref{eq:13.19})。
+
+    步骤(c)中常用的方法是\textit{三次样条法}（cubic splines），已有相应的计算机程序（见 \textit{Press et al.}, Chapter 3 ; \textit{Shoup}, Chapter 6）。
+
+    至于(d)的步骤，一维薛定谔方程(\ref{eq:13.19})的数值解法可以采用\textit{Cooley-Numerov法}【见 J. Tellinghuisen, \textit{J. Chem. Educ.}, \textbf{66}, 51 (1989)】，这是对Numerov方法的改进（第\ref{sec:4.4 Numerical Solutions of the One-Dimensional Time-Independent Schrödinger Equation}节和\ref{sec:6.9 Numerical Solution of the Radial Schrödinger Equation}节）；或使用\textit{有限元法}（finite-element method）【见D. J. Searles and E. I. von Nagy-Felsobuki, \textit{Am. J. Phys.}, \textbf{56}, 444 (1988)】。
+
+    对于给定的$J$值，径向方程(\ref{eq:13.19})的解$F\left(R\right)$由量子数$v$指定，其中$v$为$F\left(R\right)$中的节点数；$v = 0,\:1,\:2,\:\ldots$。能级$E_{\text{int}}$【通过$P\left(R\right) = F\left(R\right) / R$满足平方可积性求出】依赖于出现在(\ref{eq:13.19})中的量子数$J$和指定$F\left(R\right)$的量子数$v$；$E_{\text{int}} = E_{v,J}$。(\ref{eq:13.16})中的角向因子$Y_J^M\left(\theta_N,\phi_N\right)$为角度坐标的函数。保持$R$不变而改变$\theta_N$和$\phi_N$对应于双原子分子空间方向的转变，即转动运动。量子数$J$和$M$为转动量子数。注意$Y_J^M$为双粒子刚性转子波函数【式(\ref{eq:6.46})】。$R$坐标中的变化对应于核间距的变化，即振动运动，指定了函数$F\left(R\right)$的量子数$v$为振动量子数。
+
+    由于精确求解电子薛定谔方程【步骤(a)】很困难，我们通常使用简单但精度比步骤(a)至(d)稍低的方法来求解。最简单的方法是将$U\left(R\right)$展开为$R_e$的泰勒级数（问题4.1）：
+    \begin{equation}
+        U\left(R\right) = U\left(R_e\right) + U'\left(R_e\right) \left(R - R_e\right) + \frac{1}{2}U''\left(R_e\right) \left(R - R_e\right)^2 + \frac{1}{6}U'''\left(R_e\right) \left(R - R_e\right)^3 + \cdots
+        \label{eq:13.20}
+    \end{equation}
+    在平衡核间距$R_e$处，曲线$U\left(R\right)$的斜率为零（图\ref{fig:13.1}），则$U'\left(R_e\right) = 0$。我们可以预料到分子在平衡核间距附近振动。对于接近$R_e$的$R$值，$\left(R-R_e\right)^3$及更高次幂很小，我们可以忽略它们。定义\textbf{平衡力常数}（equilibrium force constant）$k_e$为$k_e \equiv U''\left(R_e\right)$，我们有
+    \begin{equation}
+        U\left(R\right) \approx U\left(R_e\right) + \frac{1}{2}k_e \left(R - R_e\right)^2 = U\left(R_e\right) + \frac{1}{2}k_ex^2
+        \label{eq:13.21}
+    \end{equation}
+    \begin{equation*}
+        k_e \equiv U''\left(R_e\right) \quad \text{以及} \quad x \equiv R - R_e
+    \end{equation*}
+    我们通过一个抛物线来近似$U\left(R\right)$【图\ref{fig:4.6}，其中$V \equiv U\left(R\right) - U\left(R_e\right)$，$x \equiv R - R_e$】。
+
+    随着自变量$x \equiv R - R_e$的变化，(\ref{eq:13.19})变为
+    \begin{equation}
+        -\frac{\hbar^2}{2\mu}S''\left(x\right) + \left[U\left(R_e\right) + \frac{1}{2}k_ex^2 + \frac{J\left(J+1\right)\hbar^2}{2\mu \left(x+R_e\right)^2} \right]S\left(x\right) \approx E_{\text{int}}S\left(x\right)
+        \label{eq:13.22}
+    \end{equation}
+    \begin{equation}
+        \text{其中} \quad S\left(x\right) \equiv F\left(R\right)
+        \label{eq:13.23}
+    \end{equation}
+    将$1/\left(x + R_e\right)^2$展开为泰勒级数，我们有（问题13.7）
+    \begin{equation}
+        \frac{1}{\left(x + R_e\right)^2} = \frac{1}{R_e^2\left(1 + x/R_e\right)^2} = \frac{1}{R_e^2} \left(1 - 2\frac{x}{R_e} + 3\frac{x^2}{R_e^2} - \cdots\right) \approx \frac{1}{R_e^2}
+        \label{eq:13.24}
+    \end{equation}
+    我们假设与$R_e$相比，$R-R_e=x$足够小，使得(\ref{eq:13.24})中1之后的项都可以被忽略。将(\ref{eq:13.24})带入(\ref{eq:13.22})并整理，得
+    \begin{equation}
+        -\frac{\hbar^2}{2\mu}S''\left(x\right) + \frac{1}{2}k_ex^2S\left(x\right) \approx \left[E_{\text{int}} - U\left(R_e\right) - \frac{J\left(J+1\right)\hbar^2}{2\mu R_e^2}\right]S\left(x\right)
+        \label{eq:13.25}
+    \end{equation}
+    方程(\ref{eq:13.25})与坐标为$x$、质量为$\mu$、势能函数为$\frac{1}{2}k_ex^2$以及能量本征值为$E_{\text{int}} - U\left(R_e\right) - J\left(J+1\right)\hbar^2$\\$/2\mu R_e^2$的一维谐振子薛定谔方程一致。【\ref{eq:13.25}的定解条件与(\ref{eq:4.32})并不一致，但区别不重要，可以忽略（\textit{Levine, Molecular Spectroscopy}, p. 147）。】因此，我们可以令(\ref{eq:13.25})括号中的项等于谐振子的本征值，得到
+    \begin{equation*}
+        E_{\text{int}} - U\left(R_e\right) - {J\left(J+1\right)\hbar^2}/{2\mu R_e^2} \approx \left(v + \frac{1}{2}\right)h\nu_e
+    \end{equation*}
+    \begin{equation}
+        E_{\text{int}} \approx U\left(R_e\right) + \left(v + \frac{1}{2}\right)h\nu_e + J\left(J+1\right)\hbar^2/2\mu R_e^2
+        \label{eq:13.26}
+    \end{equation}
+    \begin{equation}
+        \nu_e = \left(k_e/\mu\right)^{1/2} /2\pi ,\quad v = 0,\:1,\:2,\:\ldots
+        \label{eq:13.27}
+    \end{equation}
+    其中用到了(\ref{eq:4.23})，$\nu_e$称为\textbf{平衡（或简谐）振动频率}（equilibrium or harmonic vibrational frequency）。分子内能$E_{\text{int}}$近似等于电子能量之和$U\left(R_e\right) = E_{\text{elec}}$（与相同分子不同电子态不同），振动能为$\left(v + \frac{1}{2}\right)h\nu_e$，转动能为$J\left(J+1\right)\hbar^2/2\mu R_e^2$。近似(\ref{eq:13.21})和(\ref{eq:13.14})分别对应谐振子和刚性转子近似。根据(\ref{eq:13.26})和(\ref{eq:13.14})，分子能量$E = E_{\text{tr}} + E_{\text{int}}$近似为平动、转动、振动和电子能的和：
+    \begin{equation*}
+        E \approx E_{\text{tr}} + E_{\text{rot}} + E_{\text{vib}} + E_{\text{elec}}
+    \end{equation*}
+    由(\ref{eq:13.14})、(\ref{eq:13.16})、(\ref{eq:13.18})以及(\ref{eq:13.23})，核运动波函数为
+    \begin{equation}
+        \psi_N \approx \psi_{N,\text{tr}} S_v \left(R - R_e\right)R^{-1}Y_J^M\left(\theta_N,\phi_N\right)
+        \label{eq:13.28}
+    \end{equation}
+    其中$S_v\left(R - R_e\right)$为$v$量子数的谐振子本征函数。
+
+    与实验观测到的双原子分子振动-转动能级相比，近似式(\ref{eq:13.26})的吻合性较差。通过引入由(\ref{eq:13.21})和(\ref{eq:13.24})中忽略的项带来的一级和二级微扰理论能量校正，可以改善精度。当我们这么做时，（见\textit{Levine, Molecular Spectroscopy}, Section 4.2），能量中包含了额外的项，对应于非谐性振动【式(\ref{eq:4.60})】、振动-转动耦合和旋转离心畸变（第\ref{sec:6.4 The Two-Particle Rigid Rotor}节），其中非谐性振动是这些修正项中最大的，而旋转离心畸变则是最小的。
+
+    \begin{examplebox}
+        \textbf{例题：}一种对双原子分子势能函数的近似表示是莫尔斯（Morse）函数
+        \begin{equation*}
+            U\left(R\right) = U\left(R_e\right) + D_e\left[1 - \mathrm{e}^{-a\left(R-R_e\right)}\right]^2
+        \end{equation*}
+        由$U''\left(R_e\right) = k_e$【式(\ref{eq:4.59})】和(\ref{eq:13.27})可得（见问题4.29，因为能量零点的选取不同，所以问题4.29中的莫尔斯函数与本例中不同）
+        \begin{equation*}
+            a = \left(k_e/2D_e\right)^{1/2} = 2\pi\nu_e\left(\mu/2D_e\right)^{1/2}
+        \end{equation*}
+        使用莫尔斯函数和Numerov方法（第\ref{sec:4.4 Numerical Solutions of the One-Dimensional Time-Independent Schrödinger Equation}节）：\\
+        (a)求\ce{H2}分子处于其基态电子态时六个最低的振动能级能量，已知$D_e/hc = 38297 \:\mathrm{cm}^{-1}$，$\nu_e/c = 4403.2 \:\mathrm{cm}^{-1}$，$R_e = 0.741 \:\mathrm{Å}$，其中$h$和$c$分别为普朗克常数和光速；\\
+        (b)求这些振动态的$\left\langle R \right\rangle$。
+        \\
+
+        (a)振动能级对应于转动量子数$J=0$的状态。将变量替换为$x \equiv R - R_e$和$S\left(x\right) \equiv F\left(R\right)$【式(\ref{eq:13.23})】，再将莫尔斯函数带入核运动薛定谔方程(\ref{eq:13.19})中，对于$J=0$，我们有
+        \begin{equation*}
+            -\left(\hbar^2/2\mu\right)S''\left(x\right) + D_e\left(1-\mathrm{e}^{-ax}\right)^2S\left(x\right) = \left[E_{\text{int}} - U\left(R_e\right)\right]S\left(x\right) = E_{\text{vib}}S\left(x\right)
+        \end{equation*}
+        因为当$J=0$时，有$E_{\text{int}} = E_{\text{elec}} + E_{\text{vib}} = U\left(R_e\right) + E_{\text{vib}}$【式(\ref{eq:13.26})】。与Numerov方法中通常的做法一致，我们转而使用无量纲的约化变量$E_{\text{vib},r} \equiv E_{\text{vib}}/A$而$x_r \equiv x /B$，其中$A$和$B$为常数$\hbar$、$\mu$和$a$次幂的乘积。第\ref{sec:4.4 Numerical Solutions of the One-Dimensional Time-Independent Schrödinger Equation}节的过程给出了（问题13.8a）$A = \hbar^2a^2/\mu$和$B = a^{-1}$。因此，
+        \begin{equation*}
+            x_r = x/B = ax, \quad E_{\text{vib},r} = E_{\text{vib}}/A = \mu E_{\text{vib}}/\hbar^2a^2 = \left(2D_e/h^2\nu_e^2\right)E_{\text{vib}}
+        \end{equation*}
+        其中我们用到了$a = 2\pi\nu_e\left(\mu/2D_e\right)^{1/2}$。将
+        \begin{equation*}
+            x = x_{r}/a, \quad E_{\text{vib}} = \hbar^{2}a^{2} E_{\text{vib},r}/\mu, \quad D_{e,r} = D_{e}/\left(\hbar^{2}a^{2}/\mu\right), \quad S\left(x\right) = S_{r}\left(x_{r}\right)B^{-1/2}
+        \end{equation*}
+        \begin{equation*}
+            S'' = B^{-5/2}S''_r = B^{-1/2}B^{-2}S''_r = B^{-1/2}a^2 S''_r
+        \end{equation*}
+        【式(\ref{eq:4.78})和(\ref{eq:4.79})】代入$S\left(x\right)$的微分方程中，得到
+        \begin{equation*}
+            S''_r\left(x_r\right) = 2\left[2D_{e,r}\left(1-\mathrm{e}^{-x_r}\right)^2 - 2E_{\text{vib},r}\right]S_r\left(x_r\right) \equiv G_rS_r\left(x_r\right)
+        \end{equation*}
+        最后一个方程具有(\ref{eq:4.82})的形式，其中$G_r \equiv 2D_{e,r}\left(1-\mathrm{e}^{-x_r}\right)^2 - 2E_{\text{vib},r}$。所以我们已经准备好应用第\ref{sec:4.4 Numerical Solutions of the One-Dimensional Time-Independent Schrödinger Equation}节的Numerov方法。对于\ce{H2}的基态电子态，我们有（问题13.8b）
+        \begin{equation*}
+            A = h^2 \nu_e^2 / 2D_e = h^2 c^2 \left(4403.2 \:\mathrm{cm}^{-1}\right)^2 / 2hc \left(38297 \:\mathrm{cm}^{-1}\right) = \left(253.12_9 \:\mathrm{cm}^{-1}\right)hc
+        \end{equation*}
+        \begin{equation*}
+            B = 0.51412 \:\mathrm{Å}, \quad D_{e,r} = D_e / A = 151.29_4
+        \end{equation*}
+        我们希望在经典禁区中开始和结束应用Numerov方法。若我们使用谐振子来近似振动能级，则最低六个振动能级的能量为$\left(v + \frac{1}{2}\right)h\nu_e,\: v = 0,\:1,\:\ldots,\:5$。六个谐振子振动能级的约化能量为$5.5h\nu_e/A = 5.5h\nu_e/\left(253\:\mathrm{cm}^{-1}\right)hc = 5.5\left(4403\:\mathrm{cm}^{-1}\right) / \left(253\:\mathrm{cm}^{-1}\right) = 95.7$。由于非谐性振动的存在（第\ref{sec:4.3 Vibrations of Diatomic Molecules}节），事实上，六个振动能级的能量应低于95.7，因此我们可以安全地使用95.7来确定经典允许区域的边界。我们有$D_{e,r}\left(1-\mathrm{e}^{-x_r}\right) = 95.7$，以及$D_{e,r} = 151.29$，得到约化能量为95.7时的经典允许区域边界$x_r = -0.58$和$x_r = 0.58$。将边界两端各延长1.2，我们将在$x_r = −1.8$处开始Numerov方法，并在$x_r = 2.8$处结束。然而，$x_r = \left(R - R_e\right)/B = \left(R - 0.741\:\mathrm{Å}\right)/\left(0.514\:\mathrm{Å}\right)$以及核间距$R$的最小可能值为0，所以$x_r$的最小可能值为-144。因此，我们从$x_r = -144$开始Numerov方法，并在$x_r = 2.8$处结束。若我们取间隔为$s_r = 0.04$，就得到了106个点，这已经很充分了；但我们希望通过设$s_r=0.02$得到212个点来提高精度。通过这些选择，我们按照常规方式设置Numerov电子表格（或使用Mathcad或表4.1中的计算机程序）。得到（问题13.9）以下六个最低的$E_{\text{vib},r}$值：8.572525，24.967566，40.362582，54.757570，68.152531，80.547472。使用$E_{\text{vib},r} = E_{\text{vib}}/A$，我们得到六个最低的振动能级为$E_{\text{vib}} / h c=2169.95,\:6320.01,\:10216.94,\:13860.73,\:17251.38,\:20388.90 \:\mathrm{~cm}^{-1}$。注意：随着振动量子数的变大，能级间隔逐渐减小。（相比之下，谐振子近似给出了以下值：$2201.6, \:6604.8, \:11008.0, \:15411.2, \:19814.4, \:24217.6 \:\mathrm{cm}^{-1}$。）\\
+        巧合的是，莫尔斯函数的薛定谔方程可以几乎精确地解析求解，而解析解（问题13.11）给出了以下最低本征值：$2169.96,\:6320.03,\:10216.97,\:13860.78,\:17251.57,\:23889.02\:\mathrm{cm}^{-1}$。Numerov 莫尔斯函数值与解析莫尔斯函数值之间具有非常良好的一致性。实验观测到的\ce{H2}最低能级为$2170.08,\:6331.22,\:10257.19,\:13952.43,\:17420.44,\:20662.00\:\mathrm{cm}^{-1}$。莫尔斯函数值与实验值的偏差表明，莫尔斯函数并非对\ce{H2}基态$U\left(R\right)$函数的精确描述。
+
+        (b)我们有
+        \begin{equation*}
+            \left\langle x_{r}\right\rangle \approx \int_{-1.44}^{2.8} x_{r}\left|S_{r}\right|^{2} d x_{r} \approx \sum_{x_{r}=1.44}^{2.8} x_{r}\left|S_{r}\right|^{2} s_{r}
+        \end{equation*}
+        其中$s_r = 0.02$为间距（不要与振动波函数$S_r$相混淆），且振动波函数$S_r$必须归一化。（另见问题13.12。）我们按照第\ref{sec:4.4 Numerical Solutions of the One-Dimensional Time-Independent Schrödinger Equation}节的步骤对$S_r$进行归一化处理，从而得到一列$x_r\left|S_r\right|^2s_r$的值。接下来，我们将这些值相加，得到以下六个最低振动态的结果（问题13.9b）：$\left\langle x_r \right\rangle = 0.0440,\:0.1365,\:0.2360,\:0.3435,\:0.4605,\:0.5884$。由$x_r = \left(R - R_e\right)/B$，我们得到了以下值：
+        %\vspace{1em}
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{Figures/13.2.png}
+            \captionof{figure}{通过Numerov方法求出的\ce{H2}$v=5$莫尔斯振动波函数。}
+            \label{fig:13.2}
+        \end{center}
+        %\vspace{1em}
+        $\left\langle R \right\rangle = 0.763,\:0.811,\:0.862,\:0.918,\:1.044\:\mathrm{Å}$。（为了得到准确的$\left\langle x_r \right\rangle$值，$E_{\text{vib},r}$的计算精度必须远高于（a）中所给的精度——精度必须足够高，以确保波函数在 2.8 处接近于零。如果电子表格不允许输入足够的小数位数来对 $ν = 0$ 进行此操作，则可以将右边界取为2.5而不是2.8。）由于非谐性振动的存在，当振动量子数增大时，分子将变大。这种效应对于氢等轻原子来说相当显著。$v=5$的Numerov-莫尔斯振动波函数（图\ref{fig:13.2}）显示出以原点（$x_r = 0$，对应于$R = R_e$）为中心的明显不对称性。关于非谐性对键长影响的典型例子，请参见第\ref{sec:13.7 MO Configurations for Homonuclear Diatomic Molecules}节末尾对\ce{He2}（世界上最大的双原子分子）的讨论。
+    \end{examplebox}
 
 \section{原子单位制}
 \label{sec:13.3 Atomic Units}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{氢分子离子}
 \label{sec:13.4 The Hydrogen Molecular Ion}
