@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  20 AUG 2025 17:02
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  21 AUG 2025 09:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2398,45 +2398,42 @@ See the caption package documentation for explanation.
 [268]
 
 [269]
+
+[270]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 15.05785pt on input line 316.
+(Font)              scaled to size 15.05785pt on input line 346.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 15.05463pt on input line 316.
+(Font)              scaled to size 15.05463pt on input line 346.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <15.05624> not available
-(Font)              size <14.4> substituted on input line 316.
+(Font)              size <14.4> substituted on input line 346.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 316.
+(hyperref)                removing `\mhchem@cee' on input line 346.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 316.
+(hyperref)                removing `superscript' on input line 346.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 319.
+(hyperref)                removing `\mhchem@cee' on input line 349.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 319.
+(hyperref)                removing `superscript' on input line 349.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 331.
+(hyperref)                removing `\mhchem@cee' on input line 361.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 340.
+(hyperref)                removing `\mhchem@cee' on input line 370.
 
 ) (./chapters/14.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[270]
 
 [271]
 
@@ -2538,10 +2535,10 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 43343 strings out of 473832
- 983330 string characters out of 5726732
- 1620930 words of memory out of 5000000
- 65645 multiletter control sequences out of 15000+600000
+ 43345 strings out of 473832
+ 983350 string characters out of 5726732
+ 1621008 words of memory out of 5000000
+ 65647 multiletter control sequences out of 15000+600000
  571128 words of font info for 159 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,25n,111p,1743b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s

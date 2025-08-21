@@ -281,37 +281,67 @@
 \section{原子单位制}
 \label{sec:13.3 Atomic Units}
 
+    大多数量子化学家使用原子单位来报告他们的计算结果。
 
+    在国际单位制下，氢原子哈密顿算符（假设原子核为无限重）为$-\left(\hbar^2/2m_{\mathrm{e}}\right)\nabla^2 - \mathrm{e}^2/4\pi\varepsilon_0 r$。原子单位系统遵循如下定义。质量、电荷量以及角动量的单位分别定义为电子的质量$m_{\mathrm{e}}$、质子的电荷$\mathrm{e}$和$\hbar$（而不是千克、库仑和$\mathrm{kg}\:\mathrm{m}^2/\mathrm{s}$）。介电常数的单位为$4\pi\varepsilon_0$，而不是$\mathrm{C}^2\:\mathrm{N}^{-1}\:\mathrm{m}^{-2}$。（量子化学中使用的质量原子单位不应与1 amu相混淆，其中1 amu为\ce{^12C}原子质量的$1/12$。）当我们使用原子单位制时，$\hbar$、$m_{\mathrm{e}}$、$\mathrm{e}$和$4\pi\varepsilon_0$的数值都为1。因此，为了将某公式从国际单位制转换为原子单位制，我们只需令这些量为1即可。所以原子单位制下的氢原子哈密顿算符为$-\frac{1}{2}\nabla^2 - 1/r$，其中$r$采用原子单位制的长度而不是米。氢原子基态能量由(\ref{eq:6.94})给出，为$-\frac{1}{2}\left(\mathrm{e}^2/4\pi\varepsilon_0a_0\right)$。因为【式(\ref{eq:6.106})】$a_0 = 4\pi\varepsilon_0\hbar^2/m_{\mathrm{e}}\mathrm{e}^2$，则它（玻尔半径）在原子单位下的值为1，基态氢原子能量的值（忽略核运动）在原子单位制下则为$-\frac{1}{2}$。
 
+    能量的原子单位$\mathrm{e}^2/4\pi\varepsilon_0a_0$称为\textbf{哈特里}（hartree）（记作$E_h$）：
+    \begin{equation}
+        1\:\text{hartree} \equiv E_h \equiv \frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0} = \frac{m_{\mathrm{e}}\mathrm{e}^4}{\left(4\pi\varepsilon_0\right)^2\hbar^2} = 27.211385 \:\mathrm{eV} = 4.359744 \times 10^{-18} \:\mathrm{J}
+        \label{eq:13.29}
+    \end{equation}
+    若忽略原子核运动，则基态氢原子能量为$-\frac{1}{2}$。长度的原子单位称为\textbf{玻尔}（bohr）：
+    \begin{equation}
+        1\:\text{bohr} \equiv a_0 \equiv {4\pi\varepsilon_0\hbar^2}/{m_{\mathrm{e}}\mathrm{e}^2} = 0.52917721 \:\mathrm{Å}
+        \label{eq:13.30}
+    \end{equation}
 
+    为了求出任何量的原子单位（例如时间），我们可以将$\hbar$、$m_{\mathrm{e}}$、$\mathrm{e}$和$4\pi\varepsilon_0$进行组合，得出具有目标量纲的量。可以证明（问题13.14），时间的原子单位$\hbar/E_h = 2.4188843 \times 10^{-17} \:\mathrm{s}$，电偶极矩的单位是$\mathrm{e}a_0 = 8.478353 \times 10^{-30} \:\mathrm{C}\:\mathrm{m}$。
 
+    在第\ref{chap:13}至\ref{chap:17}章中，我们将使用原子单位制。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    \begin{quote}
+        \small
+        \noindent
+        一种更严格定义原子单位的方法如下所述。从国际单位制下氢原子的电子薛定谔方程开始，我们定义（与第\ref{sec:4.4 Numerical Solutions of the One-Dimensional Time-Independent Schrödinger Equation}节一致）无量纲的约化变量$E_r \equiv E/A$，$r_r \equiv r/B$，其中$A$和$B$是$\hbar$、$m_{\mathrm{e}}$、$\mathrm{e}$和$4\pi\varepsilon_0$的组合，使得它们分别具有能量和长度的量纲。第\ref{sec:4.4 Numerical Solutions of the One-Dimensional Time-Independent Schrödinger Equation}节的过程表明（问题13.13）$A = m_{\mathrm{e}}\mathrm{e}^4/\left(4\pi\varepsilon_0\right)^2\hbar^2 = \mathrm{e}^2/4\pi\varepsilon_0a_0 \equiv 1\:\mathrm{hartree}$，$B = \hbar^24\pi\varepsilon_0/m_{\mathrm{e}}\mathrm{e}^2 \equiv 1\:\mathrm{bohr}$。对于该三量纲问题，氢原子波函数的量纲为$\mathrm{L}^{3/2}$，所以约化无量纲的$\psi_r$定义为$\psi_r \equiv \psi\left(r\right)B^{3/2}$。此外，
+        \begin{equation*}
+            \frac{\partial^2 \psi_r}{\partial r_r^2} = B^{3/2} \frac{\partial^2 \psi}{\partial r^2} \left( \frac{\partial r}{\partial r_r} \right)^2 = B^{3/2} \frac{\partial^2 \psi}{\partial r^2} B^2 = B^{3/2} \frac{\partial^2 \psi}{\partial r^2} a_0^2
+        \end{equation*}
+        将约化量引入薛定谔方程后，我们发现（问题13.13），约化氢原子薛定谔方程为$-\frac{1}{2}\nabla_r^2\psi_r - \left({1}/{r_r}\right)\psi_r = E_r\psi_r$，其中$\nabla_r^2$由(\ref{eq:6.6})给出，但用$r_r$代替$r$。实际上，人们通常不会特意加上下标$r$，而是直接写成$-\frac{1}{2}\nabla^2\psi - \left({1}/{r}\right)\psi = E\psi$。
+    \end{quote}
 
 \section{氢分子离子}
 \label{sec:13.4 The Hydrogen Molecular Ion}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{\ce{H^2+}离子基态的近似解}
 \label{sec:13.5 Approximate Treatments of the H2 Ground Electronic State}
