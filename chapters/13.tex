@@ -74,13 +74,12 @@
         \label{fig:13.1}
     \end{figure}
 
-    当我们考虑核运动（第\ref{sec:13.2 Nuclear Motion in Diatomic Molecules}节）时会发现：平衡核间距$D_e$与分子基态振动解离能$D_0$有差异。核运动最低态具有零转动能【正如式(\ref{eq:6.47})所示】和非零振动能——零点能。若我们使用谐振子模型来近似双原子分子的振动（第\ref{sec:4.3 Vibrations of Diatomic Molecules}节），则该零点能为$\frac{1}{2}h\nu$。该零点能使得核运动基态能量$\frac{1}{2}h\nu$高于$U\left(R\right)$曲线中的最小值，则$D_0$小于$D_e$：$D_0 \approx D_e - \frac{1}{2}h\nu$。相同分子的不同电子态具有不同的$U\left(R\right)$曲线（图13.5和13.19），以及不同的$R_e$、$D_e$、$D_0$和$\nu$值。
+    当我们考虑核运动（第\ref{sec:13.2 Nuclear Motion in Diatomic Molecules}节）时会发现：平衡核间距$D_e$与分子基态振动解离能$D_0$有差异。核运动最低态具有零转动能【正如式(\ref{eq:6.47})所示】和非零振动能——零点能。若我们使用谐振子模型来近似双原子分子的振动（第\ref{sec:4.3 Vibrations of Diatomic Molecules}节），则该零点能为$\frac{1}{2}h\nu$。该零点能使得核运动基态能量$\frac{1}{2}h\nu$高于$U\left(R\right)$曲线中的最小值，则$D_0$小于$D_e$：$D_0 \approx D_e - \frac{1}{2}h\nu$。相同分子的不同电子态具有不同的$U\left(R\right)$曲线（图\ref{fig:13.5}和13.19），以及不同的$R_e$、$D_e$、$D_0$和$\nu$值。
     %记得改引用！！！！！！
 
     考虑由双原子分子\ce{AB}组成的理想气体。在趋于绝对零度的近似中，所有的分子\ce{AB}都处于电子和核运动的基态，则$D_0N_A$（其中$N_A$为阿伏伽德罗常数，$D_0$为\ce{AB}分子的基态解离能）为将1摩尔\ce{AB}分子完全解离带来的热力学内能$U$和焓$H$的变化值：$N_AD_0 = \Delta U^°_0 = \Delta H^°_0$，\ce{AB(g) -> A(g) + B(g)}。
 
-    对于某些双原子分子的电子态，解电子薛定谔方程得到的$U\left(R\right)$曲线没有最小值。此类态不具束缚性，分子将发生解离。例如图13.5中所示的某些态。
-    %记得改引用！！！！！！
+    对于某些双原子分子的电子态，解电子薛定谔方程得到的$U\left(R\right)$曲线没有最小值。此类态不具束缚性，分子将发生解离。例如图\ref{fig:13.5}中所示的某些态。
 
     假设我们已经解出了电子薛定谔方程，则下一步该考虑核运动了。根据我们的近似，电子的运动远快于核运动。当核的组态稍微变化时（设为$q'_{\alpha}$到$q''_{\alpha}$），电子可以迅速对核组态变化做出响应，其中电子波函数从$\psi_{\text{el}}\left(q_i;q'_{\alpha}\right)$变为$\psi_{\text{el}}\left(q_i;q''_{\alpha}\right)$而电子能量从$U\left(q'_{\alpha}\right)$变为$U\left(q''_{\alpha}\right)$。因此，随着原子核的运动，电子能随着定义核组态参数的函数而连续变化，而$U\left(q\right)$实际上成为核运动的势能。电子就像连接原子核的弹簧。随着原子核之间的距离变化，弹簧中储存的能量也会发生变化。因此，描述原子核运动的薛定谔方程是
     \begin{equation}
@@ -271,7 +270,7 @@
         %\vspace{1em}
         \begin{center}
             \includegraphics[width=0.6\textwidth]{Figures/13.2.png}
-            \captionof{figure}{通过Numerov方法求出的\ce{H2}$v=5$莫尔斯振动波函数。}
+            \captionof{figure}{通过Numerov方法求出的\ce{H2}满足$v=5$的莫尔斯振动波函数。}
             \label{fig:13.2}
         \end{center}
         %\vspace{1em}
@@ -313,40 +312,148 @@
 \section{氢分子离子}
 \label{sec:13.4 The Hydrogen Molecular Ion}
 
+    现在，我们开始研究分子的电子能。我们将使用玻恩-奥本海默近似，在求解电子运动的薛定谔方程时，将原子核固定不动。通常情况下，我们将考虑孤立分子，忽略分子间相互作用。我们的结果主要适用于低压气相中的分子。有关溶剂效应的讨论，请参见第\ref{sec:15.17 Solvent Effects}节和第\ref{sec:17.6 Empirical and Semiempirical Treatments of Treating Solvent Effects}节。
 
+    首先从双原子分子开始，最简单的为包含两个质子和一个电子的氢分子离子\ce{H2+}。与我们将单电子的氢原子作为多电子原子讨论的起点一致，单电子的\ce{H2+}为讨论多电子双原子分子提供了许多有用的想法。\ce{H2+}的电子薛定谔方程可分离变量，因此我们可以得到本征函数和本征值的精确解。
 
+    图\ref{fig:13.3}展示了\ce{H2+}的结构。两个原子核位于$a$和$b$；核间距为$R$；$r_a$和$r_b$分别为电子与核$a$和$b$的距离。由于原子核是固定的，所以这是一个单粒子问题，其纯电子哈密顿算符为【式(\ref{eq:13.5})】
+    \begin{equation}
+        \hat{H}_{\text{el}} = -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla^2 - \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_a} - \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_b}
+        \label{eq:13.31}
+    \end{equation}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/13.3.png}
+        \caption{\ce{H2+}中的粒子间距离。}
+        \label{fig:13.3}
+    \end{figure}
+    第一项为电子的动能算符，第二和第三项为电子与原子核之间的吸引势。在原子单位制下，\ce{H2+}纯电子哈密顿算符为
+    \begin{equation}
+        \hat{H}_{\text{el}} = -\frac{1}{2}\nabla^2 - \frac{1}{r_a} - \frac{1}{r_b}
+        \label{eq:13.32}
+    \end{equation}
 
+    图\ref{fig:13.3}中的坐标原点位于核间轴上，处于两个核连线的中点，$z$轴沿核间轴方向延伸。在球坐标系下，\ce{H2+}的电子薛定谔方程无法分离变量。然而，若我们使用\textit{共焦椭圆坐标}（confocal elliptic coordinates）$\xi$、$\eta$和$\phi$，则可以分离变量。坐标$\phi$为电子绕核间轴（$z$轴）旋转的角度，与球坐标一致。坐标$\xi$（xi）和$\eta$（eta）定义为
+    \begin{equation}
+        \xi \equiv \frac{r_a + r_b}{R}, \quad \eta \equiv \frac{r_a - r_b}{R}
+        \label{eq:13.33}
+    \end{equation}
+    这些坐标的取值范围是
+    \begin{equation}
+        0 \le \phi \le 2\pi, \quad 1 \le \xi < \infty, \quad -1 < \eta < 1
+        \label{eq:13.34}
+    \end{equation}
 
+    我们必须将哈密顿算符(\ref{eq:13.32})使用的坐标转换为这些坐标。有
+    \begin{equation}
+        r_a = \frac{1}{2}R\left(\xi + \eta\right), \quad r_b = \frac{1}{2}R\left(\xi - \eta\right)
+        \label{eq:13.35}
+    \end{equation}
+    我们还需要拉普拉斯算符在共焦椭圆坐标中的表达式。一种方法是将$\xi$、$\eta$和$\phi$用电子的笛卡尔坐标$x$、$y$和$z$来表示，再使用链式法则将$\partial /\partial x$、$\partial /\partial y$和$\partial /\partial z$转换为$\partial /\partial \xi$、$\partial /\partial \eta$和$\partial /\partial \phi$。然后构造出$\nabla^2 \equiv \partial^2/\partial x^2 + \partial^2/\partial y^2 + \partial^2/\partial z^2$。$\nabla^2$表达式的导出此处省略。（讨论见\textit{Margenau and Murphy}, Chapter 5。）将$\nabla^2$和(\ref{eq:13.35})代入(\ref{eq:13.32})，我们得到\ce{H2+}的$\hat{H}_{\text{el}}$在共焦椭圆坐标下的表达式。结果省略。
 
+    对于哈密顿算符为球对称的氢原子，电子角动量算符为$\hat{L}^2$和$\hat{L}_z$，都和$\hat{H}$可对易。但\ce{H2+}离子的哈密顿算符并不满足球对称关系，可以得到对\ce{H2+}有$\left[\hat{L}^2, \hat{H}_{\text{el}}\right] \neq 0$。然而，\ce{H2+}满足轴对称，可以证明$\hat{L}_z$和$\hat{H}_{\text{el}}$可对易。因此，电子波函数可以选为$\hat{L}_z$的本征函数。$\hat{L}_z$的本征函数为【式(\ref{eq:5.81})】
+    \begin{equation}
+        \text{常数}\cdot \left(2\pi\right)^{-1/2}\mathrm{e}^{\mathrm{i}m\phi}, \quad \text{其中}\:m = 0,\:\pm 1,\:\pm 2,\:\pm 3,\:\ldots
+        \label{eq:13.36}
+    \end{equation}
+    \ce{H2+}中电子轨道角动量在$z$方向分量为$m\hbar$，若使用原子单位制则为$m$。\ce{H2+}的电子总轨道角动量不为常数。
 
+    仅就$\partial / \partial\phi$而言，式(\ref{eq:13.36})中的“常数”是一个常数，则\ce{H2+}波函数的形式为$\psi_{\text{el}} = F\left(\xi,\eta\right)$\\$\left(2\pi\right)^{-1/2}\mathrm{e}^{\mathrm{i}m\phi}$。现在尝试分离变量：
+    \begin{equation}
+        \psi_{\text{el}} = L\left(\xi\right)M\left(\eta\right)\left(2\pi\right)^{-1/2}\mathrm{e}^{\mathrm{i}m\phi}
+        \label{eq:13.37}
+    \end{equation}
+    将(\ref{eq:13.37})代入$\hat{H}_{\text{el}}\psi_{\text{el}} = E_{\text{el}}\psi_{\text{el}}$中就得到了可分离变量的方程。得到两个常微分方程，一个关于$L\left(\xi\right)$，另一个关于$M\left(\eta\right)$。解这些方程，可以发现若$\psi_{\text{el}}$满足品优条件，则要求对给定的$R$值，只有某些特定的$E_{\text{el}}$值是允许的。这个条件给出了一组不同的电子态。没有$E_{\text{el}}$的代数公式，对于每个状态的$R$的每个期望值，都必须通过数值计算来确定其大小。除了量子数$m$以外，\ce{H2+}的电子波函数还由量子数$n_{\xi}$和$n_{\eta}$指定，这些量子数给出了$L\left(\xi\right)$和$M\left(\eta\right)$因子在$\psi_{\text{el}}$中产生的节点数。
 
+    对于基态电子态，量子数$m$为零。在$R = \infty$时，\ce{H2+}的基态分离成一个质子和一个基态氢原子，因此$E_{\text{el}} \left(\infty\right) = -\frac{1}{2}\:\mathrm{hartree}$。当$R=0$时，两个质子聚拢，形成了\ce{He+}离子，基态能量为$-\frac{1}{2}\left(2\right)^2\:\mathrm{hartrees} = -2\:\mathrm{hartrees}$。将核间排斥势$1/R$（原子单位制）与$E_{\text{el}}\left(R\right)$相加，得到核运动的势能曲线$U\left(R\right)$。从电子薛定谔方程中解得的$E_{\text{el}}\left(R\right)$与$U\left(R\right)$的图像如图\ref{fig:13.4}所示。在$R = \infty$处核间排斥势为零，而$U$为$-\frac{1}{2}\:\mathrm{hartree}$。
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.55\textwidth]{Figures/13.4.png}
+        \caption{\ce{H2+}基态电子能级中存在（$U$）和不存在（$E_{\text{el}}$）核间排斥势的电子能量。}
+        \label{fig:13.4}
+    \end{figure}
 
+    $U\left(R\right)$曲线的最小值位于$R_e = 1.9972\:\mathrm{bohrs} = 1.057 \:\mathrm{Å}$处，表明\ce{H2+}的基态电子态为稳定束缚态。$1.9972\:\mathrm{bohsr}$处的$E_{\text{el}}$计算值为$-1.1033\:\mathrm{hartrees}$。引入核间排斥势$1/R$后得到$U\left(R_e\right) = -0.6026\:\mathrm{hartree}$，与$R = \infty$处的值$-0.5000\:\mathrm{hartree}$相比。因此，基态结合能为$D_e = 0.1026\:\mathrm{hartree} = 2.79\:\mathrm{eV}$。对应于$64.4\:\mathrm{kcal}/\mathrm{mol} = 269\:\mathrm{kJ}/\mathrm{mol}$。结合能仅占平衡核间距下总能量的$17\%$。因此，总能量中的微小误差可能对应于结合能中的较大误差。对于较重的分子，情况更为严重，因为大多数双原子分子的化学结合能处于同一数量级，但较重分子的总电子能会显著增加。
 
+    请注意，\ce{H2+}中的单个电子足以形成一个稳定的束缚态。
 
+    图\ref{fig:13.5}展示了几个\ce{H2+}电子态的$U\left(R\right)$曲线，这些曲线从电子薛定谔方程中解得。
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/13.5.png}
+        \caption{
+            \centering
+            \parbox{0.65\textwidth}{
+                几个\ce{H2+}电子态的$U\left(R\right)$曲线。虚线用于帮助区分间隔较近的能级。在本图的尺度上无法观察到第一激发电子能级曲线在12.5 bohrs处的一个微小谷值，其势阱深度为0.00006 hartrees。
+            }
+        }
+        \label{fig:13.5}
+    \end{figure}
 
+    在\ce{H2+}的$\hat{H}_{\text{el}}$中，角度$\phi$只以$\partial^2/\partial\phi^2$的形式出现。当(\ref{eq:13.37})的$\psi_{\text{el}}$满足$\hat{H}_{\text{el}}\psi_{\text{el}} = E_{\text{el}}\psi_{\text{el}}$时，因子$\mathrm{e}^{\mathrm{i}m\phi}$对消了，得到了关于$L\left(\xi\right)$和$M\left(\eta\right)$的两个常微分方程，其中量子数$m$只以$m^2$的形式出现。因为$E_{\text{el}}$是通过$L\left(\xi\right)$和$M\left(\eta\right)$的解来确定的，所以$E_{\text{el}}$与$m^2$有关，每个$m \neq 0$的电子能级都是二重简并的，对应于量子数为$+\left|m\right|$和$-\left|m\right|$的两个电子态。在双原子分子的标准表示法中【F. A. Jenkins, \textit{J. Opt. Soc. Am.}, \textbf{43}, 425 (1953)】，$m$的绝对值称为$\lambda$：
+    \begin{equation*}
+        \lambda \equiv \left|m\right|
+    \end{equation*}
+    （某些教科书将$\lambda$定义为与$m$相同。）与描述氢原子状态的$s,\:p,\:d,\:f,\:g$记号类似，我们用一个字母来指定$\lambda$（原子单位制），即电子轨道角动量沿分子轴向分量绝对值大小：
+    \begin{equation}
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            $\lambda$ & 0 & 1 & 2 & 3 & 4 \\
+            \hline
+            字母 & $\sigma$ & $\pi$ & $\delta$ & $\varphi$ & $\gamma$ \\
+            \hline
+        \end{tabular}
+        \label{eq:13.38}
+    \end{equation}
+    因此，\ce{H2+}的最低电子态为$\sigma$态。
 
+    除了根据$\lambda$来对\ce{H2+}的状态进行分类以外，我们还可以使用它们的宇称（第\ref{sec:7.5 Parity}节）来分类。由图13.12可知，通过原点$O$对电子坐标进行反演会使$\phi$变为$\phi+\pi$、$r_a$变为$r_b$和$r_b$变为$r_a$。该操作未改变电子哈密顿算符(\ref{eq:13.31})中的势能部分。我们之前已经证明了动能算符在反演下是不变的。因此宇称算符和哈密顿算符(\ref{eq:13.31})可对易，\ce{H2+}的电子波函数可以分为奇函数和偶函数。对于偶函数，我们使用下标$g$来表示（来自德语词\textit{gerade}，意为“偶数”），对于奇函数，我们使用下标$u$来表示（来自德语词\textit{ungerade}，意为“奇数”）。
+    %记得改引用！！！！！！
 
+    图\ref{fig:13.5}中最低的$\sigma_g$能级标记为$1\sigma_g$，在小$R$处第二低的能级记为$2\sigma_g$，以此类推。最低的$\sigma_u$能级记为$1\sigma_u$，以此类推。替代记号$\sigma_g1s$表明该能级会解离为$1s$氢原子。$\sigma_u^*1s$中星号的意义稍后将予以说明。
 
+    为了完备性的考虑，我们必须考虑自旋，根据电子自旋角动量在核间轴方向的分量为$+\frac{1}{2}$或$-\frac{1}{2}$（原子单位制），我们将每个\ce{H2+}电子空间波函数乘以$\alpha$或$\beta$。自旋的引入使每个能级的简并度翻倍。
 
+    \ce{H2+}基态电子态满足$R_e = 2.00\:\mathrm{bohrs} = 2.00\left(4\pi\varepsilon_0\hbar^2/m_{\mathrm{e}}\mathrm{e}^2\right)$。负的$\mu$子（记为$\mu^-$）为存在时间很短（半衰期为$2\times 10^{-6}\:\mathrm{s}$）的基本粒子，其电荷量与电子一致，但其质量$m_{\mu}$为电子质量的207倍。当一束负$\mu$子束（由高速加速的离子与普通物质碰撞产生）进入\ce{H2}气体时，会形成由两个质子和一个$\mu$子组成的$\mu$分子离子。这种物质记为$\left(\mathrm{p\mu p}\right)^+$，为电子被$\mu$子取代的\ce{H2+}离子。通过将$R_e$中的$m_{\mathrm{e}}$替换为$m_{\mu}$，可以计算出其$R_e$值：
+    \begin{equation*}
+        2.00 \left(4\pi \varepsilon_0 \hbar^2 / m_\mu \mathrm{e}^2\right) = 2.00 \left(4\pi \varepsilon_0 \hbar^2 / 207 m_{\mathrm{e}} \mathrm{e}^2\right) = \left(2.00/207\right) \:\mathrm{bohr} = 0.0051 \:\mathrm{Å}
+    \end{equation*}
+    该$\mu$离子中的核间距为\ce{H2+}中的$1/207$。(\ref{eq:13.28})中振动波函数因子很小，但与$R - R_e = -0.0051 \:\mathrm{Å}$相比并不完全可忽略，所以在$\left(\mathrm{p\mu p}\right)^+$中原子核建立联系的可能性不为零，即可能发生核聚变。同位素核\ce{^2H}（氘）和\ce{^3H}（氚）比质子更容易发生聚变反应，因此人们通常使用\ce{D2}和\ce{T2}的混合气体，而不是\ce{H2}。聚变发生后， $\mu$子被释放并可被重新捕获以催化另一次聚变。在适当条件下，一个 $\mu$ 子平均可催化 150 次聚变后才衰变。遗憾的是，目前产生 $\mu$ 束所需的能量超过融合释放的能量。（See \url{en.wikipedia.org/wiki/Muon-catalyzed_fusion}.）
 
+    在本章的其余部分，电子波函数、哈密顿算符和能量中的下标 el 将被省略。在第 \ref{chap:13} 章至第 \ref{chap:17} 章中，我们将$\psi$理解为$\psi_{\text{el}}$。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{\ce{H^2+}离子基态的近似解}
+\section{\ce{H2+}离子基态的近似处理}
 \label{sec:13.5 Approximate Treatments of the H2 Ground Electronic State}
 
-\section{\ce{H^2+}离子激发态的分子轨道}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{\ce{H2+}离子激发态的分子轨道}
 \label{sec:13.6 Molecular Orbitals for H2 Excited States}
 
 \section{同核双原子分子的分子轨道构型}
