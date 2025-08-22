@@ -408,7 +408,7 @@
     \end{equation}
     因此，\ce{H2+}的最低电子态为$\sigma$态。
 
-    除了根据$\lambda$来对\ce{H2+}的状态进行分类以外，我们还可以使用它们的宇称（第\ref{sec:7.5 Parity}节）来分类。由图13.12可知，通过原点$O$对电子坐标进行反演会使$\phi$变为$\phi+\pi$、$r_a$变为$r_b$和$r_b$变为$r_a$。该操作未改变电子哈密顿算符(\ref{eq:13.31})中的势能部分。我们之前已经证明了动能算符在反演下是不变的。因此宇称算符和哈密顿算符(\ref{eq:13.31})可对易，\ce{H2+}的电子波函数可以分为奇函数和偶函数。对于偶函数，我们使用下标$g$来表示（来自德语词\textit{gerade}，意为“偶数”），对于奇函数，我们使用下标$u$来表示（来自德语词\textit{ungerade}，意为“奇数”）。
+    除了根据$\lambda$来对\ce{H2+}的状态进行分类以外，我们还可以使用它们的宇称（第\ref{sec:7.5 Parity}节）来分类。由图13.12可知，通过原点$O$对电子坐标进行反演会使$\phi$变为$\phi+\pi$、$r_a$变为$r_b$和$r_b$变为$r_a$。该操作未改变电子哈密顿算符(\ref{eq:13.31})中的势能部分。我们之前已经证明了动能算符在反演下是不变的。因此宇称算符和哈密顿算符(\ref{eq:13.31})可对易，\ce{H2+}的电子波函数可以分为奇函数和偶函数。对于偶函数，我们使用下标$g$来表示（来自德语词\textit{gerade}，意为“偶数的”），对于奇函数，我们使用下标$u$来表示（来自德语词\textit{ungerade}，意为“奇数的”）。
     %记得改引用！！！！！！
 
     图\ref{fig:13.5}中最低的$\sigma_g$能级标记为$1\sigma_g$，在小$R$处第二低的能级记为$2\sigma_g$，以此类推。最低的$\sigma_u$能级记为$1\sigma_u$，以此类推。替代记号$\sigma_g1s$表明该能级会解离为$1s$氢原子。$\sigma_u^*1s$中星号的意义稍后将予以说明。
@@ -426,35 +426,300 @@
 \section{\ce{H2+}离子基态的近似处理}
 \label{sec:13.5 Approximate Treatments of the H2 Ground Electronic State}
 
+    对于多电子原子，自洽场（SCF）方法用于构建近似波函数，该波函数可表示为（单电子）自旋轨道函数的斯莱特行列式。自旋轨道函数的单电子空间部分即为原子轨道（AO）。我们将每个原子轨道视为球谐函数与径向因子的乘积。作为径向因子的初始近似，我们可以使用具有有效核电荷的类氢径向函数。
 
+    对于无法精确求解的多电子原子（不像\ce{H2+}那样），我们希望采用自洽场方法处理原子时所采用的许多方法。我们将近似分子电子波函数表示为（单电子）自旋轨道的斯莱特行列式。分子自旋轨道的单电子空间部分为\textbf{分子轨道}（molecular orbital, MO）。与原子轨道一致，根据泡利不相容原理，每个分子轨道最多能容纳两个电子。我们使用哪种函数来描述分子轨道？理想情况下，每个分子轨道的解析式可以通过自洽场计算（第\ref{sec:14.3 The Hartree-Fock Method for Molecules}节）的方法求出。在本节中，我们寻求对分子轨道的简单近似，以便对化学键的形成有一些定性理解。正如我们把每个原子轨道的角向部分视为与单电子类氢函数一致的同类函数（球谐函数）一样，我们也将每个双原子分子轨道的角向部分记为$\left(2\pi\right)^{-1/2}\mathrm{e}^{\mathrm{i}m\phi}$，与\ce{H2+}中一致。然而，\ce{H2+}波函数中的$\xi$和$\eta$因子是复杂函数，不适用于分子轨道计算。因此，我们寻求更简单的函数，这些函数能够提供对\ce{H2+}波函数的合理准确的近似，并且可以用于构建多电子双原子分子的分子轨道。以这一讨论为动机，我们考察了在薛定谔方程可精确求解的情况下对\ce{H2+}的近似处理方法。
 
+    我们使用变分法，写出包含几个参数的某些函数，通过调整这些参数使得变分积分最小化。这将得到基态波函数的近似函数以及基态能量的上界。通过在试探函数中使用因子$\mathrm{e}^{\mathrm{i}m\phi}$，我们可以得到在任意给定$m$值下\ce{H2+}最低能级能量的上界（见第\ref{sec:8.2 Extension of the Variational Method}节）。通过使用线性变分函数，我们可以得到激发态的近似函数。
 
+    \ce{H2+}基态满足$m=0$，波函数只取决于$\xi$和$\eta$。我们尝试这些坐标的任意品优函数作为试探变分函数。然而，我们将采用一种更系统的方法，基于分子是由原子相互作用形成的这一概念。
 
+    考虑当核间距$R$很大时，\ce{H2+}波函数会呈现何种形态。当电子靠近原子核$a$时，核$b$处于非常远的位置，以至于我们基本上得到一个以$a$为原点的氢原子。因此，当$r_a$很小时，基态\ce{H2+}电子波函数应具有和氢原子基态波函数(\ref{eq:6.104})类似的形式。我们有$Z=1$，在原子单位制下玻尔半径$a_0$的值为1，因此(\ref{eq:6.104})变为
+    \begin{equation}
+        \pi^{-1/2}\mathrm{e}^{-r_a}
+        \label{eq:13.39}
+    \end{equation}
+    同样地，我们得出当电子靠近核$b$时，\ce{H2+}波函数可用如下函数近似：
+    \begin{equation}
+        \pi^{-1/2}\mathrm{e}^{-r_b}
+        \label{eq:13.40}
+    \end{equation}
+    这建议我们可以尝试如下形式的试探函数
+    \begin{equation}
+        c_{1}\pi^{-1/2}\mathrm{e}^{-r_{a}} + c_{2}\pi^{-1/2}\mathrm{e}^{-r_{b}}
+        \label{eq:13.41}
+    \end{equation}
+    其中$c_{1}$和$c_{2}$是变分参数。当电子靠近核$a$时，变量$r_a$很小而$r_b$很大，(\ref{eq:13.41})中的第一项占主导地位，得到一个与(\ref{eq:13.39})相似的函数。函数(\ref{eq:13.41})是一个线性变分函数，我们被引导去求解一个形式为(\ref{eq:8.56})的久期方程，其中下标1和2分别对应于函数(\ref{eq:13.39})和(\ref{eq:13.40})。
 
+    我们还可以使用微扰理论来解决这个问题。设无扰系统为$R = \infty$时的\ce{H2+}分子。当$R=\infty$时，电子可以被束缚在核$a$上，其波函数为(\ref{eq:13.39})；或者被束缚在核$b$上，其波函数为(\ref{eq:13.40})。无论在哪种情况中，能量都为$-\frac{1}{2}$ hartree，我们有双重简并的无扰能级。将原子核从无限远处引入会引起一种微扰，该微扰将无扰的双重简并能级裂分为两个能级。这可以通过\ce{H2+}分子两个最低电子态的$U\left(R\right)$曲线来说明，这两个态均会解离为基态氢原子（见图\ref{fig:13.5}）。微扰能级的零级校正波函数为(\ref{eq:13.41})形式的线性组合，我们被引导去求解一个形式为(\ref{eq:8.56})的久期方程，其中$W$用$E^{\left(0\right)}+E^{\left(1\right)}$代替（见问题9.20）。
 
+    在求解(\ref{eq:8.56})之前，我们先改进一下试探函数(\ref{eq:13.41})。考虑当$R$趋于零时\ce{H2+}的基态电子波函数的极限行为。在该极限中我们得到了\ce{He+}离子，其基态波函数为【在(\ref{eq:6.104})中令$Z=2$】：
+    \begin{equation}
+        2^{3/2}\pi^{-1/2}\mathrm{e}^{-2r}
+        \label{eq:13.42}
+    \end{equation}
+    由图\ref{fig:13.3}可知，当$R$趋于零时，$r_a$和$r_b$都趋于$r$。因此当$R$趋于零时，试探函数(\ref{eq:13.41})趋于$\left(c_1+c_2\right)\pi^{-1/2}\mathrm{e}^{-r}$。与(\ref{eq:13.42})相对照，我们发现试探函数在$R=0$附近的极限是错误的，它应趋近于$\mathrm{e}^{-2r}$而不是$\mathrm{e}^{-r}$。我们可以通过将指数中的 $r_a$ 和 $r_b$ 与一个变分参数 $k$ 相乘来解决问题，该参数 $k$ 将是 $R$ 的某个函数；即 $k = k\left(R\right)$。若要修正在$R=0$和$R=\infty$处的极限行为，对于\ce{H2+}基态电子态，我们有$k\left(0\right)=2$和$k\left(\infty\right)=1$。从物理上讲，$k$ 是一种有效核电荷，随着原子核互相靠近而增加。因此，我们可以将试探函数改为
+    \begin{equation}
+        \phi = c_a1s_a + c_b1s_b
+        \label{eq:13.43}
+    \end{equation}
+    其中$c$是变分参数，以及
+    \begin{equation}
+        1s_a = k^{3/2} \pi^{-1/2} \mathrm{e}^{-kr_a}, \quad 1s_b = k^{3/2} \pi^{-1/2} \mathrm{e}^{-kr_b}
+        \label{eq:13.44}
+    \end{equation}
+    因子$k^{3/2}$使得$1s_a$和$1s_b$得以归一化【见(\ref{eq:6.104})】。分子轨道函数(\ref{eq:13.43})称为\textbf{原子轨道线性组合}（linear combination of atomic orbitals, LCAO or LCAO-MO）。试探函数（\ref{eq:13.43}）由芬克尔斯坦（Finkelstein）和霍罗威茨（Horowitz）于1928年首次提出。
 
+    对于函数(\ref{eq:13.43})，久期方程(\ref{eq:8.56})的形式为
+    \begin{equation}
+        \begin{vmatrix}
+            H_{aa} - WS_{aa} & H_{ab} - WS_{ab} \\
+            H_{ba} - WS_{ba} & H_{bb} - WS_{bb}
+        \end{vmatrix} = 0
+        \label{eq:13.45}
+    \end{equation}
+    积分$H_{aa}$和$H_{bb}$为
+    \begin{equation}
+        H_{aa} = \int 1s_a^* \hat{H} 1s_a\:\mathrm{d}v, \quad H_{bb} = \int 1s_b^* \hat{H} 1s_b\:\mathrm{d}v
+        \label{eq:13.46}
+    \end{equation}
+    其中\ce{H2+}的电子哈密顿算符$\hat{H}$由(\ref{eq:13.32})给出。我们可以重新标记定积分中的变量，而不会影响其值。将$1s_a$和$1s_b$中的$a$换为$b$，$b$换为$a$并不会影响$\hat{H}$的形式（对于异核双原子分子而言，情况并非如此）。因此$H_{aa} = H_{bb}$。我们有
+    \begin{equation}
+        H_{ab} = \int 1s_a^* \hat{H} 1s_b\:\mathrm{d}v, \quad H_{ba} = \int 1s_b^* \hat{H} 1s_a\:\mathrm{d}v
+        \label{eq:13.47}
+    \end{equation}
+    因为$\hat{H}$是厄米算符，且这些积分中的函数都是实函数，我们得出$H_{ab} = H_{ba}$。积分$H_{ab}$称为\textit{共振（或键）积分}（resonance or bond integral）。因为$1s_a$和$1s_b$是归一化且实的，我们有
+    \begin{equation*}
+        S_{aa} = \int 1s_a^* 1s_a\:\mathrm{d}v = 1 = S_{bb}
+    \end{equation*}
+    \begin{equation}
+        \boxed{
+            S_{ab} = \int 1s_a^* 1s_b\:\mathrm{d}v = S_{ba}
+        }
+        \label{eq:13.48}
+    \end{equation}
+    \textbf{重叠积分}（overlap integral）$S_{ab}$的值介于0到1之间，随着两核间距的增加而减小。
 
+    久期方程(\ref{eq:13.45})变为
+    \begin{equation}
+        \begin{vmatrix}
+            H_{aa} - W & H_{ab} - S_{ab}W \\
+            H_{ab} - S_{ab}W & H_{aa} - W
+        \end{vmatrix} = 0
+        \label{eq:13.49}
+    \end{equation}
+    \begin{equation}
+        H_{aa} - W = \pm \left(H_{ab} - S_{ab}W\right)
+        \label{eq:13.50}
+    \end{equation}
+    \begin{equation}
+        W_1 = \frac{H_{aa} + H_{ab}}{1 + S_{ab}}, \quad W_2 = \frac{H_{aa} - H_{ab}}{1 - S_{ab}}
+        \label{eq:13.51}
+    \end{equation}
+    这两个根是\ce{H2+}基态和第一激发态电子能量的上界。我们将看到$H_{ab}$为负值，所以$W_1$是较低能级的根。
 
+    我们现在计算（\ref{eq:13.43}）中久期方程每个根的系数。由（\ref{eq:8.54}）可得，
+    \begin{equation}
+        \left(H_{aa} - W\right)c_a + \left(H_{ab} - S_{ab}W\right)c_b = 0
+        \label{eq:13.52}
+    \end{equation}
+    从(\ref{eq:13.51})中将$W_1$带入【或使用(\ref{eq:13.50})】，得到
+    \begin{equation}
+        c_a / c_b = 1
+        \label{eq:13.53}
+    \end{equation}
+    \begin{equation}
+        \phi_1 = c_a \left(1s_a + 1s_b\right)
+        \label{eq:13.54}
+    \end{equation}
+    再通过归一化条件确定$c_a$：
+    \begin{equation}
+        \left|c_a\right|^2 \int \left(1s_a^2 + 1s_b^2 + 2 \cdot 1s_a1s_b\right) \:\mathrm{d}v = 1
+        \label{eq:13.55}
+    \end{equation}
+    \begin{equation}
+        \left|c_a\right| = \frac{1}{\left(2 + 2S_{ab}\right)^{1/2}}
+        \label{eq:13.56}
+    \end{equation}
+    因此，对应于能量$W_1$的归一化试探函数为
+    \begin{equation}
+        \phi_1 = \frac{1s_a + 1s_b}{\sqrt{2}\left(1 + S_{ab}\right)^{1/2}}
+        \label{eq:13.57}
+    \end{equation}
+    对于根$W_2$，我们有$c_b = -c_a$，因此
+    \begin{equation}
+        \phi_2 = \frac{1s_a - 1s_b}{\sqrt{2}\left(1 - S_{ab}\right)^{1/2}}
+        \label{eq:13.58}
+    \end{equation}
+    方程(\ref{eq:13.57})和(\ref{eq:13.58})的导出一点都不令人惊讶。由于原子核相同，因此当$a$和$b$互换时，我们希望$\left|\phi\right|^2$保持不变；换言之，我们预测该键不具有宇称。
 
+    现在我们来考虑计算积分$H_{aa}$、$H_{ab}$和$S_{ab}$。由(\ref{eq:13.44})和(\ref{eq:13.33})，$S_{ab}$的被积函数为$1s_a1s_b = k^3\pi^{-1} \mathrm{e}^{-k\left(r_a + r_b\right)} = k^3\pi^{-1} \mathrm{e}^{-kR\xi}$。共焦椭圆坐标系中的体积微元为（\textit{Eyring, Walter and Kimball}, Appendix III）
+    \begin{equation}
+        \mathrm{d}v = \mathrm{e}^{-kR}\left(\xi^2 - \eta^2\right)\:\mathrm{d}\xi\:\mathrm{d}\eta\:\mathrm{d}\phi
+        \label{eq:13.59}
+    \end{equation}
+    将这些$1s_a1s_b$和$\mathrm{d}v$的表达式带入$S_{ab}$中，再使用附录中的积分（A.11）来计算$\xi$的积分，得到（问题13.16）
+    \begin{equation}
+        S_{ab} = \mathrm{e}^{-kR}\left(1 + kR + \frac{1}{2}k^2R^2\right)
+        \label{eq:13.60}
+    \end{equation}
+    $H_{aa}$和$H_{ab}$的计算留作习题13.17。结果为
+    \begin{equation}
+        H_{aa} = \frac{1}{2}k^2 - k - R^{-1} + \mathrm{e}^{-2kR}\left(k + R^{-1}\right)
+        \label{eq:13.61}
+    \end{equation}
+    \begin{equation}
+        H_{ab} = -\frac{1}{2}k^2S_{ab} - k\left(2 - k\right)\left(1 + kR\right)\mathrm{e}^{-kR}
+        \label{eq:13.62}
+    \end{equation}
+    其中的$\hat{H}$由(\ref{eq:13.32})给出，忽略了核间排斥势。
 
+    将这些积分值带入(\ref{eq:13.51})，我们得到
+    \begin{equation}
+        W_{1,2} = -\frac{1}{2}k^2 + \frac{
+            k^2 - k - R^{-1} +R^{-1}\left(1 + kR\right)\mathrm{e}^{-2kR} \pm k\left(k - 2\right)\left(1 + kR\right)\mathrm{e}^{-kR}
+        }{
+            1 \pm \mathrm{e}^{-kR}\left(1 + kR + k^2R^2/3\right)
+        }
+        \label{eq:13.63}
+    \end{equation}
+    其中$\pm$的“+”号对应$W_1$。因为(\ref{eq:13.32})中的$\hat{H}$忽略了核间排斥势$1/R$，所以$W_1$和$W_2$是纯电子能量$E_{\text{el}}$的近似，当需要求出$U_{1,2}\left(R\right)$时，我们必须把$W_{1,2}\left(R\right)$与$1/R$相加【式(\ref{eq:13.8})】。
 
+    最后的任务是对几个给定的$R$值，通过调整参数$k$，使得$U_1\left(R\right)$和$U_2\left(R\right)$先后取到最小值。这可以通过计算机进行数值计算（问题13.19）或解析求解。结果如下：当 $R$ 从 $\infty$ 减少到 0时，对于$1s_a + 1s_b$函数(\ref{eq:13.57})，$k$ 几乎单调地从 1 增加到 2；而对于$1s_a - 1s_b$函数(\ref{eq:13.58})，$k$ 几乎单调地从 1 减少到 0.4。因为$0 < k \leq 2$和$S_{ab} >0$，方程(\ref{eq:13.62})表明积分$H_{ab}$总为负值。因此，(\ref{eq:13.51})中的$W_1$对应于\ce{H2+}的基态电子态$\sigma_g1s$。对于基态，我们得出$k\left(R_e\right) = 1.24$。
 
+    我们可能想问：当$R$减小到零时，为什么$\sigma_u^*1s$态的变分参数$k$趋于0.4而不是2。答案为\ce{H2+}的该状态当$R$趋于零时并不趋于\ce{He+}的基态。$\sigma_u^*1s$态具有奇宇称，则必须与\ce{He+}的某奇态相关联。\ce{He+}的最低奇态为$2p$态（第\ref{sec:11.5 Angular momentum in Many-Electron Atoms}节）；因为$\sigma_u^*1s$态的电子轨道角动量在轴向($z$)方向的分量为零，所以该态必须跃迁至$m=0$的原子$2p$态，即$2p_0 = 2p_z$态。
 
+    找到了每个根的$k\left(R\right)$值后，可以通过(\ref{eq:13.63})计算出$W_1$和$W_2$，将其与$1/R$相加即可得到$U\left(R\right)$曲线。计算得到的基态$U\left(R\right)$曲线在2.00 bohrs处取到最小值（问题13.20），与$R_e$真实值2.00 bohrs相符；最小值为$U\left(R_e\right) = -15.96\:\mathrm{eV}$，得到$D_e$的预测值为$2.36\:\mathrm{eV}$，与真实值$2.79\:\mathrm{eV}$相比较。（若我们不调整$k$的值，而是直接将其设为1，则得到$R_e = 2.49\:\mathrm{bohrs}$和$D_e = 1.76\:\mathrm{eV}$。）
 
+    现在考虑$R$处于中间值时$\sigma_g1s$和$\sigma_u^*1s$态的试探函数形式。图\ref{fig:13.6}展示了函数$\left(1s_a\right)^2$和$\left(1s_b\right)^2$的在核间轴上部分点的图象（另见图\ref{fig:6.7}）。对于$\sigma_g1s$函数$1s_a + 1s_b$，如图 13.7 所示，原子核之间会形成电子概率密度的聚集现象。特别值得注意的是，原子核之间的电荷积累量大于单纯将各原子电荷密度相加所得的值。如果我们将1sa原子轨道中半个电子的概率密度与1sb原子轨道中半个电子的概率密度相加，将得到
+    \begin{equation}
+        \frac{1}{2}\left(1s_a^2 + 1s_b^2\right)
+        \label{eq:13.64}
+    \end{equation}
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=0.55\textwidth]{Figures/13.6.png}
+        \caption{\ce{H2+}的原子概率密度。注意原子核处的尖锐峰。}
+        \label{fig:13.6}
+    \end{figure}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Figures/13.7.png}
+        \caption{LCAO-MO函数$N\left(1s_a+1s_b\right)$沿核间轴的概率密度。}
+        \label{fig:13.7}
+    \end{figure}
+    然而，在量子力学中，我们不将孤立的原子概率密度相加。相反地，我们将波函数相加，正如(\ref{eq:13.57})所示。因此，\ce{H2+}基态概率密度为
+    \begin{equation}
+        \phi_1^2 = \frac{1}{2\left(1 + S_{ab}\right)} \left[1s_a^2 + 1s_b^2 + 2\left(1s_a1s_b\right)\right]
+        \label{eq:13.65}
+    \end{equation}
+    (\ref{eq:13.65})和(\ref{eq:13.64})之间的不同在于
+    \begin{equation}
+        \phi_1^2 - \frac{1}{2}\left(1s_a^2 + 1s_b^2\right) = \frac{1}{2\left(1 + S_{ab}\right)}\left[2\left(1s_a1s_b\right) - S_{ab}\left(1s_a^2 + 1s_b^2\right)\right]
+        \label{eq:13.66}
+    \end{equation}
+    在(\ref{eq:13.60})中令$R = 2.00$以及$k = 1.24$，我们得到在$R_e$处有$S_{ab} = 0.46$。（人们可能会认为，由于不同原子轨道之间的正交性，重叠积分 $S_{ab}$ 应为零。然而，原子轨道 $1s_a$ 和 $1s_b$ 是\textit{不同}哈密顿算符的本征函数——一个对应于位于 $a$ 处的氢原子，另一个对应于位于 $b$ 处的氢原子。因此，正交定理不适用。）
 
+    现在考虑式(\ref{eq:13.66})中括号内两个项的相对大小，对于分子轴上的点而言。在原子核$a$左侧，函数$1s_b$非常小；在原子核$b$右侧，函数$1s_a$非常小。因此，在原子核之间的区域之外，$1s_a1s_b$的乘积很小，式(\ref{eq:13.66})中括号内的第二项占主导地位。这导致在核间区域外，电子密度小于单个原子的密度之和。现在考虑核间区域。在核间轴的中点（以及在与轴垂直且平分轴的平面上的任何位置），我们有$1s_a = 1s_b$，因此式(\ref{eq:13.66})中的括号项变为$2\left(1s_a\right)^2 - 0.92\left(1s_a\right)^2 \approx 1s_a^2$，为正值。因此，分子中的原子核之间会形成电荷密度积累，与各原子单独的电荷密度之和相比。这种原子核之间的电子电荷积累使电子能够同时感受到两个原子核的吸引力，从而降低其势能。形成化学键的原子轨道在原子核之间的重叠程度越大，该区域的电荷积累就越显著。
 
+    前文的讨论似乎将\ce{H2+}中的键合主要归因于共用电子与两个核相互作用而非一个核所导致的平均电子势能降低。然而，这只是不完整的描述。Feinberg和Ruedenberg对\ce{H2+}的计算表明，由于电子共用导致的电子势能降低与核间排斥势$1/R$处于同一数量级，因此仅凭电子势能降低不足以形成键合。另外两个效应也对键合有所贡献。原子轨道指数的增加（在 $R$ 处$k = 1.24$ ，而 $\infty$ 处为 1.0）导致电荷在核附近（以及核间区域）积累，这进一步降低了电子势能。除此以外，核间区域电子的积累使得在分子轴中点附近有$\partial \psi /\partial z$为零。因此与原子的$\left\langle T_z \right\rangle$相比，分子的电子平均动能在$z$方向分量【可表示为$\frac{1}{2}\left|\partial \psi/\partial z\right|^2\:\mathrm{d}\tau$；问题7.7b】更低。（然而，\textit{总}平均电子动能增加了，见\ref{sec:14.5 The Virial Theorem and Chemical Bonding}节。）详情请见M. J. Feinberg and K. Ruedenberg, \textit{J. Chem. Phys.}, \textbf{54}, 1495 (1971); M. P. Melrose et al., \textit{Theor. Chim. Acta}, \textbf{88}, 311 (1994); see also K. Ruedenberg and M. W. Schmidt, \textit{J. Phys. Chem. A}, \textbf{113}, 1954 (2009); \textit{J. Comput. Chem.}, \textbf{28}, 391 (2007).
 
+    然而，Bader对Feinberg和Ruedenberg的观点提出了批评。Bader指出（其中包括其他几点），\ce{H2+}和\ce{H2}是非典型的，而且与\ce{H2}和\ce{H2+}分子形成过程中核周围电荷密度增加的情况不同，涉及除氢原子以外的其他原子的分子形成通常伴随着核周围电荷密度的显著降低。见R. F. W. Bader in The \textit{Force Concept in Chemistry}, B. M. Deb, ed., Van Nostrand Reinhold, 1981, pp. 65–67, 71, 95–100, 113–115. 在确定共价键的起源之前，还需要进一步的研究。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Figures/13.8.png}
+        \caption{LCAO-MO函数$N'\left(1s_a-1s_b\right)$沿核间轴的概率密度。}
+        \label{fig:13.8}
+    \end{figure}
 
+    $\sigma_u^*1s$的试探函数$1s_a - 1s_b$正比于$\mathrm{e}^{-kr_a} - \mathrm{e}^{-kr_b}$。在与核间轴垂直且通过两个核中点的平面上，$r_a = r_b$，所以该平面是$\sigma_u^*1s$函数的节面。对于这种状态，我们没有观察到核间电荷的积累，而且$U\left(R\right)$曲线也没有最小值。我们称$\sigma_g1s$轨道为\textbf{成键}（bonding）而$\sigma_u^*1s$轨道为\textbf{反键}（antibonding）。（见图\ref{fig:13.8}。）
 
+    将电子坐标对垂直于核间轴且通过核中点的$\sigma_h$反映面进行反映操作，将核从$r_a$转换到$r_b$，$r_b$转换到$r_a$而$\phi$无变化【式(13.79)】。则算符$\hat{O}_{\sigma_h}$（第\ref{sec:12.1 Symmetry Elements and Symmetry Operations}节）与电子哈密顿算符(\ref{eq:13.32})可对易，也与宇称（反演）算符可对易。因此，我们选择-1波函数为该反映算符和宇称算符的本征函数。由于该反映算符的平方为单位算符，则其本征值一定为$+1$和$-1$（第\ref{sec:7.5 Parity}节）。对于对该平面反映时波函数符号发生变化的\ce{H2+}态（本征值为−1），其对应的波函数在指定$\lambda$的字母上方以星号标注。而对该平面反映时波函数保持不变的态则不加星号。由于该反射方向下特征值为$−1$的轨道具有核间节面，因此带星号的轨道为反键轨道。
+    %记得改引用！！！！！！
 
+    与其使用图形，我们可以通过绘制轨道等高线图（第\ref{sec:6.7 Hydrogenlike orbitals}节）来表示；参见图\ref{fig:13.9}。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.55\textwidth]{Figures/13.9.png}
+        \caption{
+            \centering
+            \parbox{0.6\textwidth}{
+                $\left|\psi\right|$的等高线图，对应于$\sigma_g1s$和$\sigma_u^*1s$轨道。三维等高面是由这些图形绕$z$轴旋转形成的。注意反键轨道等高线与$2p_z$轨道等高线的相似性。
+            }
+        }
+        \label{fig:13.9}
+    \end{figure}
 
+    有时，\ce{H2+}分子的结合能被归因于共振积分$H_{ab}$，因为在我们给出的近似处理中，它提供了大部分结合能。这种观点是误导性的。在第\ref{sec:13.4 The Hydrogen Molecular Ion}节的精确处理中，并未出现这样的共振积分。共振积分仅源于我们所使用的原子轨道线性组合近似法的本质。
 
+    综上所述，从原子轨道$1s_a$和$1s_b$出发，我们构建了两个\ce{H2+}分子轨道(\ref{eq:13.57})和(\ref{eq:13.58})，一个为成键轨道，另一个则是反键轨道。分子轨道的能量由(\ref{eq:13.51})给出，为
+    \begin{equation}
+        W_{1,2} = H_{aa} \pm \frac{H_{ab} - H_{aa}S_{ab}}{1 \pm S_{ab}}
+        \label{eq:13.67}
+    \end{equation}
+    其中$H_{aa} = \left\langle 1s_a \middle| \hat{H} \middle| 1s_a \right\rangle$，$\hat{H}$为\ce{H2+}的纯电子哈密顿算符。若电子的波函数在分子中为$1s_a$，则积分$H_{aa}$为分子的纯电子能量。从某种意义上说，$H_{aa}$是分子中$1s_a$轨道的能量。在极限$R = \infty$中，$H_{aa}$变味了氢原子中$1s$原子轨道的能量。在分子中，$H_{aa}$远低于氢原子的电子能量，因为电子同时被两个原子核所吸引。图13.22给出了从原子轨道形成分子轨道的示意图。为了得到包含核间排斥势的电子能量$U\left(R\right)$，我们必须将$1/R$加到(\ref{eq:13.67})中。
+    %记得改引用！！！！！！
 
+    问题13.21介绍了如何使用Mathcad创建展示\ce{H2+}的LCAO-MO（$\phi_1$和$\phi_2$）等高线随着$R$的变化而变化的图形。
 
+    我们根据氢原子在解离时的状态描述了最低的两个\ce{H2+}电子态。即\textbf{分离原子描述}（separated-atoms description）。或者，我们可以使用原子在核间距离趋于零时形成的状态。即\textbf{联合原子描述}（united-atom description）。可以看到，\ce{H2+}联合原子的最低两个电子态为\ce{He+}的$1s$和$2p_0$态。联合原子符号位于$\lambda$符号的左侧。因此，$\sigma_g1s$态的联合原子符号为$1s\sigma_g$。$\sigma_u^*1s$态的联合原子符号为$2p\sigma_u^*$。没必要将该态写作$2p_0\sigma_u^*$，因为它是$\sigma$态的事实告诉我们它与联合原子$2p_0$态相关联。对于联合原子描述，下标 $g$ 和 $u$ 是不需要的，因为与 $s$、$d$、$g$ 等原子态相关的分子态必须是$ g$，而与 $p$、$f$、$h$ 等原子态相关的分子态必须是 $u$。从分离原子态中，我们无法判断分子波函数是$ g$ 还是 $u$。因此，从 $1s$ 分离原子态中，我们为\ce{H2+}构造了 $g$ 和 $u$ 两种函数。
 
+    在构建\ce{H2+}其他状态的近似分子轨道之前，我们先考虑如何改进试探函数(\ref{eq:13.57})。从微扰理论的角度来看，(\ref{eq:13.57})是零级校正波函数。我们知道，分子形成的微扰会使其他氢原子能级（除了$1s$能级）也参与其中。Dickinson于1933年使用了包含部分$2p_0$特征的试探函数（因为\ce{H2+}基态为$\sigma$态，掺入$2p_{\pm 1}$函数是错误的）；他取了
+    \begin{equation}
+        \phi = \left[1s_a + c\left(2p_0\right)_a\right] + \left[1s_b + c\left(2p_0\right)_b\right]
+        \label{eq:13.68}
+    \end{equation}
+    其中$c$是变分参数，以及（表\ref{tab:6.2}）
+    \begin{equation*}
+        1s_a = k^{3/2} \pi^{-1/2} \mathrm{e}^{-kr_a}, \quad \left(2p_0\right)_a = \left(2p_z\right)_a = \frac{\beta^{5/2}}{4 \left(2\pi\right)^{1/2}} r_a \mathrm{e}^{-\beta r_a/2} \cos \theta_a
+    \end{equation*}
+    $k$和$\beta$是另外两个变分参数。$1s_b$和$\left(2p_0\right)_b$的表达式类似。角度$\theta_a$和$\theta_b$是两组球坐标，每个原子核对应一组；见图\ref{fig:13.10}。 $\theta_a$ 和 $\theta_b$ 的定义对应于在原子 $a$ 上使用右手坐标系，而在原子 $b$ 上使用左手坐标系。系数 $c$ 在 $R$ 趋于零或无穷大时趋于零。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/13.10.png}
+        \caption{同核双原子分子的坐标系统。}
+        \label{fig:13.10}
+    \end{figure}
+
+    在同个原子中混合两个或更多原子轨道称为\textbf{杂化}（hybridization）。函数$1s+c2p_0$为杂化原子轨道。由于$2p_0$函数在一个半球中为正，在另一个半球中为负，因此引入$2p_0$会导致原子核之间产生额外的电荷积累，从而产生更大的结合能。杂化使$1s_a$和$1s_b$原子轨道在形成分子过程中发生极化。函数(\ref{eq:13.68})给出了最小值位于2.01 bohrs的$U\left(R\right)$曲线。在该距离下，变分参数的值分别为$k = 1.246,\:\beta = 2.965,\:c = 0.138$【F. Weinhold, \textit{J. Chem. Phys.}, \textbf{54}, 530 (1971)】。$D_e$的计算值为$2.73\:\mathrm{eV}$，与真实值$2.79\:\mathrm{eV}$非常接近。
+
+    \ce{H2+}的量子力学与光谱学在C. A. Leach and R. E. Moss, \textit{Annu. Rev. Phys. Chem.}, \textbf{46}, 55 (1995)中进行了综述。
+
+    最后一点。本章中给出的近似波函数均以原子单位表示。当将这些函数转换为普通单位时，必须记住波函数并非无量纲。单电子波函数$\psi$的单位为$\text{长度}^{-3/2}$（第\ref{sec:3.5 The Particle in a Three-Dimensional Box}节）。在函数(\ref{eq:13.57})和(\ref{eq:13.58})中出现的原子轨道$1s_a$和$1s_b$由(\ref{eq:13.44})在原子单位制下给出。在普通单位制中，$1s_a = \left(k/a_0\right)^{3/2}\pi^{-1/2}\mathrm{e}^{-kr_a/a_0}$。
 
 \section{\ce{H2+}离子激发态的分子轨道}
 \label{sec:13.6 Molecular Orbitals for H2 Excited States}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{同核双原子分子的分子轨道构型}
 \label{sec:13.7 MO Configurations for Homonuclear Diatomic Molecules}
