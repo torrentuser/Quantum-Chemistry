@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  22 AUG 2025 15:20
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  24 AUG 2025 15:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -920,8 +920,8 @@ LaTeX Font Info:    ... okay on input line 71.
 * \textheight=702.78308pt
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-1.1381pt
-* \topmargin=-31.2056pt
-* \headheight=12.0pt
+* \topmargin=-33.2056pt
+* \headheight=14.0pt
 * \headsep=18.06749pt
 * \topskip=10.0pt
 * \footskip=25.29494pt
@@ -2439,23 +2439,9 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 9.99893pt on input line 462.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 462.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.01286pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.01286pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.01286pt}.
-
 [275]
 
 [276]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.01286pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.01286pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.01286pt}.
 
 [277]
 File: Figures/13.6.png Graphic file (type bmp)
@@ -2468,13 +2454,6 @@ File: Figures/13.7.png Graphic file (type bmp)
 File: Figures/13.8.png Graphic file (type bmp)
 <Figures/13.8.png>
 
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.01286pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.01286pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.01286pt}.
 
 [279]
 File: Figures/13.9.png Graphic file (type bmp)
@@ -2490,36 +2469,51 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\mhchem@cee' on input line 690.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 733.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 742.
-
-) (./chapters/14.tex
-Underfull \vbox (badness 6236) has occurred while \output is active []
-
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.01286pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.01286pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.01286pt}.
 
 [281]
+File: Figures/13.11.png Graphic file (type bmp)
+<Figures/13.11.png>
+
 
 [282]
+File: Figures/13.12.png Graphic file (type bmp)
+<Figures/13.12.png>
+File: Figures/13.13.png Graphic file (type bmp)
+<Figures/13.13.png>
+
+
+[283]
+File: Figures/13.14.png Graphic file (type bmp)
+<Figures/13.14.png>
+File: Figures/13.15.png Graphic file (type bmp)
+<Figures/13.15.png>
+
+
+[284]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 877.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 886.
+
+) (./chapters/14.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[285]
+
+[286]
 Chapter 14.
 ) (./chapters/15.tex
 
-[283
+[287
 
 ]
 
-[284
+[288
 
 ]
 Chapter 15.
@@ -2532,70 +2526,70 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[285]
+[289]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
 
-[286]
+[290]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[287
+[291
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
 
-[288]
+[292]
 Chapter 17.
 
 
-[289
+[293
 
 ]) (./chapters/appendix.tex
 
-[290]
+[294]
 附录 A.
 ) (./chapters/bibliography.tex
 
-[291
+[295
 
 ]
 
-[292
+[296
 
 ]
 附录 B.
 
 
-[293]
+[297]
 
-[294
+[298
 
 ]) (./chapters/answers.tex
 
-[295]
+[299]
 
-[296
+[300
 
 ]
 附录 C.
 ) (./chapters/index.tex
 
-[297]
+[301]
 
-[298
+[302
 
 ]
 附录 D.
 )
 
-[299] (./Quantum Chemistry.aux)
+[303] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -2609,12 +2603,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 43493 strings out of 473832
- 986593 string characters out of 5726732
- 1624481 words of memory out of 5000000
- 65779 multiletter control sequences out of 15000+600000
+ 43558 strings out of 473832
+ 987763 string characters out of 5726732
+ 1625998 words of memory out of 5000000
+ 65839 multiletter control sequences out of 15000+600000
  572526 words of font info for 172 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,25n,111p,1743b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (307 pages).
+Output written on Quantum Chemistry.pdf (311 pages).

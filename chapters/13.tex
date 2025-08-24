@@ -690,39 +690,183 @@
 \section{\ce{H2+}离子激发态的分子轨道}
 \label{sec:13.6 Molecular Orbitals for H2 Excited States}
 
+    在前一节中，我们使用函数(\ref{eq:13.57})和(\ref{eq:13.58})近似描述了\ce{H2+}最低两个电子态。现在我们构造近似函数以描述更高的激发态，从而建立一组类\ce{H2+}分子轨道。我们将利用这些分子轨道定性地讨论双原子多电子分子，正如我们利用类氢轨道讨论多电子原子一样。
 
+    为了获得对更高\ce{H2+}分子轨道的近似，我们使用线性变分函数法。我们发现，将\ce{H2+}的变分函数表示为氢原子轨道函数的线性组合是自然而然的，从而得到了原子轨道线性组合的分子轨道。为了获得更高能级状态的分子轨道，我们在线性组合中加入更多的原子轨道。因此，为了获得\ce{H2+}最低六个$\sigma$态的近似波函数，我们使用每个原子上三个最低阶的$m=0$类氢函数的线性组合：
+    \begin{equation*}
+        \phi = c_1 1s_a + c_2 2s_a + c_3 \left(2p_0\right)_a + c_4 1s_b + c_5 2s_b + c_6 \left(2p_0\right)_b
+    \end{equation*}
+    如前一节对函数(\ref{eq:13.43})所示，同核双原子分子的对称性使得原子$b$轨道系数等于原子$a$轨道系数的$\pm 1$倍：
+    \begin{equation}
+        \phi = \left[c_1 1s_a + c_2 2s_a + c_3\left(2p_0\right)_a\right] \pm \left[c_1 1s_b + c_2 2s_b + c_3\left(2p_0\right)_b\right]
+        \label{eq:13.69}
+    \end{equation}
+    其中的“+”号对应于$g$态。
 
+    考虑式(\ref{eq:13.69})中系数的相对大小。对于分解为$1s$氢原子的两个电子态，我们预期$c_1$将远大于$c_2$或$c_3$，因为$c_2$和$c_3$在$R$趋于无穷大时会消失。因此，Dickinson函数（\ref{eq:13.68}）在$R_e$处的$2p_0$系数等于$1s$系数的七分之一（该函数不包含$2s$项，但若包含，其系数与$1s$系数相比将很小）。作为第一近似，我们因此将$c_2$和$c_3$设为零，取
+    \begin{equation}
+        \phi = c_1\left(1s_a \pm 1s_b\right)
+        \label{eq:13.70}
+    \end{equation}
+    为这两个状态的近似波函数（正如我们已经做过的那样）。从微扰理论的角度来看，如果我们将分离的原子视为无扰问题，那么式（\ref{eq:13.70}）中的函数就是零级校正波函数。
 
+    对于两个分离成$2s$氢原子的状态，相同的论证给出了它们的近似波函数
+    \begin{equation}
+        \phi = c_2\left(2s_a \pm 2s_b\right)
+        \label{eq:13.71}
+    \end{equation}
+    因为对这些状态而言，$c_1$和$c_3$很小。(\ref{eq:13.71})仅是对我们通过线性变分处理所能获得结果的近似。要找到这两个\ce{H2+}态能量的严格上界，我们必须使用试探函数（\ref{eq:13.69}）并求解相应的久期方程（\ref{eq:8.58}）（或使用矩阵代数——第\ref{sec:8.6 Matrices, Eigenvalues, and Eigenvectors}节）。
 
+    总的来说，我们有两个与每个分离原子态相关联的\ce{H2+}状态，以及对这两个态波函数的粗略近似——原子轨道线性组合函数$f_a + f_b$和$f_a - f_b$，其中$f$为类氢波函数。函数(\ref{eq:13.70})给出了$\sigma_g1s$和$\sigma_u^*1s$态。同样地，函数(\ref{eq:13.71})给出了$\sigma_g2s$和$\sigma_u^*2s$态。这些轨道的外轮廓线与由$1s$原子轨道构成的对应分子轨道的轮廓线相似。然而，由于$2s$原子轨道具有球节面而$1s$没有，因此每个分子轨道比对应于$\sigma_g1s$和$\sigma_u^*1s$的分子轨道多一个节面。
 
+    接下来是给出了$\sigma_2p$和$\sigma_u^*2p$分子轨道的组合（图\ref{fig:13.11}）
+    \begin{equation}
+        \left(2p_0\right)_a \pm \left(2p_0\right)_b = \left(2p_z\right)_a \pm \left(2p_z\right)_b
+        \label{eq:13.72}
+    \end{equation}
+    这些是$\sigma$分子轨道，尽管它们与$2p$分离原子轨道相关联，因为它们满足$m=0$。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.7\textwidth]{Figures/13.11.png}
+        \caption{
+            \centering
+            \parbox{0.6\textwidth}{
+                由$2p_z$原子轨道形成$\sigma_g2p$和$\sigma_u^*2p$分子轨道示意图。虚线表示节面。等高线上的符号表示波函数的符号。等高线关于$z$轴对称。（由于$2s−2p$轨道之间存在显著的杂化作用，这些等高线并非真实分子轨道形状的准确表示。如需准确的等高线，请参阅图13.20。）
+            }
+        }
+        \label{fig:13.11}
+    \end{figure}
+    %记得改引用！！！！！！
 
+    前面的讨论过于简化了。对于氢原子，$2s$和$2p$轨道是简并的，则我们可以预测\ce{H2+}的$\sigma_g2s$、$\sigma_u^*2s$、$\sigma_u2p$和$\sigma_u^*2p$对应的零级校正波函数都是$2s$和$2p$原子轨道的混合而不是只包含$2s$或$2p$。【在极限$R \to \infty$时，\ce{H2+} 由一个受远距离质子产生的基本均匀电场微扰的氢原子构成。问题9.23表明，在$z$方向上均匀电场中，与\ce{H}原子的$n=2$能级对应的零级校正函数为$2^{-1/2}\left(2s + 2p_0\right)$、$2^{-1/2}\left(2s-2p_0\right)$、$2p_1$和$2p_{-1}$。因此，对于\ce{H2+}，(\ref{eq:13.71})和(\ref{eq:13.72})中的$2s$和$2p_0$应替换为$2s+2p_0$和$2s-2p_0$。】对于分解成多电子原子的分子，分离后原子的$2s$和$2p$原子轨道并非简并，但它们的能量非常接近。因此，波函数的一级校正将使$\sigma 2p$分子轨道中混入大量$2s$轨道特征，而$\sigma 2s$分子轨道中则混入大量$2p$轨道特征。因此，将分子轨道标记为$\sigma2s$或$\sigma2p$时，不应过于字面化。对于\ce{H2+}和\ce{H2}，分子轨道的联合原子描述相对于分离原子描述，前者更可取，但我们主要使用后者。
 
+    对于其他两个$2p$原子轨道，我们可是用复轨道$2p_{+1}$和$2p_{-1}$，也可使用真是函数$2p_x$和$2p_y$。如果我们希望分子轨道是$\hat{L}_z$的本征函数，则可以选择复$p$轨道，得到分子轨道为
+    \begin{align}
+        \left(2p_{+1}\right)_a &+ \left(2p_{+1}\right)_b \label{eq:13.73} \\
+        \left(2p_{+1}\right)_a &- \left(2p_{+1}\right)_b \label{eq:13.74} \\
+        \left(2p_{-1}\right)_a &+ \left(2p_{-1}\right)_b \label{eq:13.75} \\
+        \left(2p_{-1}\right)_a &- \left(2p_{-1}\right)_b \label{eq:13.76}
+    \end{align}
+    因为$\phi_a=\phi_b=\phi$，所以由(\ref{eq:6.114})，我们有
+    \begin{equation}
+        \left(2p_{+1}\right)_{a} + \left(2p_{+1}\right)_{b} = \frac{1}{8}\pi^{-1/2} \left(r_{a}\mathrm{e}^{-r_{a}/2}\sin\theta_{a} + r_{b}\mathrm{e}^{-r_{b}/2}\sin\theta_{b}\right)\mathrm{e}^{\mathrm{i}\phi}
+        \label{eq:13.77}
+    \end{equation}
+    因为$\lambda = \left|m\right| = 1$，所以这是一个$\pi$轨道。反演操作相当于坐标变换（图\ref{fig:13.12}）
+    \begin{equation}
+        r_a \to r_b, \quad r_b \to r_a, \quad \phi \to \phi + \pi
+        \label{eq:13.78}
+    \end{equation}
+    我们有$\mathrm{e}^{\mathrm{i}\left(\phi + \pi\right)} = \left(\cos\pi + \mathrm{i} \sin\pi\right)\mathrm{e}^{\mathrm{i}\phi} = -\mathrm{e}^{\mathrm{i}\phi}$。由图\ref{fig:13.12}可见，反演操作将$\theta_a$变为$\theta_b$，反之亦然。因此，反演将（\ref{eq:13.77}）转换为其负值，这意味着它是$u$轨道。对与轴垂直且通过两核连线中点的平面进行反映，会导致以下变换（问题13.24）：
+    \begin{equation}
+        r_a \to r_b, \quad r_b \to r_a, \quad \phi \to \phi, \quad \theta_a \to \theta_b, \quad \theta_b \to \theta_a
+        \label{eq:13.79}
+    \end{equation}
+    变换后(\ref{eq:13.77})保持不变，因此，我们有一个未被占据（成键）的轨道。(\ref{eq:13.77})的描述为$\pi_u2p_{+1}$。
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figures/13.12.png}
+        \caption{\ce{H2+}电子坐标反演示意图，$r_a'=r_b$，$r_b'=r_a$，$\phi'=\phi+\pi$。}
+        \label{fig:13.12}
+    \end{figure}
 
+    函数(\ref{eq:13.77})为复函数。取其绝对值，我们可以绘制概率密度恒定的轨道轮廓（第\ref{sec:6.7 Hydrogenlike orbitals}节）。因为$\left|\mathrm{e}^{\mathrm{i}\phi}\right| = 1$，所以概率密度与$\phi$无关，得到关于$z$轴（核间轴）对称的概率密度。图\ref{fig:13.13}显示了该轨道在包含核的平面上的截面图。绕$z$轴旋转该图，可以得到其三维形状，形成一种类似于肥厚甜甜圈的结构。
+    \begin{figure}[hb]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/13.13.png}
+        \caption{
+            \centering
+            \parbox{0.5\textwidth}{
+                $\pi_u2p_{+1}$（或$\pi_u2p_{-1}$）分子轨道的截面图。要获得三维轮廓表面，请绕$z$轴旋转该图形。$z$轴为该分子的节线（与$2p_{+1}$的原子轨道一致）。
+            }
+        }
+        \label{fig:13.13}
+    \end{figure}
 
+    分子轨道(\ref{eq:13.75})与(\ref{eq:13.77})唯一的不同是$\mathrm{e}^{\mathrm{i}\phi}$被$\mathrm{e}^{-\mathrm{i}\phi}$所取代，因此为$\pi_u2p_{-1}$轨道。$\phi$坐标在哈密顿算符中体现为$\partial^2 / \partial \phi^2$。因为$\partial^2 \mathrm{e}^{\mathrm{i}\phi} / \partial \phi^2 = \partial^2 \mathrm{e}^{-\mathrm{i}\phi} / \partial \phi^2$，所以状态(\ref{eq:13.73})和(\ref{eq:13.75})具有相同的能量。它们是简并的。回忆（第\ref{sec:13.4 The Hydrogen Molecular Ion}节），$\lambda = 1$的能级为双重简并的，对应于$m = \pm 1$。因为$\left|\mathrm{e}^{\mathrm{i}\phi}\right| = \left|\mathrm{e}^{-\mathrm{i}\phi}\right|$，所以$\pi_u2p_{+1}$和$\pi_u2p_{-1}$轨道具有相同的形状，正如$2p_{+1}$和$2p_{-1}$原子轨道有相同形状。
 
+    函数(\ref{eq:13.74})和(\ref{eq:13.76})分别为$\pi_g^*2p_{+1}$和$\pi_g^*2p_{-1}$分子轨道。这些函数不会在核间产生电荷积累，参见图\ref{fig:13.14}。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.35\textwidth]{Figures/13.14.png}
+        \caption{
+            \centering
+            \parbox{0.5\textwidth}{
+                $\pi_g^*2p_{+1}$（或$\pi_g^*2p_{-1}$）分子轨道的截面图。要获得三维轮廓表面，请绕$z$轴旋转该图形。$z$轴和$xOy$平面为节面。
+            }
+        }
+        \label{fig:13.14}
+    \end{figure}
 
+    现在考虑更常见的替代方法，即使用$2p_x$和$2p_y$原子轨道来构建分子轨道。线性组合
+    \begin{equation}
+        \left(2p_x\right)_a + \left(2p_x\right)_b
+        \label{eq:13.80}
+    \end{equation}
+    给出了$\pi_u2p_x$分子轨道（图\ref{fig:13.15}）。该分子轨道不具有核间轴对称性，而是在$yOz$平面上下两个区域中构建概率密度，其中$yOz$平面是该函数的节面。波函数在该平面的两侧符号相反。线性组合
+    \begin{equation}
+        \left(2p_x\right)_a - \left(2p_x\right)_b
+        \label{eq:13.81}
+    \end{equation}
+    给出了$\pi_g^*2p_x$分子轨道（图\ref{fig:13.15}）。由于$2p_y$函数与$2p_x$函数唯一的不同仅为绕核间轴旋转了90°，因此它们得到的分子轨道与图\ref{fig:13.15}中的分子轨道相比，绕$z$轴旋转了90°。线性组合
+    \begin{align}
+        \left(2p_y\right)_a &+ \left(2p_y\right)_b \label{eq:13.82} \\
+        \left(2p_y\right)_a &- \left(2p_y\right)_b \label{eq:13.83}
+    \end{align}
+    给出了$\pi_u2p_y$和$\pi_g^*2p_y$分子轨道。轨道(\ref{eq:13.80})和(\ref{eq:13.82})能量相同；而(\ref{eq:13.81})和(\ref{eq:13.83})能量也相同。（注意$g\:\pi2p$轨道为反键轨道，而$u\:\pi2p$轨道为成键轨道。）
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.55\textwidth]{Figures/13.15.png}
+        \caption{
+            \centering
+            \parbox{0.5\textwidth}{
+                $\pi_u2p_x$和$\pi_g^*2p_x$分子轨道的形成。因为在$xOz$平面中$\phi=0$，所以这些分子轨道在$xOz$平面给上的节面与对应$\pi_u2p_{+1}$和$\pi_g^*2p_{+1}$轨道节面一致。然而，$\pi 2p_x$轨道不关于$z$轴对称。实际上，它们由节点$yOz$平面上方和下方的概率密度团块组成。
+            }
+        }
+        \label{fig:13.15}
+    \end{figure}
 
+    与$2p_x$和$2p_y$原子轨道是$2p_{+1}$和$2p_{-1}$的线性组合一致【式(\ref{eq:6.118})和(\ref{eq:6.120})】，分子轨道$\pi_u2p_x$和$\pi_u2p_y$是$\pi_u2p_{+1}$和$\pi_u2p_{-1}$的线性组合。我们可以使用简并能级本征函数的任意线性组合，仍然得到一个能量本征函数。与原子轨道$2p_{+1}$和$2p_{-1}$是$\hat{L}_z$的本征函数而$2p_x$和$2p_y$不是一致，$\pi_u2p_{+1}$和$\pi_u2p_{-1}$是$\hat{L}_z$的本征函数而$\pi_u2p_x$和$\pi_u2p_y$不是。对于\ce{H2+}的$\pi_u2p$能级，我们可以使用实分子轨道对 (\ref{eq:13.80}) 和 (\ref{eq:13.82})，或复分子轨道对 (\ref{eq:13.73}) 和 (\ref{eq:13.75})，或这些函数的任意两个线性无关的线性组合。
 
+    我们已经表明了\ce{H2+}分子轨道与分离原子原子轨道之间的关系。我们也可说明它们与联合原子原子轨道之间的关系。随着$R$趋于零，分子轨道$\sigma_u^*1s$（图\ref{fig:13.9}）越来越类似于与其关联的$2p_z$原子轨道。同样地，$\pi_u2p$分子轨道与$p$联合原子态相关，而$\pi_g^*2p$分子轨道与$d$联合原子态相关。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    \ce{H2+}分子轨道的在线模拟可在\url{www.falstad.com/qmmo}上进行；核间距可调整。
 
 \section{同核双原子分子的分子轨道构型}
 \label{sec:13.7 MO Configurations for Homonuclear Diatomic Molecules}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{双原子分子的分子光谱项}
 \label{sec:13.8 Electronic Terms of Diatomic Molecules}
