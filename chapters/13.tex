@@ -983,39 +983,187 @@
 
     某些双原子范德华分子及其$R_e$和$D_e$值如下：\ce{Ne2}，$R_e = 3.1\:\mathrm{Å}$，$D_e = 0.0036\:\mathrm{eV}$；\ce{HeNe}，$R_e = 3.2\:\mathrm{Å}$，$D_e = 0.0012\:\mathrm{eV}$；\ce{Ca2}，$R_e = 4.28\:\mathrm{Å}$，$D_e = 0.13\:\mathrm{eV}$；\ce{Mg2}，$R_e = 3.89\:\mathrm{Å}$，$D_e = 0.0353\:\mathrm{eV}$。观测到的多原子范德华分子包括\ce{(O2)2}，\ce{H2-N2}，\ce{Ar-HCl}和\ce{(Cl)2}。对于范德华键合的分子，其$R_e$显著增大，而$D_e$远小于化学键合的分子。\ce{Be2}的键长为$2.45\:\mathrm{Å}$，远小于范德华分子的典型键长；\ce{Be}中$2p$和$2s$轨道的靠近引起了\ce{Be2}中显著的$2s-2p$杂化，并且在色散作用之外可能还具有一定的共价性质。有关范德华分子的更多信息，见\textit{Chem. Rev.}, \textbf{88}, 813–988 (1988); \textbf{94}, 1721–2160 (1994); \textbf{100}, 38614264 (2000).
 
-\section{双原子分子的分子光谱项}
+\section{双原子分子的电子谱项}
 \label{sec:13.8 Electronic Terms of Diatomic Molecules}
 
+    我们现在考虑由给定分子电子组态所产生的电子谱项。
 
+    对于原子，每组简并的原子轨道构成一个原子亚层。例如，原子轨道$2p_{+1}$、$2p_0$和$2p_{-1}$构成了$2p$亚层。源自组态通过给定每个亚层中电子数来确定，例如，$1s^22s^22p^4$。对于分子，每组简并的分子轨道构成一个分子\textbf{壳层}（shell）。例如，$\pi_u2p_{+1}$和$\pi_u2p_{-1}$分子轨道构成了$\pi_u2p$壳层。每个双原子$\sigma$壳层由一个分子轨道构成，而每个$\pi,\:\delta,\:\phi,\:\ldots$壳层包含两个分子轨道；双原子$\sigma$壳层可以容纳两个电子，非$\sigma$壳层最多可以容纳四个电子。通过给定每个壳层中的电子数，我们可以指定分子的电子\textbf{组态}（configuration），例如$\left(\sigma_{g} 1s\right)^{2}\left(\sigma_{u}^{*} 1s\right)^{2}\left(\sigma_{g} 2s\right)^{2}\left(\sigma_{u}^{*} 2s\right)^{2}\left(\pi_{u} 2p\right)^{3}$。
 
+    对于\ce{H2+}，算符$\hat{L}_z$与$\hat{H}$可对易。对于多电子双原子分子，可以证明，总电子角动量轴向分量的算符与$\hat{H}$也可对易。总电子角动量在分子轴向方向分量的可能值为$M_L\hbar$，其中$M_L = 0,\:\pm 1,\:\pm 2,\:\ldots$。为了计算$M_L$，我们只需将各个电子的$m$值进行代数相加。类似于表示单电子分子的符号$\lambda$，我们定义$\Lambda$为
+    \begin{equation}
+        \Lambda \equiv \left| M_L \right|
+        \label{eq:13.84}
+    \end{equation}
+    （一些人可能会将$\Lambda$定义为与$M_L$相等。）以下字母指定了$\Lambda$的值：
+    \begin{table*}
+        \centering
+        \begin{tabular}{c|c|c|c|c|c}
+            $\Lambda$ & 0 & 1 & 2 & 3 & 4 \\
+            \hline
+            字母 & $\Sigma$ & $\Pi$ & $\Delta$ & $\Phi$ & $\Gamma$
+        \end{tabular}
+    \end{table*}
+    当$\Lambda \neq 0$时，$M_L$有两个取值，即$+\Lambda$和$-\Lambda$。与\ce{H2+}一致，电子能量取决于$M_L^2$，因此，与$M_L$的两个值相关联的是一种二重简并。请注意，小写字母表示单个电子，而大写字母表示整个分子。
 
+    与原子中一致，独立电子自旋角动量的矢量和为总电子自旋角动量$\mathbf{S}$，取值为$\left[S\left(S+1\right)\right]^{1/2}\hbar$，其中$S = 0,\:\frac{1}{2},\:1,\:\frac{3}{2},\:\ldots$。总电子自旋角动量在分子轴向方向的分量为$M_S\hbar$，其中$M_S = -S,\:-S+1,\:\ldots,\:S-1,\:S$。正如在原子中一样，$2S+1$称为\textbf{自旋多重度}（spin multiplicity），记在$\Lambda$字母的左上标处。具有相同电子组态且$\Lambda$和$S$值相同的双原子电子态被认为属于同一电子\textbf{谱项}（term）。我们现在考虑如何推导出属于给定电子组态的谱项。（我们假设拉塞尔-桑德斯耦合，该耦合适用于由原子序数不太高的原子组成的分子。）
 
+    一个分子闭壳层包含一个或两个全满分子轨道。对处于同一分子轨道中的电子而言，根据泡利不相容原理，一个电子满足$m_s = +\frac{1}{2}$而另一个必须满足$m_s = -\frac{1}{2}$。对于闭壳层的分子组态，由于$M_S$为每个独立$m_s$值的代数和，所以$M_S$必须为零。因此，对于只包含闭壳层的组态，必须有$S=0$。闭$\sigma$壳层包含两个电子且满足$m=0$，所以$M_L$为零。闭$\pi$层包含$m=+1$和$m=-1$的电子各两个，则$M_L$（为$m$的代数和）也为零。其他全满的$\delta,\:\phi,\:\ldots$壳层也类似。因此，闭壳层分子组态同时满足$S$和$\Lambda$均为零，谱项符号为$^1\Sigma$。\ce{H2}的基态电子态就是一个例子。（回忆闭亚层原子组态只产生$^1S$谱项。）在推导分子光谱项时，我们只需考虑闭壳层之外的电子。
 
+    单$\sigma$电子满足$s = \frac{1}{2}$，则$S$只能取$\frac{1}{2}$，得到$^2\Sigma$谱项。一个例子为\ce{H2+}的基态电子组态。单$\pi$电子产生$^2\Pi$谱项，以此类推。
 
+    再考虑多于一个电子的情况。处于不同分子壳层中的电子称为\textit{非等价或非同科}（nonequivalent）电子。对于这类电子，我们无需担心给其中两个电子赋予相同的量子数，则光谱项的推导很容易。考虑两个非等价$\sigma$电子，$\sigma\:\sigma$组态。因为$m$都为零，有$M_L = 0$。每个$s$的值都为$\frac{1}{2}$，则$S$可以取0或1。我们得到两个谱项：$^1\Sigma$和$^3\Sigma$。类似地，$\sigma\:\pi$组态产生$^1\Pi$和$^3\Pi$谱项。
 
+    对于$\pi\:\delta$组态，我们有单重态和三重态谱项。$\pi$电子满足$m = \pm 1$，$\delta$电子满足$m = \pm 2$。因此，$M_L$可以取$+3,\:-3,\:+1,\:-1$，得到$\Lambda = 3$和1。我们得到四个谱项：$^1\Phi$、$^3\Phi$、$^1\Pi$和$^3\Pi$。（在原子中，我们将\textit{矢量}$\mathbf{L}_i$相加得到总$\mathbf{L}$；因此$pd$原子组态产生$P$、$D$和$F$谱项。然而，在双原子分子中，我们将轨道角动量的\textit{$z$分量}相加。这是一个代数和而不是矢量和，因此$\pi\:\delta$组态产生$\Pi$和$\Phi$谱项而不产生$\Delta$谱项。）
 
+    对于包含两个非等价电子的$\pi\:\pi$组态，每个电子都满足$m = \pm 1$，则$M_L$可以取$+2,\:-2,\:0,\:0$。$\Lambda$的取值为2，0和0；谱项为$^1\Delta$、$^3\Delta$、$^1\Sigma$、$^3\Sigma$、$^1\Sigma$和$^3\Sigma$。+2和-2对应于同一个$\Delta$谱项的两个简并态。然而，$\Sigma$谱项为非简并的（除了自旋简并性之外），$M_L$为零的两个值暗示了两个不同的$\Sigma$谱项（考虑自选后会变为四个$\Sigma$谱项。）
 
+    考虑$\pi\:\pi$谱项对应波函数的形式。我们将两个$\pi$亚层称为$\pi$和$\pi'$，使用下标来表明$m$值。对于$\Delta$谱项，每个电子都满足$m=+1$或$m=-1$。对于$M_L = +2$，我们可以将波函数中的空间因子写作$\pi_{+1}\left(1\right)\pi'_{+1}\left(2\right)$或$\pi_{+1}\left(2\right)\pi'_{+1}\left(1\right)$。然而，这些函数在全同电子交换时既不满足交换对称也不满足交换反对称，因此是不可接受的。相反，我们必须取线性组合（不考虑归一化常数）
+    \begin{equation}
+        ^1\Delta: \quad \pi_{+1}\left(1\right)\pi'_{+1}\left(2\right) + \pi_{+1}\left(2\right)\pi'_{+1}\left(1\right)
+        \label{eq:13.85}
+    \end{equation}
+    \begin{equation}
+        ^3\Delta: \quad \pi_{+1}\left(1\right)\pi'_{+1}\left(2\right) - \pi_{+1}\left(2\right)\pi'_{+1}\left(1\right)
+        \label{eq:13.86}
+    \end{equation}
+    类似地，若两个电子都满足$m=-1$，则空间因子为
+    \begin{equation}
+        ^1\Delta: \quad \pi_{-1}\left(1\right)\pi'_{-1}\left(2\right) + \pi_{-1}\left(2\right)\pi'_{-1}\left(1\right)
+        \label{eq:13.87}
+    \end{equation}
+    \begin{equation}
+        ^3\Delta: \quad \pi_{-1}\left(1\right)\pi'_{-1}\left(2\right) - \pi_{-1}\left(2\right)\pi'_{-1}\left(1\right)
+        \label{eq:13.88}
+    \end{equation}
+    函数(\ref{eq:13.85})和(\ref{eq:13.87})在交换时满足交换对称。它们需与交换反对称的$S=0$双电子自旋因子(\ref{eq:11.60})相乘。因此(\ref{eq:13.85})和(\ref{eq:13.87})为双重简并$^1\Delta$谱项对应两个状态波函数的空间因子。(\ref{eq:13.86})和(\ref{eq:13.88})必须与交换对称双电子自旋函数(\ref{eq:11.57})、(\ref{eq:11.58})和(\ref{eq:11.59})相乘，给出$^3\Delta$谱项的六个状态。这些状态的能量都相同（若我们忽略自旋-轨道耦合）。
 
+    现在考虑$\Sigma$谱项的波函数。这些谱项中一个电子满足$m=+1$而另一个满足$m=-1$。我们从四个函数开始：
+    \begin{equation*}
+        \pi_{+1}\left(1\right)\pi'_{-1}\left(2\right), \quad \pi_{+1}\left(2\right)\pi'_{-1}\left(1\right), \quad \pi_{-1}\left(1\right)\pi'_{+1}\left(2\right), \quad \pi_{-1}\left(2\right)\pi'_{+1}\left(1\right)
+    \end{equation*}
+    将它们组合，得到满足交换对称和交换反对称的函数，有
+    \begin{equation}
+        \begin{aligned}
+            ^1\Sigma^+: & \quad \pi_{+1}\left(1\right)\pi'_{-1}\left(2\right) + \pi_{+1}\left(2\right)\pi'_{-1}\left(1\right) + \pi_{-1}\left(1\right)\pi'_{+1}\left(2\right) + \pi_{-1}\left(2\right)\pi'_{+1}\left(1\right)\\
+            ^1\Sigma^-: & \quad \pi_{+1}\left(1\right)\pi'_{-1}\left(2\right) + \pi_{+1}\left(2\right)\pi'_{-1}\left(1\right) - \pi_{-1}\left(1\right)\pi'_{+1}\left(2\right) - \pi_{-1}\left(2\right)\pi'_{+1}\left(1\right)\\
+            ^3\Sigma^+: & \quad \pi_{+1}\left(1\right)\pi'_{-1}\left(2\right) - \pi_{+1}\left(2\right)\pi'_{-1}\left(1\right) + \pi_{-1}\left(1\right)\pi'_{+1}\left(2\right) - \pi_{-1}\left(2\right)\pi'_{+1}\left(1\right)\\
+            ^3\Sigma^-: & \quad \pi_{+1}\left(1\right)\pi'_{-1}\left(2\right) - \pi_{+1}\left(2\right)\pi'_{-1}\left(1\right) - \pi_{-1}\left(1\right)\pi'_{+1}\left(2\right) + \pi_{-1}\left(2\right)\pi'_{+1}\left(1\right)            
+        \end{aligned} 
+        \label{eq:13.89} 
+    \end{equation}
+    (\ref{eq:13.89})中的前两个函数满足交换对称。因此，它们必须与交换反对称的$S=0$双电子自旋函数(\ref{eq:11.60})相乘。很明显，这两个空间函数的能量不同。(\ref{eq:13.89})中的后两个函数满足交换反对称，因此为两个$^3\Sigma$谱项对应波函数的空间因子。若将(\ref{eq:13.89})中的四个函数通过包含分子($z$)轴的$xz\sigma_v$反映面对电子坐标进行反映，它们的本征值为+1或-1（问题13.30）。上标+和-对应于该本征值。
 
+    观察$\Delta$谱项(\ref{eq:13.85})至(\ref{eq:13.88})可以发现，这些函数不是对称算符$\hat{O}_{\sigma_v}$的本征函数（第\ref{sec:12.1 Symmetry Elements and Symmetry Operations}节）。由于这些谱项与双重简并（不包括自旋简并）相关，因此它们的波函数不一定是该算符的本征函数。然而，因为$\hat{O}_{\sigma_v}$与哈密顿量对易，所以我们\textit{选择}本征函数成为$\hat{O}_{\sigma_v}$的本征函数。通过将属于简并能级的(\ref{eq:13.85})至(\ref{eq:13.87})进行组合，得到
+    \begin{center}
+        (\ref{eq:13.85}) + (\ref{eq:13.87}) 以及 (\ref{eq:13.85}) - (\ref{eq:13.87})
+    \end{center}
+    这两个线性组合是$\hat{O}_{\sigma_v}$的本征函数，分别对应于本征值+1和-1，我们可以将它们指定为$^1\Delta^+$和$^1\Delta^-$状态。由于它们具有相同的能量，因此没有必要使用1和2的上标。因此1和2的表述只用于$\Sigma$谱项。然而，当考虑分子转动角动量与电子轨道角动量之间的相互作用时，会出现$^1\Delta$谱项两个状态的非常微小的分裂【称为\textit{$\Lambda$型倍增}（$\Lambda$-type doubling）】。事实证明，该微扰的零级校正波函数为$\hat{O}_{\sigma_v}$本征函数的线性组合，所以在这种情况下，有必要区分$\Delta^+$和$\Delta^-$状态。线性组合(\ref{eq:13.85})$\pm$(\ref{eq:13.87})是$\hat{O}_{\sigma_v}$的本征函数，但不是$\hat{L}_z$的本征函数，而是本征值为+2和-2的$\hat{L}_z$本征函数的叠加。
+    \begin{quote}
+        \small
+        \noindent
+        我们可以区分单电子组态的+和-谱项。单$\sigma$电子波函数无$\phi$因子，因此必须对应于$\Sigma^+$谱项。对于一个$\pi$电子而言，$\pi_{+1}$和$\pi_{-1}$是$\hat{L}_z$本征函数的分子轨道（其概率密度关于$z$轴对称，图\ref{fig:13.14}）。$\pi_{+1}$和$\pi_{-1}$不是$\hat{O}_{\sigma_v}$的本征函数，但线性组合$\pi_{+1} + \pi_{-1} = \pi_x$和$\pi_{+1} - \pi_{-1} = \pi_y$却是。若考虑由分子转动引入的对电子波函数的微扰，则$\pi_x$和$\pi_y$分子轨道（其概率密度不关于$z$轴对称，见图\ref{fig:13.15}）是零级校正波函数。对在$xz$平面内的反映，$\pi_x$和$\pi_y$分子轨道的本征值分别为+1和-1；而对于$yz$平面内的反映，其本征值分别为-1和+1。（算符$\hat{L}_z$和$\hat{O}_{\sigma_v}$不可对易；问题13.31。因此，$\hat{H}$的所有本征函数不一定同时是这些算符的本征函数。然而，由于这些算符各自与电子哈密顿算符可对易，且非简并能级的波函数中不存在可选择的元素，则$\sigma$分子轨道一定同时是$\hat{L}_z$和$\hat{O}_{\sigma_v}$的本征函数。）
+    \end{quote}
 
+    处于相同分子壳层中的电子称为\textit{等价或同科}（equivalent）电子。因为泡利不相容原理的限制，等价电子产生的谱项少于对应的非等价电子组态。因此，对于由两个等价$\pi$电子构成的$\pi^2$组态，(\ref{eq:13.85})至(\ref{eq:13.89})中的八个函数只有四个是允许的；剩余的函数给出了$^1\Delta$、$^1\Sigma^+$和$^1\Sigma^-$谱项。或者，我们可以制作一个与表\ref{tab:11.1}类似的表格，并利用它来推导等价电子的谱项。
 
+    表\ref{tab:13.3}给出了由不同电子组态产生的谱项。闭壳层必然产生单重态谱项$^1\Sigma^+$。$\pi^3$组态与$\pi$组态给出相同的谱项。
+    \begin{table}[htbp]
+        \centering
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{|l|l|}
+            \hline
+            组态 & 谱项 \\
+            \hline
+            $\sigma\sigma$ & $^1\Sigma^+$，$^3\Sigma^+$ \\
+            \hline
+            $\sigma\pi$，$\sigma\pi^3$ & $^1\Pi$，$^3\Pi$ \\
+            \hline
+            $\pi\pi$，$\pi\pi^3$ & $^{1}\Sigma^{+}$，$^{3}\Sigma^{+}$，$^{1}\Sigma^{-}$，$^{3}\Sigma^{-}$，$^{1}\Delta$，$^{3}\Delta$ \\
+            \hline
+            $\pi\delta$，$\pi^3\delta$，$\pi\delta^3$ & ${}^{1}\Pi$，${}^{3}\Pi$，${}^{1}\Phi$，${}^{3}\Phi$ \\
+            \hline
+            $\sigma$ & $^2\Sigma^+$ \\
+            \hline
+            $\sigma^2$，$\pi^4$，$\delta^4$ & $^1\Sigma^+$ \\
+            \hline
+            $\pi$，$\pi^3$ & $^2\Pi$ \\
+            \hline
+            $\pi^2$ & $^1\Sigma^+$，$^3\Sigma^-$，$^1\Delta$ \\
+            \hline
+            $\delta$，$\delta^3$ & $^2\Delta$ \\
+            \hline
+            $\delta^2$ & $^1\Sigma^+$，$^3\Sigma^-$，$^1\Gamma$ \\
+            \hline
+        \end{tabular}
+        \caption{双原子分子的电子谱项}
+        \label{tab:13.3}
+    \end{table}
 
+    对于同核双原子分子，我们在谱项中添加$g$或$u$的右下标来表示属于该谱项电子态的宇称性。由电子组态中奇数个电子占据奇宇称分子轨道所产生的谱项为奇项（$u$）；其余所有谱项均为偶项（$g$）。这一规则与原子中的情况相同。
 
+    表\ref{tab:13.2}中所列的谱项符号可直接由分子轨道组态推导得出。例如，\ce{O2}的组态为$\pi^2$，给出了三个谱项$^1\Sigma^+_g$，$^3\Sigma^-_g$和$^1\Delta_g$。根据洪特规则，$^3\Sigma^-_g$为最低谱项，如所列示。\ce{O2}的$^1\Delta_g$和$^1\Sigma^+_g$谱项的$v=0$能级分别比基态$^3\Sigma^-_g$谱项的$v=0$能级高0.98 eV和1.6 eV。单线态氧是许多有机、生化和无机反应中的反应中间体。【See C. S. Foote et al., eds., \textit{Active Oxygen in Chemistry}, Springer, 1995; J. S. Valentine et al., eds., \textit{Active Oxygen in Biochemistry}, Springer, 1995; C. Schweitzer and R. Schmidt, \textit{Chem. Rev.}, \textbf{103}, 1685 (2003).】
 
+    大多数稳定双原子分子的基态谱项为$^1\Sigma^+$（同核双原子分子为$^1\Sigma^+_g$）。然而\ce{B2}、\ce{Al2}、\ce{Si2}、\ce{O2}和\ce{NO}是例外，它们的基态谱项为$^2\Pi$。
 
+    光谱学家在分子的基态谱项前加上符号$X$。与基态谱项具有相同自旋多重度的激发态谱项被标记为$A,\:B,\:C,\:\ldots$，而具有不同自旋多重度的激发态谱项被标记为$a,\:b,\:c,\:\ldots$。\ce{C2}和\ce{N2}是例外，它们的基态谱项为$^1\Sigma^+_g$，但使用$A,\:B,\:C,\:\ldots$来表示其激发三重态谱项。
 
+    与原子类似，自旋-轨道相互作用可以将分子谱项裂分为相邻的支项，从而使该谱项呈现出多重态结构。电子总自旋角动量$\mathbf{S}$在分子轴向方向上的投影为$M_S\hbar$。在分子中，量子数$M_S$称为$\Sigma$（不要与$\Lambda=0$的符号混淆）：
+    \begin{equation*}
+        \Sigma = S,\: S-1,\: \ldots,\: -S
+    \end{equation*}
 
+    电子轨道角动量和自旋角动量的轴向分量相加，得到电子角动量的总轴向分量$\left(\Lambda + \Sigma\right)\hbar$。（回忆$\Lambda$为$M_L$的绝对值。当$\Sigma$与$\Lambda$方向相同时，$\Sigma$为正值；而当$\Sigma$与$\Lambda$方向相反时，$\Sigma$为负值。）$\Lambda+\Sigma$的可能值为
+    \begin{equation*}
+        \Lambda + S,\: \Lambda + S - 1,\: \ldots,\: \Lambda - S
+    \end{equation*}
 
+    $\Lambda+\Sigma$的值卸载谱项符号的右下角处，表示该谱项的支项。因此$^3\Delta$满足$\Lambda=2$和$S=1$且产生$^3\Delta_3$、$^3\Delta_2$和$^3\Delta_1$三个支项。从某种意义上说，$\Lambda+\Sigma$ 是分子中与原子中的量子数 $J$ 相对应的量。然而，$\Lambda+\Sigma$是总电子角动量在$z$方向\textit{分量}的量子数，因此可以取为负值。则$^4\Pi$谱项有四个支项$^4\Pi_{5/2}$、$^4\Pi_{3/2}$、$^4\Pi_{1/2}$和$^4\Pi_{-1/2}$。$\Lambda+\Sigma$的绝对值记为$\Omega$：
+    \begin{equation}
+        \Omega \equiv \left| \Lambda + \Sigma \right|
+        \label{eq:13.90}
+    \end{equation}
 
+    可以证明，双原子分子中的自旋-轨道耦合能可以用$A\Lambda\Sigma$来良好近似，其中$A$取决于$\Lambda$和核间距$R$但与$\Sigma$无关。因此，多重态各支项之间的间隔是固定的。当$A$为正时，具有最低$\Lambda+\Sigma$值的支项能量最低，多重态为\textit{常规}（regular）；当$A$为负时，该多重态为\textit{反常}（inverted）。注意当$\Lambda \neq 0$时，自旋多重度$2S+1$总是等于多重态成分。这对于原子来说并不总是成立的。
 
+    某$\Lambda \neq 0$多重态的每个谱项都是双重简并的，对应于$M_L$的两个值。因此一个$^3\Delta$谱项有六个不同的波函数【式(\ref{eq:13.86})、(\ref{eq:13.88})、(\ref{eq:11.57})、(\ref{eq:11.59})】，因此有六个不同的分子电子态。自旋-轨道耦合将$^3\Delta$谱项裂分为三个支项，每个都为两重简并。通过之前提到的$\Lambda$型倍增，我们消除了支项的双重简并。
 
+    对于$\Sigma$谱项（$\Lambda = 0$），自旋-轨道耦合非常小（一级近似为零），量子数$\Sigma$和$\Omega$没有定义。
 
-
-
-
+    $^1\Sigma$谱项总是对应于一个单重非简并能级。
 
 \section{氢分子}
 \label{sec:13.9 The Hydrogen Molecule}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{价键理论求解\ce{H2}}
 \label{sec:13.10 The Valence-Bond Treatment of H2}

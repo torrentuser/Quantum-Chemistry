@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  25 AUG 2025 14:17
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  25 AUG 2025 19:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2506,31 +2506,32 @@ File: Figures/13.17.png Graphic file (type bmp)
 
 [289]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 1020.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 1029.
-
-) (./chapters/14.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 [290]
 
 [291]
 
-[292
-
-]
-Chapter 14.
-) (./chapters/15.tex
+[292]
 
 [293]
 
-[294
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 1168.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 1177.
+
+) (./chapters/14.tex
+
+[294]
+Chapter 14.
+) (./chapters/15.tex
+
+[295
+
+]
+
+[296
 
 ]
 Chapter 15.
@@ -2543,70 +2544,70 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[295]
+[297]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
 
-[296]
+[298]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[297
+[299
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
 
-[298]
+[300]
 Chapter 17.
 
 
-[299
+[301
 
 ]) (./chapters/appendix.tex
 
-[300]
+[302]
 附录 A.
 ) (./chapters/bibliography.tex
 
-[301
+[303
 
 ]
 
-[302
+[304
 
 ]
 附录 B.
 
 
-[303]
-
-[304
-
-]) (./chapters/answers.tex
-
 [305]
 
 [306
 
-]
-附录 C.
-) (./chapters/index.tex
+]) (./chapters/answers.tex
 
 [307]
 
 [308
 
 ]
+附录 C.
+) (./chapters/index.tex
+
+[309]
+
+[310
+
+]
 附录 D.
 )
 
-[309] (./Quantum Chemistry.aux)
+[311] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -2620,12 +2621,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 43592 strings out of 473832
- 989003 string characters out of 5726732
- 1633172 words of memory out of 5000000
- 65871 multiletter control sequences out of 15000+600000
+ 43609 strings out of 473832
+ 989691 string characters out of 5726732
+ 1635517 words of memory out of 5000000
+ 65888 multiletter control sequences out of 15000+600000
  572526 words of font info for 172 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,25n,111p,1743b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (317 pages).
+Output written on Quantum Chemistry.pdf (319 pages).
