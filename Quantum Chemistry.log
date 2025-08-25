@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  24 AUG 2025 15:54
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  25 AUG 2025 14:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2415,30 +2415,30 @@ File: Figures/13.5.png Graphic file (type bmp)
 
 [273]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 15.05785pt on input line 426.
+(Font)              scaled to size 15.05785pt on input line 425.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 15.05463pt on input line 426.
+(Font)              scaled to size 15.05463pt on input line 425.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <15.05624> not available
-(Font)              size <14.4> substituted on input line 426.
+(Font)              size <14.4> substituted on input line 425.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 426.
+(hyperref)                removing `\mhchem@cee' on input line 425.
 
 
 
 [274]
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 462.
+(Font)              scaled to size 10.00107pt on input line 461.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 462.
+(Font)              scaled to size 7.00075pt on input line 461.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 462.
+(Font)              scaled to size 9.99893pt on input line 461.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 462.
+(Font)              scaled to size 6.99925pt on input line 461.
 [275]
 
 [276]
@@ -2466,7 +2466,7 @@ File: Figures/13.10.png Graphic file (type bmp)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 690.
+(hyperref)                removing `\mhchem@cee' on input line 688.
 
 
 
@@ -2491,29 +2491,46 @@ File: Figures/13.15.png Graphic file (type bmp)
 
 [284]
 
+[285]
+File: Figures/13.16.png Graphic file (type bmp)
+<Figures/13.16.png>
+File: Figures/13.17.png Graphic file (type bmp)
+<Figures/13.17.png>
+
+
+[286]
+
+[287]
+
+[288]
+
+[289]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 877.
+(hyperref)                removing `\mhchem@cee' on input line 1020.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 886.
+(hyperref)                removing `\mhchem@cee' on input line 1029.
 
 ) (./chapters/14.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[285]
+[290]
 
-[286]
+[291]
+
+[292
+
+]
 Chapter 14.
 ) (./chapters/15.tex
 
-[287
+[293]
 
-]
-
-[288
+[294
 
 ]
 Chapter 15.
@@ -2526,70 +2543,70 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[289]
+[295]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
 
-[290]
+[296]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[291
+[297
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
 
-[292]
+[298]
 Chapter 17.
 
 
-[293
+[299
 
 ]) (./chapters/appendix.tex
 
-[294]
+[300]
 附录 A.
 ) (./chapters/bibliography.tex
 
-[295
+[301
 
 ]
 
-[296
+[302
 
 ]
 附录 B.
 
 
-[297]
+[303]
 
-[298
+[304
 
 ]) (./chapters/answers.tex
 
-[299]
+[305]
 
-[300
+[306
 
 ]
 附录 C.
 ) (./chapters/index.tex
 
-[301]
+[307]
 
-[302
+[308
 
 ]
 附录 D.
 )
 
-[303] (./Quantum Chemistry.aux)
+[309] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -2603,12 +2620,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 43558 strings out of 473832
- 987763 string characters out of 5726732
- 1625998 words of memory out of 5000000
- 65839 multiletter control sequences out of 15000+600000
+ 43592 strings out of 473832
+ 989003 string characters out of 5726732
+ 1633172 words of memory out of 5000000
+ 65871 multiletter control sequences out of 15000+600000
  572526 words of font info for 172 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,25n,111p,1743b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (311 pages).
+Output written on Quantum Chemistry.pdf (317 pages).
