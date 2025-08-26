@@ -1209,36 +1209,157 @@
     \end{equation*}
     其中求和是针对$m$、$n$、$j$、$k$和$p$的整数值进行的。变分参数为$\delta$和$c_{mnjkp}$系数。James和Coolidge函数在交换电子1和2时满足交换对称，这正是我们所期望的，因为我们有一个反对称的基态自旋函数。在和式中包含13项，James和Coolidge发现$D_e = 4.72\:\mathrm{eV}$，误差仅为0.03 eV。他们的研究成果得到了Kolos、Wolniewicz及其同事的进一步推进，他们在求和中使用了多达279项。因为$D_0$由观测到的电子能谱所决定，所以他们使用了Cooley-Numerov法（第\ref{sec:13.2 Nuclear Motion in Diatomic Molecules}节）来从它们的理论$U\left(R\right)$曲线中中计算振动能级和$D_0$。引入相对论校正和对玻恩-奥本海默近似的修正后，他们得出$D_0/hc - 36118.1\:\mathrm{cm}^{-1}$，与光谱观测值$36118.1\:\mathrm{cm}^{-1}$完全一致【W. Kolos et al., \textit{J. Chem. Phys.}, \textbf{84}, 3278 (1986); L. Wolniewicz, \textit{J. Chem. Phys.}, \textbf{99}, 1851 (1993)】。通过进行相对论修正、玻恩-奥本海默近似修正以及量子电动力学修正的高精度计算，研究人员计算出了更为精确的$D_0$值。这些计算使用了玻恩-奥本海默近似下的，从多达7000项的波函数中计算得出的$U\left(R\right)$，结果为$D_0/hc = 36118.0695(10)\:\mathrm{cm}^{-1}$，其中括号内的数字表示最后一位的不确定度【K. Piszczatowski et al., \textit{J. Chem. Theory Comput.}, \textbf{5}, 3039 (2009); \url{www.fuw.edu.pl/~krp/papers/D0.pdf}】。实验值为$3.118.0696(4)\:\mathrm{cm}^{-1}$。（量子电动力学是Feynman、Schwinger和Tomonaga在20世纪40年代末提出的相对论性量子力学理论，用于描述辐射与物质的相互作用，是对狄拉克量子场论的改进。）
 
-\section{价键理论求解\ce{H2}}
+\section{价键理论处理\ce{H2}}
 \label{sec:13.10 The Valence-Bond Treatment of H2}
 
+    氢分子的首个量子力学处理是由Heitler和London于1927年完成的。他们的思想已被扩展为一种普遍的化学键理论，即\textbf{价键理论}（valence-bond, VB theory）。价键方法与化学家关于分子由原子通过局域键结合而成的观念更为密切相关，而分子轨道方法则不然。价键法将分子视为由原子核（原子核加上内层电子）和成键价电子组成。对于\ce{H2}，两个电子都是价电子。
 
+    Heitler-London处理\ce{H2}基态的第一步是将分子近似为两个基态氢原子。两个这样的非相互作用原子的波函数是
+    \begin{equation*}
+        f_1 = 1s_a\left(1\right)1s_b\left(2\right)
+    \end{equation*}
+    其中$a$和$b$指代的是原子核，而1和2为电子。当然，函数
+    \begin{equation*}
+        f_2 = 1s_a\left(2\right)1s_b\left(1\right)
+    \end{equation*}
+    也是有效的波函数。因此提出了试探函数
+    \begin{equation}
+        c_1f_1 + c_2f_2 = c_11s_a\left(1\right)1s_b\left(2\right) + c_21s_a\left(2\right)1s_b\left(1\right)
+        \label{eq:13.96}
+    \end{equation}
+    该线性变分函数引出了久期行列式方程$\det\left(H_{ij} - S_{ij}W\right) = 0$【式(\ref{eq:8.57})】，其中$H_{11} = \left\langle f_1 \middle| \hat{H} \middle| f_1 \right\rangle$，$S_{11} = \left\langle f_1 \middle| f_1 \right\rangle = 1$，$\ldots$。
 
+    我们还可以用微扰理论来考虑这个问题（正如Heitler和London所做的那样）。一个基态氢分子分解为两个基态氢原子。因此，我们将两个基态氢原子在无限远处的相互作用视为无扰系统。一个可能的零级（无扰）波函数为$1s_a\left(1\right)1s_b\left(2\right)$。然而，电子2也可能与原子核$a$结合，从而得到无扰波函数$1s_a\left(2\right)1s_b\left(1\right)$。这两个无扰波函数属于一个双重简并能级（交换简并）。在分子形成的微扰作用下，双重简并能级裂分为两个能级，而零阶\textit{校正}波函数是这两个微扰波函数的线性组合：
+    \begin{equation*}
+        c_11s_a\left(1\right)1s_b\left(2\right) + c_21s_a\left(2\right)1s_b\left(1\right)
+    \end{equation*}
+    该函数引出了$2\times2$的久期行列式，除了$W$被$E^{\left(0\right)} + E^{\left(1\right)}$取代以外，它与(\ref{eq:8.56})一致；见问题9.20。
 
+    我们现在来求解久期方程。哈密顿算符为厄米算符，所有函数都为实函数且$f_1$和$f_2$已归一化。因此，
+    \begin{equation*}
+        H_{12} = H_{21}, \quad S_{12} = S_{21}, \quad S_{11} = S_{22} = 1
+    \end{equation*}
+    考虑$H_{11}$和$H_{12}$：
+    \begin{equation*}
+        H_{11} = \left\langle 1s_a\left(1\right)1s_b\left(2\right) \middle| \hat{H} \middle| 1s_a\left(1\right)1s_b\left(2\right) \right\rangle
+    \end{equation*}
+    \begin{equation*}
+        H_{22} = \left\langle 1s_a\left(2\right)1s_b\left(1\right) \middle| \hat{H} \middle| 1s_a\left(2\right)1s_b\left(1\right) \right\rangle
+    \end{equation*}
+    在$H_{22}$中将坐标记号1和2交换就得到了$H_{11}$，因为该转换未改变$\hat{H}$。因此$H_{11} = H_{22}$。则久期方程$\left(H_{ij} - S_{ij}W\right) = 0$变为
+    \begin{equation}
+        \begin{vmatrix}
+            H_{11} - W & H_{12} - WS_{12} \\
+            H_{12} - WS_{12} & H_{11} - W
+        \end{vmatrix} = 0
+        \label{eq:13.97}
+    \end{equation}
+    该方程的形式与(\ref{eq:13.49})相同，类比于(\ref{eq:13.51})，(\ref{eq:13.57})和(\ref{eq:13.58})，近似能量和波函数为
+    \begin{equation}
+        W_1 = \frac{H_{11} + H_{12}}{1 + S_{12}}, \quad W_2 = \frac{H_{11} - H_{12}}{1 - S_{12}}
+        \label{eq:13.98}
+    \end{equation}
+    \begin{equation}
+        \phi_1 = \frac{f_1 + f_2}{\sqrt{2} \left(1 + S_{12}\right)^{1/2}}, \quad \phi_2 = \frac{f_1 - f_2}{\sqrt{2} \left(1 - S_{12}\right)^{1/2}}
+        \label{eq:13.99}
+    \end{equation}
+    (\ref{eq:13.99})的分子为
+    \begin{equation*}
+        f_1 \pm f_2 = 1s_a\left(1\right)1s_b\left(2\right) \pm 1s_a\left(2\right)1s_b\left(1\right)
+    \end{equation*}
+    根据我们之前的讨论，我们知道\ce{H2}的基态为$^1\Sigma$态，具有反对称自旋因子(\ref{eq:11.60})和对称空间因子。那么$\phi_1$一定是基态。Heitler-London基态波函数为
+    \begin{equation}
+        \frac{
+            1s_a\left(1\right)1s_b\left(2\right) + 1s_a\left(2\right)1s_b\left(1\right)
+        }{  
+            \sqrt{2}\left(1 + S_{12}\right)^{1/2}}\frac{1}{\sqrt{2}
+        }
+        \left[\alpha\left(1\right)\beta\left(2\right) - \beta\left(1\right)\alpha\left(2\right)\right]
+        \label{eq:13.100}
+    \end{equation}
+    最低$^3\Sigma$谱项对应三个状态的Heitler-London波函数为
+    \begin{equation}
+        \frac{
+            1s_a\left(1\right)1s_b\left(2\right) - 1s_a\left(2\right)1s_b\left(1\right)
+        }{
+            \sqrt{2}\left(1 - S_{12}\right)^{1/2}
+        } \left\{ 
+            \begin{array}{l}
+                \alpha\left(1\right)\alpha\left(2\right) \\
+                2^{-1/2}\left[\alpha\left(1\right)\beta\left(2\right) + \beta\left(1\right)\alpha\left(2\right)\right] \\
+                \beta\left(1\right)\beta\left(2\right)
+            \end{array}
+            \right.
+        \label{eq:13.101}
+    \end{equation}
+    其中的$S_{12}$由问题13.33给出。
 
+    现在考虑基态能量表达式。我们将分子电子哈密顿算符表示为两个氢原子哈密顿算符的和再加上微扰项：
+    \begin{equation}
+        \hat{H} = \hat{H}_a\left(1\right) + \hat{H}_b\left(2\right) + \hat{H}'
+        \label{eq:13.102}
+    \end{equation}
+    \begin{equation*}
+        \hat{H}_a\left(1\right) = -\frac{1}{2}\nabla_1^2 - \frac{1}{r_{a1}}, \quad \hat{H}_b\left(2\right) = -\frac{1}{2}\nabla_2^2 - \frac{1}{r_{b2}}, \quad \hat{H}' = -\frac{1}{r_{b1}} - \frac{1}{r_{a2}} + \frac{1}{r_{12}}
+    \end{equation*}
+    Heitler-London计算并未在$1s$函数中引入有效核电荷。因此$1s_a\left(1\right)$是$\hat{H}_a\left(1\right)$的本征函数，能量为$-\frac{1}{2}$ hartree，即氢原子基态能量。利用这一结果，可以得到以下价键能量的表达式：
+    \begin{equation}
+        W_1 = -1 + \frac{Q+A}{1+S_{ab}^2}, \quad W_2 = -1 + \frac{Q-A}{1-S_{ab}^2}
+        \label{eq:13.103}
+    \end{equation}
+    其中的\textit{库仑积分$Q$和交换积分$A$}定义为
+    \begin{equation}
+        Q \equiv \left\langle 1s_a\left(1\right)1s_b\left(2\right) \middle| \hat{H}' \middle| 1s_a\left(1\right)1s_b\left(2\right) \right\rangle
+        \label{eq:13.104}
+    \end{equation}
+    \begin{equation}
+        A \equiv \left\langle 1s_a\left(2\right)1s_b\left(1\right) \middle| \hat{H}' \middle| 1s_a\left(1\right)1s_b\left(2\right) \right\rangle
+        \label{eq:13.105}
+    \end{equation}
+    重叠积分$S_{ab}$由(\ref{eq:13.48})定义。这些表达式中的-1 hartree 为两个基态氢原子的能量。为了获得$U\left(R\right)$势能曲线，我们将这些表达式与核间排斥势$1/R$相加。
 
+    用于计算$W_1$和$W_2$所需的许多积分已在第\ref{sec:13.5 Approximate Treatments of the H2 Ground Electronic State}节对\ce{H2+}的处理中给出。唯一陌生的积分是包含$1/r_{12}$的积分。最难的是两中心，两电子交换积分：
+    \begin{equation*}
+        \int \int 1s_a\left(1\right)1s_b\left(2\right)\frac{1}{r_{12}}1s_a\left(2\right)1s_b\left(1\right) \:\mathrm{d}v_1\:\mathrm{d}v_2
+    \end{equation*}
+    \textit{两中心}意味着被积函数包含以两个不同核$a$和$b$为中心的函数；双电子意味着被积函数中包含两个电子的坐标。这可以通过在共焦椭圆坐标系中对$1/r_{12}$进行展开来计算，与球坐标系中问题9.14中的展开类似。该积分的详细计算过程在\textit{Slater, Quantum Theory of Molecules and Solids}, Volume 1, Appendix 6.中给出。Heitler-London处理的结果为$D_e = 3.15\:\mathrm{eV}$，$R_e = 0.87\:\mathrm{Å}$。与实验值$D_e = 4.75\:\mathrm{eV}$和$R_e = 0.741\:\mathrm{Å}$的吻合程度一般。在此处理中，大部分结合能由交换积分$A$提供。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    考虑对 Heitler–London 函数 (\ref{eq:13.100}) 进行一些改进。一个显而易见的步骤是在$1s$函数中引入轨道指数$\zeta$。这一工作由Wang于1928年完成。当$R_e$和$D_e$优化至3.78 eV和0.744 Å时，$\zeta$的优化值为1.166。回顾一下，Dickinson于1933年通过在原子轨道中引入部分$2p_z$特征（杂化）来改进Finkelstein–Horowitz的\ce{H2+}试探函数。1931年，Rosen利用这一思路改进Heitler–London-Wang函数。他采用了试探函数
+    \begin{equation*}
+        \phi = \phi_a\left(1\right)\phi_b\left(2\right) + \phi_a\left(2\right)\phi_b\left(1\right)
+    \end{equation*}
+    其中原子轨道$\phi_a$定义为$\phi_a = \mathrm{e}^{-\zeta r_a} \left(1 + cz_a\right)$，$\phi_b$的表达式类似。这使得在分子形成过程中能够实现原子轨道的极化。得到结果为4.04 eV的结合能。另一项改进——采用离子结构——将在下一节中进行讨论。
 
 \section{分子轨道理论和价键理论的比较}
 \label{sec:13.11 Comparison of the MO and VB Theories}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{同核双原子分子的分子轨道理论和价键理论波函数}
 \label{sec:13.12 MO and VB Wave Functions for Homonuclear Diatomic Molecules}
