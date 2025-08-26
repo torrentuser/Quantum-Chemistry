@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  26 AUG 2025 15:36
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  26 AUG 2025 17:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2527,25 +2527,22 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [297]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 1367.
-
-) (./chapters/14.tex
-Underfull \vbox (badness 4096) has occurred while \output is active []
-
-
-
 [298]
 
 [299]
 
-[300
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 1426.
 
-]
+) (./chapters/14.tex
+
+[300]
 Chapter 14.
 ) (./chapters/15.tex
 
-[301]
+[301
+
+]
 
 [302
 
@@ -2637,10 +2634,10 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 43634 strings out of 473832
- 990051 string characters out of 5726732
- 1637275 words of memory out of 5000000
- 65912 multiletter control sequences out of 15000+600000
+ 43639 strings out of 473832
+ 990106 string characters out of 5726732
+ 1637525 words of memory out of 5000000
+ 65917 multiletter control sequences out of 15000+600000
  572526 words of font info for 172 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,25n,111p,1743b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s

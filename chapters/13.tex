@@ -1333,36 +1333,95 @@
 \section{分子轨道理论和价键理论的比较}
 \label{sec:13.11 Comparison of the MO and VB Theories}
 
+    让我们比较\ce{H2}基态的分子轨道理论与价键理论的处理方法。
 
+    若$\phi_a$表示以原子核$a$为中心的原子轨道，空间因子为\ce{H2}基态的LCAO-MO波函数
+    \begin{equation}
+        \left[\phi_a\left(1\right)+\phi_b\left(1\right)\right]\left[\phi_a\left(2\right)+\phi_b\left(2\right)\right]
+        \label{eq:13.106}
+    \end{equation}
+    在最简单的处理中，$\phi$为$1s$原子轨道。(\ref{eq:13.106})等于
+    \begin{equation}
+        \phi_a\left(1\right)\phi_a\left(2\right) + \phi_b\left(1\right)\phi_b\left(2\right) + \phi_a\left(1\right)\phi_b\left(2\right) + \phi_b\left(1\right)\phi_a\left(2\right)
+        \label{eq:13.107}
+    \end{equation}
+    这些项的物理意义是什么？最后两个项中的每个电子都位于以不同原子核为中心的原子轨道中。这些是共价项，对应于原子之间电子的平等共享。前两个项中的两个电子都位于以同一原子核为中心的原子轨道中。这些是离子项，对应于化学结构
+    \begin{center}
+        \ce{H-}\ce{H+} 和 \ce{H+}\ce{H-}
+    \end{center}
+    共价项和离子项的权重相等，因此这个简单的分子轨道函数使得氢原子的基态有$50\%$的概率分解为两个中性氢原子，也有$50\%$的概率分解为一个质子和一个氢化物离子。实际上，\ce{H2}的基态会分解为两个中性\ce{H}原子。因此，这个简单的分子轨道函数在$R$趋于无穷大时给出了错误的能量极限值。
 
+    我们该如何解决这个问题？由于H是非极性分子，化学直觉告诉我们，离子项对波函数的贡献应远小于共价项。最简单的处理方法是省略分子轨道函数（\ref{eq:13.107}）中的离子项。这样得到
+    \begin{equation}
+        \phi_a\left(1\right)\phi_b\left(2\right) + \phi_b\left(1\right)\phi_a\left(2\right)
+        \label{eq:13.108}
+    \end{equation}
+    我们识别 (\ref{eq:13.108}) 为Heitler-London函数 (\ref{eq:13.100}) 。
 
+    尽管电子间排斥势使电子相互避开，但仍有一定概率发现两个电子靠近同一个原子核，这对应于离子结构。因此，我们不应简单地从（\ref{eq:13.107}）中省略离子项，而是可以尝试
+    \begin{equation}
+        \phi_{\text{VB,imp}} = \phi_a\left(1\right)\phi_b\left(2\right) + \phi_b\left(1\right)\phi_a\left(2\right) + \delta\left[\phi_a\left(1\right)\phi_a\left(2\right) + \phi_b\left(1\right)\phi_b\left(2\right)\right]
+        \label{eq:13.109}
+    \end{equation}
+    其中$\delta\left(R\right)$为变分参数，下标imp表示这是一个改进的价键函数。在价键理论的语言中，该试探函数代表了\textbf{离子-共价共振}（ionic-covalent resonance）。当然，\ce{H2}的基态波函数不会随时间在对应于\ce{H-H}结构的共价函数与离子函数之间来回变化。相反（在我们考虑的近似中），波函数是共价函数与离子函数的时不变混合。由于\ce{H2}会解离为中性原子，我们知道$\delta\left(\infty\right)=0$。Weinbaum于1933年使用$1s$原子轨道并采用轨道指数进行的变分计算得出，在$R$处参数$\delta$的值为0.26；轨道指数被确定为1.19，解离能计算为4.03 eV，相较于Heitler–London–Wang值3.78 eV有所改善。当$\delta$等于零时，我们得到价键函数（\ref{eq:13.108}）。当$\delta$等于1时，我们得到LCAO-MO函数（\ref{eq:13.107}）。$\delta$ 的最优值实际上更接近于0而非1，事实上，Heitler–London–Wang 价键函数给出的解离能优于LCAO-MO函数。
 
+    让我们将改进的价键试探函数（\ref{eq:13.109}）与通过组态相互作用改进的简单LCAO-MO函数进行比较。LCAO-MO 组态相互作用试函数（\ref{eq:13.95}）具有（未归一化的）形式
+    \begin{equation}
+        \phi_{\text{MO,imp}} = \left[\phi_a\left(1\right) + \phi_b\left(1\right)\right]\left[\phi_a\left(2\right) + \phi_b\left(2\right)\right] + \gamma\left[\phi_a\left(1\right) - \phi_b\left(1\right)\right]\left[\phi_a\left(2\right) - \phi_b\left(2\right)\right]
+        \label{eq:13.110}
+    \end{equation}
+    因为该函数未归一化，所以将其与常数$1/\left(1-\gamma\right)$相乘并无不妥。这样做并重新排列项后，我们得到
+    \begin{equation*}
+        \phi_{\text{MO,imp}} = \phi_a\left(1\right)\phi_b\left(2\right) + \phi_b\left(1\right)\phi_a\left(2\right) + \frac{1+\gamma}{1-\gamma}\left[\phi_a\left(1\right)\phi_a\left(2\right) + \phi_b\left(1\right)\phi_b\left(2\right)\right]
+    \end{equation*}
+    再定义一个新常数$\delta$为$\delta = \left(1+\gamma\right)/\left(1-\gamma\right)$也无伤大雅。我们可以看到，改进的分子轨道函数与改进的价键函数（\ref{eq:13.109}）是完全相同的。Weinbaum将其\ce{H2}计算视为包含离子项的价键计算。我们已经证明，同样可以将Weinbaum的计算视为包含组态相互作用的分子轨道计算。（这是在第\ref{sec:13.9 The Hydrogen Molecule}节中采纳的观点。）
 
+    分子轨道函数（\ref{eq:13.107}）低估了电子相关，因为它认为两个电子都位于同一个原子的结构与每个电子位于不同原子的结构具有相同的概率。价键 函数（\ref{eq:13.108}）高估了电子相关，因为它不包含两个电子都位于同一个原子的结构的贡献。在分子轨道理论中，电子相关可以通过组态相互作用引入。在价键理论中，电子相关性因离子-共价共振而减弱。简单的价键方法在大$R$值下比简单的分子轨道方法更可靠，因为后者预测了错误的解离产物。为进一步阐明分子轨道法与价键法之间的差异，需考察两种方法如何将\ce{H2}电子哈密顿算符分解为无扰哈密顿算符与微扰哈密顿算符。对于分子轨道法，我们写为：
+    \begin{equation*}
+        \hat{H} = \left[ \left( -\frac{1}{2} \nabla_1^2 - \frac{1}{r_{a1}} - \frac{1}{r_{b1}} \right) + \left( -\frac{1}{2} \nabla_2^2 - \frac{1}{r_{a2}} - \frac{1}{r_{b2}} \right) \right] + \frac{1}{r_{12}}
+    \end{equation*}
+    其中无扰哈密顿算符由括号内的项组成。在分子轨道理论中，\ce{H2}的无扰哈密顿算符为两个\ce{H2+}哈密顿算符之和，每个电子一个。因此，零级分子轨道波函数为两个类\ce{H2+}波函数的乘积，每个电子一个。因为\ce{H2+}函数很复杂，所以我们使用原子轨道线性组合来近似类\ce{H2+}分子轨道。通过自洽场分子轨道法，以平均方式考虑了$1/r_{12}$扰动的影响。为考虑瞬时电子相关效应，可采用组态相互作用法。
 
+    对于价键法，哈密顿算符中的项可按以下两种方式分组：
+    \begin{equation*}
+        \hat{H} = \left[ \left( -\frac{1}{2}\nabla_1^2 - \frac{1}{r_{a1}} \right) + \left( -\frac{1}{2}\nabla_2^2 - \frac{1}{r_{b2}} \right) \right] - \frac{1}{r_{a2}} - \frac{1}{r_{b1}} + \frac{1}{r_{12}}
+    \end{equation*}
+    \begin{equation*}
+        \hat{H} = \left[ \left( -\frac{1}{2} \nabla_1^2 - \frac{1}{r_{b1}} \right) + \left( -\frac{1}{2} \nabla_2^2 - \frac{1}{r_{a2}} \right) \right] - \frac{1}{r_{a1}} - \frac{1}{r_{b2}} + \frac{1}{r_{12}}
+    \end{equation*}
+    无扰系统由两个氢原子组成。我们有两个零级函数，它们由氢原子波函数的乘积构成，且属于简并能级。基态零级校正波函数是式(\ref{eq:13.100})所示的线性组合。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    分子轨道法的使用频率远高于价键法，因为其计算复杂度远低于价键法。该方法由Hund、Mulliken和Lennard-Jones于1920年代末创立。最初主要用于分子的定性描述，而电子计算机的出现使得精确计算分子轨道函数成为可能（参见第\ref{sec:13.14 SCF Wave Functions for Diatomic Molecules}节）。关于分子轨道法与价键法相对优劣的讨论，详见R. Hoffman et al., \textit{Acc. Chem. Res.}, \textbf{36}, 750 (2003).
 
 \section{同核双原子分子的分子轨道理论和价键理论波函数}
 \label{sec:13.12 MO and VB Wave Functions for Homonuclear Diatomic Molecules}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{\ce{H2}分子的激发态}
 \label{sec:13.13 Excited States of H2}
