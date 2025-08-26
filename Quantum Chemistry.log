@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  25 AUG 2025 19:41
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  26 AUG 2025 10:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -546,39 +546,24 @@ Package fontspec Info:
 
 )) (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
-) (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/unicode-math/unicode-math.sty
-Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
- (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
-Package: unicode-math-xetex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
- (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
-)
-\g__um_fam_int=\count352
-\g__um_fonts_used_int=\count353
-\l__um_primecount_int=\count354
-\g__um_primekern_muskip=\muskip19
- (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex))) (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/mathtools/mathtools.sty
+) (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
  (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count355
-\calc@Bcount=\count356
+\calc@Acount=\count352
+\calc@Bcount=\count353
 \calc@Adimen=\dimen285
 \calc@Bdimen=\dimen286
 \calc@Askip=\skip84
 \calc@Bskip=\skip85
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count357
+\calc@Ccount=\count354
 \calc@Cskip=\skip86
 ) (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-
-Package mathtools Warning: For best results, please load mathtools *before* 
-(mathtools)                unicode-math on input line 127.
-
-\g_MT_multlinerow_int=\count358
+\g_MT_multlinerow_int=\count355
 \l_MT_multwidth_dim=\dimen287
 \origjot=\skip87
 \l_MT_shortvdotswithinadjustabove_dim=\dimen288
@@ -589,7 +574,18 @@ Package mathtools Warning: For best results, please load mathtools *before*
 \l_MT_below_shortintertext_sep=\dimen293
 \xmathstrut@box=\box72
 \xmathstrut@dim=\dimen294
-) (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+) (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
+ (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
+Package: unicode-math-xetex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
+ (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+)
+\g__um_fam_int=\count356
+\g__um_fonts_used_int=\count357
+\l__um_primecount_int=\count358
+\g__um_primekern_muskip=\muskip19
+ (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex))) (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/10/22 version 6.4.1 text color boxes
  (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (d:/Program Files/TexLive/2025/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (d:/Program Files/TexLive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks35
@@ -693,7 +689,8 @@ File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@path@lastx=\dimen322
 \pgf@path@lasty=\dimen323
-) (d:/Program Files/TexLive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+)
+(d:/Program Files/TexLive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@shorten@end@additional=\dimen324
 \pgf@shorten@start@additional=\dimen325
@@ -2513,25 +2510,39 @@ File: Figures/13.17.png Graphic file (type bmp)
 [292]
 
 [293]
+File: Figures/13.18.png Graphic file (type bmp)
+<Figures/13.18.png>
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 1168.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 1177.
-
-) (./chapters/14.tex
 
 [294]
+
+[295]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 1212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 1246.
+
+) (./chapters/14.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[296]
+
+[297]
+
+[298
+
+]
 Chapter 14.
 ) (./chapters/15.tex
 
-[295
+[299]
 
-]
-
-[296
+[300
 
 ]
 Chapter 15.
@@ -2544,70 +2555,70 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[297]
+[301]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
 
-[298]
+[302]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[299
+[303
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
 
-[300]
+[304]
 Chapter 17.
 
 
-[301
+[305
 
 ]) (./chapters/appendix.tex
 
-[302]
+[306]
 附录 A.
 ) (./chapters/bibliography.tex
 
-[303
+[307
 
 ]
 
-[304
+[308
 
 ]
 附录 B.
 
 
-[305]
+[309]
 
-[306
+[310
 
 ]) (./chapters/answers.tex
 
-[307]
+[311]
 
-[308
+[312
 
 ]
 附录 C.
 ) (./chapters/index.tex
 
-[309]
+[313]
 
-[310
+[314
 
 ]
 附录 D.
 )
 
-[311] (./Quantum Chemistry.aux)
+[315] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -2621,12 +2632,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 43609 strings out of 473832
- 989691 string characters out of 5726732
- 1635517 words of memory out of 5000000
- 65888 multiletter control sequences out of 15000+600000
+ 43624 strings out of 473832
+ 989945 string characters out of 5726732
+ 1636813 words of memory out of 5000000
+ 65902 multiletter control sequences out of 15000+600000
  572526 words of font info for 172 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,25n,111p,1743b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (319 pages).
+Output written on Quantum Chemistry.pdf (323 pages).
