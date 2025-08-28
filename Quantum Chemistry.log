@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  27 AUG 2025 15:41
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.31)  28 AUG 2025 16:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2545,21 +2545,31 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 File: Figures/13.19.png Graphic file (type bmp)
 <Figures/13.19.png>
-) (./chapters/14.tex
+
 
 [302]
 
 [303]
+File: Figures/13.20.png Graphic file (type bmp)
+<Figures/13.20.png>
 
-[304
 
-]
-Chapter 14.
-) (./chapters/15.tex
+[304]) (./chapters/14.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [305]
 
-[306
+[306]
+Chapter 14.
+) (./chapters/15.tex
+
+[307
+
+]
+
+[308
 
 ]
 Chapter 15.
@@ -2572,70 +2582,70 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[307]
+[309]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
 
 
-[308]
+[310]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[309
+[311
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
 
 
-[310]
+[312]
 Chapter 17.
 
 
-[311
+[313
 
 ]) (./chapters/appendix.tex
 
-[312]
+[314]
 附录 A.
 ) (./chapters/bibliography.tex
 
-[313
+[315
 
 ]
 
-[314
+[316
 
 ]
 附录 B.
 
 
-[315]
-
-[316
-
-]) (./chapters/answers.tex
-
 [317]
 
 [318
 
-]
-附录 C.
-) (./chapters/index.tex
+]) (./chapters/answers.tex
 
 [319]
 
 [320
 
 ]
+附录 C.
+) (./chapters/index.tex
+
+[321]
+
+[322
+
+]
 附录 D.
 )
 
-[321] (./Quantum Chemistry.aux)
+[323] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -2649,12 +2659,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 43773 strings out of 473832
- 992386 string characters out of 5726732
- 1639954 words of memory out of 5000000
- 66041 multiletter control sequences out of 15000+600000
+ 43786 strings out of 473832
+ 992623 string characters out of 5726732
+ 1640353 words of memory out of 5000000
+ 66053 multiletter control sequences out of 15000+600000
  576893 words of font info for 183 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,25n,111p,1743b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (329 pages).
+Output written on Quantum Chemistry.pdf (331 pages).

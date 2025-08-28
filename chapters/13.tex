@@ -1517,37 +1517,127 @@
             B^1\Sigma_u^+:& \quad 2^{-1/2}\left[1\sigma_g\left(1\right)1\sigma_u\left(2\right)+1\sigma_g\left(2\right)1\sigma_u\left(1\right)\right] 2^{-1/2}\left[\alpha\left(1\right)\beta\left(2\right)-\alpha\left(2\right)\beta\left(1\right)\right]
         \end{aligned}
     \end{equation*}
-    其中的$1\sigma_g \approx N\left(1s_a + 1s_b\right)$，$1\sigma_u \approx N'\left(1s_a - 1s_b\right)$。$b^3\Sigma_u^+$支项是三重简并的。而$B^1\Sigma_u^+$支项是单态。$b$支项的海特勒-伦敦波函数由(\ref{eq:13.101})给出。这两个支项各含一个成键电子和一个反键电子，我们预期两者的势能曲线应呈排斥关系。实际上，$B$能支项的$U(R)$曲线存在极小值。该态的稳定性警示我们：切勿从粗略的波函数推导中草率下结论。
+    其中的$1\sigma_g \approx N\left(1s_a + 1s_b\right)$，$1\sigma_u \approx N'\left(1s_a - 1s_b\right)$。$b^3\Sigma_u^+$支项是三重简并的。而$B^1\Sigma_u^+$支项是单态。$b$支项的海特勒-伦敦波函数由(\ref{eq:13.101})给出。这两个支项各含一个成键电子和一个反键电子，我们预期两者的势能曲线应呈排斥关系。实际上，$B$能支项的$U\left(R\right)$曲线存在极小值。该态的稳定性警示我们：切勿从粗略的波函数推导中草率下结论。
 
-    我们预测下一个激发态组态为$\left(1\sigma_g\right)\left(2\sigma_g\right)$，产生$^1\Sigma_g^+$和$^3\Sigma_g^+$支项。\ce{H2}的这些支项记为$E^1\Sigma_g^+$和$a^3\Sigma_g^+$。根据洪特规则，三重态的能量更低。$E$态的$U(R)$曲线存在两个显著的极小值，因此常被称为EF态。
+    我们预测下一个激发态组态为$\left(1\sigma_g\right)\left(2\sigma_g\right)$，产生$^1\Sigma_g^+$和$^3\Sigma_g^+$支项。\ce{H2}的这些支项记为$E^1\Sigma_g^+$和$a^3\Sigma_g^+$。根据洪特规则，三重态的能量更低。$E$态的$U\left(R\right)$曲线存在两个显著的极小值，因此常被称为EF态。
 
     虽然在周期表中$2\sigma_u$比$1\pi_u$分子轨道更先被填充，但对\ce{H2}而言$1\pi_u$能量低于$2\sigma_u$。则组态$\left(1\sigma_g\right)\left(1\pi_u\right)$产生谱项$^1\Pi_u$和$^3\Pi_u$，记作$C^1\Pi_u$和$c^3\Pi_u$。$c$谱项产生的支项为$c^3\Pi_{2u}$、$c^3\Pi_{1u}$和$c^3\Pi_{0u}$，这些支项彼此极为接近，通常在光谱学研究中无法分辨。$C$支项的势能曲线在较大$R$处呈现轻微凸起。每个支项均为双重简并态，由此$\left(1\sigma_g\right)\left(1\pi_u\right)$组态共产生八个电子态。
 
 \section{双原子分子的自洽场方法波函数}
 \label{sec:13.14 SCF Wave Functions for Diatomic Molecules}
 
+    本节展示了双原子分子中自洽场方法分子轨道波函数的若干实例。
 
+    分子轨道波函数中的空间轨道$\phi_i$哥表示为一组单电子\textbf{基函数}（basis functions）$\chi_s$的线性组合：
+    \begin{equation}
+        \phi_i = \sum_s c_{si} \chi_s
+        \label{eq:13.122}
+    \end{equation}
+    在对双原子分子的自洽场方法计算中，可以使用以分子中各原子为中心的斯莱特型轨道【式(\ref{eq:11.14})】作为基函数。（另见第\ref{sec:15.4 Basis Functions}节中的替代选择。）第\ref{sec:14.3 The Hartree-Fock Method for Molecules}节讨论了用于确定每个单原子分子自洽场方法分子轨道中基函数系数$c_{si}$的计算方法。要获得原子轨道函数的完备集，需要无限数量的斯莱特轨道，但通过精心选择数量适中的斯莱特轨道，可以对真实的分子哈特里-福克波函数进行精确逼近。分子自洽场方法计算的\textbf{最小基函数集}（minimal basis set）要求每个原子的每个内层原子轨道和价层原子轨道各包含一个基函数。\textbf{扩展}（extended）基函数集则比最小基函数集更大。最小基函数集的自洽场方法计算比扩展基函数集更简单，但后者能获得更高的精度。
 
+    Ransil采用最小基函数集计算了若干轻型双原子分子的自洽场方法波函数【B. J. Ransil, \textit{Rev. Mod. Phys.}, \textbf{32}, 245 (1960)】。例如，基态\ce{Li2}【分子轨道组态$\left(1\sigma_g\right)^2\left(1\sigma_u\right)^2\left(2\sigma_g\right)^2$】满足$R=R_e$时的自洽场方法分子轨道为
+    \begin{equation}
+        \begin{aligned}
+            1\sigma_g &= 0.706\left(1s_a + 1s_b\right) + 0.009\left(2s_{\perp a} + 2s_{\perp b}\right) + 0.0003\left(2p\sigma_a + 2p\sigma_b\right) \\
+            1\sigma_u &= 0.709 \left(1s_a - 1s_b\right) + 0.021 \left(2s_a - 2s_{\perp b}\right) + 0.003 \left(2p\sigma_a - 2p\sigma_b\right) \\
+            2\sigma_{g} &= -0.059 \left(1s_{a} + 1s_{b}\right) + 0.523 \left(2s_{\perp a} + 2s_{\perp b}\right) + 0.114 \left(2p\sigma_{a} + 2p\sigma_{b}\right)
+        \end{aligned}
+        \label{eq:13.123}
+    \end{equation}
+    这些方程中的原子轨道函数为斯莱特型轨道，除了$2s_{\perp}$。$2s$斯莱特型原子轨道无径向节点，且不与$1s$斯莱特型原子轨道正交。哈特里-福克$2s$原子轨道有一个径向节点（$n-l-1=1$），且与$1s$原子轨道正交。通过对同一原子的$1s$和$2s$斯莱特型原子轨道进行以下归一化线性组合（施密特正交化），可构造出具有正确节点数的正交化$2s$轨道：
+    \begin{equation}
+        2s_{\perp}=\left(1-S^2\right)^{-1/2}\left(2s-S\cdot 1s\right)
+        \label{eq:13.124}
+    \end{equation}
+    其中的$S$为重叠积分$\left\langle 1s \middle| 2s \right\rangle$。Ransil将\ce{Li2}轨道用（未归一化的）$2s$斯莱特型原子轨道表示出来，但因为归一化的$1\sigma_u$函数能更好表示$2s$原子轨道，所以这些轨道写作$2s_{\perp}$。这么做改变了$1s$和$2s$的系数，但事实上实际轨道并无变化，见问题13.37。原子轨道的$2p\sigma$表示$p$轨道沿分子($z$)轴方向的延伸；即$2p\sigma$原子轨道是$2p_z$原子轨道。（$2p_x$和$2p_y$轨道称为$2p\pi$原子轨道。）(\ref{eq:13.123})中轨道对应的优化轨道指数为$\zeta_{1s} = 2.689,\:\zeta_{2s} = 0.634,\:\zeta_{2p\sigma} = 0.761$。
 
+    我们先前对这些分子轨道给出的简单表达式是
+    \begin{equation*}
+        \begin{aligned}
+            1\sigma_g &= \sigma_g 1s = 2^{-1/2} (1s_a + 1s_b) \\
+            1\sigma_{u} &= \sigma_{u}^{*}1s = 2^{-1/2}(1s_{a} - 1s_{b}) \\
+            2\sigma_{g} &=\sigma_{g}2s=2^{-1/2}(2s_{a}+2s_{b})
+        \end{aligned}
+    \end{equation*}
+    将这些结果与(\ref{eq:13.123})式进行比较，可知简单的LCAO函数是最小基组自洽场方法分子轨道的合理初始近似。该近似对$1\sigma_g$和$1\sigma_u$轨道尤其有效，而$2\sigma_g$分子轨道在$2s$原子轨道的贡献之外，还具有可观的$2p\sigma$原子轨道成分。因此，相较于分离原子分子轨道表示法，表\ref{tab:13.1}（第\ref{sec:13.7 MO Configurations for Homonuclear Diatomic Molecules}节）第三列的记号更为可取。由于$2s$和$2p$原子轨道能量相近【参见式(\ref{eq:9.27})】，可预期存在显著的$2s-2p\sigma$杂化。这种杂化使得$2s$原子轨道在分子形成过程中发生极化。
 
+    让我们比较Ransil使用最小基组计算的\ce{F2}基态在$R_e$处的$3\sigma$分子轨道，与Wahl使用扩展基组计算的结果【A. C. Wahl, \textit{J. Chem. Phys.}, \textbf{41}, 2600 (1964)】：
+    \begin{equation*}
+        3\sigma_{g,\min}=0.038(1s_a+1s_b)-0.184(2s_a+2s_b)+0.648(2p\sigma_a+2p\sigma_b)
+    \end{equation*}
+    \begin{equation*}
+        \zeta_{1s} = 8.65, \quad \zeta_{2s} = 2.58, \quad \zeta_{2p\sigma} = 2.49
+    \end{equation*}
+    \begin{equation*}
+        \begin{aligned}
+            3\sigma_{g,\text{ext}} = 0.048 & \left( 1s_a + 1s_b \right) + 0.003 \left( 1s_a + 1s_b \right) - 0.257 \left( 2s_a + 2s_b \right) \\
+            &+ 0.582 \left(2 p \sigma_{a}+2 p \sigma_{b}\right)+0.307\left(2 p \sigma_{a}^{\prime}+2 p \sigma_{b}^{\prime}\right)+0.085\left(2 p \sigma_{a}^{\prime \prime}+2 p \sigma_{b}^{\prime \prime}\right) \\
+            &-0.056(3s_a + 3s_b) + 0.046(3d\sigma_a + 3d\sigma_b) + 0.014(4f\sigma_a + 4f\sigma_b)
+        \end{aligned}
+    \end{equation*}
+    \begin{equation*}
+        \begin{aligned}
+            \zeta_{1s} = 8.27, &\quad \zeta_{1s'} = 13.17, \quad \zeta_{2s} = 2.26 \\
+            \zeta_{2p\sigma}=1.85, &\quad \zeta_{2p\sigma'}=3.27, \quad \zeta_{2p\sigma''}=5.86 \\
+            \zeta_{3s} = 4.91, &\quad \zeta_{3d\sigma} = 2.44, \quad \zeta_{4f\sigma} = 2.83
+        \end{aligned}
+    \end{equation*}
+    正如需要多个斯莱特型原子轨道才能精确表示哈特里-福克分子轨道的斯莱特型原子轨道线性组合（第\ref{sec:11.1 The Hartree-Fock Self-Consistent-Field Method}节），在精确表示哈特里-福克分子轨道的斯莱特型原子轨道线性组合中，也需要多个具有相同$n$和$l$的斯莱特型原子轨道。扩展基函数中的带撇号和双撇号原子轨道函数是具有不同轨道指数的斯莱特型原子轨道。$3d\sigma$和$4f\sigma$原子轨道算符是量子数$m=0$的原子轨道算符，即$3d$和$4f$原子轨道算符。对于最小计算和扩展计算，总能量分别为$-197.877\:E_{\mathrm{h}}$和$-198.768\:E_{\mathrm{h}}$（其中的$E_{\mathrm{h}}$为hartree）。采用远大于Wahl所用基组的基组进行计算外推，得出\ce{F2}哈特里-福克能级在$R_e$处的能量为$−198.773 \:E_{\mathrm{h}}$【L. Bytautas et al., \textit{J. Chem. Phys.}, \textbf{127}, 164317 (2007)】。在$R_e$处\ce{F2}的能量实验值为$U\left(R_e\right) = -199.672\:E_{\mathrm{h}}$。相关能定义式(\ref{eq:11.16})采用分子的非相对论能量。对\ce{F2}能量的相对论贡献值为$-0.142\:E_{\mathrm{h}}$，则非相对论\ce{F2}能量准确值为$-199.672\:E_{\mathrm{h}} + 0.142\:E_{\mathrm{h}} = -199.530\:E_{\mathrm{h}}$。因此,\ce{F2}中的相关能为$-199.530\:E_{\mathrm{h}} + 198.773\:E_{\mathrm{h}} = -0.757\:E_{\mathrm{h}} = -20.6\:\mathrm{eV}$。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.75\textwidth]{Figures/13.20.png}
+        \caption{
+            \centering
+            \parbox{0.6\textwidth}{
+                Wahl计算所得\ce{Li2}基态电子密度Hartree-Fock分子轨道等值线图。【A. C. Wahl, \textit{Science}, \textbf{151} , 961 (1966); \textit{Scientific American}, April 1970, p. 54; \textit{Atomic and Molecular Structure}: 4 Wall Charts, McGraw-Hill, 1970.】
+            }
+        }
+        \label{fig:13.20}
+    \end{figure}
 
+    在讨论\ce{H2+}和\ce{H2}时，我们看到了杂化（同个原子不同原子轨道的混合）是如何改进分子波函数的。人们往往认为杂化仅发生于特定分子几何构型中。自洽场方法计算明确表明，所有分子轨道都存在某种程度的杂化。因此，任何双原子分子$\sigma$分子轨道都是孤立原子$1s,\:2s,\:2p_0,\:3s,\:3p_0,\:3d_0,\:\ldots$原子轨道的线性组合。
 
+    为协助确定哪些原子轨道参与构筑特定双原子分子轨道，我们采用两条规则。首先，$\sigma$型原子轨道（$s,\:p\sigma,\:d\sigma,\:\ldots$）只能参与形成$\sigma$型分子轨道；$\pi$型原子轨道（$p\pi,\:d\pi,\:\ldots$）只能参与形成$\pi$型分子轨道。其次，只有能量相当接近的原子轨道才能对特定分子轨道产生显著贡献。（具体实例可参见上文引用的最小基组和扩展基组分子轨道。）
 
+    Wahl绘制了从\ce{H2}到\ce{F2}的同核双原子分子近哈特里-福克分子轨道的等高线。图\ref{fig:13.20}展示了\ce{Li2}分子的等高线图。
 
+    当然，哈特里-福克波函数只是对真实波函数的近似。可以证明：对于处于平衡组态区域中的核组态，哈特里-福克波函数可以很好地给出电子概率密度$\rho\left(x,y,z\right)$的近似。仅涉及单电子算符的分子性质可表示为包含密度$\rho$的积分，参见式(14.8)。因此，此类性质可通过哈特里-福克波函数精确计算。分子偶极矩即为一例【式(14.21)】。例如，采用近似哈特里-福克$\psi$函数计算的\ce{LiH}分子偶极矩为6.00 D（德拜）（debyes）【S. Green, \textit{J. Chem. Phys.}, \textbf{54}, 827 (1971)】，与真实值5.83 D相比较。（1 D = $3.33564\times 10^{-30}\:\mathrm{C\:m}$。）对于\ce{NaCl}，计算偶极矩和实验偶极矩的值分别为9.18 D和9.02 D【R. L. Matcha, \textit{J. Chem. Phys.}, \textbf{48}, 335 (1968)】。此类计算中通常存在约0.2 D的误差，但在偶极矩较小的情况下，百分比误差可能较大。一个极端的例子是\ce{CO}，其偶极矩的实验值为0.11 D，极性为\ce{C-O+}，但进哈特里-福克偶极矩为0.27 D，得到了错误的极性\ce{C+O-}。然而，组态相互作用波函数可以得出具有正确极性的0.12 D值【S. Green, \textit{J. Chem. Phys.}, \textbf{54}, 827 (1971)】。
 
-
-
-
-
-
-
-
-
-
-
+    哈特里-福克法的主要缺陷在于其无法精确计算分子解离能。例如，扩展基组计算【P. E. Cade et al., \textit{J. Chem. Phys.}, \textbf{44}, 1973 (1966)】得出的\ce{N2}分子解离能为$D_e = 5.3 \:\mathrm{eV}$，而真实值应为9.9 eV。（计算哈特里-福克$D_e$时，需将$U\left(R\right)$哈特里-福克曲线中分子能量的最小值从分离原子的哈特里-福克能量总和中减去。）哈特里-福克分子波函数的另一个缺陷在于：当$R$趋于无穷时，其能量会趋近于错误的极限值。回忆对\ce{H2}分子轨道的讨论。
 
 \section{分子轨道理论处理异核双原子分子}
 \label{sec:13.15 MO Treatment of Heteronuclear Diatomic Molecules}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{价键理论处理异核双原子分子}
 \label{sec:13.16 VB Treatment of Heteronuclear Diatomic Molecules}
