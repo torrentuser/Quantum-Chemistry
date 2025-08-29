@@ -1608,39 +1608,148 @@
 \section{分子轨道理论处理异核双原子分子}
 \label{sec:13.15 MO Treatment of Heteronuclear Diatomic Molecules}
 
+    异核双原子分子的处理方法与同核双原子分子类似。我们首先考虑分子轨道描述。
 
+    假设有两个核电荷数稍微不同的原子；例如\ce{CO}。我们可以认为，\ce{CO}是通过电中性分子\ce{N2}中的一个原子核逐渐向另一个原子核转移电荷而形成。在此假设转移过程中，原始的\ce{N2}分子轨道将逐渐变化，最终形成\ce{CO}分子轨道。因此，我们预计\ce{CO}分子的分子轨道在某种程度上会与\ce{N2}的分子轨道相似。然而，对于异核双原子分子，电子哈密顿算符(\ref{eq:13.5})在电子坐标反演时并非不变的（即$\hat{H}_{\text{el}}$不与$\hat{\Pi}$对易），则分子轨道的$g$和$u$对称性消失。\ce{N2}和\ce{CO}壳层表示之间的关联性为
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{c|c|c|c|c|c|c|c|c}
+            \ce{N2} & $1\sigma_g$ & $1\sigma_u$ & $2\sigma_g$ & $2\sigma_u$ & $1\pi_u$ & $3\sigma_g$ & $1\pi_g$ & $3\sigma_u$ \\
+            \hline
+            \ce{CO} & $1\sigma$ & $2\sigma$ & $3\sigma$ & $4\sigma$ & $1\pi$ & $5\sigma$ & $2\pi$ & $6\sigma$ \\
+        \end{tabular}
+    \end{table} \\
+    具有相同对称性的分子轨道按照能量依次递增的顺序标号。因为缺少了$g$和$u$对称性，同核和异核分子轨道对应的数字不同。图\ref{fig:13.21}是通过自洽场方法计算确定的\ce{CO}分子轨道$1\pi_{\pm 1}$等高线示意图【W. M. Huo, \textit{J. Chem. Phys.}, \textbf{43}, 624 (1965)】。注意其轮廓与图\ref{fig:13.13}的相似性，该图展示了同核双原子分子中$1\pi_{u,\pm 1}$分子轨道的轮廓。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.3\textwidth]{Figures/13.21.png}
+        \caption{\ce{CO}中$1π_{\pm 1}$分子轨道轮廓的横截面。}
+        \label{fig:13.21}
+    \end{figure}
 
+    \ce{CO}的基态组态为$1\sigma^{2}2\sigma^{2}3\sigma^{2}4\sigma^{2}1\pi^{4}5\sigma^{2}$，而\ce{N2}的基态组态为$\left(1\sigma_g\right)^2\left(1\sigma_u\right)^2\left(2\sigma_g\right)^2\left(2\sigma_u\right)^2\left(1\pi_u\right)^4$\\$\left(3\sigma_g\right)^2$。
 
+    与同核双原子分子类似，异核双原子分子的分子轨道被近似为原子轨道的线性组合。系数通过第\ref{sec:14.3 The Hartree-Fock Method for Molecules}节所述方法求得。例如，采用斯莱特原子轨道（按斯莱特规则设定非优化指数）进行最小基组自洽场计算时，在$R=R_e$条件下，\ce{CO}分子的$5\sigma$、$1\pi$和$2\pi$分子轨道结果如下【B. J. Ransil, \textit{Rev. Mod. Phys.}, \textbf{32}, 245 (1960)】：
+    \begin{equation*}
+        \begin{aligned}
+            5\sigma = 0.027\left(1s_{\mathrm{C}}\right) &+ 0.011\left(1s_{\mathrm{O}}\right) + 0.739\left(2s_{\perp {\mathrm{C}}}\right) + 0.036\left(2s_{\perp \mathrm{O}}\right) \\
+            & -0.566\left(2p\sigma_{\mathrm{C}}\right)-0.438\left(2p\sigma_{\mathrm{O}}\right)
+        \end{aligned}
+    \end{equation*}
+    \begin{equation*}
+        1\pi = 0.469 \left(2p\pi_{\mathrm{C}}\right) + 0.771 \left(2p\pi_{\mathrm{O}}\right), \quad 2\pi = 0.922 \left(2p\pi_{\mathrm{C}}\right) - 0.690 \left(2p\pi_{\mathrm{O}}\right)
+    \end{equation*}
+    $\pi$分子轨道的表达式比$\sigma$分子轨道简单，因为$s$和$p\sigma$原子轨道无法参与贡献$\pi$分子轨道。作为对比，\ce{N2}中$R = R_e$处对应的分子轨道为（Ransil, op. cit.）：
+    \begin{equation*}
+        3\sigma_g = 0.030 \left( 1s_a + 1s_b \right) + 0.395 \left( 2s_{\perp a} + 2s_{\perp b} \right) - 0.603 \left( 2p\sigma_a + 2p\sigma_b \right)
+    \end{equation*}
+    \begin{equation*}
+        1\pi_u = 0.624 \left(2p\pi_a + 2p\pi_b\right), 1\pi_g = 0.835 \left(2p\pi_a - 2p\pi_b\right)
+    \end{equation*}
+    \ce{CO}分子轨道与\ce{N2}分子轨道的相似性显而易见。\ce{CO}中的$1\sigma$分子轨道几乎与氧原子$1s$原子轨道完全一致；而\ce{CO}中的$2\sigma$分子轨道本质上就是碳原子$1s$原子轨道。一般而言，对于异核双原子分子AB，当每个原子的原子轨道均为$s$型和$p$型，且A的原子轨道与B的原子轨道能量差异不大时，可预期其轨道能量分布符合图\ref{fig:13.17}所示模式：
+    \begin{equation*}
+        \sigma s < \sigma ^* s < \pi p < \sigma p < \pi ^* p < \sigma ^* p
+    \end{equation*}
+    即由$s$和$p$价层原子轨道形成的价层分子轨道具有较好适用性。
 
+    当B的价层原子轨道能量远小于A的价层原子轨道能量时，B的$s$和$p\sigma$价层原子轨道将比A的$s$价层原子轨道能量更低，这将影响各分子轨道中参与构成的原子轨道。例如，考虑\ce{BF}。最小基组计算【Ransil, \textit{Rev. Mod. Phys.}, \textbf{32}, 245 (1960)】给出的$1\sigma$分子轨道事实上是$1s_{\mathrm{F}}$，而$2\sigma$分子轨道则是$2s_{\mathrm{B}}$。而$3\sigma$分子轨道则绝大多数是$2s_{\mathrm{F}}$，并含有少量$2s\sigma_{\mathrm{B}},\:2p\sigma_{\mathrm{B}}$和$2p\sigma_{\mathrm{F}}$成分。$4\sigma$分子轨道则绝大多数是$2p\sigma_{\mathrm{F}}$，也有大量的$2s_{\mathrm{B}}$和$2s_{\mathrm{F}}$成分，还有微量的$2p\sigma_{\mathrm{B}}$成分。这与\ce{N2}的分子轨道显然不同，其对应的分子轨道绝大多数由每个N的$2s$原子轨道构成。$1\pi$分子轨道是$2p\pi_{\mathrm{F}}$和$2p\pi_{\mathrm{B}}$的成键组合。$5\sigma$分子轨道主要由$2s_{\mathrm{B}}$构成，其中$2p\sigma_{\mathrm{B}}$贡献显著，$2p\sigma_{\mathrm{F}}$亦有重要贡献。这也与\ce{N2}中对应的分子轨道不同，其最大的贡献来自于每个原子的$2p\sigma$原子轨道。$2\pi$分子轨道则是$2p\pi_{\mathrm{F}}$和$2p\pi_{\mathrm{B}}$的反键组合。$6\pi$分子轨道的重要贡献来自于$2p\sigma_{\mathrm{B}}$、$2s_{\mathrm{B}}$、$2s_{\mathrm{F}}$和$2p\sigma_{\mathrm{F}}$。
 
+    根据图\ref{fig:11.2}，我们知道$2p_{\mathrm{F}}$原子轨道能量低于$2s_{\mathrm{B}}$原子轨道能量。这使得$2p\sigma_{\mathrm{F}}$原子轨道对能量较低的分子轨道贡献显著，而$2s_{\mathrm{B}}$原子轨道则对较高的分子轨道有较多贡献，与\ce{N2}形成鲜明对比（这种效应出现在\ce{CO}中，尽管程度较轻。注意$2s_{\mathrm{C}}$对$5\sigma$分子轨道的显著贡献。以及$2p\sigma_{\mathrm{O}}$对$4\sigma$分子轨道的贡献也很大。）
 
+    对于双原子分子AB，其中每个原子具有$s$和$p$价层原子轨道（不包括氢和过渡元素），且A与B的价层原子轨道能量差异显著，我们可预期其价层分子轨道模式为：$\sigma < \sigma < \pi < \sigma < \pi < \sigma$，但难以直接推测哪些原子轨道参与了不同分子轨道的形成，亦难以判断这些分子轨道的成键或反键性质。通过将价电子填入这些分子轨道，我们可以合理推测AB分子的未成对电子数及其基态（见习题13.38）。
 
+    双原子氢化物属于特殊情况，因为H仅具有$1s$价键原子轨道。以\ce{HF}为例说明。H的原子基态组态为$1s$，而F则为$1s^22s^22p^5$。我们预期F已填满的$1s$和$2s$ 亚层在键合中贡献甚微。F的四个$2p\pi$的电子属于非键合电子（H原子上不存在$\pi$价层原子轨道）。H的$1s$原子轨道与F的$2p\sigma$原子轨道具有相同的对称性（$\sigma$），且能量相当接近（见图\ref{fig:11.2}）。这两种原子轨道的线性组合将形成用于成键电子对的$\sigma$分子轨道：
+    \begin{equation*}
+        \phi = c_1(1s_{\mathrm{H}}) + c_2(2p\sigma_{\mathrm{F}})
+    \end{equation*}
+    其中忽略了$1s_{\mathrm{F}}$和$2s_{\mathrm{F}}$原子轨道的贡献，因为F的电负性远高于H，我们可以预测$c_2 > c_1$。（除此以外，$1s_{\mathrm{H}}$和$2p\sigma_{\mathrm{F}}$原子轨道形成了反键轨道，但在基态时未占据）。
 
+    刚刚给出的HF图仅为粗略的定性近似。采用具有优化指数的斯莱特轨道进行最小基函数集的自洽场方法计算，得出的分子轨道为【B. J. Ransil, \textit{Rev. Mod. Phys.}, \textbf{32}, 245 (1960)】：
+    \begin{equation*}
+        \begin{aligned}
+            1\sigma &= 1.000 (1s_{\mathrm{F}}) + 0.012 (2s_{\perp \mathrm{F}}) + 0.002 (2p\sigma_{\mathrm{F}}) - 0.003 (1s_{\mathrm{H}}) \\
+            2\sigma &= -0.018 (1s_{\mathrm{F}}) + 0.914 (2s_{\perp \mathrm{F}}) + 0.090 (2p\sigma_{\mathrm{F}}) + 0.154 (1s_{\mathrm{H}}) \\
+            3\sigma &= -0.023(1s_{\mathrm{F}}) - 0.411(2s_{\perp \mathrm{F}}) + 0.711(2p\sigma_{\mathrm{F}}) + 0.516(1s_{\mathrm{H}})
+        \end{aligned}
+    \end{equation*}
+    \begin{equation*}
+        1\pi_{+1} = (2p\pi_{+1})_{\mathrm{F}}, \quad 1\pi_{-1} = (2p\pi_{-1})_{\mathrm{F}}
+    \end{equation*}
+    HF的基态分子轨道组态为$1\sigma^22\sigma^23\sigma^21\pi^4$。$1s$分子轨道与F $1s$原子轨道几乎完全相同。$2\sigma$分子轨道与F $2s$原子轨道极为接近。根据对称性要求，$1\pi$分子轨道必须与对应的F原子$\pi$原子轨道相同。成键的$3\sigma$分子轨道主要由F $2p\sigma$原子轨道和H $1s$原子轨道贡献，这与前文讨论的结果一致。然而，F $2s$原子轨道对该分子轨道贡献显著。（因为单$2s$函数只是对F $2s$原子轨道的近似，我们不能使用该计算来准确得出HF分子轨道中$2s$原子轨道的贡献。）
 
+    对于定性讨论（而非定量工作），异核双原子分子轨道的简单近似模型颇具实用价值。在最粗略的近似中，可将异核双原子分子的每个价层分子轨道视为每个原子轨道$\phi_a$和$\phi_b$的线性组合。（正如CO和BF的讨论所示，这种近似往往相当不准确。）从两个原子轨道出发，我们可以形成两个分子轨道：
+    \begin{equation*}
+        c_1\phi_a + c_2\phi_b, \quad c_1'\phi_a + c_2'\phi_b
+    \end{equation*}
+    异核双原子分子缺乏对称性，导致系数大小不一。这些系数通过求解久期方程确定【参见式(\ref{eq:13.45})】：
+    \begin{equation*}
+        \begin{vmatrix}
+            H_{aa} - W & H_{ab} - WS_{ab} \\
+            H_{ab} - WS_{ab} & H_{bb} - W
+        \end{vmatrix} = 0
+    \end{equation*}
+    \begin{equation}
+        (H_{aa} - W) (H_{bb} - W) - (H_{ab} - WS_{ab})^2 = 0
+        \label{eq:13.125}
+    \end{equation}
+    其中 $\hat{H}$ 是某种有效单电子哈密顿量。假设$H_{aa} > H_{bb}$，再令(\ref{eq:13.125})的左侧为$f\left(W\right)$。交换积分$S_{ab}$的值小于1（除了$R=0$处）。【A rigorous proof of this follows from Eq. (3.114) in \textit{Margenau and Murphy}.】$f\left(W\right)$中$W^2$的系数为$\left(1 - S_{ab}^2\right) >0$；因此$f\left(\infty\right) = f\left(-\infty\right) = +\infty >0$。若$W = H_{aa}$或$H_{bb}$，则(\ref{eq:13.125})中的第一个乘积为零。因此$f\left(H_{aa}\right) <0$及$f\left(H_{bb}\right) >0$。当$f\left(W\right)$为零时，(\ref{eq:13.125})才有解。因此，根据连续性，一个根必须介于$H_{aa}$和$H_{bb}$之间，另一个根则介于$H_{bb}$和$-\infty$之间。那么单分子轨道的能量同时比$H_{aa}$和$H_{bb}$低（分子中两个原子轨道的能量，第\ref{sec:13.5 Approximate Treatments of the H2 Ground Electronic State}节），另一个分子轨道的能量则比$H_{aa}$和$H_{bb}$都高。两个原子轨道形成一个成键分子轨道和一个反键分子轨道。图\ref{fig:13.22}展示了在同核和异核情况下，两个原子轨道形成成键与反键分子轨道的过程。这些示意图过于简化，因为特定的分子轨道由多个原子轨道共同贡献，而不仅限于两个。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Figures/13.22.png}
+        \caption{同核与异核情况下从原子轨道形成成键与反键分子轨道的过程。（参见习题13.39）}
+        \label{fig:13.22}
+    \end{figure}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    图\ref{fig:13.22}异核成键分子轨道中的系数$c_1$和$c_2$都为正值，则会引起核间电荷积累；对于反键分子轨道，$\phi_a$和$\phi_b$的系数符号相反，导致核间电荷减少。
 
 \section{价键理论处理异核双原子分子}
 \label{sec:13.16 VB Treatment of Heteronuclear Diatomic Molecules}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{价电子近似}
 \label{sec:13.17 The Valence-Electron Approximation}
