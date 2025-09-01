@@ -1,22 +1,95 @@
 % ===== CHAPTER 14 =====
 \chapter{分子量子力学理论}
 \label{chap:14}
+
+    \noindent 本章讨论在分子量子力学中应用的理论。第\ref{sec:14.1 Electron Probability Density}节使用波函数来表示电子概率密度。第\ref{sec:14.2 Dipole Moments}节展示了如何从波函数中计算出分子的偶极矩。第\ref{sec:14.3 The Hartree-Fock Method for Molecules}节给出了计算分子哈特里-福克波函数的步骤。第\ref{sec:14.4 The Virial Theorem}至第\ref{sec:14.7 The Electrostatic Theorem}节给出了位力定理和赫尔曼-费恩曼定理，这些定理对我们理解化学键很有帮助。
+
 \section{电子概率密度}
 \label{sec:14.1 Electron Probability Density}
+
+    多电子分子的波函数与电子概率密度之间有何关联？我们想要找出在空间中位于点 $\left(x, y, z\right)$ 的边长分别为 $\mathrm{d}x$、$\mathrm{d}y$、$\mathrm{d}z$ 的矩形体积元内找到一个电子的概率。电子波函数 $\psi$ 是 $n$ 个电子的空间坐标和自旋坐标的函数。（为简便起见，核构型的参数依赖性将不明确表示。）我们知道
+    \begin{equation}
+        \left|\psi\left(x_1,\:\ldots,\:z_n,m_{s1},\:\ldots,m_{sn}\right)\right|^2\mathrm{d}x_1\:\mathrm{d}y_1\:\mathrm{d}z_1\:\ldots\:\mathrm{d}x_n\:\mathrm{d}y_n\:\mathrm{d}z_n
+        \label{eq:14.1}
+    \end{equation}
+    为在$\left(x_1,y_1,z_1\right)$处的体积微元$\mathrm{d}x_1\:\mathrm{d}y_1\:\mathrm{d}z_1$内找到自旋为$m_{s1}$的电子1，在$\left(x_2,y_2,z_2\right)$处的体积微元$\mathrm{d}x_2\:\mathrm{d}y_2\:\mathrm{d}z_2$内找到自旋为$m_{s2}$的电子2等的概率。因为我们对在$\left(x,y,z\right)$处找到的电子处于何种自旋状态并不感兴趣，所以我们对所有可能的电子自旋态求和（\ref{eq:14.1}），从而给出同时在适当体积元内找到每个电子的概率，不考虑自旋：
+    \begin{equation}
+        \sum_{m_{s1}} \cdots \sum_{m_{sn}}\left|\psi\right|^2\mathrm{d}x_1\:\ldots\mathrm{d}z_n
+        \label{eq:14.2}
+    \end{equation}
+
+    假设我们希望求出在$\left(x,y,z\right)$处的体积微元$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$内找到电子1的概率。对于这个概率，我们并不关心电子 $2$ 到 $n$ 位于何处。因此，我们要把这些电子处于所有可能位置的概率相加。这相当于对电子的坐标进行积分
+    \begin{equation}
+        \left[\sum_{\text{all}\:m_s} \int \cdots \int \left|\psi\left(x,y,z,x_2,y_2,x_2,\ldots,x_n,y_n,z_n,m_{s1},m_{s2},\ldots,m_{sn}\right)\right|^2\mathrm{d}x_2\ldots\mathrm{d}z_n\right]\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z
+        \label{eq:14.3}
+    \end{equation}
+    其中从$x_2$到$z_n$共有$\left(3n-3\right)$重积分。
+
+    再假设我们希望求出在$\left(x,y,z\right)$处的体积微元$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$内找到电子2的概率。类比(\ref{eq:14.3})该积分为
+    \begin{equation}
+        \left[\sum_{\text{all } m_s} \int \ldots \int \left|\psi\left(x_1,y_1,z_1,x,y,z,x_3,\ldots,z_n,m_{s1},\ldots,m_{sn}\right)\right|^2 \mathrm{d}x_1\: \mathrm{d}y_1 \:\mathrm{d}z_1 \:\mathrm{d}x_3 \ldots \mathrm{d}z_n\right]\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z
+        \label{eq:14.4}
+    \end{equation}
+    当然，电子本身并不带有标记，这种不可区分性（第\ref{sec:10.3 Spin-Statistics Theorem}节）意味着概率式(\ref{eq:14.3})与(\ref{eq:14.4})必须相等。该等式可轻易得到证明。在电子坐标交换时，波函数$\psi$满足反对称，因此电子交换时$\left|\psi\right|^2$不变。在(\ref{eq:14.4})中交换$\psi$中电子1和2的空间和自旋坐标，再重新标记虚拟变量，我们发现(\ref{eq:14.3})等于(\ref{eq:14.4})。因此(\ref{eq:14.3})给出了在$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$的体积微元内找到任意特定电子的概率。因为系统有$n$个电子，在$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$的体积微元内找到\textit{单个}电子的概率为$n$乘以(\ref{eq:14.3})。（在得出这一结论时，我们假设在无限小空间$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$内发现多个电子的概率与发现单个电子的概率相比可以忽略不计。这一假设显然成立，因为发现两个电子的概率需要考虑六个无限小量的乘积，而发现单个电子的概率仅需考虑三个无限小量的乘积。）
+
+    因此，在某点$\left(x,y,z\right)$附近找到电子的概率密度$\rho$为
+    \begin{equation*}
+        \rho\left(x,y,z\right) = n \sum_{\text{all }m_s} \int \cdots \int \left|\psi\left(x,y,z,x_2, \cdots, z_n, m_{s1}, \dots, m_{sn}\right)\right|^2 \mathrm{d}x_2 \ldots \mathrm{d}z_n
+    \end{equation*}
+    \begin{equation}
+        \rho\left(\mathbf{r}\right) = n \sum_{\text{all }m_s} \int \cdots \int \left|\psi\left(x,y,z,x_2, \cdots, z_n, m_{s1}, \dots, m_{sn}\right)\right|^2 \mathrm{d}\mathbf{r}_2\ldots \mathrm{d}\mathbf{r}_n
+        \label{eq:14.5}
+    \end{equation}
+    其中我们用到了空间变量的向量表示（第\ref{sec:5.2 Vectors}节）。$\rho$的原子单位为$\mathrm{e}/a_0^3$，其中$\mathrm{e}$为电子的电荷，$a_0$为玻尔半径。
+
+    $\rho$为电子概率密度。对应的电子电荷密度经时间平均后等于$-\mathrm{e}\rho\left(x,y,z\right)$，其中$-\mathrm{e}$为电子的电荷。在原子单位制下，电荷密度为$-\rho$。此外，还有原子核的正电荷。术语“\textit{电子电荷密度}”（electronic charge density）通常简称为“电荷密度”（charge density）。
+
+    分子的$\rho$值是一个实验可观测量，可通过测量分子晶体的X射线衍射强度或气体的电子衍射强度获得。见P. Coppens and M. B. Hall (eds.), \textit{Electron Distributions and the Chemical Bond}, Plenum, 1982; D. A. Kohl and L. S. Bartell, \textit{J. Chem. Phys.}, \textbf{51}, 2891, 2896 (1969); P. Coppens, \textit{J. Phys. Chem.}, \textbf{93}, 7979 (1989); P. Coppens, Annu. \textit{Rev. Phys. Chem.}, \textbf{43}, 663 (1992); C. Gatti and P. Macchi (eds.), \textit{Modern Charge Density Analysis}, Springer, 2012.
+
+    为说明式(\ref{eq:14.5})，考虑简单价键理论和分子轨道理论基态\ce{H2}波函数的电子密度。波函数为空间因子和自旋函数(\ref{eq:11.60})的乘积。（对于多于两个电子的分子，$\psi$不能写成自旋部分和空间部分的乘积，见第\ref{chap:10}章。）将(\ref{eq:11.60})对$m_{s1}$和$m_{s2}$求和，结果为1（第\ref{sec:10.4 Th Helium Atom}节）。因此，对于\ce{H2}，(\ref{eq:14.5})变为
+    \begin{equation*}
+        \rho\left(x,y,z\right) = 2\int \int \int \left|\phi\left(x,y,z,x_2,y_2,z_2\right)\right|^2\mathrm{d}x_2\:\mathrm{d}y_2\:\mathrm{d}z_2
+    \end{equation*}
+    当$\phi$分别取为价键理论函数(\ref{eq:13.100})与问题13.33中的自旋因子或分子轨道函数(\ref{eq:13.94})时，我们得出（问题14.1）
+    \begin{equation}
+        \rho_{\text{VB}} = \frac{1s_a^2 + 1s_b^2 + 2S_{ab}1s_a1s_b}{1 + S_{ab}^2}, \quad \rho_{\text{MO}} = \frac{1s_a^2 + 1s_b^2 + 2\left(1s_a1s_b\right)}{1 + s_{ab}}
+        \label{eq:14.6}
+    \end{equation}
+    可以得出（问题14.2）：在共价键的中点处有$\rho_{\text{MO}} > \rho_{\text{VB}}$。因此，分子轨道函数（该函数低估了电子相关效应）在核间堆积的电荷比价键函数更多。
+
+    对于类\ce{H2+}分子轨道$1s_{\text{A}} + 1s_{\text{B}}$【式(\ref{eq:13.65})】，(\ref{eq:14.6})中的分子轨道概率密度为$\rho$的两倍。可以证明，对于多电子分子轨道波函数，$\rho$可通过将每个分子轨道的概率密度函数与占据该轨道的电子数相乘，再将结果求和得到：
+    \begin{equation}
+        \rho\left(x,y,z\right) = \sum_j n_j \left|\phi_j\right|^2
+        \label{eq:14.7}
+    \end{equation}
+    其中针对所有不同的正交空间分子轨道求和，$n_j$（其可能值为0、1和2）为分子轨道$\phi_j$中电子的数目。【我们用到了(\ref{eq:11.11})】。
+
+    通过高质量波函数计算得到的$\rho$值表明，对于几乎所有分子而言，$\rho$的局部极大值仅出现在原子核处。其中一个例外是\ce{Li2}的基态，其$\rho$在共价键中点处有一个较小的极大值。【\textit{Bader}, Section E2.1; G. I. Bersuker et al., \textit{J. Phys. Chem.}, \textbf{97}, 9323 (1993)】。
+
+    令$B\left(\mathbf{r}_i\right)$为在电子$i$在$x_i,y_i,z_i$处的空间坐标函数，此处用到了第\ref{sec:5.2 Vectors}节中的向量表示法。对于$n$电子分子，考虑平均值
+    \begin{equation*}
+        \left\langle \psi \middle| \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \middle| \psi \right\rangle = \int \psi^* \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \psi \:\mathrm{d}\tau = \sum_{i=1}^{n} \int \left|\psi\right|^2 B\left(\mathbf{r}_i\right) \:\mathrm{d}\tau
+    \end{equation*}
+    其中$\psi$是电子波函数。因为电子的不可区分性，求和$\sum \int \left|\psi\right|^2B\:\mathrm{d}\tau$中的每一项都必须相等。因此有$\left\langle \psi \middle| \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \middle| \psi \right\rangle = \int n \left|\psi\right|^2B\left(\mathbf{r}_i\right)\:\mathrm{d}\tau$。由于$B\left(\mathbf{r}_1\right)$只依赖于$x_1,y_1,z_1$，所以在对$x_1,y_1,z_1$积分以前，我们可以先对电子2到$n$的空间坐标积分$n\left|\psi\right|^2$，再对所有自旋坐标求和。根据(\ref{eq:14.5})，该过程该出了电子概率密度$\rho\left(\mathbf{r}_1\right)$。因此，我们得出$\left\langle \psi \middle| \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \middle| \psi \right\rangle = \int \rho\left(\mathbf{r}_1\right) B\left(\mathbf{r}_1\right)\:\mathrm{d}\mathbf{r}_1$。积分变量中的下标1是多余的，那么最终的结果为
+    \begin{equation}
+        \int \psi^* \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \psi \:\mathrm{d}\tau = \int \rho\left(\mathbf{r}\right) B\left(\mathbf{r}\right)\:\mathrm{d}\mathbf{r}
+        \label{eq:14.8}
+    \end{equation}
+    其中的积分包括三个自旋坐标$x,y,z$。该结果将在本章后续部分以及第\ref{chap:15}章中使用。
 
 \section{偶极矩}
 \label{sec:14.2 Dipole Moments}
 
-\section{分子的Hartree-Fock方法}
+\section{分子的哈特里-福克方法}
 \label{sec:14.3 The Hartree-Fock Method for Molecules}
 
-\section{Virial理论}
+\section{位力理论}
 \label{sec:14.4 The Virial Theorem}
 
-\section{Virial理论和化学键}
+\section{位力理论和化学键}
 \label{sec:14.5 The Virial Theorem and Chemical Bonding}
 
-\section{Hellmann-Feynman理论}
+\section{赫尔曼-费恩曼定理}
 \label{sec:14.6 The Hellmann-Feynman Theorem}
 
 \section{静电力定理}
