@@ -80,8 +80,131 @@
 \section{偶极矩}
 \label{sec:14.2 Dipole Moments}
 
-\section{分子的哈特里-福克方法}
+    我们现在展示如何从波函数计算分子偶极矩。一组分立电荷$Q_i$电偶极矩$\mu_{\text{cl}}$的经典表达式为
+    \begin{equation}
+        \mu_{\text{cl}} = \sum_{i} Q_i \mathbf{r}_i
+        \label{eq:14.9}
+    \end{equation}
+    其中$\mathbf{r}_i$为从原点指向第$i$个点电荷的位置矢量【式(\ref{eq:5.33})】。电偶极矩为矢量，其$x$分量为
+    \begin{equation}
+        \mu_{x,\text{cl}} = \sum_{i} Q_i x_i
+        \label{eq:14.10}
+    \end{equation}
+    其$y$和$z$分量类似。对于电荷密度为$\rho_Q\left(x,y,z\right)$的连续分布，$\mu_{\text{cl}}$可以通过对元电荷$\mathrm{d}Q_i = \rho_Q\left(x,y,z\right)$\\$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$积分得到：
+    \begin{equation}
+        \mu_{\text{cl}} = \int \rho_Q\left(x,y,z\right) \mathbf{r} \mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z, \quad \text{其中} \mathbf{r} \equiv x\mathbf{i} + y\mathbf{j} + z\mathbf{k}
+        \label{eq:14.11}
+    \end{equation}
+
+    再来考虑电偶极矩的量子力学定义。假设我们对原子或分子施加均匀外电场$\mathbf{E}$，并考察其对系统能量的影响。为构造哈密顿算符，我们首先需要能量的经典表达式。电场强度$\mathbf{E}$定义为$\mathbf{E} \equiv \mathbf{F}/Q$，其中$\mathbf{F}$为电场作用于电荷$Q$上的力。我们取外加电场的方向为$z$方向：$\mathbf{E} = \mathscr{E}_z\mathbf{k}$。势能$V$为【式(\ref{eq:4.24})】
+    \begin{equation*}
+        \mathrm{d}V/\mathrm{d}z = -F_z = -Q\mathscr{E}_z \quad \text{以及} \quad V = -Q\mathscr{E}_zz
+    \end{equation*}
+    这是电场中单个电荷的势能。对于多个电荷的系统，
+    \begin{equation}
+        V = -\mathscr{E}_z \sum_{i} Q_i z_i
+        \label{eq:14.12}
+    \end{equation}
+    其中$z_i$为电荷$Q_i$的$z$坐标。将(\ref{eq:14.12})式推广至电场指向任意方向的情况，可由(\ref{eq:4.24})式得出，为
+    \begin{equation}
+        V = -\mathscr{E}_x \sum_i Q_i x_i - \mathscr{E}_y \sum_i Q_i y_i - \mathscr{E}_z \sum_i Q_i z_i = -\mathbf{E} \cdot \mu_{\text{cl}}
+        \label{eq:14.13}
+    \end{equation}
+    这是经典力学中描述均匀外加电场中电偶极子能量的表达式。
+
+    为了计算量子力学表达式，我们使用微扰理论。与(\ref{eq:14.13})对应的微扰算符$\hat{H}'$为$\hat{H}' = -\mathbf{E}\cdot \hat{\symbf{\mu}}$，其中$\hat{\symbf{\mu}}$为\textbf{电偶极矩算符}（electric dipole-moment operator）
+    \begin{equation}
+        \hat{\symbf{\mu}} = \sum_i Q_i \hat{\mathbf{r}}_i = \mathbf{i}\hat{\mu}_x + \mathbf{j}\hat{\mu}_y + \mathbf{k}\hat{\mu}_z
+        \label{eq:14.14}
+    \end{equation}
+    \begin{equation}
+        \hat{\mu}_x = \sum_i Q_i x_i, \quad \hat{\mu}_y = \sum_i Q_i y_i, \quad \hat{\mu}_z = \sum_i Q_i z_i
+        \label{eq:14.15}
+    \end{equation}
+    对能量的一级修正为【式(\ref{eq:9.22})】
+    \begin{equation}
+        E^{\left(1\right)} = -\mathbf{E}\cdot \int \psi^{\left(0\right)*} \hat{\symbf{\mu}} \psi^{\left(0\right)} \:\mathrm{d}\tau
+        \label{eq:14.16}
+    \end{equation}
+    其中$\psi^{\left(0\right)}$为无扰波函数。将(\ref{eq:14.16})与(\ref{eq:14.13})相比较，我们发现对应于$\mu_{\text{cl}}$的量子力学量为积分
+    \begin{equation}
+        \symbf{\mu} = \int \psi^{\left(0\right)*} \hat{\symbf{\mu}} \psi^{\left(0\right)} \:\mathrm{d}\tau
+        \label{eq:14.17}
+    \end{equation}
+    (\ref{eq:14.17})中的$\hat{\symbf{\mu}}$成为系统的量子力学\textbf{电偶极矩}（electric dipole moment）。
+
+    反对将(\ref{eq:14.17})作为偶极矩的理由在于，我们仅考虑了一阶能量修正项。若我们在(\ref{eq:14.16})中引入了$E^{\left(2\right)}$，与(\ref{eq:14.13})相比较，我们无法得出(\ref{eq:14.17})为偶极矩。实际上，(\ref{eq:14.17})表示系统在无外加电场作用下的偶极矩，即\textit{永久}电偶极矩。电场的作用使得波函数从$\psi^{\left(0\right)}$发生畸变，除了永久偶极矩外，还产生了\textit{诱导}电偶极矩。该诱导偶极矩对应于能量校正$E^{\left(2\right)}$。（具体细节见\textit{Merzbacher}, Section 17.4.）诱导偶极矩$\symbf{\mu}_{\text{ind}}$与外加电场$\mathbf{E}$的关系为
+    \begin{equation}
+        \symbf{\mu}_{\text{ind}} = \alpha \mathbf{E}
+        \label{eq:14.18}
+    \end{equation}
+    其中$\alpha$为原子或分子的\textbf{极化率}（polarizability）。分子B的极化率越大，两个B分子之间的伦敦色散力（第\ref{sec:13.7 MO Configurations for Homonuclear Diatomic Molecules}节）就越强。
+
+    量子力学系统在施加电场作用下发生的能级位移称为\textit{斯塔克效应}（Stark effect）。一阶（或线性）斯塔克效应由式(\ref{eq:14.16})给出，根据式(\ref{eq:14.17})，当系统不具有永久电偶极矩时该效应消失。二阶（或二次）斯塔克效应由能量修正项$E^{\left(2\right)}$描述，其大小与施加电场的平方成正比。
+
+    电偶极矩算符(\ref{eq:14.14})为坐标的奇函数。若(\ref{eq:14.17})中的波函数是奇函数或偶函数，则(\ref{eq:14.17})中的被积函数为奇函数，则对全空间积分为零。因此，对于具有确定宇称的状态，其永久偶极矩$\hat{\symbf{\mu}}$为零。
+
+    处于电子态$\psi_{\text{el}}$分子的永久电偶极矩为
+    \begin{equation}
+        \hat{\symbf{\mu}} = \int \psi_{\text{el}}^* \hat{\symbf{\mu}} \psi_{\text{el}} \:\mathrm{d}\tau_{\text{el}}
+        \label{eq:14.19}
+    \end{equation}
+    根据同核双原子分子宇称的不同，其电子波函数可以分为$g$和$u$。因此，同核双原子分子具有零永久电偶极矩，这一结果并不令人惊讶。具有对称中心的任何分子均遵循相同规律。分子的电偶极矩算符包含对电子电荷与核电荷的求和项：
+    \begin{equation}
+        \hat{\symbf{\mu}} = \sum_{i=1}^{n} \left(-\mathrm{e}\mathbf{r}_i\right) + \sum_{\alpha} Z_{\alpha} \mathrm{e} \mathbf{r}_{\alpha}
+        \label{eq:14.20}
+    \end{equation}
+    其中的$\mathbf{r}_{\alpha}$为从原点指向核电荷数为$Z_{\alpha}$的原子核的矢量，$\mathbf{r}_i$为从原点指向电子$i$的矢量。因为偶极矩算符(\ref{eq:14.20})和电子波函数都依赖于定义核组态的参数，所以分子电偶极矩$\hat{\symbf{\mu}}$取决于核组态。为表明这一点，(\ref{eq:14.19})可称为分子的偶极矩\textit{函数}。在书写(\ref{eq:14.19})时，我们忽略了核运动。当实验测定分子偶极矩时，所测量的量值(\ref{eq:14.19})是经过零点振动平均后的结果（假设温度不足以使较高振动能级被显著粒子占据）。我们用$\hat{\symbf{\mu}}_0$表示经过零点振动平均后的偶极矩，用$\hat{\symbf{\mu}}_e$表示在平衡核组态处计算得到的偶极矩。
+
+
+    由于式(\ref{eq:14.20})中的第二个和式与电子坐标无关，故有
+    \begin{equation*}
+        \begin{aligned}
+            \hat{\symbf{\mu}} &= \int \psi_{\text{el}}^* \sum_{i=1} \left(-\mathrm{e}\mathbf{r}_i\right) \psi_{\text{el}}\:\mathrm{d}\tau_{\text{el}} + \sum_{\alpha} Z_{\alpha} \mathrm{e} \mathbf{r}_{\alpha} \int \psi_{\text{el}}^* \psi_{\text{el}} \:\mathrm{d}\tau_{\text{el}} \\
+            &= -\mathrm{e} \int \left|\psi_{\text{el}}\right|^2 \sum_{i=1} \mathbf{r}_i \:\mathrm{d}\tau_{\text{el}} + \mathrm{e} \sum_{\alpha} Z_{\alpha} \mathbf{r}_{\alpha}
+        \end{aligned}
+    \end{equation*}
+    再使用(\ref{eq:14.8})，我们有
+    \begin{equation}
+        \hat{\symbf{\mu}} = -\mathrm{e} \int \int \int \rho\left(x,y,z\right) \mathbf{r} \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z + \mathrm{e} \sum_{\alpha} Z_{\alpha} \mathbf{r}_{\alpha}
+        \label{eq:14.21}
+    \end{equation}
+    其中$\rho$为电子概率密度。方程(14.21)是当我们假设电子被展宽成连续电荷分布时所得到的结果，其电荷密度为$-\mathrm{e}\rho\left(x,y,z\right)$，我们使用经典方程(\ref{eq:14.11})来计算$\hat{\symbf{\mu}}$。
+
+\section{分子哈特里-福克方法}
 \label{sec:14.3 The Hartree-Fock Method for Molecules}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{位力理论}
 \label{sec:14.4 The Virial Theorem}
