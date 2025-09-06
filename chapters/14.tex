@@ -174,40 +174,448 @@
 \section{分子哈特里-福克方法}
 \label{sec:14.3 The Hartree-Fock Method for Molecules}
 
+    量子化学的一项关键进展是针对众多双原子分子和多原子分子，精确计算出自洽场波函数 。分子自洽场分子轨道计算的原理，与原子自洽场计算的原理（见第\ref{sec:11.1 The Hartree-Fock Self-Consistent-Field Method}节）本质上是一致的。我们将讨论范围限定在闭壳层构型。对于开壳层而言，相关公式要更为复杂。
 
+    分子哈特里-福克方程可以写为自旋轨道反对称乘积（斯莱特行列式），其中每个自旋轨道又为空间轨道$\phi_i$与自旋函数$\alpha$或$\beta$的乘积。
 
+    分子哈特里-福克电子能表达式$E_{\text{HF}}$又变分理论给出，为$E_{\text{HF}} = \left\langle D \middle| \hat{H}_{\text{el}} + V_{NN} \middle| D \right\rangle$，其中的$D$为哈特里-福克波函数斯莱特行列式，$\hat{H}_{\text{el}}$为纯电子哈密顿算符，$V_{NN}$为核间排斥势，由(\ref{eq:13.5})和(\ref{eq:13.6})给出。因为$V_{NN}$与电子坐标无关，以及$D$已归一化，所以我们有$\left\langle D \middle| V_{NN} \middle| D \right\rangle = V_{NN} \left\langle D \middle| D \right\rangle = V_{NN}$。算符$\hat{H}_{\text{el}}$为单电子算符$\hat{f}_i$和双电子算符$\hat{g}_{ij}$之和；我们有$\hat{H}_{\text{el}} = \sum_{i=1} \hat{f}_i + \sum_{j}\sum_{i>j} \hat{g}_{ij}$，其中（原子单位制下）
+    \begin{equation*}
+        \hat{f}_i = -\frac{1}{2} \nabla_i^2 - \sum_{\alpha} \frac{Z_{\alpha}}{r_{i\alpha}}, \quad \hat{g}_{ij} = \frac{1}{r_{ij}}
+    \end{equation*}
+    哈密顿算符$\hat{H}_{\text{el}}$与原子哈密顿算符$\hat{H}$的唯一区别在于$\hat{f}_i$中用$\sum_{\alpha} {Z_{\alpha}}/{r_{i\alpha}}$代替了${Z}/{r_i}$。因此，(\ref{eq:11.83})可以用来计算$\left\langle D \middle| \hat{H}_{\text{el}} \middle| D \right\rangle$。则只包含闭壳层的双原子或多原子分子的哈特里-福克能量为
+    \begin{equation}
+        E_{\text{HF}} = 2\sum_{i=1}^{n/2} H^{\text{core}}_{ii} + \sum_{i=1}^{n/2} \sum_{j=1}^{n/2} \left(2J_{ij} - K_{ij}\right) + V_{NN}
+        \label{eq:14.22}
+    \end{equation}
+    \begin{equation}
+        H^{\text{core}}_{ii} \equiv \left\langle \phi_i\left(1\right) \middle| \hat{H}^{\text{core}}\left(1\right) \middle| \phi_i\left(1\right) \right\rangle = \left\langle \phi_i \left(1\right) \middle| -\frac{1}{2} \nabla_1^2 - \sum_{\alpha} \frac{Z_{\alpha}}{r_{1\alpha}} \middle| \phi_i \left(1\right) \right\rangle
+        \label{eq:14.23}
+    \end{equation}
+    \begin{equation}
+        J_{ij} \equiv \left\langle \phi_i\left(1\right) \phi_j\left(2\right) \middle| 1/r_{12} \middle| \phi_i\left(1\right) \phi_j\left(2\right) \right\rangle, \quad K_{ij} \equiv \left\langle \phi_i\left(1\right) \phi_j\left(2\right) \middle| 1/r_{12} \middle| \phi_j\left(1\right) \phi_i\left(2\right) \right\rangle
+        \label{eq:14.24}
+    \end{equation}
+    其中的单电子算符表示法从$\hat{f}_1$替换为了$\hat{H}^{\text{core}}\left(1\right)$。\textbf{单电子核哈密顿算符}（one-electron core Hamiltonian）
+    \begin{equation*}
+        \hat{H}^{\text{core}}\left(1\right) \equiv -\frac{1}{2} \nabla_1^2 - \sum_{\alpha} \frac{Z_{\alpha}}{r_{1\alpha}}
+    \end{equation*}
+    为电子1动能算符和电子1与所有原子核之间吸引势能算符的总和。$\hat{H}^{\text{core}}\left(1\right)$忽略了电子1和其他电子之间的相互作用。对$i$和$j$的求和为对$n$电子分子$n/2$个占据空间轨道$\phi_i$的求和。在\textbf{库仑积分}$J_{ij}$和交换积分$K_{ij}$中，积分是针对电子1和2的空间坐标进行的。
 
+    哈特里-福克法寻找使变分积分$E_{\text{HF}}$最小的轨道$\phi_i$。每个空间轨道均已归一化：$\left\langle \phi_i\left(1\right) \middle| \phi_i\left(1\right) \right\rangle = 1$。此外，为了计算方便，我们取空间轨道彼此正交：$\left\langle \phi_i\left(1\right) \middle| \phi_j\left(1\right) \right\rangle = 0$（$i \neq j$）。或许有人会认为，如果取消正交性限制，就能得到更低的能量，但事实并非如此。闭壳层反对称波函数是斯莱特行列式，利用行列式的性质可以证明，由非正交轨道构成的斯莱特行列式等于通过施密特正交化或其他方法将轨道正交化后的斯莱特行列式；见第\ref{sec:15.9 The SCF MO Treatment of Methane, Ethane, and Ethylene}节和F. W. Bobrowicz and W. A. Goddard, Chapter 4 , Section 3.1 of \textit{Schaefer, Methods of Electronic Structure Theory}.事实上，泡利反对称要求已经排除了不满足正交性要求的轨道。
 
+    推导确定能使$E_{\text{HF}}$最小的轨道的方程很复杂，此处忽略。（详细推导见\textit{Lowe and Peterson}, Appendix 7; \textit{Szabo and Ostlund}, Section 3.1 and 3.2; \textit{Parr}, pages 21-23.）可以证明，闭壳层正交哈特里-福克分子轨道满足
+    \begin{equation}
+        \hat{F}\left(1\right) \phi_i\left(1\right) = \varepsilon_i \phi_i\left(1\right)
+        \label{eq:14.25}
+    \end{equation}
+    其中$\varepsilon_i$为轨道能量，$\hat{F}\left(1\right)$为\textbf{（哈特里）-福克算符}【（Hartree）-Fock operator】,在原子单位制下为
+    \begin{equation}
+        \hat{F}\left(1\right) = \hat{H}^{\text{core}}\left(1\right) + \sum_{j=1}^{n/2}\left[2\hat{J}_j\left(1\right) - \hat{K}_j\left(1\right)\right]
+        \label{eq:14.26}
+    \end{equation}
+    \begin{equation}
+        \hat{H}^{\text{core}}\left(1\right) \equiv -\frac{1}{2} \nabla_1^2 - \sum_{\alpha} \frac{Z_{\alpha}}{r_{1\alpha}}
+        \label{eq:14.27}
+    \end{equation}
+    其中的\textbf{库仑算符}（Coulomb operator）$\hat{J}_j\left(1\right)$和\textbf{交换算符}（exchange operator）$\hat{K}_j\left(1\right)$定义为
+    \begin{equation}
+        \hat{H}f\left(1\right)f\left(1\right) = f\left(1\right) \int \left|\phi_j\left(2\right)\right|^2 \frac{1}{r_{12}} \:\mathrm{d}v_2
+        \label{eq:14.28}
+    \end{equation}
+    \begin{equation}
+        \hat{K}_j\left(1\right) f\left(1\right) = \phi_j\left(1\right) \int \frac{\phi_j^*\left(2\right) f\left(2\right)}{r_{12}} \:\mathrm{d}v_2
+        \label{eq:14.29}
+    \end{equation}
+    其中的$f$为任意函数，积分为全空间的积分。
 
+    (\ref{eq:14.27})右侧的第一项为单电子动能算符。第二项为电子1与所有原子核之间的吸引势能算符。库仑算符$\hat{J}_j\left(1\right)$表示电子1与电荷密度为$-\left|\phi_j\left(2\right)\right|^2$的电子云之间的平均排斥作用。(\ref{eq:14.26})中的因子2表示每个空间轨道中有两个电子。交换算符$\hat{K}_j\left(1\right)$没有经典对应项，仅来自于电子交换时波函数需满足反对称的要求。(\ref{eq:11.9})中也没有出现交换算符。(\ref{eq:14.25})中的哈特里-福克分子轨道$\phi_i$为$\hat{F}$的本征函数，本征值为轨道能量$\varepsilon_i$。
 
+    分子轨道的正交性极大简化了分子轨道计算，使许多积分项归零。相比之下，价键法采用原子轨道，而不同原子中心的原子轨道之间并不正交。分子轨道计算远比价键计算简单，因此分子轨道法的应用更为广泛。
 
+    真实哈密顿算符和波函数包括了所有$n$个电子的坐标。哈特里-福克算符$\hat{F}$是单电子算符（也就是说，它只包含了一个电子的坐标），(\ref{eq:14.25})是单电子微分方程。通过将$\hat{F}$和$\phi_i$写作电子1的坐标函数，该结论可以得到验证。当然，我们可以使用任何电子的坐标。算符$\hat{F}$的特殊性在于它依赖于自身的本征函数【参见式(\ref{eq:14.26})至(\ref{eq:14.29})】，而这些本征函数在初始阶段尚未确定。因此，哈特里-福克方程必须通过迭代法求解，该过程始于对分子轨道的初始猜测。
 
+    为了求出轨道能量$\varepsilon_i$的表达式，我们将(\ref{eq:14.25})左乘$\phi_i^*\left(1\right)$并对全空间积分。使用$\phi_i$已归一化和问题14.8的结论，我们得到$\varepsilon_i = \int \phi_i^*\left(1\right) \hat{F}\left(1\right) \phi_i\left(1\right) \:\mathrm{d}v_1$以及
+    \begin{equation*}
+        \varepsilon_i = \left\langle \phi_i \left(1\right) \middle| \hat{H}^{\text{core}}\left(1\right) \middle| \phi_i \left(1\right) \right\rangle + \sum_{j=1}^{n/2} \left[2\left\langle \phi_i\left(1\right) \middle| \hat{J}_j\left(1\right) \middle| \phi_i\left(1\right) \right\rangle - \left\langle \phi_i\left(1\right) \middle| \hat{K}_j\left(1\right) \middle| \phi_i\left(1\right) \right\rangle\right]
+    \end{equation*}
+    \begin{equation}
+        \varepsilon_i = H^{\text{core}}_{ii} + \sum_{j=1}^{n/2} \left(2J_{ij} - K_{ij}\right)
+        \label{eq:14.30}
+    \end{equation}
+    其中的$H^{\text{core}}_{ii}$、$J_{ij}$和$K_{ij}$分别由(\ref{eq:14.23})和(\ref{eq:14.24})定义。
 
+    将(\ref{eq:14.30})对$n/2$个占据轨道求和，得到
+    \begin{equation}
+        \sum_{i=1}^{n/2} \varepsilon_i = \sum_{i=1}^{n/2} H^{\text{core}}_{ii} + \sum_{i=1}^{n/2} \sum_{j=1}^{n/2} \left(2J_{ij} - K_{ij}\right)
+        \label{eq:14.31}
+    \end{equation}
+    从该方程中解出$\sum_i H^{\text{core}}_{ii}$并将其代入(\ref{eq:14.22})，得到哈特里-福克能量为
+    \begin{equation}
+        E_{\text{HF}} = 2\sum_{i=1}^{n/2} \varepsilon_i - \sum_{i=1}^{n/2} \sum_{j=1}^{n/2} \left(2J_{ij} - K_{ij}\right) + V_{NN}
+        \label{eq:14.32}
+    \end{equation}
+    因为每个分子轨道有两个电子，所以$2\sum_i \varepsilon_i$为所有电子的轨道能量之和。通过对(\ref{eq:14.32})中的双重求和进行减法运算，可避免对每个电子间排斥作用进行重复计数，如第\ref{sec:11.1 The Hartree-Fock Self-Consistent-Field Method}节所述。
 
+    使精确分子自洽场波函数计算成为可能的关键进展，是罗特汉（Roothaan）于1951年提出的将空间轨道$\phi_i$展开为单电子基函数$\chi_s$线性组合的方案：
+    \begin{equation}
+        \phi_i\left(1\right) = \sum_{s=1}^{b} C_{si} \chi_s
+        \label{eq:14.33}
+    \end{equation}
+    为了能精确表示分子轨道$\phi_i$，基函数$\chi_s$必须构成一个完备集。这实际上要求我们有无穷多个基函数。然而在实际计算中，我们必须使用有限数$b$的基函数。若$b$足够大，以及$\chi_s$函数组的选择合理，则我们可以近似地表示分子轨道，误差可忽略不计。
 
+    为了避免歧义，我们使用字母$r,s,t,u$来表示基函数下标，使用字母$i,j,k,l$来表示分子轨道下标。（通常，我们用希腊字母$\mu,\nu,\lambda,\sigma$来表示基函数。）
 
+    将展开式(\ref{eq:14.33})代入哈特里-福克方程(\ref{eq:14.25})，得到
+    \begin{equation*}
+        \sum_s c_{si} \hat{F} \chi_s = \varepsilon_i \sum_s c_{si} \chi_s
+    \end{equation*}
+    左乘$\chi_r^*$并对全空间积分，得到
+    \begin{equation}
+        \sum_{s=1}^{b} c_{si} \left(F_{rs} - \varepsilon_i S_{rs}\right) = 0, \quad r = 1,\:2,\:\ldots,\:b
+        \label{eq:14.34}
+    \end{equation}
+    \begin{equation}
+        F_{rs} \equiv \left\langle \chi_r \middle| \hat{F} \middle| \chi_s \right\rangle, \quad S_{rs} \equiv \left\langle \chi_r \middle| \chi_s \right\rangle
+        \label{eq:14.35}
+    \end{equation}
+    方程组(\ref{eq:14.34})为关于$b$个未知数$c_{si}, s = 1, 2, \ldots, b$的线性齐次方程组，它可以表示(\ref{eq:14.33})中的分子轨道$\phi_i$。为了得到非平凡解，我们必须有
+    \begin{equation}
+        \det \left(F_{rs} - \varepsilon_i S_{rs}\right) = 0
+        \label{eq:14.36}
+    \end{equation}
+    这是一个久期方程，它的根给出了轨道能量$\varepsilon_i$。\textbf{（哈特里）-福克-罗特汉方程}【（Hartree）-Fock-Roothaan equations】(\ref{eq:14.34})必须通过迭代法求解，因为积分$F_{rs}$依赖于轨道$\phi_i$（通过$\hat{F}$依赖于$\phi_i$），而这些轨道又依赖于未知系数$c_{si}$。
 
+    我们从猜测占据分子轨道的表达式为基函数的线性组合开始，正如(\ref{eq:14.33})所示。最初得到分子轨道集合可以用来从(\ref{eq:14.26})至(\ref{eq:14.29})计算福克算符$\hat{F}$。再计算矩阵元(\ref{eq:14.35})，计算久期方程(\ref{eq:14.36})来得出最初的$\varepsilon_i$集合。我们使用这些$\varepsilon_i$和(\ref{eq:14.34})来计算系数的改进集合，从而得到改进的分子轨道和改进的$\hat{F}$，等等。持续进行直至分子轨道系数与能量值在相邻迭代周期间不再出现改善。计算过程通过计算机完成。（求解罗特汉方程组最有效的方法是采用矩阵代数方法；详见本节末尾部分。）
 
+    我们交替使用术语\textit{自洽场波函数}（SCF wave function）和\textit{哈特里-福克波函数}（Hartree-Fock wave function）。实际上，\textit{自洽场波函数}可以用于任何通过迭代法求解罗特汉方程得到的波函数，并不取决于基函数组是否足够大以至于可以得到对哈特里-福克自洽场波函数的准确近似。仅存在唯一的真实哈特里-福克波函数，这是能以自旋轨道的斯莱特行列式形式表示的最佳波函数。凭借当前的计算机算力，可为小分子构建超大基函数集，所得波函数与真实哈特里-福克波函数的偏差可忽略不计。由于哈特里-福克波函数计算结果存在局限性，目前广泛应用多种超越该方法的改进技术（详见第\ref{chap:16}章）。
 
+\subsection*{福克矩阵元}
 
+    为了求解罗特汉方程(\ref{eq:14.34})，我们首先需要将\textit{福克矩阵元（积分）}【Fock martix elements（integrals）】$F_{rs}$用基函数$\chi$表示。福克算符$\hat{F}$由(\ref{eq:14.26})给出，则
+    \begin{align}
+        F_{rs} &= \left\langle \chi_r \left(1\right) \middle| \hat{F} \left(1\right) \middle| \chi_s \left(1\right) \right\rangle \nonumber \\
+        F_{rs} &= \left\langle \chi_r \left(1\right) \middle| \hat{H}^{\text{core}} \left(1\right) \middle| \chi_s \left(1\right) \right\rangle + \sum_{j=1}^{n/2} \left[ 2\left\langle \chi_r \left(1\right) \middle| \hat{J}_j \left(1\right) \chi_s \left(1\right) \right\rangle - \left\langle \chi_r \left(1\right) \middle| \hat{K}_j \left(1\right) \chi_s \left(1\right) \right\rangle \right] \label{eq:14.37}
+    \end{align}
+    将(\ref{eq:14.28})中的$f$替换为$\chi_s$，再使用展开式(\ref{eq:14.33})，得到
+    \begin{equation*}
+        \hat{J}_j \left(1\right) \chi_s \left(1\right) = \chi_s \left(1\right) \int \frac{\phi_j^* \left(2\right)\phi_j \left(2\right)}{r_{12}} \:\mathrm{d}v_2 = \chi_s \left(1\right) \sum_{t} \sum_{u} c_{tj}^* c_{uj} \int \frac{\chi_t^* \left(2\right) \chi_u \left(2\right)}{r_{12}} \:\mathrm{d}v_2
+    \end{equation*}
+    将其与$\chi_r^* \left(1\right)$左乘并对电子1的坐标进行全空间积分，得到
+    \begin{align}
+        \left\langle \chi_r \left(1\right) \middle| \hat{J}_j \left(1\right) \chi_s \left(1\right) \right\rangle &= \sum_{t} \sum_{u} c_{tj}^* c_{uj} \int \int \frac{
+            \chi_r^* \left(1\right) \chi_s \left(1\right) \chi_t^* \left(2\right) \chi_u \left(2\right)
+        }{r_{12}} \:\mathrm{d}v_1 \:\mathrm{d}v_2 \nonumber \\
+        \left\langle \chi_r \left(1\right) \middle| \hat{J}_j \left(1\right) \chi_s \left(1\right) \right\rangle &= \sum_{t=1}^{b} \sum_{u=1}^{b} c_{tj}^* c_{uj} \left(rs \middle| tu\right) \label{eq:14.38}
+    \end{align}
+    其中\textbf{双电子排斥积分}（two-electron repulsion integral）$\left(rs \middle| tu\right)$定义为
+    \begin{equation}
+        \boxed{
+            \left(rs \middle| tu\right) \equiv \int \int \frac{\chi_r^* \left(1\right) \chi_s \left(1\right) \chi_t^* \left(2\right) \chi_u \left(2\right)}{r_{12}} \:\mathrm{d}v_1 \:\mathrm{d}v_2
+        }
+        \label{eq:14.39}
+    \end{equation}
+    （\ref{eq:14.39}）中广泛使用的符号不应被误解为重叠积分。电子排斥积分采用多种符号表示，其中部分符号相互矛盾，因此查阅作者的定义始终是明智之举。
 
+    同样地，将(\ref{eq:14.29})中的$f$替换为$\chi_s$，得到（问题14.9）
+    \begin{equation}
+        \left\langle \chi_r \left(1\right) \middle| \hat{K}_j \left(1\right) \chi_s \left(1\right) \right\rangle = \sum_{t=1}^{b} \sum_{u=1}^{b} c_{tj}^* c_{uj} \left(ru \middle| ts\right)
+        \label{eq:14.40}
+    \end{equation}
+    将(\ref{eq:14.38})和(\ref{eq:14.40})代入(\ref{eq:14.37})，再改变求和的顺序，我们就得到了期望的，用基函数$\chi$的积分表示的$F_{rs}$表达式：
+    \begin{align}
+        F_{rs} &= H^{\text{core}}_{rs} + \sum_{t=1}^{b} \sum_{u=1}^{b} \sum_{j=1}^{n/2} c_{tj}^* c_{uj} \left[ 2\left(rs \middle| tu\right) - \left(ru \middle| ts\right) \right] \nonumber \\
+        F_{rs} &= H^{\text{core}}_{rs} + \sum_{t=1}^{b} \sum_{u=1}^{b} P_{tu} \left[ \left(rs \middle| tu\right) - \frac{1}{2}\left(ru \middle| ts\right) \right] \label{eq:14.41} \\
+        P_{tu} &\equiv 2\sum_{j=1}^{n/2} c_{tj}^* c_{uj}, \quad t = 1,\:2,\:\ldots,\:b; \quad u = 1,\:2,\:\ldots,\:b \label{eq:14.42}
+    \end{align}
+    \begin{equation*}
+        H^{\text{core}}_{rs} \equiv \left\langle \chi_r \left(1\right) \middle| \hat{H}^{\text{core}} \left(1\right) \middle| \chi_s \left(1\right) \right\rangle
+    \end{equation*}
 
+    $P_{tu}$为\textbf{密度矩阵元}（density matrix element）或\textit{电荷，键级矩阵元}（charge, bond order matrix element）。【某些工作者使用如下定义：$P_{tu} \equiv 2\sum_{j=1} c_{tj}^* c_{uj}$。】将展开式(\ref{eq:14.33})带入(\ref{eq:14.7})，得到闭壳层分子的电荷概率密度$\rho$为
+    \begin{equation}
+        \rho = 2 \sum_{j=1}^{n/2} \phi_j^* \phi_j = 2 \sum_{r=1}^{b} \sum_{s=1}^{b} \sum_{j=1}^{n/2} c_{rj}^* c_{sj} \chi_r^* \chi_s = \sum_{r=1}^{b} \sum_{s=1}^{b} P_{rs} \chi_r^* \chi_s
+        \label{eq:14.43}
+    \end{equation}
 
+    为了将哈特里-福克能量用基函数$\chi$的积分表示，我们先求解(\ref{eq:14.31})，得到$\sum_i \sum_j \left(2J_{ij} - K_{ij}\right)$，将结果带入(\ref{eq:14.32})，得到
+    \begin{equation*}
+        E_{\text{HF}} = \sum_{i=1}^{n/2} \varepsilon_i + \sum_{i=1}^{n/2} H^{\text{core}}_{ii} + V_{NN}
+    \end{equation*}
+    再使用展开式(\ref{eq:14.33})，我们有
+    \begin{equation*}
+        H^{\text{core}}_{ii} = \left\langle \phi_i \left(1\right) \middle| \hat{H}^{\text{core}} \left(1\right) \middle| \phi_i \left(1\right) \right\rangle = \sum_{r} \sum_{s} c_{ri}^* c_{si} \left\langle \chi_r \middle| H^{\text{core}} \middle| \chi_s \right\rangle = \sum_{r} \sum_{s} c_{ri}^* c_{si} H^{\text{core}}_{rs}
+    \end{equation*}
+    \begin{equation*}
+        E_{\text{HF}} = \sum_{i=1}^{n/2} \varepsilon_i + \sum_{r} \sum_{s} c_{ri}^* c_{si} H^{\text{core}}_{rs} + V_{NN}
+    \end{equation*}
+    \begin{equation}
+        E_{\text{HF}} = \sum_{i=1}^{n/2} \varepsilon_i + \frac{1}{2} \sum_{r=1}^{b} \sum_{s=1}^{b} P_{rs} H^{\text{core}}_{rs} + V_{NN}
+        \label{eq:14.44}
+    \end{equation}
 
+    一种对$E_{\text{HF}}$的替代表达式很有用。将$\hat{F}\phi_i = \varepsilon_i \phi_i$【式(\ref{eq:14.25})】左乘$\phi_i^*$并对全空间积分，得到$\varepsilon_i = \left\langle \phi_i \middle| \hat{F} \middle| \phi_i \right\rangle$。将$\phi_i = \sum_{s=1}^{b} c_{si} \chi_s$【式(\ref{eq:14.33})】代入，得到$\varepsilon_i =  \sum_r \sum_s c_{ri}^* c_{si} \left\langle \chi_r \middle| \hat{F} \middle| \chi_s \right\rangle = \sum_r \sum_s c_{ri}^* c_{si} F_{rs}$。(\ref{eq:14.44})中的第一个求和变为$\sum_i \varepsilon_i = \sum_r \sum_s \sum_i c_{ri}^* c_{si} F_{rs} = \frac{1}{2} \sum_r \sum_s P_{rs} F_{rs}$，其中用到了$P_{rs}$的定义(\ref{eq:14.42})。则方程(\ref{eq:14.44})变为
+    \begin{equation}
+        E_{\text{HF}} = \frac{1}{2} \sum_{r=1}^{b} \sum_{s=1}^{b} P_{rs} \left( H^{\text{core}}_{rs} + F_{rs} \right) + V_{NN}
+        \label{eq:14.45}
+    \end{equation}
+    该式给出了用密度矩阵元、福克矩阵元和单电子核矩阵元（均由基函数$\chi_r$计算得出）表示的闭壳层分子哈特里-福克能量。
 
+    \begin{examplebox}
+        \textbf{例题：}使用由两个轨道系数分别为$\zeta_1 = 1.45$和$\zeta_2 = 2.91$的斯莱特型原子轨道构成的基函数组，对氦原子基态进行自洽场计算。【经过反复尝试，这些指数为该基函数集的最优化指数；见C. Roetti and E. Clementi, \textit{J. Chem. Phys.}, \textbf{60}, 4725 (1974).】
 
+        根据(\ref{eq:11.14})，归一化基函数为（原子单位制下）
+        \begin{equation}
+            \chi_1 = 2 \zeta_1^{3/2} \mathrm{e}^{-\zeta_1 r} Y_0^0, \quad \chi_2 = 2 \zeta_2^{3/2} \mathrm{e}^{-\zeta_2 r} Y_0^0, \quad \zeta_1 = 1.45, \quad \zeta_2 = 2.91
+            \label{eq:14.46}
+        \end{equation}
+        为了解罗特汉方程(\ref{eq:14.34})，我们需要计算积分$F_{rs}$和$S_{rs}$。重叠积分$S_{rs}$为：
+        \begin{equation*}
+            S_{11} = \left\langle \chi_1 \middle| \chi_1 \right\rangle = 1, \quad S_{22} = \left\langle \chi_2 \middle| \chi_2 \right\rangle = 1
+        \end{equation*}
+        \begin{equation*}
+            S_{12} = S_{21} = \left\langle \chi_1 \middle| \chi_2 \right\rangle = 4\zeta_1^{3/2} \zeta_2^{3/2} \int_0^{\infty} \mathrm{e}^{-\left(\zeta_1 + \zeta_2\right)r} r^2 \:\mathrm{d}r = \frac{8\zeta_1^{3/2} \zeta_2^{3/2}}{\left(\zeta_1 + \zeta_2\right)^3} = 0.8366
+        \end{equation*}
+        其中用到了附录中的积分（A.8）。
 
+        积分$F_{rs}$由(\ref{eq:14.41})给出，它依赖于$H^{\text{core}}_{rs}$、$P_{tu}$和$\left(rs \middle| tu\right)$。由(\ref{eq:14.27})，$\hat{H}^{\text{core}} = -\frac{1}{2} \nabla^2 - {2}/{r} = -\frac{1}{2} \nabla^2 - \zeta / r + \left(\zeta - 2\right)/r$。积分$H^{\text{core}}_{rs}$的处理方法与第\ref{sec:9.4 Variational Treatments of the Ground State of Helium}节中对氦原子基态的变分处理方法相同。我们有（问题14.12）
+        \begin{equation*}
+            H^{\text{core}}_{11} = \left\langle \chi_1 \middle| \hat{H}^{\text{core}} \middle| \chi_1 \right\rangle = -\frac{1}{2}\zeta_1^2 + \left(\zeta_1 - 2\right) \zeta_1 = \frac{1}{2}\zeta_1^2 - 2\zeta_1 = -1.8488
+        \end{equation*}
+        \begin{equation*}
+            H^{\text{core}}_{12}  = H^{\text{core}}_{21} = \left\langle \chi_1 \middle| \hat{H}^{\text{core}} \middle| \chi_2 \right\rangle = -\frac{1}{2}\zeta_2^2 S_{12} + \frac{4\left(\zeta_2 - 2\right)\zeta_1^{3/2}\zeta_2^{3/2}}{\left(\zeta_1 + \zeta_2\right)^2}
+        \end{equation*}
+        \begin{equation*}
+            H^{\text{core}}_{12} = H^{\text{core}}_{21} = \frac{\zeta_1^{3/2}\zeta_2^{3/2}\left(4\zeta_1\zeta_2 - 8\zeta_1 - 8\zeta_2\right)}{\left(\zeta_1 + \zeta_2\right)^2} = -1.8826
+        \end{equation*}
 
+        许多电子排斥积分$\left(rs \middle| tu\right)$都相等。对于实基函数，可以证明（问题14.13）
+        \begin{equation}
+            \left(rs \middle| tu\right) = \left(sr \middle| tu\right) = \left(rs \middle| ut\right) = \left(sr \middle| ut\right) = \left(tu \middle| rs\right) = \left(ut \middle| rs\right) = \left(tu \middle| sr\right) = \left(ut \middle| sr\right)
+            \label{eq:14.47}
+        \end{equation}
+        可以使用问题9.14中$1/r_{12}$的展开式(9.124)来计算电子排斥积分。可以得出【见式(\ref{eq:9.53})和问题14.14】
+        \begin{equation*}
+            \begin{aligned}
+                \left(11 \middle| 11\right) &= \frac{5}{8}\zeta_1 = 0.9062, \quad \left(22 \middle| 22\right) = \frac{5}{8}\zeta_2 = 1.8188 \\
+                \left(11 \middle| 22\right) &= \left(22 \middle| 11\right) = \left(\zeta_1^4 \zeta_2 + 4 \zeta_1^3 \zeta_2^2 + \zeta_1 \zeta_2^4 + 4 \zeta_1^2 \zeta_2^3\right) / \left(\zeta_1 + \zeta_2\right)^4 = 1.1826 \\
+                \left(12 \middle| 12\right) &= \left(21 \middle| 12\right) = \left(12 \middle| 21\right) = \left(21 \middle| 21\right) = 20\zeta_1^3 \zeta_2^3 / \left(\zeta_1 + \zeta_2\right)^5 = 0.9536 \\
+                \left(11 \middle| 12\right) &= \left(11 \middle| 21\right) = \left(12 \middle| 11\right) = \left(21 \middle| 11\right) = \frac{16\zeta_1^{9/2}\zeta_2^{3/2}}{\left(3\zeta_1 + \zeta_2\right)^4} \left[\frac{12\zeta_1 + 8\zeta_2}{\left(\zeta_1 + \zeta_2\right)^2} + \frac{9\zeta_1 + \zeta_2}{2\zeta_1^2}\right] = 0.9033 \\
+                \left(12 \middle| 22\right) &= \left(22 \middle| 12\right) = \left(21 \middle| 22\right) = \left(22 \middle| 21\right) \\
+                &= \left(11 \middle| 12\right) \: \text{其中的1和2交换} = 1.2980
+            \end{aligned}
+        \end{equation*}
 
+        为了开始计算，我们首先需要猜测(\ref{eq:14.33})中基态原子轨道展开式的的系数$c_{si}$，从而可以得到(\ref{eq:14.41})中最初的密度矩阵元$P_{tu}$。在\ref{sec:9.4 Variational Treatments of the Ground State of Helium}节中，我们已经看到，包含$1s$斯莱特型原子轨道的氦原子轨道最优化轨道指数为$\frac{27}{16} = 1.6875$。因为轨道指数$\zeta_1$远比$\zeta_2$更靠近1.6875，所以我们猜测展开式$\phi_1 = c_{11} \chi_1 + c_{21} \chi_2$中$\chi_1$的系数远大于$\chi_2$。首先猜测$c_{11} / c_{21} \approx 2$。【一种更通用的猜测系数$c_{si}$的方法是先忽略(\ref{eq:14.41})中的电子排斥积分，在久期方程(\ref{eq:14.36})中将$F_{rs}$近似为$H^{\text{core}}_{rs}$；随即求解(\ref{eq:14.36})和(\ref{eq:14.34})。该方法得出$c_{11} / c_{21} \approx 1.5$（问题14.15）。】归一化条件$\int \left|\phi_1\right|^2 \:\mathrm{d}\tau = 1$给出了实系数（问题14.17）
+        \begin{equation}
+            c_{21} = \left(1 + k^2 + 2kS_{12}\right)^{-1/2}, \quad k \equiv c_{11} / c_{21}
+            \label{eq:14.48}
+        \end{equation}
+        将$k=2$和$S_{12} = 0.8366$代入，得到$c_{21} = 0.3461$和$c_{11} \approx 2c_{21} = 0.6922$。再由$n=2$和$b=2$，方程(\ref{eq:14.42})给出
+        \begin{equation}
+            P_{11} = 2c_{11}^* c_{11}, \quad P_{22} = 2c_{21}^* c_{21}, \quad P_{21} =  P_{12}^*, \quad P_{22} = 2c_{21}^* c_{11}
+            \label{eq:14.49}
+        \end{equation}
+        最初的猜测$c_{11} \approx 0.6922$和$c_{21} \approx 0.3461$给出了最初的密度矩阵元
+        \begin{equation*}
+            P_{11} = 0.9583, \quad P_{12} = P_{21} = 0.4791, \quad P_{22} = 0.2396
+        \end{equation*}
+        福克矩阵元通过在(\ref{eq:14.41})中令$b=2$给出。使用(\ref{eq:14.47})，以及对实函数有$P_{12} = P_{21}$，我们有（问题14.16a）
+        \begin{equation*}
+            F_{11} = H^{\text{core}}_{11} + \frac{1}{2} P_{11} \left(11 \middle| 11\right) + P_{12} \left(11 \middle| 12\right) + P_{22} \left[\left(11 \middle| 22\right) - \frac{1}{2}\left(12 \middle| 21\right)\right]
+        \end{equation*}
+        \begin{equation*}
+            F_{12} = F_{21} = H^{\text{core}}_{12} + \frac{1}{2} P_{11} \left(12 \middle| 11\right) + P_{12} \left[\frac{3}{2}\left(12 \middle| 12\right) - \frac{1}{2}\left(11 \middle| 22\right)\right] + \frac{1}{2}P_{22} \left(12 \middle| 22\right)
+        \end{equation*}
+        \begin{equation*}
+            F_{22} = H^{\text{core}}_{22} + P_{11} \left[\left(22 \middle| 11\right) - \frac{1}{2} \left(21 \middle| 12\right)\right] + P_{12} \left(22 \middle| 12\right) + \frac{1}{2}P_{22} \left(22 \middle| 22\right)
+        \end{equation*}
+        将$H^{\text{core}}_{rs}$和之前列出的$\left(rs \middle| tu\right)$数值代入，得到（问题14.16b）
+        \begin{equation}
+            F_{11} = -1.8488 + 0.4531 P_{11} + 0.9033 P_{12} + 0.7058 P_{22}
+            \label{eq:14.50}
+        \end{equation}
+        \begin{equation}
+            F_{12} = F_{21} = -1.8826 + 0.4516_5 P_{11} + 0.8391 P_{12} + 0.6400 P_{22}
+            \label{eq:14.51}
+        \end{equation}
+        \begin{equation}
+            F_{22} = -1.5860 + 0.7058 P_{11} + 1.2980 P_{12} + 0.9094 P_{22}
+            \label{eq:14.52}
+        \end{equation}
 
+        将$P_{tu}$的猜测值代入(\ref{eq:14.50})至(\ref{eq:14.52})，得到$F_{rs}$矩阵元的最初估计值：
+        \begin{equation*}
+            F_{11} = -0.813, \quad F_{12} = F_{21} = -0.892, \quad F_{22} = -0.070
+        \end{equation*}
+        对久期方程$\det \left(F_{rs} - S_{rs} \varepsilon_i\right) = 0$的最初求解为
+        \begin{equation*}
+            \begin{aligned}
+                \begin{vmatrix}
+                    -0.813 - \varepsilon_i & -0.892 - 0.8366 \varepsilon_i \\
+                    -0.892 - 0.8366 \varepsilon_i & -0.070 - \varepsilon_i
+                \end{vmatrix} &\approx  0 \\
+                0.3001 \varepsilon_i^2 - 0.609 \varepsilon_i - 0.739 &\approx  0 \\
+                \varepsilon_1 \approx  -0.854, \quad \varepsilon_2 \approx  2.885  
+            \end{aligned}
+        \end{equation*}
+        将较小根$\varepsilon_1$代入$r=2$的罗特汉方程(\ref{eq:14.34})，得到
+        \begin{equation*}
+            c_{11} \left(F_{21} - \varepsilon_1 S_{21}\right) + c_{21} \left(F_{22} - \varepsilon_1 S_{22}\right) \approx 0
+        \end{equation*}
+        \begin{equation*}
+            -0.177_5 c_{11} + 0.784_0 c_{21} = 0
+        \end{equation*}
+        \begin{equation*}
+            c_{11} / c_{21} \approx 4.42
+        \end{equation*}
+        将$k = 4.42$和$S_{12} = 0.8366$代入归一化条件(\ref{eq:14.48})，得到
+        \begin{equation*}
+            c_{21} \approx 0.189, \quad c_{11} = kc_{21} \approx 0.836
+        \end{equation*}
 
+        将改进的系数代入(\ref{eq:14.49})，得到改进的密度矩阵元
+        \begin{equation*}
+            P_{11} = 1.398, \quad P_{12} = P_{21} = 0.316, \quad P_{22} = 0.071
+        \end{equation*}
+        将其代入(\ref{eq:14.50})至(\ref{eq:14.52})，得到改进的福克矩阵元$F_{rs}$：
+        \begin{equation*}
+            F_{11} = -0.880, \quad F_{12} = F_{21} = -0.940, \quad F_{22} = -0.124_6
+        \end{equation*}
+        改进的久期方程为
+        \begin{equation*}
+            \begin{vmatrix}
+                -0.880 - \varepsilon_i & -0.940 - 0.8366 \varepsilon_i \\
+                -0.940 - 0.8366 \varepsilon_i & -0.124_6 - \varepsilon_i
+            \end{vmatrix} \approx 0
+        \end{equation*}
+        \begin{equation*}
+            \varepsilon_1 \approx 0.842, \quad \varepsilon_2 \approx 2.810
+        \end{equation*}
+        改进的$\varepsilon_1$给出了$c_{11} / c_{21} \approx 4.61$，从而得到
+        \begin{equation*}
+            c_{11} \approx 0.842, \quad c_{21} \approx 0.183
+        \end{equation*}
+        再进行一轮循环运算，得出（问题14.18）：
+        \begin{equation*}
+            P_{11} = 1.418, \quad P_{12} = P_{21} = 0.308, \quad P_{22} = 0.067
+        \end{equation*}
+        \begin{equation}
+            F_{11} = -0.881, \quad F_{12} = F_{21} = -0.940, \quad F_{22} = -0.124_5
+            \label{eq:14.53}
+        \end{equation}
+        \begin{equation}
+            \varepsilon_1 = -0.918, \quad \varepsilon_2 = 2.809
+            \label{eq:14.54}
+        \end{equation}
+        \begin{equation*}
+            c_{11} = 0.842, \quad c_{21} = 0.183
+        \end{equation*}
+        这些最后的$c$值与前一个周期的相同，因此计算已收敛，我们完成计算。则该基函数下的氦原子基态自洽场原子轨道为
+        \begin{equation*}
+            \phi_1 = 0.842 \chi_1 + 0.183 \chi_2
+        \end{equation*}
+        自洽场能量由(\ref{eq:14.44})给出，其中$n=2$，$b=2$：
+        \begin{equation*}
+            \begin{aligned}
+                E_{\text{HF}} &= -0.918 + \frac{1}{2} \left[1.418\left(-1.8488\right) + 2\left(0.308\right)\left(-1.8826\right) + 0.067\left(-1.5860\right)\right] + 0 \\
+                &= -2.862 \: \mathrm{hartrees} = -77.9 \: \mathrm{eV}
+            \end{aligned}
+        \end{equation*}
 
+        另一种轨道指数为$\zeta_1 = 1.45363$、$\zeta_2 = 2.91093$的更准确计算给出了自洽场能量为-2.8616726 hartrees，与通过五个基函数计算得到的哈特里-福克能量极限值-2.8616799 hartrees相比【C. Roetti and E. Clementi, \textit{J. Chem. Phys.}, \textbf{60}, 4725 (1974)】。
+    \end{examplebox}
 
+\subsection*{罗特汉方程的矩阵形式}
 
+    求解罗特汉方程组最有效的方法是使用矩阵方法。罗特汉方程组（\ref{eq:14.34}）如下：
+    \begin{equation*}
+        \sum_{s=1}^{b} F_{rs} c_{si} = \sum_{s=1}^{b} S_{rs} c_{si} \varepsilon_i, \quad r = 1,\:2,\:\ldots,\:b
+    \end{equation*}
+    根据$\phi_i = \sum_{s=1}^{b} c_{si} \chi_s$，系数$c_{si}$将分子轨道$\phi_i$与基函数$\chi_s$联系起来。令$\mathbf{C}$为$b$阶方阵，其元素为系数$c_{si}$。令$\mathbf{F}$为$b$阶方阵，其元素为$F_{rs} = \left\langle \chi_r \middle| \hat{F} \middle| \chi_s \right\rangle$。令$\mathbf{S}$为$b$元素满足$S_{rs} = \left\langle \chi_r \middle| \chi_s \right\rangle$的方阵。令$\symbf{\varepsilon}$为对角矩阵，其对角线元素为轨道能量$\varepsilon_1, \: \varepsilon_2, \:\ldots,\:\varepsilon_b$，则$\symbf{\varepsilon}$的元素可以写为$\varepsilon_{mi} = \delta_{mi} \varepsilon_i$，其中$\delta_{mi}$为克罗内克$\delta$函数。
 
+    使用矩阵的乘法规则(\ref{eq:7.107})，我们可以得出矩阵乘积$\mathbf{C}\symbf{\varepsilon}$的第$\left(s,i\right)$个元素为$\left(\mathbf{C}\symbf{\varepsilon}\right)_{si} = \sum_{m} c_{sm} $\\$\varepsilon_{mi} = \sum_m c_{sm} \delta_{mi} \varepsilon_i = c_{si} \varepsilon_i$。因此，罗特汉方程组可以写为
+    \begin{equation}
+        \sum_{s=1}^{b} F_{rs} c_{si} = \sum_{s=1}^{b} S_{rs} \left(\mathbf{C}\symbf{\varepsilon}\right)_{si}
+        \label{eq:14.55}
+    \end{equation}
+    根据乘法规则，(\ref{eq:14.55})的左侧为$\left(\mathbf{FC}\right)$的第$\left(r,i\right)$个元素，右侧为$\left(\mathbf{SC}\symbf{\varepsilon}\right)$的第$\left(r,i\right)$个元素。因为$\mathbf{FC}$和$\mathbf{SC}\symbf{\varepsilon}$的每个元素都相等，所以这些矩阵相等：
+    \begin{equation}
+        \mathbf{FC} = \mathbf{SC}\symbf{\varepsilon}
+        \label{eq:14.56}
+    \end{equation}
+    这就是罗特汉方程的矩阵形式。
+
+    用来展开分子轨道的基函数集$\chi_s$并不构成一个正交集。然而，我们可以使用施密特正交化或其他方法来构建一个正交线性组合基函数集$\chi'_s$，得到一个新的，满足正交关系的基函数集$\chi'_s = \sum_t a_{ts} \chi_t$，以及$S_{rs}' = \left\langle \chi'_r \middle| \chi'_s \right\rangle = \delta_{rs}$（正交化的细节见问题8.57、8.58和\textit{Szabo and Ostlund}, Section 3.4.5.）。有了这个正交集合，那么重叠矩阵就是单位阵，罗特汉方程(\ref{eq:14.56})就能得到简化：
+    \begin{equation}
+        \mathbf{F'C'} = \mathbf{C'}\symbf{\varepsilon}
+        \label{eq:14.57}
+    \end{equation}
+    其中$F'_{rs} = \left\langle \chi'_r \middle| \hat{F} \middle| \chi'_s \right\rangle$，$\mathbf{C'}$，$\mathbf{C'}$为将分子轨道与正交基函数$\phi_i = \sum_s c'_{si} \chi'_s$联系起来的系数矩阵。可以证明（问题8.57c）：矩阵$\mathbf{F}$和$\mathbf{F'}$、$\mathbf{C}$和$\mathbf{C'}$之间的关系为
+    \begin{equation*}
+        \mathbf{F'} = \mathbf{A}^{\dagger} \mathbf{FA}, \quad \mathbf{C} = \mathbf{A}\mathbf{C'}
+    \end{equation*}
+    其中$\mathbf{A}$为$\chi_s' = \sum_t a_{ts} \chi_t$的系数$a_{ts}$矩阵，所以我们可以从$\mathbf{F}$中计算出$\mathbf{F'}$，并从$\mathbf{C'}$中计算出$\mathbf{C}$【问题8.57中的$\mathbf{H}$对应于(\ref{eq:14.56})中的$\mathbf{F}$】。
+
+    矩阵方程(\ref{eq:14.57})与$\mathbf{HC}=\mathbf{CW}$的方程(\ref{eq:8.87})一致，其中的$\mathbf{C}$和$\mathbf{W}$【由(\ref{eq:8.86})定义】分别为$\mathbf{H}$的本征向量矩阵和本征值矩阵。因此，轨道能量$\varepsilon_i$为$\mathbf{F'}$的本征值，$\mathbf{C'}$的每一列为$\mathbf{F'}$的本征向量。又因为福克算符$\hat{F}$为厄米算符，所以$\mathbf{F'}$为厄米矩阵。正如导出(\ref{eq:8.94})的段落所示，厄米矩阵$\mathbf{F'}$的本征向量矩阵$\mathbf{C'}$为酉矩阵，意味着其逆矩阵等于其共轭转置【式(\ref{eq:8.92})】：$\mathbf{C'}^{-1} = \mathbf{C'}^{\dagger}$。（有了酉系数矩阵$\mathbf{C'}$，分子轨道$\phi_i$是正交的，见问题14.22。）将(\ref{eq:14.57})左乘$\mathbf{C'}^{-1}\mathbf{C'}^{\dagger}$，得到
+    \begin{equation}
+        \mathbf{C'}^{\dagger} \mathbf{F'} \mathbf{C'} = \symbf{\varepsilon}
+        \label{eq:14.58}
+    \end{equation}
+    该方程的形式与(\ref{eq:8.94})相同。
+
+    以下流程通常用于在指定分子几何构型下执行自洽场分子轨道计算。
+    \begin{enumerate}
+        \item 选择基函数集$\chi_s$。
+        \item 计算积分$H^{\text{core}}_{rs}$、$S_{rs}$和$\left(rs \middle| tu\right)$。
+        \item 使用重叠积分$S_{rs}$和归一化条件计算能给出正交基函数$\chi'_s = \sum_t a_{ts} \chi_t$的系数$a_{ts}$矩阵$\mathbf{A}$。
+        \item 猜测分子轨道$\phi_i = \sum_s c_{si} \chi_s$的系数$c_{si}$。根据该猜测值，计算(\ref{eq:14.42})中的密度矩阵元$P_{rs}$。
+        \item 使用(\ref{eq:14.41})从$\mathbf{P}$中计算福克矩阵元$F_{rs}$，以及积分$\left(rs \middle| tu\right)$和$H^{\text{core}}_{rs}$。
+        \item 使用$\mathbf{F'} = \mathbf{A}^{\dagger} \mathbf{FA}$计算$\mathbf{F'}$。
+        \item 根据矩阵对角化法（第\ref{sec:8.6 Matrices, Eigenvalues, and Eigenvectors}节），求出$\mathbf{C'}$和$\mathbf{F'}$的本征值和本征向量矩阵$\symbf{\varepsilon}$。
+        \item 计算系数矩阵$\mathbf{C} = \mathbf{A}\mathbf{C'}$。
+        \item 通过$\mathbf{P}^* = 2\mathbf{CC}^{\dagger}$，从$\mathbf{C}$中计算新的密度矩阵元$P_{rs}^*$，它具有与(\ref{eq:14.42})相同的形式（问题14.10c）。
+        \item 将改进后的$\mathbf{P}$与之前的$\mathbf{P}$进行比较。若所有对应的矩阵元之间差异可忽略不计，则计算已收敛，此时可使用收敛的自洽场波函数计算分子性质。若计算未收敛，则返回步骤(5)，基于当前$\mathbf{P}$矩阵计算改进的$\mathbf{F}$矩阵，随后执行后续步骤。
+    \end{enumerate}
+
+    一种开始自洽场计算的方法是首先通过$F_{rs} \approx H^{\text{core}}_{rs}$来估算福克矩阵元，即忽略了(\ref{eq:14.41})中的双重求和项。这是一种非常粗略的估计。更常见的做法是通过对分子进行半经验计算（第\ref{sec:17.4 General Semiempirical MO and DFT Methods}节）来获得密度矩阵的初始估计值。半经验计算速度极快。另一种方法是利用分子组成原子的密度矩阵来构造$\mathbf{P}$矩阵的初始猜测。要确定分子的平衡几何构型，需在多个连续构型下进行系列自洽场计算（参见第\ref{sec:15.10 Molecular Geometry}节）。对于系列中的第二次及后续自洽场计算，可将邻近构型的自洽场波函数对应的$\mathbf{P}$值作为$\mathbf{P}$的初始猜测。
 
 \section{位力理论}
 \label{sec:14.4 The Virial Theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{位力理论和化学键}
 \label{sec:14.5 The Virial Theorem and Chemical Bonding}

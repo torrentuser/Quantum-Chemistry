@@ -1167,7 +1167,7 @@
             \int \int \left|f\left(1\right)\right|^2 \left|f\left(2\right)\right|^2 \:\mathrm{d}v_1\:\mathrm{d}v_2
         }
     \end{equation*}
-    其中积分是针对两个电子的空间坐标进行的。理想情况下，$f$应通过自洽场方法计算得出。为了简化起见，我们使用类\ce{H2+}分子轨道。（若我们忽略$1/r_{12}$项，则\ce{H2}的哈密顿量为两个\ce{H2+}哈密顿量之和。）在\ref{sec:13.5 Approximate Treatments of the H2 Ground Electronic State}中，我们发现【式(\ref{eq:13.57})】
+    其中积分是针对两个电子的空间坐标进行的。理想情况下，$f$应通过自洽场计算得出。为了简化起见，我们使用类\ce{H2+}分子轨道。（若我们忽略$1/r_{12}$项，则\ce{H2}的哈密顿量为两个\ce{H2+}哈密顿量之和。）在\ref{sec:13.5 Approximate Treatments of the H2 Ground Electronic State}中，我们发现【式(\ref{eq:13.57})】
     \begin{equation*}
         \frac{k^{3/2}}{(2\pi)^{1/2}(1+S_{ab})^{1/2}}\left(\mathrm{e}^{-k r_a}+\mathrm{e}^{-k r_b}\right)
     \end{equation*}
@@ -1194,9 +1194,9 @@
     \begin{equation*}
         f = \mathrm{e}^{-\alpha\xi} \sum_{p,q}a_{pq} \xi^p \eta^{q}
     \end{equation*}
-    其中$p$和$q$是整数，$\alpha$和$a_{pq}$是变分参数。哈特里-福克计算结果为$R_e = 0.732\:\mathrm{Å}$，$D_e = 3.64\:\mathrm{eV}$，与简单的原子轨道线性组合分子轨道得出的结果3.49 eV相比略有改善。\ce{H2}的关联能为-1.11 eV，与双电子\ce{He2}的值-1.14 eV相近（第\ref{sec:11.3 Electron Correlation}节）。要获得真正准确的结合能，我们必须超越自洽场方法近似，不再将波函数写成$f\left(1\right)f\left(2\right)$的形式。我们可以采用与处理原子时相同的方法：组态相互作用以及将$r_{12}$引入试探函数。
+    其中$p$和$q$是整数，$\alpha$和$a_{pq}$是变分参数。哈特里-福克计算结果为$R_e = 0.732\:\mathrm{Å}$，$D_e = 3.64\:\mathrm{eV}$，与简单的原子轨道线性组合分子轨道得出的结果3.49 eV相比略有改善。\ce{H2}的关联能为-1.11 eV，与双电子\ce{He2}的值-1.14 eV相近（第\ref{sec:11.3 Electron Correlation}节）。要获得真正准确的结合能，我们必须超越自洽场近似，不再将波函数写成$f\left(1\right)f\left(2\right)$的形式。我们可以采用与处理原子时相同的方法：组态相互作用以及将$r_{12}$引入试探函数。
 
-    首先，考虑组态相互作用（CI，下同）。为了得到准确基态波函数，我们引入了自洽场方法（或其他）函数对所有与基态具有相同对称性的激发态的贡献。在第一近似中，仅考虑最低能级激发态的贡献。\ce{H2}的第一激发态为$\left(\sigma_g 1s\right)\left(\sigma_u 1s\right)$，给出的谱项为$^1\Sigma_u^+$和$^3\Sigma_u^+$。（有一个$g$电子和一个$u$电子，则谱项为奇宇称。）基态组态$\left(\sigma_g1s\right)^2$是$^1\Sigma_g^+$态。因此，由于$\left(\sigma_g1s\right)\left(\sigma_u^*1s\right)$与基态组态对称性不同，所以该激发态没有贡献。再考虑组态$\left(\sigma_u^*1s\right)^2$。这是一个闭壳层组态，具有单重态$^1\Sigma_g^+$。它具有正确的对称性，有助于贡献到基态波函数中。作为一个简单的CI波函数，我们取$\left(\sigma_g1s\right)^2$和$\left(\sigma_u^*1s\right)^2$组态的分子轨道波函数的线性组合。为了简化，我们使用原子轨道线性组合-分子轨道来作为分子轨道的近似。因此有
+    首先，考虑组态相互作用（CI，下同）。为了得到准确基态波函数，我们引入了自洽场（或其他）函数对所有与基态具有相同对称性的激发态的贡献。在第一近似中，仅考虑最低能级激发态的贡献。\ce{H2}的第一激发态为$\left(\sigma_g 1s\right)\left(\sigma_u 1s\right)$，给出的谱项为$^1\Sigma_u^+$和$^3\Sigma_u^+$。（有一个$g$电子和一个$u$电子，则谱项为奇宇称。）基态组态$\left(\sigma_g1s\right)^2$是$^1\Sigma_g^+$态。因此，由于$\left(\sigma_g1s\right)\left(\sigma_u^*1s\right)$与基态组态对称性不同，所以该激发态没有贡献。再考虑组态$\left(\sigma_u^*1s\right)^2$。这是一个闭壳层组态，具有单重态$^1\Sigma_g^+$。它具有正确的对称性，有助于贡献到基态波函数中。作为一个简单的CI波函数，我们取$\left(\sigma_g1s\right)^2$和$\left(\sigma_u^*1s\right)^2$组态的分子轨道波函数的线性组合。为了简化，我们使用原子轨道线性组合-分子轨道来作为分子轨道的近似。因此有
     \begin{equation}
         \phi = \sigma_g1s\left(1\right)\sigma_g1s\left(2\right) + c\: \sigma_u^*1s\left(1\right)\sigma_u^*1s\left(2\right)
         \label{eq:13.95}
@@ -1402,7 +1402,7 @@
         \left|1s_a\overline{1s_a}1s_b\overline{1s_b}\right|
         \label{eq:13.110}
     \end{equation}
-    下标$a$和$b$分别表示两个氦原子，横线表示自旋函数$\beta$。该波函数中的$1s$函数为氦原子的$1s$函数，该函数在理想情况下应为自洽场方法原子函数，但可通过使用有效核电荷的类氢函数进行近似。\ce{He2}的价键波函数中的每个电子都与\textit{同一}原子轨道上的另一个电子配对，因此预测不存在键合。
+    下标$a$和$b$分别表示两个氦原子，横线表示自旋函数$\beta$。该波函数中的$1s$函数为氦原子的$1s$函数，该函数在理想情况下应为自洽场原子函数，但可通过使用有效核电荷的类氢函数进行近似。\ce{He2}的价键波函数中的每个电子都与\textit{同一}原子轨道上的另一个电子配对，因此预测不存在键合。
 
     在分子轨道近似中，\ce{He2}的基态组态为$\left(\sigma_g1s\right)^2\left(\sigma_u^*1s\right)^2$。由于不具有净成键电子，我们也预测不存在键合，与价键理论一致。分子轨道近似得到的波函数为
     \begin{equation}
@@ -1523,19 +1523,19 @@
 
     虽然在周期表中$2\sigma_u$比$1\pi_u$分子轨道更先被填充，但对\ce{H2}而言$1\pi_u$能量低于$2\sigma_u$。则组态$\left(1\sigma_g\right)\left(1\pi_u\right)$产生谱项$^1\Pi_u$和$^3\Pi_u$，记作$C^1\Pi_u$和$c^3\Pi_u$。$c$谱项产生的支项为$c^3\Pi_{2u}$、$c^3\Pi_{1u}$和$c^3\Pi_{0u}$，这些支项彼此极为接近，通常在光谱学研究中无法分辨。$C$支项的势能曲线在较大$R$处呈现轻微凸起。每个支项均为双重简并态，由此$\left(1\sigma_g\right)\left(1\pi_u\right)$组态共产生八个电子态。
 
-\section{双原子分子的自洽场方法波函数}
+\section{双原子分子的自洽场波函数}
 \label{sec:13.14 SCF Wave Functions for Diatomic Molecules}
 
-    本节展示了双原子分子中自洽场方法分子轨道波函数的若干实例。
+    本节展示了双原子分子中自洽场分子轨道波函数的若干实例。
 
     分子轨道波函数中的空间轨道$\phi_i$哥表示为一组单电子\textbf{基函数}（basis functions）$\chi_s$的线性组合：
     \begin{equation}
         \phi_i = \sum_s c_{si} \chi_s
         \label{eq:13.122}
     \end{equation}
-    在对双原子分子的自洽场方法计算中，可以使用以分子中各原子为中心的斯莱特型轨道【式(\ref{eq:11.14})】作为基函数。（另见第\ref{sec:15.4 Basis Functions}节中的替代选择。）第\ref{sec:14.3 The Hartree-Fock Method for Molecules}节讨论了用于确定每个单原子分子自洽场方法分子轨道中基函数系数$c_{si}$的计算方法。要获得原子轨道函数的完备集，需要无限数量的斯莱特轨道，但通过精心选择数量适中的斯莱特轨道，可以对真实的分子哈特里-福克波函数进行精确逼近。分子自洽场方法计算的\textbf{最小基函数集}（minimal basis set）要求每个原子的每个内层原子轨道和价层原子轨道各包含一个基函数。\textbf{扩展}（extended）基函数集则比最小基函数集更大。最小基函数集的自洽场方法计算比扩展基函数集更简单，但后者能获得更高的精度。
+    在对双原子分子的自洽场计算中，可以使用以分子中各原子为中心的斯莱特型轨道【式(\ref{eq:11.14})】作为基函数。（另见第\ref{sec:15.4 Basis Functions}节中的替代选择。）第\ref{sec:14.3 The Hartree-Fock Method for Molecules}节讨论了用于确定每个单原子分子自洽场分子轨道中基函数系数$c_{si}$的计算方法。要获得原子轨道函数的完备集，需要无限数量的斯莱特轨道，但通过精心选择数量适中的斯莱特轨道，可以对真实的分子哈特里-福克波函数进行精确逼近。分子自洽场计算的\textbf{最小基函数集}（minimal basis set）要求每个原子的每个内层原子轨道和价层原子轨道各包含一个基函数。\textbf{扩展}（extended）基函数集则比最小基函数集更大。最小基函数集的自洽场计算比扩展基函数集更简单，但后者能获得更高的精度。
 
-    Ransil采用最小基函数集计算了若干轻型双原子分子的自洽场方法波函数【B. J. Ransil, \textit{Rev. Mod. Phys.}, \textbf{32}, 245 (1960)】。例如，基态\ce{Li2}【分子轨道组态$\left(1\sigma_g\right)^2\left(1\sigma_u\right)^2\left(2\sigma_g\right)^2$】满足$R=R_e$时的自洽场方法分子轨道为
+    Ransil采用最小基函数集计算了若干轻型双原子分子的自洽场波函数【B. J. Ransil, \textit{Rev. Mod. Phys.}, \textbf{32}, 245 (1960)】。例如，基态\ce{Li2}【分子轨道组态$\left(1\sigma_g\right)^2\left(1\sigma_u\right)^2\left(2\sigma_g\right)^2$】满足$R=R_e$时的自洽场分子轨道为
     \begin{equation}
         \begin{aligned}
             1\sigma_g &= 0.706\left(1s_a + 1s_b\right) + 0.009\left(2s_{\perp a} + 2s_{\perp b}\right) + 0.0003\left(2p\sigma_a + 2p\sigma_b\right) \\
@@ -1559,7 +1559,7 @@
             2\sigma_{g} &=\sigma_{g}2s=2^{-1/2}(2s_{a}+2s_{b})
         \end{aligned}
     \end{equation*}
-    将这些结果与(\ref{eq:13.123})式进行比较，可知简单的LCAO函数是最小基组自洽场方法分子轨道的合理初始近似。该近似对$1\sigma_g$和$1\sigma_u$轨道尤其有效，而$2\sigma_g$分子轨道在$2s$原子轨道的贡献之外，还具有可观的$2p\sigma$原子轨道成分。因此，相较于分离原子分子轨道表示法，表\ref{tab:13.1}（第\ref{sec:13.7 MO Configurations for Homonuclear Diatomic Molecules}节）第三列的记号更为可取。由于$2s$和$2p$原子轨道能量相近【参见式(\ref{eq:9.27})】，可预期存在显著的$2s-2p\sigma$杂化。这种杂化使得$2s$原子轨道在分子形成过程中发生极化。
+    将这些结果与(\ref{eq:13.123})式进行比较，可知简单的LCAO函数是最小基组自洽场分子轨道的合理初始近似。该近似对$1\sigma_g$和$1\sigma_u$轨道尤其有效，而$2\sigma_g$分子轨道在$2s$原子轨道的贡献之外，还具有可观的$2p\sigma$原子轨道成分。因此，相较于分离原子分子轨道表示法，表\ref{tab:13.1}（第\ref{sec:13.7 MO Configurations for Homonuclear Diatomic Molecules}节）第三列的记号更为可取。由于$2s$和$2p$原子轨道能量相近【参见式(\ref{eq:9.27})】，可预期存在显著的$2s-2p\sigma$杂化。这种杂化使得$2s$原子轨道在分子形成过程中发生极化。
 
     让我们比较Ransil使用最小基组计算的\ce{F2}基态在$R_e$处的$3\sigma$分子轨道，与Wahl使用扩展基组计算的结果【A. C. Wahl, \textit{J. Chem. Phys.}, \textbf{41}, 2600 (1964)】：
     \begin{equation*}
@@ -1595,7 +1595,7 @@
         \label{fig:13.20}
     \end{figure}
 
-    在讨论\ce{H2+}和\ce{H2}时，我们看到了杂化（同个原子不同原子轨道的混合）是如何改进分子波函数的。人们往往认为杂化仅发生于特定分子几何构型中。自洽场方法计算明确表明，所有分子轨道都存在某种程度的杂化。因此，任何双原子分子$\sigma$分子轨道都是孤立原子$1s,\:2s,\:2p_0,\:3s,\:3p_0,\:3d_0,\:\ldots$原子轨道的线性组合。
+    在讨论\ce{H2+}和\ce{H2}时，我们看到了杂化（同个原子不同原子轨道的混合）是如何改进分子波函数的。人们往往认为杂化仅发生于特定分子几何构型中。自洽场计算明确表明，所有分子轨道都存在某种程度的杂化。因此，任何双原子分子$\sigma$分子轨道都是孤立原子$1s,\:2s,\:2p_0,\:3s,\:3p_0,\:3d_0,\:\ldots$原子轨道的线性组合。
 
     为协助确定哪些原子轨道参与构筑特定双原子分子轨道，我们采用两条规则。首先，$\sigma$型原子轨道（$s,\:p\sigma,\:d\sigma,\:\ldots$）只能参与形成$\sigma$型分子轨道；$\pi$型原子轨道（$p\pi,\:d\pi,\:\ldots$）只能参与形成$\pi$型分子轨道。其次，只有能量相当接近的原子轨道才能对特定分子轨道产生显著贡献。（具体实例可参见上文引用的最小基组和扩展基组分子轨道。）
 
@@ -1619,7 +1619,7 @@
             \ce{CO} & $1\sigma$ & $2\sigma$ & $3\sigma$ & $4\sigma$ & $1\pi$ & $5\sigma$ & $2\pi$ & $6\sigma$ \\
         \end{tabular}
     \end{table} \\
-    具有相同对称性的分子轨道按照能量依次递增的顺序标号。因为缺少了$g$和$u$对称性，同核和异核分子轨道对应的数字不同。图\ref{fig:13.21}是通过自洽场方法计算确定的\ce{CO}分子轨道$1\pi_{\pm 1}$等高线示意图【W. M. Huo, \textit{J. Chem. Phys.}, \textbf{43}, 624 (1965)】。注意其轮廓与图\ref{fig:13.13}的相似性，该图展示了同核双原子分子中$1\pi_{u,\pm 1}$分子轨道的轮廓。
+    具有相同对称性的分子轨道按照能量依次递增的顺序标号。因为缺少了$g$和$u$对称性，同核和异核分子轨道对应的数字不同。图\ref{fig:13.21}是通过自洽场计算确定的\ce{CO}分子轨道$1\pi_{\pm 1}$等高线示意图【W. M. Huo, \textit{J. Chem. Phys.}, \textbf{43}, 624 (1965)】。注意其轮廓与图\ref{fig:13.13}的相似性，该图展示了同核双原子分子中$1\pi_{u,\pm 1}$分子轨道的轮廓。
     \begin{figure}[ht]
         \centering
         \includegraphics[width=0.3\textwidth]{Figures/13.21.png}
@@ -1664,7 +1664,7 @@
     \end{equation*}
     其中忽略了$1s_{\mathrm{F}}$和$2s_{\mathrm{F}}$原子轨道的贡献，因为F的电负性远高于H，我们可以预测$c_2 > c_1$。（除此以外，$1s_{\mathrm{H}}$和$2p\sigma_{\mathrm{F}}$原子轨道形成了反键轨道，但在基态时未占据）。
 
-    刚刚给出的HF图仅为粗略的定性近似。采用具有优化指数的斯莱特轨道进行最小基函数集的自洽场方法计算，得出的分子轨道为【B. J. Ransil, \textit{Rev. Mod. Phys.}, \textbf{32}, 245 (1960)】：
+    刚刚给出的HF图仅为粗略的定性近似。采用具有优化指数的斯莱特轨道进行最小基函数集的自洽场计算，得出的分子轨道为【B. J. Ransil, \textit{Rev. Mod. Phys.}, \textbf{32}, 245 (1960)】：
     \begin{equation*}
         \begin{aligned}
             1\sigma &= 1.000 (1s_{\mathrm{F}}) + 0.012 (2s_{\perp \mathrm{F}}) + 0.002 (2p\sigma_{\mathrm{F}}) - 0.003 (1s_{\mathrm{H}}) \\
