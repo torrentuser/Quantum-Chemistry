@@ -579,43 +579,294 @@
 
     一种开始自洽场计算的方法是首先通过$F_{rs} \approx H^{\text{core}}_{rs}$来估算福克矩阵元，即忽略了(\ref{eq:14.41})中的双重求和项。这是一种非常粗略的估计。更常见的做法是通过对分子进行半经验计算（第\ref{sec:17.4 General Semiempirical MO and DFT Methods}节）来获得密度矩阵的初始估计值。半经验计算速度极快。另一种方法是利用分子组成原子的密度矩阵来构造$\mathbf{P}$矩阵的初始猜测。要确定分子的平衡几何构型，需在多个连续构型下进行系列自洽场计算（参见第\ref{sec:15.10 Molecular Geometry}节）。对于系列中的第二次及后续自洽场计算，可将邻近构型的自洽场波函数对应的$\mathbf{P}$值作为$\mathbf{P}$的初始猜测。
 
-\section{位力理论}
+\section{位力定理}
 \label{sec:14.4 The Virial Theorem}
 
+    现在我们来推导位力定理（virial theorem）。令某处于定态束缚态$\psi$系统的定态哈密顿算符满足
+    \begin{equation}
+        \hat H \psi = E \psi
+        \label{eq:14.59}
+    \end{equation}
+    设$\hat{A}$为线性定态算符。考虑积分
+    \begin{equation}
+        \int \psi^* \left[\hat{H}, \hat{A}\right] \psi\:\mathrm{d}\tau = \left\langle \psi \middle| \hat{H}\hat{A} - \hat{A}\hat{H} \middle| \psi \right\rangle = \left\langle \psi \middle| \hat{H} \middle| \hat{A} \psi \right\rangle - E \left\langle \psi \middle| \hat{A} \middle| \psi \right\rangle
+        \label{eq:14.60}
+    \end{equation}
+    其中用到了(\ref{eq:14.59})。因为$\hat{H}$为厄米算符，所以我们有
+    \begin{equation*}
+        \left\langle \psi \middle| \hat{H} \middle| \hat{A} \psi \right\rangle = \left\langle \hat{A} \psi \middle| \hat{H} \middle| \psi \right\rangle^* = E^* \left\langle \hat{A} \psi \middle| \psi \right\rangle^* = E \left\langle \psi \middle| \hat{A} \psi \right\rangle = E \left\langle \psi \middle| \hat{A} \middle| \psi \right\rangle
+    \end{equation*}
+    则(\ref{eq:14.60})变为
+    \begin{equation}
+        \int \psi^* \left[\hat{H}, \hat{A}\right] \psi\:\mathrm{d}\tau = 0
+        \label{eq:14.61}
+    \end{equation}
+    方程(\ref{eq:14.61})称为\textbf{超位力定理}（hypervirial theorem）。【其应用见J.O. Hirschfelder, \textit{J. Chem. Phys.}, \textbf{33}, 1462 (1960); J. H. Epstein and S. T. Epstein, \textit{Am. J. Phys.}, \textbf{30}, 266 (1962).】在推导(\ref{eq:14.61})的过程中，我们用到了$\hat{H}$的厄米性质。对$\hat{p}_x$和$\hat{p}_x^2$厄米性和$\hat{H}$厄米性的证明要求$\psi$在$\pm \infty$处趋于零【见方程(\ref{eq:7.17})】。因此，超位力定理对连续态不适用，因为连续态波函数在$\pm \infty$处不趋于零。
 
+    现在从(\ref{eq:14.61})出发来推导位力定理。我们选择$\hat{A}$为
+    \begin{equation}
+        \sum_i \hat{q}_i \hat{p}_i = -\mathrm{i} \hbar \sum_i q_i \frac{\partial}{\partial q_i}
+        \label{eq:14.62}
+    \end{equation}
+    其中的求和是对$n$个粒子的$3n$个笛卡尔坐标进行的。（粒子1的笛卡尔坐标为$q_1, q_2, q_3$，其线动量分量为$p_1, p_2, p_3$。本章中，我们使用符号$q$来表示\textit{笛卡尔}坐标。）为了计算$\left[\hat{H}, \hat{A}\right]$，我们使用(\ref{eq:5.4})、(\ref{eq:5.5})、(\ref{eq:5.8})和(\ref{eq:5.9})，得到
+    \begin{align}
+        \left[\hat{H}, \sum_i \hat{q}_i \hat{p}_i\right] &= \sum_i \left[\hat{H}, \hat{q}_i \hat{p}_i\right] = \sum_i \hat{q}_i \left[\hat{H}, \hat{p}_i\right] + \sum_i \left[\hat{H}, \hat{q}_i\right] \hat{p}_i \nonumber \\
+        &= \mathrm{i} \hbar \sum_i \hat{q}_i \frac{\partial V}{\partial q_i} - \mathrm{i} \hbar \sum_i \frac{1}{m_i} \hat{p}_i^2 = \mathrm{i} \hbar \sum_i q_i \frac{\partial V}{\partial q_i} - 2 \mathrm{i} \hbar \hat{T}
+        \label{eq:14.63}
+    \end{align}
+    其中的$\hat{T}$和$\hat{V}$为系统的动能和势能算符。将(\ref{eq:14.63})代入(\ref{eq:14.61})，得到
+    \begin{equation}
+        \left\langle \psi \middle| \sum_i q_i \frac{\partial V}{\partial q_i} \middle| \psi \right\rangle = 2 \left\langle \psi \middle| \hat{T} \middle| \psi \right\rangle
+        \label{eq:14.64}
+    \end{equation}
+    由于$B$的量子力学平均值可以写作$\left\langle B \right\rangle$，所以我们可以将(\ref{eq:14.64})写为
+    \begin{equation}
+        \left\langle \sum_i q_i \frac{\partial V}{\partial q_i} \right\rangle = 2 \left\langle \hat{T} \right\rangle
+        \label{eq:14.65}
+    \end{equation}
+    方程(\ref{eq:14.65})就是量子力学\textbf{位力定理}（virial theorem）。注意它只对束缚态有效。（\textit{vires}来自拉丁文，意为“力”。在经典力学中，势能的导数给出了力分量的负值。还存在经典力学的位力定理。）
 
+    对于特定的系统来说，位力定理的形式不同。为了讨论这些系统，我们引入齐次函数的思想。设满足以下条件的，关于多个变量的函数$f\left(x_1, x_2, \:\ldots,\: x_j\right)$为\textbf{齐$n$次函数}（homogeneous function of degree $n$）：
+    \begin{equation}
+        \boxed{
+            f\left(sx_1, sx_2, \ldots, sx_j\right) = s^n f\left(x_1, x_2, \ldots, x_j\right)
+        }
+        \label{eq:14.66}
+    \end{equation}
+    其中的$s$为任意参数。例如，函数$g = 1/y^3 + x/y^2z^2$为齐$-3$次函数，因为$g\left(sx_1, sy_1, sz_1\right) = 1/s^3y^3 + sx/s^2y^2s^2z^2 = s^{-3} g\left(x_1, y_1, z_1\right)$。
 
+    关于齐次函数的\textit{欧拉定理}(Euler's theorem)指出：若$f\left(x_1, x_2, \:\ldots,\: x_j\right)$为齐$n$次函数，则
+    \begin{equation}
+        \sum_{k=1}^j x_k \frac{\partial f}{\partial x_k} = n f
+        \label{eq:14.67}
+    \end{equation}
+    该定理的证明如下。令
+    \begin{equation*}
+        u_1 \equiv sx_1, \quad u_2 \equiv sx_2, \quad \ldots, \quad u_j \equiv sx_j
+    \end{equation*}
+    对(\ref{eq:14.66})的左侧对$s$求偏导，并使用链式法则，得到
+    \begin{equation*}
+        \begin{aligned}
+            \frac{\partial f \left(u_1,\ldots,u_j\right)}{\partial s} &= \frac{\partial f}{\partial u_1} \frac{\partial u_1}{\partial s} + \frac{\partial f}{\partial u_2} \frac{\partial u_2}{\partial s} + \ldots + \frac{\partial f}{\partial u_j} \frac{\partial u_j}{\partial s} \\
+            &= x_1 \frac{\partial f}{\partial u_1} + x_2 \frac{\partial f}{\partial u_2} + \ldots + x_j \frac{\partial f}{\partial u_j} = \sum_{k=1}^j x_k \frac{\partial f}{\partial u_k}
+        \end{aligned}
+    \end{equation*}
+    则(\ref{eq:14.66})对$s$的偏导为
+    \begin{equation}
+        \sum_{k=1}^{j} x_k \frac{\partial f \left(u_1,\ldots,u_j\right)}{\partial u_k} = ns^{n-1} f\left(x_1, x_2, \ldots, x_j\right)
+        \label{eq:14.68}
+    \end{equation}
+    令$s=1$，则$u_i = x_i$；那么(\ref{eq:14.68})就变为(\ref{eq:14.67})，得证。
 
+    现在，我们回到位力定理(\ref{eq:14.65})。若势能函数$V$为笛卡尔坐标系下的齐$n$次函数，则由欧拉定理(\ref{eq:14.67})，我们有
+    \begin{equation}
+        \sum_i q_i \frac{\partial V}{\partial q_i} = nV
+        \label{eq:14.69}
+    \end{equation}
+    那么束缚态的位力定理(\ref{eq:14.65})简化为
+    \begin{equation}
+        \boxed{
+            2 \left\langle T \right\rangle = n \left\langle V \right\rangle
+        }
+        \label{eq:14.70}
+    \end{equation}
+    因为（问题6.35）
+    \begin{equation}
+        \left\langle T \right\rangle + \left\langle V \right\rangle = E
+        \label{eq:14.71}
+    \end{equation}
+    我们可以将(\ref{eq:14.70})写成另外两个形式
+    \begin{equation}
+        \left\langle V \right\rangle = \frac{2E}{n+2}
+        \label{eq:14.72}
+    \end{equation}
+    \begin{equation}
+        \left\langle T \right\rangle = \frac{nE}{n+2}
+        \label{eq:14.73}
+    \end{equation}
 
+    \begin{examplebox}
+        \textbf{例题：}将位力定理应用于(a)一维谐振子；(b)氢原子；(c)某多电子原子。
+        \\
 
+        (a)对于一维谐振子，其势能函数为$V = \frac{1}{2} kx^2$，为齐2次函数（$n=2$）。由(\ref{eq:14.70})和(\ref{eq:14.72})，我们得出
+        \begin{equation}
+            \left\langle T \right\rangle = \left\langle V \right\rangle = \frac{1}{2}E = \frac{1}{2} \hbar \nu \left(v + \frac{1}{2}\right)
+            \label{eq:14.74}
+        \end{equation}
+        对于基态，该式已在问题4.9中得到证明。
 
+        (b)对于氢原子，其势能函数在笛卡尔坐标系和原子单位制下为$V = -1 / \left(x^2 + y^2 + z^2\right)^{1/2}$，为齐$-1$次函数（$n=-1$）。因此
+        \begin{equation}
+            2 \left\langle T \right\rangle = -\left\langle V \right\rangle
+            \label{eq:14.75}
+        \end{equation}
+        对于基态，该式已在问题6.36中得证。对于任意氢原子束缚态，有
+        \begin{equation}
+            \left\langle V \right\rangle = 2E, \quad \left\langle T \right\rangle = -E
+            \label{eq:14.76}
+        \end{equation}
 
+        (c)对于忽略了自旋-轨道耦合的多电子原子，
+        \begin{equation*}
+            V = -Z \sum_{i=1}^{n} \frac{1}{\left(x_i^2 + y_i^2 + z_i^2\right)^{1/2}} + \sum_i \sum_{j>i} \frac{1}{\left[\left(x_i - x_j\right)^2 + \left(y_i - y_j\right)^2 + \left(z_i - z_j\right)^2\right]^{1/2}}
+        \end{equation*}
+        将每个$3n$坐标替换为$s$乘以这些坐标，我们发现$V$为齐$-1$次函数（$n=-1$）。因此，式(\ref{eq:14.75})和(\ref{eq:14.76})适用于所有原子。
+    \end{examplebox}
 
+    现在来考虑分子。在珀恩-奥本海默近似中，分子波函数为【式(\ref{eq:13.12})】
+    \begin{equation*}
+        \psi = \psi_{\text{el}}\left(q_i;q_{\alpha}\right) \psi_N \left(q_{\alpha}\right)
+    \end{equation*}
+    其中$q_i$为电子坐标，$q_{\alpha}$为核坐标。电子波函数$\psi_{\text{el}}$可通过求解电子薛定谔方程(\ref{eq:13.7})得出：
+    \begin{equation}
+        \hat{H}_{\text{el}} \psi_{\text{el}} = E_{\text{el}} \left(q_{\alpha}\right) \psi_{\text{el}} \left(q_i\right)
+        \label{eq:14.77}
+    \end{equation}
+    \begin{equation}
+        \hat{T}_{\text{el}} = -\frac{1}{2} \sum_i \left(\frac{\partial ^2}{\partial x_i^2} + \frac{\partial ^2}{\partial y_i^2} + \frac{\partial ^2}{\partial z_i^2}\right)
+        \label{eq:14.78}
+    \end{equation}
+    \begin{equation}
+        \begin{aligned}
+            \hat{V}_{\text{el}} = &-\sum_i \sum_{\alpha} \frac{Z_{\alpha}}{\left[\left(x_i - x_{\alpha}\right)^2 + \left(y_i - y_{\alpha}\right)^2 + \left(z_i - z_{\alpha}\right)^2\right]^{1/2}} \\
+            &+ \sum_i \sum_{j>i} \frac{1}{\left[\left(x_i - x_j\right)^2 + \left(y_i - y_j\right)^2 + \left(z_i - z_j\right)^2\right]^{1/2}} 
+        \end{aligned}
+        \label{eq:14.79}
+    \end{equation}
+    设系统处于定态电子态$\psi_{\text{el}}$。若我们在(\ref{eq:14.59})中给$\hat{H}$和$\psi$分别设置下标el，并将$\psi_{\text{el}}$的变量设为电子坐标$q_i$（核坐标$q_{\alpha}$为参数），则位力定理(\ref{eq:14.65})的导出似乎也对电子的动能和势能算符成立：
+    \begin{equation}
+        2 \left\langle \psi_{\text{el}} \middle| \hat{T}_{\text{el}} \middle| \psi_{\text{el}} \right\rangle = \left\langle \psi_{\text{el}} \middle| \sum_i q_i \frac{\partial V_{\text{el}}}{\partial q_i} \middle| \psi_{\text{el}} \right\rangle
+        \label{eq:14.80}
+    \end{equation}
 
+    若将$V_{\text{el}}$视为电子坐标的函数，则它\textit{不是}齐次函数，因为
+    \begin{equation*}
+        \left[\left(s x_i - x_{\alpha}\right)^2 + \left(sy_i - y_{\alpha}\right)^2 + \left(sz_i - z_{\alpha}\right)^2\right]^{-1/2} \neq s^{-1} \left[\left(x_i - x_{\alpha}\right)^2 + \left(y_i - y_{\alpha}\right)^2 + \left(z_i - z_{\alpha}\right)^2\right]^{-1/2}
+    \end{equation*}
+    因此，对于分子电子平均动能和势能，位力理论将不再具有对原子成立的(\ref{eq:14.75})的形式。然而，我们可以将$V_{\text{el}}$看作同时是电子和核笛卡尔坐标的函数。则$V_{\text{el}}$为齐$-1$次函数（$n=-1$），因为
+    \begin{equation*}
+            \left[\left(sx_i - sx_{\alpha}\right)^2 + \left(sy_i - sy_{\alpha}\right)^2 + \left(sz_i - sz_{\alpha}\right)^2\right]^{-1/2} \\
+            = s^{-1} \left[\left(x_i - x_{\alpha}\right)^2 + \left(y_i - y_{\alpha}\right)^2 + \left(z_i - z_{\alpha}\right)^2\right]^{-1/2}
+    \end{equation*}
+    因此，考虑将$V_{\text{el}}$视为电子和核坐标的函数并应用欧拉定理(\ref{eq:14.67})，我们得到
+    \begin{equation*}
+        \sum_i q_i \frac{\partial V_{\text{el}}}{\partial q_i} + \sum_{\alpha} q_{\alpha} \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} = -V_{\text{el}}
+    \end{equation*}
+    在(\ref{eq:14.80})中使用上式，我们得出
+    \begin{equation}
+        2 \left\langle \psi_{\text{el}} \middle| \hat{T}_{\text{el}} \middle| \psi_{\text{el}} \right\rangle = -\left\langle \psi_{\text{el}} \middle| V_{\text{el}} \middle| \psi_{\text{el}} \right\rangle - \left\langle \psi_{\text{el}} \middle| \sum_{\alpha} q_{\alpha} \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} \middle| \psi_{\text{el}} \right\rangle
+        \label{eq:14.81}
+    \end{equation}
+    与原子位力理论(\ref{eq:14.75})相比，该式包含了一个额外项。考虑该额外项，我们有
+    \begin{equation*}
+        \left\langle \psi_{\text{el}} \middle| \sum_{\alpha} q_{\alpha} \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} \middle| \psi_{\text{el}} \right\rangle = \sum_{\alpha} q_{\alpha} \int \psi_{\text{el}}^* \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} \psi_{\text{el}}\:\mathrm{d}\tau_{\text{el}}
+    \end{equation*}
+    其中我们把核坐标$q_{\alpha}$提到积分外面，对电子坐标积分。在第\ref{sec:14.7 The Electrostatic Theorem}节中，我们将证明【见(14.126)后括号中的说明】：
+    % 记得改引用！！！！！
+    \begin{equation}
+        \int \psi_{\text{el}}^* \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} \psi_{\text{el}}\:\mathrm{d}\tau_{\text{el}} = \frac{\partial E_{\text{el}}}{\partial q_{\alpha}}
+        \label{eq:14.82}
+    \end{equation}
+    【方程(\ref{eq:14.82})是赫尔曼-费恩曼定理的一个例子。】在分子电子位力定理(\ref{eq:14.81})中使用上述两个方程，我们得出
+    \begin{equation*}
+        2 \left\langle \hat{T}_{\text{el}} \right\rangle = -\left\langle V_{\text{el}} \right\rangle - \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}}
+    \end{equation*}
+    \begin{equation}
+        2 \left\langle T_{\text{el}} \right\rangle = - \left\langle V_{\text{el}} \right\rangle - \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}}
+        \label{eq:14.83}
+    \end{equation}
+    其中的$q_{\alpha}$为核坐标。再使用
+    \begin{equation}
+        \left\langle T_{\text{el}} \right\rangle + \left\langle V_{\text{el}} \right\rangle = E_{\text{el}}
+        \label{eq:14.84}
+    \end{equation}
+    我们可以从从(\ref{eq:14.83})中消去$\left\langle T_{\text{el}} \right\rangle$或$\left\langle V_{\text{el}} \right\rangle$，得到位力定理的分子形式。
 
+    再来考虑双原子分子。电子能是$R$的函数，$R$为核间距：$E_{\text{el}} = E_{\text{el}}\left(R\right)$。(\ref{eq:14.83})中的求和是对核的笛卡尔坐标$x_a, y_a, z_a, x_b, y_b, z_b$进行的。我们有
+    \begin{equation*}
+        \frac{\partial E_{\text{el}}}{\partial x_a} = \frac{\mathrm{d}E_{\text{el}}}{\mathrm{d} R} \frac{\partial R}{\partial x_a}, \quad \frac{\partial E_{\text{el}}}{\partial x_b} = \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R} \frac{\partial R}{\partial x_b}
+    \end{equation*}
+    \begin{equation*}
+        R = \left[\left(x_a - x_b\right)^2 + \left(y_a - y_b\right)^2 + \left(z_a - z_b\right)^2\right]^{1/2}
+    \end{equation*}
+    \begin{equation}
+        \frac{\partial R}{\partial x_a} = \frac{x_a - x_b}{R}, \quad \frac{\partial R}{\partial x_b} = \frac{x_b - x_a}{R}
+        \label{eq:14.85}
+    \end{equation}
+    $y$和$z$坐标的表达式类似。则(\ref{eq:14.83})中的求和变为
+    \begin{equation*}
+        \begin{aligned}
+            \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}} &= \frac{1}{R} \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R} \left[x_a \left(x_a - x_b\right) + x_b \left(x_b - x_a\right) + y_a \left(y_a - y_b\right) + y_b \left(y_b - y_a\right) \right. \\
+            &\quad \left. + z_a \left(z_a - z_b\right) + z_b \left(z_b - z_a\right)\right] \\
+            \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}} &= R \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R}
+        \end{aligned}
+    \end{equation*}
+    其中用到了$\left(x_a - x_b\right)^2 + \left(y_a - y_b\right)^2 + \left(z_a - z_b\right)^2 = R^2$。因此，双原子分子的电子位力定理为
+    \begin{equation}
+        2 \left\langle T_{\text{el}} \right\rangle = - \left\langle V_{\text{el}} \right\rangle - R \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R}
+        \label{eq:14.86}
+    \end{equation}
+    再使用(\ref{eq:14.84})，我们有两个备选的形式
+    \begin{equation}
+        \left\langle T_{\text{el}} \right\rangle = E_{\text{el}} - R \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R}
+        \label{eq:14.87}
+    \end{equation}
+    \begin{equation}
+        \left\langle V_{\text{el}} \right\rangle = 2E_{\text{el}} + R \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R}
+        \label{eq:14.88}
+    \end{equation}
+    在推导分子电子位力理论(\ref{eq:14.83})时，我们在电子哈密顿算符(\ref{eq:14.77})至(\ref{eq:14.79})中忽略了核间排斥势
+    \begin{equation}
+        V_{NN} = \sum_{\beta} \sum_{\alpha > \beta} \frac{Z_{\alpha} Z_{\beta}}{\left[\left(x_{\alpha} - x_{\beta}\right)^2 + \left(y_{\alpha} - y_{\beta}\right)^2 + \left(z_{\alpha} - z_{\beta}\right)^2\right]^{1/2}}
+        \label{eq:14.89}
+    \end{equation}
+    令
+    \begin{equation*}
+        V = V_{\text{el}} + V_{NN}
+    \end{equation*}
+    其中的$V_{\text{el}}$由(\ref{eq:14.79})给出。我们可以将电子薛定谔方程$\hat{H}_{\text{el}} \psi_{\text{el}} = E_{\text{el}} \psi_{\text{el}}$改写为【式(\ref{eq:13.4})】
+    \begin{equation*}
+        \left(\hat{T}_{\text{el}} + \hat{V}\right) \psi_{\text{el}} = U \left(q_{\alpha}\right) \psi_{\text{el}}
+    \end{equation*}
+    其中
+    \begin{equation*}
+        U \left(q_{\alpha}\right) = E_{\text{el}} \left(q_{\alpha}\right) + V_{NN}
+    \end{equation*}
+    $U\left(q_{\alpha}\right)$是核运动的势能函数。考虑当我们将$V_{NN}$加入到$V_{\text{el}}$中和$E_{\text{el}}$中时，(\ref{eq:14.83})的右侧会发生什么。我们有
+    \begin{equation}
+        - \int \psi_{\text{el}}^* \left(\hat{V}_{\text{el}} + V_{NN}\right) \psi_{\text{el}}\:\mathrm{d}\tau_{\text{el}} - \sum_{\alpha} q_{\alpha} \frac{\partial U}{\partial q_{\alpha}} = - \left\langle \psi_{\text{el}} \middle| \hat{V}_{\text{el}} \middle| \psi_{\text{el}} \right\rangle - V_{NN} - \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}} - \sum_{\alpha} q_{\alpha} \frac{\partial V_{NN}}{\partial q_{\alpha}}
+        \label{eq:14.90}
+    \end{equation}
+    因为$V_{NN}$为核笛卡尔坐标的齐$-1$次函数，所以欧拉定理给出了
+    \begin{equation*}
+        \sum_{\alpha} q_{\alpha} \frac{\partial V_{NN}}{\partial q_{\alpha}} = -V_{NN}
+    \end{equation*}
+    那么(\ref{eq:14.90})变为
+    \begin{equation}
+        - \left\langle \psi_{\text{el}} \middle| \hat{V}_{\text{el}} + V_{NN} \middle| \psi_{\text{el}} \right\rangle - \sum_{\alpha} q_{\alpha} \frac{\partial U}{\partial q_{\alpha}} = - \left\langle \psi_{\text{el}} \middle| \hat{V}_{\text{el}} \middle| \psi_{\text{el}} \right\rangle - \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}}
+        \label{eq:14.91}
+    \end{equation}
+    将(\ref{eq:14.91})代入(\ref{eq:14.83})，得出
+    \begin{equation*}
+        2 \left\langle \psi_{\text{el}} \middle| \hat{T}_{\text{el}} \middle| \psi_{\text{el}} \right\rangle = - \left\langle \psi_{\text{el}} \middle| \hat{V}_{\text{el}} + V_{NN} \middle| \psi_{\text{el}} \right\rangle - \sum_{\alpha} q_{\alpha} \frac{\partial U}{\partial q_{\alpha}}
+    \end{equation*}
+    \begin{equation}
+        2 \left\langle T_{\text{el}} \right\rangle = - \left\langle V \right\rangle - \sum_{\alpha} q_{\alpha} \frac{\partial U}{\partial q_{\alpha}}
+        \label{eq:14.92}
+    \end{equation}
+    其形式与(\ref{eq:14.83})一致。因此，无论我们是否考虑核间排斥势，分子电子位力定理均成立。对于双原子分子，对应于式(\ref{eq:14.86})至(\ref{eq:14.88})，我们得到：
+    \begin{align}
+        2 \left\langle T_{\text{el}} \right\rangle &= - \left\langle V \right\rangle - R \left(\mathrm{d}U / \mathrm{d}R\right) \label{eq:14.93} \\
+        \left\langle T_{\text{el}} \right\rangle &= U - R \left(\mathrm{d}U / \mathrm{d}R\right) \label{eq:14.94} \\
+        \left\langle V \right\rangle &= 2U + R \left(\mathrm{d}U / \mathrm{d}R\right) \label{eq:14.95}
+    \end{align}
 
+    若所有粒子（电子和原子核）之间的距离都为无穷大，则势能$V = V_{\text{el}} + V_{NN} = 0$为零。因此，(\ref{eq:14.93})至(\ref{eq:14.95})中的$U\left(R\right)$在$R = \infty$不趋于零，但趋于孤立原子的能量之和，该总和为负数。
 
+    对于$V$是坐标的齐次函数的某系统，其真实（非相对论）波函数必须满足形式为(\ref{eq:14.70})的位力定理。什么决定了此类系统的\textit{近似}波函数是否满足(\ref{eq:14.70})？答案是：通过在每个笛卡尔坐标前插入变分参数作为乘数，并选择该参数使变分积分最小化，我们可使任意试探变分函数满足位力定理。（证明详见\textit{Kauzmann}, page 229.）此过程称为\textit{标度化}（scaling），乘于各坐标的变分参数称为\textit{标度因子}（scale factor）。对于分子试探函数，标度参数必须置于核坐标与电子坐标之前。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    考虑一些例子。类氦原子的零级微扰波函数(\ref{eq:9.49})没有标度因子，因此不满足位力定理。若我们希望从(\ref{eq:9.49})中计算出$\left\langle T \right\rangle$和$\left\langle V \right\rangle$，会得到$2 \left\langle T \right\rangle \neq - \left\langle V \right\rangle$，见问题14.26。\ce{H2}的海特勒-伦敦试探函数(\ref{eq:13.100})不具有标度因子，因此也不满足位力定理。引入了由变量决定的轨道指数的海特勒-伦敦-王函数满足位力定理。哈特里-福克函数满足位力定理，注意斯莱特基函数(\ref{eq:11.14})中的标度因子。
 
 \section{位力理论和化学键}
 \label{sec:14.5 The Virial Theorem and Chemical Bonding}
