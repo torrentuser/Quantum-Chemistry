@@ -868,11 +868,146 @@
 
     考虑一些例子。类氦原子的零级微扰波函数(\ref{eq:9.49})没有标度因子，因此不满足位力定理。若我们希望从(\ref{eq:9.49})中计算出$\left\langle T \right\rangle$和$\left\langle V \right\rangle$，会得到$2 \left\langle T \right\rangle \neq - \left\langle V \right\rangle$，见问题14.26。\ce{H2}的海特勒-伦敦试探函数(\ref{eq:13.100})不具有标度因子，因此也不满足位力定理。引入了由变量决定的轨道指数的海特勒-伦敦-王函数满足位力定理。哈特里-福克函数满足位力定理，注意斯莱特基函数(\ref{eq:11.14})中的标度因子。
 
-\section{位力理论和化学键}
+\section{位力定理和化学键}
 \label{sec:14.5 The Virial Theorem and Chemical Bonding}
+
+    我们现在用位力定理来考察两个原子形成双原子分子共价键时，电子动能和势能的变化。为了形成一根稳定的共价键，$U\left(R\right)$曲线必须存在显著的最小值。在该最小值处有
+    \begin{equation}
+        \left. \frac{\mathrm{d}U}{\mathrm{d}R} \right|_{R_e} = 0
+        \label{eq:14.96}
+    \end{equation}
+    则(\ref{eq:14.93})至(\ref{eq:14.95})变为
+    \begin{equation}
+        2 \left. \left\langle T_{\text{el}} \right\rangle \right|_{R_e} = - \left. \left\langle V \right\rangle \right|_{R_e}
+        \label{eq:14.97}
+    \end{equation}
+    \begin{equation}
+        \left. \left\langle T_{\text{el}} \right\rangle \right|_{R_e} = \left. U \right|_{R_e}
+        \label{eq:14.98}
+    \end{equation}
+    \begin{equation}
+        \left. \left\langle V \right\rangle \right|_{R_e} = 2 \left. U \right|_{R_e}
+        \label{eq:14.99}
+    \end{equation}
+    这些方程与原子对应的方程有些类似【式(\ref{eq:14.75})和(\ref{eq:14.76})】。在$R = \infty$处，分子解离成孤立原子，根据原子位力定理，有
+    \begin{equation}
+        2 \left. \left\langle T_{\text{el}} \right\rangle \right|_{\infty} = - \left. \left\langle V \right\rangle \right|_{\infty}, \quad \left. \left\langle T_{\text{el}} \right\rangle \right|_{\infty} = -U\left(\infty\right), \quad \left. \left\langle V \right\rangle \right|_{\infty} = 2 U \left(\infty\right)
+        \label{eq:14.100}
+    \end{equation}
+    $U \left(\infty\right)$为两个孤立原子的能量之和。方程(\ref{eq:14.98})至(\ref{eq:14.100})表明
+    \begin{equation}
+        \left. \left\langle T_{\text{el}} \right\rangle \right|_{R_e} - \left. \left\langle T_{\text{el}} \right\rangle \right|_{\infty} = U \left(\infty\right) - U \left(R_e\right)
+        \label{eq:14.101}
+    \end{equation}
+    \begin{equation}
+        \left. \left\langle V \right\rangle \right|_{R_e} - \left. \left\langle V \right\rangle \right|_{\infty} = 2 \left[U\left(R_e\right) - U\left(\infty\right)\right]
+        \label{eq:14.102}
+    \end{equation}
+    为了能成键，我们有$U \left(R_e\right) < U\left(\infty\right)$。因此方程(\ref{eq:14.101})和(\ref{eq:14.102})表明$R_e$处分子平均势能\textit{小于}两个孤立原子的平均势能，而$R_e$处分子平均动能\textit{大于}$\infty$处的动能。势能的降低是动能增加的两倍，因此允许电子感受到来自两个原子核的吸引，也可能导致分子中轨道指数的增加（见第\ref{sec:13.5 Approximate Treatments of the H2 Ground Electronic State}节）。平衡解离能(\ref{eq:13.9})为$D_e = \frac{1}{2} \left(\left. \left\langle V \right\rangle\right|_{\infty} - \left.\left\langle V \right\rangle\right|_{R_e}\right)$。
+
+    考虑$R$值很大时，平均势能和动能的行为。无电荷原子和分子之间（不同于成键作用）的力称为\textit{范德华力}（van der Waals forces）。对于两个中性原子，至少有一个原子处于$s$态，量子力学微扰理论给出了范德华力的吸引势正比于$1/R^7$，势能的表现为
+    \begin{equation}
+        U \left(R\right) \approx U\left(\infty\right) - \frac{A}{R^6}, \quad R \text{ large}
+        \label{eq:14.103}
+    \end{equation}
+    其中的$A$为正常数（见\textit{Kauzmann}, Chapter 13.）该表达式最先由伦敦导出，则中性原子之间的范德华力也称为\textit{伦敦力}（London forces）或\textit{色散力}（dispersion forces）。（回忆第\ref{sec:13.7 MO Configurations for Homonuclear Diatomic Molecules}末尾的讨论。）
+
+    对(\ref{eq:14.103})求导，将$U$和$\mathrm{d}U/\mathrm{d}R$的表达式代入(\ref{eq:14.94})和(\ref{eq:14.95})，再使用(\ref{eq:14.100})，我们得到
+    \begin{equation}
+        \left\langle V \right\rangle \approx \left. \left\langle V \right\rangle \right|_{\infty} + \frac{4A}{R^6}, \quad \left\langle T_{\text{el}} \right\rangle \approx \left. \left\langle T_{\text{el}} \right\rangle \right|_{\infty} - \frac{5A}{R^6}, \quad R \text{ large}
+        \label{eq:14.104}
+    \end{equation}
+    因此，当$R$从无穷大逐渐减小时，平均势能首先增加，而平均动能首先减少。将这些结论与我们有关$\left. \left\langle V \right\rangle \right|_{R_e}$和$\left. \left\langle T_{\text{el}} \right\rangle \right|_{R_e}$的结论结合起来发现，在$R_e$到无穷远处的某区域内，$\left\langle V \right\rangle$有最大值，而$\left\langle T_{\text{el}} \right\rangle$有最小值。
+
+    再来考虑$R$较小的情况。我们可以对双原子分子应用微扰理论，将其视为分由分子的两个原子合并而成的联合原子（UA）。再将分子和联合原子哈密顿算符之间的区别视为微扰：$H' = \hat{H}_{\text{mol}} - \hat{H}_{\text{UA}}$。可以证明，分子的纯电子能量在$R$很小时有如下形式【W. A. Bingel, \textit{J. Chem. Phys.}, \textbf{30}, 1250 (1959); I. N. Levine, \textit{J Chem. Phys.}, \textbf{40}, 3444 (1964); \textbf{41}, 2044 (1965); W. ByersBrown and E. Steiner, \textit{J. Chem. Phys.} \textbf{44}, 3934 (1966)】：
+    \begin{equation}
+        E_{\text{el}} = E_{\text{UA}} + aR^2 + bR^3 + cR^4 + dR^5 + eR^5 \ln R + \ldots
+        \label{eq:14.105}
+    \end{equation}
+    其中的$E_{\text{UA}}$为联合原子的能量，$a, b, c, d, e$为常数。当$R \ll R_e$时，我们可以使用(\ref{eq:14.105})和$U = E_{\text{el}} + V_{NN}$【式(\ref{eq:13.8})】来得出
+    \begin{equation}
+        U\left(R\right) \approx \frac{Z_a Z_b}{R} + E_{\text{UA}} + aR^2, \quad R \text{ small}
+        \label{eq:14.106}
+    \end{equation}
+    则位力定理给出了（原子单位制下）
+    \begin{equation*}
+        \left\langle T_{\text{el}} \right\rangle \approx -E_{\text{UA}} - 3aR^2, \quad R \text{ small}
+    \end{equation*}
+    \begin{equation*}
+        \left\langle V \right\rangle \approx \frac{Z_a Z_b}{R} + 2E_{\text{UA}} + 4aR^2, \quad R \text{ small}
+    \end{equation*}
+    由于位力定理(\ref{eq:14.76})对联合原子也成立，所以有$\left. \left\langle T_{\text{el}} \right\rangle \right|_0 = -E_{\text{UA}}$和$\left. \left\langle V \right\rangle \right|_0 = 2E_{\text{UA}}$。因此，
+    \begin{equation}
+        \left\langle T_{\text{el}} \right\rangle \approx \left. \left\langle T_{\text{el}} \right\rangle \right|_0 - 3aR^2, \quad R \text{ small}
+        \label{eq:14.107}
+    \end{equation}
+    \begin{equation}
+        \left\langle V \right\rangle \approx  \frac{Z_a Z_b}{R} + \left. \left\langle V \right\rangle \right|_0 + 4aR^2, \quad R \text{ small}
+        \label{eq:14.108}
+    \end{equation}
+    由于核间排斥势的作用，当$R$趋于零时，$\left\langle V \right\rangle$趋于无穷。
+
+    找到$\left\langle V \right\rangle$和$\left\langle T_{\text{el}} \right\rangle$作为$R$当函数的一般行为后，我们可以绘制出图象\ref{fig:14.1}。该图并非针对某特定分子，但与已知的\ce{H2}和\ce{H2+}图象曲线类似。【W. Kolos and L. Wolniewicz, \textit{J. Chem. Phys.}, \textbf{41}, 3663 (1964); Slater, \textit{Quantum Theory of Molecules and Solids}, Volume 1, p. \textbf{36}。】其他双原子分子存在类似的曲线图象【see Fig. 1 in J. Hernandez-Trujillo et al., \textit{Faraday Discuss.}, \textbf{135}, 79 (2007)】。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Figures/14.1.png}
+        \caption{双原子分子平均势能与动能的变化。能量单位取分离原子间的电子动能。}
+        \label{fig:14.1}
+    \end{figure}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/14.2.png}
+        \caption{\ce{H2+}分子在较大核间距条件下，沿核间轴方向电子运动的势能。采用原子单位制。}
+        \label{fig:14.2}
+    \end{figure}
+
+    我们如何解释平均动能和势能随$R$的变化情况？考虑\ce{H2+}。电子势能函数在原子单位制下为
+    \begin{equation}
+        V_{\text{el}} = -\frac{1}{R_a} - \frac{1}{R_b}
+        \label{eq:14.109}   
+    \end{equation}
+    若在分子轴上绘制$V_{\text{el}}$点（对应较大$R$值）的分布，将得到如图\ref{fig:14.2}所示的曲线，其形态酷似两条氢原子势能曲线（图\ref{fig:6.7}）并列排列。我们看到，形成分子中的重叠$1s$原子轨道使基态核间电荷密度升高。然而，图\ref{fig:14.2}显示，当$R$很大时，在两个原子核之间的中间区域，势能相对\textit{较高}。因此，当$R$从无穷大逐渐减小时，$\left\langle V \right\rangle$首先增加。再考虑动能。不确定性原理(\ref{eq:5.13})给出了$\left(\Delta x\right)^2 \left(\Delta p_x\right)^2 \geq \hbar^2 / 4$。对于某定态，$\left\langle p_x \right\rangle$为零【见式(\ref{eq:3.92})、问题14.31】，方程(\ref{eq:5.11})给出了$\left(\Delta p_x\right)^2 = \left\langle p_x^2 \right\rangle$。因此，$\left(\Delta x\right)^2$很小的值意味着$\left\langle p_x^2 \right\rangle$很大，进而意味着动能平均值$\left\langle p^2 \right\rangle/ 2m$也很大。因此，某紧凑的$\psi_{\text{el}}$对应于较大的电子动能。在分子形成的初始阶段，原子核之间概率密度的积累对应于波函数的紧凑性低于分离原子状态。因此，当$R$从无穷大减小时，电子动能最初会减小。图\ref{fig:14.2}给出了\ce{H2+}两个最低能态的能量$E_{\text{el}}$。当$R$较大时，原子核间的区域为经典禁区，但根据量子力学（隧穿效应），该区域是可及的。
+
+    现在考虑当$R$进一步减小时的情况。当$R$取中间值时绘制(\ref{eq:14.109})的图象，可发现此时两个原子核之间的区域成为低势能区——因为该区域内的电子同时受到两个原子核的显著吸引力（见图\ref{fig:14.3}）。因此在$R$的中间值范围内，原子核间的电荷重叠积累降低了势能。相较于大$R$值，波函数在R的中间值范围内变得更为紧凑，当$R$减小时，有$\left\langle T_{\text{el}} \right\rangle$增加。事实上，从图\ref{fig:14.1}和式(\ref{eq:14.101})可见，与分离的原子相比，分子中$R_e$处的$\left\langle T_{\text{el}} \right\rangle$\textit{更大}。因此$R_e$处的分子波函数比对应的分离原子波函数更紧密。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Figures/14.3.png}
+        \caption{\ce{H2+}分子在中等核间距条件下，沿核间轴方向电子运动的势能。}
+        \label{fig:14.3}
+    \end{figure}
+
+    若$R$非常小，则由于核间排斥势的存在，平均势能趋于无穷大。\textit{然而}，对于$R = R_e$时，图\ref{fig:14.1}表明$\left\langle V \right\rangle$在$R$减小时仍急剧减小，导致了$\left\langle T_{\text{el}} \right\rangle$的增加，而不是核间排斥势，使得当$R$小于$R_e$时$U\left(R\right)$曲线上升。分子波函数被压缩到更小的区域，伴随$\left\langle T_{\text{el}} \right\rangle$值的增加，这一过程比核间排斥势更重要，是导致原子间初始排斥力的关键因素。
 
 \section{赫尔曼-费恩曼定理}
 \label{sec:14.6 The Hellmann-Feynman Theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{静电力定理}
 \label{sec:14.7 The Electrostatic Theorem}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  9 SEP 2025 16:35
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  13 SEP 2025 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1976,9 +1976,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 689--691
 
  []
 
-[325] [326] [327] [328]) (./chapters/15.tex [329] [330
+[325] [326] [327] [328] [329]
+File: Figures/14.1.png Graphic file (type bmp)
+<Figures/14.1.png>
+File: Figures/14.2.png Graphic file (type bmp)
+<Figures/14.2.png>
+ [330]
+File: Figures/14.3.png Graphic file (type bmp)
+<Figures/14.3.png>
+) (./chapters/15.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
+ [331] [332]
 Chapter 15.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1987,42 +1996,44 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ) (./chapters/16.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [331]
+ [333
+
+]
 Overfull \vbox (103.21605pt too high) has occurred while \output is active []
 
- [332]
+ [334]
 Chapter 16.
 ) (./chapters/17.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [333
+ [335
 
 ]
 Overfull \vbox (24.89746pt too high) has occurred while \output is active []
 
- [334]
+ [336]
 Chapter 17.
-[335
+[337
 
-]) (./chapters/appendix.tex [336]
+]) (./chapters/appendix.tex [338]
 附录 A.
-) (./chapters/bibliography.tex [337
+) (./chapters/bibliography.tex [339
 
-] [338
+] [340
 
 ]
 附录 B.
-[339] [340
+[341] [342
 
-]) (./chapters/answers.tex [341] [342
+]) (./chapters/answers.tex [343] [344
 
 ]
 附录 C.
-) (./chapters/index.tex [343] [344
+) (./chapters/index.tex [345] [346
 
 ]
 附录 D.
-) [345] (./Quantum Chemistry.aux)
+) [347] (./Quantum Chemistry.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -2039,12 +2050,12 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 41612 strings out of 474773
- 937171 string characters out of 5757723
+ 41656 strings out of 474773
+ 937903 string characters out of 5757723
  2170839 words of memory out of 5000000
- 62988 multiletter control sequences out of 15000+600000
+ 63029 multiletter control sequences out of 15000+600000
  576125 words of font info for 183 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,25n,114p,1794b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Quantum Chemistry.pdf (353 pages).
+Output written on Quantum Chemistry.pdf (355 pages).
