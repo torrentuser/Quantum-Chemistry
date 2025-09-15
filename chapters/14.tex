@@ -981,36 +981,141 @@
 \section{赫尔曼-费恩曼定理}
 \label{sec:14.6 The Hellmann-Feynman Theorem}
 
+    考虑某含时哈密顿算符$\hat{H}$包含参数的系统。一个很明显的例子是分子的电子哈密顿算符(\ref{eq:13.5})，它在参数上依赖于核坐标。然而，任何系统的哈密顿算符都包含参数。例如，在一维谐振子的哈密顿算符$-\left(\hbar^2 / 2m\right)\left(\mathrm{d}^2 / \mathrm{d}x^2\right) + \frac{1}{2} kx^2$中，力常数$k$为参数，质量$m$也为参数。虽然$U$是常量，但我们通常也把它视为参数定态能量$E_n$也是这些参数的函数，与$\hat{H}$一致。例如，对于谐振子，有
+    \begin{equation}
+        E_n = \left(v + \frac{1}{2}\right)h\nu = \left(v + \frac{1}{2}\right) \hbar \left({k}/{m}\right)^{1/2}
+        \label{eq:14.110}
+    \end{equation}
+    定态波函数也依赖于$\hat{H}$中的参数。我们现在推导$E_n$是如何与每个参数相关联的。更具体地，当我们取其他参数保持不变时，若$\lambda$为某参数之一，我们求偏导数$\partial E_n / \partial \lambda$。
+    
+    从薛定谔方程
+    \begin{equation}
+        \hat{H} \psi_n = E_n \psi_n
+        \label{eq:14.111}
+    \end{equation}
+    开始。其中的$\psi_n$为已归一化的定态本征函数。由于已归一化，我们有
+    \begin{equation}
+        E_n = \int 2\psi_n^* \hat{H} \psi_n \:\mathrm{d}\tau
+        \label{eq:14.112}
+    \end{equation}
+    \begin{equation}
+        \frac{\partial E_n}{\partial \lambda} = \frac{\partial}{\partial \lambda} \int \psi_n^* \hat{H} \psi_n \:\mathrm{d}\tau
+        \label{eq:14.113}
+    \end{equation}
+    (\ref{eq:14.112})中的积分是全空间定积分，它的值在参数上取决于$\lambda$，因为$\hat{H}$和$\psi_n$都依赖于$\lambda$。只要被积函数行为良好，我们可以通过对被积函数关于参数求导，然后进行积分，来求得积分关于该参数的导数。因此，
+    \begin{equation}
+        \frac{\partial E_n}{\partial \lambda} = \int \frac{\partial}{\partial \lambda} \left(\psi_n^*\hat{H}\psi_n\right)\:\mathrm{d}\tau = \int \frac{\partial \psi_n^*}{\partial \lambda} \hat{H} \psi_n \:\mathrm{d}\tau + \int \psi_n^* \frac{\partial}{\partial \lambda} \left(\hat{H}\psi_n\right) \:\mathrm{d}\tau
+        \label{eq:14.114}
+    \end{equation}
+    我们有
+    \begin{equation}
+        \frac{\partial}{\partial \lambda} \left(\hat{H}\psi_n\right) = \frac{\partial}{\partial \lambda} \left(\hat{T}\psi_n\right) + \frac{\partial}{\partial \lambda} \left(\hat{V}\psi_n\right)
+        \label{eq:14.115}
+    \end{equation}
+    势能算符只是乘以$V$，所以
+    \begin{equation}
+        \frac{\partial}{\partial \lambda} \left(\hat{V}\psi_n\right) = \frac{\partial V}{\partial \lambda} \psi_n + V \frac{\partial \psi_n}{\partial \lambda}
+        \label{eq:14.116}
+    \end{equation}
+    参数$\lambda$将出现在动能算符中，作为乘积因子的一部分，用于乘以一个或多个坐标导数项。例如，若取粒子质量为$\lambda$，则单粒子问题中可得：
+    \begin{equation*}
+        \begin{aligned}
+            \hat{T} &= -\frac{\hbar^2}{2\lambda} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\right) \\
+            \frac{\partial}{\partial \lambda} \left(\hat{T}\psi_n\right) &= \frac{\hbar^2}{2} \frac{\partial}{\partial \lambda} \left[\frac{1}{\lambda}\left(\frac{\partial^2 \psi_n}{\partial x^2} + \frac{\partial^2 \psi_n}{\partial y^2} + \frac{\partial^2 \psi_n}{\partial z^2}\right)\right] \\
+            &= \frac{\hbar^2}{2\lambda^2} \left(\frac{\partial^2 \psi_n}{\partial x^2} + \frac{\partial^2 \psi_n}{\partial y^2} + \frac{\partial^2 \psi_n}{\partial z^2}\right) - \frac{\hbar^2}{2\lambda} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\right) \left(\frac{\partial \psi_n}{\partial \lambda}\right) \\
+        \end{aligned}
+    \end{equation*}
+    因为我们可以改变偏微分的顺序而不影响结果。可以讲最后一个方程写为
+    \begin{equation}
+        \frac{\partial}{\partial \lambda} \left(\hat{T}\psi_n\right) = \left(\frac{\partial \hat{T}}{\partial \lambda}\right) \psi_n + \hat{T} \left(\frac{\partial \psi_n}{\partial \lambda}\right)
+        \label{eq:14.117}
+    \end{equation}
+    其中$\partial \hat{T} / \partial \lambda$可以通过将$\hat{T}$对$\lambda$求偏导得出，将其视为一个函数而不是算符。虽然，通过考虑一个特定的$\hat{T}$和$\lambda$，我们得到了(\ref{eq:14.117})，但同样的过程适用于更广泛的情况。将(\ref{eq:14.116})和(\ref{eq:14.117})相结合，我们得到
+    \begin{equation}
+        \frac{\partial}{\partial \lambda} \left(\hat{H}\psi_n\right) = \left(\frac{\partial \hat{H}}{\partial \lambda}\right) \psi_n + \hat{H} \left(\frac{\partial \psi_n}{\partial \lambda}\right)
+        \label{eq:14.118}
+    \end{equation}
+    则(\ref{eq:14.114})变为
+    \begin{equation}
+        \frac{\partial E_n}{\partial \lambda} = \int \frac{\partial \psi_n^*}{\partial \lambda} \hat{H} \psi_n \:\mathrm{d}\tau + \int \psi_n^* \frac{\partial \hat{H}}{\partial \lambda} \psi_n \:\mathrm{d}\tau + \int \psi_n^* \hat{H} \frac{\partial \psi_n}{\partial \lambda} \:\mathrm{d}\tau
+        \label{eq:14.119}
+    \end{equation}
+    对于(\ref{eq:14.119})中的第一个积分，我们有
+    \begin{equation}
+        \int \frac{\partial \psi_n^*}{\partial \lambda} \hat{H} \psi_n \:\mathrm{d}\tau = E_n \int \frac{\partial \psi_n^*}{\partial \lambda} \psi_n \:\mathrm{d}\tau
+        \label{eq:14.120}
+    \end{equation}
+    再使用$\hat{H}$的厄米性质以及(\ref{eq:14.111})，我们得出(\ref{eq:14.119})中最后一个积分为
+    \begin{equation*}
+        \int \psi_n^* \hat{H} \frac{\partial \psi_n}{\partial \lambda} \:\mathrm{d}\tau = \int \frac{\partial \psi_n}{\partial \lambda} \left(\hat{H} \psi_n\right)^* \:\mathrm{d}\tau = E_n \int \psi_n^* \frac{\partial \psi_n}{\partial \lambda} \:\mathrm{d}\tau
+    \end{equation*}
+    因此，
+    \begin{equation}
+        \frac{\partial E_n}{\partial \lambda} = \int \psi_n^* \frac{\partial \hat{H}}{\partial \lambda} \psi_n \:\mathrm{d}\tau + E_n \int \frac{\partial \psi_n^*}{\partial \lambda} \psi_n \:\mathrm{d}\tau + E_n \int \psi_n^* \frac{\partial \psi_n}{\partial \lambda} \:\mathrm{d}\tau
+        \label{eq:14.121}
+    \end{equation}
+    波函数已归一化，则
+    \begin{equation*}
+        \int \psi_n^* \psi_n \:\mathrm{d}\tau = 1, \quad \frac{\partial}{\partial \lambda} \int \psi_n^* \psi_n \:\mathrm{d}\tau = 0
+    \end{equation*}
+    \begin{equation}
+        \int \frac{\partial \psi_n^*}{\partial \lambda} \psi_n \:\mathrm{d}\tau + \int \psi_n^* \frac{\partial \psi_n}{\partial \lambda} \:\mathrm{d}\tau = 0
+        \label{eq:14.122}
+    \end{equation}
+    在(\ref{eq:14.121})中使用(\ref{eq:14.122})，我们得到
+    \begin{equation}
+        \boxed{
+            \frac{\partial E_n}{\partial \lambda} = \int \psi_n^* \frac{\partial \hat{H}}{\partial \lambda} \psi_n \:\mathrm{d}\tau
+        }
+        \label{eq:14.123}
+    \end{equation}
+    方程(\ref{eq:14.123})称为\textbf{（广义）赫尔曼-费恩曼定理}【（generalized） Hellmann-Feynman theorem】。【有关赫尔曼-费恩曼定理的起源和其相关定理的讨论，见J. I. Musher, \textit{Am. J. Phys.}, \textbf{34}, 267 (1966).】
 
+    \begin{examplebox}
+        \textbf{例题：}对一维谐振子应用广义赫尔曼-费恩曼定理，将$\lambda$视为力常数。
+        \\
 
+        对于谐振子，我们有$\hat{H} = -\left(\hbar^2 / 2m\right)\left(\mathrm{d}^2 / \mathrm{d}x^2\right) + \frac{1}{2} kx^2$，$\partial \hat{H} / \partial k = \frac{1}{2} x^2$。能级为$E_v = \left(v + \frac{1}{2}\right) h\nu = \left(v + \frac{1}{2}\right) h \left(k/m\right)^{1/2}/2\pi$。我们有
+        \begin{equation*}
+            \partial E_v / \partial k = \frac{1}{2} \left(v + \frac{1}{2}\right) h \left(k/m\right)^{-1/2} / 2\pi = \frac{1}{2} \left(v + \frac{1}{2}\right) h\nu / k
+        \end{equation*}
+        将其带入(\ref{eq:14.123})，我们得到
+        \begin{equation}
+            \int_{-\infty}^{\infty} \psi_v^*  x^2 \psi_v \:\mathrm{d}x = \left(v + \frac{1}{2}\right) h\nu / k
+            \label{eq:14.124}
+        \end{equation}
+        在没有计算任何积分的情况下，我们得到了任何谐振子定态的$\left\langle x^2 \right\rangle$的值。该结果也可从位力定理导出；见方程(\ref{eq:14.74})。对于第三种导出方法，见\textit{Eyring, Walter, and Kimball}, p.79.
+    \end{examplebox}
 
+    在赫尔曼-费恩曼定理的推导过程中，我们假设了$\partial \psi / \partial \lambda$存在。对于属于某简并能级的状态，该假设可能不成立，则(\ref{eq:14.123})不成立。将参数的值从$\lambda$变为$\lambda + \mathrm{d} \lambda$，相当于施加微扰$\hat{H}' = \hat{H} \left(\lambda + \mathrm{d}\lambda\right) - \hat{H} \left(\lambda\right) \approx \left(\partial \hat{H} / \partial \lambda\right) \mathrm{d}\lambda$。该微扰将$\psi$从$\psi\left(\lambda\right)$变为$\psi\left(\lambda + \mathrm{d}\lambda\right)$。若$\psi\left(\lambda\right)$不是微扰$\hat{H}'$的零级校正波函数(\ref{eq:9.73})之一，则$\psi\left(\lambda\right)$不等于$\lim_{\mathrm{d}\lambda \to 0} \psi\left(\lambda + \mathrm{d}\lambda\right)$，因此$\psi$在$\mathrm{d}\lambda = 0$处有非连续跳跃，$\partial \psi / \partial \lambda$不存在。\textit{当且仅当我们使用微扰$\hat{H}'$的零级校正波函数时，可以对属于简并能级的波函数赫尔曼-费恩曼定理。}这些校正波函数可以通过定义$\hat{H}' \equiv \left(\partial \hat{H} / \partial \lambda\right) \mathrm{d}\lambda$，然后求解方程(\ref{eq:9.83})和(\ref{eq:9.81})得到。【因为$E^{\left(1\right)}$正比于$\mathrm{d}\lambda$，我们可以在(\ref{eq:9.83})和(\ref{eq:9.81})中用$\partial \hat{H} / \partial \lambda$代替$\hat{H}'$，用$E^{\left(1\right)} / \mathrm{d}\lambda$代替$E^{\left(1\right)}$。】更具体的细节，见G. P. Zhang and T. F. George, \textit{Phys. Rev. B}, \textbf{69}, 167102 (2004)中的引文4-7。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    对类氢原子应用赫尔曼-费恩曼定理，将$Z$视为参数，得到（问题14.37a）
+    \begin{equation}
+        \int r^{-1} \left|\psi\right|^2\:\mathrm{d}\tau = \left\langle \frac{1}{r} \right\rangle = \frac{Z}{n^2} \left(\frac{1}{a_0}\right)
+        \label{eq:14.125}
+    \end{equation}
+    该结果也可以从位力定理导出，见式(\ref{eq:14.76})。
 
 \section{静电力定理}
 \label{sec:14.7 The Electrostatic Theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section*{总结}
 
