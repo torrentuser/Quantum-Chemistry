@@ -1096,26 +1096,127 @@
     \end{equation}
     该结果也可以从位力定理导出，见式(\ref{eq:14.76})。
 
-\section{静电力定理}
+\section{静电定理}
 \label{sec:14.7 The Electrostatic Theorem}
 
+    赫尔曼和费恩曼分别独立地将(\ref{eq:14.123})应用于分子，将$\lambda$视为某原子核的笛卡尔坐标。我们现在来考虑他们得到的结果。
 
+    与往常一样，我们使用玻恩-奥本海默近似，来求解某给定核组态的电子薛定谔方程【式(\ref{eq:13.4})至(\ref{eq:13.6})】
+    \begin{equation*}
+        \left(\hat{T}_{\text{el}} + \hat{V}\right) \psi_{\text{el}} = \left(\hat{T}_{\text{el}} + \hat{V}_{\text{el}} + \hat{V}_{NN}\right) \psi_{\text{el}} = U \psi_{\text{el}}
+    \end{equation*}
+    其中的$\hat{T}_{\text{el}}$、$\hat{V}_{\text{el}}$和$\hat{V}_{NN}$分别由方程(\ref{eq:14.78})、(\ref{eq:14.79})和(\ref{eq:14.89})给出。哈密顿算符$\hat{T}_{\text{el}} + \hat{V}_{\text{el}} + \hat{V}_{NN}$依赖于作为参数的核坐标。若$x_{\delta}$为原子核$\delta$的$x$坐标，则根据广义赫尔曼-费恩曼定理，我们有
+    \begin{equation}
+        \frac{\partial U}{\partial x_{\delta}} = \int \psi_{\text{el}}^* \frac{\partial\left(\hat{T}_{\text{el}} + \hat{V}_{\text{el}} + \hat{V}_{NN}\right)}{\partial x_{\delta}} \psi_{\text{el}} \:\mathrm{d}\tau_{\text{el}} = \int \psi_{\text{el}}^* \left(\frac{\partial V_{\text{el}}}{\partial x_{\delta}} + \frac{\partial V_{NN}}{\partial x_{\delta}}\right) \psi_{\text{el}} \:\mathrm{d}\tau_{\text{el}}
+        \label{eq:14.126}
+    \end{equation}
+    因为$\hat{T}_{\text{el}}$与核的笛卡尔坐标无关，从(\ref{eq:14.78})中可以看出。【若我们在$V$中忽略$V_{NN}$，则我们会得到(\ref{eq:14.82})，在推导分子电子位力定理时使用过该式。】由(\ref{eq:14.79})，在原子单位制下，我们得到
+    \begin{equation}
+        \frac{\partial V_{\text{el}}}{\partial x_{\delta}} = - \sum_i Z_{\delta} \frac{\left(x_{i} - x_{\delta}\right)}{r_{i\delta}^3}
+        \label{eq:14.127}
+    \end{equation}
+    其中的$r_{i\delta}$是电子$i$与原子核$\delta$之间的距离。为了求出$\partial V_{NN} / \partial x_{\delta}$，我们只需考虑包含原子核$\delta$的核间排斥势项。因此，
+    \begin{equation*}
+        \frac{\partial V_{NN}}{\partial x_{\delta}} = \frac{\partial}{\partial x_{\delta}} \sum_{\alpha \neq \delta} \frac{Z_{\alpha} Z_{\delta}}{\left[\left(x_{\alpha} - x_{\delta}\right)^2 + \left(y_{\alpha} - y_{\delta}\right)^2 + \left(z_{\alpha} - z_{\delta}\right)^2\right]^{1/2}} = \sum_{\alpha \neq \delta} Z_{\alpha} Z_{\delta} \frac{\left(x_{\delta} - x_{\alpha}\right)}{R_{\alpha\delta}^3}
+    \end{equation*}
+    其中的$R_{\alpha\delta}$为原子核$\alpha$与$\delta$之间的距离。因为$\partial V_{NN} / \partial x_{\delta}$不包含电子坐标，以及$\psi_{\text{el}}$已归一化，所以(\ref{eq:14.126})变为
+    \begin{equation}
+        \frac{\partial U}{\partial x_{\delta}} = - Z_{\delta} \int \left|\psi_{\text{el}}\right|^2 \sum_i \frac{x_{i} - x_{\delta}}{r_{i\delta}^3} \:\mathrm{d}\tau_{\text{el}} + \sum_{\alpha \neq \delta} Z_{\alpha} Z_{\delta} \frac{x_{\alpha} - x_{\delta}}{R_{\alpha\delta}^3}
+        \label{eq:14.128}
+    \end{equation}
+    考虑(\ref{eq:14.128})中的积分，使用(\ref{eq:14.8})，其中$B\left(\mathbf{r}_i\right) = \left(x_i - x_{\delta}\right) / r_{i\delta}^3$，我们得到
+    \begin{equation}
+        \frac{\partial U}{\partial x_{\delta}} = - Z_{\delta} \int \int \int \rho \left(x,y,z\right) \frac{\left(x - x_{\delta}\right)}{r_{\delta}^3} \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z + \sum_{\alpha \neq \delta} Z_{\alpha} Z_{\delta} \frac{x_{\alpha} - x_{\delta}}{R_{\alpha\delta}^3}
+        \label{eq:14.129}
+    \end{equation}
+    变量$r_{\delta}$为点$\left(x,y,z\right)$与原子核$\delta$之间的距离：
+    \begin{equation*}
+        r_{\delta} = \left[\left(x - x_{\delta}\right)^2 + \left(y - y_{\delta}\right)^2 + \left(z - z_{\delta}\right)^2\right]^{1/2}
+    \end{equation*}
+    (\ref{eq:14.129})的意义是什么呢？在玻恩-奥本海默近似中，$U\left(x_{\alpha}, y_{\alpha}, z_{\alpha}, x_{\beta}, \ldots\right)$为核运动的势能函数，核薛定谔方程为
+    \begin{equation}
+        \left(-\frac{\hbar^2}{2}\sum_{\alpha}\frac{1}{m_{\alpha}}\nabla_{\alpha}^2 + U\right) \psi_N = E \psi_N
+        \label{eq:14.130}
+    \end{equation}
+    因此，$-\partial U / \partial x_{\delta}$可以视为【见式(\ref{eq:5.31})】其他原子核和电子作用于核$\delta$上有效力的$x$分量。除了(\ref{eq:14.129})以外，对于$\partial U / \partial y_{\delta}$和$\partial U / \partial z_{\delta}$，我们也可以得到对应的方程。若记$\mathbf{F}_{\delta}$为作用于核$\delta$上的有效力，则
+    \begin{equation}
+        \mathbf{F}_{\delta} = -\mathbf{i} \frac{\partial U}{\partial x_{\delta}} - \mathbf{j} \frac{\partial U}{\partial y_{\delta}} - \mathbf{k} \frac{\partial U}{\partial z_{\delta}}
+        \label{eq:14.131}
+    \end{equation}
+    \begin{equation}
+        \mathbf{F}_{\delta} = - Z_{\delta} \int \int \int \rho \left(x,y,z\right) \frac{\mathbf{r}_{\delta}}{r_{\delta}^3} \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z + \sum_{\alpha \neq \delta} Z_{\alpha} Z_{\delta} \frac{\mathbf{R}_{\alpha\delta}}{R_{\alpha\delta}^3}
+        \label{eq:14.132}
+    \end{equation}
+    其中$\mathbf{r}_{\delta}$为从点$\left(x,y,z\right)$到原子核$\delta$的位矢：
+    \begin{equation}
+        \mathbf{r}_{\delta} = \mathbf{i} \left(x_{\delta} - x\right) + \mathbf{j} \left(y_{\delta} - y\right) + \mathbf{k} \left(z_{\delta} - z\right)
+        \label{eq:14.133}
+    \end{equation}
+    而$\mathbf{R}_{\alpha\delta}$为从原子核$\alpha$到$\delta$的位矢：
+    \begin{equation*}
+        \mathbf{R}_{\alpha\delta} = \mathbf{i} \left(x_{\delta} - x_{\alpha}\right) + \mathbf{j} \left(y_{\delta} - y_{\alpha}\right) + \mathbf{k} \left(z_{\delta} - z_{\alpha}\right)
+    \end{equation*}
 
+    方程（\ref{eq:14.132}）具有简单的物理解释。想象电子被“涂开”在某电荷分布中，其电荷密度在原子单位制下为$-\rho \left(x,y,z\right)$。则微小元电荷$-\rho \:\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$作用于原子核$\delta$上的力为【式(\ref{eq:6.56})】
+    \begin{equation}
+        -Z_{\delta} \frac{\mathbf{r}_{\delta}}{r_{\delta}^3} \rho \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z
+        \label{eq:14.134}
+    \end{equation}
+    对式(\ref{eq:14.134})进行积分可得，该假想的电子云对原子核$\delta$施加的总力由式(\ref{eq:14.132})右侧第一项给出。(\ref{eq:14.132})右侧的第二项很明显是由其他核静电排斥作用产生的，作用于核$\delta$的库仑力。
 
+    因此，\textit{分子中原子核所受的有效作用力可通过简单的静电学计算得出，其为其他原子核施加的库仑力与假想电子云所施加的库仑力之和。该电子云的电荷密度$-\rho \left(x,y,z\right)$可通过求解电子薛定谔方程获得。}这就是\textbf{赫尔曼-费恩曼静电定理}（Hellmann-Feynman electrostatic theorem）。电子电荷密度依赖于确定核组态的参数：$\rho = \rho \left(x,y,z;x_{\alpha},y_{\alpha},z_{\alpha};x_{\beta},\ldots\right)$。
 
+    静电定理从玻恩-奥本海默近似推导出来是完全合理的，因为电子的快速运动使得电子波函数和概率密度能够立即适应核配置的变化。电子的高速运动使惰性原子核将电子“视为”电荷云而非离散粒子。原子核所受有效力为静电力的事实，证实分子中不存在“神秘的量子力学作用力”。
 
+    让我们探讨静电定理对双原子分子中化学键的意义。取核间轴为$z$轴（图\ref{fig:14.4}）。根据对称性，作用于两个原子核上的有效力的x和y分量均为零。【可以证明，核$a$和$b$所受力的$z$分量关系为$F_{z,a} = -F_{z,b}$（问题14.40）。作用于$a$和$b$的有效力大小相等，方向相反。】
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.45\textwidth]{Figures/14.4.png}
+        \caption{双原子分子的坐标系统。原点为$O$。}
+        \label{fig:14.4}
+    \end{figure}
 
+    由(\ref{eq:14.134})和(\ref{eq:14.133})式可知，在$\left(x, y, z\right)$点附近无限小区域内，电子电荷微元对原子核$a$产生的有效力的$z$分量为：
+    \begin{equation}
+        -Z_{a} \rho \left[\left(z_a - z\right) / r_a^3\right] \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z = Z_a \rho \left(\cos\theta_a / r_a^2\right) \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z
+        \label{eq:14.135}
+    \end{equation}
+    因为$\cos\theta_a = \left(z - z_a\right) / r_a$。（$z_a$为负数。）同样地，由该电荷产生作用于核$b$的有效力的$z$分量为
+    \begin{equation}
+        -Z_{b} \rho \left(\cos\theta_b / r_b^2\right) \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z
+        \label{eq:14.136}
+    \end{equation}
+    (\ref{eq:14.135})和(\ref{eq:14.136})的正值对应于$+z$方向上的力，即图\ref{fig:14.4}中的右侧。当作用于原子核$a$的力在数值上大于作用于原子核$b$的力时，元电荷便倾向于将$a$拉向$b$。因此，具有结合作用的电子电荷位于
+    \begin{equation}
+        Z_a \rho \left(\cos\theta_a / r_a^2\right) > Z_b \rho \left(-\cos\theta_b / r_b^2\right)
+        \label{eq:14.137}
+    \end{equation}
+    的区域内。又因为概率密度$\rho$非负，所以两边同除以$\rho$不改变不等号的方向，则成键区域满足
+    \begin{equation}
+        Z_a \frac{\cos\theta_a}{r_a^2} + Z_b \frac{\cos\theta_b}{r_b^2} > 0
+        \label{eq:14.138}
+    \end{equation}
+    当作用于$b$的力在数值上大于作用于$a$的力时，元电荷便倾向于将$b$拉向$a$。因此，反键区域对应于(\ref{eq:14.138})左侧的负值。满足(\ref{eq:14.138})左侧为零的曲面将空间划分为\textbf{成键区域}（bonding region）和\textbf{反键区域}（antibonding region）。【T. Berlin, \textit{J. Chem. Phys.}, \textbf{19}, 208 (1951); J. Hinze, J\textit{. Chem. Phys.}, \textbf{101}, 6369 (1994); Berlin’s ideas are extended to polyatomic molecules in T. Koga et al., \textit{J. Am. Chem. Soc.}, \textbf{100}, 7522 (1978); X. Wang and Z. Peng, \textit{Int. J. Quantum. Chem.}, \textbf{47}, 393 (1993).】
 
+    图(\ref{fig:14.5})和(\ref{fig:14.6})展示了同核和异核双原子分子的成键和反键区域。正如预期的那样，同核双原子分子的结合区域位于两个原子核之间。该区域的电荷倾向于将原子核吸引在一起。由于成键原子轨道之间的重叠，键合导致电荷概率密度转移到原子核之间的区域。位于原子核“后方”的电子电荷（如图\ref{fig:14.5}所示，位于原子核$a$左侧或原子核$b$右侧）对较近的原子核的吸引力大于对另一原子核的吸引力，因此会导致原子核相互分离。
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.45\textwidth]{Figures/14.5.png}
+        \caption{同核双原子分子中成键区与反键区的横截面。欲获得三维区域，请绕核间轴旋转该图。}
+        \label{fig:14.5}
+    \end{figure}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.45\textwidth]{Figures/14.6.png}
+        \caption{满足$Z_b>Z_a$的异核双原子分子的成键和反键区域。}
+        \label{fig:14.6}
+    \end{figure}
 
+    从赫尔曼-费恩曼的视角来看，我们似乎仅从势能角度考虑化学键，而位力定理的讨论则同时涉及势能和动能。在赫尔曼-费恩曼的讨论中，我们假设电子被展宽为连续电荷分布，因此不涉及电子动能。部分量子化学家批评使用静电定理解释化学键的观点，认为其掩盖了动能在成键中的作用。【参见式(\ref{eq:13.66})后引用的参考文献。】
 
+    1939年，费恩曼提出假说：当分子间距离较远时，分子A与分子B之间的色散吸引力可解释为：两分子间的相互作用导致各自的电子概率密度发生畸变，并向对方分子方向偏移。分子A的原子核对分子B畸变（极化）电子密度的吸引力，以及分子B的原子核对极化B电子密度的吸引力，共同促使两个分子相互靠近。1990年，亨特证明：处于基态电子能级的任意两个分子之间的色散相互作用，源于A分子核对B分子畸变电子密度的吸引力，以及B分子核对极化B电子密度的吸引力。B的极化电子密度所产生的吸引力，进而将两个分子相互吸引。1990年，亨特证明处于基态电子能级的任意两个分子间的色散相互作用，源于每个分子核对自身极化电子密度的吸引力【K. L. C. Hunt, \textit{J. Chem. Phys.}, \textbf{92}, 1180 (1990)】。
 
-
-
-
-
-
-
-
+    有关赫尔曼-费恩曼静电定理的进一步应用，参见B. M. Deb, ed., \textit{The Force Concept in Chemistry}, Van Nostrand Reinhold, 1981.
 
 \section*{总结}
 
