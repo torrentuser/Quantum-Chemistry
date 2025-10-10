@@ -17,12 +17,12 @@
     \end{equation}
     一维非谐振子的哈密顿量就是一个例子：
     \begin{equation}
-        \hat{H} = -\frac{\hbar^2}{2m} \frac{\mathrm{d}^2}{\mathrm{d}x^2} + \frac{1}{2}kx^2 + cx^3 + dx^4
+        \hat{H} = -\frac{\hbar^2}{2m} \frac{\dd ^2}{\dd x^2} + \frac{1}{2}kx^2 + cx^3 + dx^4
         \label{eq:9.3}
     \end{equation}
     其哈密顿量(\ref{eq:9.3})与以下谐振子的哈密顿量十分接近：
     \begin{equation}
-        \hat{H}^0 = -\frac{\hbar^2}{2m} \frac{\mathrm{d}^2}{\mathrm{d}x^2} + \frac{1}{2}kx^2
+        \hat{H}^0 = -\frac{\hbar^2}{2m} \frac{\dd ^2}{\dd x^2} + \frac{1}{2}kx^2
         \label{eq:9.4}
     \end{equation}
     若(\ref{eq:9.3})中的常数$c$和$d$很小，我们可以预测非谐振子的本征函数和本征值与谐振子的非常接近。
@@ -71,7 +71,7 @@
         \label{eq:9.9}
     \end{equation}
     \begin{equation}
-        E_n = \left. E_n \right|_{\lambda=0} + \left. \frac{\mathrm{d} E_n}{\mathrm{d} \lambda} \right|_{\lambda=0}\lambda + \left. \frac{\mathrm{d}^2 E_n}{\mathrm{d} \lambda^2} \right|_{\lambda=0}\frac{\lambda^2}{2!} + \cdots
+        E_n = \left. E_n \right|_{\lambda=0} + \left. \frac{\dd E_n}{\dd \lambda} \right|_{\lambda=0}\lambda + \left. \frac{\dd ^2 E_n}{\dd \lambda^2} \right|_{\lambda=0}\frac{\lambda^2}{2!} + \cdots
         \label{eq:9.10}
     \end{equation}
     根据假设，当$\lambda \to 0$时，$\psi_n$和$E_n$分别趋近于$\psi_n^{\left(0\right)}$和$E_n^{\left(0\right)}$：
@@ -81,7 +81,7 @@
     \end{equation}
     我们引入以下缩写：
     \begin{equation}
-        \psi_n^{\left(k\right)} \equiv \frac{1}{k!} \left. \frac{\partial^k \psi_n}{\partial \lambda^k} \right|_{\lambda=0}, \quad E_n^{\left(k\right)} \equiv \frac{1}{k!} \left. \frac{\mathrm{d}^k E_n}{\mathrm{d} \lambda^k} \right|_{\lambda=0}, \quad k = 0, 1, 2, \ldots
+        \psi_n^{\left(k\right)} \equiv \frac{1}{k!} \left. \frac{\partial^k \psi_n}{\partial \lambda^k} \right|_{\lambda=0}, \quad E_n^{\left(k\right)} \equiv \frac{1}{k!} \left. \frac{\dd ^k E_n}{\dd \lambda^k} \right|_{\lambda=0}, \quad k = 0, 1, 2, \ldots
         \label{eq:9.12}
     \end{equation}
     则(\ref{eq:9.9})和(\ref{eq:9.10})变为
@@ -164,7 +164,7 @@
     若$m=n$，则(\ref{eq:9.21})的左侧为零，(\ref{eq:9.21})变为
     \begin{equation}
         \boxed{
-            E_n^{\left(1\right)} = \left\langle \psi_n^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle = \int \psi_n^{\left(0\right)\ast} \hat{H}' \psi_n^{\left(0\right)} \:\mathrm{d}\tau
+            E_n^{\left(1\right)} = \left\langle \psi_n^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle = \int \psi_n^{\left(0\right)\ast} \hat{H}' \psi_n^{\left(0\right)} \:\dd \tau
         }
         \label{eq:9.22}
     \end{equation}
@@ -172,7 +172,7 @@
 
     在(\ref{eq:9.14})中令$\lambda=1$，我们得到
     \begin{equation}
-        E_n \approx E_n^{\left(0\right)} + E_n^{\left(1\right)} = E_n^{\left(0\right)} + \int \psi_n^{\left(0\right)\ast} \hat{H}' \psi_n^{\left(0\right)} \:\mathrm{d}\tau
+        E_n \approx E_n^{\left(0\right)} + E_n^{\left(1\right)} = E_n^{\left(0\right)} + \int \psi_n^{\left(0\right)\ast} \hat{H}' \psi_n^{\left(0\right)} \:\dd \tau
         \label{eq:9.23}
     \end{equation}
 
@@ -184,13 +184,13 @@
         \begin{equation*}
             \hat{H}' = \hat{H} - \hat{H}^0 = cx^3 + dx^4
         \end{equation*}
-        具有量子数为$v$状态的一级能量校正由(\ref{eq:9.22})给出：$E_v^{(1)} = \left\langle \psi_v^{(0)} \middle| cx^3 + dx^4 \middle| \psi_v^{(0)} \right\rangle$，其中$\psi_v^{(0)}$是状态$v$的谐振子波函数。对于$v=0$的基态，使用式$\psi_0^{\left(0\right)} = \left(\alpha /\pi\right)^{1/4} \mathrm{e}^{-\alpha x^2 / 2}$[式(\ref{eq:4.53})]，有
+        具有量子数为$v$状态的一级能量校正由(\ref{eq:9.22})给出：$E_v^{(1)} = \left\langle \psi_v^{(0)} \middle| cx^3 + dx^4 \middle| \psi_v^{(0)} \right\rangle$，其中$\psi_v^{(0)}$是状态$v$的谐振子波函数。对于$v=0$的基态，使用式$\psi_0^{\left(0\right)} = \left(\alpha /\pi\right)^{1/4} \ee ^{-\alpha x^2 / 2}$[式(\ref{eq:4.53})]，有
         \begin{equation*}
-            E_0^{\left(1\right)} = \left\langle \psi_0^{\left(0\right)} \middle| cx^3 + dx^4 \middle| \psi_0^{\left(0\right)} \right\rangle = \left(\frac{\alpha}{\pi}\right)^{1/2} \int_{-\infty}^{\infty} \mathrm{e}^{-\alpha x^2} \left(cx^3 + dx^4\right) \:\mathrm{d}x
+            E_0^{\left(1\right)} = \left\langle \psi_0^{\left(0\right)} \middle| cx^3 + dx^4 \middle| \psi_0^{\left(0\right)} \right\rangle = \left(\frac{\alpha}{\pi}\right)^{1/2} \intinf \ee ^{-\alpha x^2} \left(cx^3 + dx^4\right) \:\dd x
         \end{equation*}
-        从$-\infty$到$\infty$对奇函数$cx^3\mathrm{e}^{-\alpha x^2}$积分为零。使用附录（A.10）中的积分，令$n=2$；再对$\alpha$使用(\ref{eq:4.31})，得到
+        从$-\infty$到$\infty$对奇函数$cx^3\ee ^{-\alpha x^2}$积分为零。使用附录（A.10）中的积分，令$n=2$；再对$\alpha$使用(\ref{eq:4.31})，得到
         \begin{equation*}
-            E_0^{\left(1\right)} = 2d\left(\frac{\alpha}{\pi}\right)^{1/2} \int_{0}^{\infty} \mathrm{e}^{-\alpha x^2} x^4 \:\mathrm{d}x = \frac{3d}{4\alpha^2} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
+            E_0^{\left(1\right)} = 2d\left(\frac{\alpha}{\pi}\right)^{1/2} \int_{0}^{\infty} \ee ^{-\alpha x^2} x^4 \:\dd x = \frac{3d}{4\alpha^2} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
         \end{equation*}
         无扰基态能量为$E_0^{\left(0\right)} = \frac{1}{2}h\nu$，$E_0^{\left(0\right)} + E_0^{\left(1\right)} = \frac{1}{2}h\nu + \frac{3dh^2}{64\pi^4 \nu^2 m^2}$。
         \\
@@ -322,10 +322,10 @@
 
     我们在 (\ref{eq:9.28}) 和 (\ref{eq:9.36}) 中对状态求和，是因为我们需要一组完整的函数来展开 (\ref{eq:9.25}) ，因此我们必须在求和中包含所有线性无关的波函数。如果无扰问题具有连续的波函数（例如氢原子），我们还必须对连续波函数进行积分，这样才能得到一组完整的波函数。若$\psi_E^{\left(0\right)}$是能量为$E$的无扰连续波函数，则(\ref{eq:9.27})和(\ref{eq:9.35})变为
     \begin{equation*}
-        \psi_n^{\left(1\right)} = \sum_{m \neq n} \frac{H'_{nn}}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} \psi_m^{\left(0\right)} + \int \frac{H'_{E,n}}{E_n^{\left(0\right)} - E^{\left(0\right)}} \psi_E^{\left(0\right)} \:\mathrm{d}E^{\left(0\right)}
+        \psi_n^{\left(1\right)} = \sum_{m \neq n} \frac{H'_{nn}}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} \psi_m^{\left(0\right)} + \int \frac{H'_{E,n}}{E_n^{\left(0\right)} - E^{\left(0\right)}} \psi_E^{\left(0\right)} \:\dd E^{\left(0\right)}
     \end{equation*}
     \begin{equation}
-        E_n^{\left(2\right)} = \sum_{m \neq n} \frac{\left|H'_{mn}\right|^2}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} + \int \frac{\left|H'_{E,n}\right|^2}{E_n^{\left(0\right)} - E^{\left(0\right)}} \:\mathrm{d}E^{\left(0\right)}
+        E_n^{\left(2\right)} = \sum_{m \neq n} \frac{\left|H'_{mn}\right|^2}{E_n^{\left(0\right)} - E_m^{\left(0\right)}} + \int \frac{\left|H'_{E,n}\right|^2}{E_n^{\left(0\right)} - E^{\left(0\right)}} \:\dd E^{\left(0\right)}
         \label{eq:9.37}
     \end{equation}
     其中$H'_{E,n} = \left\langle \psi_E^{\left(0\right)} \middle| \hat{H}' \middle| \psi_n^{\left(0\right)} \right\rangle$。这些方程中的积分是在连续态能量范围内进行的（例如，氢原子的能量从零到无穷大）。无扰问题中连续态的存在使得 $E_n^{\left(2\right)}$ 的计算变得更加困难。
@@ -349,7 +349,7 @@
 
 \section{微扰理论求解基态氦原子}
 \label{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}
-    氦原子有两个电子，其原子核带$+2\mathrm{e}$的电荷。我们将认为原子核处于静止状态（第 \ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions} 节），并将坐标系的原点放在原子核上。电子1和2的坐标分别为$\left(x_1,y_1,z_1\right)$和$\left(x_2,y_2,z_2\right)$；见图\ref{fig:9.1}。
+    氦原子有两个电子，其原子核带$+2\ee $的电荷。我们将认为原子核处于静止状态（第 \ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions} 节），并将坐标系的原点放在原子核上。电子1和2的坐标分别为$\left(x_1,y_1,z_1\right)$和$\left(x_2,y_2,z_2\right)$；见图\ref{fig:9.1}。
     \begin{figure}[ht]
         \centering
         \includegraphics[width=0.5\textwidth]{Figures/9.1.png}
@@ -357,24 +357,24 @@
         \label{fig:9.1}
     \end{figure}
 
-    如果我们把核电荷数记为$+Z\mathrm{e}$而不是$+2\mathrm{e}$，就能处理类氦离子\ce{H^-}、\ce{Li^+}和\ce{Be^2+}。哈密顿算符为
+    如果我们把核电荷数记为$+Z\ee $而不是$+2\ee $，就能处理类氦离子\ce{H^-}、\ce{Li^+}和\ce{Be^2+}。哈密顿算符为
     \begin{equation}
-        \hat{H} = -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_1} - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_2} + \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}
+        \hat{H} = -\frac{\hbar^2}{2m_{\ee }}\nabla_1^2 - \frac{\hbar^2}{2m_{\ee }}\nabla_2^2 - \frac{Z\ee ^2}{4\pi\varepsilon_0r_1} - \frac{Z\ee ^2}{4\pi\varepsilon_0r_2} + \frac{\ee ^2}{4\pi\varepsilon_0r_{12}}
         \label{eq:9.39}
     \end{equation}
-    其中$m_{\mathrm{e}}$是电子的质量，$r_1$和$r_2$分别是电子1和电子2到原子核的距离，$r_{12}$是两个电子之间的距离。前两项为电子动能的算符[式(\ref{eq:3.48})]。第三项和第四项是电子与原子核之间的吸引势。最后一项是电子间的排斥势[式(\ref{eq:6.58})]。请注意，相互作用粒子系统的势能不能写成单个粒子的势能之和。势能是整个系统的属性。
+    其中$m_{\ee }$是电子的质量，$r_1$和$r_2$分别是电子1和电子2到原子核的距离，$r_{12}$是两个电子之间的距离。前两项为电子动能的算符[式(\ref{eq:3.48})]。第三项和第四项是电子与原子核之间的吸引势。最后一项是电子间的排斥势[式(\ref{eq:6.58})]。请注意，相互作用粒子系统的势能不能写成单个粒子的势能之和。势能是整个系统的属性。
 
     薛定谔方程涉及六个独立变量，每个电子有三个坐标。在球坐标系中，$\psi = \psi\left(r_1,\theta_1,\phi_1,r_2,\theta_2,\phi_2\right)$。
 
     算符$\nabla_1^2$由将(\ref{eq:6.6})中的$r,\theta,\phi$替换为$r_1,\theta_1,\phi_1$给出。变量$r_{12}$为$r_{12} = \left[\left(x_1 - x_2\right)^2 + \left(y_1 - y_2\right)^2\right.$\\$\left. + \left(z_1 - z_2\right)^2\right]^{1/2}$，使用球坐标系和直角坐标系之间的关系，我们可以用$r_1,r_2,\theta_1,\theta_2,\phi_1,\phi_2$来表示$r_{12}$。
 
-    由于$\mathrm{e}^2 / 4\pi \varepsilon_0r_{12}$项的存在，氦原子的薛定谔方程在任何坐标系中都无法分离变量，因此我们必须使用近似方法。微扰法将哈密顿算符(\ref{eq:9.39})分为两个部分，$\hat{H}^0$和$\hat{H}'$，其中$\hat{H}^0$是一个可精确求解系统的哈密顿算符。若我们选择s
+    由于$\ee ^2 / 4\pi \varepsilon_0r_{12}$项的存在，氦原子的薛定谔方程在任何坐标系中都无法分离变量，因此我们必须使用近似方法。微扰法将哈密顿算符(\ref{eq:9.39})分为两个部分，$\hat{H}^0$和$\hat{H}'$，其中$\hat{H}^0$是一个可精确求解系统的哈密顿算符。若我们选择s
     \begin{equation}
-        \hat{H}^0 = -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_1} - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_2}
+        \hat{H}^0 = -\frac{\hbar^2}{2m_{\ee }}\nabla_1^2 - \frac{Z\ee ^2}{4\pi\varepsilon_0r_1} - \frac{\hbar^2}{2m_{\ee }}\nabla_2^2 - \frac{Z\ee ^2}{4\pi\varepsilon_0r_2}
         \label{eq:9.40}
     \end{equation}
     \begin{equation}
-        \hat{H}' = \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}
+        \hat{H}' = \frac{\ee ^2}{4\pi\varepsilon_0r_{12}}
         \label{eq:9.41}
     \end{equation}
     那么$\hat{H}^0$是两个类氢哈密顿算符的加和，每个算符各有一个电子：
@@ -383,7 +383,7 @@
         \label{eq:9.42}
     \end{equation}
     \begin{equation}
-        \hat{H}_1^0 \equiv -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_1}, \quad \hat{H}_2^0 \equiv -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_2}
+        \hat{H}_1^0 \equiv -\frac{\hbar^2}{2m_{\ee }}\nabla_1^2 - \frac{Z\ee ^2}{4\pi\varepsilon_0r_1}, \quad \hat{H}_2^0 \equiv -\frac{\hbar^2}{2m_{\ee }}\nabla_2^2 - \frac{Z\ee ^2}{4\pi\varepsilon_0r_2}
         \label{eq:9.43}
     \end{equation}
     未受微扰的系统是两个电子互不施力的氦原子。虽然这样的系统并不存在，但这并不妨碍我们将微扰理论应用于这一系统。
@@ -404,11 +404,11 @@
     \end{equation}
     由于$\hat{H}_1^0$和$\hat{H}_2^0$是类氢哈密顿算符，(\ref{eq:9.46})的解为类氢本征函数和本征值。根据(\ref{eq:6.94})，我们有
     \begin{equation}
-        E_1 = -\frac{Z^2}{n_1^2}\frac{m_{\mathrm{e}}e^4}{8\pi^2\varepsilon_0a_0}, \quad E_2 = -\frac{Z^2}{n_2^2}\frac{m_{\mathrm{e}}e^4}{8\pi^2\varepsilon_0a_0}
+        E_1 = -\frac{Z^2}{n_1^2}\frac{m_{\ee }e^4}{8\pi^2\varepsilon_0a_0}, \quad E_2 = -\frac{Z^2}{n_2^2}\frac{m_{\ee }e^4}{8\pi^2\varepsilon_0a_0}
         \label{eq:9.47}
     \end{equation}
     \begin{equation}
-        E^{\left(0\right)} = -Z^2\left(\frac{1}{n_1^2} + \frac{1}{n_2^2}\right)\frac{\mathrm{e}^2}{8\pi\varepsilon_0a_0}, \quad \begin{aligned}
+        E^{\left(0\right)} = -Z^2\left(\frac{1}{n_1^2} + \frac{1}{n_2^2}\right)\frac{\ee ^2}{8\pi\varepsilon_0a_0}, \quad \begin{aligned}
             n_1 = & 1, 2, 3, \ldots \\
             n_2 = & 1, 2, 3, \ldots
         \end{aligned}
@@ -418,21 +418,21 @@
 
     最低能级满足$n_1 = 1,\: n_2 = 1$，其零级波函数[式(\ref{eq:6.104})]为
     \begin{equation}
-        \psi_{1s^2}^{\left(0\right)} = \frac{1}{\pi^{1/2}}\left(\frac{Z}{a_0}\right)^{3/2} \mathrm{e}^{-Zr_1/a_0} \cdot \frac{1}{\pi^{1/2}}\left(\frac{Z}{a_0}\right)^{3/2} \mathrm{e}^{-Zr_2/a_0} = 1s\left(1\right)1s\left(2\right)
+        \psi_{1s^2}^{\left(0\right)} = \frac{1}{\pi^{1/2}}\left(\frac{Z}{a_0}\right)^{3/2} \ee ^{-Zr_1/a_0} \cdot \frac{1}{\pi^{1/2}}\left(\frac{Z}{a_0}\right)^{3/2} \ee ^{-Zr_2/a_0} = 1s\left(1\right)1s\left(2\right)
         \label{eq:9.49}
     \end{equation}
     其中$1s\left(1\right)1s\left(2\right)$表示电子1和2的类氢$1s$波函数的乘积，下标表示两个电子都在类氢$1s$轨道中。（请注意，将电子分配到轨道并将原子波函数写成单电子轨道函数的乘积的过程只是一种\textit{近似}。）该无扰基态能量为
     \begin{equation}
-        E^{\left(0\right)}_{1s^2} = -Z^2\left(2\right)\frac{\mathrm{e}^2}{8\pi\varepsilon_0a_0}
+        E^{\left(0\right)}_{1s^2} = -Z^2\left(2\right)\frac{\ee ^2}{8\pi\varepsilon_0a_0}
         \label{eq:9.50}
     \end{equation}
-    $-\mathrm{e}^2 / 8\pi\varepsilon_0a_0$是氢原子的基态能量（假设原子核无限重）等于$213.606 \: \mathrm{eV}$[式(\ref{eq:6.105})-(\ref{eq:6.108})]。若$a_0$中电子的质量$m_{\mathrm{e}}$被替换为\ce{He}原子的折合质量，则$-\mathrm{e}^2 / 8\pi\varepsilon_0a_0$的值变为$-13.604 \: \mathrm{eV}$，我们将用这个数字来（部分地）校正 \ce{He} 中的核运动。对于氦原子，$Z=2$，(\ref{eq:9.50})为$-8\left(13.604 \: \mathrm{eV}\right) = -108.83 \: \mathrm{eV}$：
+    $-\ee ^2 / 8\pi\varepsilon_0a_0$是氢原子的基态能量（假设原子核无限重）等于$213.606 \: \mathrm{eV}$[式(\ref{eq:6.105})-(\ref{eq:6.108})]。若$a_0$中电子的质量$m_{\ee }$被替换为\ce{He}原子的折合质量，则$-\ee ^2 / 8\pi\varepsilon_0a_0$的值变为$-13.604 \: \mathrm{eV}$，我们将用这个数字来（部分地）校正 \ce{He} 中的核运动。对于氦原子，$Z=2$，(\ref{eq:9.50})为$-8\left(13.604 \: \mathrm{eV}\right) = -108.83 \: \mathrm{eV}$：
     \begin{equation}
         E^{\left(0\right)}_{1s^2} = -108.83 \: \mathrm{eV}
         \label{eq:9.51}
     \end{equation}
 
-    这个零级能量与真正的氦原子基态能量相比如何？\ce{He}原子第一电离能的实验值为$24.587 \: \mathrm{eV}$。\ce{He} 的第二电离能很容易从理论上计算出来，因为它是类氢离子\ce{He^+}的电离能，等于$2^2\left(13.604 \: \mathrm{eV}\right) = 54.416 \: \mathrm{eV}$。如果我们选择完全电离原子的能量为零[这一选择隐含在 (\ref{eq:9.39}) 中]，那么氦原子的基态能量为$-\left(24.587 + 54.416\right) \: \mathrm{eV} = -79.00 \: \mathrm{eV}$。零级能量 (\ref{eq:9.51}) 的误差为 $38\%$。我们本应预料到如此大的误差，因为微扰项$\mathrm{e}^2 / 4\pi\varepsilon_0r_{12}$并不小。
+    这个零级能量与真正的氦原子基态能量相比如何？\ce{He}原子第一电离能的实验值为$24.587 \: \mathrm{eV}$。\ce{He} 的第二电离能很容易从理论上计算出来，因为它是类氢离子\ce{He^+}的电离能，等于$2^2\left(13.604 \: \mathrm{eV}\right) = 54.416 \: \mathrm{eV}$。如果我们选择完全电离原子的能量为零[这一选择隐含在 (\ref{eq:9.39}) 中]，那么氦原子的基态能量为$-\left(24.587 + 54.416\right) \: \mathrm{eV} = -79.00 \: \mathrm{eV}$。零级能量 (\ref{eq:9.51}) 的误差为 $38\%$。我们本应预料到如此大的误差，因为微扰项$\ee ^2 / 4\pi\varepsilon_0r_{12}$并不小。
 
     下一步是计算能量的一级微扰校正。无扰基态是非简并的，使用(\ref{eq:9.22})和(\ref{eq:9.49})，得到
     \begin{equation*}
@@ -440,17 +440,17 @@
     \end{equation*}
     \begin{equation}
         \begin{aligned}
-            E^{\left(1\right)} = \frac{Z^6\mathrm{e}^2}{\left(4\pi\varepsilon_0\right)\pi^2a_0^6} \int_{0}^{2\pi} \int_{0}^{2\pi} \int_{0}^{\pi} \int_{0}^{\pi} \int_{0}^{\infty} & \int_{0}^{\infty}  \mathrm{e}^{-2Zr_1/a_0} \mathrm{e}^{-2Zr_2/a_0} \frac{1}{r_{12}}r_1^2 \sin\theta_1 \\
-            & \times r^2 _2 \sin\theta_2 \:\mathrm{d}r_1 \:\mathrm{d}r_2 \:\mathrm{d}\theta_1 \:\mathrm{d}\theta_2 \:\mathrm{d}\phi_1 \:\mathrm{d}\phi_2
+            E^{\left(1\right)} = \frac{Z^6\ee ^2}{\left(4\pi\varepsilon_0\right)\pi^2a_0^6} \int_{0}^{2\pi} \int_{0}^{2\pi} \int_{0}^{\pi} \int_{0}^{\pi} \int_{0}^{\infty} & \int_{0}^{\infty}  \ee ^{-2Zr_1/a_0} \ee ^{-2Zr_2/a_0} \frac{1}{r_{12}}r_1^2 \sin\theta_1 \\
+            & \times r^2 _2 \sin\theta_2 \:\dd r_1 \:\dd r_2 \:\dd \theta_1 \:\dd \theta_2 \:\dd \phi_1 \:\dd \phi_2
         \end{aligned}
         \label{eq:9.52}
     \end{equation}
-    这个双电子问题的体积微元包含两个电子的坐标；$\mathrm{d}\tau \equiv \mathrm{d}\tau_1 \mathrm{d}\tau_2$。(\ref{eq:9.52})中的积分可以用球谐函数对$1/r_{12}$进行展开来计算，如问题9.14所述。可以发现，
+    这个双电子问题的体积微元包含两个电子的坐标；$\dd \tau \equiv \dd \tau_1 \dd \tau_2$。(\ref{eq:9.52})中的积分可以用球谐函数对$1/r_{12}$进行展开来计算，如问题9.14所述。可以发现，
     \begin{equation}
-        E^{\left(1\right)} = \frac{5Z}{8}\left(\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0}\right)
+        E^{\left(1\right)} = \frac{5Z}{8}\left(\frac{\ee ^2}{4\pi\varepsilon_0a_0}\right)
         \label{eq:9.53}
     \end{equation}
-    回忆一下，当我们使用\ce{He}的折合质量时，$\frac{1}{2}\mathrm{e}^2/4\pi\varepsilon_0a_0$的值为$13.604 \: \mathrm{eV}$，再令$Z=2$，我们得到了氦原子基态能量的一级校正：
+    回忆一下，当我们使用\ce{He}的折合质量时，$\frac{1}{2}\ee ^2/4\pi\varepsilon_0a_0$的值为$13.604 \: \mathrm{eV}$，再令$Z=2$，我们得到了氦原子基态能量的一级校正：
     \begin{equation*}
         E^{\left(1\right)} = \frac{10}{4}\left(13.604 \: \mathrm{eV}\right) = 34.01 \: \mathrm{eV}
     \end{equation*}
@@ -468,7 +468,7 @@
     \begin{equation*}
         E \approx -108.83 \: \mathrm{eV} + 34.01 \: \mathrm{eV} - 4.29 \: \mathrm{eV} + 0.12 \: \mathrm{eV} = -78.99 \: \mathrm{eV}
     \end{equation*}
-    与实验值$-79.00 \: \mathrm{eV}$很接近了。通过引入十三级校正，Scherr和Knight得到了基态氦原子能量为$-2.90372433 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$，与将在下一节讲述的纯变分计算获得的结果$-2.90372438 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$非常接近。
+    与实验值$-79.00 \: \mathrm{eV}$很接近了。通过引入十三级校正，Scherr和Knight得到了基态氦原子能量为$-2.90372433 \left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$，与将在下一节讲述的纯变分计算获得的结果$-2.90372438 \left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$非常接近。
 
     可以证明氦原子能量的微扰理论级数展开是收敛的。见[R. Ahlrichs, \textit{Phys. Rev. A}, \textbf{5}, 605 (1972)]。
 
@@ -476,7 +476,7 @@
         \small
         \noindent 我们无法找到双电子基态 \ce{He} 原子的精确波函数和能量，但值得注意的是，我们已经找到了双电子问题的薛定谔方程的基态精确解。这是一个假想原子[称为\textit{胡克定律原子或谐波原子}（Hooke's-law atom or harmonium）]，其哈密顿算符为
         \begin{equation*}
-            \hat{H} = -\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 + \frac{1}{2}k\left(r_1^2 + r_2^2\right) + \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}
+            \hat{H} = -\frac{\hbar^2}{2m_{\ee }}\nabla_1^2 - \frac{\hbar^2}{2m_{\ee }}\nabla_2^2 + \frac{1}{2}k\left(r_1^2 + r_2^2\right) + \frac{\ee ^2}{4\pi\varepsilon_0r_{12}}
         \end{equation*}
         其中$r_1$和$r_2$是电子到原点的距离。对于力常数$k$的特定值，可以精确解得基态波函数和能量。见\url{en.wikipedia.org/wiki/Hooke’s_atom}。
     \end{quote}
@@ -495,62 +495,62 @@
 
     现在，考虑氦原子基态的变分函数。如果我们使用$\psi_n^{\left(0\right)}$[式(\ref{eq:9.49})]作为试探函数，会得到一级微扰结果$-74.82 \: \mathrm{eV}$。为了改进这一结果，我们在(\ref{eq:9.49})中引入一个变分参数。我们尝试归一化函数
     \begin{equation}
-        \phi = \frac{1}{\pi} \left(\frac{\zeta}{a_0}\right)^3 \mathrm{e}^{-\zeta r_1/a_0} \mathrm{e}^{-\zeta r_2/a_0}
+        \phi = \frac{1}{\pi} \left(\frac{\zeta}{a_0}\right)^3 \ee ^{-\zeta r_1/a_0} \ee ^{-\zeta r_2/a_0}
         \label{eq:9.56}
     \end{equation}
     该函数通过将(\ref{eq:9.49})中真实核电荷数$Z$替换为试探参数$\zeta$（Zeta）而得。$\zeta$有一个简单的物理解释。由于一个电子往往会将另一个电子屏蔽在原子核之外，因此每个电子所带的有效核电荷略小于全核电荷 $Z$。如果一个电子将另一个电子完全屏蔽在原子核之外，我们就会得到 $Z-1$ 的有效核电荷。由于两个电子位于同一轨道，它们只能部分地相互屏蔽。因此，我们希望$\zeta$介于 $Z-1$ 和 $Z$ 之间。
 
     现在我们来计算变分积分。为了方便起见，我们将氦哈密顿算符（\ref{eq:9.39}）重写为
     \begin{equation}
-        \hat{H} = \left[-\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{\zeta\mathrm{e}^2}{4\pi\varepsilon_0r_1} - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{\zeta\mathrm{e}^2}{4\pi\varepsilon_0r_2} \right] + \left(\zeta - Z\right)\frac{e^2}{4\pi\varepsilon_0r_{1}} + \left(\zeta - Z\right)\frac{e^2}{4\pi\varepsilon_0r_{2}} + \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}
+        \hat{H} = \left[-\frac{\hbar^2}{2m_{\ee }}\nabla_1^2 - \frac{\zeta\ee ^2}{4\pi\varepsilon_0r_1} - \frac{\hbar^2}{2m_{\ee }}\nabla_2^2 - \frac{\zeta\ee ^2}{4\pi\varepsilon_0r_2} \right] + \left(\zeta - Z\right)\frac{e^2}{4\pi\varepsilon_0r_{1}} + \left(\zeta - Z\right)\frac{e^2}{4\pi\varepsilon_0r_{2}} + \frac{\ee ^2}{4\pi\varepsilon_0r_{12}}
         \label{eq:9.57}
     \end{equation}
     其中涉及 $\zeta$ 的项被相加和相减。(\ref{eq:9.57}) 中括号内的项是有效核电荷 $\zeta$ 的两个类氢哈密顿量的总和。此外，试探函数 (\ref{eq:9.56}) 是核电荷 $\zeta$ 的两个类氢 $1s$ 函数的乘积。因此，当这些项作用于 $\phi$ 时，我们就得到了一个本征方程，本征值是核电荷 $\zeta$ 的两个类氢 $1s$ 的能量之和：
     \begin{equation}
-        \left[-\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 - \frac{\zeta\mathrm{e}^2}{4\pi\varepsilon_0r_1} - \frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_2^2 - \frac{\zeta\mathrm{e}^2}{4\pi\varepsilon_0r_2} \right] \phi = -\zeta^2\left(2\right)\frac{\mathrm{e}^2}{8\pi\varepsilon_0a_0}\phi
+        \left[-\frac{\hbar^2}{2m_{\ee }}\nabla_1^2 - \frac{\zeta\ee ^2}{4\pi\varepsilon_0r_1} - \frac{\hbar^2}{2m_{\ee }}\nabla_2^2 - \frac{\zeta\ee ^2}{4\pi\varepsilon_0r_2} \right] \phi = -\zeta^2\left(2\right)\frac{\ee ^2}{8\pi\varepsilon_0a_0}\phi
         \label{eq:9.58}
     \end{equation}
     使用(\ref{eq:9.57})和(\ref{eq:9.58})，我们可以计算变分积分
     \begin{equation}
         \begin{aligned}
-            \int \phi^* \hat{H} \phi \:\mathrm{d}\tau = &-\zeta^2\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0} \int \phi^* \phi \:\mathrm{d}\tau + \frac{\left(\zeta - Z\right)\mathrm{e}^2}{4\pi\varepsilon_0} \int \frac{\phi^*\phi}{r_1} \:\mathrm{d}\tau \\
-            &+ \frac{\left(\zeta - Z\right)\mathrm{e}^2}{4\pi\varepsilon_0} \int \frac{\phi^*\phi}{r_2} \:\mathrm{d}\tau + \frac{\mathrm{e}^2}{4\pi\varepsilon_0}\int \frac{\phi^*\phi}{r_{12}} \:\mathrm{d}\tau
+            \int \phi^* \hat{H} \phi \:\dd \tau = &-\zeta^2\frac{\ee ^2}{4\pi\varepsilon_0a_0} \int \phi^* \phi \:\dd \tau + \frac{\left(\zeta - Z\right)\ee ^2}{4\pi\varepsilon_0} \int \frac{\phi^*\phi}{r_1} \:\dd \tau \\
+            &+ \frac{\left(\zeta - Z\right)\ee ^2}{4\pi\varepsilon_0} \int \frac{\phi^*\phi}{r_2} \:\dd \tau + \frac{\ee ^2}{4\pi\varepsilon_0}\int \frac{\phi^*\phi}{r_{12}} \:\dd \tau
         \end{aligned}
         \label{eq:9.59}
     \end{equation}
 
     设$f_1$表示核电荷为$\zeta$的类氢$1s$轨道，由电子1占据。设$f_2$为电子2的类似函数，则
     \begin{equation}
-        f_1 = \frac{1}{\pi^{1/2}}\left(\frac{\zeta}{a_0}\right)^{3/2} \mathrm{e}^{-\zeta r_1/a_0}, \quad f_2 = \frac{1}{\pi^{1/2}}\left(\frac{\zeta}{a_0}\right)^{3/2} \mathrm{e}^{-\zeta r_2/a_0}
+        f_1 = \frac{1}{\pi^{1/2}}\left(\frac{\zeta}{a_0}\right)^{3/2} \ee ^{-\zeta r_1/a_0}, \quad f_2 = \frac{1}{\pi^{1/2}}\left(\frac{\zeta}{a_0}\right)^{3/2} \ee ^{-\zeta r_2/a_0}
         \label{eq:9.60}
     \end{equation}
     注意到$\phi = f_1 f_2$，现在我们来计算积分(\ref{eq:9.59})：
     \begin{equation*}
         \begin{aligned}
-            \int \phi^* \phi \: \mathrm{d}\tau = \int \int f_1^* f_2^* f_1 f_2 \: \mathrm{d}\tau_1 \: \mathrm{d}\tau_2 = \int f_1^* f_1 \: \mathrm{d}\tau_1 \int f_2^* f_2 \: \mathrm{d}\tau_2 = 1 \\
-            \int \frac{\phi^* \phi}{r_1} \: \mathrm{d}\tau = \int \frac{f_1^*f_1}{r_1} \: \mathrm{d}\tau_1 \int f_2^* f_2 \: \mathrm{d}\tau_2 = \int \frac{f_1^* f_1}{r_1} \: \mathrm{d}\tau_1 \\
-            = \frac{1}{\pi}\frac{\zeta^3}{a_0^3}\int_{0}^{\infty} \mathrm{e}^{-2\zeta r_1/a_0} \frac{r_1^2}{r_1} \:\mathrm{d}r_1 \int_{0}^{\pi} \sin\theta_1 \:\mathrm{d}\theta_1 \int_{0}^{2\pi} \:\mathrm{d}\phi_1 = \frac{\zeta}{a_0}
+            \int \phi^* \phi \: \dd \tau = \int \int f_1^* f_2^* f_1 f_2 \: \dd \tau_1 \: \dd \tau_2 = \int f_1^* f_1 \: \dd \tau_1 \int f_2^* f_2 \: \dd \tau_2 = 1 \\
+            \int \frac{\phi^* \phi}{r_1} \: \dd \tau = \int \frac{f_1^*f_1}{r_1} \: \dd \tau_1 \int f_2^* f_2 \: \dd \tau_2 = \int \frac{f_1^* f_1}{r_1} \: \dd \tau_1 \\
+            = \frac{1}{\pi}\frac{\zeta^3}{a_0^3}\int_{0}^{\infty} \ee ^{-2\zeta r_1/a_0} \frac{r_1^2}{r_1} \:\dd r_1 \int_{0}^{\pi} \sin\theta_1 \:\dd \theta_1 \int_{0}^{2\pi} \:\dd \phi_1 = \frac{\zeta}{a_0}
         \end{aligned}
     \end{equation*}
     其中用到了附录中的积分（A.8）。同样地，
     \begin{equation*}
-        \int \frac{\phi^* \phi}{r_2} \: \mathrm{d}\tau = \int \frac{f_2^*f_2}{r_2}\: \mathrm{d}\tau_2 = \int \frac{f_1^*f_1}{r_1} \: \mathrm{d}\tau_1 = \frac{\zeta}{a_0}
+        \int \frac{\phi^* \phi}{r_2} \: \dd \tau = \int \frac{f_2^*f_2}{r_2}\: \dd \tau_2 = \int \frac{f_1^*f_1}{r_1} \: \dd \tau_1 = \frac{\zeta}{a_0}
     \end{equation*}
-    因为在定积分中，虚拟变量的下标是 1 还是 2 并不重要。最终，我们必须计算积分$\left(\mathrm{e}^2 / 4\pi\varepsilon_0\right)$\\$ \int \left(\phi^* \phi / r_{12}\right) \: \mathrm{d}\tau$。除了$Z$被替换为$\zeta$外，该积分与微扰法处理中的积分(\ref{eq:9.52})相同。因此，根据(\ref{eq:9.53})，我们有
+    因为在定积分中，虚拟变量的下标是 1 还是 2 并不重要。最终，我们必须计算积分$\left(\ee ^2 / 4\pi\varepsilon_0\right)$\\$ \int \left(\phi^* \phi / r_{12}\right) \: \dd \tau$。除了$Z$被替换为$\zeta$外，该积分与微扰法处理中的积分(\ref{eq:9.52})相同。因此，根据(\ref{eq:9.53})，我们有
     \begin{equation*}
-        \frac{\mathrm{e}^2}{4\pi\varepsilon_0}\int \frac{\phi^* \phi}{r_{12}} \: \mathrm{d}\tau = \frac{5\zeta\mathrm{e}^2}{32\pi\varepsilon_0a_0}
+        \frac{\ee ^2}{4\pi\varepsilon_0}\int \frac{\phi^* \phi}{r_{12}} \: \dd \tau = \frac{5\zeta\ee ^2}{32\pi\varepsilon_0a_0}
     \end{equation*}
 
     因此，变分积分(\ref{eq:9.59})的值为
     \begin{equation}
-        \int \phi^* \hat{H} \phi \: \mathrm{d}\tau = \left(\zeta^2 - 2Z\zeta + \frac{5}{8}\zeta\right)\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0}
+        \int \phi^* \hat{H} \phi \: \dd \tau = \left(\zeta^2 - 2Z\zeta + \frac{5}{8}\zeta\right)\frac{\ee ^2}{4\pi\varepsilon_0a_0}
         \label{eq:9.61}
     \end{equation}
     检查一下，如果我们在(\ref{eq:9.61})中令$\zeta = Z$，就会得到一级微扰结果，即(\ref{eq:9.50})加上(\ref{eq:9.53})。
 
     现在我们来改变$\zeta$的值，使得变分积分最小化：
     \begin{equation*}
-        \frac{\partial}{\partial \zeta} \int \phi^* \hat{H} \phi \: \mathrm{d}\tau = \left(2\zeta - 2Z + \frac{5}{8}\right)\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0} = 0
+        \frac{\partial}{\partial \zeta} \int \phi^* \hat{H} \phi \: \dd \tau = \left(2\zeta - 2Z + \frac{5}{8}\right)\frac{\ee ^2}{4\pi\varepsilon_0a_0} = 0
     \end{equation*}
     \begin{equation}
         \zeta = Z - \frac{5}{16}
@@ -558,10 +558,10 @@
     \end{equation}
     正如预期的那样，有效核电荷介于$Z$和$Z-1$之间。使用(\ref{eq:9.62})和(\ref{eq:9.61})，我们得到：
     \begin{equation}
-        \int \phi^* \hat{H} \phi \: \mathrm{d}\tau = \left(-Z^2 + \frac{5}{8}Z - \frac{25}{256}\right)\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0} = -\left(Z - \frac{5}{16}\right)^2\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0}
+        \int \phi^* \hat{H} \phi \: \dd \tau = \left(-Z^2 + \frac{5}{8}Z - \frac{25}{256}\right)\frac{\ee ^2}{4\pi\varepsilon_0a_0} = -\left(Z - \frac{5}{16}\right)^2\frac{\ee ^2}{4\pi\varepsilon_0a_0}
         \label{eq:9.63}
     \end{equation}
-    令$Z=2$，我们得到氦原子基态能量的近似值$-\left(27/16\right)^2\left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$=$-\left(729/256\right)2\left(13.604 \: \mathrm{eV}\right)$\\=$-77.48 \: \mathrm{eV}$，与实验值$-79.00 \: \mathrm{eV}$相比。使用$\zeta$代替$Z$将误差从$5.3\%$减少到$1.9\%$。与变分原理一致，基态能量的真实值小于变分积分。
+    令$Z=2$，我们得到氦原子基态能量的近似值$-\left(27/16\right)^2\left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$=$-\left(729/256\right)2\left(13.604 \: \mathrm{eV}\right)$\\=$-77.48 \: \mathrm{eV}$，与实验值$-79.00 \: \mathrm{eV}$相比。使用$\zeta$代替$Z$将误差从$5.3\%$减少到$1.9\%$。与变分原理一致，基态能量的真实值小于变分积分。
 
 
     如何改进我们的变分结果？我们可以试试具有 (\ref{eq:9.56}) 一般形式的函数，即两个函数的乘积，每个电子一个函数：
@@ -569,11 +569,11 @@
         \phi = u\left(1\right)u\left(2\right)
         \label{eq:9.64}
     \end{equation}
-    不过，我们可以尝试在 (\ref{eq:9.64}) 中使用各种函数 $u$，而不是 (\ref{eq:9.56}) 中使用的单一指数函数。我们将在第 \ref{sec:11.1 The Hartree-Fock Self-Consistent-Field Method} 节中讨论如何系统地找到能给出最小变分值的函数 $u$ 。这一过程表明，在 (\ref{eq:9.64}) 中选择最佳 $u$ 时，变分积分等于 $-77.86 \:\mathrm{eV}$，误差仍为 $1.5\%$。我们可能会问，无论我们用什么形式来表示 $u$，为什么 (\ref{eq:9.64}) 不能给出真正的基态能量。答案是：当我们把试探函数写成每个电子的单独函数的乘积时，我们是在做近似计算。由于哈密顿算符中的$\mathrm{e}^2 / 4\pi\varepsilon_0r_{12}$项，氦原子薛定谔方程无法分离变量，则基态波函数不能写成每个电子单独函数的乘积。要获得真正的基态能量，我们必须超越形式为 (\ref{eq:9.64}) 的函数。
+    不过，我们可以尝试在 (\ref{eq:9.64}) 中使用各种函数 $u$，而不是 (\ref{eq:9.56}) 中使用的单一指数函数。我们将在第 \ref{sec:11.1 The Hartree-Fock Self-Consistent-Field Method} 节中讨论如何系统地找到能给出最小变分值的函数 $u$ 。这一过程表明，在 (\ref{eq:9.64}) 中选择最佳 $u$ 时，变分积分等于 $-77.86 \:\mathrm{eV}$，误差仍为 $1.5\%$。我们可能会问，无论我们用什么形式来表示 $u$，为什么 (\ref{eq:9.64}) 不能给出真正的基态能量。答案是：当我们把试探函数写成每个电子的单独函数的乘积时，我们是在做近似计算。由于哈密顿算符中的$\ee ^2 / 4\pi\varepsilon_0r_{12}$项，氦原子薛定谔方程无法分离变量，则基态波函数不能写成每个电子单独函数的乘积。要获得真正的基态能量，我们必须超越形式为 (\ref{eq:9.64}) 的函数。
 
     玻尔模型给出了氢原子的正确能量，但应用于氦原子时却失败了。因此，在量子力学的早期，证明新理论能够准确地处理氦原子是非常重要的。关于氦基态的开创性工作是由 Hylleraas 在 1928-1930 年间完成的。为了考虑一个电子对另一个电子运动的影响，Hylleraas 使用了包含电子间距 $r_{12}$ 的变分函数。他使用的其中一个函数为
     \begin{equation}
-        \phi = N\left[\mathrm{e}^{-\zeta r_1/a_0} \mathrm{e}^{-\zeta r_2/a_0}\left(1 + br_{12}\right)\right]
+        \phi = N\left[\ee ^{-\zeta r_1/a_0} \ee ^{-\zeta r_2/a_0}\left(1 + br_{12}\right)\right]
         \label{eq:9.65}
     \end{equation}
     其中$N$是归一化常数，$\zeta$和$b$是变分参数。由于
@@ -583,7 +583,7 @@
     \end{equation}
     函数 (\ref{eq:9.65}) 超越了简单的乘积形式 (\ref{eq:9.64})。对含参数的变分积分求最小值，得到$\zeta = 1.849$，$b = 0.364/a_0$，基态能量为$-78.7 \:\mathrm{eV}$，误差为$0.3 \: \mathrm{eV}$。$1+br_{12}$项的引入使得波函数的值在大$r_{12}$值时变大。这是理所应当的，因为电子之间的斥力使得电子在能量上更有利于避开对方。使用包含 $r_{12}$ 的更复杂的六项试探函数，Hylleraas 得到的能量仅比真实的基态能量高出 0.01 eV。
 
-    其他人对 Hylleraas 的工作进行了扩展。Pekeris 使用 1078 项的变分函数，求出基态能量为$-2.903724375\left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$[C. L. Pekeris, \textit{Phys. Rev.}, \textbf{115}, 1216 (1959)]。加上相对论修正和核运动修正，得出了氦的电离能 $E_i$，$E_i/hc = 198310.69 \: \mathrm{cm}^{-1}$，与实验值 $E_i/hc = 198310.67 \: \mathrm{cm}^{-1}$ 相比较。通过获得能量为$-2.90372437703 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$，Frankowski 和 Pekeris 改进了Pekeris的结果[K. Frankowski and C. L. Pekeris, \textit{Phys. Rev.}, \textbf{146}, 46 (1966)]。Drake 和 Yan 使用含有 $r_{12}$ 的线性变分函数计算了 \ce{He} 的基态能量和许多激发态能量，其精确度被认为可以达到 $1/10^{14}$ 或更高 [G. W. F. Drake and Z-C. Yan, \textit{Chem. Phys. Lett.}, \textbf{229}, 486 (1994); \textit{Phys. Rev. A}, \textbf{46}, 2378 (1992)]。这些工作者同样计算出了\ce{Li}基态和两个激发态的变分能量，精确度达到或超过 $1/10^9$[Z-C. Yan and G. W. F. Drake, \textit{Phys. Rev. A}, \textbf{52}, 3711 (1995)]。加上相对论和核运动修正，Drake 和 Yan 发现理论计算和实验光谱之间的氦和锂转变频率非常吻合。通过对变异函数中不断增加的项数进行一系列变异计算，并推导到无限项数的极限，Drake 和合作者发现了以下非相对论、无限核质量 \ce{He} 的基态能量：$-2.90372437703411959831 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$，据信精确到21位有效数字[G. W. F. Drake et al., \textit{Phys. Rev. A}, \textbf{65}, 054501 (2002)]。
+    其他人对 Hylleraas 的工作进行了扩展。Pekeris 使用 1078 项的变分函数，求出基态能量为$-2.903724375\left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$[C. L. Pekeris, \textit{Phys. Rev.}, \textbf{115}, 1216 (1959)]。加上相对论修正和核运动修正，得出了氦的电离能 $E_i$，$E_i/hc = 198310.69 \: \mathrm{cm}^{-1}$，与实验值 $E_i/hc = 198310.67 \: \mathrm{cm}^{-1}$ 相比较。通过获得能量为$-2.90372437703 \left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$，Frankowski 和 Pekeris 改进了Pekeris的结果[K. Frankowski and C. L. Pekeris, \textit{Phys. Rev.}, \textbf{146}, 46 (1966)]。Drake 和 Yan 使用含有 $r_{12}$ 的线性变分函数计算了 \ce{He} 的基态能量和许多激发态能量，其精确度被认为可以达到 $1/10^{14}$ 或更高 [G. W. F. Drake and Z-C. Yan, \textit{Chem. Phys. Lett.}, \textbf{229}, 486 (1994); \textit{Phys. Rev. A}, \textbf{46}, 2378 (1992)]。这些工作者同样计算出了\ce{Li}基态和两个激发态的变分能量，精确度达到或超过 $1/10^9$[Z-C. Yan and G. W. F. Drake, \textit{Phys. Rev. A}, \textbf{52}, 3711 (1995)]。加上相对论和核运动修正，Drake 和 Yan 发现理论计算和实验光谱之间的氦和锂转变频率非常吻合。通过对变异函数中不断增加的项数进行一系列变异计算，并推导到无限项数的极限，Drake 和合作者发现了以下非相对论、无限核质量 \ce{He} 的基态能量：$-2.90372437703411959831 \left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$，据信精确到21位有效数字[G. W. F. Drake et al., \textit{Phys. Rev. A}, \textbf{65}, 054501 (2002)]。
 
 \section{简并能级的微扰理论}
 \label{sec:9.5 Perturbation Theory for a Degenerate Energy Level}
@@ -823,7 +823,7 @@
 
     第\ref{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}节中，我们已经使用微扰理论处理了氦原子基态。现在我们将处理氦原子第一激发态。无扰能量由(\ref{eq:9.48})给出。最低无扰激发态满足$n_1 = 1, n_2 = 2$或$n_1 = 2, n_2 = 1$，带入(\ref{eq:9.48})，我们得到
     \begin{equation}
-        E_n^{\left(0\right)} = -\frac{5Z^2}{8}\left(\frac{\mathrm{e}^2}{4\pi\varepsilon_0a_0}\right) = -\frac{20}{8}2\left(\frac{\mathrm{e}^2}{8\pi\varepsilon_0a_0}\right) = -5\left(13.606 \:\mathrm{eV}\right) = -68.03 \:\mathrm{eV}
+        E_n^{\left(0\right)} = -\frac{5Z^2}{8}\left(\frac{\ee ^2}{4\pi\varepsilon_0a_0}\right) = -\frac{20}{8}2\left(\frac{\ee ^2}{8\pi\varepsilon_0a_0}\right) = -5\left(13.606 \:\mathrm{eV}\right) = -68.03 \:\mathrm{eV}
         \label{eq:9.92}
     \end{equation}
     回忆：类氢原子的$n=2$能级是四重简并的，$2s$和三个$2p$态都具有相同的能量值。\ce{He}原子第一无扰激发态的能级是八重简并的。八个无扰波函数为[式(\ref{eq:9.44})]：
@@ -836,16 +836,16 @@
     \end{equation}
     其中$1s\left(1\right)2s\left(2\right)$表示电子1的类氢函数$1s$和电子2的类氢函数$2s$的乘积。例如$\psi_8^{\left(0\right)}$的显式形式如下（表\ref{tab:6.2}）：
     \begin{equation*}
-        \psi_8^{\left(0\right)} = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a_0}\right)^{5/2}r_1\mathrm{e}^{-Zr_1/2a_0}\cos\theta_1 \cdot \frac{1}{\pi^{1/2}}\left(\frac{Z}{a_0}\right)^{3/2}r_2^2\mathrm{e}^{-Zr_2/a_0}
+        \psi_8^{\left(0\right)} = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a_0}\right)^{5/2}r_1\ee ^{-Zr_1/2a_0}\cos\theta_1 \cdot \frac{1}{\pi^{1/2}}\left(\frac{Z}{a_0}\right)^{3/2}r_2^2\ee ^{-Zr_2/a_0}
     \end{equation*}
     我们选择使用实$2p$类氢轨道，而不是其他复函数轨道。
 
     由于无扰能级是简并的，我们必须求解久期方程。久期方程(\ref{eq:9.83})假设函数$\psi_1^{\left(0\right)}, \psi_2^{\left(0\right)}, \ldots, \psi_8^{\left(0\right)}$是正交的。该条件已经满足。例如，
     \begin{equation*}
         \begin{aligned}
-            \int \psi_1^{\left(0\right)*}\psi_1^{\left(0\right)}\mathrm{d}\tau &= \int\int 1s\left(1\right)^*2s\left(2\right)^*1s\left(1\right)2s\left(2\right)\:\mathrm{d}\tau_1\:\mathrm{d}\tau_2 \\
-            &= \int \left|1s\left(1\right)\right|^2 \:\mathrm{d}\tau_1 \int \left|2s\left(2\right)\right|^2 \:\mathrm{d}\tau_2 = 1 \cdot 1 = 1 \\ 
-            \int \psi_3^{\left(0\right)*}\psi_5^{\left(0\right)}\:\mathrm{d}\tau &= \int \left|1s\left(1\right)\right|^2 \:\mathrm{d}\tau_1 \int 2p_x\left(2\right)^*2p_y\left(2\right)\:\mathrm{d}\tau_2 = 1 \cdot 0 = 0
+            \int \psi_1^{\left(0\right)*}\psi_1^{\left(0\right)}\dd \tau &= \int\int 1s\left(1\right)^*2s\left(2\right)^*1s\left(1\right)2s\left(2\right)\:\dd \tau_1\:\dd \tau_2 \\
+            &= \int \left|1s\left(1\right)\right|^2 \:\dd \tau_1 \int \left|2s\left(2\right)\right|^2 \:\dd \tau_2 = 1 \cdot 1 = 1 \\ 
+            \int \psi_3^{\left(0\right)*}\psi_5^{\left(0\right)}\:\dd \tau &= \int \left|1s\left(1\right)\right|^2 \:\dd \tau_1 \int 2p_x\left(2\right)^*2p_y\left(2\right)\:\dd \tau_2 = 1 \cdot 0 = 0
         \end{aligned}
     \end{equation*}
     其中用到了类氢轨道的正交性。
@@ -854,7 +854,7 @@
 
     考虑使用宇称，可以证明：大部分的积分$H_{ij}'$为零。首先，考虑$H_{13}'$：
     \begin{equation*}
-        H_{13}' = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} 1s\left(1\right)2s\left(2\right)\frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}1s\left(1\right)2p_x\left(2\right)\:\mathrm{d}x_1\:\mathrm{d}y_1\:\mathrm{d}z_1\:\mathrm{d}x_2\:\mathrm{d}y_2\:\mathrm{d}z_2
+        H_{13}' = \intinf \intinf \intinf \intinf \intinf \intinf 1s\left(1\right)2s\left(2\right)\frac{\ee ^2}{4\pi\varepsilon_0r_{12}}1s\left(1\right)2p_x\left(2\right)\:\dd x_1\:\dd y_1\:\dd z_1\:\dd x_2\:\dd y_2\:\dd z_2
     \end{equation*}
     类氢函数$s$只依赖于$r = \left(x^2+y^2+z^2\right)^{1/2}$，因此是偶函数。$2p_x\left(2\right)$是$x_2$的奇函数[式(\ref{eq:6.119})]。$r_{12}$由(\ref{eq:9.66})给出，如果我们将六个坐标反转，$r_{12}$保持不变：
     \begin{equation*}
@@ -862,7 +862,7 @@
     \end{equation*}
     因此，反转六个坐标，积分$H_{13}'$变为其相反数。那么[式(\ref{eq:7.74})]，$H_{13}' = 0$。同样地，$H_{14}' = H_{15}' = H_{16}' = H_{17}' = H_{18}' = 0$；$H_{23}' = H_{24}' = H_{25}' = H_{26}' = H_{27}' = H_{28}' = 0$。现在考虑$H_{35}'$：
     \begin{equation*}
-        H_{35}' = \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} 1s\left(1\right)2p_x\left(2\right)\frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}1s\left(1\right)2p_y\left(2\right)\:\mathrm{d}x_1\cdots\mathrm{d}z_2
+        H_{35}' = \intinf \cdots \intinf 1s\left(1\right)2p_x\left(2\right)\frac{\ee ^2}{4\pi\varepsilon_0r_{12}}1s\left(1\right)2p_y\left(2\right)\:\dd x_1\cdots\dd z_2
     \end{equation*}
     假设我们反转$x$坐标：$x_1 \to -x_1$，$x_2 \to -x_2$。该操作未改变$r_{12}$，$1s\left(1\right)$和$2p_y\left(2\right)$也不受影响。然而，$2p_x\left(2\right)$变为其相反数，因此，净效果是将$H_{35}'$变为其相反数。所以（问题7.30），$H_{35}' = 0$。同样地，$H_{36}' = H_{37}' = H_{38}' = 0$；$H_{45}' = H_{46}' = H_{47}' = H_{48}' = 0$。同样反转$y_1 \to -y_1$和$y_2 \to -y_2$，我们得到$H_{57}' = H_{58}' = H_{67}' = H_{68}' = 0$。久期方程变为
     \begin{equation*}
@@ -904,39 +904,39 @@
     我们有
     \begin{equation*}
         \begin{aligned}
-            H_{11}^{\prime} & =\int_{-\infty}^{\infty} \ldots \int_{-\infty}^{\infty} 1 s(1) 2 s(2) \frac{e^{2}}{4 \pi \varepsilon_{0} r_{12}} 1 s(1) 2 s(2) \:\mathrm{d} x_{1} \ldots\: \mathrm{d} z_{2} \\
-            H_{11}^{\prime} & =\int\int[1 s(1)]^{2}[2 s(2)]^{2} \frac{e^{2}}{4 \pi \varepsilon_{0} r_{12}} \:\mathrm{d} \tau_{1}\: \mathrm{d} \tau_{2} \\
-            H_{22}^{\prime} & =\int\int[1 s(2)]^{2}[2 s(1)]^{2} \frac{e^{2}}{4 \pi \varepsilon_{0} r_{12}} \:\mathrm{d} \tau_{1} \:\mathrm{d} \tau_{2}
+            H_{11}^{\prime} & =\intinf \ldots \intinf 1 s(1) 2 s(2) \frac{e^{2}}{4 \pi \varepsilon_{0} r_{12}} 1 s(1) 2 s(2) \:\dd x_{1} \ldots\: \dd z_{2} \\
+            H_{11}^{\prime} & =\int\int[1 s(1)]^{2}[2 s(2)]^{2} \frac{e^{2}}{4 \pi \varepsilon_{0} r_{12}} \:\dd \tau_{1}\: \dd \tau_{2} \\
+            H_{22}^{\prime} & =\int\int[1 s(2)]^{2}[2 s(1)]^{2} \frac{e^{2}}{4 \pi \varepsilon_{0} r_{12}} \:\dd \tau_{1} \:\dd \tau_{2}
         \end{aligned}
     \end{equation*}
     积分变量是虚拟变量，可以用任何符号表示。我们使用如下方法标记$H_{22}'$中的积分：交换$x_1$和$x_2$，$y_1$和$y_2$，$z_1$和$z_2$。该过程没有改变$r_{12}$[式(\ref{eq:9.66})]，因此
     \begin{equation}
-        H'_{22} = \int [1s\ (1)]^2 [2s\ (2)]^2 \frac{\mathrm{e}^2}{4\pi\epsilon_0 r_{12}}\: \mathrm{d}\tau_2\: \mathrm{d}\tau_1 = H'_{11}
+        H'_{22} = \int [1s\ (1)]^2 [2s\ (2)]^2 \frac{\ee ^2}{4\pi\epsilon_0 r_{12}}\: \dd \tau_2\: \dd \tau_1 = H'_{11}
         \label{eq:9.96}
     \end{equation}
     同样的论证表明$H_{33}' = H_{44}'$，$H_{55}' = H_{66}'$，$H_{77}' = H_{88}'$。
 
     我们使用符号$J_{1s2s}$表示积分$H_{11}'$：
     \begin{equation}
-        H_{11}' = J_{1s2s} = \int [1s\,(1)]^2 [2s\,(2)]^2 \frac{\mathrm{e}^2}{4\pi \epsilon_0 r_{12}}\: \mathrm{d}\tau_1\: \mathrm{d}\tau_2
+        H_{11}' = J_{1s2s} = \int [1s\,(1)]^2 [2s\,(2)]^2 \frac{\ee ^2}{4\pi \epsilon_0 r_{12}}\: \dd \tau_1\: \dd \tau_2
         \label{eq:9.97}
     \end{equation}
     这是一个\textbf{库仑积分}（Coulomb integral）的例子，之所以叫库仑积分，是因为 $J_{1s2s}$ 等于概率密度函数为 $\left[1s\right]^2$ 的电子和概率密度函数为 $\left[2s\right]^2$ 的电子之间的静电排斥能。
 
     积分$H_{12}'$用$K_{1s2s}$表示：
     \begin{equation}
-        H'_{12} = K_{1s2s} = \int 1s\left(1\right)2s\left(2\right) \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}} 2s\left(1\right)1s\left(2\right)\: \mathrm{d}\tau_1 \:\mathrm{d}\tau_2
+        H'_{12} = K_{1s2s} = \int 1s\left(1\right)2s\left(2\right) \frac{\ee ^2}{4\pi\varepsilon_0r_{12}} 2s\left(1\right)1s\left(2\right)\: \dd \tau_1 \:\dd \tau_2
         \label{eq:9.98}
     \end{equation}
-    这是一个\textbf{交换积分}（exchange integral）：$\frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}}$左右两侧的积分之间的区别在于电子 1 和电子 2 的交换。
+    这是一个\textbf{交换积分}（exchange integral）：$\frac{\ee ^2}{4\pi\varepsilon_0r_{12}}$左右两侧的积分之间的区别在于电子 1 和电子 2 的交换。
 
     库仑积分$J_{mn}$和交换积分$K_{mn}$的一般定义如下：
     \begin{equation}
-        J_{mn} \equiv \left\langle f_m(1) f_n(2) \middle| \mathrm{e}^2/4\pi\varepsilon_0 r_{12} \middle| f_m(1) f_n(2) \right\rangle
+        J_{mn} \equiv \left\langle f_m(1) f_n(2) \middle| \ee ^2/4\pi\varepsilon_0 r_{12} \middle| f_m(1) f_n(2) \right\rangle
         \label{eq:9.99}
     \end{equation}
     \begin{equation}
-        K_{mn} \equiv \left\langle f_m(1) f_n(2) \middle| \mathrm{e}^2/4\pi\varepsilon_0 r_{12} \middle| f_n(1) f_m(2) \right\rangle
+        K_{mn} \equiv \left\langle f_m(1) f_n(2) \middle| \ee ^2/4\pi\varepsilon_0 r_{12} \middle| f_n(1) f_m(2) \right\rangle
         \label{eq:9.100}
     \end{equation}
     其中的积分是对电子1和2的全空间坐标进行积分，$f_m$和$f_n$是空间轨道。
@@ -1008,17 +1008,17 @@
     考虑$H_{33}'$和$H_{55}'$：
     \begin{equation*}
         \begin{aligned}
-            H_{33}' &= \int_{-\infty}^{\infty}\cdots\int_{-\infty}^{\infty} 1s(1)2p_x(2)\frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}} 1s(1)2p_x(2)\:\mathrm{d}x_1\cdots\mathrm{d}z_2 \\
-            H_{55}' &= \int_{-\infty}^{\infty}\cdots\int_{-\infty}^{\infty} 1s(1)2p_y(2)\frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{12}} 1s(1)2p_y(2)\:\mathrm{d}x_1\cdots\mathrm{d}z_2
+            H_{33}' &= \intinf \cdots\intinf 1s(1)2p_x(2)\frac{\ee ^2}{4\pi\varepsilon_0r_{12}} 1s(1)2p_x(2)\:\dd x_1\cdots\dd z_2 \\
+            H_{55}' &= \intinf \cdots\intinf 1s(1)2p_y(2)\frac{\ee ^2}{4\pi\varepsilon_0r_{12}} 1s(1)2p_y(2)\:\dd x_1\cdots\dd z_2
         \end{aligned}
     \end{equation*}
     这两个积分是相等的——它们唯一的区别是将$2p_x\left(2\right)$替换为$2p_y\left(2\right)$——这两个轨道只是空间取向不同。更正式地说，如果我们根据方案$x_2 \to y_2, y_2 \to x_2, x_1 \to y_1, y_1 \to x_1$对 $H_{33}'$ 中的虚拟积分变量进行重新标注，那么$r_{12}$保持不变，则$H_{33}'$变为$H_{55}'$。同样地理由表明$H_{77}' = H_{33}'$。在这些库仑积分中引入符号$J_{1s2p}$，我们有：
     \begin{equation*}
-        H'_{33} = H'_{55} = H'_{77} = J_{1s2p} = \int\int 1s(1)2p_z(2)\frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{12}}1s(1)2p_z(2) \:\mathrm{d}\tau_1\: \mathrm{d}\tau_2
+        H'_{33} = H'_{55} = H'_{77} = J_{1s2p} = \int\int 1s(1)2p_z(2)\frac{\ee ^2}{4\pi\varepsilon_0 r_{12}}1s(1)2p_z(2) \:\dd \tau_1\: \dd \tau_2
     \end{equation*}
     同样地，有关$2p$轨道的交换积分也相等：
     \begin{equation*}
-        H'_{34} = H'_{56} = H'_{78} = K_{1s2p} = \int\int 1s(1)2p_z(2)\frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{12}}2p_z(1)1s(2)\:\mathrm{d}\tau_1\: \mathrm{d}\tau_2
+        H'_{34} = H'_{56} = H'_{78} = K_{1s2p} = \int\int 1s(1)2p_z(2)\frac{\ee ^2}{4\pi\varepsilon_0 r_{12}}2p_z(1)1s(2)\:\dd \tau_1\: \dd \tau_2
     \end{equation*}
     因此，(\ref{eq:9.105}) 至 (\ref{eq:9.107}) 三个行列式完全相同，其形式为
     \begin{equation*}
@@ -1048,7 +1048,7 @@
         \label{eq:9.110}
     \end{equation}
 
-    电子间排斥势$\mathrm{e}^2/4\pi\varepsilon_0 r_{12}$部分消除了简并的现象。假设的八重简并无扰能级裂分为与组态$1s2s$相关的两个非简并能级和两个与组态$2s2p$相关的三重简并能级。人们可能认为，高级能量校正会进一步解决简并问题。事实上，要完全消除简并，需要施加外磁场。由于微扰$\mathrm{e}/4\pi\varepsilon_0a_0$项未完全消除简并，任何$\phi_3^{\left(0\right)},\phi_5^{\left(0\right)},\phi_7^{\left(0\right)}$的归一化线性组合和$\phi_4^{\left(0\right)},\phi_6^{\left(0\right)},\phi_8^{\left(0\right)}$的归一化线性组合都可以是零级校正波函数。
+    电子间排斥势$\ee ^2/4\pi\varepsilon_0 r_{12}$部分消除了简并的现象。假设的八重简并无扰能级裂分为与组态$1s2s$相关的两个非简并能级和两个与组态$2s2p$相关的三重简并能级。人们可能认为，高级能量校正会进一步解决简并问题。事实上，要完全消除简并，需要施加外磁场。由于微扰$\ee /4\pi\varepsilon_0a_0$项未完全消除简并，任何$\phi_3^{\left(0\right)},\phi_5^{\left(0\right)},\phi_7^{\left(0\right)}$的归一化线性组合和$\phi_4^{\left(0\right)},\phi_6^{\left(0\right)},\phi_8^{\left(0\right)}$的归一化线性组合都可以是零级校正波函数。
 
     为了计算(\ref{eq:9.102})和(\ref{eq:9.108})中的库仑积分和交换积分，我们使用问题9.14中给出的$1/r_{12}$的展开式。结果为
     \begin{equation}
@@ -1058,7 +1058,7 @@
         \end{aligned}
         \label{eq:9.111}
     \end{equation}
-    其中$Z=2$，$\mathrm{e}^2/4\pi\varepsilon_0 a_0 = 13.606 \:\mathrm{eV}$。回忆$E^{\left(0\right)} = -68.03 \:\mathrm{eV}$，我们得到(图\ref{fig:9.3})：
+    其中$Z=2$，$\ee ^2/4\pi\varepsilon_0 a_0 = 13.606 \:\mathrm{eV}$。回忆$E^{\left(0\right)} = -68.03 \:\mathrm{eV}$，我们得到(图\ref{fig:9.3})：
     \begin{figure}[ht]
         \centering
         \includegraphics[width=0.5\textwidth]{Figures/9.3.png}
@@ -1075,7 +1075,7 @@
     \end{equation*}
     能量的一级校正似乎表明：组态$1s2p$的两个较低的能级能量比$1s2s$组态两个较高能级的能量低。对氦光谱的研究表明，事实并非如此。该误差由忽略能量的高级微扰校正造成。
 
-    Knight和Scherr使用变分-微扰法（第 \ref{sec:9.2 Nondegenerate Perturbation Theory} 节）计算了这四个激发水平的二级和三级校正 $E^{(2)}$ 和 $E^{(3)}$。[R. E. Knight and C. W. Scherr, \textit{Rev. Mod. Phys.}, \textbf{35}, 431 (1963).十七级能量校正见F. C. Sanders and C. W. Scherr, \textit{Phys. Rev.}, \textbf{181}, 84 (1969).]图\ref{fig:9.4}展示了他们的成果（与实验值相差$0.1 \: \mathrm{eV}$）。图\ref{fig:9.4}表明图\ref{fig:9.3}并不准确。因为微扰项$\mathrm{e}^2/4\pi\varepsilon_0 r_{12}$并不真的很小，只包含$E^{\left(1\right)}$校正的微扰处理无法给出准确的结果。
+    Knight和Scherr使用变分-微扰法（第 \ref{sec:9.2 Nondegenerate Perturbation Theory} 节）计算了这四个激发水平的二级和三级校正 $E^{(2)}$ 和 $E^{(3)}$。[R. E. Knight and C. W. Scherr, \textit{Rev. Mod. Phys.}, \textbf{35}, 431 (1963).十七级能量校正见F. C. Sanders and C. W. Scherr, \textit{Phys. Rev.}, \textbf{181}, 84 (1969).]图\ref{fig:9.4}展示了他们的成果（与实验值相差$0.1 \: \mathrm{eV}$）。图\ref{fig:9.4}表明图\ref{fig:9.3}并不准确。因为微扰项$\ee ^2/4\pi\varepsilon_0 r_{12}$并不真的很小，只包含$E^{\left(1\right)}$校正的微扰处理无法给出准确的结果。
     \begin{figure}
         \centering
         \includegraphics[width=0.65\textwidth]{Figures/9.4.png}
@@ -1091,7 +1091,7 @@
 
     波函数的一级校正$\psi^{\left(1\right)}$引入了其他组态的贡献（组态相互作用）。当我们说某个能级属于组态$1s2s$时，我们指出的是对真实波函数贡献最大的组态。
 
-    我们从八个简并的零级波函数(\ref{eq:9.93})开始。这些函数有三种兼并方式。一是具有相同$n$但不同$l$值的类氢函数之间的简并，$2s$和$2p$函数具有相同的能量。二是相同$n$和$l$但不同$m$值之间的简并，$2p_1,2p_0,2p_{-1}$函数具有相同的能量。（方便起见，我们使用实际波函数$2p_{x,y,z}$，但是我们可以从函数$2p_{1,0,-1}$开始。）最后，是仅在轨道间两个电子的交换上不同的函数之间的简并（全同粒子，译者注）；函数$\psi_1^{\left(0\right)} = 1s\left(1\right)2s\left(2\right)$和$\psi_2^{\left(0\right)} = 1s\left(2\right)2s\left(1\right)$有相同的能量。最后一种简并形式称为\textit{交换简并}（exchange degeneracy）。当我们引入电子间斥力$\mathrm{e}^2/4\pi\varepsilon_0 r_{12}$作为微扰时，交换简并和与量子数$l$有关的简并不再存在。然而，与$m$有关的简并依然存在，每个氦$1s2p$能级是三重简并的，在构建零级校正波函数时，我们完全可以使用 $2p_1$、$2p_0$ 和 $2p_{-1}$ 轨道，而不是实际轨道。让我们来思考消除$l$简并和交换简并的理由。
+    我们从八个简并的零级波函数(\ref{eq:9.93})开始。这些函数有三种兼并方式。一是具有相同$n$但不同$l$值的类氢函数之间的简并，$2s$和$2p$函数具有相同的能量。二是相同$n$和$l$但不同$m$值之间的简并，$2p_1,2p_0,2p_{-1}$函数具有相同的能量。（方便起见，我们使用实际波函数$2p_{x,y,z}$，但是我们可以从函数$2p_{1,0,-1}$开始。）最后，是仅在轨道间两个电子的交换上不同的函数之间的简并（全同粒子，译者注）；函数$\psi_1^{\left(0\right)} = 1s\left(1\right)2s\left(2\right)$和$\psi_2^{\left(0\right)} = 1s\left(2\right)2s\left(1\right)$有相同的能量。最后一种简并形式称为\textit{交换简并}（exchange degeneracy）。当我们引入电子间斥力$\ee ^2/4\pi\varepsilon_0 r_{12}$作为微扰时，交换简并和与量子数$l$有关的简并不再存在。然而，与$m$有关的简并依然存在，每个氦$1s2p$能级是三重简并的，在构建零级校正波函数时，我们完全可以使用 $2p_1$、$2p_0$ 和 $2p_{-1}$ 轨道，而不是实际轨道。让我们来思考消除$l$简并和交换简并的理由。
 
     \ce{He}中的电子间斥力使得$2s$轨道能量低于$2p$轨道。图 \ref{eq:6.9} 和 \ref{eq:6.8} 显示，$2s$ 电子比 $2p$ 电子更有可能比 $1s$ 电子更靠近原子核。$2s$ 电子不会像 $1s$ 电子那样有效地屏蔽原子核，因此其能量低于 $2p$ 电子。[根据式(\ref{eq:6.94})，核电荷越高，能量越低。]数学上来说，$1s2s$比$1s2p$能量更低，导致了库仑积分$J_{1s2s}$小于$J_{1s2p}$。这些库仑积分表示适当电荷分布之间的静电斥力。当 $2s$ 电子穿透 $1s$ 电子的电荷分布时，它只受到 $1s$ 电荷分布中未穿透部分的斥力。因此，$1s-2s$电子间斥力小于$1s-2p$电子间斥力，则$1s2s$能级能量比$1s2p$能级能量低。多电子原子中的电子间斥力消除了 $l$ 的简并性，相同 $n$ 值的轨道能量随着 $l$ 的增加而增加。
 
@@ -1113,26 +1113,26 @@
     \end{equation}
     其中$E_k^0$和$\psi_k^0$分别是无扰系统的能量和波函数。无辐射作用下的含时薛定谔方程(\ref{eq:7.97})为
     \begin{equation}
-        -\frac{\hbar}{\mathrm{i}}\frac{\partial \Psi}{\partial t} = \left(\hat{H}^0 + \hat{H}'\right) \Psi
+        -\frac{\hbar}{\ii }\frac{\partial \Psi}{\partial t} = \left(\hat{H}^0 + \hat{H}'\right) \Psi
         \label{eq:9.113}
     \end{equation}
     其中态函数$\Psi$取决于与时间相关的空间坐标和自旋坐标（用$q$表示）：$\Psi = \Psi\left(q,t\right)$。（见第\ref{chap:10}章，关于自旋的讨论。）
 
     首先，我们不考虑$\hat{H}'\left(t\right)$。无扰含时薛定谔方程为
     \begin{equation}
-        -\left(\hbar/\mathrm{i}\right)\partial \Psi^0/\partial t = \hat{H}^0 \Psi^0
+        -\left(\hbar/\ii \right)\partial \Psi^0/\partial t = \hat{H}^0 \Psi^0
         \label{eq:9.114}
     \end{equation}
-    系统可能的定态函数由(\ref{eq:7.99})给出：$\Psi^0_k = \exp\left(-\mathrm{i}E_k^0t/\hbar\right)\psi_k^0$，其中$\psi_k^0$是算符$\hat{H}^0$的本征函数[式(\ref{eq:9.112})]。每个$\Psi^0_k$都是(\ref{eq:9.114})的解。此外，线性组合
+    系统可能的定态函数由(\ref{eq:7.99})给出：$\Psi^0_k = \exp\left(-\ii E_k^0t/\hbar\right)\psi_k^0$，其中$\psi_k^0$是算符$\hat{H}^0$的本征函数[式(\ref{eq:9.112})]。每个$\Psi^0_k$都是(\ref{eq:9.114})的解。此外，线性组合
     \begin{equation}
-        \Psi^0 = \sum_k c_k \Psi^0_k = \sum_k c_k \exp\left(-\mathrm{i}E_k^0t/\hbar\right)\psi_k^0
+        \Psi^0 = \sum_k c_k \Psi^0_k = \sum_k c_k \exp\left(-\ii E_k^0t/\hbar\right)\psi_k^0
         \label{eq:9.115}
     \end{equation}
     （其中$c_k$是任意与时间无关的常数）也是含时薛定谔方程(\ref{eq:9.114})的解，正如导出(\ref{eq:7.100})时的讨论。函数组$\Psi_k^0$构成一个完备集（因为它们是厄米算符$\hat{H}^0$的本征函数），因此任何(\ref{eq:9.114})的解都可以写成(\ref{eq:9.115})的形式。那么(\ref{eq:9.115})就是(\ref{eq:9.114})的通解，其中$\hat{H}^0$与时间无关。
 
     现在，我们引入$\hat{H}'\left(t\right)$。则(\ref{eq:9.115})不再是含时薛定谔方程的解了。然而，由于无扰函数组$\Psi_k^0$构成一个完备集，在任意时刻的真实态函数$\Psi$可以根据$\Psi = \sum_k b_k \Psi_k^0$来展开为$\Psi_k^0$函数组的线性组合。因为$\hat{H}$与时间无关，$\Psi$随时间变化，那么展开系数$b_k$也会随时间变化。因此，
     \begin{equation}
-        \Psi = \sum_k b_k\left(t\right) \exp\left(-\mathrm{i}E_k^0t/\hbar\right)\psi_k^0
+        \Psi = \sum_k b_k\left(t\right) \exp\left(-\ii E_k^0t/\hbar\right)\psi_k^0
         \label{eq:9.116}
     \end{equation}
     在极限$\hat{H}'\left(t\right) \to 0$时，展开式(\ref{eq:9.116})退化为(\ref{eq:9.115})。
@@ -1140,26 +1140,26 @@
     将(\ref{eq:9.116})代入含时薛定谔方程(\ref{eq:9.113})，并使用式(\ref{eq:9.112})，我们得到
     \begin{equation*}
         \begin{aligned}
-            \frac{-\hbar}{\mathrm{i}} \sum_k \frac{\mathrm{d} b_k}{\mathrm{d}t} \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) \psi_k^0 &+ \sum_k E_k^0 b_k \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) \psi_k^0 \\
-            &= \sum_k b_k \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) E_k^0 \psi_k^0 + \sum_k b_k \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) \hat{H}'\psi_k^0
+            \frac{-\hbar}{\ii } \sum_k \frac{\dd b_k}{\dd t} \exp \left( -\ii E_k^0 t/\hbar \right) \psi_k^0 &+ \sum_k E_k^0 b_k \exp \left( -\ii E_k^0 t/\hbar \right) \psi_k^0 \\
+            &= \sum_k b_k \exp \left( -\ii E_k^0 t/\hbar \right) E_k^0 \psi_k^0 + \sum_k b_k \exp \left( -\ii E_k^0 t/\hbar \right) \hat{H}'\psi_k^0
         \end{aligned}
     \end{equation*}
     \begin{equation*}
-        - \frac{\hbar}{\mathrm{i}}\sum_k \frac{\mathrm{d} b_k}{\mathrm{d}t} \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) \psi_k^0 = \sum_k b_k \exp \left( -\mathrm{i} E_k^0 t/\hbar \right) \hat{H}'\psi_k^0
+        - \frac{\hbar}{\ii }\sum_k \frac{\dd b_k}{\dd t} \exp \left( -\ii E_k^0 t/\hbar \right) \psi_k^0 = \sum_k b_k \exp \left( -\ii E_k^0 t/\hbar \right) \hat{H}'\psi_k^0
     \end{equation*}
 
 
     将其乘以$\psi_m^{0\ast}$并对空间和自旋坐标全部积分。使用正交方程$\left\langle \psi_m^0 \middle| \psi_k^0 \right\rangle = \delta_{mk}$，我们得到
     \begin{equation*}
-        -\frac{\hbar}{\mathrm{i}}\sum_k\frac{\mathrm{d}b_k}{\mathrm{d}t}\exp\left(-\mathrm{i}E_k^0t/\hbar\right)\delta_{mk} = \sum_kb_k\exp\left(-\mathrm{i}E_k^0t/\hbar\right)\left\langle\psi_m^0|\hat{H}'\middle|\psi_k^0\right\rangle
+        -\frac{\hbar}{\ii }\sum_k\frac{\dd b_k}{\dd t}\exp\left(-\ii E_k^0t/\hbar\right)\delta_{mk} = \sum_kb_k\exp\left(-\ii E_k^0t/\hbar\right)\left\langle\psi_m^0|\hat{H}'\middle|\psi_k^0\right\rangle
     \end{equation*}
-    由于因子$\delta_{mk}$，左侧求和中只有一项不为零，其他都为零，左侧等于$-\left(\hbar/\mathrm{i}\right) \left(\mathrm{d} b_m/\mathrm{d}t\right) \exp\left(-\mathrm{i}E_m^0t/\hbar\right)$。因此，我们得到
+    由于因子$\delta_{mk}$，左侧求和中只有一项不为零，其他都为零，左侧等于$-\left(\hbar/\ii \right) \left(\dd b_m/\dd t\right) \exp\left(-\ii E_m^0t/\hbar\right)$。因此，我们得到
     \begin{equation}
-        \frac{\mathrm{d}b_m}{\mathrm{d}t} = -\frac{\mathrm{i}}{\hbar}\sum_k b_k\exp\left[\mathrm{i}(E_m^0-E_k^0)t/\hbar\right]\left\langle\psi_m^0\middle|\hat{H}'\middle|\psi_k^0\right\rangle
+        \frac{\dd b_m}{\dd t} = -\frac{\ii }{\hbar}\sum_k b_k\exp\left[\ii (E_m^0-E_k^0)t/\hbar\right]\left\langle\psi_m^0\middle|\hat{H}'\middle|\psi_k^0\right\rangle
         \label{eq:9.117}
     \end{equation}
 
-    假设在$t=0$时刻应用微扰$\hat{H}'\left(t\right)$，在微扰作用于系统之前，系统处于状态$n$，能量为$E_n^{\left(0\right)}$。则$t=0$时刻的态函数为$\Psi = \exp{(-\mathrm{i}E_n^0t/\hbar)}\psi_n^0$[式(\ref{eq:7.99})]，因此，$t=0$时刻(\ref{eq:9.116})的展开系数为$b_n\left(0\right) = 1$，$k \neq n$的其他系数为零：
+    假设在$t=0$时刻应用微扰$\hat{H}'\left(t\right)$，在微扰作用于系统之前，系统处于状态$n$，能量为$E_n^{\left(0\right)}$。则$t=0$时刻的态函数为$\Psi = \exp{(-\ii E_n^0t/\hbar)}\psi_n^0$[式(\ref{eq:7.99})]，因此，$t=0$时刻(\ref{eq:9.116})的展开系数为$b_n\left(0\right) = 1$，$k \neq n$的其他系数为零：
     \begin{equation}
         b_k\left(0\right) = \delta_{kn}
         \label{eq:9.118}
@@ -1167,25 +1167,25 @@
 
     我们假设微扰项$\hat{H}'$很小，且作用时间很短。在这些条件下，在施加微扰时，展开系数$b_k$与其初始值相比的变化将很小。近似地，我们可以将 (\ref{eq:9.117}) 右侧的膨胀系数替换为它们的初始值 (\ref{eq:9.118}) 。由此得出
     \begin{equation}
-        \frac{\mathrm{d}b_m}{\mathrm{d}t} \approx 2\frac{\mathrm{i}}{\hbar}\exp\left[\mathrm{i}\left(E_m^0-E_n^0\right)t/\hbar\right]\left\langle\psi_m^0\middle|\hat{H}'\middle|\psi_n^0\right\rangle
+        \frac{\dd b_m}{\dd t} \approx 2\frac{\ii }{\hbar}\exp\left[\ii \left(E_m^0-E_n^0\right)t/\hbar\right]\left\langle\psi_m^0\middle|\hat{H}'\middle|\psi_n^0\right\rangle
         \label{eq:9.119}
     \end{equation}
 
     令微扰$\hat{H}'$从$t=0$时刻开始作用到$t=t'$时刻。将(\ref{eq:9.119})两侧对$t$从$0$到$t'$积分，我们得到
     \begin{equation}
-        b_{m}\left(t'\right) \approx \delta_{m n}-\frac{\mathrm{i}}{\hbar}\int_{0}^{t'} \exp\left[\mathrm{i}\left(E_{m}^{0}-E_{n}^{0}\right)t/\hbar\right]\left\langle\psi_{m}^{0}\left|\hat{H}'\right| \psi_{n}^{0}\right\rangle \mathrm{d} t
+        b_{m}\left(t'\right) \approx \delta_{m n}-\frac{\ii }{\hbar}\int_{0}^{t'} \exp\left[\ii \left(E_{m}^{0}-E_{n}^{0}\right)t/\hbar\right]\left\langle\psi_{m}^{0}\left|\hat{H}'\right| \psi_{n}^{0}\right\rangle \dd t
         \label{eq:9.120}
     \end{equation}
     如果在 $t=0$ 时对处于定态 $n$ 的系统施加含时微扰 $\hat{H}'$，使用 (\ref{eq:9.120}) 的近似结果可以得到 (\ref{eq:9.116}) 中展开系数在 $t'$ 时刻的态函数近似值。[与定态微扰理论一样，我们也可以采用高阶近似方法。（见\textit{Fong}, pp. 234-244）。]
 
-    在$t'$时刻以后，微扰的作用停止，即$\hat{H}'=0$。对于$t > t'$，方程(\ref{eq:9.117})给出$\mathrm{d}b_m /\mathrm{d}t = 0$，所以在$t \geq t'$时，$b_m = b_m\left(t'\right)$。因此，微扰作用后，态函数$\Psi$为[式(\ref{eq:9.116})]：
+    在$t'$时刻以后，微扰的作用停止，即$\hat{H}'=0$。对于$t > t'$，方程(\ref{eq:9.117})给出$\dd b_m /\dd t = 0$，所以在$t \geq t'$时，$b_m = b_m\left(t'\right)$。因此，微扰作用后，态函数$\Psi$为[式(\ref{eq:9.116})]：
     \begin{equation}
-        \Psi = \sum_mb_m\left(t'\right)\exp\left(-\mathrm{i}E_m^0t/\hbar\right)\psi_m^0, \quad t \geq t'
+        \Psi = \sum_mb_m\left(t'\right)\exp\left(-\ii E_m^0t/\hbar\right)\psi_m^0, \quad t \geq t'
         \label{eq:9.121}
     \end{equation}
-    其中$b_m\left(t'\right)$由(\ref{eq:9.120})给出。在(\ref{eq:9.121})中，$\Psi$是能量算符$\hat{H}^0$本征函数组$\psi_m^0$的态叠加，展开系数为$b_m\exp\left(-\mathrm{i}E_m^0t/\hbar\right)$。[将(\ref{eq:9.121})与(\ref{eq:7.66})相比较。]第\ref{sec:7.4 Eigenfunctions of Commuting Operators}节的工作告诉我们，在$t'$时刻后对系统能量进行的测量将得到能量函数$\hat{H}^0$的本征值之一$E_m^0$，概率等于与$\psi_m^0$相关的展开系数的绝对值的平方，即$\left|b_m\left(t'\right)\exp\left(-\mathrm{i}E_m^0t/\hbar\right)\right|^2 = \left|b_m\left(t'\right)\right|^2$。
+    其中$b_m\left(t'\right)$由(\ref{eq:9.120})给出。在(\ref{eq:9.121})中，$\Psi$是能量算符$\hat{H}^0$本征函数组$\psi_m^0$的态叠加，展开系数为$b_m\exp\left(-\ii E_m^0t/\hbar\right)$。[将(\ref{eq:9.121})与(\ref{eq:7.66})相比较。]第\ref{sec:7.4 Eigenfunctions of Commuting Operators}节的工作告诉我们，在$t'$时刻后对系统能量进行的测量将得到能量函数$\hat{H}^0$的本征值之一$E_m^0$，概率等于与$\psi_m^0$相关的展开系数的绝对值的平方，即$\left|b_m\left(t'\right)\exp\left(-\ii E_m^0t/\hbar\right)\right|^2 = \left|b_m\left(t'\right)\right|^2$。
     
-    含时微扰将系统的态函数从$\exp\left(-\mathrm{i}E_n^0t/\hbar\right)\psi_n^0$变为叠加态(\ref{eq:9.121})。对能量的测量将$\Psi$变为能量本征函数之一$\exp\left(-\mathrm{i}E_m^0t/\hbar\right)\psi_m^0$（波函数的坍缩，第\ref{sec:7.9 Measurement and the Interpretation of Quantum Mechanics}节）。净结果是将系统从状态$n$跃迁到$m$，发生这样跃迁的概率为$\left|b_m\left(t'\right)\right|^2$。
+    含时微扰将系统的态函数从$\exp\left(-\ii E_n^0t/\hbar\right)\psi_n^0$变为叠加态(\ref{eq:9.121})。对能量的测量将$\Psi$变为能量本征函数之一$\exp\left(-\ii E_m^0t/\hbar\right)\psi_m^0$（波函数的坍缩，第\ref{sec:7.9 Measurement and the Interpretation of Quantum Mechanics}节）。净结果是将系统从状态$n$跃迁到$m$，发生这样跃迁的概率为$\left|b_m\left(t'\right)\right|^2$。
 
 \section{辐射和物质的相互作用}
 \label{sec:9.9 Interaction of Radiation and Matter}
@@ -1194,7 +1194,7 @@
 
     我们省略的一项详细研究表明，辐射磁场与原子电荷之间的相互作用通常比辐射电场与电荷之间的相互作用要弱得多，因此我们将只考虑后一种相互作用（在NMR谱图中，重要的相互作用是原子核的磁偶极矩与辐射磁场之间的相互作用。我们将忽略这种情况。）
 
-    令电磁波的电场$\mathscr{E}$只指向$x$方向。（称为平面偏振辐射。）电场的定义为单位电荷所受的力，则电荷$Q_i$所受的力为$F = -Q_i \mathscr{E}_x = -\mathrm{d}V /\mathrm{d}x$，其中用到了(\ref{eq:4.24})。积分后，辐射电场与电荷之间的相互作用势为$V = -Q_i \mathscr{E}_xx$，我们把任意积分常量定为零。对于有多个电荷的系统，$V = -\sum_i Q_i x_i \mathscr{E}_x$。这是含时微扰项$\hat{H}'\left(t\right)$。波长为 $\lambda$ 、频率为 $\nu$ 的电磁波沿 $z$ 方向传播时，其电场随空间和时间变化的函数由 $\mathscr{E}_x = \mathscr{E}_0\sin\left(2\pi\nu t - 2\pi z/\lambda\right)$ 给出（见一年级物理课本），其中$\mathscr{E}_0$ 是电场$\mathscr{E}_x$的最大值（振幅）。因此，
+    令电磁波的电场$\mathscr{E}$只指向$x$方向。（称为平面偏振辐射。）电场的定义为单位电荷所受的力，则电荷$Q_i$所受的力为$F = -Q_i \mathscr{E}_x = -\dd V /\dd x$，其中用到了(\ref{eq:4.24})。积分后，辐射电场与电荷之间的相互作用势为$V = -Q_i \mathscr{E}_xx$，我们把任意积分常量定为零。对于有多个电荷的系统，$V = -\sum_i Q_i x_i \mathscr{E}_x$。这是含时微扰项$\hat{H}'\left(t\right)$。波长为 $\lambda$ 、频率为 $\nu$ 的电磁波沿 $z$ 方向传播时，其电场随空间和时间变化的函数由 $\mathscr{E}_x = \mathscr{E}_0\sin\left(2\pi\nu t - 2\pi z/\lambda\right)$ 给出（见一年级物理课本），其中$\mathscr{E}_0$ 是电场$\mathscr{E}_x$的最大值（振幅）。因此，
     \begin{equation*}
         \hat{H}'\left(t\right) = -\mathscr{E}_0\sum_i Q_i x_i \sin\left(2\pi\nu t - 2\pi z/\lambda\right)
     \end{equation*}
@@ -1207,18 +1207,18 @@
     \end{equation}
     将$\hat{H}'\left(t\right)$代入(\ref{eq:9.120})，我们得到态函数$\Psi$展开式(\ref{eq:9.116})中展开系数的近似值：
     \begin{equation*}
-        b_m \approx \delta_{mn} + \frac{\mathrm{i}\mathscr{E}_0}{\hbar}\int_{0}^{t'} \exp\left(\mathrm{i}\omega_{mn}t\right)\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \sin\left(\omega t - 2\pi z/\lambda\right) \middle| \psi_n^0 \right\rangle \:\mathrm{d}t
+        b_m \approx \delta_{mn} + \frac{\ii \mathscr{E}_0}{\hbar}\int_{0}^{t'} \exp\left(\ii \omega_{mn}t\right)\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \sin\left(\omega t - 2\pi z/\lambda\right) \middle| \psi_n^0 \right\rangle \:\dd t
     \end{equation*}
 
     该方程中的积分$\left\langle \psi_m^0 \middle| \sum_i\cdots \middle| \psi_n^0 \right\rangle$是对全空间积分，但是只有$\psi_m^0$和$\psi_n^0$大小相当的区域才会对该积分值产生较大影响。在原子或分子以外的区域，$\psi_m^0$和$\psi_n^0$的值都非常小，这些区域可以忽略不计。我们将坐标原点放置在原子或分子内部。由于原子以外的区域可以忽略，可以认为坐标$z_i$最大值的数量级约为$1\:\mathrm{nm}$。对于紫外光，其波长$\lambda$的数量级为$10^2\:\mathrm{nm}$。对于可见、红外、微波、射频辐射，其波长甚至更长。因此$2\pi z_i/\lambda$很小，可以忽略不计，积分中只剩下了$\sum_i Q_i x_i \sin \omega t$。
 
-    使用性质（问题1.29）$\sin \omega t = \left(\mathrm{e}^{\mathrm{i}\omega t} - \mathrm{e}^{-\mathrm{i}\omega t}\right)/2\mathrm{i}$，我们得到
+    使用性质（问题1.29）$\sin \omega t = \left(\ee ^{\ii \omega t} - \ee ^{-\ii \omega t}\right)/2\ii $，我们得到
     \begin{equation*}
-        b_m\left(t'\right) \approx \delta_{mn} + \frac{\mathscr{E}_0}{2\hbar}\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \middle| \psi_n^0 \right\rangle \int_{0}^{t'} \left[\mathrm{e}^{\mathrm{i}\left(\omega_{mn}+\omega\right)t} - \mathrm{e}^{\mathrm{i}\left(\omega_{mn}-\omega\right)t}\right]\:\mathrm{d}t
+        b_m\left(t'\right) \approx \delta_{mn} + \frac{\mathscr{E}_0}{2\hbar}\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \middle| \psi_n^0 \right\rangle \int_{0}^{t'} \left[\ee ^{\ii \left(\omega_{mn}+\omega\right)t} - \ee ^{\ii \left(\omega_{mn}-\omega\right)t}\right]\:\dd t
     \end{equation*}
-    使用$\int_{0}^{t'} \mathrm{e}^{at}\:\mathrm{d}t = a^{-1}\left(\mathrm{e}^{at'} - 1\right)$，我们得到
+    使用$\int_{0}^{t'} \ee ^{at}\:\dd t = a^{-1}\left(\ee ^{at'} - 1\right)$，我们得到
     \begin{equation}
-        b_m\left(t'\right) \approx \delta_{mn} + \frac{\mathscr{E}_0}{2\hbar\mathrm{i}}\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \middle| \psi_n^0 \right\rangle \left[\frac{\mathrm{e}^{\mathrm{i}\left(\omega_{mn}+\omega\right)t'} - 1}{\left(\omega_{mn}+\omega\right)} - \frac{\mathrm{e}^{\mathrm{i}\left(\omega_{mn}-\omega\right)t'} - 1}{\left(\omega_{mn}-\omega\right)}\right]
+        b_m\left(t'\right) \approx \delta_{mn} + \frac{\mathscr{E}_0}{2\hbar\ii }\left\langle \psi_m^0 \middle| \sum_i Q_i x_i \middle| \psi_n^0 \right\rangle \left[\frac{\ee ^{\ii \left(\omega_{mn}+\omega\right)t'} - 1}{\left(\omega_{mn}+\omega\right)} - \frac{\ee ^{\ii \left(\omega_{mn}-\omega\right)t'} - 1}{\left(\omega_{mn}-\omega\right)}\right]
         \label{eq:9.123}
     \end{equation}
     若$m \neq n$，则$\delta_{mn}$一项为零。

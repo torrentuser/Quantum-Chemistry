@@ -7,48 +7,48 @@
 \section{电子概率密度}
 \label{sec:14.1 Electron Probability Density}
 
-    多电子分子的波函数与电子概率密度之间有何关联？我们想要找出在空间中位于点 $\left(x, y, z\right)$ 的边长分别为 $\mathrm{d}x$、$\mathrm{d}y$、$\mathrm{d}z$ 的矩形体积元内找到一个电子的概率。电子波函数 $\psi$ 是 $n$ 个电子的空间坐标和自旋坐标的函数。（为简便起见，核构型的参数依赖性将不明确表示。）我们知道
+    多电子分子的波函数与电子概率密度之间有何关联？我们想要找出在空间中位于点 $\left(x, y, z\right)$ 的边长分别为 $\dd x$、$\dd y$、$\dd z$ 的矩形体积元内找到一个电子的概率。电子波函数 $\psi$ 是 $n$ 个电子的空间坐标和自旋坐标的函数。（为简便起见，核构型的参数依赖性将不明确表示。）我们知道
     \begin{equation}
-        \left|\psi\left(x_1,\:\ldots,\:z_n,m_{s1},\:\ldots,m_{sn}\right)\right|^2\mathrm{d}x_1\:\mathrm{d}y_1\:\mathrm{d}z_1\:\ldots\:\mathrm{d}x_n\:\mathrm{d}y_n\:\mathrm{d}z_n
+        \left|\psi\left(x_1,\:\ldots,\:z_n,m_{s1},\:\ldots,m_{sn}\right)\right|^2\dd x_1\:\dd y_1\:\dd z_1\:\ldots\:\dd x_n\:\dd y_n\:\dd z_n
         \label{eq:14.1}
     \end{equation}
-    为在$\left(x_1,y_1,z_1\right)$处的体积微元$\mathrm{d}x_1\:\mathrm{d}y_1\:\mathrm{d}z_1$内找到自旋为$m_{s1}$的电子1，在$\left(x_2,y_2,z_2\right)$处的体积微元$\mathrm{d}x_2\:\mathrm{d}y_2\:\mathrm{d}z_2$内找到自旋为$m_{s2}$的电子2等的概率。因为我们对在$\left(x,y,z\right)$处找到的电子处于何种自旋状态并不感兴趣，所以我们对所有可能的电子自旋态求和（\ref{eq:14.1}），从而给出同时在适当体积元内找到每个电子的概率，不考虑自旋：
+    为在$\left(x_1,y_1,z_1\right)$处的体积微元$\dd x_1\:\dd y_1\:\dd z_1$内找到自旋为$m_{s1}$的电子1，在$\left(x_2,y_2,z_2\right)$处的体积微元$\dd x_2\:\dd y_2\:\dd z_2$内找到自旋为$m_{s2}$的电子2等的概率。因为我们对在$\left(x,y,z\right)$处找到的电子处于何种自旋状态并不感兴趣，所以我们对所有可能的电子自旋态求和（\ref{eq:14.1}），从而给出同时在适当体积元内找到每个电子的概率，不考虑自旋：
     \begin{equation}
-        \sum_{m_{s1}} \cdots \sum_{m_{sn}}\left|\psi\right|^2\mathrm{d}x_1\:\ldots\mathrm{d}z_n
+        \sum_{m_{s1}} \cdots \sum_{m_{sn}}\left|\psi\right|^2\dd x_1\:\ldots\dd z_n
         \label{eq:14.2}
     \end{equation}
 
-    假设我们希望求出在$\left(x,y,z\right)$处的体积微元$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$内找到电子1的概率。对于这个概率，我们并不关心电子 $2$ 到 $n$ 位于何处。因此，我们要把这些电子处于所有可能位置的概率相加。这相当于对电子的坐标进行积分
+    假设我们希望求出在$\left(x,y,z\right)$处的体积微元$\dd x\:\dd y\:\dd z$内找到电子1的概率。对于这个概率，我们并不关心电子 $2$ 到 $n$ 位于何处。因此，我们要把这些电子处于所有可能位置的概率相加。这相当于对电子的坐标进行积分
     \begin{equation}
-        \left[\sum_{\text{all}\:m_s} \int \cdots \int \left|\psi\left(x,y,z,x_2,y_2,x_2,\ldots,x_n,y_n,z_n,m_{s1},m_{s2},\ldots,m_{sn}\right)\right|^2\mathrm{d}x_2\ldots\mathrm{d}z_n\right]\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z
+        \left[\sum_{\text{all}\:m_s} \int \cdots \int \left|\psi\left(x,y,z,x_2,y_2,x_2,\ldots,x_n,y_n,z_n,m_{s1},m_{s2},\ldots,m_{sn}\right)\right|^2\dd x_2\ldots\dd z_n\right]\dd x\:\dd y\:\dd z
         \label{eq:14.3}
     \end{equation}
     其中从$x_2$到$z_n$共有$\left(3n-3\right)$重积分。
 
-    再假设我们希望求出在$\left(x,y,z\right)$处的体积微元$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$内找到电子2的概率。类比(\ref{eq:14.3})该积分为
+    再假设我们希望求出在$\left(x,y,z\right)$处的体积微元$\dd x\:\dd y\:\dd z$内找到电子2的概率。类比(\ref{eq:14.3})该积分为
     \begin{equation}
-        \left[\sum_{\text{all } m_s} \int \ldots \int \left|\psi\left(x_1,y_1,z_1,x,y,z,x_3,\ldots,z_n,m_{s1},\ldots,m_{sn}\right)\right|^2 \mathrm{d}x_1\: \mathrm{d}y_1 \:\mathrm{d}z_1 \:\mathrm{d}x_3 \ldots \mathrm{d}z_n\right]\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z
+        \left[\sum_{\text{all } m_s} \int \ldots \int \left|\psi\left(x_1,y_1,z_1,x,y,z,x_3,\ldots,z_n,m_{s1},\ldots,m_{sn}\right)\right|^2 \dd x_1\: \dd y_1 \:\dd z_1 \:\dd x_3 \ldots \dd z_n\right]\dd x\:\dd y\:\dd z
         \label{eq:14.4}
     \end{equation}
-    当然，电子本身并不带有标记，这种不可区分性（第\ref{sec:10.3 Spin-Statistics Theorem}节）意味着概率式(\ref{eq:14.3})与(\ref{eq:14.4})必须相等。该等式可轻易得到证明。在电子坐标交换时，波函数$\psi$满足反对称，因此电子交换时$\left|\psi\right|^2$不变。在(\ref{eq:14.4})中交换$\psi$中电子1和2的空间和自旋坐标，再重新标记虚拟变量，我们发现(\ref{eq:14.3})等于(\ref{eq:14.4})。因此(\ref{eq:14.3})给出了在$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$的体积微元内找到任意特定电子的概率。因为系统有$n$个电子，在$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$的体积微元内找到\textit{单个}电子的概率为$n$乘以(\ref{eq:14.3})。（在得出这一结论时，我们假设在无限小空间$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$内发现多个电子的概率与发现单个电子的概率相比可以忽略不计。这一假设显然成立，因为发现两个电子的概率需要考虑六个无限小量的乘积，而发现单个电子的概率仅需考虑三个无限小量的乘积。）
+    当然，电子本身并不带有标记，这种不可区分性（第\ref{sec:10.3 Spin-Statistics Theorem}节）意味着概率式(\ref{eq:14.3})与(\ref{eq:14.4})必须相等。该等式可轻易得到证明。在电子坐标交换时，波函数$\psi$满足反对称，因此电子交换时$\left|\psi\right|^2$不变。在(\ref{eq:14.4})中交换$\psi$中电子1和2的空间和自旋坐标，再重新标记虚拟变量，我们发现(\ref{eq:14.3})等于(\ref{eq:14.4})。因此(\ref{eq:14.3})给出了在$\dd x\:\dd y\:\dd z$的体积微元内找到任意特定电子的概率。因为系统有$n$个电子，在$\dd x\:\dd y\:\dd z$的体积微元内找到\textit{单个}电子的概率为$n$乘以(\ref{eq:14.3})。（在得出这一结论时，我们假设在无限小空间$\dd x\:\dd y\:\dd z$内发现多个电子的概率与发现单个电子的概率相比可以忽略不计。这一假设显然成立，因为发现两个电子的概率需要考虑六个无限小量的乘积，而发现单个电子的概率仅需考虑三个无限小量的乘积。）
 
     因此，在某点$\left(x,y,z\right)$附近找到电子的概率密度$\rho$为
     \begin{equation*}
-        \rho\left(x,y,z\right) = n \sum_{\text{all }m_s} \int \cdots \int \left|\psi\left(x,y,z,x_2, \cdots, z_n, m_{s1}, \dots, m_{sn}\right)\right|^2 \mathrm{d}x_2 \ldots \mathrm{d}z_n
+        \rho\left(x,y,z\right) = n \sum_{\text{all }m_s} \int \cdots \int \left|\psi\left(x,y,z,x_2, \cdots, z_n, m_{s1}, \dots, m_{sn}\right)\right|^2 \dd x_2 \ldots \dd z_n
     \end{equation*}
     \begin{equation}
-        \rho\left(\mathbf{r}\right) = n \sum_{\text{all }m_s} \int \cdots \int \left|\psi\left(x,y,z,x_2, \cdots, z_n, m_{s1}, \dots, m_{sn}\right)\right|^2 \mathrm{d}\mathbf{r}_2\ldots \mathrm{d}\mathbf{r}_n
+        \rho\left(\mathbf{r}\right) = n \sum_{\text{all }m_s} \int \cdots \int \left|\psi\left(x,y,z,x_2, \cdots, z_n, m_{s1}, \dots, m_{sn}\right)\right|^2 \dd \mathbf{r}_2\ldots \dd \mathbf{r}_n
         \label{eq:14.5}
     \end{equation}
-    其中我们用到了空间变量的向量表示（第\ref{sec:5.2 Vectors}节）。$\rho$的原子单位为$\mathrm{e}/a_0^3$，其中$\mathrm{e}$为电子的电荷，$a_0$为玻尔半径。
+    其中我们用到了空间变量的向量表示（第\ref{sec:5.2 Vectors}节）。$\rho$的原子单位为$\ee /a_0^3$，其中$\ee $为电子的电荷，$a_0$为玻尔半径。
 
-    $\rho$为电子概率密度。对应的电子电荷密度经时间平均后等于$-\mathrm{e}\rho\left(x,y,z\right)$，其中$-\mathrm{e}$为电子的电荷。在原子单位制下，电荷密度为$-\rho$。此外，还有原子核的正电荷。术语“\textit{电子电荷密度}”（electronic charge density）通常简称为“电荷密度”（charge density）。
+    $\rho$为电子概率密度。对应的电子电荷密度经时间平均后等于$-\ee \rho\left(x,y,z\right)$，其中$-\ee $为电子的电荷。在原子单位制下，电荷密度为$-\rho$。此外，还有原子核的正电荷。术语“\textit{电子电荷密度}”（electronic charge density）通常简称为“电荷密度”（charge density）。
 
     分子的$\rho$值是一个实验可观测量，可通过测量分子晶体的X射线衍射强度或气体的电子衍射强度获得。见P. Coppens and M. B. Hall (eds.), \textit{Electron Distributions and the Chemical Bond}, Plenum, 1982; D. A. Kohl and L. S. Bartell, \textit{J. Chem. Phys.}, \textbf{51}, 2891, 2896 (1969); P. Coppens, \textit{J. Phys. Chem.}, \textbf{93}, 7979 (1989); P. Coppens, Annu. \textit{Rev. Phys. Chem.}, \textbf{43}, 663 (1992); C. Gatti and P. Macchi (eds.), \textit{Modern Charge Density Analysis}, Springer, 2012.
 
     为说明式(\ref{eq:14.5})，考虑简单价键理论和分子轨道理论基态\ce{H2}波函数的电子密度。波函数为空间因子和自旋函数(\ref{eq:11.60})的乘积。（对于多于两个电子的分子，$\psi$不能写成自旋部分和空间部分的乘积，见第\ref{chap:10}章。）将(\ref{eq:11.60})对$m_{s1}$和$m_{s2}$求和，结果为1（第\ref{sec:10.4 Th Helium Atom}节）。因此，对于\ce{H2}，(\ref{eq:14.5})变为
     \begin{equation*}
-        \rho\left(x,y,z\right) = 2\int \int \int \left|\phi\left(x,y,z,x_2,y_2,z_2\right)\right|^2\mathrm{d}x_2\:\mathrm{d}y_2\:\mathrm{d}z_2
+        \rho\left(x,y,z\right) = 2\int \int \int \left|\phi\left(x,y,z,x_2,y_2,z_2\right)\right|^2\dd x_2\:\dd y_2\:\dd z_2
     \end{equation*}
     当$\phi$分别取为价键理论函数(\ref{eq:13.100})与问题13.33中的自旋因子或分子轨道函数(\ref{eq:13.94})时，我们得出（问题14.1）
     \begin{equation}
@@ -68,11 +68,11 @@
 
     令$B\left(\mathbf{r}_i\right)$为在电子$i$在$x_i,y_i,z_i$处的空间坐标函数，此处用到了第\ref{sec:5.2 Vectors}节中的向量表示法。对于$n$电子分子，考虑平均值
     \begin{equation*}
-        \left\langle \psi \middle| \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \middle| \psi \right\rangle = \int \psi^* \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \psi \:\mathrm{d}\tau = \sum_{i=1}^{n} \int \left|\psi\right|^2 B\left(\mathbf{r}_i\right) \:\mathrm{d}\tau
+        \left\langle \psi \middle| \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \middle| \psi \right\rangle = \int \psi^* \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \psi \:\dd \tau = \sum_{i=1}^{n} \int \left|\psi\right|^2 B\left(\mathbf{r}_i\right) \:\dd \tau
     \end{equation*}
-    其中$\psi$是电子波函数。因为电子的不可区分性，求和$\sum \int \left|\psi\right|^2B\:\mathrm{d}\tau$中的每一项都必须相等。因此有$\left\langle \psi \middle| \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \middle| \psi \right\rangle = \int n \left|\psi\right|^2B\left(\mathbf{r}_i\right)\:\mathrm{d}\tau$。由于$B\left(\mathbf{r}_1\right)$只依赖于$x_1,y_1,z_1$，所以在对$x_1,y_1,z_1$积分以前，我们可以先对电子2到$n$的空间坐标积分$n\left|\psi\right|^2$，再对所有自旋坐标求和。根据(\ref{eq:14.5})，该过程该出了电子概率密度$\rho\left(\mathbf{r}_1\right)$。因此，我们得出$\left\langle \psi \middle| \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \middle| \psi \right\rangle = \int \rho\left(\mathbf{r}_1\right) B\left(\mathbf{r}_1\right)\:\mathrm{d}\mathbf{r}_1$。积分变量中的下标1是多余的，那么最终的结果为
+    其中$\psi$是电子波函数。因为电子的不可区分性，求和$\sum \int \left|\psi\right|^2B\:\dd \tau$中的每一项都必须相等。因此有$\left\langle \psi \middle| \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \middle| \psi \right\rangle = \int n \left|\psi\right|^2B\left(\mathbf{r}_i\right)\:\dd \tau$。由于$B\left(\mathbf{r}_1\right)$只依赖于$x_1,y_1,z_1$，所以在对$x_1,y_1,z_1$积分以前，我们可以先对电子2到$n$的空间坐标积分$n\left|\psi\right|^2$，再对所有自旋坐标求和。根据(\ref{eq:14.5})，该过程该出了电子概率密度$\rho\left(\mathbf{r}_1\right)$。因此，我们得出$\left\langle \psi \middle| \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \middle| \psi \right\rangle = \int \rho\left(\mathbf{r}_1\right) B\left(\mathbf{r}_1\right)\:\dd \mathbf{r}_1$。积分变量中的下标1是多余的，那么最终的结果为
     \begin{equation}
-        \int \psi^* \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \psi \:\mathrm{d}\tau = \int \rho\left(\mathbf{r}\right) B\left(\mathbf{r}\right)\:\mathrm{d}\mathbf{r}
+        \int \psi^* \sum_{i=1}^{n} B\left(\mathbf{r}_i\right) \psi \:\dd \tau = \int \rho\left(\mathbf{r}\right) B\left(\mathbf{r}\right)\:\dd \mathbf{r}
         \label{eq:14.8}
     \end{equation}
     其中的积分包括三个自旋坐标$x,y,z$。该结果将在本章后续部分以及第\ref{chap:15}章中使用。
@@ -90,15 +90,15 @@
         \mu_{x,\text{cl}} = \sum_{i} Q_i x_i
         \label{eq:14.10}
     \end{equation}
-    其$y$和$z$分量类似。对于电荷密度为$\rho_Q\left(x,y,z\right)$的连续分布，$\mu_{\text{cl}}$可以通过对元电荷$\mathrm{d}Q_i = \rho_Q\left(x,y,z\right)$\\$\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$积分得到：
+    其$y$和$z$分量类似。对于电荷密度为$\rho_Q\left(x,y,z\right)$的连续分布，$\mu_{\text{cl}}$可以通过对元电荷$\dd Q_i = \rho_Q\left(x,y,z\right)$\\$\dd x\:\dd y\:\dd z$积分得到：
     \begin{equation}
-        \mu_{\text{cl}} = \int \rho_Q\left(x,y,z\right) \mathbf{r} \mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z, \quad \text{其中} \mathbf{r} \equiv x\mathbf{i} + y\mathbf{j} + z\mathbf{k}
+        \mu_{\text{cl}} = \int \rho_Q\left(x,y,z\right) \mathbf{r} \dd x\:\dd y\:\dd z, \quad \text{其中} \mathbf{r} \equiv x\mathbf{i} + y\mathbf{j} + z\mathbf{k}
         \label{eq:14.11}
     \end{equation}
 
     再来考虑电偶极矩的量子力学定义。假设我们对原子或分子施加均匀外电场$\mathbf{E}$，并考察其对系统能量的影响。为构造哈密顿算符，我们首先需要能量的经典表达式。电场强度$\mathbf{E}$定义为$\mathbf{E} \equiv \mathbf{F}/Q$，其中$\mathbf{F}$为电场作用于电荷$Q$上的力。我们取外加电场的方向为$z$方向：$\mathbf{E} = \mathscr{E}_z\mathbf{k}$。势能$V$为【式(\ref{eq:4.24})】
     \begin{equation*}
-        \mathrm{d}V/\mathrm{d}z = -F_z = -Q\mathscr{E}_z \quad \text{以及} \quad V = -Q\mathscr{E}_zz
+        \dd V/\dd z = -F_z = -Q\mathscr{E}_z \quad \text{以及} \quad V = -Q\mathscr{E}_zz
     \end{equation*}
     这是电场中单个电荷的势能。对于多个电荷的系统，
     \begin{equation}
@@ -123,12 +123,12 @@
     \end{equation}
     对能量的一级修正为【式(\ref{eq:9.22})】
     \begin{equation}
-        E^{\left(1\right)} = -\mathbf{E}\cdot \int \psi^{\left(0\right)*} \hat{\symbf{\mu}} \psi^{\left(0\right)} \:\mathrm{d}\tau
+        E^{\left(1\right)} = -\mathbf{E}\cdot \int \psi^{\left(0\right)*} \hat{\symbf{\mu}} \psi^{\left(0\right)} \:\dd \tau
         \label{eq:14.16}
     \end{equation}
     其中$\psi^{\left(0\right)}$为无扰波函数。将(\ref{eq:14.16})与(\ref{eq:14.13})相比较，我们发现对应于$\mu_{\text{cl}}$的量子力学量为积分
     \begin{equation}
-        \symbf{\mu} = \int \psi^{\left(0\right)*} \hat{\symbf{\mu}} \psi^{\left(0\right)} \:\mathrm{d}\tau
+        \symbf{\mu} = \int \psi^{\left(0\right)*} \hat{\symbf{\mu}} \psi^{\left(0\right)} \:\dd \tau
         \label{eq:14.17}
     \end{equation}
     (\ref{eq:14.17})中的$\hat{\symbf{\mu}}$成为系统的量子力学\textbf{电偶极矩}（electric dipole moment）。
@@ -146,12 +146,12 @@
 
     处于电子态$\psi_{\text{el}}$分子的永久电偶极矩为
     \begin{equation}
-        \hat{\symbf{\mu}} = \int \psi_{\text{el}}^* \hat{\symbf{\mu}} \psi_{\text{el}} \:\mathrm{d}\tau_{\text{el}}
+        \hat{\symbf{\mu}} = \int \psi_{\text{el}}^* \hat{\symbf{\mu}} \psi_{\text{el}} \:\dd \tau_{\text{el}}
         \label{eq:14.19}
     \end{equation}
     根据同核双原子分子宇称的不同，其电子波函数可以分为$g$和$u$。因此，同核双原子分子具有零永久电偶极矩，这一结果并不令人惊讶。具有对称中心的任何分子均遵循相同规律。分子的电偶极矩算符包含对电子电荷与核电荷的求和项：
     \begin{equation}
-        \hat{\symbf{\mu}} = \sum_{i=1}^{n} \left(-\mathrm{e}\mathbf{r}_i\right) + \sum_{\alpha} Z_{\alpha} \mathrm{e} \mathbf{r}_{\alpha}
+        \hat{\symbf{\mu}} = \sum_{i=1}^{n} \left(-\ee \mathbf{r}_i\right) + \sum_{\alpha} Z_{\alpha} \ee \mathbf{r}_{\alpha}
         \label{eq:14.20}
     \end{equation}
     其中的$\mathbf{r}_{\alpha}$为从原点指向核电荷数为$Z_{\alpha}$的原子核的矢量，$\mathbf{r}_i$为从原点指向电子$i$的矢量。因为偶极矩算符(\ref{eq:14.20})和电子波函数都依赖于定义核组态的参数，所以分子电偶极矩$\hat{\symbf{\mu}}$取决于核组态。为表明这一点，(\ref{eq:14.19})可称为分子的偶极矩\textit{函数}。在书写(\ref{eq:14.19})时，我们忽略了核运动。当实验测定分子偶极矩时，所测量的量值(\ref{eq:14.19})是经过零点振动平均后的结果（假设温度不足以使较高振动能级被显著粒子占据）。我们用$\hat{\symbf{\mu}}_0$表示经过零点振动平均后的偶极矩，用$\hat{\symbf{\mu}}_e$表示在平衡核组态处计算得到的偶极矩。
@@ -160,16 +160,16 @@
     由于式(\ref{eq:14.20})中的第二个和式与电子坐标无关，故有
     \begin{equation*}
         \begin{aligned}
-            \hat{\symbf{\mu}} &= \int \psi_{\text{el}}^* \sum_{i=1} \left(-\mathrm{e}\mathbf{r}_i\right) \psi_{\text{el}}\:\mathrm{d}\tau_{\text{el}} + \sum_{\alpha} Z_{\alpha} \mathrm{e} \mathbf{r}_{\alpha} \int \psi_{\text{el}}^* \psi_{\text{el}} \:\mathrm{d}\tau_{\text{el}} \\
-            &= -\mathrm{e} \int \left|\psi_{\text{el}}\right|^2 \sum_{i=1} \mathbf{r}_i \:\mathrm{d}\tau_{\text{el}} + \mathrm{e} \sum_{\alpha} Z_{\alpha} \mathbf{r}_{\alpha}
+            \hat{\symbf{\mu}} &= \int \psi_{\text{el}}^* \sum_{i=1} \left(-\ee \mathbf{r}_i\right) \psi_{\text{el}}\:\dd \tau_{\text{el}} + \sum_{\alpha} Z_{\alpha} \ee \mathbf{r}_{\alpha} \int \psi_{\text{el}}^* \psi_{\text{el}} \:\dd \tau_{\text{el}} \\
+            &= -\ee \int \left|\psi_{\text{el}}\right|^2 \sum_{i=1} \mathbf{r}_i \:\dd \tau_{\text{el}} + \ee \sum_{\alpha} Z_{\alpha} \mathbf{r}_{\alpha}
         \end{aligned}
     \end{equation*}
     再使用(\ref{eq:14.8})，我们有
     \begin{equation}
-        \hat{\symbf{\mu}} = -\mathrm{e} \int \int \int \rho\left(x,y,z\right) \mathbf{r} \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z + \mathrm{e} \sum_{\alpha} Z_{\alpha} \mathbf{r}_{\alpha}
+        \hat{\symbf{\mu}} = -\ee \int \int \int \rho\left(x,y,z\right) \mathbf{r} \:\dd x \:\dd y \:\dd z + \ee \sum_{\alpha} Z_{\alpha} \mathbf{r}_{\alpha}
         \label{eq:14.21}
     \end{equation}
-    其中$\rho$为电子概率密度。方程(14.21)是当我们假设电子被展宽成连续电荷分布时所得到的结果，其电荷密度为$-\mathrm{e}\rho\left(x,y,z\right)$，我们使用经典方程(\ref{eq:14.11})来计算$\hat{\symbf{\mu}}$。
+    其中$\rho$为电子概率密度。方程(14.21)是当我们假设电子被展宽成连续电荷分布时所得到的结果，其电荷密度为$-\ee \rho\left(x,y,z\right)$，我们使用经典方程(\ref{eq:14.11})来计算$\hat{\symbf{\mu}}$。
 
 \section{分子哈特里-福克方法}
 \label{sec:14.3 The Hartree-Fock Method for Molecules}
@@ -219,11 +219,11 @@
     \end{equation}
     其中的\textbf{库仑算符}（Coulomb operator）$\hat{J}_j\left(1\right)$和\textbf{交换算符}（exchange operator）$\hat{K}_j\left(1\right)$定义为
     \begin{equation}
-        \hat{H}f\left(1\right)f\left(1\right) = f\left(1\right) \int \left|\phi_j\left(2\right)\right|^2 \frac{1}{r_{12}} \:\mathrm{d}v_2
+        \hat{H}f\left(1\right)f\left(1\right) = f\left(1\right) \int \left|\phi_j\left(2\right)\right|^2 \frac{1}{r_{12}} \:\dd v_2
         \label{eq:14.28}
     \end{equation}
     \begin{equation}
-        \hat{K}_j\left(1\right) f\left(1\right) = \phi_j\left(1\right) \int \frac{\phi_j^*\left(2\right) f\left(2\right)}{r_{12}} \:\mathrm{d}v_2
+        \hat{K}_j\left(1\right) f\left(1\right) = \phi_j\left(1\right) \int \frac{\phi_j^*\left(2\right) f\left(2\right)}{r_{12}} \:\dd v_2
         \label{eq:14.29}
     \end{equation}
     其中的$f$为任意函数，积分为全空间的积分。
@@ -234,7 +234,7 @@
 
     真实哈密顿算符和波函数包括了所有$n$个电子的坐标。哈特里-福克算符$\hat{F}$是单电子算符（也就是说，它只包含了一个电子的坐标），(\ref{eq:14.25})是单电子微分方程。通过将$\hat{F}$和$\phi_i$写作电子1的坐标函数，该结论可以得到验证。当然，我们可以使用任何电子的坐标。算符$\hat{F}$的特殊性在于它依赖于自身的本征函数【参见式(\ref{eq:14.26})至(\ref{eq:14.29})】，而这些本征函数在初始阶段尚未确定。因此，哈特里-福克方程必须通过迭代法求解，该过程始于对分子轨道的初始猜测。
 
-    为了求出轨道能量$\varepsilon_i$的表达式，我们将(\ref{eq:14.25})左乘$\phi_i^*\left(1\right)$并对全空间积分。使用$\phi_i$已归一化和问题14.8的结论，我们得到$\varepsilon_i = \int \phi_i^*\left(1\right) \hat{F}\left(1\right) \phi_i\left(1\right) \:\mathrm{d}v_1$以及
+    为了求出轨道能量$\varepsilon_i$的表达式，我们将(\ref{eq:14.25})左乘$\phi_i^*\left(1\right)$并对全空间积分。使用$\phi_i$已归一化和问题14.8的结论，我们得到$\varepsilon_i = \int \phi_i^*\left(1\right) \hat{F}\left(1\right) \phi_i\left(1\right) \:\dd v_1$以及
     \begin{equation*}
         \varepsilon_i = \left\langle \phi_i \left(1\right) \middle| \hat{H}^{\text{core}}\left(1\right) \middle| \phi_i \left(1\right) \right\rangle + \sum_{j=1}^{n/2} \left[2\left\langle \phi_i\left(1\right) \middle| \hat{J}_j\left(1\right) \middle| \phi_i\left(1\right) \right\rangle - \left\langle \phi_i\left(1\right) \middle| \hat{K}_j\left(1\right) \middle| \phi_i\left(1\right) \right\rangle\right]
     \end{equation*}
@@ -298,19 +298,19 @@
     \end{align}
     将(\ref{eq:14.28})中的$f$替换为$\chi_s$，再使用展开式(\ref{eq:14.33})，得到
     \begin{equation*}
-        \hat{J}_j \left(1\right) \chi_s \left(1\right) = \chi_s \left(1\right) \int \frac{\phi_j^* \left(2\right)\phi_j \left(2\right)}{r_{12}} \:\mathrm{d}v_2 = \chi_s \left(1\right) \sum_{t} \sum_{u} c_{tj}^* c_{uj} \int \frac{\chi_t^* \left(2\right) \chi_u \left(2\right)}{r_{12}} \:\mathrm{d}v_2
+        \hat{J}_j \left(1\right) \chi_s \left(1\right) = \chi_s \left(1\right) \int \frac{\phi_j^* \left(2\right)\phi_j \left(2\right)}{r_{12}} \:\dd v_2 = \chi_s \left(1\right) \sum_{t} \sum_{u} c_{tj}^* c_{uj} \int \frac{\chi_t^* \left(2\right) \chi_u \left(2\right)}{r_{12}} \:\dd v_2
     \end{equation*}
     将其与$\chi_r^* \left(1\right)$左乘并对电子1的坐标进行全空间积分，得到
     \begin{align}
         \left\langle \chi_r \left(1\right) \middle| \hat{J}_j \left(1\right) \chi_s \left(1\right) \right\rangle &= \sum_{t} \sum_{u} c_{tj}^* c_{uj} \int \int \frac{
             \chi_r^* \left(1\right) \chi_s \left(1\right) \chi_t^* \left(2\right) \chi_u \left(2\right)
-        }{r_{12}} \:\mathrm{d}v_1 \:\mathrm{d}v_2 \nonumber \\
+        }{r_{12}} \:\dd v_1 \:\dd v_2 \nonumber \\
         \left\langle \chi_r \left(1\right) \middle| \hat{J}_j \left(1\right) \chi_s \left(1\right) \right\rangle &= \sum_{t=1}^{b} \sum_{u=1}^{b} c_{tj}^* c_{uj} \left(rs \middle| tu\right) \label{eq:14.38}
     \end{align}
     其中\textbf{双电子排斥积分}（two-electron repulsion integral）$\left(rs \middle| tu\right)$定义为
     \begin{equation}
         \boxed{
-            \left(rs \middle| tu\right) \equiv \int \int \frac{\chi_r^* \left(1\right) \chi_s \left(1\right) \chi_t^* \left(2\right) \chi_u \left(2\right)}{r_{12}} \:\mathrm{d}v_1 \:\mathrm{d}v_2
+            \left(rs \middle| tu\right) \equiv \int \int \frac{\chi_r^* \left(1\right) \chi_s \left(1\right) \chi_t^* \left(2\right) \chi_u \left(2\right)}{r_{12}} \:\dd v_1 \:\dd v_2
         }
         \label{eq:14.39}
     \end{equation}
@@ -365,7 +365,7 @@
 
         根据(\ref{eq:11.14})，归一化基函数为（原子单位制下）
         \begin{equation}
-            \chi_1 = 2 \zeta_1^{3/2} \mathrm{e}^{-\zeta_1 r} Y_0^0, \quad \chi_2 = 2 \zeta_2^{3/2} \mathrm{e}^{-\zeta_2 r} Y_0^0, \quad \zeta_1 = 1.45, \quad \zeta_2 = 2.91
+            \chi_1 = 2 \zeta_1^{3/2} \ee ^{-\zeta_1 r} Y_0^0, \quad \chi_2 = 2 \zeta_2^{3/2} \ee ^{-\zeta_2 r} Y_0^0, \quad \zeta_1 = 1.45, \quad \zeta_2 = 2.91
             \label{eq:14.46}
         \end{equation}
         为了解罗特汉方程(\ref{eq:14.34})，我们需要计算积分$F_{rs}$和$S_{rs}$。重叠积分$S_{rs}$为：
@@ -373,7 +373,7 @@
             S_{11} = \left\langle \chi_1 \middle| \chi_1 \right\rangle = 1, \quad S_{22} = \left\langle \chi_2 \middle| \chi_2 \right\rangle = 1
         \end{equation*}
         \begin{equation*}
-            S_{12} = S_{21} = \left\langle \chi_1 \middle| \chi_2 \right\rangle = 4\zeta_1^{3/2} \zeta_2^{3/2} \int_0^{\infty} \mathrm{e}^{-\left(\zeta_1 + \zeta_2\right)r} r^2 \:\mathrm{d}r = \frac{8\zeta_1^{3/2} \zeta_2^{3/2}}{\left(\zeta_1 + \zeta_2\right)^3} = 0.8366
+            S_{12} = S_{21} = \left\langle \chi_1 \middle| \chi_2 \right\rangle = 4\zeta_1^{3/2} \zeta_2^{3/2} \int_0^{\infty} \ee ^{-\left(\zeta_1 + \zeta_2\right)r} r^2 \:\dd r = \frac{8\zeta_1^{3/2} \zeta_2^{3/2}}{\left(\zeta_1 + \zeta_2\right)^3} = 0.8366
         \end{equation*}
         其中用到了附录中的积分（A.8）。
 
@@ -405,7 +405,7 @@
             \end{aligned}
         \end{equation*}
 
-        为了开始计算，我们首先需要猜测(\ref{eq:14.33})中基态原子轨道展开式的的系数$c_{si}$，从而可以得到(\ref{eq:14.41})中最初的密度矩阵元$P_{tu}$。在\ref{sec:9.4 Variational Treatments of the Ground State of Helium}节中，我们已经看到，包含$1s$斯莱特型原子轨道的氦原子轨道最优化轨道指数为$\frac{27}{16} = 1.6875$。因为轨道指数$\zeta_1$远比$\zeta_2$更靠近1.6875，所以我们猜测展开式$\phi_1 = c_{11} \chi_1 + c_{21} \chi_2$中$\chi_1$的系数远大于$\chi_2$。首先猜测$c_{11} / c_{21} \approx 2$。【一种更通用的猜测系数$c_{si}$的方法是先忽略(\ref{eq:14.41})中的电子排斥积分，在久期方程(\ref{eq:14.36})中将$F_{rs}$近似为$H^{\text{core}}_{rs}$；随即求解(\ref{eq:14.36})和(\ref{eq:14.34})。该方法得出$c_{11} / c_{21} \approx 1.5$（问题14.15）。】归一化条件$\int \left|\phi_1\right|^2 \:\mathrm{d}\tau = 1$给出了实系数（问题14.17）
+        为了开始计算，我们首先需要猜测(\ref{eq:14.33})中基态原子轨道展开式的的系数$c_{si}$，从而可以得到(\ref{eq:14.41})中最初的密度矩阵元$P_{tu}$。在\ref{sec:9.4 Variational Treatments of the Ground State of Helium}节中，我们已经看到，包含$1s$斯莱特型原子轨道的氦原子轨道最优化轨道指数为$\frac{27}{16} = 1.6875$。因为轨道指数$\zeta_1$远比$\zeta_2$更靠近1.6875，所以我们猜测展开式$\phi_1 = c_{11} \chi_1 + c_{21} \chi_2$中$\chi_1$的系数远大于$\chi_2$。首先猜测$c_{11} / c_{21} \approx 2$。【一种更通用的猜测系数$c_{si}$的方法是先忽略(\ref{eq:14.41})中的电子排斥积分，在久期方程(\ref{eq:14.36})中将$F_{rs}$近似为$H^{\text{core}}_{rs}$；随即求解(\ref{eq:14.36})和(\ref{eq:14.34})。该方法得出$c_{11} / c_{21} \approx 1.5$（问题14.15）。】归一化条件$\int \left|\phi_1\right|^2 \:\dd \tau = 1$给出了实系数（问题14.17）
         \begin{equation}
             c_{21} = \left(1 + k^2 + 2kS_{12}\right)^{-1/2}, \quad k \equiv c_{11} / c_{21}
             \label{eq:14.48}
@@ -589,7 +589,7 @@
     \end{equation}
     设$\hat{A}$为线性定态算符。考虑积分
     \begin{equation}
-        \int \psi^* \left[\hat{H}, \hat{A}\right] \psi\:\mathrm{d}\tau = \left\langle \psi \middle| \hat{H}\hat{A} - \hat{A}\hat{H} \middle| \psi \right\rangle = \left\langle \psi \middle| \hat{H} \middle| \hat{A} \psi \right\rangle - E \left\langle \psi \middle| \hat{A} \middle| \psi \right\rangle
+        \int \psi^* \left[\hat{H}, \hat{A}\right] \psi\:\dd \tau = \left\langle \psi \middle| \hat{H}\hat{A} - \hat{A}\hat{H} \middle| \psi \right\rangle = \left\langle \psi \middle| \hat{H} \middle| \hat{A} \psi \right\rangle - E \left\langle \psi \middle| \hat{A} \middle| \psi \right\rangle
         \label{eq:14.60}
     \end{equation}
     其中用到了(\ref{eq:14.59})。因为$\hat{H}$为厄米算符，所以我们有
@@ -598,20 +598,20 @@
     \end{equation*}
     则(\ref{eq:14.60})变为
     \begin{equation}
-        \int \psi^* \left[\hat{H}, \hat{A}\right] \psi\:\mathrm{d}\tau = 0
+        \int \psi^* \left[\hat{H}, \hat{A}\right] \psi\:\dd \tau = 0
         \label{eq:14.61}
     \end{equation}
     方程(\ref{eq:14.61})称为\textbf{超位力定理}（hypervirial theorem）。【其应用见J.O. Hirschfelder, \textit{J. Chem. Phys.}, \textbf{33}, 1462 (1960); J. H. Epstein and S. T. Epstein, \textit{Am. J. Phys.}, \textbf{30}, 266 (1962).】在推导(\ref{eq:14.61})的过程中，我们用到了$\hat{H}$的厄米性质。对$\hat{p}_x$和$\hat{p}_x^2$厄米性和$\hat{H}$厄米性的证明要求$\psi$在$\pm \infty$处趋于零【见方程(\ref{eq:7.17})】。因此，超位力定理对连续态不适用，因为连续态波函数在$\pm \infty$处不趋于零。
 
     现在从(\ref{eq:14.61})出发来推导位力定理。我们选择$\hat{A}$为
     \begin{equation}
-        \sum_i \hat{q}_i \hat{p}_i = -\mathrm{i} \hbar \sum_i q_i \frac{\partial}{\partial q_i}
+        \sum_i \hat{q}_i \hat{p}_i = -\ii \hbar \sum_i q_i \frac{\partial}{\partial q_i}
         \label{eq:14.62}
     \end{equation}
     其中的求和是对$n$个粒子的$3n$个笛卡尔坐标进行的。（粒子1的笛卡尔坐标为$q_1, q_2, q_3$，其线动量分量为$p_1, p_2, p_3$。本章中，我们使用符号$q$来表示\textit{笛卡尔}坐标。）为了计算$\left[\hat{H}, \hat{A}\right]$，我们使用(\ref{eq:5.4})、(\ref{eq:5.5})、(\ref{eq:5.8})和(\ref{eq:5.9})，得到
     \begin{align}
         \left[\hat{H}, \sum_i \hat{q}_i \hat{p}_i\right] &= \sum_i \left[\hat{H}, \hat{q}_i \hat{p}_i\right] = \sum_i \hat{q}_i \left[\hat{H}, \hat{p}_i\right] + \sum_i \left[\hat{H}, \hat{q}_i\right] \hat{p}_i \nonumber \\
-        &= \mathrm{i} \hbar \sum_i \hat{q}_i \frac{\partial V}{\partial q_i} - \mathrm{i} \hbar \sum_i \frac{1}{m_i} \hat{p}_i^2 = \mathrm{i} \hbar \sum_i q_i \frac{\partial V}{\partial q_i} - 2 \mathrm{i} \hbar \hat{T}
+        &= \ii \hbar \sum_i \hat{q}_i \frac{\partial V}{\partial q_i} - \ii \hbar \sum_i \frac{1}{m_i} \hat{p}_i^2 = \ii \hbar \sum_i q_i \frac{\partial V}{\partial q_i} - 2 \ii \hbar \hat{T}
         \label{eq:14.63}
     \end{align}
     其中的$\hat{T}$和$\hat{V}$为系统的动能和势能算符。将(\ref{eq:14.63})代入(\ref{eq:14.61})，得到
@@ -760,12 +760,12 @@
     \end{equation}
     与原子位力理论(\ref{eq:14.75})相比，该式包含了一个额外项。考虑该额外项，我们有
     \begin{equation*}
-        \left\langle \psi_{\text{el}} \middle| \sum_{\alpha} q_{\alpha} \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} \middle| \psi_{\text{el}} \right\rangle = \sum_{\alpha} q_{\alpha} \int \psi_{\text{el}}^* \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} \psi_{\text{el}}\:\mathrm{d}\tau_{\text{el}}
+        \left\langle \psi_{\text{el}} \middle| \sum_{\alpha} q_{\alpha} \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} \middle| \psi_{\text{el}} \right\rangle = \sum_{\alpha} q_{\alpha} \int \psi_{\text{el}}^* \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} \psi_{\text{el}}\:\dd \tau_{\text{el}}
     \end{equation*}
     其中我们把核坐标$q_{\alpha}$提到积分外面，对电子坐标积分。在第\ref{sec:14.7 The Electrostatic Theorem}节中，我们将证明【见(14.126)后括号中的说明】：
     % 记得改引用！！！！！
     \begin{equation}
-        \int \psi_{\text{el}}^* \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} \psi_{\text{el}}\:\mathrm{d}\tau_{\text{el}} = \frac{\partial E_{\text{el}}}{\partial q_{\alpha}}
+        \int \psi_{\text{el}}^* \frac{\partial V_{\text{el}}}{\partial q_{\alpha}} \psi_{\text{el}}\:\dd \tau_{\text{el}} = \frac{\partial E_{\text{el}}}{\partial q_{\alpha}}
         \label{eq:14.82}
     \end{equation}
     【方程(\ref{eq:14.82})是赫尔曼-费恩曼定理的一个例子。】在分子电子位力定理(\ref{eq:14.81})中使用上述两个方程，我们得出
@@ -785,7 +785,7 @@
 
     再来考虑双原子分子。电子能是$R$的函数，$R$为核间距：$E_{\text{el}} = E_{\text{el}}\left(R\right)$。(\ref{eq:14.83})中的求和是对核的笛卡尔坐标$x_a, y_a, z_a, x_b, y_b, z_b$进行的。我们有
     \begin{equation*}
-        \frac{\partial E_{\text{el}}}{\partial x_a} = \frac{\mathrm{d}E_{\text{el}}}{\mathrm{d} R} \frac{\partial R}{\partial x_a}, \quad \frac{\partial E_{\text{el}}}{\partial x_b} = \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R} \frac{\partial R}{\partial x_b}
+        \frac{\partial E_{\text{el}}}{\partial x_a} = \frac{\dd E_{\text{el}}}{\dd R} \frac{\partial R}{\partial x_a}, \quad \frac{\partial E_{\text{el}}}{\partial x_b} = \frac{\dd E_{\text{el}}}{\dd R} \frac{\partial R}{\partial x_b}
     \end{equation*}
     \begin{equation*}
         R = \left[\left(x_a - x_b\right)^2 + \left(y_a - y_b\right)^2 + \left(z_a - z_b\right)^2\right]^{1/2}
@@ -797,23 +797,23 @@
     $y$和$z$坐标的表达式类似。则(\ref{eq:14.83})中的求和变为
     \begin{equation*}
         \begin{aligned}
-            \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}} &= \frac{1}{R} \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R} \left[x_a \left(x_a - x_b\right) + x_b \left(x_b - x_a\right) + y_a \left(y_a - y_b\right) + y_b \left(y_b - y_a\right) \right. \\
+            \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}} &= \frac{1}{R} \frac{\dd E_{\text{el}}}{\dd R} \left[x_a \left(x_a - x_b\right) + x_b \left(x_b - x_a\right) + y_a \left(y_a - y_b\right) + y_b \left(y_b - y_a\right) \right. \\
             &\quad \left. + z_a \left(z_a - z_b\right) + z_b \left(z_b - z_a\right)\right] \\
-            \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}} &= R \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R}
+            \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}} &= R \frac{\dd E_{\text{el}}}{\dd R}
         \end{aligned}
     \end{equation*}
     其中用到了$\left(x_a - x_b\right)^2 + \left(y_a - y_b\right)^2 + \left(z_a - z_b\right)^2 = R^2$。因此，双原子分子的电子位力定理为
     \begin{equation}
-        2 \left\langle T_{\text{el}} \right\rangle = - \left\langle V_{\text{el}} \right\rangle - R \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R}
+        2 \left\langle T_{\text{el}} \right\rangle = - \left\langle V_{\text{el}} \right\rangle - R \frac{\dd E_{\text{el}}}{\dd R}
         \label{eq:14.86}
     \end{equation}
     再使用(\ref{eq:14.84})，我们有两个备选的形式
     \begin{equation}
-        \left\langle T_{\text{el}} \right\rangle = E_{\text{el}} - R \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R}
+        \left\langle T_{\text{el}} \right\rangle = E_{\text{el}} - R \frac{\dd E_{\text{el}}}{\dd R}
         \label{eq:14.87}
     \end{equation}
     \begin{equation}
-        \left\langle V_{\text{el}} \right\rangle = 2E_{\text{el}} + R \frac{\mathrm{d} E_{\text{el}}}{\mathrm{d} R}
+        \left\langle V_{\text{el}} \right\rangle = 2E_{\text{el}} + R \frac{\dd E_{\text{el}}}{\dd R}
         \label{eq:14.88}
     \end{equation}
     在推导分子电子位力理论(\ref{eq:14.83})时，我们在电子哈密顿算符(\ref{eq:14.77})至(\ref{eq:14.79})中忽略了核间排斥势
@@ -835,7 +835,7 @@
     \end{equation*}
     $U\left(q_{\alpha}\right)$是核运动的势能函数。考虑当我们将$V_{NN}$加入到$V_{\text{el}}$中和$E_{\text{el}}$中时，(\ref{eq:14.83})的右侧会发生什么。我们有
     \begin{equation}
-        - \int \psi_{\text{el}}^* \left(\hat{V}_{\text{el}} + V_{NN}\right) \psi_{\text{el}}\:\mathrm{d}\tau_{\text{el}} - \sum_{\alpha} q_{\alpha} \frac{\partial U}{\partial q_{\alpha}} = - \left\langle \psi_{\text{el}} \middle| \hat{V}_{\text{el}} \middle| \psi_{\text{el}} \right\rangle - V_{NN} - \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}} - \sum_{\alpha} q_{\alpha} \frac{\partial V_{NN}}{\partial q_{\alpha}}
+        - \int \psi_{\text{el}}^* \left(\hat{V}_{\text{el}} + V_{NN}\right) \psi_{\text{el}}\:\dd \tau_{\text{el}} - \sum_{\alpha} q_{\alpha} \frac{\partial U}{\partial q_{\alpha}} = - \left\langle \psi_{\text{el}} \middle| \hat{V}_{\text{el}} \middle| \psi_{\text{el}} \right\rangle - V_{NN} - \sum_{\alpha} q_{\alpha} \frac{\partial E_{\text{el}}}{\partial q_{\alpha}} - \sum_{\alpha} q_{\alpha} \frac{\partial V_{NN}}{\partial q_{\alpha}}
         \label{eq:14.90}
     \end{equation}
     因为$V_{NN}$为核笛卡尔坐标的齐$-1$次函数，所以欧拉定理给出了
@@ -857,9 +857,9 @@
     \end{equation}
     其形式与(\ref{eq:14.83})一致。因此，无论我们是否考虑核间排斥势，分子电子位力定理均成立。对于双原子分子，对应于式(\ref{eq:14.86})至(\ref{eq:14.88})，我们得到：
     \begin{align}
-        2 \left\langle T_{\text{el}} \right\rangle &= - \left\langle V \right\rangle - R \left(\mathrm{d}U / \mathrm{d}R\right) \label{eq:14.93} \\
-        \left\langle T_{\text{el}} \right\rangle &= U - R \left(\mathrm{d}U / \mathrm{d}R\right) \label{eq:14.94} \\
-        \left\langle V \right\rangle &= 2U + R \left(\mathrm{d}U / \mathrm{d}R\right) \label{eq:14.95}
+        2 \left\langle T_{\text{el}} \right\rangle &= - \left\langle V \right\rangle - R \left(\dd U / \dd R\right) \label{eq:14.93} \\
+        \left\langle T_{\text{el}} \right\rangle &= U - R \left(\dd U / \dd R\right) \label{eq:14.94} \\
+        \left\langle V \right\rangle &= 2U + R \left(\dd U / \dd R\right) \label{eq:14.95}
     \end{align}
 
     若所有粒子（电子和原子核）之间的距离都为无穷大，则势能$V = V_{\text{el}} + V_{NN} = 0$为零。因此，(\ref{eq:14.93})至(\ref{eq:14.95})中的$U\left(R\right)$在$R = \infty$不趋于零，但趋于孤立原子的能量之和，该总和为负数。
@@ -873,7 +873,7 @@
 
     我们现在用位力定理来考察两个原子形成双原子分子共价键时，电子动能和势能的变化。为了形成一根稳定的共价键，$U\left(R\right)$曲线必须存在显著的最小值。在该最小值处有
     \begin{equation}
-        \left. \frac{\mathrm{d}U}{\mathrm{d}R} \right|_{R_e} = 0
+        \left. \frac{\dd U}{\dd R} \right|_{R_e} = 0
         \label{eq:14.96}
     \end{equation}
     则(\ref{eq:14.93})至(\ref{eq:14.95})变为
@@ -912,7 +912,7 @@
     \end{equation}
     其中的$A$为正常数（见\textit{Kauzmann}, Chapter 13.）该表达式最先由伦敦导出，则中性原子之间的范德华力也称为\textit{伦敦力}（London forces）或\textit{色散力}（dispersion forces）。（回忆第\ref{sec:13.7 MO Configurations for Homonuclear Diatomic Molecules}末尾的讨论。）
 
-    对(\ref{eq:14.103})求导，将$U$和$\mathrm{d}U/\mathrm{d}R$的表达式代入(\ref{eq:14.94})和(\ref{eq:14.95})，再使用(\ref{eq:14.100})，我们得到
+    对(\ref{eq:14.103})求导，将$U$和$\dd U/\dd R$的表达式代入(\ref{eq:14.94})和(\ref{eq:14.95})，再使用(\ref{eq:14.100})，我们得到
     \begin{equation}
         \left\langle V \right\rangle \approx \left. \left\langle V \right\rangle \right|_{\infty} + \frac{4A}{R^6}, \quad \left\langle T_{\text{el}} \right\rangle \approx \left. \left\langle T_{\text{el}} \right\rangle \right|_{\infty} - \frac{5A}{R^6}, \quad R \text{ large}
         \label{eq:14.104}
@@ -981,7 +981,7 @@
 \section{赫尔曼-费恩曼定理}
 \label{sec:14.6 The Hellmann-Feynman Theorem}
 
-    考虑某含时哈密顿算符$\hat{H}$包含参数的系统。一个很明显的例子是分子的电子哈密顿算符(\ref{eq:13.5})，它在参数上依赖于核坐标。然而，任何系统的哈密顿算符都包含参数。例如，在一维谐振子的哈密顿算符$-\left(\hbar^2 / 2m\right)\left(\mathrm{d}^2 / \mathrm{d}x^2\right) + \frac{1}{2} kx^2$中，力常数$k$为参数，质量$m$也为参数。虽然$U$是常量，但我们通常也把它视为参数定态能量$E_n$也是这些参数的函数，与$\hat{H}$一致。例如，对于谐振子，有
+    考虑某含时哈密顿算符$\hat{H}$包含参数的系统。一个很明显的例子是分子的电子哈密顿算符(\ref{eq:13.5})，它在参数上依赖于核坐标。然而，任何系统的哈密顿算符都包含参数。例如，在一维谐振子的哈密顿算符$-\left(\hbar^2 / 2m\right)\left(\dd ^2 / \dd x^2\right) + \frac{1}{2} kx^2$中，力常数$k$为参数，质量$m$也为参数。虽然$U$是常量，但我们通常也把它视为参数定态能量$E_n$也是这些参数的函数，与$\hat{H}$一致。例如，对于谐振子，有
     \begin{equation}
         E_n = \left(v + \frac{1}{2}\right)h\nu = \left(v + \frac{1}{2}\right) \hbar \left({k}/{m}\right)^{1/2}
         \label{eq:14.110}
@@ -995,16 +995,16 @@
     \end{equation}
     开始。其中的$\psi_n$为已归一化的定态本征函数。由于已归一化，我们有
     \begin{equation}
-        E_n = \int 2\psi_n^* \hat{H} \psi_n \:\mathrm{d}\tau
+        E_n = \int 2\psi_n^* \hat{H} \psi_n \:\dd \tau
         \label{eq:14.112}
     \end{equation}
     \begin{equation}
-        \frac{\partial E_n}{\partial \lambda} = \frac{\partial}{\partial \lambda} \int \psi_n^* \hat{H} \psi_n \:\mathrm{d}\tau
+        \frac{\partial E_n}{\partial \lambda} = \frac{\partial}{\partial \lambda} \int \psi_n^* \hat{H} \psi_n \:\dd \tau
         \label{eq:14.113}
     \end{equation}
     (\ref{eq:14.112})中的积分是全空间定积分，它的值在参数上取决于$\lambda$，因为$\hat{H}$和$\psi_n$都依赖于$\lambda$。只要被积函数行为良好，我们可以通过对被积函数关于参数求导，然后进行积分，来求得积分关于该参数的导数。因此，
     \begin{equation}
-        \frac{\partial E_n}{\partial \lambda} = \int \frac{\partial}{\partial \lambda} \left(\psi_n^*\hat{H}\psi_n\right)\:\mathrm{d}\tau = \int \frac{\partial \psi_n^*}{\partial \lambda} \hat{H} \psi_n \:\mathrm{d}\tau + \int \psi_n^* \frac{\partial}{\partial \lambda} \left(\hat{H}\psi_n\right) \:\mathrm{d}\tau
+        \frac{\partial E_n}{\partial \lambda} = \int \frac{\partial}{\partial \lambda} \left(\psi_n^*\hat{H}\psi_n\right)\:\dd \tau = \int \frac{\partial \psi_n^*}{\partial \lambda} \hat{H} \psi_n \:\dd \tau + \int \psi_n^* \frac{\partial}{\partial \lambda} \left(\hat{H}\psi_n\right) \:\dd \tau
         \label{eq:14.114}
     \end{equation}
     我们有
@@ -1037,35 +1037,35 @@
     \end{equation}
     则(\ref{eq:14.114})变为
     \begin{equation}
-        \frac{\partial E_n}{\partial \lambda} = \int \frac{\partial \psi_n^*}{\partial \lambda} \hat{H} \psi_n \:\mathrm{d}\tau + \int \psi_n^* \frac{\partial \hat{H}}{\partial \lambda} \psi_n \:\mathrm{d}\tau + \int \psi_n^* \hat{H} \frac{\partial \psi_n}{\partial \lambda} \:\mathrm{d}\tau
+        \frac{\partial E_n}{\partial \lambda} = \int \frac{\partial \psi_n^*}{\partial \lambda} \hat{H} \psi_n \:\dd \tau + \int \psi_n^* \frac{\partial \hat{H}}{\partial \lambda} \psi_n \:\dd \tau + \int \psi_n^* \hat{H} \frac{\partial \psi_n}{\partial \lambda} \:\dd \tau
         \label{eq:14.119}
     \end{equation}
     对于(\ref{eq:14.119})中的第一个积分，我们有
     \begin{equation}
-        \int \frac{\partial \psi_n^*}{\partial \lambda} \hat{H} \psi_n \:\mathrm{d}\tau = E_n \int \frac{\partial \psi_n^*}{\partial \lambda} \psi_n \:\mathrm{d}\tau
+        \int \frac{\partial \psi_n^*}{\partial \lambda} \hat{H} \psi_n \:\dd \tau = E_n \int \frac{\partial \psi_n^*}{\partial \lambda} \psi_n \:\dd \tau
         \label{eq:14.120}
     \end{equation}
     再使用$\hat{H}$的厄米性质以及(\ref{eq:14.111})，我们得出(\ref{eq:14.119})中最后一个积分为
     \begin{equation*}
-        \int \psi_n^* \hat{H} \frac{\partial \psi_n}{\partial \lambda} \:\mathrm{d}\tau = \int \frac{\partial \psi_n}{\partial \lambda} \left(\hat{H} \psi_n\right)^* \:\mathrm{d}\tau = E_n \int \psi_n^* \frac{\partial \psi_n}{\partial \lambda} \:\mathrm{d}\tau
+        \int \psi_n^* \hat{H} \frac{\partial \psi_n}{\partial \lambda} \:\dd \tau = \int \frac{\partial \psi_n}{\partial \lambda} \left(\hat{H} \psi_n\right)^* \:\dd \tau = E_n \int \psi_n^* \frac{\partial \psi_n}{\partial \lambda} \:\dd \tau
     \end{equation*}
     因此，
     \begin{equation}
-        \frac{\partial E_n}{\partial \lambda} = \int \psi_n^* \frac{\partial \hat{H}}{\partial \lambda} \psi_n \:\mathrm{d}\tau + E_n \int \frac{\partial \psi_n^*}{\partial \lambda} \psi_n \:\mathrm{d}\tau + E_n \int \psi_n^* \frac{\partial \psi_n}{\partial \lambda} \:\mathrm{d}\tau
+        \frac{\partial E_n}{\partial \lambda} = \int \psi_n^* \frac{\partial \hat{H}}{\partial \lambda} \psi_n \:\dd \tau + E_n \int \frac{\partial \psi_n^*}{\partial \lambda} \psi_n \:\dd \tau + E_n \int \psi_n^* \frac{\partial \psi_n}{\partial \lambda} \:\dd \tau
         \label{eq:14.121}
     \end{equation}
     波函数已归一化，则
     \begin{equation*}
-        \int \psi_n^* \psi_n \:\mathrm{d}\tau = 1, \quad \frac{\partial}{\partial \lambda} \int \psi_n^* \psi_n \:\mathrm{d}\tau = 0
+        \int \psi_n^* \psi_n \:\dd \tau = 1, \quad \frac{\partial}{\partial \lambda} \int \psi_n^* \psi_n \:\dd \tau = 0
     \end{equation*}
     \begin{equation}
-        \int \frac{\partial \psi_n^*}{\partial \lambda} \psi_n \:\mathrm{d}\tau + \int \psi_n^* \frac{\partial \psi_n}{\partial \lambda} \:\mathrm{d}\tau = 0
+        \int \frac{\partial \psi_n^*}{\partial \lambda} \psi_n \:\dd \tau + \int \psi_n^* \frac{\partial \psi_n}{\partial \lambda} \:\dd \tau = 0
         \label{eq:14.122}
     \end{equation}
     在(\ref{eq:14.121})中使用(\ref{eq:14.122})，我们得到
     \begin{equation}
         \boxed{
-            \frac{\partial E_n}{\partial \lambda} = \int \psi_n^* \frac{\partial \hat{H}}{\partial \lambda} \psi_n \:\mathrm{d}\tau
+            \frac{\partial E_n}{\partial \lambda} = \int \psi_n^* \frac{\partial \hat{H}}{\partial \lambda} \psi_n \:\dd \tau
         }
         \label{eq:14.123}
     \end{equation}
@@ -1075,23 +1075,23 @@
         \textbf{例题：}对一维谐振子应用广义赫尔曼-费恩曼定理，将$\lambda$视为力常数。
         \\
 
-        对于谐振子，我们有$\hat{H} = -\left(\hbar^2 / 2m\right)\left(\mathrm{d}^2 / \mathrm{d}x^2\right) + \frac{1}{2} kx^2$，$\partial \hat{H} / \partial k = \frac{1}{2} x^2$。能级为$E_v = \left(v + \frac{1}{2}\right) h\nu = \left(v + \frac{1}{2}\right) h \left(k/m\right)^{1/2}/2\pi$。我们有
+        对于谐振子，我们有$\hat{H} = -\left(\hbar^2 / 2m\right)\left(\dd ^2 / \dd x^2\right) + \frac{1}{2} kx^2$，$\partial \hat{H} / \partial k = \frac{1}{2} x^2$。能级为$E_v = \left(v + \frac{1}{2}\right) h\nu = \left(v + \frac{1}{2}\right) h \left(k/m\right)^{1/2}/2\pi$。我们有
         \begin{equation*}
             \partial E_v / \partial k = \frac{1}{2} \left(v + \frac{1}{2}\right) h \left(k/m\right)^{-1/2} / 2\pi = \frac{1}{2} \left(v + \frac{1}{2}\right) h\nu / k
         \end{equation*}
         将其带入(\ref{eq:14.123})，我们得到
         \begin{equation}
-            \int_{-\infty}^{\infty} \psi_v^*  x^2 \psi_v \:\mathrm{d}x = \left(v + \frac{1}{2}\right) h\nu / k
+            \intinf \psi_v^*  x^2 \psi_v \:\dd x = \left(v + \frac{1}{2}\right) h\nu / k
             \label{eq:14.124}
         \end{equation}
         在没有计算任何积分的情况下，我们得到了任何谐振子定态的$\left\langle x^2 \right\rangle$的值。该结果也可从位力定理导出；见方程(\ref{eq:14.74})。对于第三种导出方法，见\textit{Eyring, Walter, and Kimball}, p.79.
     \end{examplebox}
 
-    在赫尔曼-费恩曼定理的推导过程中，我们假设了$\partial \psi / \partial \lambda$存在。对于属于某简并能级的状态，该假设可能不成立，则(\ref{eq:14.123})不成立。将参数的值从$\lambda$变为$\lambda + \mathrm{d} \lambda$，相当于施加微扰$\hat{H}' = \hat{H} \left(\lambda + \mathrm{d}\lambda\right) - \hat{H} \left(\lambda\right) \approx \left(\partial \hat{H} / \partial \lambda\right) \mathrm{d}\lambda$。该微扰将$\psi$从$\psi\left(\lambda\right)$变为$\psi\left(\lambda + \mathrm{d}\lambda\right)$。若$\psi\left(\lambda\right)$不是微扰$\hat{H}'$的零级校正波函数(\ref{eq:9.73})之一，则$\psi\left(\lambda\right)$不等于$\lim_{\mathrm{d}\lambda \to 0} \psi\left(\lambda + \mathrm{d}\lambda\right)$，因此$\psi$在$\mathrm{d}\lambda = 0$处有非连续跳跃，$\partial \psi / \partial \lambda$不存在。\textit{当且仅当我们使用微扰$\hat{H}'$的零级校正波函数时，可以对属于简并能级的波函数赫尔曼-费恩曼定理。}这些校正波函数可以通过定义$\hat{H}' \equiv \left(\partial \hat{H} / \partial \lambda\right) \mathrm{d}\lambda$，然后求解方程(\ref{eq:9.83})和(\ref{eq:9.81})得到。【因为$E^{\left(1\right)}$正比于$\mathrm{d}\lambda$，我们可以在(\ref{eq:9.83})和(\ref{eq:9.81})中用$\partial \hat{H} / \partial \lambda$代替$\hat{H}'$，用$E^{\left(1\right)} / \mathrm{d}\lambda$代替$E^{\left(1\right)}$。】更具体的细节，见G. P. Zhang and T. F. George, \textit{Phys. Rev. B}, \textbf{69}, 167102 (2004)中的引文4-7。
+    在赫尔曼-费恩曼定理的推导过程中，我们假设了$\partial \psi / \partial \lambda$存在。对于属于某简并能级的状态，该假设可能不成立，则(\ref{eq:14.123})不成立。将参数的值从$\lambda$变为$\lambda + \dd \lambda$，相当于施加微扰$\hat{H}' = \hat{H} \left(\lambda + \dd \lambda\right) - \hat{H} \left(\lambda\right) \approx \left(\partial \hat{H} / \partial \lambda\right) \dd \lambda$。该微扰将$\psi$从$\psi\left(\lambda\right)$变为$\psi\left(\lambda + \dd \lambda\right)$。若$\psi\left(\lambda\right)$不是微扰$\hat{H}'$的零级校正波函数(\ref{eq:9.73})之一，则$\psi\left(\lambda\right)$不等于$\lim_{\dd \lambda \to 0} \psi\left(\lambda + \dd \lambda\right)$，因此$\psi$在$\dd \lambda = 0$处有非连续跳跃，$\partial \psi / \partial \lambda$不存在。\textit{当且仅当我们使用微扰$\hat{H}'$的零级校正波函数时，可以对属于简并能级的波函数赫尔曼-费恩曼定理。}这些校正波函数可以通过定义$\hat{H}' \equiv \left(\partial \hat{H} / \partial \lambda\right) \dd \lambda$，然后求解方程(\ref{eq:9.83})和(\ref{eq:9.81})得到。【因为$E^{\left(1\right)}$正比于$\dd \lambda$，我们可以在(\ref{eq:9.83})和(\ref{eq:9.81})中用$\partial \hat{H} / \partial \lambda$代替$\hat{H}'$，用$E^{\left(1\right)} / \dd \lambda$代替$E^{\left(1\right)}$。】更具体的细节，见G. P. Zhang and T. F. George, \textit{Phys. Rev. B}, \textbf{69}, 167102 (2004)中的引文4-7。
 
     对类氢原子应用赫尔曼-费恩曼定理，将$Z$视为参数，得到（问题14.37a）
     \begin{equation}
-        \int r^{-1} \left|\psi\right|^2\:\mathrm{d}\tau = \left\langle \frac{1}{r} \right\rangle = \frac{Z}{n^2} \left(\frac{1}{a_0}\right)
+        \int r^{-1} \left|\psi\right|^2\:\dd \tau = \left\langle \frac{1}{r} \right\rangle = \frac{Z}{n^2} \left(\frac{1}{a_0}\right)
         \label{eq:14.125}
     \end{equation}
     该结果也可以从位力定理导出，见式(\ref{eq:14.76})。
@@ -1107,7 +1107,7 @@
     \end{equation*}
     其中的$\hat{T}_{\text{el}}$、$\hat{V}_{\text{el}}$和$\hat{V}_{NN}$分别由方程(\ref{eq:14.78})、(\ref{eq:14.79})和(\ref{eq:14.89})给出。哈密顿算符$\hat{T}_{\text{el}} + \hat{V}_{\text{el}} + \hat{V}_{NN}$依赖于作为参数的核坐标。若$x_{\delta}$为原子核$\delta$的$x$坐标，则根据广义赫尔曼-费恩曼定理，我们有
     \begin{equation}
-        \frac{\partial U}{\partial x_{\delta}} = \int \psi_{\text{el}}^* \frac{\partial\left(\hat{T}_{\text{el}} + \hat{V}_{\text{el}} + \hat{V}_{NN}\right)}{\partial x_{\delta}} \psi_{\text{el}} \:\mathrm{d}\tau_{\text{el}} = \int \psi_{\text{el}}^* \left(\frac{\partial V_{\text{el}}}{\partial x_{\delta}} + \frac{\partial V_{NN}}{\partial x_{\delta}}\right) \psi_{\text{el}} \:\mathrm{d}\tau_{\text{el}}
+        \frac{\partial U}{\partial x_{\delta}} = \int \psi_{\text{el}}^* \frac{\partial\left(\hat{T}_{\text{el}} + \hat{V}_{\text{el}} + \hat{V}_{NN}\right)}{\partial x_{\delta}} \psi_{\text{el}} \:\dd \tau_{\text{el}} = \int \psi_{\text{el}}^* \left(\frac{\partial V_{\text{el}}}{\partial x_{\delta}} + \frac{\partial V_{NN}}{\partial x_{\delta}}\right) \psi_{\text{el}} \:\dd \tau_{\text{el}}
         \label{eq:14.126}
     \end{equation}
     因为$\hat{T}_{\text{el}}$与核的笛卡尔坐标无关，从(\ref{eq:14.78})中可以看出。【若我们在$V$中忽略$V_{NN}$，则我们会得到(\ref{eq:14.82})，在推导分子电子位力定理时使用过该式。】由(\ref{eq:14.79})，在原子单位制下，我们得到
@@ -1121,12 +1121,12 @@
     \end{equation*}
     其中的$R_{\alpha\delta}$为原子核$\alpha$与$\delta$之间的距离。因为$\partial V_{NN} / \partial x_{\delta}$不包含电子坐标，以及$\psi_{\text{el}}$已归一化，所以(\ref{eq:14.126})变为
     \begin{equation}
-        \frac{\partial U}{\partial x_{\delta}} = - Z_{\delta} \int \left|\psi_{\text{el}}\right|^2 \sum_i \frac{x_{i} - x_{\delta}}{r_{i\delta}^3} \:\mathrm{d}\tau_{\text{el}} + \sum_{\alpha \neq \delta} Z_{\alpha} Z_{\delta} \frac{x_{\alpha} - x_{\delta}}{R_{\alpha\delta}^3}
+        \frac{\partial U}{\partial x_{\delta}} = - Z_{\delta} \int \left|\psi_{\text{el}}\right|^2 \sum_i \frac{x_{i} - x_{\delta}}{r_{i\delta}^3} \:\dd \tau_{\text{el}} + \sum_{\alpha \neq \delta} Z_{\alpha} Z_{\delta} \frac{x_{\alpha} - x_{\delta}}{R_{\alpha\delta}^3}
         \label{eq:14.128}
     \end{equation}
     考虑(\ref{eq:14.128})中的积分，使用(\ref{eq:14.8})，其中$B\left(\mathbf{r}_i\right) = \left(x_i - x_{\delta}\right) / r_{i\delta}^3$，我们得到
     \begin{equation}
-        \frac{\partial U}{\partial x_{\delta}} = - Z_{\delta} \int \int \int \rho \left(x,y,z\right) \frac{\left(x - x_{\delta}\right)}{r_{\delta}^3} \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z + \sum_{\alpha \neq \delta} Z_{\alpha} Z_{\delta} \frac{x_{\alpha} - x_{\delta}}{R_{\alpha\delta}^3}
+        \frac{\partial U}{\partial x_{\delta}} = - Z_{\delta} \int \int \int \rho \left(x,y,z\right) \frac{\left(x - x_{\delta}\right)}{r_{\delta}^3} \:\dd x \:\dd y \:\dd z + \sum_{\alpha \neq \delta} Z_{\alpha} Z_{\delta} \frac{x_{\alpha} - x_{\delta}}{R_{\alpha\delta}^3}
         \label{eq:14.129}
     \end{equation}
     变量$r_{\delta}$为点$\left(x,y,z\right)$与原子核$\delta$之间的距离：
@@ -1144,7 +1144,7 @@
         \label{eq:14.131}
     \end{equation}
     \begin{equation}
-        \mathbf{F}_{\delta} = - Z_{\delta} \int \int \int \rho \left(x,y,z\right) \frac{\mathbf{r}_{\delta}}{r_{\delta}^3} \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z + \sum_{\alpha \neq \delta} Z_{\alpha} Z_{\delta} \frac{\mathbf{R}_{\alpha\delta}}{R_{\alpha\delta}^3}
+        \mathbf{F}_{\delta} = - Z_{\delta} \int \int \int \rho \left(x,y,z\right) \frac{\mathbf{r}_{\delta}}{r_{\delta}^3} \:\dd x \:\dd y \:\dd z + \sum_{\alpha \neq \delta} Z_{\alpha} Z_{\delta} \frac{\mathbf{R}_{\alpha\delta}}{R_{\alpha\delta}^3}
         \label{eq:14.132}
     \end{equation}
     其中$\mathbf{r}_{\delta}$为从点$\left(x,y,z\right)$到原子核$\delta$的位矢：
@@ -1157,9 +1157,9 @@
         \mathbf{R}_{\alpha\delta} = \mathbf{i} \left(x_{\delta} - x_{\alpha}\right) + \mathbf{j} \left(y_{\delta} - y_{\alpha}\right) + \mathbf{k} \left(z_{\delta} - z_{\alpha}\right)
     \end{equation*}
 
-    方程（\ref{eq:14.132}）具有简单的物理解释。想象电子被“涂开”在某电荷分布中，其电荷密度在原子单位制下为$-\rho \left(x,y,z\right)$。则微小元电荷$-\rho \:\mathrm{d}x\:\mathrm{d}y\:\mathrm{d}z$作用于原子核$\delta$上的力为【式(\ref{eq:6.56})】
+    方程（\ref{eq:14.132}）具有简单的物理解释。想象电子被“涂开”在某电荷分布中，其电荷密度在原子单位制下为$-\rho \left(x,y,z\right)$。则微小元电荷$-\rho \:\dd x\:\dd y\:\dd z$作用于原子核$\delta$上的力为【式(\ref{eq:6.56})】
     \begin{equation}
-        -Z_{\delta} \frac{\mathbf{r}_{\delta}}{r_{\delta}^3} \rho \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z
+        -Z_{\delta} \frac{\mathbf{r}_{\delta}}{r_{\delta}^3} \rho \:\dd x \:\dd y \:\dd z
         \label{eq:14.134}
     \end{equation}
     对式(\ref{eq:14.134})进行积分可得，该假想的电子云对原子核$\delta$施加的总力由式(\ref{eq:14.132})右侧第一项给出。(\ref{eq:14.132})右侧的第二项很明显是由其他核静电排斥作用产生的，作用于核$\delta$的库仑力。
@@ -1178,12 +1178,12 @@
 
     由(\ref{eq:14.134})和(\ref{eq:14.133})式可知，在$\left(x, y, z\right)$点附近无限小区域内，电子电荷微元对原子核$a$产生的有效力的$z$分量为：
     \begin{equation}
-        -Z_{a} \rho \left[\left(z_a - z\right) / r_a^3\right] \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z = Z_a \rho \left(\cos\theta_a / r_a^2\right) \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z
+        -Z_{a} \rho \left[\left(z_a - z\right) / r_a^3\right] \:\dd x \:\dd y \:\dd z = Z_a \rho \left(\cos\theta_a / r_a^2\right) \:\dd x \:\dd y \:\dd z
         \label{eq:14.135}
     \end{equation}
     因为$\cos\theta_a = \left(z - z_a\right) / r_a$。（$z_a$为负数。）同样地，由该电荷产生作用于核$b$的有效力的$z$分量为
     \begin{equation}
-        -Z_{b} \rho \left(\cos\theta_b / r_b^2\right) \:\mathrm{d}x \:\mathrm{d}y \:\mathrm{d}z
+        -Z_{b} \rho \left(\cos\theta_b / r_b^2\right) \:\dd x \:\dd y \:\dd z
         \label{eq:14.136}
     \end{equation}
     (\ref{eq:14.135})和(\ref{eq:14.136})的正值对应于$+z$方向上的力，即图\ref{fig:14.4}中的右侧。当作用于原子核$a$的力在数值上大于作用于原子核$b$的力时，元电荷便倾向于将$a$拉向$b$。因此，具有结合作用的电子电荷位于

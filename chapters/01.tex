@@ -42,9 +42,9 @@
 		\boxed{1 \: \text{nm} = 10^{-9} \: \text{nm}, \qquad 1 \: \text{\AA}= 10^{-10} \: \text{m} = 0.1 \: \text{nm}}
 		\label{units:1.2 nm and angstroms}
 	\end{equation}
-	19 世纪 90 年代，物理学家测量了在固定温度下加热黑体发出的各种频率的光强度，并在多个温度下进行了这些测量。\textit{黑体}是一种能吸收落在其上的所有光线的物体。一种对黑体对良好近似是一个带有小孔的空腔。1896 年，物理学家维恩（Wien）提出了黑体辐射与光频和黑体温度的关系式：$I=a\nu^3/\mathrm{e}^{b\nu /T}$，其中$a$与$b$是经验常数，$I \:\mathrm{d} \nu$是黑体在单位时间和单位表面积内辐射的频率在$\nu$到$\nu + \mathrm{d} \nu$范围内的能量，其中$\mathrm{d} \nu$是一个无穷小的频率范围。维恩的公式很好地拟合了 1896 年的黑体辐射数据，但他对该公式的理论论证却不令人满意。
+	19 世纪 90 年代，物理学家测量了在固定温度下加热黑体发出的各种频率的光强度，并在多个温度下进行了这些测量。\textit{黑体}是一种能吸收落在其上的所有光线的物体。一种对黑体对良好近似是一个带有小孔的空腔。1896 年，物理学家维恩（Wien）提出了黑体辐射与光频和黑体温度的关系式：$I=a\nu^3/\ee^{b\nu /T}$，其中$a$与$b$是经验常数，$I \:\dd \nu$是黑体在单位时间和单位表面积内辐射的频率在$\nu$到$\nu + \dd \nu$范围内的能量，其中$\dd \nu$是一个无穷小的频率范围。维恩的公式很好地拟合了 1896 年的黑体辐射数据，但他对该公式的理论论证却不令人满意。
 
-	1899-1900 年，对黑体辐射的测量扩展到了比以前更低的频率，维恩公式在低频下显示出较大的偏差。这些偏差促使物理学家马克斯·普朗克（Max Planck）于 1900 年 10 月提出了以下公式$I=a \nu^3 \Big/ \left(\mathrm{e}^{b\nu / T}-1\right)$，并发现该公式适用于所有频率的数据。
+	1899-1900 年，对黑体辐射的测量扩展到了比以前更低的频率，维恩公式在低频下显示出较大的偏差。这些偏差促使物理学家马克斯·普朗克（Max Planck）于 1900 年 10 月提出了以下公式$I=a \nu^3 \Big/ \left(\ee^{b\nu / T}-1\right)$，并发现该公式适用于所有频率的数据。
 
 	提出这个公式后，普朗克一直在寻找理论依据。1900 年 12 月，他向德国物理学会提交了他的公式的理论推导。普朗克假定黑体中的辐射发射器和吸收器是与空腔中的电磁辐射处于平衡状态的谐振电荷（谐振子）。他假设频率为$\nu$的谐振子的总能量由$N$个不可分割的 “能量元素”组成，每个能量元素的大小为$h\nu$，其中$N$为整数，$h$（普朗克常数）是物理学中的一个新常数。普朗克将这些能量元素分布在谐振子中。实际上，每个谐振子的能量必须是$h\nu$的整数倍（尽管普朗克没有明说）。因此，每个谐振子的能量都被量子化了，这意味着谐振子的能量只允许是某些分立的值。普朗克的理论导出了$a=2 \pi  h/c^2$和$b=h/k$，其中$k$是玻尔兹曼（Bolzmann）常量。通过拟合实验中得到的黑体辐射曲线，普朗克常数为$h=6.6 \times 10^{-34}$ J$\cdot$s。
 
@@ -143,10 +143,10 @@
 
 	在经典力学中，粒子的运动遵循牛顿第二定律：
 	\begin{equation}
-		\boxed{F = ma = m \frac{\mathrm{d}^2x}{\mathrm{d}t^2}}
+		\boxed{F = ma = m \frac{\dd ^2x}{\dd t^2}}
 		\label{eq:1.8 Newton's second law}
 	\end{equation}
-	其中$F$是作用在粒子上的合外力，$m$是粒子的质量，$t$是时间；$a$是加速度，由$a = \mathrm{d} v / \mathrm{d}t = \left(\mathrm{d} / \mathrm{d}t\right)\left(\mathrm{d}x / \mathrm{d}t\right) = \mathrm{d}^2x / \mathrm{d} t^2$给出，其中$v$是速度。方程(\ref{eq:1.8 Newton's second law})包含坐标$x$对时间的二阶导数。为了求解这个方程，我们必须进行两次积分。这就引入了两个积分常量$c_1$和$c_2$，有
+	其中$F$是作用在粒子上的合外力，$m$是粒子的质量，$t$是时间；$a$是加速度，由$a = \dd v / \dd t = \left(\dd / \dd t\right)\left(\dd x / \dd t\right) = \dd ^2x / \dd t^2$给出，其中$v$是速度。方程(\ref{eq:1.8 Newton's second law})包含坐标$x$对时间的二阶导数。为了求解这个方程，我们必须进行两次积分。这就引入了两个积分常量$c_1$和$c_2$，有
 	\begin{equation}
 		x=g\left(t,\:c_1,\:c_2\right)
 		\label{eq:1.9 function of the x-coordinate}
@@ -158,17 +158,17 @@
 	\end{equation}
 	由于我们需要确定两个常数，因此需要更多信息。将(\ref{eq:1.9 function of the x-coordinate})左右两边对时间求导，有
 	\begin{equation*}
-		\frac{\mathrm{d} x }{\mathrm{d}t} = v = \frac{\mathrm{d}}{\mathrm{d} t} g\left(t,\:c_1,\:c_2\right)
+		\frac{\dd x }{\dd t} = v = \frac{\dd }{\dd t} g\left(t,\:c_1,\:c_2\right)
 		\label{eq*:derivative of g function with respect to time}
 	\end{equation*}
 	如果我们也知道在$t_0$时刻，粒子具有速度$v_0$，那么有进一步的关系
 	\begin{equation}
-		v_0 = \left. \frac{\mathrm{d}}{\mathrm{d} t} g(t, \:c_1, \:c_2)\right|_{t = t_0}
+		v_0 = \left. \frac{\dd }{\dd t} g(t, \:c_1, \:c_2)\right|_{t = t_0}
 		\label{eq:1.11 v_0's equation}
 	\end{equation}
 	知道$x_0$和$v_0$后，我们可以用方程(\ref{eq:1.10 initial function of the x-coordinate})和(\ref{eq:1.11 v_0's equation})求出$c_1$和$c_2$。知道$c_1$和$c_2$后，就可以用方程(\ref{eq:1.9 function of the x-coordinate})来精确预测粒子在未来的运动。
 
-	作为式(\ref{eq:1.8 Newton's second law})至(\ref{eq:1.11 v_0's equation})的例子，考虑一个粒子在地球重力场中的运动。取垂直向上为$x$轴正方向，则作用在粒子上的合外力方向垂直向下，大小为$-mg$，其中$g$是重力加速度。则牛顿第二定律(\ref{eq:1.8 Newton's second law})形式为$-mg=m\mathrm{d}^2x/\mathrm{d}t^2$，所以$\mathrm{d}^2x/\mathrm{d}t^2=-g$。积分一次，有$\mathrm{d}x/\mathrm{d}t=-gt+c_1$。如果我们知道粒子在$t_0$时刻的速度为$v_0$，就可以求出积分常量$c_1$。又由于$v=\mathrm{d}x/\mathrm{d}t$，将$v_0=-gt_0+c_1$即$c_1=v_0+gt_0$带入，有$\mathrm{d}x/\mathrm{d}t=-gt+gt_0+v_0$。再次积分，我们引入了另一个积分常量$c_2$。如果我们知道粒子在$t_0$时刻的位置为$x_0$，则可以求出$c_2$。	因此，我们有$x=x_0-\frac{1}{2}g\left(t-t_0\right)^2+v_0\left(t-t_0\right)$。知道了在$t_0$时刻粒子的$x_0$和$v_0$，我们就能预测粒子未来的运动轨迹。
+	作为式(\ref{eq:1.8 Newton's second law})至(\ref{eq:1.11 v_0's equation})的例子，考虑一个粒子在地球重力场中的运动。取垂直向上为$x$轴正方向，则作用在粒子上的合外力方向垂直向下，大小为$-mg$，其中$g$是重力加速度。则牛顿第二定律(\ref{eq:1.8 Newton's second law})形式为$-mg=m\dd ^2x/\dd t^2$，所以$\dd ^2x/\dd t^2=-g$。积分一次，有$\dd x/\dd t=-gt+c_1$。如果我们知道粒子在$t_0$时刻的速度为$v_0$，就可以求出积分常量$c_1$。又由于$v=\dd x/\dd t$，将$v_0=-gt_0+c_1$即$c_1=v_0+gt_0$带入，有$\dd x/\dd t=-gt+gt_0+v_0$。再次积分，我们引入了另一个积分常量$c_2$。如果我们知道粒子在$t_0$时刻的位置为$x_0$，则可以求出$c_2$。	因此，我们有$x=x_0-\frac{1}{2}g\left(t-t_0\right)^2+v_0\left(t-t_0\right)$。知道了在$t_0$时刻粒子的$x_0$和$v_0$，我们就能预测粒子未来的运动轨迹。
 
 	在一维范围内运动的粒子的经典力学势能$V$的定义为满足
 	\begin{equation}
@@ -189,7 +189,7 @@
 
 	我们研究量子力学的方法是\textit{假设}基本原理，然后利用这些假设推导出实验可检验的结果，例如原子的能级。为了描述量子力学中一个系统的\textbf{状态}，我们假设存在一个粒子坐标的函数$\Psi$，称为\textbf{状态函数}（state function）或\textbf{波 函数}（wave function）【通常写作\textbf{波函数}（wavefunction）】。由于状态一般会随时间变化，因此$\Psi$也是时间的函数。对于一个单粒子的一维系统，我们有$\Psi=\Psi\left(x,t\right)$。波函数包含了一个系统所有可能的信息，因此我们不说 “波函数$\Psi$所描述的状态”，而只说 “状态$\Psi$”。 牛顿第二定律告诉我们，如何通过对经典力学系统当前状态的了解来找到它的未来状态。而要根据量子力学系统当前的状态找到它未来的状态，我们需要一个方程来告诉我们波函数是如何随时间变化的。对于单粒子的一维系统，将这个方程假定为
 	\begin{equation}
-		-\frac{\hbar}{\mathrm{i}}\frac{\partial \Psi \left(x,t\right)}{\partial t}= -\frac{\hbar^2}{2m}\frac{\partial^2 \Psi \left(x,t\right)}{\partial x^2}+ V\left(x,t\right)\Psi\left(x,t\right)
+		-\frac{\hbar}{\ii}\frac{\partial \Psi \left(x,t\right)}{\partial t}= -\frac{\hbar^2}{2m}\frac{\partial^2 \Psi \left(x,t\right)}{\partial x^2}+ V\left(x,t\right)\Psi\left(x,t\right)
 		\label{eq:1.13 Time-dependent Schödinger equation}
 	\end{equation}
 	其中常数$\hbar$（约化普朗克常数）定义为
@@ -198,22 +198,22 @@
 		\label{eq:1.14 h-bar's definition}
 	\end{equation}
 
-	1926 年，奥地利物理学家埃尔温·薛定谔（Erwin Schrödinger）（1887-1961）建立了波函数的概念及其随时间变化的方程。这个被称为\textbf{含时薛定谔方程}（或\textbf{薛定谔波方程}）（time-dependent Schrödinger Equation）中，$\mathrm{i}$是虚数单位，$m$是粒子的质量，$V\left(x,t\right)$是系统的势能函数。（量子力学中许多具有重要历史意义的论文可在 dieumsnh.qfb.umich.mx/archivoshistoricosmq 网站上查阅。）
+	1926 年，奥地利物理学家埃尔温·薛定谔（Erwin Schrödinger）（1887-1961）建立了波函数的概念及其随时间变化的方程。这个被称为\textbf{含时薛定谔方程}（或\textbf{薛定谔波方程}）（time-dependent Schrödinger Equation）中，$\ii$是虚数单位，$m$是粒子的质量，$V\left(x,t\right)$是系统的势能函数。（量子力学中许多具有重要历史意义的论文可在 dieumsnh.qfb.umich.mx/archivoshistoricosmq 网站上查阅。）
 
 	含时薛定谔方程包含波函数对时间的一阶导数，如果我们知道$t_0$时刻的波函数，就可以计算出未来任意时刻的波函数（状态）。
 
 	波函数包含了我们可能知道的关于它所描述的系统的所有信息。关于粒子$x$坐标的测量结果，$\Psi$给了我们什么信息？我们不能指望$\Psi$会像经典力学系统的状态那样具有涉及位置的明确说明。这个问题的正确答案是在薛定谔发现薛定谔方程后不久，由马克斯·玻恩（Max Born）给出的。玻恩推测：对于单粒子的一维系统，
 	\begin{equation}
-		\boxed{\left|\Psi \left(x,t\right)\right|^2 \:\mathrm{d}x}
+		\boxed{\left|\Psi \left(x,t\right)\right|^2 \:\dd x}
 		\label{exp:1.15 probability of a particle}
 	\end{equation}
-	给出了在$t$时刻，在$x$到$x+ \mathrm{d}x$范围内找到该粒子的概率。在(\ref{exp:1.15 probability of a particle})中，两条竖线表示绝对值，$\mathrm{d}x$表示$x$轴上一个无限小的长度。函数$\left|\Psi \left(x,t\right)\right|^2$是在$x$轴上不同位置找到粒子的\textbf{概率密度}（probability density）。（第 \ref{sec:1.6 Probability} 节回顾了概率）例如，假设在某个特定时间$t_0$，粒子处于由波函数$a^2\mathrm{e}^{-2bx^2}$描述的特征状态，其中$a$和$b$是实常数。如果我们在$t_0$时刻观测该粒子的位置，会得到任意的$x$值，因为概率密度$a^2\mathrm{e}^{-2bx^2}$处处非零。由于$\left|\Psi\right|^2$在原点取到最大值，因此在$x=0$附近的$x$值比其他地方的更有可能被观测到。
+	给出了在$t$时刻，在$x$到$x+ \dd x$范围内找到该粒子的概率。在(\ref{exp:1.15 probability of a particle})中，两条竖线表示绝对值，$\dd x$表示$x$轴上一个无限小的长度。函数$\left|\Psi \left(x,t\right)\right|^2$是在$x$轴上不同位置找到粒子的\textbf{概率密度}（probability density）。（第 \ref{sec:1.6 Probability} 节回顾了概率）例如，假设在某个特定时间$t_0$，粒子处于由波函数$a^2\ee^{-2bx^2}$描述的特征状态，其中$a$和$b$是实常数。如果我们在$t_0$时刻观测该粒子的位置，会得到任意的$x$值，因为概率密度$a^2\ee^{-2bx^2}$处处非零。由于$\left|\Psi\right|^2$在原点取到最大值，因此在$x=0$附近的$x$值比其他地方的更有可能被观测到。
 
-	为了将$\Psi$与实验测量联系起来，我们需要许多完全相同的非相互作用系统，每个系统都处于相同的状态$\Psi$。如果我们对$n$个系统进行了$n$次测量，令$\mathrm{d}n_x$表示在$x$和$x+\mathrm{d}x$之间找到粒子的测量次数，那么$\mathrm{d}n_x/n$就是在$x$和$x+\mathrm{d}x$之间找到粒子的概率。因此，有
+	为了将$\Psi$与实验测量联系起来，我们需要许多完全相同的非相互作用系统，每个系统都处于相同的状态$\Psi$。如果我们对$n$个系统进行了$n$次测量，令$\dd n_x$表示在$x$和$x+\dd x$之间找到粒子的测量次数，那么$\dd n_x/n$就是在$x$和$x+\dd x$之间找到粒子的概率。因此，有
 	\begin{equation*}
-		\frac{\mathrm{d}n_x}{n} = \left|\Psi\right|^2\:\mathrm{d}x
+		\frac{\dd n_x}{n} = \left|\Psi\right|^2\:\dd x
 	\end{equation*}
-	而$\left(1/n\right) \:\mathrm{d}n_x / \mathrm{d}x$与$x$的关系图则给出了概率密度$\left|\Psi\right|^2$与$x$的函数关系。也许有人认为，我们可以通过一个处于$\Psi$状态的系统，反复测量粒子的位置来找到概率密度函数。这种方法是错误的，因为测量过程通常会改变系统的状态。我们在讨论不确定性原理（第 \ref{sec:1.3 The Uncertainty Principle} 节）时看到过一个这方面的例子。
+	而$\left(1/n\right) \:\dd n_x / \dd x$与$x$的关系图则给出了概率密度$\left|\Psi\right|^2$与$x$的函数关系。也许有人认为，我们可以通过一个处于$\Psi$状态的系统，反复测量粒子的位置来找到概率密度函数。这种方法是错误的，因为测量过程通常会改变系统的状态。我们在讨论不确定性原理（第 \ref{sec:1.3 The Uncertainty Principle} 节）时看到过一个这方面的例子。
 
 	量子力学是\textit{统计性质}的。在知道状态的情况下，我们无法准确预测位置测量的结果；我们只能预测各种可能结果的\textit{概率}。氢原子的玻尔理论规定了电子的精确路径，因此不是正确的量子力学图景。
 
@@ -238,7 +238,7 @@
 
 	首先，我们只讨论一种特殊情况，即势能$V$不是时间的函数，而只取决于$x$。系统没有受到与时间相关的外力作用时会出现此情况。此时，含时薛定谔方程为
 	\begin{equation}
-		-\frac{\hbar}{\mathrm{i}}\frac{\partial \Psi \left(x,t\right)}{\partial t}= -\frac{\hbar^2}{2m}\frac{\partial^2 \Psi \left(x,t\right)}{\partial x^2}+ V\left(x,t\right)\Psi\left(x,t\right)
+		-\frac{\hbar}{\ii}\frac{\partial \Psi \left(x,t\right)}{\partial t}= -\frac{\hbar^2}{2m}\frac{\partial^2 \Psi \left(x,t\right)}{\partial x^2}+ V\left(x,t\right)\Psi\left(x,t\right)
 		\label{eq:1.16 Time-dependent Schödinger equation}
 	\end{equation}
 	将式(\ref{eq:1.16 Time-dependent Schödinger equation})的解假设为时间函数和坐标$x$函数的乘积：
@@ -248,42 +248,42 @@
 	\end{equation}
 	大写的$\Psi$用来表示含时的波函数，而小写的$\psi$表示只与$x$坐标有关的因子。与 (\ref{eq:1.17 product of x and t}) 形式的波函数相对应的状态具有某些特性（稍后讨论），这些特性使它们极具吸引力。【并非 (\ref{eq:1.16 Time-dependent Schödinger equation}) 的所有解都具有 (\ref{eq:1.17 product of x and t}) 的形式；见问题 3.51。】取 (\ref{eq:1.17 product of x and t}) 的偏导数，我们有
 	\begin{equation*}
-		\frac{\partial \Psi\left(x,t\right)}{\partial t} = \frac{\mathrm{d} f\left(t\right)}{\mathrm{d}t} \psi\left(x\right), \quad \frac{\partial^2 \Psi \left(x,t\right)}{\partial x^2}= f\left(t\right) \frac{\mathrm{d}^2\psi\left(x\right)}{\mathrm{d}x^2}
+		\frac{\partial \Psi\left(x,t\right)}{\partial t} = \frac{\dd f\left(t\right)}{\dd t} \psi\left(x\right), \quad \frac{\partial^2 \Psi \left(x,t\right)}{\partial x^2}= f\left(t\right) \frac{\dd ^2\psi\left(x\right)}{\dd x^2}
 	\end{equation*}
 	带入(\ref{eq:1.16 Time-dependent Schödinger equation})，有
 	\begin{equation*}
-		-\frac{\hbar}{\mathrm{i}}\frac{\mathrm{d}f\left(t\right)}{\mathrm{d}t}\psi\left(x\right)=-\frac{\hbar^2}{2m}f\left(t\right)\frac{\mathrm{d}^2\psi\left(x\right)}{\mathrm{d}x^2}+V\left(x\right)f\left(t\right)\psi\left(x\right)
+		-\frac{\hbar}{\ii}\frac{\dd f\left(t\right)}{\dd t}\psi\left(x\right)=-\frac{\hbar^2}{2m}f\left(t\right)\frac{\dd ^2\psi\left(x\right)}{\dd x^2}+V\left(x\right)f\left(t\right)\psi\left(x\right)
 	\end{equation*}
 	\begin{equation}
-			-\frac{\hbar}{\mathrm{i}}\frac{1}{f\left(t\right)}\frac{\mathrm{d}f\left(t\right)}{\mathrm{d}t}=-\frac{\hbar^2}{2m}\frac{1}{\psi\left(x\right)}\frac{\mathrm{d}^2\psi\left(x\right)}{\mathrm{d}x^2}+V\left(x\right)
+			-\frac{\hbar}{\ii}\frac{1}{f\left(t\right)}\frac{\dd f\left(t\right)}{\dd t}=-\frac{\hbar^2}{2m}\frac{1}{\psi\left(x\right)}\frac{\dd ^2\psi\left(x\right)}{\dd x^2}+V\left(x\right)
 			\label{eq:1.18}
 	\end{equation}
 	其中方程左右两边同除$f\psi$。一般来说，我们希望 (\ref{eq:1.18}) 两边各相等的量是$x$和$t$的某个函数。然而，(\ref{eq:1.18}) 的右边不依赖于$t$，所以 (\ref{eq:1.18}) 两边相等的函数必须与$t$无关。我们称这个常数为$E$。
 
 	令式(\ref{eq:1.18})的左边等于$E$，我们有
 	\begin{equation*}
-		\frac{\mathrm{d}f\left(t\right)}{\mathrm{d}t}=-\frac{\mathrm{i}E}{\hbar}\mathrm{d}t
+		\frac{\dd f\left(t\right)}{\dd t}=-\frac{\ii E}{\hbar}\dd t
 	\end{equation*}
 	左右对时间求积分，有
 	\begin{equation*}
-		\ln f\left(t\right)= - \mathrm{i}Et/\hbar+C
+		\ln f\left(t\right)= - \ii Et/\hbar+C
 	\end{equation*}
 	其中$C$是任意常数。因此，
 	\begin{equation*}
-		f\left(t\right)=\mathrm{e}^C\mathrm{e}^{-\mathrm{i}Et/\hbar}=A\mathrm{e}^{-\mathrm{i}Et/\hbar}
+		f\left(t\right)=\ee^C\ee^{-\ii Et/\hbar}=A\ee^{-\ii Et/\hbar}
 	\end{equation*}
-	其中$A$是代替了$\mathrm{e}^C$的任意常数。由于$A$可以作为因子包含在与$f\left(t\right)$相乘的函数$\psi\left(x\right)$中，因此$A$可以从$f\left(t\right)$中略去。所以，
+	其中$A$是代替了$\ee^C$的任意常数。由于$A$可以作为因子包含在与$f\left(t\right)$相乘的函数$\psi\left(x\right)$中，因此$A$可以从$f\left(t\right)$中略去。所以，
 	\begin{equation*}
-		f\left(t\right)=\mathrm{e}^{-\mathrm{i}Et/\hbar}
+		f\left(t\right)=\ee^{-\ii Et/\hbar}
 	\end{equation*}
 	\indent 令(\ref{eq:1.18})的右边等于$E$，我们有
 	\begin{equation}
-		\boxed{-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2\psi\left(x\right)}{\mathrm{d}x^2}+V\left(x\right)\psi\left(x\right)=E\psi\left(x\right)}
+		\boxed{-\frac{\hbar^2}{2m}\frac{\dd ^2\psi\left(x\right)}{\dd x^2}+V\left(x\right)\psi\left(x\right)=E\psi\left(x\right)}
 		\label{eq:1.19 time-independent Schrödinger Equation}
 	\end{equation}
 	方程(\ref{eq:1.19 time-independent Schrödinger Equation})就是质量为$m$的单粒子一维运动的\textbf{定态薛定谔方程}（time-independent Schrödinger Equation）。	常数$E$有什么意义？由于$E$在（\ref{eq:1.19 time-independent Schrödinger Equation}）中作为$\left[E-V\left(x\right)\right]$出现，$E$的量纲与$V$相同，因此$E$具有能量的量纲。事实上，我们假设$E$就是系统的能量。（这是后一章将讨论的一个更普遍假设的特例）因此，在势能仅是$x$的函数的情况下，存在如下形式的波函数
 	\begin{equation}
-		\Psi\left(x,t\right)=\mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)
+		\Psi\left(x,t\right)=\ee^{-\ii Et/\hbar}\psi\left(x\right)
 		\label{eq:1.20}
 	\end{equation}
 	这些波函数对应于恒定能量$E$的状态。在接下来的几章中，我们将主要关注如何找到各种系统的方程(\ref{eq:1.19 time-independent Schrödinger Equation})的解。
@@ -296,9 +296,9 @@
 	其中，$\ast$号表示复共轭。对于波函数(\ref{eq:1.20})，有
 	\begin{equation*}
 		\begin{aligned}
-			\left|\Psi\left(x,t\right)\right|^2 &=\left[\mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)\right]^{\ast}\mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)\\
-			& = \mathrm{e}^{\mathrm{i}Et/\hbar}\psi^{\ast}\left(x\right)\mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(x\right)\\
-			& = \mathrm{e}^0\psi^{\ast}\left(x\right)\psi\left(x\right)=\psi^\ast\left(x\right)\psi\left(x\right)
+			\left|\Psi\left(x,t\right)\right|^2 &=\left[\ee^{-\ii Et/\hbar}\psi\left(x\right)\right]^{\ast}\ee^{-\ii Et/\hbar}\psi\left(x\right)\\
+			& = \ee^{\ii Et/\hbar}\psi^{\ast}\left(x\right)\ee^{-\ii Et/\hbar}\psi\left(x\right)\\
+			& = \ee^0\psi^{\ast}\left(x\right)\psi\left(x\right)=\psi^\ast\left(x\right)\psi\left(x\right)
 		\end{aligned}
 	\end{equation*}
 	\begin{equation}
@@ -307,7 +307,7 @@
 	\end{equation}
 	在推导(\ref{eq:1.22 Psi and psi})时，我们假设$E$是实数，即$E=E^{\ast}$。这将会在第\ref{sec:7.2 Hermitian Operators}节给出证明。
 
-	因此，对于 (\ref{eq:1.20}) 形式的状态，概率密度由$\left|\Psi\left(x\right)\right|^2$给出，且不随时间变化。这种状态称为\textbf{定态}（stationary states）。由于具有物理意义的量是$\left|\Psi\left(x,t\right)\right|^2$，而且对于定态有$\left|\Psi\left(x,t\right)\right|^2=\left|\psi\left(x\right)\right|^2$，函数$\psi\left(x\right)$通常被称为\textbf{波函数}，尽管定态的完整波函数是$\psi\left(x\right)$与$\mathrm{e}^{-\mathrm{i}Et/\hbar}$的乘积。\textit{定态}一词不应误导读者，让他们以为处于定态的粒子就是静止的。确定的是概率密度$\left|\Psi\right|^2$，而不是粒子本身。
+	因此，对于 (\ref{eq:1.20}) 形式的状态，概率密度由$\left|\Psi\left(x\right)\right|^2$给出，且不随时间变化。这种状态称为\textbf{定态}（stationary states）。由于具有物理意义的量是$\left|\Psi\left(x,t\right)\right|^2$，而且对于定态有$\left|\Psi\left(x,t\right)\right|^2=\left|\psi\left(x\right)\right|^2$，函数$\psi\left(x\right)$通常被称为\textbf{波函数}，尽管定态的完整波函数是$\psi\left(x\right)$与$\ee^{-\ii Et/\hbar}$的乘积。\textit{定态}一词不应误导读者，让他们以为处于定态的粒子就是静止的。确定的是概率密度$\left|\Psi\right|^2$，而不是粒子本身。
 
 	我们将主要关注能量恒定的状态（定态），因此通常会处理定态薛定谔方程（\ref{eq:1.19 time-independent Schrödinger Equation}）。为简单起见，我们将此方程称为 “薛定谔方程”。请注意，薛定谔方程包含两个未知数：允许的能量$E$和允许的波函数$ \psi$。为了求解这两个未知数，我们除了要求它满足 (\ref{eq:1.19 time-independent Schrödinger Equation}) 以外，还需要有额外的条件（称为边界条件或定解条件）。边界条件决定了允许的能量，因为只有特定的$E$值才能满足边界条件。这一点在后面章节讨论具体例子时会更加清楚。
 	
@@ -326,30 +326,30 @@
 
 	有时我们会关心两个相关事件同时发生的概率。例如，我们可能会问从一副 52 张牌中抽出两张红心的概率，假设抽出第一张牌后我们不放回去。第一次抽牌有 52 种可能的结果，而每一种可能都对应 51 种可能的第二次抽牌。我们有 52 $\cdot$ 51种可能的结果。因为有 13 张红心，所以有 13$\cdot$12 种不同的方法抽出两张红心。期望概率为 $\left(13\cdot12\right)/\left(52\cdot51\right)=1/17$。这个计算说明了定理： 两个事件$A$和 $B$ 同时发生的概率是 $A$ 发生的概率乘以 $B$ 随后发生的条件概率（计算时假设 $A$ 发生）。因此，如果 $A$ 是第一次抽中红心的概率，那么 $A$ 的概率就是 $13/52$。如果第一次抽到红心，那么第二次抽到红心的概率是 $12/51$，因为牌中还有 12 张红心。那么抽到两张红心的概率是 $\left(13/52\right)\left(12/51\right)=1/17$，如前所述。
 
-	在量子力学中，我们必须处理涉及连续变量（例如 $x$ 坐标）的概率。谈论在 $x=0.5000\ldots$这样一个特定点上发现粒子的概率是没有多大意义的，因为 $x$ 轴上有无数个点，而对于我们进行的任何有限次数的测量来说，精确得到 $0.5000\ldots$的概率都是微乎其微的。相反，我们谈论的是在 $x$ 轴上位于 $x$ 和 $x+\mathrm{d}x$ 之间的微小区间内找到粒子的概率，$\mathrm{d}x$ 是长度的一个无穷小量。这个概率自然与区间的长度 $\mathrm{d}x$ 成正比，并且会随着 $x$ 轴的不同区域而变化。因此，粒子在 $x$ 和 $x+\mathrm{d}x$ 之间被发现的概率等于 $g\left(x\right)\mathrm{d}x$，其中 $g\left(x\right)$ 是某个函数，表示概率在 $x$ 轴上的变化情况。函数 $g\left(x\right)$ 称为\textbf{概率密度}（probability density），因为它是单位长度上的概率。由于概率是实数、非负数，因此 $g\left(x\right)$ 必须是一个处处非负的实函数。波函数 $\Psi$ 可以取负值和复值，不是概率密度。 因此，量子力学假设概率密度为 $\left|\Psi\right|^2$ 【公式 (\ref{exp:1.15 probability of a particle}) 】。
+	在量子力学中，我们必须处理涉及连续变量（例如 $x$ 坐标）的概率。谈论在 $x=0.5000\ldots$这样一个特定点上发现粒子的概率是没有多大意义的，因为 $x$ 轴上有无数个点，而对于我们进行的任何有限次数的测量来说，精确得到 $0.5000\ldots$的概率都是微乎其微的。相反，我们谈论的是在 $x$ 轴上位于 $x$ 和 $x+\dd x$ 之间的微小区间内找到粒子的概率，$\dd x$ 是长度的一个无穷小量。这个概率自然与区间的长度 $\dd x$ 成正比，并且会随着 $x$ 轴的不同区域而变化。因此，粒子在 $x$ 和 $x+\dd x$ 之间被发现的概率等于 $g\left(x\right)\dd x$，其中 $g\left(x\right)$ 是某个函数，表示概率在 $x$ 轴上的变化情况。函数 $g\left(x\right)$ 称为\textbf{概率密度}（probability density），因为它是单位长度上的概率。由于概率是实数、非负数，因此 $g\left(x\right)$ 必须是一个处处非负的实函数。波函数 $\Psi$ 可以取负值和复值，不是概率密度。 因此，量子力学假设概率密度为 $\left|\Psi\right|^2$ 【公式 (\ref{exp:1.15 probability of a particle}) 】。
 
-	粒子位于空间的某个有限区域$a \le x \le b$的概率是多少？为了求出这个概率，我们将在位于$a$和 $b$ 之间的所有无限小区域中找到粒子的概率 $\left|\Psi\right|^2\mathrm{d}x$ 相加，这就是如下定积分的定义：
+	粒子位于空间的某个有限区域$a \le x \le b$的概率是多少？为了求出这个概率，我们将在位于$a$和 $b$ 之间的所有无限小区域中找到粒子的概率 $\left|\Psi\right|^2\dd x$ 相加，这就是如下定积分的定义：
 	\begin{equation}
-		\boxed{\int_{a}^{b}\left|\Psi\right|^2 \:\mathrm{d}x = \text{Pr}\left(a \le x \le b\right)}
+		\boxed{\int_{a}^{b}\left|\Psi\right|^2 \:\dd x = \text{Pr}\left(a \le x \le b\right)}
 		\label{eq:1.23 int of probability}
 	\end{equation}
 	其中，Pr 表示概率。概率为1则代表必然性。由于粒子肯定位于 $x$ 轴上的某处，因此我们要求
 	\begin{equation}
-		\boxed{\int_{-\infty}^{\infty} \left|\Psi\right|^2 \:\mathrm{d}x = 1}
+		\boxed{\intinf \left|\Psi\right|^2 \:\dd x = 1}
 		\label{eq:1.24 the definition of nomalization}
 	\end{equation}
-	若波函数$\Psi$满足式(\ref{eq:1.24 the definition of nomalization})，则我们说$\Psi$是\textbf{归一化的}（normalized）。对于定态波函数，有$\left|\Psi\right|^2 = \left|\psi\right|^2$且$\int_{-\infty}^{\infty} \left|\psi\right|^2 \:\mathrm{d}x = 1$。
+	若波函数$\Psi$满足式(\ref{eq:1.24 the definition of nomalization})，则我们说$\Psi$是\textbf{归一化的}（normalized）。对于定态波函数，有$\left|\Psi\right|^2 = \left|\psi\right|^2$且$\intinf \left|\psi\right|^2 \:\dd x = 1$。
 
 	\begin{examplebox}
-		\textbf{例题：}一个单粒子一维系统在$t=0$时刻满足$\Psi = a^{-1/2}\mathrm{e}^{-\left|x\right|/a}$，其中$a = 1.0000$ nm。在$t=0$时对粒子的位置进行一次测量。\\
+		\textbf{例题：}一个单粒子一维系统在$t=0$时刻满足$\Psi = a^{-1/2}\ee^{-\left|x\right|/a}$，其中$a = 1.0000$ nm。在$t=0$时对粒子的位置进行一次测量。\\
 		(a)求测量值介于 $x = 1.5000$ nm 和 $x = 1.5001$ nm 之间的概率；\\
 		(b)求测量值介于 $x = 0$ nm 和 $x = 2$ nm之间的概率；\\
 		(c)求证：$\Psi$是归一化的。\\
 
-		(a)在这个极小的区间内，$x$只变化了$0.0001$ nm，而$\Psi$从$\mathrm{e}^{-1.5000}$ nm $^{-1/2} = 0.22313$ nm $^{-1/2}$到$\mathrm{e}^{-1.5001}$ nm $^{-1/2} = 0.22311$ nm $^{-1/2}$，所以$\Psi$在这个区间可以近似为常数，将这一区间视为无穷小区间是一个很好的近似方法。带入(\ref{exp:1.15 probability of a particle})给出的期望概率公式，有
+		(a)在这个极小的区间内，$x$只变化了$0.0001$ nm，而$\Psi$从$\ee^{-1.5000}$ nm $^{-1/2} = 0.22313$ nm $^{-1/2}$到$\ee^{-1.5001}$ nm $^{-1/2} = 0.22311$ nm $^{-1/2}$，所以$\Psi$在这个区间可以近似为常数，将这一区间视为无穷小区间是一个很好的近似方法。带入(\ref{exp:1.15 probability of a particle})给出的期望概率公式，有
 		\begin{equation*}
 			\begin{aligned}
-				\left|\Psi\right|^2 \:\mathrm{d}x = a^{-1/2} \mathrm{e}^{-2\left|x\right|/a}\:\mathrm{d}x & = \left(1 \: \text{nm}\right)^{-1} \mathrm{e}^{-2\left(1.5 \: \text{nm}\right)/\left(1 \:\text{nm}\right)}\left(0.0001 \:\text{nm}\right)\\
+				\left|\Psi\right|^2 \:\dd x = a^{-1/2} \ee^{-2\left|x\right|/a}\:\dd x & = \left(1 \: \text{nm}\right)^{-1} \ee^{-2\left(1.5 \: \text{nm}\right)/\left(1 \:\text{nm}\right)}\left(0.0001 \:\text{nm}\right)\\
 				& = 4.979 \times 10^{-6}
 			\end{aligned}
 		\end{equation*}	
@@ -357,21 +357,21 @@
 		(b)使用式(\ref{eq:1.23 int of probability})以及$x \ge 0$时$\left|x\right| = x$，有
 		\begin{equation*}
 			\begin{aligned}
-				\text{Pr} \left(0 \le x \le 2 \: \text{nm}\right) & = \int_{0}^{2 \: \text{nm}}\left|\Psi\right|^2 \:\mathrm{d}x  = a^{-1} \int_{0}^{2 \: \text{nm}} \mathrm{e}^{-2x/a}\:\mathrm{d}x\\
-				& = \eval{-\frac{1}{2}\mathrm{e}^{-2x/a}}_{0}^{2 \: \text{nm}} = -\frac{1}{2}\left(\mathrm{e}^{-4}-1\right) = 0.4908
+				\text{Pr} \left(0 \le x \le 2 \: \text{nm}\right) & = \int_{0}^{2 \: \text{nm}}\left|\Psi\right|^2 \:\dd x  = a^{-1} \int_{0}^{2 \: \text{nm}} \ee^{-2x/a}\:\dd x\\
+				& = \eval{-\frac{1}{2}\ee^{-2x/a}}_{0}^{2 \: \text{nm}} = -\frac{1}{2}\left(\ee^{-4}-1\right) = 0.4908
 			\end{aligned}
 		\end{equation*}
-		(c)使用$\int_{-\infty}^{\infty} f\left(x\right) \:\mathrm{d}x = \int_{-\infty}^{0} f \left(x\right) \:\mathrm{d}x+\int_{0}^{\infty} f\left(x\right) \:\mathrm{d}x$，以及$x \ge 0$时$\left|x\right| = x$和$x < 0$时$\left|x\right| = -x$，有
+		(c)使用$\intinf f\left(x\right) \:\dd x = \int_{-\infty}^{0} f \left(x\right) \:\dd x+\int_{0}^{\infty} f\left(x\right) \:\dd x$，以及$x \ge 0$时$\left|x\right| = x$和$x < 0$时$\left|x\right| = -x$，有
 		\begin{equation*}
 			\begin{aligned}
-				\int_{-\infty}^{\infty} \left|\Psi\right|^2 \:\mathrm{d}x  & = a ^{-1}\int_{-\infty}^{0} \mathrm{e}^{2x/a}\:\mathrm{d}x + a^{-1}\int_{0}^{\infty} \mathrm{e}^{-2x/a}\:\mathrm{d}x\\
-				& = a^{-1}\left(\eval{\frac{1}{2}a\mathrm{e}^{2x/a}}_{-\infty}^{0}\right) + a^{-1}\left(\eval{-\frac{1}{2}a\mathrm{e}^{-2x/a}}_{0}^{\infty}\right) = \frac{1}{2} + \frac{1}{2} = 1 
+				\intinf \left|\Psi\right|^2 \:\dd x  & = a ^{-1}\int_{-\infty}^{0} \ee^{2x/a}\:\dd x + a^{-1}\int_{0}^{\infty} \ee^{-2x/a}\:\dd x\\
+				& = a^{-1}\left(\eval{\frac{1}{2}a\ee^{2x/a}}_{-\infty}^{0}\right) + a^{-1}\left(\eval{-\frac{1}{2}a\ee^{-2x/a}}_{0}^{\infty}\right) = \frac{1}{2} + \frac{1}{2} = 1 
 			\end{aligned}
 		\end{equation*}
 		得证。
 		\\
 
-		\textbf{练习：}对于一个测量时态函数为$\Psi = \left(32 a^3 /\pi \right)^{1/4} x \mathrm{e}^{-ax^2}$的系统（其中 $a = 1.0000 \: \text{nm}^{-2}$），求测量值在 $x = 1.2000$ nm 和 $1.2001$ nm 之间的概率。将区间视为无穷小区间。	（\textit{答案：}0.0000258。）
+		\textbf{练习：}对于一个测量时态函数为$\Psi = \left(32 a^3 /\pi \right)^{1/4} x \ee^{-ax^2}$的系统（其中 $a = 1.0000 \: \text{nm}^{-2}$），求测量值在 $x = 1.2000$ nm 和 $1.2001$ nm 之间的概率。将区间视为无穷小区间。	（\textit{答案：}0.0000258。）
 	\end{examplebox}
 	
 \section{复数}
@@ -381,10 +381,10 @@
 
 	\textbf{复数}（complex number）$z$具有如下的形式：
 	\begin{equation}
-		z = x+\mathrm{i}y, \quad \text{其中} \: \mathrm{i}  \equiv \sqrt{-1}
+		z = x+\ii y, \quad \text{其中} \: \ii  \equiv \sqrt{-1}
 		\label{eq:1.25 definition of complex number}
 	\end{equation}
-	且$x$和$y$是\textbf{实数}（real number）（不涉及负数平方根的数），如果在(\ref{eq:1.25 definition of complex number})中$y=0$，则$z$是实数。如果$y \neq 0$，则$z$是\textbf{虚数}（imaginary number）。如果$x=0$且$y \neq 0$，则$z$是\textbf{纯虚数}（pure imaginary number）。例如：6.83是实数，$5.4-3\mathrm{i}$是虚数，而$0.60\mathrm{i}$是纯虚数。实数和纯虚数是复数的特例，在(\ref{eq:1.25 definition of complex number})中，$x$和$y$分别是$z$的实部和虚部，即$x = \mathrm{Re} \left(z\right)$；$y = \mathrm{Im}\left(z\right)$。
+	且$x$和$y$是\textbf{实数}（real number）（不涉及负数平方根的数），如果在(\ref{eq:1.25 definition of complex number})中$y=0$，则$z$是实数。如果$y \neq 0$，则$z$是\textbf{虚数}（imaginary number）。如果$x=0$且$y \neq 0$，则$z$是\textbf{纯虚数}（pure imaginary number）。例如：6.83是实数，$5.4-3\ii$是虚数，而$0.60\ii$是纯虚数。实数和纯虚数是复数的特例，在(\ref{eq:1.25 definition of complex number})中，$x$和$y$分别是$z$的实部和虚部，即$x = \mathrm{Re} \left(z\right)$；$y = \mathrm{Im}\left(z\right)$。
 
 	复数可以代表\textbf{复平面}（complex plane）(图 \ref{fig:1.3})上的一个点，其中，$z$ 的实部绘制在横轴上，虚部绘制在纵轴上。这幅图显然提示我们定义两个表征复数 $z$ 的量：点 $z$ 与原点的距离 $r$ 称为 $z$ 的\textbf{绝对值}（absolute value）或模；点 $z$ 的半径矢量与正横轴所成的角度 $\theta$ 则称为 $z$ 的\textbf{相位}（phase）或辐角。我们有
 	\begin{equation}
@@ -394,41 +394,41 @@
 	\begin{equation*}
 		x = r \cos \theta, \qquad y = r \sin \theta
 	\end{equation*}
-	所以我们可以把$z = x+ \mathrm{i}y$写作
+	所以我们可以把$z = x+ \ii y$写作
 	\begin{equation}
-		z = r \cos \theta + \mathrm{i} \sin \theta = r \mathrm{e}^{\mathrm{i} \theta}
+		z = r \cos \theta + \ii \sin \theta = r \ee^{\ii \theta}
 		\label{eq:1.27 Triangular forms of complex numbers}
 	\end{equation}	
 	由欧拉公式带入。（见问题 4.3）
 	\begin{equation}
-		\boxed{\mathrm{e}^{\mathrm{i}\theta} = \cos \theta + \mathrm{i} \sin\theta}
+		\boxed{\ee^{\ii\theta} = \cos \theta + \ii \sin\theta}
 		\label{eq:1.28 Euler's equation}
 	\end{equation}
 	以上方程中的$\theta$角均采用弧度制。
 
-	如果$z = x + \mathrm{i}y$，则它的\textbf{复共轭}（complex conjugate）$z^{\ast}$定义为
+	如果$z = x + \ii y$，则它的\textbf{复共轭}（complex conjugate）$z^{\ast}$定义为
 	\begin{equation}
-		z^{\ast} \equiv x - \mathrm{i}y = r \mathrm{e} ^{-\mathrm{i}\theta}
+		z^{\ast} \equiv x - \ii y = r \ee ^{-\ii\theta}
 		\label{eq:1.29 definition of complexconjugate}
 	\end{equation}
 	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=0.8\textwidth]{Figures/1.3.png}  % 图片路径
-		\caption{(a)\text{复数}$z = x + \mathrm{i}y$\text{的图象；}  (b)\text{复数}$-2+\mathrm{i}$\text{的图象}}
+		\caption{(a)\text{复数}$z = x + \ii y$\text{的图象；}  (b)\text{复数}$-2+\ii$\text{的图象}}
 		\label{fig:1.3}
 	\end{figure}
 
 	如果$z$是实数，那么它的虚部为0。因此，当且仅当$z = z^{\ast}$时有$z$是实数。对复数$z$作两次复共轭，我们再次得到了$z$，所以$\left(z^{\ast}\right)^{\ast}=z$。将$z$与其复共轭$z^{\ast}$作乘积，我们有
 	\begin{equation*}
-		zz^{\ast} = \left(x + \mathrm{i}y\right)\left(x= \mathrm{i}y\right) = x^2+\mathrm{i}yx+\mathrm{i}xy-\mathrm{i}^2y^2
+		zz^{\ast} = \left(x + \ii y\right)\left(x - \ii y\right) = x^2+\ii yx-\ii xy-\ii^2y^2
 	\end{equation*}
 	\begin{equation}
 		\boxed{zz^{\ast} = x^2+y^2=r^2=\left|z\right|^2}
 		\label{eq:1.30 product of z and its complex conjugate}
 	\end{equation}
-	对于两个复数$z_1=r_1\mathrm{e}^{\mathrm{i}\theta_1}$与$z_2 = r_2\mathrm{e}^{\mathrm{i}\theta_2}$的积和商，我们有
+	对于两个复数$z_1=r_1\ee^{\ii\theta_1}$与$z_2 = r_2\ee^{\ii\theta_2}$的积和商，我们有
 	\begin{equation}
-		z_1z_2 = r_1r_2\mathrm{e}^{\mathrm{i}\left(\theta_1+\theta_2\right)}, \quad \frac{z_1}{z_2} = \frac{r_1}{r_2}\mathrm{e}^{\mathrm{i} \left(\theta_1 - \theta_2\right)}
+		z_1z_2 = r_1r_2\ee^{\ii\left(\theta_1+\theta_2\right)}, \quad \frac{z_1}{z_2} = \frac{r_1}{r_2}\ee^{\ii \left(\theta_1 - \theta_2\right)}
 		\label{eq:1.31 product and quotient of two complex numbers}
 	\end{equation}
 
@@ -455,9 +455,9 @@
 		\label{eq:1.35 properties of psi wave function}
 	\end{equation}
 
-	现在我们得到了数字 1 的 $n$ 次根式。我们可以将数字 1 的相位取为 0 或 $2\pi$ 或 $4\pi$，以此类推。因此 $1 = \mathrm{e}^{\mathrm{i}2\pi k}$，其中 $k$ 是任何整数，0、负数或正数。现在考虑数字 $\omega$，其中 $\omega \equiv \mathrm{e}^{\mathrm{i} 2\pi k /n}$，$n$ 为正整数。使用式(\ref{eq:1.31 product and quotient of two complex numbers}) $\:$$n$次，我们有$\omega^n = \mathrm{e}^{\mathrm{i}2\pi k} = 1$。因此，$\omega$是$n$次单位根。有 $n$ 个不同的复数 $n$ 次单位根，连续取 $n$ 个整数 $k$ 的值，就可以得到所有这些根：
+	现在我们得到了数字 1 的 $n$ 次根式。我们可以将数字 1 的相位取为 0 或 $2\pi$ 或 $4\pi$，以此类推。因此 $1 = \ee^{\ii 2\pi k}$，其中 $k$ 是任何整数，0、负数或正数。现在考虑数字 $\omega$，其中 $\omega \equiv \ee^{\ii 2\pi k /n}$，$n$ 为正整数。使用式(\ref{eq:1.31 product and quotient of two complex numbers}) $\:$$n$次，我们有$\omega^n = \ee^{\ii2 \pi k} = 1$。因此，$\omega$是$n$次单位根。有 $n$ 个不同的复数 $n$ 次单位根，连续取 $n$ 个整数 $k$ 的值，就可以得到所有这些根：
 	\begin{equation}
-		\omega = \mathrm{e}^{\mathrm{i} 2\pi k /n}, \quad k = 0,1,2,\cdots , n-1
+		\omega = \ee^{\ii 2\pi k /n}, \quad k = 0,1,2,\cdots , n-1
 		\label{eq:1.36 n different complex nth roots of unity}
 	\end{equation}
 	除了 (\ref{eq:1.36 n different complex nth roots of unity}) 中的 $k$ 值之外，任何其他 $k$ 值所得到的数的相位都与 (\ref{eq:1.36 n different complex nth roots of unity}) 中的一个数相差 $2$ 的整数倍，因此不是不同的根。对于 (\ref{eq:1.36 n different complex nth roots of unity}) 中的 $n=2$，我们得到 1 的两个平方根；对于 $n=3$，得到 1 的三个立方根；以此类推。
@@ -477,49 +477,46 @@
 	量子化学中大量使用微积分，因此应牢记以下公式。其中 $c$、$n$ 和 $b$ 为常数，$f$ 和 $g$ 为 $x$ 的函数。
 	\begin{equation*}
 		\boxed{
-			\frac{\mathrm{d}c}{\mathrm{d}x} = 0, \quad \frac{\mathrm{d}\left(cf\right)}{\mathrm{d}x} = c\frac{\mathrm{d}f}{\mathrm{d}x}, \quad \frac{\mathrm{d}x^n}{\mathrm{d}x} = nx^{n-1}, \quad \cfrac{\mathrm{d}\mathrm{e}^{cx}}{\mathrm{d}x} = c\mathrm{e}^{cx}
+			\frac{\dd c}{\dd x} = 0, \quad \frac{\dd \left(cf\right)}{\dd x} = c\frac{\dd f}{\dd x}, \quad \frac{\dd x^n}{\dd x} = nx^{n-1}, \quad \cfrac{\dd \ee^{cx}}{\dd x} = c\ee^{cx}
 		}
 	\end{equation*}
 	\begin{equation*}
 		\boxed{
-			\frac{\mathrm{d}\left(\sin cx\right)}{\mathrm{d}x} = c \cos cx, \quad \frac{\mathrm{d} \left(\cos cx\right)}{\mathrm{d}x} = -c \sin cx, \quad \frac{\mathrm{d} \ln cx}{\mathrm{d} x } = \frac{1}{x}
+			\frac{\dd \left(\sin cx\right)}{\dd x} = c \cos cx, \quad \frac{\dd \left(\cos cx\right)}{\dd x} = -c \sin cx, \quad \frac{\dd \ln cx}{\dd x } = \frac{1}{x}
 		}
 	\end{equation*}
 	\begin{equation*}
 		\boxed{
-			\frac{\mathrm{d}\left(f+g\right)}{\mathrm{d}x} = \frac{\mathrm{d}f}{\mathrm{d}x}+\frac{\mathrm{d}g}{\mathrm{d}x}, \quad \frac{\mathrm{d}\left(fg\right)}{\mathrm{d}x} = f\frac{\mathrm{d}g}{\mathrm{d}x}+g\frac{\mathrm{d}f}{\mathrm{d}x}
+			\frac{\dd \left(f+g\right)}{\dd x} = \frac{\dd f}{\dd x}+\frac{\dd g}{\dd x}, \quad \frac{\dd \left(fg\right)}{\dd x} = f\frac{\dd g}{\dd x}+g\frac{\dd f}{\dd x}
 		}
 	\end{equation*}
 	\begin{equation*}
 		\boxed{
-			\frac{\mathrm{d}\left(f/g\right)}{\mathrm{d}x} = \frac{\mathrm{d}\left(fg^{-1}\right)}{\mathrm{d}x} = -fg^{-2}\frac{\mathrm{d}g}{\mathrm{d}x}+g^{-1}\frac{\mathrm{d}f}{\mathrm{d}x}
+			\frac{\dd \left(f/g\right)}{\dd x} = \frac{\dd \left(fg^{-1}\right)}{\dd x} = -fg^{-2}\frac{\dd g}{\dd x}+g^{-1}\frac{\dd f}{\dd x}
 		}
 	\end{equation*}
 	\begin{equation*}
 		\boxed{
-			\frac{\mathrm{d}}{\mathrm{d}x}f\left(g\left(x\right)\right) = \frac{\mathrm{d}f}{\mathrm{d}g}\frac{\mathrm{d}g}{\mathrm{d}x}
+			\frac{\dd }{\dd x}f\left(g\left(x\right)\right) = \frac{\dd f}{\dd g}\frac{\dd g}{\dd x}
 		}
 	\end{equation*}
-	最后一个公式有一个例子：$\mathrm{d}\left[\sin\left(cx^2\right)\right]/\mathrm{d}x = 2cx\cos\left(cx^2\right)$。这里$g\left(x\right) = cx^2$而$f=\sin$。
+	最后一个公式有一个例子：$\dd \left[\sin\left(cx^2\right)\right]/\dd x = 2cx\cos\left(cx^2\right)$。这里$g\left(x\right) = cx^2$而$f=\sin$。
 	\begin{equation*}
 		\boxed{
-			\int cf\left(x\right)\:\mathrm{d}x = c \int f\left(x\right)\:\mathrm{d}x, \quad \int \left[f\left(x\right)+g\left(x\right)\right]\:\mathrm{d}x = \int f\left(x\right)\:\mathrm{d}x+\int g\left(x\right)\:\mathrm{d}x
-		}
-	\end{equation*}
-	\begin{equation*}
-		\boxed{
-			\int \mathrm{d}x = x, \quad \int x^n\:\mathrm{d}x = \frac{x^{n+1}}{n+1} \: \text{其中} \: n \neq -1, \quad \int \frac{1}{x}\:\mathrm{d}x = \ln x
+			\int cf\left(x\right)\:\dd x = c \int f\left(x\right)\:\dd x, \quad \int \left[f\left(x\right)+g\left(x\right)\right]\:\dd x = \int f\left(x\right)\:\dd x+\int g\left(x\right)\:\dd x
 		}
 	\end{equation*}
 	\begin{equation*}
 		\boxed{
-			\int \mathrm{e}^{cx}\:\mathrm{d}x = \frac{\mathrm{e}^{cx}}{c}, \quad \int \sin cx\:\mathrm{d}x = -\frac{\cos cx}{c}, \quad \int \cos cx\:\mathrm{d}x = \frac{\sin cx}{c}
+			\int \dd x = x, \quad \int x^n\:\dd x = \frac{x^{n+1}}{n+1} \: \text{其中} \: n \neq -1, \quad \int \frac{1}{x}\:\dd x = \ln x
+		}
+	\end{equation*}
+	\begin{equation*}
+		\boxed{
+			\int \ee^{cx}\:\dd x = \frac{\ee^{cx}}{c}, \quad \int \sin cx\:\dd x = -\frac{\cos cx}{c}, \quad \int \cos cx\:\dd x = \frac{\sin cx}{c}
 		}
 	\end{equation*}
 	
-	
-	
-	
-	\section*{总结}
+\section*{总结}
 
-	\section*{习题}
+\section*{习题}

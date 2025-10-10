@@ -8,14 +8,14 @@
 
     $n$电子原子的哈密顿算符为
     \begin{equation}
-        \hat{H} = -\frac{\hbar^2}{2m_{\mathrm{e}}} \sum_{i=1}^{n} \nabla_i^2 - \sum_{i=1}^{n} \frac{Z \mathrm{e}^2}{4\pi\varepsilon_0 r_i} + \sum_{i=1}^{n-1} \sum_{j=i+1}^{n} \frac{\mathrm{e}^2}{4\pi\varepsilon_0 r_{ij}}
+        \hat{H} = -\frac{\hbar^2}{2m_{\ee }} \sum_{i=1}^{n} \nabla_i^2 - \sum_{i=1}^{n} \frac{Z \ee ^2}{4\pi\varepsilon_0 r_i} + \sum_{i=1}^{n-1} \sum_{j=i+1}^{n} \frac{\ee ^2}{4\pi\varepsilon_0 r_{ij}}
         \label{eq:11.1}
     \end{equation}
-    其中假设存在一个质量无限大的点状原子核（第\ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions}节）。(\ref{eq:11.1})中的第一个求和包含了$n$个电子的动能算符。第二个求和为电子和核电荷$Z\mathrm{e}$之间的吸引势(\ref{eq:6.58})。对于中性原子，有$Z=n$。最后一个求和为电子排斥势。限制$j > i$避免了重复计算电子间排斥力，且舍去了如$\mathrm{e}^2/4\pi\varepsilon_0 r_{ii}$这样的项。哈密顿算符(\ref{eq:11.1})是不完整的，因为它忽略了自旋轨道和其他相互作用。略去的项较小（除了具有高$Z$值的原子，它们将在第\ref{sec:11.6 Spin-Orbit Interaction}和\ref{sec:11.7 The Atomic Hamiltonian}节中讨论。
+    其中假设存在一个质量无限大的点状原子核（第\ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions}节）。(\ref{eq:11.1})中的第一个求和包含了$n$个电子的动能算符。第二个求和为电子和核电荷$Z\ee $之间的吸引势(\ref{eq:6.58})。对于中性原子，有$Z=n$。最后一个求和为电子排斥势。限制$j > i$避免了重复计算电子间排斥力，且舍去了如$\ee ^2/4\pi\varepsilon_0 r_{ii}$这样的项。哈密顿算符(\ref{eq:11.1})是不完整的，因为它忽略了自旋轨道和其他相互作用。略去的项较小（除了具有高$Z$值的原子，它们将在第\ref{sec:11.6 Spin-Orbit Interaction}和\ref{sec:11.7 The Atomic Hamiltonian}节中讨论。
 
 \subsection*{Hartree自洽场方法}
 
-    由于电子间排斥项$\mathrm{e}^2 / 4\pi\varepsilon_0r_{ij}$的存在，单原子的薛定谔方程无法分离变量。回忆处理氦原子的微扰法（第\ref{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}节），通过忽略这些排斥项，我们可以得到零级波函数。那么薛定谔方程就可以分离成$n$个单电子类氢方程。零级波函数就是$n$个类氢（单电子）轨道的乘积：
+    由于电子间排斥项$\ee ^2 / 4\pi\varepsilon_0r_{ij}$的存在，单原子的薛定谔方程无法分离变量。回忆处理氦原子的微扰法（第\ref{sec:9.3 Perturbation Treatment of the Helium-Atom Ground State}节），通过忽略这些排斥项，我们可以得到零级波函数。那么薛定谔方程就可以分离成$n$个单电子类氢方程。零级波函数就是$n$个类氢（单电子）轨道的乘积：
     \begin{equation}
         \psi^{(0)} = f_1(r_1, \theta_1, \phi_1) f_2(r_2, \theta_2, \phi_2) \cdots f_n(r_n, \theta_n, \phi_n)
         \label{eq:11.2}
@@ -46,21 +46,21 @@
         \phi_0 = s_1(r_1, \theta_1, \phi_1) s_2(r_2, \theta_2, \phi_2) \cdots s_n(r_n, \theta_n, \phi_n)
         \label{eq:11.6}
     \end{equation}
-    其中每个$s_i$都是一个关于$r$的已归一化函数与球谐函数的乘积。合理假设$\phi_0$是一系列具有有效原子数的类氢轨道的乘积。对于函数(\ref{eq:11.6})，电子$i$的概率密度为$\left|s_i\right|^2$。我们现在只关注电子1，将电子$2,\:3,\:\ldots,\:n$看作一个电荷的固定分布，电子1在该分布中运动。因此，我们实际上是在平均电子1与其他电子之间的瞬时相互作用。点电荷$Q_1$和$Q_2$之间相互作用势为$V_{12} = Q_1 Q_2 / 4\pi\varepsilon_0 r_{12}$【式(\ref{eq:6.58})】。我们将$Q_2$展开为一个连续的电荷分布，使得$\rho_2$是电荷密度，即单位体积内的电荷量。则体积微元$\mathrm{d} v_2$中的元电荷为$\rho_2 \:\mathrm{d} v_2$，再对$Q_1$和元电荷之间的相互作用求和，我们有
+    其中每个$s_i$都是一个关于$r$的已归一化函数与球谐函数的乘积。合理假设$\phi_0$是一系列具有有效原子数的类氢轨道的乘积。对于函数(\ref{eq:11.6})，电子$i$的概率密度为$\left|s_i\right|^2$。我们现在只关注电子1，将电子$2,\:3,\:\ldots,\:n$看作一个电荷的固定分布，电子1在该分布中运动。因此，我们实际上是在平均电子1与其他电子之间的瞬时相互作用。点电荷$Q_1$和$Q_2$之间相互作用势为$V_{12} = Q_1 Q_2 / 4\pi\varepsilon_0 r_{12}$【式(\ref{eq:6.58})】。我们将$Q_2$展开为一个连续的电荷分布，使得$\rho_2$是电荷密度，即单位体积内的电荷量。则体积微元$\dd v_2$中的元电荷为$\rho_2 \:\dd v_2$，再对$Q_1$和元电荷之间的相互作用求和，我们有
     \begin{equation*}
-        V_{12} = \frac{Q_1}{4\pi\varepsilon_0} \int \frac{\rho_2}{r_{12}} \:\mathrm{d} v_2
+        V_{12} = \frac{Q_1}{4\pi\varepsilon_0} \int \frac{\rho_2}{r_{12}} \:\dd v_2
     \end{equation*}
-    对于电子2（电荷为$-\mathrm{e}$），假设电子云的电荷密度为$\rho_2 = -\mathrm{e}\left|s_2\right|^2$；对于电子1，$Q_1 = -\mathrm{e}$。那么
+    对于电子2（电荷为$-\ee $），假设电子云的电荷密度为$\rho_2 = -\ee \left|s_2\right|^2$；对于电子1，$Q_1 = -\ee $。那么
     \begin{equation*}
-        V_{12} = \frac{\mathrm{e}^2}{4\pi\varepsilon_0} \int \frac{\left|s_2\right|^2}{r_{12}} \:\mathrm{d} v_2
+        V_{12} = \frac{\ee ^2}{4\pi\varepsilon_0} \int \frac{\left|s_2\right|^2}{r_{12}} \:\dd v_2
     \end{equation*}
     考虑与其他电子的相互作用，我们得到
     \begin{equation*}
-        V_{12} + V_{13} + \cdots + V_{1n} = \sum_{j=2}^{n} \frac{\mathrm{e}^2}{4\pi\varepsilon_0} \int \frac{\left|s_j\right|^2}{r_{1j}} \:\mathrm{d} v_j
+        V_{12} + V_{13} + \cdots + V_{1n} = \sum_{j=2}^{n} \frac{\ee ^2}{4\pi\varepsilon_0} \int \frac{\left|s_j\right|^2}{r_{1j}} \:\dd v_j
     \end{equation*}
     则电子1和其他电子以及原子核之间相互作用势为
     \begin{equation}
-        V_1(r_1, \theta_1, \phi_1) = \sum_{j=2}^{n} \frac{\mathrm{e}^2}{4\pi\varepsilon_0} \int \frac{|s_j|^2}{r_{1j}} \:\mathrm{d} v_j - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0 r_1}
+        V_1(r_1, \theta_1, \phi_1) = \sum_{j=2}^{n} \frac{\ee ^2}{4\pi\varepsilon_0} \int \frac{|s_j|^2}{r_{1j}} \:\dd v_j - \frac{Z\ee ^2}{4\pi\varepsilon_0 r_1}
         \label{eq:11.7}
     \end{equation}
 
@@ -68,30 +68,30 @@
     \begin{equation}
         V_{1}(r_{1}) =
         \dfrac{
-            \displaystyle \int_{0}^{2\pi} \int_{0}^{\pi} V_{1}(r_{1}, \theta_{1}, \phi_{1}) \sin \theta_{1} \, \mathrm{d}\theta_{1} \, \mathrm{d}\phi_{1}
+            \displaystyle \int_{0}^{2\pi} \int_{0}^{\pi} V_{1}(r_{1}, \theta_{1}, \phi_{1}) \sin \theta_{1} \, \dd \theta_{1} \, \dd \phi_{1}
         }{
-            \displaystyle \int_{0}^{2\pi} \int_{0}^{\pi} \sin \theta \, \mathrm{d}\theta \, \mathrm{d}\phi
+            \displaystyle \int_{0}^{2\pi} \int_{0}^{\pi} \sin \theta \, \dd \theta \, \dd \phi
         }
         \label{eq:11.8}
     \end{equation}
 
     我们现在使用$V_1\left(r_1\right)$作为单电子薛定谔方程中的势能项：
     \begin{equation}
-        \left[-\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_1^2 + V_1\left(r_1\right)\right]t_1\left(1\right) = \varepsilon_1t_1\left(1\right)
+        \left[-\frac{\hbar^2}{2m_{\ee }}\nabla_1^2 + V_1\left(r_1\right)\right]t_1\left(1\right) = \varepsilon_1t_1\left(1\right)
         \label{eq:11.9}
     \end{equation}
     求出$t_1(1)$， 这将是一个改进的轨道，适用于电子1。在(\ref{eq:11.9})中，$\varepsilon_1$是电子1在该近似阶段的轨道能量。因为(\ref{eq:11.9})中的势能为球对称的，那么$t_1(1)$中的角向因子也是球对称的，设计量子数$l_1$和$m_1$（第\ref{sec:6.1 The One-Particle Central Force Problem}节）。$t_1$中的径向因子$R_1(1)$是形式为(\ref{eq:6.17})的一维薛定谔方程的解。我们得到一组解$R_1(1)$，当能量从最低值开始时，边界点（$r = 0$ 和 $\infty$）内部的节点数 $k$ 从零开始，并随着能量的增加而每次增加 1（第\ref{sec:4.2 The One-Dimensional Harmonic Oscillator}节）。我们现在\textit{定义}量子数$n$为$n \equiv l + 1 + k$，其中$k = 0,\:1,\:2,\:\ldots$。因此，我们得到了$1s, \: 2s, \: 2p$等，轨道（轨道能量$\varepsilon$随着$n$的增加而增加）与类氢原子一样，内部径向节点数$\left(n - l - 1\right)$也与类氢原子一致（第\ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions}节）。然而，因为$V_1\left(r_1\right)$不是简单的库仑势，那么径向因子$R_1\left(r_1\right)$也不是类氢函数。在解集$R_1\left(r_1\right)$中，我们选择与正在优化的轨道对应的那个解。例如，若电子1为铍原子组态$1s^22s^2$中的一个$1s$电子，那么$V_1\left(r_1\right)$是根据一个$1s$电子和两个$2s$电子的猜测轨道计算得出的，我们使用式(\ref{eq:11.9})的径向解（$k=0$）来确定一个改进的$1s$轨道。
 
     现在来计算电子2，将其视为在由其他电子产生的电子云中运动，该电子云的密度为
     \begin{equation*}
-        -\mathrm{e} \left[ \left| t_1 (1) \right|^2 + \left| s_3 (3) \right|^2 + \left| s_4 (4) \right|^2 + \dots + \left| s_n (n) \right|^2 \right]
+        -\ee \left[ \left| t_1 (1) \right|^2 + \left| s_3 (3) \right|^2 + \left| s_4 (4) \right|^2 + \dots + \left| s_n (n) \right|^2 \right]
     \end{equation*}
     我们计算有效势能$V_2\left(r_2\right)$，求解电子2的单电子薛定谔方程来得到改进的轨道$t_2\left(2\right)$。我们继续这个过程，直到为所有$n$个电子得到一组改进的轨道。然后我们回到电子1并重复该过程。我们继续计算改进的轨道，直到从一次迭代到下一次迭代不再有变化。最终得到的轨道集给出了Hartree自洽场波函数。
 
     如何得到在自洽场近似下原子的能量？似乎自然而然地要将电子的轨道能之和求和，$\varepsilon_1 + \varepsilon_2 + \cdots + \varepsilon_n$，但这是错误的。在计算轨道能量$\varepsilon_1$时，我们使用了迭代法求解单电子薛定谔方程(\ref{eq:11.9})。式(\ref{eq:11.9})中的势能包含了电子1与2、1与3、$\ldots$、1与n之间排斥能的平均值。当求解$\varepsilon_2$时，我们求解了势能包括电子2和1、2和3、$\ldots$、2和$n$之间排斥势的单电子薛定谔方程。若我们直接取$\sum_i \varepsilon_i$，则每个电子的排斥能被计算了两次。为了的大原子总能量$E$正确值，我们必须令
     % 等号对齐且只给第一行编号
     \begin{align}
-        E &= \sum_{i=1}^{n} \varepsilon_{i} - \sum_{i=1}^{n-1} \sum_{j=i+1}^{n} \iint \frac{\mathrm{e}^{2} |g_{i}(i)|^{2} |g_{j}(j)|^{2}}{4 \pi \varepsilon_{0} r_{i j}} \:\mathrm{d}v_{i} \:\mathrm{d}v_{j} \label{eq:11.10} \\
+        E &= \sum_{i=1}^{n} \varepsilon_{i} - \sum_{i=1}^{n-1} \sum_{j=i+1}^{n} \iint \frac{\ee ^{2} |g_{i}(i)|^{2} |g_{j}(j)|^{2}}{4 \pi \varepsilon_{0} r_{i j}} \:\dd v_{i} \:\dd v_{j} \label{eq:11.10} \\
         E &= \sum_{i} \varepsilon_{i} - \sum_{i} \sum_{j>i} J_{ij} \nonumber
     \end{align}
     其中，(\ref{eq:11.4})式中Hartree轨道中电子的平均排斥势被从轨道能量之和中减去，且符号$J_{ij}$用于表示库仑积分【式(\ref{eq:9.99})】。
@@ -127,7 +127,7 @@
 
     原子 Hartree–Fock 计算中常用的基函数集是\textbf{Slater型轨道（STO）}（Slater-type Orbitals），其归一化形式为
     \begin{equation}
-        \frac{\left(2\zeta/a_0\right)^{n+1/2}}{\left[\left(2n\right)!\right]^{1/2}}r^{n-1}\mathrm{e}^{-\zeta r/a_0}Y_l^m\left(\theta, \phi\right)
+        \frac{\left(2\zeta/a_0\right)^{n+1/2}}{\left[\left(2n\right)!\right]^{1/2}}r^{n-1}\ee ^{-\zeta r/a_0}Y_l^m\left(\theta, \phi\right)
         \label{eq:11.14}
     \end{equation}
     所有满足$\zeta$(\ref{eq:6.96})–(\ref{eq:6.98})且$n$、$l$、$m$为整数、但具有所有可能正值的函数构成了一个完备集。参数 $\zeta$ 被称为\textbf{轨道指数}（orbital exponent）。为了获得真正准确的 Hartree-Fock 轨道表示，我们必须在展开式中包括无限数量的 Slater 轨道。实际上，只需使用几个精心选择的 Slater 轨道，就可以获得非常准确的结果。（另一种可能是使用Gaussian基函数；参见第 \ref{sec:15.4 Basis Functions} 节。）
@@ -138,7 +138,7 @@
     \end{equation*}
     Clementi和Roetti将 $1s$ 轨道函数 $f$ 表示为以下五个 $1s$ Slater 型轨道的组合：
     \begin{equation*}
-        f = \pi^{-1/2} \sum_{i=1}^{5} c_i \left( \frac{\zeta_i}{a_0} \right)^{3/2} \mathrm{e}^{-\zeta_i r / a_0}
+        f = \pi^{-1/2} \sum_{i=1}^{5} c_i \left( \frac{\zeta_i}{a_0} \right)^{3/2} \ee ^{-\zeta_i r / a_0}
     \end{equation*}
     其中展开系数$c_i$为$c_1 = 0.76838$，$c_2 = 0.22346$，$c_3 = 0.04082$，$c_4 = -0.00994$，$c_5 = 0.00230$；轨道指数$\zeta_i$为$\zeta_1 = 1.41714$，$\zeta_2 = 2.37682$，$\zeta_3 = 4.39628$，$\zeta_4 = 6.52699$，$\zeta_5 = 7.94252$。【展开式中最大项的轨道指数与简单试探函数（\ref{eq:9.56}）的轨道指数（\ref{eq:9.62}）相似。】Hartree-Fock能量为$-77.9 \: \mathrm{eV}$，与非相对论真实能量$-79.0 \:\mathrm{eV}$相比较。求得与$f$对应的$1s$轨道能量为$-25.0 \:\mathrm{eV}$，与氦原子电离能实验值$24.6 \:\mathrm{eV}$相比较。
 
@@ -205,7 +205,7 @@
 
     $Z$大于20时，因为$3d$能级能量低于$4s$能级，所以我们可能想知道如\ce{_21Sc}的基态组态为什么是$3d^14s^2$而不是$3d^3$。虽然这些每个组态都满足$\varepsilon_{3d} < \varepsilon_{4s}$，但这并不意味着$3d^3$组态的轨道总能量之和更低。当一个电子从$4s$轨道移动到$3d$轨道时，$\varepsilon_{4s}$和$\varepsilon_{3d}$都增加了。轨道能是通过求解单电子 Hartree–Fock 方程得出的，该方程包含轨道 $i$ 中的电子与原子中其他电子之间的平均排斥势能项，因此 $\varepsilon_i$ 取决于这些排斥势的值，从而取决于哪些轨道被占据。对于第一过渡系元素，$4s$轨道能量比$3d$轨道高得多。例如，Vanquickenborne及其同事计算了\ce{Sc}中如下的$\left\langle r \right\rangle$值：对于组态$3d^14s^2$，$\left\langle r \right\rangle _{3d} = 0.89$ \AA，$\left\langle r \right\rangle _{4s} = 2.09$ \AA；对于组态$3d^24s^1$，$\left\langle r \right\rangle _{3d} = 1.11$ \AA，$\left\langle r \right\rangle _{4s} = 2.29$ \AA。由于这种尺寸差异，涉及$4s$电子的排斥作用远小于涉及$3d$电子的排斥作用，因此，我们有$\left(4s, 4s\right) < \left(4s, 3d\right) < \left(3d, 3d\right)$，其中$\left(4s, 3d\right)$表示分布于$3d$轨道电子与$4s$轨道电子之间的平均排斥势。（这些排斥势可以用库仑积分和交换积分给出。）当一个电子从$4s$轨道移动到$3d$轨道时，由上述不等式导致的电子间排斥力增大，使得轨道能$\varepsilon_{3d}$和$\varepsilon_{4s}$升高。例如，对于\ce{_21Sc}的组态$3d^14s^2$有$\varepsilon_{3d} = -9.35 \:\mathrm{eV}$，$\varepsilon_{4s} = -5.72 \:\mathrm{eV}$；而组态$3d^24s^1$则有$\varepsilon_{3d} = -5.23 \:\mathrm{eV}$，$\varepsilon_{4s} = -5.06 \:\mathrm{eV}$。对于组态$3d^14s^2$，价电子能量之和为$- 9.35 \:\mathrm{eV} + 2\left(-5.72 \:\mathrm{eV}\right) = -20.79 \:\mathrm{eV}$，而组态$3d^24s^1$的能量之和为$2\left(-5.23 \:\mathrm{eV}\right) - 5.06 \:\mathrm{eV} = -15.52 \:\mathrm{eV}$。因此，尽管每个组态都满足$\varepsilon_{3d} < \varepsilon_{4s}$，但将电子从$4s$转移到$3d$使得\ce{Sc}中价电子轨道能量总和升高。【正如我们在方程（\ref{eq:11.10}）中看到 Hartree 方法，以及将在第 \ref{sec:14.3 The Hartree-Fock Method for Molecules} 节中看到的 Hartree–Fock 方法一样，Hartree 和 Hartree–Fock 方法对原子能量的表达式除了轨道能量之和之外还包含其他项，因此我们必须考虑轨道能量之和之外的因素，才能确定哪种组态最稳定。】
 
-    对于过渡金属的$+2$价离子，由于屏蔽效应的减弱，价电子（$3d$和$4s$电子）所受到的有效核电荷$Z_{\text{eff}}$比中性原子的更大。类比氢原子方程$E = - \left(Z^2 / n^2\right)\left(\mathrm{e}^2 / 8\pi\varepsilon_0a\right)$【式(\ref{eq:6.94})】，轨道能量$\varepsilon_{3d}$和$\varepsilon_{4s}$都大致与$Z^2_{\text{eff}}$成正比，能级差$\varepsilon_{4s} - \varepsilon_{3d}$也大致与$Z^2_{\text{eff}}$成正比。所以过渡金属离子的能级差$\varepsilon_{4s} - \varepsilon_{3d}$远大于中性原子；价电子排斥力的增加已不足以使 $4s$ 到 $3d$ 的转移在能量上变得不利；$+2$ 价离子具有没有 $4s$ 电子的基态组态。
+    对于过渡金属的$+2$价离子，由于屏蔽效应的减弱，价电子（$3d$和$4s$电子）所受到的有效核电荷$Z_{\text{eff}}$比中性原子的更大。类比氢原子方程$E = - \left(Z^2 / n^2\right)\left(\ee ^2 / 8\pi\varepsilon_0a\right)$【式(\ref{eq:6.94})】，轨道能量$\varepsilon_{3d}$和$\varepsilon_{4s}$都大致与$Z^2_{\text{eff}}$成正比，能级差$\varepsilon_{4s} - \varepsilon_{3d}$也大致与$Z^2_{\text{eff}}$成正比。所以过渡金属离子的能级差$\varepsilon_{4s} - \varepsilon_{3d}$远大于中性原子；价电子排斥力的增加已不足以使 $4s$ 到 $3d$ 的转移在能量上变得不利；$+2$ 价离子具有没有 $4s$ 电子的基态组态。
 
     关于电子组态的进一步讨论，请参阅W. H. E. Schwarz, \textit{J. Chem. Educ.}, \textbf{87}, 444 (2010); Schwarz and R. L. Rich, \textit{ibid.}, \textbf{87}, 435。
 
@@ -227,9 +227,9 @@
         E_{\text{corr}} \equiv E_{\text{normal}} - E_{\text{HF}}
         \label{eq:11.16}
     \end{equation}
-    其中$E_{\text{normal}}$和$E_{\text{HF}}$都应同时包含对核运动的校正或同时省略这些校正。对于\ce{He}原子，未校正核运动（非相对论）Hartree-Fock能量为$-2.86168 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$【E. Clementi and C. Roetti, \textit{At. Data Nucl. Data Tables}, \textbf{14}, 177 (1974)】，使用变分计算（第\ref{sec:9.4 Variational Treatments of the Ground State of Helium}节）可以得到未校正核运动的非相对论能量精确值为$-2.90372 \left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$。因此，$E_{\text{corr, He}} = -2.90372 \left(\mathrm{e}^2/4\pi\epsilon_0 a_0\right) + 2.86168 \left(\mathrm{e}^2/4\pi\epsilon_0 a_0\right) = -0.04204 \left(\mathrm{e}^2/4\pi\epsilon_0 a_0\right) = -1.14 \:\mathrm{eV}$。对$E_{\text{normal}}$无法精确计算的原子和分子来说，我们可以将实验能量与相对论和核运动修正的估计值相结合，得到$E_{\text{normal}}$。对于中性基态原子，$\left|E_{\text{corr}}\right|$被发现与电子数 $n$ 呈近似线性关系：
+    其中$E_{\text{normal}}$和$E_{\text{HF}}$都应同时包含对核运动的校正或同时省略这些校正。对于\ce{He}原子，未校正核运动（非相对论）Hartree-Fock能量为$-2.86168 \left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$【E. Clementi and C. Roetti, \textit{At. Data Nucl. Data Tables}, \textbf{14}, 177 (1974)】，使用变分计算（第\ref{sec:9.4 Variational Treatments of the Ground State of Helium}节）可以得到未校正核运动的非相对论能量精确值为$-2.90372 \left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$。因此，$E_{\text{corr, He}} = -2.90372 \left(\ee ^2/4\pi\epsilon_0 a_0\right) + 2.86168 \left(\ee ^2/4\pi\epsilon_0 a_0\right) = -0.04204 \left(\ee ^2/4\pi\epsilon_0 a_0\right) = -1.14 \:\mathrm{eV}$。对$E_{\text{normal}}$无法精确计算的原子和分子来说，我们可以将实验能量与相对论和核运动修正的估计值相结合，得到$E_{\text{normal}}$。对于中性基态原子，$\left|E_{\text{corr}}\right|$被发现与电子数 $n$ 呈近似线性关系：
     \begin{equation*}
-        E_{corr} \approx -0.0170 n^{1.31} \left(\mathrm{e}^{2} / 4 \pi \varepsilon_{0} a_{0}\right)=-0.0170 n^{1.31}(27.2 \: \mathrm{eV})
+        E_{corr} \approx -0.0170 n^{1.31} \left(\ee ^{2} / 4 \pi \varepsilon_{0} a_{0}\right)=-0.0170 n^{1.31}(27.2 \: \mathrm{eV})
     \end{equation*}
     【E. Clementi and G. Corongiu, \textit{Int. J. Quantum Chem.}, \textbf{62}, 571 (1997)】。百分比$\left(E_{\text{corr}} / E_{\text{normal}}\right) \times 100 \%$随着原子虚数的增加而减小。一些值如下：\ce{Li}为$0.6\%$，\ce{C}为$0.2\%$，\ce{Na}为$0.2\%$以及\ce{K}为$0.1\%$。
 
@@ -261,7 +261,7 @@
 
     总之，为了进行组态相互作用计算，我们选择一组单电子基函数$\chi_i$，通过迭代法求解Hartree-Fock方程(\ref{eq:11.12})，将单电子原子（或分子）轨道的$\phi_i$表示为基函数的线性组合，再使用轨道$\phi_i$构造多电子组态函数$\Phi_i$，将波函数$\psi$表示为这些组态函数的线性组合，通过求解(\ref{eq:11.18})确定能量，并通过求解关联线性方程组求出(\ref{eq:11.17})中的系数$c_i$。【在实际应用中，(\ref{eq:11.18}) 及其关联方程组通常通过矩阵方法求解；详见第 \ref{sec:8.6 Matrices, Eigenvalues, and Eigenvectors} 节。】
 
-    以铍的基态为例。Hartree–Fock SCF 方法将找到Slater行列式$\left|1s\overline{1s}2s\overline{2s}\right|$中 $1s$ 和 $2s$ 轨道的最佳形式，并将其用于基态波函数。【我们使用方程 (\ref{eq:10.47}) 的符号。】 超越 Hartree-Fock 方法，我们将激发组态函数（例如$\left|1s\overline{1s}3s\overline{3s}\right|$）对基态线性变化函数的贡献也包括在内。Bunge 使用 650 个组态函数的线性组合对铍基态进行了组态相互作用计算。【C. F. Bunge, \textit{Phys. Rev. A}, \textbf{14}, 1965 (1976)】。Hartree-Fock能量为$-14.5730\left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$，Bunge的组态相互作用计算结果为$-14.6669\left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$，非相对论能量真实值为$-14.5730\left(\mathrm{e}^2 / 4\pi\varepsilon_0a_0\right)$。Bunge 获得了 $99.5\%$ 的相关能。
+    以铍的基态为例。Hartree–Fock SCF 方法将找到Slater行列式$\left|1s\overline{1s}2s\overline{2s}\right|$中 $1s$ 和 $2s$ 轨道的最佳形式，并将其用于基态波函数。【我们使用方程 (\ref{eq:10.47}) 的符号。】 超越 Hartree-Fock 方法，我们将激发组态函数（例如$\left|1s\overline{1s}3s\overline{3s}\right|$）对基态线性变化函数的贡献也包括在内。Bunge 使用 650 个组态函数的线性组合对铍基态进行了组态相互作用计算。【C. F. Bunge, \textit{Phys. Rev. A}, \textbf{14}, 1965 (1976)】。Hartree-Fock能量为$-14.5730\left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$，Bunge的组态相互作用计算结果为$-14.6669\left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$，非相对论能量真实值为$-14.5730\left(\ee ^2 / 4\pi\varepsilon_0a_0\right)$。Bunge 获得了 $99.5\%$ 的相关能。
 
     第 \ref{sec:16.2 Configuration Interaction} 节详细介绍了氦原子的组态相互作用计算。
 
@@ -272,7 +272,7 @@
 
     假设我们有一个系统，包含两个角动量矢量$\mathbf{M_1}$和$\mathbf{M_2}$。它们可能是某原子中两个电子的轨道角动量矢量，也可能是两个电子的自旋角动量矢量，还可能一个是自旋角动量，另一个是单电子的轨道角动量。$\hat{M}_1^2$、$\hat{M}_2^2$、$\hat{M}_{1z}$和$\hat{M}_{2z}$的本征值分别为$j_1\left(j_1 + 1\right)\hbar^2$、$j_2\left(j_2 + 1\right)\hbar^2$、$m_1\hbar$和$m_2\hbar$，其中的量子数遵循一般的限制。$\hat{\mathbf{M}}_1$和$\hat{\mathbf{M}}_2$遵循角动量对易关系【式(\ref{eq:5.46})、(\ref{eq:5.48})和(\ref{eq:5.107})】
     \begin{equation}
-        \left[\hat{M}_{1x}, \hat{M}_{1y}\right] = \mathrm{i}\hbar \hat{M}_{1z}, \: \text{etc.} \quad \left[\hat{M}_{2x}, \hat{M}_{2y}\right] = \mathrm{i}\hbar \hat{M}_{2z}, \: \text{etc.}
+        \left[\hat{M}_{1x}, \hat{M}_{1y}\right] = \ii \hbar \hat{M}_{1z}, \: \text{etc.} \quad \left[\hat{M}_{2x}, \hat{M}_{2y}\right] = \ii \hbar \hat{M}_{2z}, \: \text{etc.}
         \label{eq:11.19}
     \end{equation}
     我们定义系统的\textbf{总轨道角动量}（total angular momentum）$\mathbf{M}$为矢量和
@@ -316,15 +316,15 @@
     \end{equation*}
     由于$\hat{\mathbf{M}}_1$的所有分量和$\hat{\mathbf{M}}_2$均可对易，我们有
     \begin{equation*}
-        \left[\hat{M}_x, \hat{M}_y\right] = \left[\hat{M}_{1x}, \hat{M}_{1y}\right] + \left[\hat{M}_{2x}, \hat{M}_{2y}\right] = \mathrm{i}\hbar \hat{M}_{1z} + \mathrm{i}\hbar \hat{M}_{2z}
+        \left[\hat{M}_x, \hat{M}_y\right] = \left[\hat{M}_{1x}, \hat{M}_{1y}\right] + \left[\hat{M}_{2x}, \hat{M}_{2y}\right] = \ii \hbar \hat{M}_{1z} + \ii \hbar \hat{M}_{2z}
     \end{equation*}
     \begin{equation}
-        \left[\hat{M}_x, \hat{M}_y\right] = \mathrm{i}\hbar \hat{M}_z
+        \left[\hat{M}_x, \hat{M}_y\right] = \ii \hbar \hat{M}_z
         \label{eq:11.27}
     \end{equation}
     对$x$、$y$和$z$进行循环置换得到
     \begin{equation}
-        \left[\hat{M}_y, \hat{M}_z\right] = \mathrm{i}\hbar \hat{M}_x, \quad \left[\hat{M}_z, \hat{M}_x\right] = \mathrm{i}\hbar \hat{M}_y
+        \left[\hat{M}_y, \hat{M}_z\right] = \ii \hbar \hat{M}_x, \quad \left[\hat{M}_z, \hat{M}_x\right] = \ii \hbar \hat{M}_y
         \label{eq:11.28}
     \end{equation}
     用于推导(\ref{eq:5.109})的同一交换子代数给出
@@ -909,12 +909,12 @@
 
     当对原子哈密顿量中的自旋-轨道耦合项$\hat{H}_{\text{S.O.}}$进行适当的相对论推导时，会发现对于单电子原子（见\textit{Bethe and Jackiw}, Chapter 8 and 23）：
     \begin{equation}
-        \hat{H}_{\text{S.O.}} = \frac{1}{2m_{\mathrm{e}}^2 c^2} \frac{1}{r} \frac{\mathrm{d}V}{\mathrm{d}r} \hat{\mathbf{L}} \cdot \hat{\mathbf{S}}
+        \hat{H}_{\text{S.O.}} = \frac{1}{2m_{\ee }^2 c^2} \frac{1}{r} \frac{\dd V}{\dd r} \hat{\mathbf{L}} \cdot \hat{\mathbf{S}}
         \label{eq:11.63}
     \end{equation}
     其中$V$是原子中电子受到的势能，$c$为光速。一种计算多电子原子$\hat{H}_{\text{S.O.}}$的方式是首先忽略$\hat{H}_{\text{S.O.}}$项，使用中心场近似来得到把其他电子视为电子云时在原子核产生的场中每个电子$i$的有效势能$V_i\left(r_i\right)$【式(\ref{eq:11.7})和(\ref{eq:11.8})】来进行SCF计算（第\ref{sec:11.1 The Hartree-Fock Self-Consistent-Field Method}节）。然后将（\ref{eq:11.63}）对电子求和，得到
     \begin{equation}
-        \hat{H}_{\text{S.O.}} \approx \frac{1}{2m_{\mathrm{e}}^2c^2} \sum_i \frac{1}{r_i} \frac{\mathrm{d}V_i(r_i)}{\mathrm{d}r_i} \hat{\mathbf{L}}_i \cdot \hat{\mathbf{S}}_i = \sum_i \xi_i(r_i) \hat{\mathbf{L}}_i \cdot \hat{\mathbf{S}}_i
+        \hat{H}_{\text{S.O.}} \approx \frac{1}{2m_{\ee }^2c^2} \sum_i \frac{1}{r_i} \frac{\dd V_i(r_i)}{\dd r_i} \hat{\mathbf{L}}_i \cdot \hat{\mathbf{S}}_i = \sum_i \xi_i(r_i) \hat{\mathbf{L}}_i \cdot \hat{\mathbf{S}}_i
         \label{eq:11.64}
     \end{equation}
     其中$\xi_i\left(r_i\right)$的定义不言自明，$\hat{\mathbf{L}}_i$和$\hat{\mathbf{S}}_i$分别为电子$i$的轨道和自旋角动量算符。
@@ -975,12 +975,12 @@
     \end{equation}
     其中$\hat{H}^0$是类氢哈密顿量之和：
     \begin{equation}
-        \hat{H}^0 = \sum_{i=1}^{n}\left(-\frac{\hbar^2}{2m_{\mathrm{e}}}\nabla_i^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r_i}\right)
+        \hat{H}^0 = \sum_{i=1}^{n}\left(-\frac{\hbar^2}{2m_{\ee }}\nabla_i^2 - \frac{Z\ee ^2}{4\pi\varepsilon_0r_i}\right)
         \label{eq:11.69}
     \end{equation}
     $\hat{H}_{\text{rep}}$是电子间排斥势：
     \begin{equation}
-        \hat{H}_{\text{rep}} = \sum_i \sum_{j>i} \frac{\mathrm{e}^2}{4\pi\varepsilon_0r_{ij}}
+        \hat{H}_{\text{rep}} = \sum_i \sum_{j>i} \frac{\ee ^2}{4\pi\varepsilon_0r_{ij}}
         \label{eq:11.70}
     \end{equation}
     以及$\hat{H}_{\text{S.O.}}$是自旋-轨道耦合项（\ref{eq:11.64}）：
@@ -995,7 +995,7 @@
         \hat{H}_B = -\hat{\mathbf{m}} \cdot \mathbf{B} = -\left(\hat{\mathbf{m}}_L + \hat{\mathbf{m}}_S\right) \cdot \mathbf{B}
         \label{eq:11.72}
     \end{equation}
-    其中包含了轨道角动量和自旋角动量。使用$\mathbf{m}_L = -\left(\mathrm{e} / 2m_{\mathrm{e}}\right)\mathbf{L}$、$\mathbf{m}_S = -\left(\mathrm{e} / 2m_{\mathrm{e}}\right)\mathbf{S}$以及$\mu_B \equiv \mathrm{e}\hbar / 2m_{\mathrm{e}}$【式(\ref{eq:6.128})、(\ref{eq:10.55})中令$g_{\mathrm{e}} \approx 2$和(\ref{eq:6.130})】，我们有
+    其中包含了轨道角动量和自旋角动量。使用$\mathbf{m}_L = -\left(\ee / 2m_{\ee }\right)\mathbf{L}$、$\mathbf{m}_S = -\left(\ee / 2m_{\ee }\right)\mathbf{S}$以及$\mu_B \equiv \ee \hbar / 2m_{\ee }$【式(\ref{eq:6.128})、(\ref{eq:10.55})中令$g_{\ee } \approx 2$和(\ref{eq:6.130})】，我们有
     \begin{equation}
         \hat{H}_B = \mu_B \hbar^{-1}\left(\hat{\mathbf{L}} + 2\hat{\mathbf{S}}\right) \cdot \mathbf{B} = \mu_B\hbar^{-1} \left(\hat{\mathbf{J}} + \hat{\mathbf{S}}\right) \cdot \mathbf{B} = \mu_BB\hbar^{-1}\left(\hat{J}_z + \hat{S}_z\right)
         \label{eq:11.73}
@@ -1066,7 +1066,7 @@
         \hat{B} = \sum_{i=1}^{n} \hat{f}_i + \sum_{i=1}^{n-1} \sum_{j>i} \hat{g}_{ij}
         \label{eq:11.77}
     \end{equation}
-    其中\textit{单电子算符}$\hat{f}_i$只涉及电子$i$的坐标和动量算符，而\textit{双电子算符}$\hat{g}_{ij}$涉及电子$i$和$j$。例如，若$\hat{B}$是原子哈密顿算符(\ref{eq:11.1})，则$\hat{f}_i = -(\hbar^2/2m_{\mathrm{e}}) \nabla_i^2 - Z\mathrm{e}^2/4\pi\varepsilon_0r_i$，$\hat{g}_{ij} = Z\mathrm{e}^2/4\pi\varepsilon_0$。
+    其中\textit{单电子算符}$\hat{f}_i$只涉及电子$i$的坐标和动量算符，而\textit{双电子算符}$\hat{g}_{ij}$涉及电子$i$和$j$。例如，若$\hat{B}$是原子哈密顿算符(\ref{eq:11.1})，则$\hat{f}_i = -(\hbar^2/2m_{\ee }) \nabla_i^2 - Z\ee ^2/4\pi\varepsilon_0r_i$，$\hat{g}_{ij} = Z\ee ^2/4\pi\varepsilon_0$。
 
     康顿和斯莱特证明了：$n$电子积分$\left\langle D' \middle| \hat{B} \middle| D \right\rangle$可以化简为特定的单电子和双电子积分之和。这些康顿-斯莱特公式的推导采用了问题8.22中的行列式表达式，并结合了自旋轨道函数的正交归一性。（参见\textit{Parr}，pp. 23-27 for the derivation.）表\ref{tab:11.3}给出了康顿-斯莱特公式。
 
@@ -1115,8 +1115,8 @@
     若算符$\hat{f}_i$和$\hat{g}_{ij}$不涉及自旋坐标，那么(\ref{tab:11.3})中的表达式可以进一步简化。我们有$u_i = \theta_i\sigma_i$，以及
     \begin{equation*}
         \begin{aligned}
-            \left\langle u_i \left( 1 \right) \middle| \hat{f}_1 \middle| u_i \left( 1 \right) \right\rangle &= \int \theta_i^{\ast} \left( 1 \right) \hat{f}_1 \theta_i \left( 1 \right) \:\mathrm{d}v_1 \sum_{m_{s1}} \sigma_i^{\ast} \left( 1 \right) \sigma_i \left( 1 \right) \\
-            &= \int \theta_i^{\ast} \left( 1 \right) \hat{f}_1 \theta_i \left( 1 \right) \:\mathrm{d}v_1 = \left\langle \theta_i \left(1\right) \middle| \hat{f} \middle| \theta_i \left(1\right) \right\rangle
+            \left\langle u_i \left( 1 \right) \middle| \hat{f}_1 \middle| u_i \left( 1 \right) \right\rangle &= \int \theta_i^{\ast} \left( 1 \right) \hat{f}_1 \theta_i \left( 1 \right) \:\dd v_1 \sum_{m_{s1}} \sigma_i^{\ast} \left( 1 \right) \sigma_i \left( 1 \right) \\
+            &= \int \theta_i^{\ast} \left( 1 \right) \hat{f}_1 \theta_i \left( 1 \right) \:\dd v_1 = \left\langle \theta_i \left(1\right) \middle| \hat{f} \middle| \theta_i \left(1\right) \right\rangle
         \end{aligned}
     \end{equation*}
     因为$\sigma_i$已归一化。使用该结果以及$\sigma_i$和$\sigma_j$的正交性，对于$D = D'$的情况，我们有（问题11.37）
@@ -1130,17 +1130,17 @@
     \end{align}
     其中，根据$m_{s,i} \neq m_{s,j}$或$m_{s,i} = m_{s,j}$的情况，$\delta_{m_{s,i}m_{s,j}}$的值取为$0$或$1$。对于其他积分，类似的方程也成立。
 
-    现在，我们应用这些方程来计算$\left\langle D \middle| \hat{H} \middle| D \right\rangle$，其中$\hat{H}$是忽略了自旋-轨道耦合的$n$电子原子哈密顿算符，$D$为$n$个自旋轨道的斯莱特行列式。我们有$\hat{H} = \sum_i\hat{f}_i + \sum_i\sum_{j>i}\hat{g}_{ij}$，其中$\hat{f}_i = -\left(\hbar^2/2m_{\mathrm{e}}\right)\nabla_i^2 - Z\mathrm{e}^2/4\pi\varepsilon_0r_i$，$\hat{g}_{ij} = Z\mathrm{e}^2/4\pi\varepsilon_0r_{ij}$。引入库仑积分(\ref{eq:9.99})和交换积分(\ref{eq:9.100})，再使用(\ref{eq:11.78})和(\ref{eq:11.79})，我们得到
+    现在，我们应用这些方程来计算$\left\langle D \middle| \hat{H} \middle| D \right\rangle$，其中$\hat{H}$是忽略了自旋-轨道耦合的$n$电子原子哈密顿算符，$D$为$n$个自旋轨道的斯莱特行列式。我们有$\hat{H} = \sum_i\hat{f}_i + \sum_i\sum_{j>i}\hat{g}_{ij}$，其中$\hat{f}_i = -\left(\hbar^2/2m_{\ee }\right)\nabla_i^2 - Z\ee ^2/4\pi\varepsilon_0r_i$，$\hat{g}_{ij} = Z\ee ^2/4\pi\varepsilon_0r_{ij}$。引入库仑积分(\ref{eq:9.99})和交换积分(\ref{eq:9.100})，再使用(\ref{eq:11.78})和(\ref{eq:11.79})，我们得到
     \begin{equation}
         \left\langle D \middle| \hat{H} \middle| D \right\rangle = \sum_{i=1}^{n}\left\langle \theta_i \left( 1 \right) \middle| \hat{f} \middle| \theta_i \left( 1 \right) \right\rangle + \sum_{i=1}^{n-1} \sum_{j>i}\left( J_{ij} - \delta_{m_{s,i}m_{s,j}}K_{ij} \right)
         \label{eq:11.80}
     \end{equation}
     \begin{equation}
-        J_{ij} = \left\langle \theta_i \left(1\right) \theta_j \left(2\right) \middle| \mathrm{e}^2/4\pi\varepsilon_0r_{12} \middle| \theta_i \left(1\right) \theta_j \left(2\right) \right\rangle, \quad K_{ij} = \left\langle \theta_i \left(1\right) \theta_j \left(2\right) \middle| \mathrm{e}^2/4\pi\varepsilon_0r_{12} \middle| \theta_j \left(1\right) \theta_i \left(2\right) \right\rangle
+        J_{ij} = \left\langle \theta_i \left(1\right) \theta_j \left(2\right) \middle| \ee ^2/4\pi\varepsilon_0r_{12} \middle| \theta_i \left(1\right) \theta_j \left(2\right) \right\rangle, \quad K_{ij} = \left\langle \theta_i \left(1\right) \theta_j \left(2\right) \middle| \ee ^2/4\pi\varepsilon_0r_{12} \middle| \theta_j \left(1\right) \theta_i \left(2\right) \right\rangle
         \label{eq:11.81}
     \end{equation}
     \begin{equation}
-        \hat{f}_1 = -\left(\hbar^2/2m_{\mathrm{e}}\right)\nabla_1^2 - Z\mathrm{e}^2/4\pi\varepsilon_0r_1
+        \hat{f}_1 = -\left(\hbar^2/2m_{\ee }\right)\nabla_1^2 - Z\ee ^2/4\pi\varepsilon_0r_1
         \label{eq:11.82}
     \end{equation}
     式(\ref{eq:11.80})中的Kronecker $\delta$项源于单电子自旋函数的正交归一性。

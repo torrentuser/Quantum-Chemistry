@@ -13,16 +13,16 @@
     \end{equation}
     (\ref{eq:6.1})中的偏导数可以用链式法则求得[式(\ref{eq:5.53})- \ref{eq:5.55}]。在这个例子中，由于$V$只是$r$的函数，所以我们有$\left(\partial V/\partial\theta\right)_{r,\phi} = 0$和$\left(\partial V/\partial\phi\right)_{r,\theta} = 0$。因此，
     \begin{equation}
-        \left(\frac{\partial V}{\partial x}\right)_{y,z} = \frac{\mathrm{d}V}{\mathrm{d}r}\left(\frac{\partial r}{\partial x}\right)_{y,z} = \frac{x}{r}\frac{\mathrm{d}V}{\mathrm{d}r}
+        \left(\frac{\partial V}{\partial x}\right)_{y,z} = \frac{\dd V}{\dd r}\left(\frac{\partial r}{\partial x}\right)_{y,z} = \frac{x}{r}\frac{\dd V}{\dd r}
         \label{eq:6.2}
     \end{equation}
     \begin{equation}
-        \left(\frac{\partial V}{\partial y}\right)_{x,z} = \frac{y}{r}\frac{\mathrm{d}V}{\mathrm{d}r}, \quad \left(\frac{\partial V}{\partial z}\right)_{x,y} = \frac{z}{r}\frac{\mathrm{d}V}{\mathrm{d}r}
+        \left(\frac{\partial V}{\partial y}\right)_{x,z} = \frac{y}{r}\frac{\dd V}{\dd r}, \quad \left(\frac{\partial V}{\partial z}\right)_{x,y} = \frac{z}{r}\frac{\dd V}{\dd r}
         \label{eq:6.3}
     \end{equation}
     其中我们用到了式(\ref{eq:5.57})和(\ref{eq:5.58})。则方程(\ref{eq:6.1})可以写成
     \begin{equation}
-        \mathbf{F} = -\frac{1}{r}\frac{\mathrm{d}V}{\mathrm{d}r}\left(x\mathbf{i}+y\mathbf{j}+z\mathbf{k}\right) = -\frac{\mathrm{d}V\left(r\right)}{\mathrm{d}r}\frac{\mathbf{r}}{r}
+        \mathbf{F} = -\frac{1}{r}\frac{\dd V}{\dd r}\left(x\mathbf{i}+y\mathbf{j}+z\mathbf{k}\right) = -\frac{\dd V\left(r\right)}{\dd r}\frac{\mathbf{r}}{r}
         \label{eq:6.4}
     \end{equation}
     其中$\mathbf{r}$的计算使用了式(\ref{eq:5.33})。式(\ref{eq:6.4})中的$\mathbf{r}/r$是径向上的单位矢量。因此中心力是径向的。
@@ -67,7 +67,7 @@
     \end{equation}
     当势能函数与$\theta$和$\phi$都无关时，$\hat{H}$和$\hat{L}^2$可对易。
 
-    现在，我们来考虑算符$\hat{L}_z = -\mathrm{i}\hbar\partial/\partial\phi$[式(\ref{eq:5.67})]。由于$\hat{L}_z$不包含$r$，因此它与$\hat{L}^2$可对易[式(\ref{eq:5.50})]，因此$\hat{H}$(\ref{eq:6.8})和$\hat{L}_z$也可对易。我们有
+    现在，我们来考虑算符$\hat{L}_z = -\ii \hbar\partial/\partial\phi$[式(\ref{eq:5.67})]。由于$\hat{L}_z$不包含$r$，因此它与$\hat{L}^2$可对易[式(\ref{eq:5.50})]，因此$\hat{H}$(\ref{eq:6.8})和$\hat{L}_z$也可对易。我们有
     \begin{equation}
         \left[\hat{H}, \hat{L}_z\right] = 0, \quad \text{若} V = V\left(r\right)
         \label{eq:6.11}
@@ -245,7 +245,7 @@
         \mathbf{r}_1 = \mathbf{R} - \frac{m_2}{m_1 + m_2}\mathbf{r}, \quad \mathbf{r}_2 = \mathbf{R} + \frac{m_1}{m_1 + m_2}\mathbf{r}
         \label{eq:6.33}
     \end{equation}
-    方程(\ref{eq:6.31})和(\ref{eq:6.32})代表了一种将$x_1,y_1,z_1$和$x_2,y_2,z_2$坐标转换为$X,Y,Z$和$x,y,z$坐标的变换。考虑一下在这种变化下，系统的哈密顿量会发生什么变化。用字母顶上的点表示对时间的导数。粒子1的速度为[式(\ref{eq:5.34})]$\mathbf{v}_1 = \mathrm{d}\mathbf{r}_1/\mathrm{d}t = \dot{\mathbf{r}}_1$。系统的动能为两个粒子的动能之和：
+    方程(\ref{eq:6.31})和(\ref{eq:6.32})代表了一种将$x_1,y_1,z_1$和$x_2,y_2,z_2$坐标转换为$X,Y,Z$和$x,y,z$坐标的变换。考虑一下在这种变化下，系统的哈密顿量会发生什么变化。用字母顶上的点表示对时间的导数。粒子1的速度为[式(\ref{eq:5.34})]$\mathbf{v}_1 = \dd \mathbf{r}_1/\dd t = \dot{\mathbf{r}}_1$。系统的动能为两个粒子的动能之和：
     \begin{equation}
         T = \frac{1}{2}m_1\left|\dot{\mathbf{r}_1}\right|^2 + \frac{1}{2}m_2\left|\dot{\mathbf{r}_2}\right|^2
         \label{eq:6.34}
@@ -280,7 +280,7 @@
         \label{eq:6.38}
     \end{equation}
 
-    (\ref{eq:6.38})的第一项是质量为$M$的整个系统平动产生的动能。\textbf{平动}（translational motion）是指每个质点都经历相同位移的运动。$\frac{1}{2}M\left|\dot{\mathbf{R}}\right|^2$是位于质心，具有质量$M$的假想粒子的动能。(\ref{eq:6.38})的第二项是两个粒子内运动（相对运动）产生的动能。内运动有两种形式。两个粒子间的距离$r$可以变化（振动），以及矢量$\mathbf{r}$的方向可以发生变化（转动）。注意：$\left|\dot{\mathbf{r}}\right| = \left|\mathrm{d}\mathbf{r}/\mathrm{d}t\right| \neq \mathrm{d}\left|\mathbf{r}\right|/\mathrm{d}t$。
+    (\ref{eq:6.38})的第一项是质量为$M$的整个系统平动产生的动能。\textbf{平动}（translational motion）是指每个质点都经历相同位移的运动。$\frac{1}{2}M\left|\dot{\mathbf{R}}\right|^2$是位于质心，具有质量$M$的假想粒子的动能。(\ref{eq:6.38})的第二项是两个粒子内运动（相对运动）产生的动能。内运动有两种形式。两个粒子间的距离$r$可以变化（振动），以及矢量$\mathbf{r}$的方向可以发生变化（转动）。注意：$\left|\dot{\mathbf{r}}\right| = \left|\dd \mathbf{r}/\dd t\right| \neq \dd \left|\mathbf{r}\right|/\dd t$。
 
     与六个原始坐标$x_1,y_1,z_1,x_2,y_2,z_2$相对应，我们有六个线动量：
     \begin{equation}
@@ -482,7 +482,7 @@
 
 \section{氢原子}
 \label{sec:6.5 The Hydrogen Atom}
-    氢原子包含一个质子和一个电子，若用$\mathrm{e}$表示质子的电荷量（$\mathrm{e} = + 1.6 \times 10^{-19} \: \mathrm{C}$），则电子的电荷量为$-\mathrm{e}$。
+    氢原子包含一个质子和一个电子，若用$\ee $表示质子的电荷量（$\ee = + 1.6 \times 10^{-19} \: \mathrm{C}$），则电子的电荷量为$-\ee $。
     \begin{quote}
         \small
         一些科学家推测，质子和电子的电荷量并不完全相等。实验表明，电子和质子的电荷量差距在$10^{-21}$的数量级。见G. Bressi 等., \textit{Phys. Rev. A}, \textbf{83}, 052101 (2011) (available online at arxiv.org/abs/1102.2766).
@@ -490,11 +490,11 @@
 
     我们将假定质子和电子是质点，其相互作用遵守库仑定律。在讨论原子和分子时，我们通常会考虑孤立的系统，而忽略原子和分子间的相互作用。
 
-    我们不只讨论氢原子，而是稍微考虑一个更为普遍的问题：\textbf{类氢原子}（hydrogenlike atom），它由一个电子和一个电荷为$Z\mathrm{e}$的原子核组成。若$Z=1$，则类氢原子就是氢原子；若$Z=2$，则类氢原子是\ce{He^+}；若$Z=3$，则类氢原子是\ce{Li^{2+}}；依此类推。类氢原子是量子化学中最重要的系统。由于存在电子间斥力，因此无法获得具有一个以上电子的原子的薛定谔方程的精确解。如果作为粗略的第一近似值，我们忽略这些斥力，那么电子就可以独立处理（参见第\ref{sec:6.2 Noninteracting Particles and Separation of Variables}节）。原子波函数将由单电子函数的乘积近似得出，而单电子函数将是类氢波函数。单电子波函数（无论是否为类氢波函数）称为\textbf{轨道}（orbital）。（更确切地说，\textbf{轨道}是一个单电子空间波函数，空间一词的意思是波函数取决于电子的三个空间坐标 $x$、$y$ 和 $z$ 或 $r$、$\theta$ 和 $\phi$。我们将在第 \ref{chap:10} 章中看到，电子自旋的存在为单电子波函数增加了第四个坐标，即所谓的自旋轨道。）原子中电子的轨道称为\textbf{原子轨道}（atomic orbital）。我们将使用原子轨道来构建多电子原子的近似波函数（第 \ref{chap:11} 章）。轨道还可用于构建分子的近似波函数。
+    我们不只讨论氢原子，而是稍微考虑一个更为普遍的问题：\textbf{类氢原子}（hydrogenlike atom），它由一个电子和一个电荷为$Z\ee $的原子核组成。若$Z=1$，则类氢原子就是氢原子；若$Z=2$，则类氢原子是\ce{He^+}；若$Z=3$，则类氢原子是\ce{Li^{2+}}；依此类推。类氢原子是量子化学中最重要的系统。由于存在电子间斥力，因此无法获得具有一个以上电子的原子的薛定谔方程的精确解。如果作为粗略的第一近似值，我们忽略这些斥力，那么电子就可以独立处理（参见第\ref{sec:6.2 Noninteracting Particles and Separation of Variables}节）。原子波函数将由单电子函数的乘积近似得出，而单电子函数将是类氢波函数。单电子波函数（无论是否为类氢波函数）称为\textbf{轨道}（orbital）。（更确切地说，\textbf{轨道}是一个单电子空间波函数，空间一词的意思是波函数取决于电子的三个空间坐标 $x$、$y$ 和 $z$ 或 $r$、$\theta$ 和 $\phi$。我们将在第 \ref{chap:10} 章中看到，电子自旋的存在为单电子波函数增加了第四个坐标，即所谓的自旋轨道。）原子中电子的轨道称为\textbf{原子轨道}（atomic orbital）。我们将使用原子轨道来构建多电子原子的近似波函数（第 \ref{chap:11} 章）。轨道还可用于构建分子的近似波函数。
 
     对于类氢原子，令$\left(x,y,z\right)$为电子相对于原子核的坐标，再令$\mathbf{r} = \mathbf{i}x+\mathbf{j}y+\mathbf{k}z$。电子在类氢原子中受到的库仑力为 [见公式 (\ref{eq:1.37 coulomb's law}) ]
     \begin{equation}
-        \mathbf{F} = -\frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r^2}\frac{\mathbf{r}}{r}
+        \mathbf{F} = -\frac{Z\ee ^2}{4\pi\varepsilon_0r^2}\frac{\mathbf{r}}{r}
         \label{eq:6.56}
     \end{equation}
     其中$\mathbf{r}/r$是$\mathbf{r}$方向的单位矢量。负号表示为吸引力。
@@ -504,9 +504,9 @@
         我们考虑了库仑定律出现微小偏差的可能性。实验表明，如果将库仑定律力写成与 $r^{-2+s}$ 成正比，那么 $\left|s\right|<10^{-16}$。库仑定律的偏差可以证明光子静止质量不为零。没有证据表明光子的静止质量不为零，而且数据表明，任何这种质量都必须小于 $10^{-51} \: \mathrm{g}$；A. S. Goldhaber and M. M. Nieto, \textit{Rev. Mod. Phys.}, \textbf{82}, 939 (2010) (arxiv.org/abs/0809.1003); G. Spavieri et al., \textit{Eur. Phys. J. D}, \textbf{61}, 531 (2011) (\url{link.springer.com/content/pdf/10.1140/epjd/e2011-10508-7}).
     \end{quote}
 
-    式(\ref{eq:6.56})中的力是中心力，将其与式(\ref{eq:6.4})相比较，有$\mathrm{d}\left(r\right)/\mathrm{d}r = Z\mathrm{e}^2/4\pi\varepsilon_0r^2$。积分，得出
+    式(\ref{eq:6.56})中的力是中心力，将其与式(\ref{eq:6.4})相比较，有$\dd \left(r\right)/\dd r = Z\ee ^2/4\pi\varepsilon_0r^2$。积分，得出
     \begin{equation}
-        V = \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0}\int\frac{1}{r^2}\mathrm{d}r = -\frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r}
+        V = \frac{Z\ee ^2}{4\pi\varepsilon_0}\int\frac{1}{r^2}\dd r = -\frac{Z\ee ^2}{4\pi\varepsilon_0r}
         \label{eq:6.57}
     \end{equation}
     其中积分常数取 0，以便在电荷间距无限大时能满足$V=0$。对于任意两个相距$r_{12}$，电荷量分别为$Q_1$和$Q_2$的粒子，式(\ref{eq:6.57})可以写成
@@ -519,11 +519,11 @@
 
     由于这个双粒子系统的势能只取决于粒子的相对坐标，我们可以应用第 \ref{sec:6.3 Reduction of the Two-Particle Problem to Two One-Particle Problems} 节的结果将问题简化为两个单粒子问题。原子的整体平移运动只是在总能量中增加了一个常数，我们将不再关注它。为了处理系统的内部运动，我们引入一个质量由下式定义的假想粒子
     \begin{equation}
-        \mu = \frac{m_{\mathrm{e}}m_N}{m_{\mathrm{e}} + m_N}
+        \mu = \frac{m_{\ee }m_N}{m_{\ee } + m_N}
         \label{eq:6.59}
     \end{equation}
 
-   其中$m_{\mathrm{e}}$为电子的质量，$m_N$为原子核的质量。质量为 $\mu$ 的粒子在势能函数 (\ref{eq:6.57}) 的作用下运动，其坐标$\left(r,\theta,\phi\right)$是一个粒子相对于另一个粒子的球面坐标（图\ref{fig:6.5}）。
+   其中$m_{\ee }$为电子的质量，$m_N$为原子核的质量。质量为 $\mu$ 的粒子在势能函数 (\ref{eq:6.57}) 的作用下运动，其坐标$\left(r,\theta,\phi\right)$是一个粒子相对于另一个粒子的球面坐标（图\ref{fig:6.5}）。
    \begin{figure}
        \centering
        \includegraphics[width=0.5\textwidth]{Figures/6.5.png}
@@ -533,7 +533,7 @@
 
    粒子内部运动的哈密顿算符为[式(\ref{eq:6.43})]
    \begin{equation}
-        \hat{H} = -\frac{\hbar^2}{2\mu}\nabla^2 - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r}
+        \hat{H} = -\frac{\hbar^2}{2\mu}\nabla^2 - \frac{Z\ee ^2}{4\pi\varepsilon_0r}
         \label{eq:6.60}
    \end{equation}
    由于$V$只是坐标$r$的函数，这是一个单粒子中心力问题，所以我们可以使用第\ref{sec:6.1 The One-Particle Central Force Problem}节的结果来求解。使用方程(\ref{eq:6.16})和(\ref{eq:6.17})，我们可以写出波函数
@@ -543,51 +543,51 @@
    \end{equation}
    其中$Y_l^m$是球谐函数，径向函数$R\left(r\right)$满足
    \begin{equation}
-        -\frac{\hbar^2}{2\mu}\left(R^{\prime\prime} + \frac{2}{r}R^{\prime}\right) + \frac{l\left(l+1\right)\hbar^2}{2\mu r^2}R - \frac{Z\mathrm{e}^2}{4\pi\varepsilon_0r}R = ER\left(r\right)
+        -\frac{\hbar^2}{2\mu}\left(R^{\prime\prime} + \frac{2}{r}R^{\prime}\right) + \frac{l\left(l+1\right)\hbar^2}{2\mu r^2}R - \frac{Z\ee ^2}{4\pi\varepsilon_0r}R = ER\left(r\right)
         \label{eq:6.62}
    \end{equation}
    为了节省时间，我们定义常数$a$满足
    \begin{equation}
-        a \equiv \frac{4\pi\varepsilon_0\hbar^2}{\mu \mathrm{e}^2}
+        a \equiv \frac{4\pi\varepsilon_0\hbar^2}{\mu \ee ^2}
         \label{eq:6.63}
    \end{equation}
    则方程(\ref{eq:6.62})可以写成
    \begin{equation}
-        R^{\prime\prime} + \frac{2}{r}R^{\prime} + \left[\frac{8\pi\varepsilon_0E}{a\mathrm{e}^2} + \frac{2Z}{ar} - \frac{l\left(l+1\right)}{r^2}\right]R = 0
+        R^{\prime\prime} + \frac{2}{r}R^{\prime} + \left[\frac{8\pi\varepsilon_0E}{a\ee ^2} + \frac{2Z}{ar} - \frac{l\left(l+1\right)}{r^2}\right]R = 0
         \label{eq:6.64}
    \end{equation}
 
 \subsection*{径向方程的求解}
    现在我们可以尝试 (\ref{eq:6.64}) 的幂级数解法，但得到的是三项递推关系，而不是两项递推关系。因此，我们要寻找一种能得到两项递推关系的替代方法。事实证明，通过研究大 $r$ 值时解的行为，可以找到合适的替代方法。当$r$值很大时，方程(\ref{eq:6.64})变为
    \begin{equation}
-        R^{\prime\prime} + \frac{8\pi\varepsilon_0E}{a\mathrm{e}^2}R = 0, \quad \text{当}r\text{很大时}
+        R^{\prime\prime} + \frac{8\pi\varepsilon_0E}{a\ee ^2}R = 0, \quad \text{当}r\text{很大时}
         \label{eq:6.65}
    \end{equation}
    该微分方程可以使用特征方程(\ref{eq:2.7 auxiliary equation})求解。其解为
    \begin{equation}
-        \exp\left[\pm\left(-8\pi\varepsilon_0E/a\mathrm{e}^2\right)^{1/2}r\right]
+        \exp\left[\pm\left(-8\pi\varepsilon_0E/a\ee ^2\right)^{1/2}r\right]
         \label{eq:6.66}
    \end{equation}
 
    假设 $E$ 为正数。(\ref{eq:6.66}) 中平方根符号下的量是负数，乘以 $r$ 的因子是虚数：
    \begin{equation}
-        R\left(r\right) \sim \mathrm{e}^{\pm \mathrm{i}\sqrt{2\mu Er}/\hbar}, \quad E \geq 0
+        R\left(r\right) \sim \ee ^{\pm \ii \sqrt{2\mu Er}/\hbar}, \quad E \geq 0
         \label{eq:6.67}
    \end{equation}
    其中我们用到了(\ref{eq:6.63})。(\ref{eq:6.67})中的符号$\sim$表示我们给出的是在$r$值较大时$R\left(r\right)$的行为，这就是函数的\textit{渐近}（asymptotic）行为。请注意 (\ref{eq:6.67}) 与自由粒子波函数公式 (\ref{eq:2.30}) 的相似性。 (\ref{eq:6.67}) 并没有给出正能量波函数中的完整径向因子。进一步的研究（\textit{Bethe and Salpeter}，第 21-24 页）表明，无论 $E$ 的值如何，$E \geq 0$ 的径向函数在所有 $r$ 值上都是有限的。因此，正如自由粒子一样，氢原子的所有非负能量都是允许的。在物理学上，这些本征函数对应于电子不与原子核结合的状态，即原子电离时的状态。（一个经典的机械比喻是彗星围绕太阳在双曲线轨道上运动。彗星不受约束，只访问太阳系一次。）由于我们得到的 $E \geq 0$ 的允许值是连续的而不是离散的，因此正能量本征函数又称为\textbf{连续谱本征函数}（continuum eigenfunctions）。连续谱波函数的角度部分是球面谐波。与自由粒子波函数一样，连续谱本征函数也不是通常意义上可归一化的。
 
    现在我们考虑氢原子的\textit{束缚}态，即 $E < 0$。（对于一个\textbf{束缚态}，当$x \to \pm \infty$时，$\psi \to 0$。）在这种情况下，(\ref{eq:6.66})中括号内的量为正数。由于我们希望波函数在 $r$ 变为无穷大时保持有限，因此我们更倾向于使用 (\ref{eq:6.66}) 中的负号，为了得到两项递推关系，我们将其替换为
    \begin{equation}
-        R\left(r\right) = \mathrm{e}^{-Cr}K\left(r\right)
+        R\left(r\right) = \ee ^{-Cr}K\left(r\right)
         \label{eq:6.68}
    \end{equation}
    \begin{equation}
-        C \equiv \left(-\frac{8\pi\varepsilon_0E}{a\mathrm{e}^2}\right)^{1/2}
+        C \equiv \left(-\frac{8\pi\varepsilon_0E}{a\ee ^2}\right)^{1/2}
         \label{eq:6.69}
    \end{equation}
-   其中，(\ref{eq:6.68})中的$\mathrm{e}$是自然对数的底数，而不是电子的电荷量。使用代换 (\ref{eq:6.68}) 无法保证当$r$很大时的波函数行为。这样代换得到的微分方程仍然有两个线性独立的解。我们可以在微分方程中进行任意代换；事实上，我们可以进行如下代换$R\left(r\right) = \mathrm{e}^{+Cr}J\left(r\right)$并最终得到正确的本征函数和本征值。$J$和$K$的关系自然是$J\left(r\right) = \mathrm{e}^{-2Cr}K\left(r\right)$。
+   其中，(\ref{eq:6.68})中的$\ee $是自然对数的底数，而不是电子的电荷量。使用代换 (\ref{eq:6.68}) 无法保证当$r$很大时的波函数行为。这样代换得到的微分方程仍然有两个线性独立的解。我们可以在微分方程中进行任意代换；事实上，我们可以进行如下代换$R\left(r\right) = \ee ^{+Cr}J\left(r\right)$并最终得到正确的本征函数和本征值。$J$和$K$的关系自然是$J\left(r\right) = \ee ^{-2Cr}K\left(r\right)$。
 
-   根据(\ref{eq:6.68})，我们来计算$R^{\prime}$和$R^{\prime\prime}$，带入(\ref{eq:6.64})，乘以$r^2\mathrm{e}^{Cr}$并利用(\ref{eq:6.69})得到$K\left(r\right)$的微分方程：
+   根据(\ref{eq:6.68})，我们来计算$R^{\prime}$和$R^{\prime\prime}$，带入(\ref{eq:6.64})，乘以$r^2\ee ^{Cr}$并利用(\ref{eq:6.69})得到$K\left(r\right)$的微分方程：
    \begin{equation}
         r^2K^{\prime\prime} + \left(2r - 2Cr^2\right)K^{\prime} + \left[\left(2Za^{-1} - 2C\right)r - l\left(l+1\right)\right]K = 0
         \label{eq:6.70}
@@ -640,10 +640,10 @@
     \end{equation}
     这些根对应于微分方程的两个线性独立解。让我们从波函数正确行为的角度来研究它们。由(\ref{eq:6.68})、(\ref{eq:6.74})和(\ref{eq:6.75})，我们有
     \begin{equation}
-        R\left(r\right) = \mathrm{e}^{-Cr}r^s\sum_{j=0}^{\infty}b_jr^j
+        R\left(r\right) = \ee ^{-Cr}r^s\sum_{j=0}^{\infty}b_jr^j
         \label{eq:6.80}
     \end{equation}
-    由于$\mathrm{e}^{-Cr} = 1-Cr+\ldots$，当$r$很小时，$R\left(r\right)$的行为与$b_0r^s$相同。当$s=l$时，$R\left(r\right)$在原点处表现正常。然而，当$s = -l-1$时，$R\left(r\right)$与下式在$r$很小时成正比：
+    由于$\ee ^{-Cr} = 1-Cr+\ldots$，当$r$很小时，$R\left(r\right)$的行为与$b_0r^s$相同。当$s=l$时，$R\left(r\right)$在原点处表现正常。然而，当$s = -l-1$时，$R\left(r\right)$与下式在$r$很小时成正比：
     \begin{equation}
         \frac{1}{r^{l+1}}
         \label{eq:6.81}
@@ -652,7 +652,7 @@
 
     与 (\ref{eq:6.81}) 类似的径向函数的归一化积分[式 (\ref{eq:5.80}) ] （当$r$不是很大时）如下
     \begin{equation}
-        \int_{0}\left|R\right|^2r^2\mathrm{d}r \approx \int_{0}\frac{1}{r^{2l}}\mathrm{d}r
+        \int_{0}\left|R\right|^2r^2\dd r \approx \int_{0}\frac{1}{r^{2l}}\dd r
         \label{eq:6.82}
     \end{equation}
     积分下限处的积分行为是
@@ -666,7 +666,7 @@
 
     取(\ref{eq:6.79})的第一个根，我们得到了径向部分的因子(\ref{eq:6.80})
     \begin{equation}
-        R\left(r\right) = \mathrm{e}^{-Cr}r^lM\left(r\right)
+        R\left(r\right) = \ee ^{-Cr}r^lM\left(r\right)
         \label{eq:6.84}
     \end{equation}
     由于$s=l$，(\ref{eq:6.75})变为
@@ -699,12 +699,12 @@
         \label{eq:6.88}
     \end{equation}
 
-    现在我们必须研究大 $r$ 时无穷级数 (\ref{eq:6.86}) 的行为。根据对 (\ref{eq:4.42}) 中谐振子幂级数的相同检验方法得出的结果，对于大 $r$，无穷级数 (\ref{eq:6.86}) 的表现与$\mathrm{e}^{2Cr}$一致（见问题6.20）。当$r$很大时，径向函数(\ref{eq:6.84})的表现为
+    现在我们必须研究大 $r$ 时无穷级数 (\ref{eq:6.86}) 的行为。根据对 (\ref{eq:4.42}) 中谐振子幂级数的相同检验方法得出的结果，对于大 $r$，无穷级数 (\ref{eq:6.86}) 的表现与$\ee ^{2Cr}$一致（见问题6.20）。当$r$很大时，径向函数(\ref{eq:6.84})的表现为
     \begin{equation}
-        R\left(r\right) \sim \mathrm{e}^{-Cr}r^l\mathrm{e}^{2Cr} = r^l\mathrm{e}^{Cr}
+        R\left(r\right) \sim \ee ^{-Cr}r^l\ee ^{2Cr} = r^l\ee ^{Cr}
         \label{eq:6.89}
     \end{equation}
-    因此，当$r$变得无穷大时，$R\left(r\right)$将变为无穷大，并且不具有平方可积性。避免这种 “无穷大灾难”（如谐振子情况）的唯一方法是让级数在有限的项数后被打断，在这种情况下，$\mathrm{e}^{-Cr}$ 因子将确保波函数在 $r$ 变为无穷大时趋于零。令该级数的最后一项为$b_kr^k$。那么为了使$b_{k+1}, b_{k+2}, \ldots$ 都为零，我们必须让 $j=k$ 时，递推关系 (\ref{eq:6.88}) 中与 $b_j$ 相乘的系数消失。因此，
+    因此，当$r$变得无穷大时，$R\left(r\right)$将变为无穷大，并且不具有平方可积性。避免这种 “无穷大灾难”（如谐振子情况）的唯一方法是让级数在有限的项数后被打断，在这种情况下，$\ee ^{-Cr}$ 因子将确保波函数在 $r$ 变为无穷大时趋于零。令该级数的最后一项为$b_kr^k$。那么为了使$b_{k+1}, b_{k+2}, \ldots$ 都为零，我们必须让 $j=k$ 时，递推关系 (\ref{eq:6.88}) 中与 $b_j$ 相乘的系数消失。因此，
     \begin{equation}
         2C\left(k+l+1\right) = 2Za^{-1}, \quad k = 0, 1, 2, \ldots
         \label{eq:6.90}
@@ -728,12 +728,12 @@
         Cn = Za^{-1}
         \label{eq:6.93}
     \end{equation}
-    将$C \equiv \left(-8\pi\varepsilon_0E/a\mathrm{e}^2\right)^{1/2}$[式(\ref{eq:6.69})]代入(\ref{eq:6.93})，解出$E$，得到
+    将$C \equiv \left(-8\pi\varepsilon_0E/a\ee ^2\right)^{1/2}$[式(\ref{eq:6.69})]代入(\ref{eq:6.93})，解出$E$，得到
     \begin{equation}
-        E = -\frac{Z^2}{n^2}\frac{\mathrm{e}^2}{8\pi\varepsilon_0a} = -\frac{Z^2\mu\mathrm{e}^4}{8\varepsilon_0^2n^2h^2}
+        E = -\frac{Z^2}{n^2}\frac{\ee ^2}{8\pi\varepsilon_0a} = -\frac{Z^2\mu\ee ^4}{8\varepsilon_0^2n^2h^2}
         \label{eq:6.94}
     \end{equation}
-    其中$a \equiv 4\pi\varepsilon_0\hbar^2/\mu\mathrm{e}^2$ [式(\ref{eq:6.63})]。这些是类氢原子的束缚态能级，它们是离散的。图 \ref{fig:6.6} 显示了氢原子($Z=1$)的势能曲线[公式 (\ref{eq:6.57}) ] 和一些允许能级。横线表示允许使用所有正能量。
+    其中$a \equiv 4\pi\varepsilon_0\hbar^2/\mu\ee ^2$ [式(\ref{eq:6.63})]。这些是类氢原子的束缚态能级，它们是离散的。图 \ref{fig:6.6} 显示了氢原子($Z=1$)的势能曲线[公式 (\ref{eq:6.57}) ] 和一些允许能级。横线表示允许使用所有正能量。
     \begin{figure}
         \centering
         \includegraphics[width=0.5\textwidth]{Figures/6.6.png}
@@ -743,7 +743,7 @@
 
     事实证明，在光的吸收和发射过程中，$n$ 的所有变化都是允许的。因此，氢原子谱线的波长[公式 (\ref{eq:4.64}) ] 为
     \begin{equation}
-        \tilde{\nu} = \frac{1}{\lambda} = \frac{\nu}{c} = \frac{E_2 - E_1}{hc} = \frac{\mathrm{e}^2}{8\pi\varepsilon_0ahc}\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right) = R_H\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right)
+        \tilde{\nu} = \frac{1}{\lambda} = \frac{\nu}{c} = \frac{E_2 - E_1}{hc} = \frac{\ee ^2}{8\pi\varepsilon_0ahc}\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right) = R_H\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right)
         \label{eq:6.95}
     \end{equation}
     其中$R_H = 109677.6 \: \mathrm{cm}^{-1}$是氢的\textit{里德伯常数}（Rydberg constant）。
@@ -782,14 +782,14 @@
         b_{j+1} = \frac{2Z}{na} = \frac{j+l+1-n}{\left(j+1\right)\left(j+2l+2\right)}b_j
         \label{eq:6.99}
     \end{equation}
-    (\ref{eq:6.91})前面的讨论表明：多项式$M\left(r\right) = \sum_{j}b_jr^j$中$r$的最高次幂为$k = n-l-1$。因此，将$C = Z/na$(\ref{eq:6.93})代入$R\left(r\right) \mathrm{e}^{-Cr}r^lM\left(r\right)$(\ref{eq:6.84})，我们得到
+    (\ref{eq:6.91})前面的讨论表明：多项式$M\left(r\right) = \sum_{j}b_jr^j$中$r$的最高次幂为$k = n-l-1$。因此，将$C = Z/na$(\ref{eq:6.93})代入$R\left(r\right) \ee ^{-Cr}r^lM\left(r\right)$(\ref{eq:6.84})，我们得到
     \begin{equation}
-        R_{nl}\left(r\right) = r^l\mathrm{e}^{-Zr/na}\sum_{j=0}^{n-l-1}b_jr^j
+        R_{nl}\left(r\right) = r^l\ee ^{-Zr/na}\sum_{j=0}^{n-l-1}b_jr^j
         \label{eq:6.100}
     \end{equation}
-    其中$a \equiv 4\pi\varepsilon_0\hbar^2/\mu\mathrm{e}^2$ [式(\ref{eq:6.63})]。完整的类氢束缚态波函数为[式 (\ref{eq:6.61}) ]
+    其中$a \equiv 4\pi\varepsilon_0\hbar^2/\mu\ee ^2$ [式(\ref{eq:6.63})]。完整的类氢束缚态波函数为[式 (\ref{eq:6.61}) ]
     \begin{equation}
-        \psi_{nlm} = R_{nl}\left(r\right)Y_l^m\left(\theta,\phi\right) = R_{nl}\left(r\right)S_{lm}\left(\theta\right)\frac{1}{\sqrt{2\pi}}\mathrm{e}^{\mathrm{i}m\phi}
+        \psi_{nlm} = R_{nl}\left(r\right)Y_l^m\left(\theta,\phi\right) = R_{nl}\left(r\right)S_{lm}\left(\theta\right)\frac{1}{\sqrt{2\pi}}\ee ^{\ii m\phi}
         \label{eq:6.101}
     \end{equation}
     其中前几个 $\theta$ 函数见表 \ref{tab:5.1}。
@@ -799,39 +799,39 @@
 \subsection*{基态波函数和能量}
     对于类氢原子的基态，我们有$n=1$， $l=0$，$m=0$。因此，径向因子(\ref{eq:6.100})为
     \begin{equation}
-        R_{10}\left(r\right) = b_0\mathrm{e}^{-Zr/a}
+        R_{10}\left(r\right) = b_0\ee ^{-Zr/a}
         \label{eq:6.102}
     \end{equation}
     常数$b_0$可以通过归一化条件[式(\ref{eq:5.80})]来确定：
     \begin{equation*}
-        \left|b_0\right|^2\int_{0}^{\infty}\mathrm{e}^{-2Zr/a}r^2\mathrm{d}r = 1
+        \left|b_0\right|^2\int_{0}^{\infty}\ee ^{-2Zr/a}r^2\dd r = 1
     \end{equation*}
     使用附录中的积分(A.8)，我们得到
     \begin{equation}
-        R_{10}\left(r\right) = 2\left(\frac{Z}{a}\right)^{3/2}\mathrm{e}^{-Zr/a}
+        R_{10}\left(r\right) = 2\left(\frac{Z}{a}\right)^{3/2}\ee ^{-Zr/a}
         \label{eq:6.103}
     \end{equation}
     乘上$Y_0^0 = 1/\left(\sqrt{4\pi}\right)$，我们得到基态波函数：
     \begin{equation}
-        \psi_{100} = \frac{1}{\pi^{1/2}}\left(\frac{Z}{a}\right)^{3/2}\mathrm{e}^{-Zr/a}
+        \psi_{100} = \frac{1}{\pi^{1/2}}\left(\frac{Z}{a}\right)^{3/2}\ee ^{-Zr/a}
         \label{eq:6.104}
     \end{equation}
 
     氢原子的能量和波函数涉及约化质量，由式(\ref{eq:6.59})给出
     \begin{equation}
-        \mu_{\mathrm{H}} = \frac{m_{\mathrm{e}}m_{\mathrm{p}}}{m_{\mathrm{e}} + m_{\mathrm{p}}} = \frac{m_{\mathrm{e}}}{1+m_{\mathrm{e}}/m_{\mathrm{p}}} = \frac{m_{\mathrm{e}}}{1+0.000544617} = 0.9994557 \: m_{\mathrm{e}}
+        \mu_{\mathrm{H}} = \frac{m_{\ee }m_{\mathrm{p}}}{m_{\ee } + m_{\mathrm{p}}} = \frac{m_{\ee }}{1+m_{\ee }/m_{\mathrm{p}}} = \frac{m_{\ee }}{1+0.000544617} = 0.9994557 \: m_{\ee }
         \label{eq:6.105}
     \end{equation}
-    其中$m_{\mathrm{p}}$是质子的质量，$m_{\mathrm{e}}/m_{\mathrm{p}}$的值从表A.1中可以查到。约化质量与电子的质量非常接近。正因为如此，一些教科书在 \ce{H} 原子薛定谔方程中使用电子的质量而不是约化质量。这相当于假设质子的质量与 (\ref{eq:6.105}) 中电子的质量相比是无限大的，并且所有的内部运动都是电子的运动。对于氢原子来说，用电子质量代替约化质量所带来的误差约为 $1/2000$。对于较重的原子，假设原子核无限重所带来的误差甚至比这还要小。此外，对于多电子原子，核运动的修正形式也相当复杂。基于这些原因，我们今后将假设原子核无限重，并在书写原子的薛定谔方程时简单地使用电子质量。
+    其中$m_{\mathrm{p}}$是质子的质量，$m_{\ee }/m_{\mathrm{p}}$的值从表A.1中可以查到。约化质量与电子的质量非常接近。正因为如此，一些教科书在 \ce{H} 原子薛定谔方程中使用电子的质量而不是约化质量。这相当于假设质子的质量与 (\ref{eq:6.105}) 中电子的质量相比是无限大的，并且所有的内部运动都是电子的运动。对于氢原子来说，用电子质量代替约化质量所带来的误差约为 $1/2000$。对于较重的原子，假设原子核无限重所带来的误差甚至比这还要小。此外，对于多电子原子，核运动的修正形式也相当复杂。基于这些原因，我们今后将假设原子核无限重，并在书写原子的薛定谔方程时简单地使用电子质量。
 
     如果我们用电子质量代替氢原子的约化质量，则由 (\ref{eq:6.63}) 定义的量 $a$ 变为
     \begin{equation}
-        a_0 = \frac{4\pi\varepsilon_0\hbar^2}{m_{\mathrm{e}}\mathrm{e}^2} = 0.529177 \: \mathrm{Å}
+        a_0 = \frac{4\pi\varepsilon_0\hbar^2}{m_{\ee }\ee ^2} = 0.529177 \: \mathrm{Å}
         \label{eq:6.106}
     \end{equation}
     其中下标$0$表示使用电子质量而不是约化质量。因为$a_0$是玻尔理论中氢原子基态中电子移动的圆半径，所以它被称为\textbf{玻尔半径}（Bohr radius）。当然，由于基态波函数 (\ref{eq:6.104}) 对所有有限的 $r$ 值都不为零，因此在离原子核的任何距离上都有一定概率找到电子。电子当然不会被限制在一个圆内。
 
-    电子能量的方便单位是\textbf{电子伏特}（electronvolt）（eV），定义为电子在 1 伏特（V）电位差中加速所获得的动能。电位差的定义是单位电荷的能量。由于$\mathrm{e} = 1.6021766 \times 10^{-19} \: \mathrm{C}$以及$1 \mathrm{V} \: \mathrm{C} = 1 \: \mathrm{J}$，因此
+    电子能量的方便单位是\textbf{电子伏特}（electronvolt）（eV），定义为电子在 1 伏特（V）电位差中加速所获得的动能。电位差的定义是单位电荷的能量。由于$\ee = 1.6021766 \times 10^{-19} \: \mathrm{C}$以及$1 \mathrm{V} \: \mathrm{C} = 1 \: \mathrm{J}$，因此
     \begin{equation}
         1 \: \mathrm{eV} = 1.6021766 \times 10^{-19} \: \mathrm{J}
         \label{eq:6.107}
@@ -841,7 +841,7 @@
         \textbf{例题：}使用国际单位制计算氢原子的基态能量，并将结果转换为电子伏特。
         \\
 
-        氢原子基态能量由式(\ref{eq:6.94})给出，其中$n=1$，$Z=1$，能量为$E = -\mu\mathrm{e}^4/8\hbar^2\varepsilon_0^2$。将$\mu$用(\ref{eq:6.105})代替，得到
+        氢原子基态能量由式(\ref{eq:6.94})给出，其中$n=1$，$Z=1$，能量为$E = -\mu\ee ^4/8\hbar^2\varepsilon_0^2$。将$\mu$用(\ref{eq:6.105})代替，得到
         \begin{equation*}
             E = -\frac{0.9994557\left(9.109383 \times 10^{-31} \: \mathrm{kg}\right)\left(1.6021766 \times 10^{-19} \: \mathrm{C}\right)^4}{8\left(6.626070 \times 10^{-34} \: \mathrm{J} \cdot \mathrm{s}\right)^2\left(8.8541878 \times 10^{-12} \: \mathrm{C}^2/\mathrm{N-m}^2\right)^2}\frac{Z^2}{n^2}
         \end{equation*}
@@ -864,30 +864,30 @@
 
         对$\left\langle T \right\rangle$的计算，我们使用(\ref{eq:3.89})；而对$\nabla^2\psi$的计算，我们使用(\ref{eq:6.7})。因此，
         \begin{equation*}
-            \left\langle T \right\rangle = \int\psi^{\ast}\hat{T}\psi\mathrm{d}\tau = -\frac{\hbar^2}{2\mu}\int\psi^{\ast}\nabla^2\psi\mathrm{d}\tau
+            \left\langle T \right\rangle = \int\psi^{\ast}\hat{T}\psi\dd \tau = -\frac{\hbar^2}{2\mu}\int\psi^{\ast}\nabla^2\psi\dd \tau
         \end{equation*}
         \begin{equation*}
             \nabla^2\psi = \frac{\partial^2\psi}{\partial r^2} + \frac{2}{r}\frac{\partial\psi}{\partial r} - \frac{1}{r^2\hbar^2}\hat{L}^2\psi = \frac{\partial^2\psi}{\partial r^2} + \frac{2}{r}\frac{\partial\psi}{\partial r}
         \end{equation*}
-        其中，我们用到了$\hat{L}^2\psi = l\left(l+1\right)\hbar^2\psi$以及对于$s$态有$l=0$。将$Z=1$带入(\ref{eq:6.104})，我们有$\psi = \pi^{-1/2}a^{-3/2}\mathrm{e}^{-r/a}$。因此，$\partial\psi/\partial r = -\pi^{-1/2}a^{-5/2}\mathrm{e}^{-r/a}$，$\partial^2\psi/\partial r^2 = \pi^{-1/2}a^{-7/2}\mathrm{e}^{-r/a}$。使用$\mathrm{d}\tau = r^2\sin\theta\:\mathrm{d}r\:\mathrm{d}\theta\:\mathrm{d}\phi$(\ref{eq:5.78})，我们有
+        其中，我们用到了$\hat{L}^2\psi = l\left(l+1\right)\hbar^2\psi$以及对于$s$态有$l=0$。将$Z=1$带入(\ref{eq:6.104})，我们有$\psi = \pi^{-1/2}a^{-3/2}\ee ^{-r/a}$。因此，$\partial\psi/\partial r = -\pi^{-1/2}a^{-5/2}\ee ^{-r/a}$，$\partial^2\psi/\partial r^2 = \pi^{-1/2}a^{-7/2}\ee ^{-r/a}$。使用$\dd \tau = r^2\sin\theta\:\dd r\:\dd \theta\:\dd \phi$(\ref{eq:5.78})，我们有
         \begin{equation*}
-            \left\langle T \right\rangle = -\frac{\hbar^2}{2\mu}\frac{1}{\pi a^4}\int_{0}^{2\pi}\int_{0}^{\pi}\int_{0}^{\infty}\left(\frac{1}{a}\mathrm{e}^{-2r/a} - \frac{2}{r}\mathrm{e}^{-2r/a}\right)r^2\sin\theta\:\mathrm{d}r\:\mathrm{d}\theta\:\mathrm{d}\phi
+            \left\langle T \right\rangle = -\frac{\hbar^2}{2\mu}\frac{1}{\pi a^4}\int_{0}^{2\pi}\int_{0}^{\pi}\int_{0}^{\infty}\left(\frac{1}{a}\ee ^{-2r/a} - \frac{2}{r}\ee ^{-2r/a}\right)r^2\sin\theta\:\dd r\:\dd \theta\:\dd \phi
         \end{equation*}
         \begin{equation*}
-            = -\frac{\hbar^2}{2\mu\pi a^4}\int_{0}^{2\pi}\mathrm{d}\phi\int_{0}^{\pi}\sin\theta\:\mathrm{d}\theta\int_{0}^{\infty}\left(\frac{r^2}{a}\mathrm{e}^{-2r/a} - 2r\mathrm{e}^{-2r/a}\right)\mathrm{d}r = \frac{\hbar^2}{2\mu a^2} = \frac{\mathrm{e}^2}{8\pi\varepsilon_0a}
+            = -\frac{\hbar^2}{2\mu\pi a^4}\int_{0}^{2\pi}\dd \phi\int_{0}^{\pi}\sin\theta\:\dd \theta\int_{0}^{\infty}\left(\frac{r^2}{a}\ee ^{-2r/a} - 2r\ee ^{-2r/a}\right)\dd r = \frac{\hbar^2}{2\mu a^2} = \frac{\ee ^2}{8\pi\varepsilon_0a}
         \end{equation*}
-        其中，我们用到了附录中的积分A.8以及$a = 4\pi\varepsilon_0\hbar^2/\mu\mathrm{e}^2$。根据(\ref{eq:6.94})，$\mathrm{e}^2/8\pi\varepsilon_0a$为基态氢原子能量的负值，$\left\langle T \right\rangle$由(\ref{eq:6.108})给出$\left\langle T \right\rangle = 13.598 \: \mathrm{eV}$。（另见第\ref{sec:14.4 The Virial Theorem}节。）
+        其中，我们用到了附录中的积分A.8以及$a = 4\pi\varepsilon_0\hbar^2/\mu\ee ^2$。根据(\ref{eq:6.94})，$\ee ^2/8\pi\varepsilon_0a$为基态氢原子能量的负值，$\left\langle T \right\rangle$由(\ref{eq:6.108})给出$\left\langle T \right\rangle = 13.598 \: \mathrm{eV}$。（另见第\ref{sec:14.4 The Virial Theorem}节。）
         \\
 
-        \textbf{练习：}使用(\ref{eq:6.113})，求氢原子$2p_0$的动能平均期望$\left\langle T \right\rangle$。（\textit{答案：}$\mathrm{e}^2/32\pi\varepsilon_0a = \left(13.598 \: \mathrm{eV}\right) /4 = 3.40 \: \mathrm{eV}$。）
+        \textbf{练习：}使用(\ref{eq:6.113})，求氢原子$2p_0$的动能平均期望$\left\langle T \right\rangle$。（\textit{答案：}$\ee ^2/32\pi\varepsilon_0a = \left(13.598 \: \mathrm{eV}\right) /4 = 3.40 \: \mathrm{eV}$。）
     \end{examplebox}
 
     让我们来看看基态波函数 (\ref{eq:6.104}) 的一个重要性质。我们有$r = \left(x^2+y^2+z^2\right)^{1/2}$。对于在$x$轴上的点，$y = 0$，$z = 0$，则$r = \left(x^2\right)^{1/2} = \left|x\right|$。即
     \begin{equation}
-        \psi_{100}\left(x,0,0\right) = \pi^{-1/2}\left(Z/a\right)^{-3/2}\mathrm{e}^{-Z\left|x\right|/a}
+        \psi_{100}\left(x,0,0\right) = \pi^{-1/2}\left(Z/a\right)^{-3/2}\ee ^{-Z\left|x\right|/a}
         \label{eq:6.109}
     \end{equation}
-    图 \ref{fig:6.7} 显示了 (\ref{eq:6.109}) 沿 $x$ 轴的变化情况。尽管$\psi_{100}$在原点处连续，但曲线切线的斜率在原点左侧为正，而在原点右侧为负。因此$\partial \psi/\partial x$在原点处不连续。我们说波函数在原点处有一个\textit{尖点}（cusp）。尖顶的出现是因为势能$V = -Z\mathrm{e}^2/4\pi\varepsilon_0r$在原点处变得无限大。回想一下，箱中粒子波函数在箱壁上的斜率是不连续的。
+    图 \ref{fig:6.7} 显示了 (\ref{eq:6.109}) 沿 $x$ 轴的变化情况。尽管$\psi_{100}$在原点处连续，但曲线切线的斜率在原点左侧为正，而在原点右侧为负。因此$\partial \psi/\partial x$在原点处不连续。我们说波函数在原点处有一个\textit{尖点}（cusp）。尖顶的出现是因为势能$V = -Z\ee ^2/4\pi\varepsilon_0r$在原点处变得无限大。回想一下，箱中粒子波函数在箱壁上的斜率是不连续的。
     \begin{figure}[ht]
         \centering
         \includegraphics[width=0.4\textwidth]{Figures/6.7.png}
@@ -912,19 +912,19 @@
 
     对于$n=2$，我们有状态$\psi_{200}$、$\psi_{21-1}$、$\psi_{210}$、$\psi_{211}$。我们将$\psi_{200}$表示为$\psi_{2s}$或简单的$2s$。为了区分三个$2p$函数，我们使用下标来表示 $m$ 值，并将它们表示为$2p_1$、$2p_0$和$2p_{-1}$。从 (\ref{eq:6.100}) 可以看出，波函数中的径向因子取决于 $n$ 和 $l$，但不取决于 $m$。因此，三个 $2p$ 波函数都具有相同的径向因子。根据 (\ref{eq:6.100}) 和 (\ref{eq:6.99}) 可以用通常的方法求出 $2s$ 和 $2p$ 的径向因子，然后进行归一化处理。结果见表 \ref{tab:6.1}。请注意，$n=2$ 径向函数中的指数因子与 $R_{1s}$ 函数中的指数因子不同。将径向因子乘以适当的球谐函数，就能得到完整的波函数。使用(\ref{eq:6.101})、表\ref{tab:6.1}和表\ref{tab:5.1}，我们有
     \begin{equation}
-        2s = \frac{1}{2\pi^{1/2}}\left(\frac{Z}{a}\right)^{3/2}\left(1 - \frac{Zr}{2a}\right)\mathrm{e}^{-Zr/2a}
+        2s = \frac{1}{2\pi^{1/2}}\left(\frac{Z}{a}\right)^{3/2}\left(1 - \frac{Zr}{2a}\right)\ee ^{-Zr/2a}
         \label{eq:6.111}
     \end{equation}
     \begin{equation}
-        2p_{-1} = \frac{1}{8\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\sin\theta\:\mathrm{e}^{-\mathrm{i}\phi}
+        2p_{-1} = \frac{1}{8\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\ee ^{-Zr/2a}\sin\theta\:\ee ^{-\ii \phi}
         \label{eq:6.112}
     \end{equation}
     \begin{equation}
-        2p_0 = \frac{1}{2\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\cos\theta
+        2p_0 = \frac{1}{2\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\ee ^{-Zr/2a}\cos\theta
         \label{eq:6.113}
     \end{equation}
     \begin{equation}
-        2p_1 = \frac{1}{8\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\sin\theta\:\mathrm{e}^{\mathrm{i}\phi}
+        2p_1 = \frac{1}{8\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\ee ^{-Zr/2a}\sin\theta\:\ee ^{\ii \phi}
         \label{eq:6.114}
     \end{equation}
     \begin{table}[htbp]
@@ -934,17 +934,17 @@
         \renewcommand{\arraystretch}{1.5}
         \begin{tabular}{l}
             \hline
-            $R_{1s} = 2\left(\frac{Z}{a}\right)^{3/2}\mathrm{e}^{-Zr/a}$ \\[0.5ex]
+            $R_{1s} = 2\left(\frac{Z}{a}\right)^{3/2}\ee ^{-Zr/a}$ \\[0.5ex]
             \hline
-            $R_{2s} = \frac{1}{\sqrt{2}}\left(\frac{Z}{a}\right)^{3/2}\left(1 - \frac{Zr}{2a}\right)\mathrm{e}^{-Zr/2a}$ \\[0.5ex]
+            $R_{2s} = \frac{1}{\sqrt{2}}\left(\frac{Z}{a}\right)^{3/2}\left(1 - \frac{Zr}{2a}\right)\ee ^{-Zr/2a}$ \\[0.5ex]
             \hline
-            $R_{2p} = \frac{1}{2\sqrt{6}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}$ \\[0.5ex]
+            $R_{2p} = \frac{1}{2\sqrt{6}}\left(\frac{Z}{a}\right)^{5/2}r\ee ^{-Zr/2a}$ \\[0.5ex]
             \hline
-            $R_{3s} = \frac{2}{3\sqrt{3}}\left(\frac{Z}{a}\right)^{3/2}\left(1 - \frac{Zr}{3a} + \frac{2Z^2r^2}{27a^2}\right)\mathrm{e}^{-Zr/3a}$ \\[0.5ex]
+            $R_{3s} = \frac{2}{3\sqrt{3}}\left(\frac{Z}{a}\right)^{3/2}\left(1 - \frac{Zr}{3a} + \frac{2Z^2r^2}{27a^2}\right)\ee ^{-Zr/3a}$ \\[0.5ex]
             \hline
-            $R_{3p} = \frac{8}{27\sqrt{6}}\left(\frac{Z}{a}\right)^{3/2}\left(\frac{Zr}{a} - \frac{Z^2r^2}{6a^2}\right)\mathrm{e}^{-Zr/3a}$ \\[0.5ex]
+            $R_{3p} = \frac{8}{27\sqrt{6}}\left(\frac{Z}{a}\right)^{3/2}\left(\frac{Zr}{a} - \frac{Z^2r^2}{6a^2}\right)\ee ^{-Zr/3a}$ \\[0.5ex]
             \hline
-            $R_{3d} = \frac{4}{81\sqrt{30}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}$ \\[0.5ex]
+            $R_{3d} = \frac{4}{81\sqrt{30}}\left(\frac{Z}{a}\right)^{7/2}r^2\ee ^{-Zr/3a}$ \\[0.5ex]
             \hline
         \end{tabular}
     \end{table}
@@ -965,20 +965,20 @@
 
 \subsection*{径向分布函数}
 
-    在空间中位于$r$到$r+\mathrm{d}r$、$\theta$到$\theta+\mathrm{d}\theta$、$\phi$到$\phi+\mathrm{d}\phi$的体积微元内找到电子的概率为[式(\ref{eq:5.78})]
+    在空间中位于$r$到$r+\dd r$、$\theta$到$\theta+\dd \theta$、$\phi$到$\phi+\dd \phi$的体积微元内找到电子的概率为[式(\ref{eq:5.78})]
     \begin{equation}
-        \left|\psi\right|^2\mathrm{d}\tau = \left[R_{nl}\left(r\right)\right]^2\left|Y_l^m\left(\theta,\phi\right)\right|^2r^2\sin\theta\:\mathrm{d}r\:\mathrm{d}\theta\:\mathrm{d}\phi
+        \left|\psi\right|^2\dd \tau = \left[R_{nl}\left(r\right)\right]^2\left|Y_l^m\left(\theta,\phi\right)\right|^2r^2\sin\theta\:\dd r\:\dd \theta\:\dd \phi
         \label{eq:6.115}
     \end{equation}
-    我们现在想知道：在不限制 $\theta$ 和 $\phi$ 值的情况下，电子的径向坐标介于 $r$ 和 $r + \mathrm{d}r$ 之间的概率是多少？我们想知道在以原点为中心的薄球壳中找到电子的概率，其内半径为$r$，外半径为 $r + \mathrm{d}r$。因此，我们必须在保持 $r$ 不变的情况下，将 $\theta$ 和 $\phi$ 所有可能值的无穷小概率 (\ref{eq:6.115}) 相加。这相当于在 $theta$ 和 $\phi$ 上对 (\ref{eq:6.115}) 进行积分。因此，在$r$到$r+\mathrm{d}r$的区间内找到电子的概率为
+    我们现在想知道：在不限制 $\theta$ 和 $\phi$ 值的情况下，电子的径向坐标介于 $r$ 和 $r + \dd r$ 之间的概率是多少？我们想知道在以原点为中心的薄球壳中找到电子的概率，其内半径为$r$，外半径为 $r + \dd r$。因此，我们必须在保持 $r$ 不变的情况下，将 $\theta$ 和 $\phi$ 所有可能值的无穷小概率 (\ref{eq:6.115}) 相加。这相当于在 $theta$ 和 $\phi$ 上对 (\ref{eq:6.115}) 进行积分。因此，在$r$到$r+\dd r$的区间内找到电子的概率为
     \begin{equation}
-        \left[R_{nl}\left(r\right)\right]^2r^2\mathrm{d}r\int_{0}^{2\pi}\int_{0}^{\pi}\left|Y_l^m\left(\theta,\phi\right)\right|^2\sin\theta\:\mathrm{d}\theta\:\mathrm{d}\phi = \left[R_{nl}\left(r\right)\right]^2r^2\mathrm{d}r
+        \left[R_{nl}\left(r\right)\right]^2r^2\dd r\int_{0}^{2\pi}\int_{0}^{\pi}\left|Y_l^m\left(\theta,\phi\right)\right|^2\sin\theta\:\dd \theta\:\dd \phi = \left[R_{nl}\left(r\right)\right]^2r^2\dd r
         \label{eq:6.116}
     \end{equation}
     其中，我们用到了球谐函数是归一化的：
     \begin{equation}
         \boxed{
-            \int_{0}^{2\pi}\int_{0}^{\pi}\left|Y_l^m\left(\theta,\phi\right)\right|^2\sin\theta\:\mathrm{d}\theta\:\mathrm{d}\phi = 1
+            \int_{0}^{2\pi}\int_{0}^{\pi}\left|Y_l^m\left(\theta,\phi\right)\right|^2\sin\theta\:\dd \theta\:\dd \phi = 1
         }
         \label{eq:6.117}
     \end{equation}
@@ -990,25 +990,25 @@
         \label{fig:6.9}
     \end{figure}
 
-    对于氢原子的$1s$基态，概率密度$\left|\psi\right|^2$由式(\ref{eq:6.104})给出，等于$\mathrm{e}^{-2r/a}$乘上一个常数，因此$\left|\psi_{1s}\right|^2$在$r=0$处达到最大值（见图\ref{fig:6.14}）。然而，径向分布函数$\left[R_{1s}\left(r\right)\right]^2r^2$在原点处为零，而在$r=a$处达到最大值（见图 \ref{fig:6.9}）。这两个事实并不矛盾。概率密度$\left|\psi\right|^2$与在体积为 $\mathrm{d}x\mathrm{d}y\mathrm{d}z$ 的无限小盒子中找到电子的概率成正比，而这一概率在原子核处为最大值。径向分布函数与在内外半径分别为 $r$ 和 $r +\mathrm{d}r$ 的薄球壳中找到电子的概率成正比，这一概率在$r = a$ 处达到最大值。由于$\psi_{1s}$只与$r$有关，$1s$ 的概率密度在薄球壳中基本恒定。如果我们把薄壳想象成无数个无穷小的盒子，每个盒子的体积都是 $\mathrm{d}x\mathrm{d}y\mathrm{d}z$，那么我们就可以把在薄壳中每个小盒子里的概率 $\left|\psi_{1s}\right|^2\mathrm{d}x\mathrm{d}y\mathrm{d}z$ 相加，得到在薄壳中找到电子的概率是$\left|\psi_{1s}\right|^2V_{\text{shell}}$。薄壳的体积 $V_{\text{shell}}$ 为
+    对于氢原子的$1s$基态，概率密度$\left|\psi\right|^2$由式(\ref{eq:6.104})给出，等于$\ee ^{-2r/a}$乘上一个常数，因此$\left|\psi_{1s}\right|^2$在$r=0$处达到最大值（见图\ref{fig:6.14}）。然而，径向分布函数$\left[R_{1s}\left(r\right)\right]^2r^2$在原点处为零，而在$r=a$处达到最大值（见图 \ref{fig:6.9}）。这两个事实并不矛盾。概率密度$\left|\psi\right|^2$与在体积为 $\dd x\dd y\dd z$ 的无限小盒子中找到电子的概率成正比，而这一概率在原子核处为最大值。径向分布函数与在内外半径分别为 $r$ 和 $r +\dd r$ 的薄球壳中找到电子的概率成正比，这一概率在$r = a$ 处达到最大值。由于$\psi_{1s}$只与$r$有关，$1s$ 的概率密度在薄球壳中基本恒定。如果我们把薄壳想象成无数个无穷小的盒子，每个盒子的体积都是 $\dd x\dd y\dd z$，那么我们就可以把在薄壳中每个小盒子里的概率 $\left|\psi_{1s}\right|^2\dd x\dd y\dd z$ 相加，得到在薄壳中找到电子的概率是$\left|\psi_{1s}\right|^2V_{\text{shell}}$。薄壳的体积 $V_{\text{shell}}$ 为
     \begin{equation*}
-        \frac{4}{3}\pi\left(r+\mathrm{d}r\right)^3 - \frac{4}{3}\pi r^3 = 4\pi r^2\mathrm{d}r
+        \frac{4}{3}\pi\left(r+\dd r\right)^3 - \frac{4}{3}\pi r^3 = 4\pi r^2\dd r
     \end{equation*}
-    其中$\left(\mathrm{d}r\right)^2$和$\left(\mathrm{d}r\right)^3$与$\mathrm{d}r$相比可以忽略。因此，位于薄壳中的概率是
+    其中$\left(\dd r\right)^2$和$\left(\dd r\right)^3$与$\dd r$相比可以忽略。因此，位于薄壳中的概率是
     \begin{equation*}
-        \left|\psi_{1s}\right|^2V_{\text{shell}} = R_{1s}^2\left(Y_0^0\right)^24\pi r^2\mathrm{d}r = R_{1s}^2\left[\left(4\pi\right)^{-1/2}\right]^24\pi r^2\mathrm{d}r = R_{1s}^2r^2\mathrm{d}r
+        \left|\psi_{1s}\right|^2V_{\text{shell}} = R_{1s}^2\left(Y_0^0\right)^24\pi r^2\dd r = R_{1s}^2\left[\left(4\pi\right)^{-1/2}\right]^24\pi r^2\dd r = R_{1s}^2r^2\dd r
     \end{equation*}
-    与(\ref{eq:6.116})一致。$1s$ 径向分布函数在 $r =0$ 时为零，因为当 $r$ 变为零时，薄球壳的体积 $4\pi r^2\mathrm{d}r$ 变为零。它们的乘积$\left|\psi_{1s}\right|^24\pi r^2\mathrm{d}r$在$r=a$处达到最大值。
+    与(\ref{eq:6.116})一致。$1s$ 径向分布函数在 $r =0$ 时为零，因为当 $r$ 变为零时，薄球壳的体积 $4\pi r^2\dd r$ 变为零。它们的乘积$\left|\psi_{1s}\right|^24\pi r^2\dd r$在$r=a$处达到最大值。
 
     \begin{examplebox}
         \textbf{例题：}求基态 \ce{H} 原子中电子与原子核的距离小于 $a$ 的概率。
         \\
 
-        我们希望找到径向坐标介于$0$到$a$之间的概率。将处于 $r$ 和 $r +\mathrm{d}r$ 之间的无穷小概率 (\ref{eq:6.116}) 在 $0$ 到 $a$ 的范围内求和，就可以得出这个结果。这个无穷小量之和就是定积分
+        我们希望找到径向坐标介于$0$到$a$之间的概率。将处于 $r$ 和 $r +\dd r$ 之间的无穷小概率 (\ref{eq:6.116}) 在 $0$ 到 $a$ 的范围内求和，就可以得出这个结果。这个无穷小量之和就是定积分
         \begin{equation*}
             \begin{aligned}
-                \int_{0}^{a}R_{nl}^2r^2\mathrm{d}r & = \frac{4}{a^3}\int_{0}^{a}\mathrm{e}^{-2r/a}r^2\mathrm{d}r  = \left. -\frac{4}{a^3}\mathrm{e}^{-2r/a}\left(-\frac{r^a}{2} - \frac{2ra^2}{4} - \frac{2a^3}{8}\right)\right|_{0}^{a}\\
-                & = 4\left[\mathrm{e}^{-2}\left(-5/4\right)- \left(-1/4\right)\right] = 0.323          
+                \int_{0}^{a}R_{nl}^2r^2\dd r & = \frac{4}{a^3}\int_{0}^{a}\ee ^{-2r/a}r^2\dd r  = \left. -\frac{4}{a^3}\ee ^{-2r/a}\left(-\frac{r^a}{2} - \frac{2ra^2}{4} - \frac{2a^3}{8}\right)\right|_{0}^{a}\\
+                & = 4\left[\ee ^{-2}\left(-5/4\right)- \left(-1/4\right)\right] = 0.323          
             \end{aligned}
         \end{equation*}
         其中$R_{10}$来自表\ref{tab:6.1}，用到了附录中的积分A.7。
@@ -1019,51 +1019,51 @@
 
 \subsection*{实际类氢函数}
 
-    除了$m=0$以外，因子$\mathrm{e}^{\mathrm{i}m\phi}$使得球谐函数为复数。化学家通常不使用 (\ref{eq:6.112}) 和 (\ref{eq:6.114}) 等复波函数，而是使用由复函数的线性组合形成的实类氢波函数。第 \ref{sec:3.6 Degeneracy} 节的定理给出了这一步骤的理由：简并能级的任何本征函数的线性组合都是具有相同本征值的哈密顿算符的本征函数。由于氢原子的能量与$m$无关，状态$2p_1$和$2p_{-1}$属于一个简并的能级。它们的任何线性组合都是哈密顿算符的本征函数，具有相同的能量本征值。
+    除了$m=0$以外，因子$\ee ^{\ii m\phi}$使得球谐函数为复数。化学家通常不使用 (\ref{eq:6.112}) 和 (\ref{eq:6.114}) 等复波函数，而是使用由复函数的线性组合形成的实类氢波函数。第 \ref{sec:3.6 Degeneracy} 节的定理给出了这一步骤的理由：简并能级的任何本征函数的线性组合都是具有相同本征值的哈密顿算符的本征函数。由于氢原子的能量与$m$无关，状态$2p_1$和$2p_{-1}$属于一个简并的能级。它们的任何线性组合都是哈密顿算符的本征函数，具有相同的能量本征值。
 
     将这两个函数组合起来得到一个实函数的方法是
     \begin{equation}
-        2p_x \equiv \frac{1}{\sqrt{2}}\left(2p_1 + 2p_{-1}\right) = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\sin\theta\cos\phi
+        2p_x \equiv \frac{1}{\sqrt{2}}\left(2p_1 + 2p_{-1}\right) = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}r\ee ^{-Zr/2a}\sin\theta\cos\phi
         \label{eq:6.118}
     \end{equation}
-    其中，我们用到了(\ref{eq:6.112})、(\ref{eq:6.114})和$\mathrm{e}^{\pm \mathrm{i}\phi} = \cos\phi \pm \mathrm{i}\sin\phi$。因子$1/\sqrt{2}$使得波函数$2p_x$归一化：
+    其中，我们用到了(\ref{eq:6.112})、(\ref{eq:6.114})和$\ee ^{\pm \ii \phi} = \cos\phi \pm \ii \sin\phi$。因子$1/\sqrt{2}$使得波函数$2p_x$归一化：
     \begin{equation*}
         \begin{aligned}
-            \int\left|2p_x\right|^2\mathrm{d}\tau & = \frac{1}{2}\left(\int\left|2p_1\right|^2\mathrm{d}\tau + \int\left|2p_{-1}\right|^2\mathrm{d}\tau + \int\left(2p_{-1}\right)^{\ast}2p_1\mathrm{d}\tau + \int\left(2p_{1}\right)^{\ast}2p_{-1}\mathrm{d}\tau\right)\\
+            \int\left|2p_x\right|^2\dd \tau & = \frac{1}{2}\left(\int\left|2p_1\right|^2\dd \tau + \int\left|2p_{-1}\right|^2\dd \tau + \int\left(2p_{-1}\right)^{\ast}2p_1\dd \tau + \int\left(2p_{1}\right)^{\ast}2p_{-1}\dd \tau\right)\\
             & = \frac{1}{2}\left(1 + 1 + 0 + 0\right) = 1
         \end{aligned}
     \end{equation*}
     其中我们用到了$2p_1$和$2p_{-1}$是归一化且互相正交的性质，因为
     \begin{equation*}
-        \int_{0}^{2\pi}\left(\mathrm{e}^{\mathrm{i}\phi}\right)^{\ast}\mathrm{e}^{\mathrm{i}\phi}\mathrm{d}\phi = \int_{0}^{2\pi}\mathrm{e}^{2\mathrm{i}\phi}\mathrm{d}\phi = 0
+        \int_{0}^{2\pi}\left(\ee ^{\ii \phi}\right)^{\ast}\ee ^{\ii \phi}\dd \phi = \int_{0}^{2\pi}\ee ^{2\ii \phi}\dd \phi = 0
     \end{equation*}
     如果我们注意到 (\ref{eq:5.51}) 给出了 下式，那么 (\ref{eq:6.118}) 的命名$2p_x$就会更加清晰：
     \begin{equation}
-        2p_x = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}x\mathrm{e}^{-Zr/2a}
+        2p_x = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}x\ee ^{-Zr/2a}
         \label{eq:6.119}
     \end{equation}
 
     第二种组合函数的方法是
     \begin{equation}
-        2p_y \equiv \frac{1}{\mathrm{i}\sqrt{2}}\left(2p_1 - 2p_{-1}\right) = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}r\sin\theta\sin\phi\:\mathrm{e}^{-Zr/2a}
+        2p_y \equiv \frac{1}{\ii \sqrt{2}}\left(2p_1 - 2p_{-1}\right) = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}r\sin\theta\sin\phi\:\ee ^{-Zr/2a}
         \label{eq:6.120}
     \end{equation}
     \begin{equation}
-        2p_y = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}y\mathrm{e}^{-Zr/2a}
+        2p_y = \frac{1}{4\sqrt{2\pi}}\left(\frac{Z}{a}\right)^{5/2}y\ee ^{-Zr/2a}
         \label{eq:6.121}
     \end{equation}
     函数$2p_0$是实数，通常用下式表示：
     \begin{equation}
-        2p_0 = 2p_z = \frac{1}{\sqrt{\pi}}\left(\frac{Z}{a}\right)^{5/2}z\mathrm{e}^{-Zr/2a}
+        2p_0 = 2p_z = \frac{1}{\sqrt{\pi}}\left(\frac{Z}{a}\right)^{5/2}z\ee ^{-Zr/2a}
         \label{eq:6.122}
     \end{equation}
     其中大写的$Z$表示核中的质子数，小写的$z$为电子的$z$坐标。函数$2p_x$、$2p_y$和$2p_z$是互相正交的。注意$2p_z$在$xOy$平面内为零，在该平面上方为正，在下方为负。
 
     函数$2p_{-1}$和$2p_1$都是算符$\hat{L}^2$的本征函数，其本征值也相同，为$2\hbar^2$。第 3.6 节的推理表明，线性组合 (\ref{eq:6.118}) 和 (\ref{eq:6.120}) 也是 $\hat{L}^2$ 的本征函数，其本征值为 $2\hbar^2$ 。然而，$2p_{-1}$和$2p_1$是$\hat{L}_z$的本征函数，但本征值分别为$-\hbar$和$\hbar$。因此，$2p_x$和$2p_y$不是$\hat{L}_z$的本征函数。
 
-    我们可以推广这一过程，为更高的状态构建实波函数。由于 $m$ 的范围是从 $- l$ 到 $+ l$，对于每个包含因子$\mathrm{e}^{-\mathrm{i}\left|m\right|\phi}$的复函数，都有一个 $n$ 和 $l$ 值相同但包含因子$\mathrm{e}^{+\mathrm{i}\left|m\right|\phi}$的函数，将这些函数相减，得到两个实函数，其中一个具有因子$\cos\left(\left|m\right|\phi\right)$，另一个具有因子$\sin\left(\left|m\right|\phi\right)$。表 \ref{tab:6.2} 列出了类氢原子的实波函数。这些函数的下标来自与 $2p_x$ 、$2p_y$ 和 $2p_z$ 函数类似的考虑。例如，$3d_{x}$ 函数与 $xy$ 成正比（问题 6.37）。
+    我们可以推广这一过程，为更高的状态构建实波函数。由于 $m$ 的范围是从 $- l$ 到 $+ l$，对于每个包含因子$\ee ^{-\ii \left|m\right|\phi}$的复函数，都有一个 $n$ 和 $l$ 值相同但包含因子$\ee ^{+\ii \left|m\right|\phi}$的函数，将这些函数相减，得到两个实函数，其中一个具有因子$\cos\left(\left|m\right|\phi\right)$，另一个具有因子$\sin\left(\left|m\right|\phi\right)$。表 \ref{tab:6.2} 列出了类氢原子的实波函数。这些函数的下标来自与 $2p_x$ 、$2p_y$ 和 $2p_z$ 函数类似的考虑。例如，$3d_{x}$ 函数与 $xy$ 成正比（问题 6.37）。
 
-    实类氢波函数由复函数导出，方法如下：当$m \neq 0$时，将$\mathrm{e}^{\mathrm{i}m\phi}/\left(2\pi\right)^{1/2}$替换为$\pi^{-1/2}\cos\left(\left|m\right|\phi\right)$或$\pi^{-1/2}\sin\left(\left|m\right|\phi\right)$；当$m=0$时，对于实函数和复函数，$\phi$因子都为$1/\left(2\pi\right)^{1/2}$。
+    实类氢波函数由复函数导出，方法如下：当$m \neq 0$时，将$\ee ^{\ii m\phi}/\left(2\pi\right)^{1/2}$替换为$\pi^{-1/2}\cos\left(\left|m\right|\phi\right)$或$\pi^{-1/2}\sin\left(\left|m\right|\phi\right)$；当$m=0$时，对于实函数和复函数，$\phi$因子都为$1/\left(2\pi\right)^{1/2}$。
 
     在处理分子时，实类氢轨道比复类氢轨道更有用。例如，我们将在第 节中看到，氧原子的实原子轨道 $2p_x$、$2p_y$ 和 $2p_z$具有适当的对称性，可用于构建 \ce{H2O} 分子的波函数，而复数 $2p$ 轨道则不具备这种对称性。
 
@@ -1078,29 +1078,29 @@
             \hline
             $2s = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{3/2}\left(2 - \frac{Zr}{2a}\right)e^{-Zr/2a}$ \\[0.5ex]
             \hline
-            $2p_z = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\cos\theta$ \\[0.5ex]
+            $2p_z = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\ee ^{-Zr/2a}\cos\theta$ \\[0.5ex]
             \hline
-            $2p_x = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\sin\theta\:\cos\phi$ \\[0.5ex]
+            $2p_x = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\ee ^{-Zr/2a}\sin\theta\:\cos\phi$ \\[0.5ex]
             \hline
-            $2p_y = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\mathrm{e}^{-Zr/2a}\sin\theta\:\sin\phi$ \\[0.5ex]
+            $2p_y = \frac{1}{4\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{5/2}r\ee ^{-Zr/2a}\sin\theta\:\sin\phi$ \\[0.5ex]
             \hline
             $3s = \frac{1}{81\left(3\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{3/2}\left(27 - 18\frac{Zr}{a} + 2\frac{Z^2r^2}{a^2}\right)e^{-Zr/3a}$ \\[0.5ex]
             \hline
-            $3p_z = \frac{2^{1/2}}{81\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}\left(6 - \frac{Zr}{a}\right)r\mathrm{e}^{-Zr/3a}\cos\theta$ \\[0.5ex]
+            $3p_z = \frac{2^{1/2}}{81\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}\left(6 - \frac{Zr}{a}\right)r\ee ^{-Zr/3a}\cos\theta$ \\[0.5ex]
             \hline
-            $3p_x = \frac{2^{1/2}}{81\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}\left(6 - \frac{Zr}{a}\right)r\mathrm{e}^{-Zr/3a}\sin\theta\:\cos\phi$ \\[0.5ex]
+            $3p_x = \frac{2^{1/2}}{81\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}\left(6 - \frac{Zr}{a}\right)r\ee ^{-Zr/3a}\sin\theta\:\cos\phi$ \\[0.5ex]
             \hline
-            $3p_y = \frac{2^{1/2}}{81\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}\left(6 - \frac{Zr}{a}\right)r\mathrm{e}^{-Zr/3a}\sin\theta\:\sin\phi$ \\[0.5ex]
+            $3p_y = \frac{2^{1/2}}{81\pi^{1/2}}\left(\frac{Z}{a}\right)^{5/2}\left(6 - \frac{Zr}{a}\right)r\ee ^{-Zr/3a}\sin\theta\:\sin\phi$ \\[0.5ex]
             \hline
-            $3d_{z^2} = \frac{1}{81\left(6\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}\left(3\cos^2\theta - 1\right)$ \\[0.5ex]
+            $3d_{z^2} = \frac{1}{81\left(6\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\ee ^{-Zr/3a}\left(3\cos^2\theta - 1\right)$ \\[0.5ex]
             \hline
-            $3d_{xz} = \frac{2^{1/2}}{81\left(6\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}\sin\theta\:\cos\theta\:\cos\phi$ \\[0.5ex]
+            $3d_{xz} = \frac{2^{1/2}}{81\left(6\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\ee ^{-Zr/3a}\sin\theta\:\cos\theta\:\cos\phi$ \\[0.5ex]
             \hline
-            $3d_{yz} = \frac{2^{1/2}}{81\left(6\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}\sin\theta\:\cos\theta\:\sin\phi$ \\[0.5ex]
+            $3d_{yz} = \frac{2^{1/2}}{81\left(6\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\ee ^{-Zr/3a}\sin\theta\:\cos\theta\:\sin\phi$ \\[0.5ex]
             \hline
-            $3d_{x^2-y^2} = \frac{1}{81\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}\sin^2\theta\:\cos2\phi$ \\[0.5ex]
+            $3d_{x^2-y^2} = \frac{1}{81\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\ee ^{-Zr/3a}\sin^2\theta\:\cos2\phi$ \\[0.5ex]
             \hline
-            $3d_{xy} = \frac{1}{81\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\mathrm{e}^{-Zr/3a}\sin^2\theta\:\sin2\phi$ \\[0.5ex]
+            $3d_{xy} = \frac{1}{81\left(2\pi\right)^{1/2}}\left(\frac{Z}{a}\right)^{7/2}r^2\ee ^{-Zr/3a}\sin^2\theta\:\sin2\phi$ \\[0.5ex]
         \end{tabular}
     \end{table}
 
@@ -1136,14 +1136,14 @@
 
     现在，考虑绘制概率密度恒定的等值面。我们将在空间中画出曲面，在每个曲面上，概率密度 $\left|\psi\right|^2$ 的值都是恒定的。自然，如果 $\left|\psi\right|^2$ 在给定的曲面上是常数，那么 $\left|\psi\right|$ 在该曲面上也是常数。$\left|\psi\right|^2$ 和 $\left|\psi\right|$ 的等值面是相同的。
 
-    对于$s$轨道，$\psi$只与$r$有关，等值面就是一个恒定 $r$ 的曲面，即以原点为中心的球面。为了确定一个轨道的大小，我们取一个等值面，在这个等值面内找到电子的概率比如说是 $95\%$，因此我们希望$\int_{V}\left|\psi\right|^2\mathrm{d}\tau = 0.95$，其中$V$是轨道等值面所包围的体积。
+    对于$s$轨道，$\psi$只与$r$有关，等值面就是一个恒定 $r$ 的曲面，即以原点为中心的球面。为了确定一个轨道的大小，我们取一个等值面，在这个等值面内找到电子的概率比如说是 $95\%$，因此我们希望$\int_{V}\left|\psi\right|^2\dd \tau = 0.95$，其中$V$是轨道等值面所包围的体积。
 
     让我们来计算类氢轨道 $2p_y$ 在 $yOz$ 平面上的横截面。在该平面上，有$\phi = \pi/2$（图\ref{fig:6.5}）以及$\sin\phi = 1$；因此表 \ref{tab:6.2} 给出了该轨道在 $yOz$ 平面上的情况
     \begin{equation}
-        \left|2p_y\right| = k^{5/2}\pi^{-1/2}r\mathrm{e}^{-kr}\left|\sin\theta\right|
+        \left|2p_y\right| = k^{5/2}\pi^{-1/2}r\ee ^{-kr}\left|\sin\theta\right|
         \label{eq:6.123}
     \end{equation}
-    其中$k = Z/2a$。为了找到轨道横截面，我们使用平面极坐标来绘制 $\psi$ 固定值的 (\ref{eq:6.123}) 图；$r$是到原点的距离，而$\theta$是与 $z$ 轴的夹角。图 \ref{fig:6.12} 显示了典型等值线的结果（问题 6.44）。由于$y\mathrm{e}^{-kr} = y\exp\left[-k\left(x^2+y^2+z^2\right)^{1/2}\right]$，我们可以看到$2p_y$轨道是$y$和$\left(x^2+z^2\right)$的函数。因此，在以 $y$ 轴为中心、平行于 $xOz$ 平面的圆上，$2p_y$是常数。因此，将图 \ref{fig:6.12} 中的横截面绕 $y$ 轴旋转，可以得到一对扭曲的椭圆体，从而形成三维等值面。实际 $2p$ 轨道的形状是两个分离的扭曲椭圆体，而不是两个相切的球体。
+    其中$k = Z/2a$。为了找到轨道横截面，我们使用平面极坐标来绘制 $\psi$ 固定值的 (\ref{eq:6.123}) 图；$r$是到原点的距离，而$\theta$是与 $z$ 轴的夹角。图 \ref{fig:6.12} 显示了典型等值线的结果（问题 6.44）。由于$y\ee ^{-kr} = y\exp\left[-k\left(x^2+y^2+z^2\right)^{1/2}\right]$，我们可以看到$2p_y$轨道是$y$和$\left(x^2+z^2\right)$的函数。因此，在以 $y$ 轴为中心、平行于 $xOz$ 平面的圆上，$2p_y$是常数。因此，将图 \ref{fig:6.12} 中的横截面绕 $y$ 轴旋转，可以得到一对扭曲的椭圆体，从而形成三维等值面。实际 $2p$ 轨道的形状是两个分离的扭曲椭圆体，而不是两个相切的球体。
     \begin{figure}[ht]
         \centering
         \includegraphics[width=0.45\textwidth]{Figures/6.12.png}
@@ -1153,15 +1153,15 @@
 
     现在来考虑两个复轨道$2p_{\pm 1}$的形状。我们有
     \begin{equation*}
-        2p_{\pm 1} = k^{5/2}\pi^{-1/2}r\mathrm{e}^{-kr}\sin\theta\:\mathrm{e}^{\pm \mathrm{i}\phi}
+        2p_{\pm 1} = k^{5/2}\pi^{-1/2}r\ee ^{-kr}\sin\theta\:\ee ^{\pm \ii \phi}
     \end{equation*}
     \begin{equation}
-        \left|2p_{\pm 1}\right| = k^{5/2}\pi^{-1/2}\mathrm{e}^{-kr}r\left|\sin\theta\right|
+        \left|2p_{\pm 1}\right| = k^{5/2}\pi^{-1/2}\ee ^{-kr}r\left|\sin\theta\right|
         \label{eq:6.124}
     \end{equation}
     这两个轨道有相同的形状。由于 (\ref{eq:6.124}) 和 (\ref{eq:6.123}) 的右边相同，我们得出结论：图 \ref{fig:6.12} 也给出了 $yOz$ 平面上 $2p_{\pm 1}$ 轨道的横截面。由于[式(\ref{eq:5.51})]
     \begin{equation*}
-        \mathrm{e}^{-kr}r\left|\sin\theta\right| = \exp\left[-k\left(x^2+y^2+z^2\right)^{1/2}\right]\left(x^2+y^2\right)^{1/2}
+        \ee ^{-kr}r\left|\sin\theta\right| = \exp\left[-k\left(x^2+y^2+z^2\right)^{1/2}\right]\left(x^2+y^2\right)^{1/2}
     \end{equation*}
     我们看到$2p_{\pm 1}$轨道是$z$和$\left(x^2+y^2\right)$的函数，因此，我们将图 \ref{fig:6.12} 绕 $z$ 轴旋转，就能得到三维轨道形状。这样就形成了一个甜甜圈状的表面。
 
@@ -1212,19 +1212,19 @@
         \mathbf{m}_L = \frac{Q\mathbf{r}\times\mathbf{p}}{2m} = \frac{Q}{2m}\mathbf{L}
         \label{eq:6.127}
     \end{equation}
-    其中我们用到了轨道角动量$\mathbf{L}$的定义，$\mathbf{m}$的下标表示它来源于粒子的轨道运动。虽然我们用圆周运动的特殊情况得出了 (\ref{eq:6.127})，但其有效性是普遍的。对于一个电子，$Q = -\mathrm{e}$，因其轨道运动而产生的磁矩为
+    其中我们用到了轨道角动量$\mathbf{L}$的定义，$\mathbf{m}$的下标表示它来源于粒子的轨道运动。虽然我们用圆周运动的特殊情况得出了 (\ref{eq:6.127})，但其有效性是普遍的。对于一个电子，$Q = -\ee $，因其轨道运动而产生的磁矩为
     \begin{equation}
-        \mathbf{m}_L = -\frac{\mathrm{e}}{2m_{\mathrm{e}}}\mathbf{L}
+        \mathbf{m}_L = -\frac{\ee }{2m_{\ee }}\mathbf{L}
         \label{eq:6.128}
     \end{equation}
     矢量$\mathbf{L}$的大小由(\ref{eq:5.95})给出，而具有轨道角动量子数 $l$ 的电子的轨道磁矩大小为
     \begin{equation}
-        \left|\mathbf{m}_L\right| = \frac{\mathrm{e}\hbar}{2m_{\mathrm{e}}}\left[l\left(l+1\right)\right]^{1/2} = \mu_{B}\left[l\left(l+1\right)\right]^{1/2}
+        \left|\mathbf{m}_L\right| = \frac{\ee \hbar}{2m_{\ee }}\left[l\left(l+1\right)\right]^{1/2} = \mu_{B}\left[l\left(l+1\right)\right]^{1/2}
         \label{eq:6.129}
     \end{equation}
-    常量$\mathrm{e}\hbar/2m_{\mathrm{e}}$称为\textit{玻尔磁子}（Bohr magneton），记作$\mu_{B}$：
+    常量$\ee \hbar/2m_{\ee }$称为\textit{玻尔磁子}（Bohr magneton），记作$\mu_{B}$：
     \begin{equation}
-        \mu_{B} \equiv \mathrm{e}\hbar/2m_{\mathrm{e}} = 9.2740 \times 10^{-24}\: \mathrm{J}/\mathrm{T}
+        \mu_{B} \equiv \ee \hbar/2m_{\ee } = 9.2740 \times 10^{-24}\: \mathrm{J}/\mathrm{T}
         \label{eq:6.130}
     \end{equation}
 
@@ -1235,12 +1235,12 @@
     \end{equation}
     使用式(\ref{eq:6.128})，我们有
     \begin{equation}
-        E_{B} = \frac{\mathrm{e}}{2m_{\mathrm{e}}}\mathbf{L}\cdot\mathbf{B}
+        E_{B} = \frac{\ee }{2m_{\ee }}\mathbf{L}\cdot\mathbf{B}
         \label{eq:6.132}
     \end{equation}
     我们沿外加磁场的方向确定$z$轴的位置：$\mathbf{B} = B\mathbf{k}$，其中$\mathbf{k}$是$z$方向的单位矢量。我们有
     \begin{equation*}
-        E_B = \frac{\mathrm{e}}{2m_{\mathrm{e}}}B\left(L_x\mathbf{i} + L_y\mathbf{j} + L_z\mathbf{k}\right)\cdot\mathbf{k} = \frac{\mathrm{e}}{2m_{\mathrm{e}}}BL_z = \frac{\mu_B}{\hbar}BL_z
+        E_B = \frac{\ee }{2m_{\ee }}B\left(L_x\mathbf{i} + L_y\mathbf{j} + L_z\mathbf{k}\right)\cdot\mathbf{k} = \frac{\ee }{2m_{\ee }}BL_z = \frac{\mu_B}{\hbar}BL_z
     \end{equation*}
     其中$L_z$是轨道角动量在$z$方向上的分量。我们现在将$L_z$替换为算符$\hat{L}_z$，在哈密顿算符中得到以下由外部磁场产生的附加项：
     \begin{equation}
@@ -1255,7 +1255,7 @@
     \end{equation}
     其中，$\hat{H}$是在无外场作用下氢原子的哈密顿算符。我们很容易验证公式 (\ref{eq:6.134}) 的解就是复类氢波函数 (\ref{eq:6.61}) ：
     \begin{equation}
-        \left(\hat{H}+\hat{H}_B\right)R\left(r\right)Y_l^m\left(\theta,\phi\right) = \hat{H}RY_l^m + \mu_B\hbar^{-1}B\hat{L}_zRY_l^m = \left(-\frac{Z^2}{n^2}\frac{\mathrm{e}^2}{8\pi\varepsilon_0a}+\mu_BBm\right)RY_l^m
+        \left(\hat{H}+\hat{H}_B\right)R\left(r\right)Y_l^m\left(\theta,\phi\right) = \hat{H}RY_l^m + \mu_B\hbar^{-1}B\hat{L}_zRY_l^m = \left(-\frac{Z^2}{n^2}\frac{\ee ^2}{8\pi\varepsilon_0a}+\mu_BBm\right)RY_l^m
         \label{eq:6.135}
     \end{equation}
     其中用到了式(\ref{eq:6.94})和(\ref{eq:5.105})。因此，能量中存在一个附加项，而外部磁场消除了 $m$ 简并。由于显而易见的原因，$m$ 通常被称为\textit{磁量子数}（magnetic quantum number）。实际上，由于电子自旋磁矩的存在，观测到的能量偏移与公式 (\ref{eq:6.135}) 的预测值并不一致（第 \ref{chap:10} 章和第 \ref{sec:11.7 The Atomic Hamiltonian} 节。）
@@ -1284,12 +1284,12 @@
 
     对于$l\neq 0$的情况，(\ref{eq:6.138})中的$G\left(r\right)$在$r=0$处发散，这会让大多数电脑感到不爽。为了避免这个问题，我们可以从极小的$r$值开始求解（例如，$10^{-15}$为无量纲的$r_r$）并近似$F\left(r\right)$在该点为零。
 
-    例如，我们将使用 Numerov 方法求解最低束缚态 \ce{H} 原子能量。有$V = -\mathrm{e}^2/4\pi\varepsilon_0r = -\mathrm{e}^{\prime^2}/r$，其中$\mathrm{e}^{\prime} \equiv \mathrm{e}/\left(4\pi\varepsilon_0\hbar^2/m\right)^{1/2}$。径向方程(\ref{eq:6.62})包含三个常数$\mathrm{e}^{\prime}$、$\mu$和$\hbar$，其中$\mathrm{e}^{\prime} \equiv \mathrm{e}/\left(4\pi\varepsilon_0\hbar^2/m\right)^{1/2}$具有国际单位$\mathrm{m}\: \mathrm{N}^{1/2}$（见附录的表A.1），因此，有无量纲的$\left[\mathrm{e}^{\prime}\right] = \mathrm{L}^{3/2}\mathrm{M}^{1/2}\mathrm{T}^{-1}$。按照公式（\ref{eq:4.73}）的推导过程，我们发现 \ce{H} 原子的约化能量和约化径向坐标为（问题 6.47）
+    例如，我们将使用 Numerov 方法求解最低束缚态 \ce{H} 原子能量。有$V = -\ee ^2/4\pi\varepsilon_0r = -\ee ^{\prime^2}/r$，其中$\ee ^{\prime} \equiv \ee /\left(4\pi\varepsilon_0\hbar^2/m\right)^{1/2}$。径向方程(\ref{eq:6.62})包含三个常数$\ee ^{\prime}$、$\mu$和$\hbar$，其中$\ee ^{\prime} \equiv \ee /\left(4\pi\varepsilon_0\hbar^2/m\right)^{1/2}$具有国际单位$\mathrm{m}\: \mathrm{N}^{1/2}$（见附录的表A.1），因此，有无量纲的$\left[\ee ^{\prime}\right] = \mathrm{L}^{3/2}\mathrm{M}^{1/2}\mathrm{T}^{-1}$。按照公式（\ref{eq:4.73}）的推导过程，我们发现 \ce{H} 原子的约化能量和约化径向坐标为（问题 6.47）
     \begin{equation}
-        E_r = E/\mu \mathrm{e}^{\prime ^4}\hbar^{-2}, \quad r_r = r/B = r/\hbar^2\mu^{-1}\mathrm{e}^{\prime ^{-2}}
+        E_r = E/\mu \ee ^{\prime ^4}\hbar^{-2}, \quad r_r = r/B = r/\hbar^2\mu^{-1}\ee ^{\prime ^{-2}}
         \label{eq:6.139}
     \end{equation}
-    使用(\ref{eq:6.139})、(\ref{eq:4.76})和(\ref{eq:4.77})将$\psi$替换为$F$，使用$B = \hbar^2\mu^{-1}\mathrm{e}^{\prime ^{-2}}$将氢原子的式(\ref{eq:6.137})变换为（问题6.47）
+    使用(\ref{eq:6.139})、(\ref{eq:4.76})和(\ref{eq:4.77})将$\psi$替换为$F$，使用$B = \hbar^2\mu^{-1}\ee ^{\prime ^{-2}}$将氢原子的式(\ref{eq:6.137})变换为（问题6.47）
     \begin{equation}
         F^{\prime\prime}_r = G_rF_r, \quad \text{其中}G_r = l\left(l+1\right)/r_r^2 - 2/r_r -2E_r
         \label{eq:6.140}

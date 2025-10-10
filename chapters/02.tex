@@ -7,7 +7,7 @@
 	本节只讨论常微分方程，即只有一个自变量的方程。[偏微分方程有不止一个自变量。含时薛定谔方程 (\ref{eq:1.16 Time-dependent Schödinger equation}) 就是一个例子，其中 $t$ 和 $x$ 都是自变量。]
 	常微分方程是自变量 $x$、因变量$y\left(x\right)$和$y$的1、2、$\cdots$、$n$阶导数$y\left(y^{\prime},y^{\prime\prime}, \cdots, y^{\left(n\right)}\right)$之间的关系式。例如
 	\begin{equation}
-		y^{\prime\prime\prime}+2x\left(y^{\prime}\right)^2+y^2\sin x = 3\mathrm{e}^x
+		y^{\prime\prime\prime}+2x\left(y^{\prime}\right)^2+y^2\sin x = 3\ee^x
 		\label{eq:2.1 an example of differential equation}
 	\end{equation}
 	微分方程的阶数与方程中最高阶导数的阶数相同。因此，方程 (\ref{eq:2.1 an example of differential equation}) 为三阶微分方程。
@@ -47,9 +47,9 @@
 		y^{\prime\prime}+py^{\prime}+qy=0
 		\label{eq:2.6 constant coefficients in linear homogeneous second-order differential equation}
 	\end{equation}
-	其中$p$与$q$是常数。为了解这个方程(\ref{eq:2.6 constant coefficients in linear homogeneous second-order differential equation})，我们暂且假定解的形式是$y = \mathrm{e}^{sx}$。我们正在寻找一个导数与常数相乘会与原函数相互抵消的函数。指数函数在微分时会重复，因此是正确的选择。将其代入 (\ref{eq:2.6 constant coefficients in linear homogeneous second-order differential equation}) 即可得出
+	其中$p$与$q$是常数。为了解这个方程(\ref{eq:2.6 constant coefficients in linear homogeneous second-order differential equation})，我们暂且假定解的形式是$y = \ee^{sx}$。我们正在寻找一个导数与常数相乘会与原函数相互抵消的函数。指数函数在微分时会重复，因此是正确的选择。将其代入 (\ref{eq:2.6 constant coefficients in linear homogeneous second-order differential equation}) 即可得出
 	\begin{equation*}
-		s^2\mathrm{e}^{sx}+ps\mathrm{e}^{sx}+q\mathrm{e}^{sx}=0
+		s^2\ee^{sx}+ps\ee^{sx}+q\ee^{sx}=0
 	\end{equation*}
 	\begin{equation}
 		\boxed{
@@ -60,11 +60,11 @@
 	方程 (\ref{eq:2.7 auxiliary equation}) 称为\textbf{特征方程}。它是一个有两个根 $s_1$ 和 $s_2$ 的一元二次方程，只要 $s_1$ 和 $s_2$ 不相等，就能给出 (\ref{eq:2.6 constant coefficients in linear homogeneous second-order differential equation}) 的两个独立解。因此，（\ref{eq:2.6 constant coefficients in linear homogeneous second-order differential equation}）的通解为
 	\begin{equation}
 		\boxed{
-			y = c_1\mathrm{e}^{s_1x}+c_2\mathrm{e}^{s_2x}
+			y = c_1\ee^{s_1x}+c_2\ee^{s_2x}
 		}
 		\label{eq:2.8 general solution for 2.6}
 	\end{equation}
-	例如，对于方程$y^{\prime\prime}+6y^{\prime}-7y=0$，其特征方程为$s^2+6s-7=0$。解这个特征方程，有$s_1=1$，$s_2=-7$，所以通解为$y = c_1\mathrm{e}^{x}+c_2\mathrm{e}^{-7x}$。
+	例如，对于方程$y^{\prime\prime}+6y^{\prime}-7y=0$，其特征方程为$s^2+6s-7=0$。解这个特征方程，有$s_1=1$，$s_2=-7$，所以通解为$y = c_1\ee^{x}+c_2\ee^{-7x}$。
 
 \section{一维盒子中的粒子}
 \label{sec:2.2 Particle in a One-Dimensional Box}
@@ -78,11 +78,11 @@
 
 	我们需要考虑三个区域。在区域I和III中，势能$V$为无穷大，此处的定态薛定谔方程(\ref{eq:1.19 time-independent Schrödinger Equation})为
 	\begin{equation*}
-		-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2} = \left(E - \infty\right)\psi
+		-\frac{\hbar^2}{2m}\frac{\dd ^2\psi}{\dd x^2} = \left(E - \infty\right)\psi
 	\end{equation*}
 	与$\infty$相比，$E$的大小可以忽略不计。我们略去$E$，有
 	\begin{equation*}
-		\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2} = \infty \psi, \quad \psi = \frac{1}{\infty}\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2}
+		\frac{\dd ^2\psi}{\dd x^2} = \infty \psi, \quad \psi = \frac{1}{\infty}\frac{\dd ^2\psi}{\dd x^2}
 	\end{equation*}
 	因此，在盒子的外侧，$\psi$为零：
 	\begin{equation}
@@ -92,7 +92,7 @@
 
 	对于区域II，$x$在0和$l$之间时，势能$V$为零，定态薛定谔方程(\ref{eq:1.19 time-independent Schrödinger Equation})为
 	\begin{equation}
-		\frac{\mathrm{d}^2\psi_{II}}{\mathrm{d}x^2}+\frac{2m}{\hbar^2}E\psi_{II}=0
+		\frac{\dd ^2\psi_{II}}{\dd x^2}+\frac{2m}{\hbar^2}E\psi_{II}=0
 		\label{eq:2.10 schrödinger equation for particle between 0 and l}
 	\end{equation}
 	其中$m$是粒子的质量，$E$是能量。我们将方程(\ref{eq:2.10 schrödinger equation for particle between 0 and l})视为一个二阶常系数线性齐次微分方程。其特征方程由(\ref{eq:2.7 auxiliary equation})给出：
@@ -104,22 +104,22 @@
 		\label{eq:2.11}
 	\end{equation}
 	\begin{equation}
-		s = \pm \mathrm{i}\left(2mE\right)^{1/2}\hbar^{-1}
+		s = \pm \ii \left(2mE\right)^{1/2}\hbar^{-1}
 		\label{eq:2.12}
 	\end{equation}
-	其中$\mathrm{i}$是虚数单位。使用(\ref{eq:2.8 general solution for 2.6})，我们有
+	其中$\ii $是虚数单位。使用(\ref{eq:2.8 general solution for 2.6})，我们有
 	\begin{equation}
-		\psi_{II} = c_1\mathrm{e}^{\mathrm{i} \left(2mE\right)^{1/2} x /\hbar}+c_2\mathrm{e}^{-\mathrm{i} \left(2mE\right)^{1/2} x /\hbar}
+		\psi_{II} = c_1\ee^{\ii \left(2mE\right)^{1/2} x /\hbar}+c_2\ee^{-\ii \left(2mE\right)^{1/2} x /\hbar}
 		\label{eq:2.13 general solution for particle between zero and l}
 	\end{equation}
 	我们姑且令
 	\begin{equation*}
 		\begin{aligned}
 			\theta & \equiv \left(2mE\right)^{1/2} x /\hbar \\
-			\psi_{II} & = c_1\mathrm{e}^{\mathrm{i}\theta}+c_1\mathrm{e}^{-\mathrm{i}\theta}
+			\psi_{II} & = c_1\ee^{\ii \theta}+c_1\ee^{-\ii \theta}
 		\end{aligned}
 	\end{equation*}
-	由$\mathrm{e}^{\mathrm{i}\theta} = \cos\theta+\mathrm{i}\sin\theta$ $\left[\ref{eq:1.28 Euler's equation}\right]$以及
+	由$\ee^{\ii \theta} = \cos\theta+\ii \sin\theta$ $\left[\ref{eq:1.28 Euler's equation}\right]$以及
 	\begin{equation}
 		\boxed{
 			\cos\left(-\theta\right) = \cos\theta \: \text{and} \: \sin\left(-\theta\right) = -\sin\theta
@@ -127,12 +127,12 @@
 		\label{eq:2.14 properties of sin and cos}
 	\end{equation}
 	我们有
-	$\mathrm{e}^{-\mathrm{i}\theta} = \cos \left(-\theta\right)+\mathrm{i}\sin\left(-\theta\right)=\cos\theta-\mathrm{i}\sin\theta$
+	$\ee^{-\ii \theta} = \cos \left(-\theta\right)+\ii \sin\left(-\theta\right)=\cos\theta-\ii \sin\theta$
 	。因此，
 	\begin{equation*}
 		\begin{aligned}
-			\psi_{II} & =c_1\cos\theta+\mathrm{i}c_1\sin\theta+c_2\cos\theta-\mathrm{i}c_2\sin\theta \\
-			& = \left(c_1+c_2\right)\cos\theta+\left(\mathrm{i}c_1-\mathrm{i}c_2\right)\sin\theta \\
+			\psi_{II} & =c_1\cos\theta+\ii c_1\sin\theta+c_2\cos\theta-\ii c_2\sin\theta \\
+			& = \left(c_1+c_2\right)\cos\theta+\left(\ii c_1-\ii c_2\right)\sin\theta \\
 			& = A \cos\theta + B\sin\theta 
 		\end{aligned}	
 	\end{equation*}
@@ -177,7 +177,7 @@
 		\label{eq:2.19 introduction of n}
 	\end{equation}
 
-	$n=0$是一种特殊情况。由(\ref{eq:2.19 introduction of n})，$n=0$意味着$E=0$。若$E=0$则特征方程(\ref{eq:2.12})有两个相等的根，且式(\ref{eq:2.13 general solution for particle between zero and l})不是薛定谔方程的完全解。为了找到完全解，我们回到(\ref{eq:2.10 schrödinger equation for particle between 0 and l})，其中$E=0$有$frac{\mathrm{d}^2\psi_{II}}{\mathrm{d}x^2}=0$。积分一次，有$\mathrm{d}\psi_{II}/\mathrm{d}x = c$；再积分一次，有$\psi_{II}=cx+d$，其中$c$和$d$都是常数。由于$x=0$时有$\psi_{II}=0$，所以$d=0$；又由于$x=l$时也有$\psi_{II}=0$，所以$c=0$。因此，$\psi_{II}=0$推出$E=0$，则$E=0$不是允许的能量值。即$n=0$是不允许的。
+	$n=0$是一种特殊情况。由(\ref{eq:2.19 introduction of n})，$n=0$意味着$E=0$。若$E=0$则特征方程(\ref{eq:2.12})有两个相等的根，且式(\ref{eq:2.13 general solution for particle between zero and l})不是薛定谔方程的完全解。为了找到完全解，我们回到(\ref{eq:2.10 schrödinger equation for particle between 0 and l})，其中$E=0$有$frac{\dd ^2\psi_{II}}{\dd x^2}=0$。积分一次，有$\dd \psi_{II}/\dd x = c$；再积分一次，有$\psi_{II}=cx+d$，其中$c$和$d$都是常数。由于$x=0$时有$\psi_{II}=0$，所以$d=0$；又由于$x=l$时也有$\psi_{II}=0$，所以$c=0$。因此，$\psi_{II}=0$推出$E=0$，则$E=0$不是允许的能量值。即$n=0$是不允许的。
 
 	从方程(\ref{eq:2.19 introduction of n})中解出$E$，我们有
 	\begin{equation}
@@ -221,13 +221,13 @@
 
 	公式 (\ref{eq:2.21 wavefunction solution of psi ii with b}) 中的常数 $B$ 仍然是任意的。为了将其确定下来，我们使用公式 (\ref{eq:1.24 the definition of nomalization}) 和 (\ref{eq:1.22 Psi and psi}) 对$\psi_{II}$进行归一化：
 	\begin{equation*}
-		\int_{-\infty}^{\infty}\left|\Psi\right|^2\mathrm{d}x = \int_{-\infty}^{\infty}\left|\psi\right|^2\mathrm{d}x = 1
+		\intinf\left|\Psi\right|^2\dd x = \intinf\left|\psi\right|^2\dd x = 1
 	\end{equation*}
 	\begin{equation*}
-		\int_{-\infty}^{0}\left|\psi_I\right|^2\mathrm{d}x + \int_{0}^{l}\left|\psi_{II}\right|^2\mathrm{d}x +\int_{l}^{\infty}\left|\psi_{III}\right|^2\mathrm{d}x =1
+		\int_{-\infty}^{0}\left|\psi_I\right|^2\dd x + \int_{0}^{l}\left|\psi_{II}\right|^2\dd x +\int_{l}^{\infty}\left|\psi_{III}\right|^2\dd x =1
 	\end{equation*}
 	\begin{equation}
-		\left|B\right|^2\int_{0}^{l}\sin^2\left(\frac{n\pi x}{l}\right)\mathrm{d}x=1=\left|B\right|^2\frac{l}{2}
+		\left|B\right|^2\int_{0}^{l}\sin^2\left(\frac{n\pi x}{l}\right)\dd x=1=\left|B\right|^2\frac{l}{2}
 		\label{eq:2.22 process of fix constant B}
 	\end{equation}
 	其中的积分是用附录中的公式 (A.2) 求得的。我们有
@@ -235,7 +235,7 @@
 		\left|B\right|^2=\left(2/l\right)^{1/2}
 	\end{equation*}
 
-	注意我们只求出了$B$的绝对值，但$B$可以取$\pm \left( 2/l\right) ^{1/2}$。此外，$B$也不必是实数，我们可以取任何模为$\left(2/l\right)^{1/2}$的复数。所以，我们可以说$B=\left( 2/l\right) ^{1/2}\mathrm{e}^{\mathrm{i}\alpha}$，其中$\alpha$是$B$的辐角，可以取0到$2\pi$之间的任何值（第 1.7 节）。取辐角为0，则箱中粒子的定态波函数为
+	注意我们只求出了$B$的绝对值，但$B$可以取$\pm \left( 2/l\right) ^{1/2}$。此外，$B$也不必是实数，我们可以取任何模为$\left(2/l\right)^{1/2}$的复数。所以，我们可以说$B=\left( 2/l\right) ^{1/2}\ee^{\ii \alpha}$，其中$\alpha$是$B$的辐角，可以取0到$2\pi$之间的任何值（第 1.7 节）。取辐角为0，则箱中粒子的定态波函数为
 	\begin{equation}
 		\boxed{
 			\psi_{II} = \left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n\pi x}{l}\right), \quad n = 1,2,3\cdots
@@ -273,28 +273,28 @@
 	\end{equation*}
 	由于波函数已归一化，我们有
 	\begin{equation}
-		\int_{-\infty}^{\infty}\psi_i^{\ast} \psi_j \mathrm{d}x = 1, \quad \text{若}i=j
+		\intinf\psi_i^{\ast} \psi_j \dd x = 1, \quad \text{若}i=j
 		\label{eq:2.24}
 	\end{equation}
 	现在我们想知道，当我们使用对应于不同能级的波函数时，这个积分的值是多少：
 	\begin{equation*}
-		\int_{-\infty}^{\infty}\psi_i^{\ast} \psi_j \mathrm{d}x = \int_{0}^{l}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n_i\pi x}{l}\right)\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n_j\pi x}{l}\right)\mathrm{d}x, \quad n_i \neq n_j
+		\intinf\psi_i^{\ast} \psi_j \dd x = \int_{0}^{l}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n_i\pi x}{l}\right)\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{n_j\pi x}{l}\right)\dd x, \quad n_i \neq n_j
 	\end{equation*}
 	使用附录中的公式(A.5)，我们有
 	\begin{equation}
-		\int_{-\infty}^{\infty}\psi_i^{\ast} \psi_j \mathrm{d}x = \frac{2}{l}\left[
+		\intinf\psi_i^{\ast} \psi_j \dd x = \frac{2}{l}\left[
 			\frac{\sin \left[\left(n_i-n_j\right)\pi\right]}{2\left(n_i-n_j\right)\pi /l}- \frac{\sin \left[\left(n_i+n_j\right)\pi\right]}{2\left(n_i+n_j\right)\pi /l}
 		\right] = 0
 		\label{eq:2.25}
 	\end{equation}
 	由于当$m$是整数时有$\sin m \pi = 0$，则
 	\begin{equation}
-		\int_{-\infty}^{\infty}\psi_i^{\ast} \psi_j \mathrm{d}x = 0, \quad i \neq j
+		\intinf\psi_i^{\ast} \psi_j \dd x = 0, \quad i \neq j
 		\label{eq:2.26 definition of orthogonal wave functions}
 	\end{equation}
 	当(\ref{eq:2.26 definition of orthogonal wave functions})成立时，我们说对$i \neq j$的波函数$\psi_i$和$\psi_j$是互相\textbf{正交}的。将(\ref{eq:2.24})与(\ref{eq:2.26 definition of orthogonal wave functions})相结合，我们有
 	\begin{equation}
-		\int_{-\infty}^{\infty}\psi_i^{\ast} \psi_j \mathrm{d}x = \delta_{ij}
+		\intinf\psi_i^{\ast} \psi_j \dd x = \delta_{ij}
 		\label{eq:2.27 orthogonal with kronecker delta}
 	\end{equation}
 	其中$\delta_{ij}$是\textbf{Kronecker符号}（由数学家的名字命名）。当$ $i 和 $j$ 相等时，它等于 1；当 $i$ 和 $j$ 不相等时，它等于 0：
@@ -321,25 +321,25 @@
 \label{sec:2.3 The Free Particle in One Dimension}
 	我们所说的自由粒子是指不受任何力作用的粒子。对于自由粒子，对（\ref{eq:1.12 Potential energy in classical mechanics}）的积分表明，无论 $x$ 的值是多少，势能都保持不变。由于基态能量的选择是任意的，我们可以设定 $V(x) = 0$。则薛定谔方程 (\ref{eq:1.19 time-independent Schrödinger Equation}) 变为
 	\begin{equation}
-		\frac{\mathrm{d}^2\psi}{\mathrm{d}x^2}+\frac{2m}{\hbar}E\psi = 0
+		\frac{\dd ^2\psi}{\dd x^2}+\frac{2m}{\hbar}E\psi = 0
 		\label{eq:2.29 schrödinger equation for free particle}
 	\end{equation}
 	式 (\ref{eq:2.29 schrödinger equation for free particle}) 与式 (\ref{eq:2.10 schrödinger equation for particle between 0 and l}) 相同（定解条件除外）。因此， (\ref{eq:2.29 schrödinger equation for free particle}) 的通解为 (\ref{eq:2.13 general solution for particle between zero and l}) ：
 	\begin{equation}
-		\psi = c_1\mathrm{e}^{\mathrm{i} \left(2mE\right)^{1/2} x /\hbar}+c_2\mathrm{e}^{-\mathrm{i} \left(2mE\right)^{1/2} x /\hbar}
+		\psi = c_1\ee^{\ii \left(2mE\right)^{1/2} x /\hbar}+c_2\ee^{-\ii \left(2mE\right)^{1/2} x /\hbar}
 		\label{eq:2.30}
 	\end{equation}
 
-	我们可以使用什么边界条件呢？似乎可以合理地假设（因为 $\psi^{\ast}\psi\mathrm{d}x$ 代表一种概率），当 $x$ 趋于 $\pm \infty$ 时，$\psi$ 将保持有限值。那么如果能量 $E$ 小于零，那么就违反了这个边界条件，因为对于 $E<0$，我们有
+	我们可以使用什么边界条件呢？似乎可以合理地假设（因为 $\psi^{\ast}\psi\dd x$ 代表一种概率），当 $x$ 趋于 $\pm \infty$ 时，$\psi$ 将保持有限值。那么如果能量 $E$ 小于零，那么就违反了这个边界条件，因为对于 $E<0$，我们有
 	\begin{equation*}
-		\mathrm{i} \left(2mE\right)^{1/2} = \mathrm{i}\left(-2m \left|E\right|\right)^{1/2} = \mathrm{i} \cdot \mathrm{i} \cdot \left(2m \left|E\right|\right)^{1/2} = -\left(2m \left|E\right|\right)^{1/2}
+		\ii \left(2mE\right)^{1/2} = \ii \left(-2m \left|E\right|\right)^{1/2} = \ii \cdot \ii \cdot \left(2m \left|E\right|\right)^{1/2} = -\left(2m \left|E\right|\right)^{1/2}
 	\end{equation*}
 	因此，当 $x$ 接近负无穷大时，（\ref{eq:2.30}）中的第一项将变为无穷大。同样，如果 $E$ 为负值，当 $x$ 接近正无穷大时，(\ref{eq:2.30}) 中的第二项也将变为无穷大。因此，对于一维自由粒子，定解条件要求
 	\begin{equation}
 		E \ge 0
 		\label{neq:2.31}
 	\end{equation}
-	波函数是振荡的，是一个正弦项和一个余弦项的线性组合[公式 (\ref{eq:2.15 complete wave function of psi ii}) ]。对于自由粒子，能量没有量子化，所有非负能量都是允许的。在这种情况下，由于我们规定$V=0$，能量 $E$ 全为动能。如果我们想通过归一化的方式求出常数$c_1$和$c_2$，会发现积分$\int_{- \infty}^{\infty} \psi^{\ast}\left(x\right)\psi\left(x\right) \mathrm{d}x$的值为无穷大。换句话说，自由粒子的波函数在通常意义上是不可归一化的。这在物理上是意料之中的，因为当 $x$ 变为 $\pm \infty$  时，找到自由粒子的概率没有理由趋近于零。
+	波函数是振荡的，是一个正弦项和一个余弦项的线性组合[公式 (\ref{eq:2.15 complete wave function of psi ii}) ]。对于自由粒子，能量没有量子化，所有非负能量都是允许的。在这种情况下，由于我们规定$V=0$，能量 $E$ 全为动能。如果我们想通过归一化的方式求出常数$c_1$和$c_2$，会发现积分$\int_{- \infty}^{\infty} \psi^{\ast}\left(x\right)\psi\left(x\right) \dd x$的值为无穷大。换句话说，自由粒子的波函数在通常意义上是不可归一化的。这在物理上是意料之中的，因为当 $x$ 变为 $\pm \infty$  时，找到自由粒子的概率没有理由趋近于零。
 
 	自由粒子问题是一种不真实的情况，因为我们实际上不可能有一种粒子与宇宙中的任何其他粒子没有相互作用。
 	
@@ -353,7 +353,7 @@
 		\label{fig:2.5}
 	\end{figure}
 
-	我们首先考虑$E < V_0$的情况。区域I和区域III的薛定谔方程为$\mathrm{d}^2\psi/\mathrm{d}x^2+\left(2m/\hbar^2\right)\left(E-V_0\right)\psi$\\$=0$。这是一个常系数齐次线性微分方程，其特征方程(\ref{eq:2.7 auxiliary equation})为$s^2+\left(2m/\hbar^2\right)\left(E-V_0\right)=0$，特征根为$s = \pm \left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}$。因此，
+	我们首先考虑$E < V_0$的情况。区域I和区域III的薛定谔方程为$\dd ^2\psi/\dd x^2+\left(2m/\hbar^2\right)\left(E-V_0\right)\psi$\\$=0$。这是一个常系数齐次线性微分方程，其特征方程(\ref{eq:2.7 auxiliary equation})为$s^2+\left(2m/\hbar^2\right)\left(E-V_0\right)=0$，特征根为$s = \pm \left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}$。因此，
 	\begin{equation*}
 		\begin{aligned}
 			\psi_I & = C \exp \left[\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] + D \exp \left[-\left(2m/\hbar^2\right)^{1/2}\left(V_0-E\right)^{1/2}x\right] \\
@@ -374,8 +374,8 @@
 	\end{equation}
 
 	为了完整解决这个问题，我们需要用到定解条件。与无限深势阱中粒子的情况类似，我们需要波函数在$x=0$和$x=l$处连续，则$\psi_I\left(0\right) = \psi_{II}\left(0\right)$，$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$
-	波函数有四个任意常数，因此需要的定解条件不止这两个。除了需要$\psi$连续以外，我们还需要其一阶导数$\mathrm{d}\psi/\mathrm{d}x$处处连续。为了证明这一要求的合理性，我们假设如果$\mathrm{d}\psi/\mathrm{d}x$在某点处不连续，则其导数（$\psi$的二阶导数的瞬时变化率）在该点处会趋于无穷。然而，对于矩形势阱中的粒子，其薛定谔方程$\mathrm{d}^2\psi/\mathrm{d}x^2=\left(2m/\hbar^2\right)\left(V-E\right)\psi$
-	的右侧不包含任何趋于无穷的因子。所以$\mathrm{d}^2\psi/\mathrm{d}x^2$不可能趋于无穷[更严谨的论证，见 D. Branson, Am. J. Phys.，47，1000（1979 ）]。因此，我们在$x=0$时有$\mathrm{d}\psi_I/\mathrm{d}x=\mathrm{d}\psi_{II}/\mathrm{d}x$，在$x=l$时有$\mathrm{d}\psi_{II}/\mathrm{d}x=\mathrm{d}\psi_{III}/\mathrm{d}x$。
+	波函数有四个任意常数，因此需要的定解条件不止这两个。除了需要$\psi$连续以外，我们还需要其一阶导数$\dd \psi/\dd x$处处连续。为了证明这一要求的合理性，我们假设如果$\dd \psi/\dd x$在某点处不连续，则其导数（$\psi$的二阶导数的瞬时变化率）在该点处会趋于无穷。然而，对于矩形势阱中的粒子，其薛定谔方程$\dd ^2\psi/\dd x^2=\left(2m/\hbar^2\right)\left(V-E\right)\psi$
+	的右侧不包含任何趋于无穷的因子。所以$\dd ^2\psi/\dd x^2$不可能趋于无穷[更严谨的论证，见 D. Branson, Am. J. Phys.，47，1000（1979 ）]。因此，我们在$x=0$时有$\dd \psi_I/\dd x=\dd \psi_{II}/\dd x$，在$x=l$时有$\dd \psi_{II}/\dd x=\dd \psi_{III}/\dd x$。
 
 	由$\psi_I\left(0\right) = \psi_{II}\left(0\right)$，我们有$C=A$。由$\psi_I^{\prime}\left(0\right) = \psi_{II}^{\prime}\left(0\right)$，我们有$B=\left(V_0-E\right)^{1/2}A/E^{1/2}$。由$\psi_{II}\left(l\right) = \psi_{III}\left(l\right)$，我们得到了一个复杂的等式，可以根据 $A$ 求出 $G$。常数$A$由归一化计算求出。
 

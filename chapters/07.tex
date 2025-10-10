@@ -7,26 +7,26 @@
 
     在开始之前，我们先介绍一些符号。夹在两个函数之间的算符在全空间上的定积分经常出现，并使用各种缩写：
     \begin{equation}
-        \int f^{\ast}_m\hat{A}f_n\mathrm{d}\tau \equiv \left\langle f_m \middle| \hat{A} \middle| f_n \right\rangle \equiv \left\langle m \middle| \hat{A} \middle| n \right\rangle
+        \int f^{\ast}_m\hat{A}f_n\dd \tau \equiv \left\langle f_m \middle| \hat{A} \middle| f_n \right\rangle \equiv \left\langle m \middle| \hat{A} \middle| n \right\rangle
         \label{eq:7.1}
     \end{equation}
     其中$f_m$和$f_n$是两个函数。如式(\ref{eq:7.1})所示，若两个函数的含义是明确的，我们就可以只用下标来区分。狄拉克引入的上述符号称为\textbf{括号符号}（bracket notation）（此处为直译，多用狄拉克符号，下同）。另一种符号是
     \begin{equation}
-        \int f^{\ast}_m\hat{A}f_n\mathrm{d}\tau \equiv A_{mn}
+        \int f^{\ast}_m\hat{A}f_n\dd \tau \equiv A_{mn}
         \label{eq:7.2}
     \end{equation}
     符号$A_{mn}$和$\left\langle m \middle| \hat{A} \middle| n \right\rangle$都表示我们使用字母在前的复函数的复共轭。定积分$\left\langle m \middle| \hat{A} \middle| n \right\rangle$称为算符$\hat{A}$的一个\textbf{矩阵元}（matrix element）。矩阵是数字的矩形数组，遵守一定的组合规则（见第 \ref{sec:7.10 Matrices} 节）。
 
     我们将对两个函数全空间的定积分写作
     \begin{equation}
-        \int f^{\ast}_m f_n \mathrm{d}\tau \equiv \left\langle f_m \middle| f_n \right\rangle \equiv \left\langle m \middle| n \right\rangle
+        \int f^{\ast}_m f_n \dd \tau \equiv \left\langle f_m \middle| f_n \right\rangle \equiv \left\langle m \middle| n \right\rangle
         \label{eq:7.3}
     \end{equation}
     注意：
     \begin{equation*}
         \left\langle f \middle| \hat{B} \middle| g \right\rangle = \left\langle f \middle| \hat{B} g \right\rangle
     \end{equation*}
-    其中$f$和$g$是函数。由于$\left(\int f^{\ast}_mf_n\mathrm{d}\tau\right)^{\ast} = \int f^{\ast}_nf_m\mathrm{d}\tau$，我们可以得到
+    其中$f$和$g$是函数。由于$\left(\int f^{\ast}_mf_n\dd \tau\right)^{\ast} = \int f^{\ast}_nf_m\dd \tau$，我们可以得到
     \begin{equation}
         \boxed{
             \left\langle m \middle| n \right\rangle^{\ast} = \left\langle n \middle| m \right\rangle
@@ -50,57 +50,57 @@
 
     设$\hat{A}$是对应某个物理量$A$的线性算符。则$A$的平均期望为[式(\ref{eq:3.88})]
     \begin{equation*}
-        \left\langle A \right\rangle = \int \Psi^{\ast} \hat{A} \Psi \mathrm{d}\tau
+        \left\langle A \right\rangle = \int \Psi^{\ast} \hat{A} \Psi \dd \tau
     \end{equation*}
     其中$\Psi$是系统的态函数。由于物理量的平均值一定是一个实数，我们要求
     \begin{equation*}
         \left\langle A \right\rangle = \left\langle A \right\rangle^{\ast}
     \end{equation*}
     \begin{equation*}
-        \int \Psi^{\ast} \hat{A} \Psi \mathrm{d}\tau = \left[\int \Psi^{\ast}\hat{A}\Psi\mathrm{d}\tau\right] = \int \left(\Psi^{\ast}\right)^{\ast} \left(\hat{A}\Psi\right)^{\ast}\mathrm{d}\tau
+        \int \Psi^{\ast} \hat{A} \Psi \dd \tau = \left[\int \Psi^{\ast}\hat{A}\Psi\dd \tau\right] = \int \left(\Psi^{\ast}\right)^{\ast} \left(\hat{A}\Psi\right)^{\ast}\dd \tau
     \end{equation*}
     \begin{equation}
-        \int \Psi^{\ast} \hat{A} \Psi \mathrm{d}\tau = \int \Psi  \left(\hat{A}\Psi\right)^{\ast} \mathrm{d}\tau
+        \int \Psi^{\ast} \hat{A} \Psi \dd \tau = \int \Psi  \left(\hat{A}\Psi\right)^{\ast} \dd \tau
         \label{eq:7.6}
     \end{equation}
     式(\ref{eq:7.6})必须对每个代表系统可能状态的波函数$\Psi$都成立，也就是说，所有品优函数$\Psi$都必须满足式(\ref{eq:7.6})。对所有品优函数都满足式(\ref{eq:7.6})的算符称为\textbf{厄米算符}（Hermitian operator）（由数学家厄米的名字命名——Charles Hermite）。
 
     许多教科书将厄米算符定义为对所有品优函数$f$和$g$都满足下式的线性算符：
     \begin{equation}
-        \int f^{\ast} \hat{A} g \:\mathrm{d}\tau = \int g \:\left(\hat{A} f\right)^{\ast} \mathrm{d}\tau
+        \int f^{\ast} \hat{A} g \:\dd \tau = \int g \:\left(\hat{A} f\right)^{\ast} \dd \tau
         \label{eq:7.7}
     \end{equation}
     注意：在(\ref{eq:7.7})的左侧，算符$\hat{A}$作用在函数$g$上；而在右侧，算符$\hat{A}$作用在函数$f$上。对于特例$f=g$，式(\ref{eq:7.7})退化为式(\ref{eq:7.6})。等式 (\ref{eq:7.7}) 显然是比 (\ref{eq:7.6}) 更强的要求，但我们将证明 (\ref{eq:7.7}) 是 (\ref{eq:7.6}) 的结果。因此，两种厄米算符的定义是等价的。
 
     我们首先在 (\ref{eq:7.6}) 中令 $ \Psi = f+cg$ ，其中 $c$ 是一个任意常数。则
     \begin{equation*}
-        \int \left(f+cg\right)^{\ast}\hat{A}\left(f+cg\right)\mathrm{d}\tau = \int \left(f+cg\right)\left[\hat{A}\left(f+cg\right)\right]^{\ast}\mathrm{d}\tau
+        \int \left(f+cg\right)^{\ast}\hat{A}\left(f+cg\right)\dd \tau = \int \left(f+cg\right)\left[\hat{A}\left(f+cg\right)\right]^{\ast}\dd \tau
     \end{equation*}
     \begin{equation*}
         \begin{aligned}
-            \int \left(f^{\ast}+c^{\ast}g^{\ast}\right)\hat{A}f\mathrm{d}\tau + \int \left(f^{\ast} +c^{\ast}g^{\ast} \right)&\hat{A}cg \:\mathrm{d}\tau \\
-            & = \int \left(f+c g\right)\left(\hat{A}f\right)^{\ast} \mathrm{d}\tau + \int \left(f+c g\right)\left(\hat{A}cg\right)^{\ast} \mathrm{d}\tau
+            \int \left(f^{\ast}+c^{\ast}g^{\ast}\right)\hat{A}f\dd \tau + \int \left(f^{\ast} +c^{\ast}g^{\ast} \right)&\hat{A}cg \:\dd \tau \\
+            & = \int \left(f+c g\right)\left(\hat{A}f\right)^{\ast} \dd \tau + \int \left(f+c g\right)\left(\hat{A}cg\right)^{\ast} \dd \tau
         \end{aligned}
     \end{equation*}
     \begin{equation*}
         \begin{aligned}
-            \int f^{\ast} \hat{A} f \:\mathrm{d}\tau + & c^{\ast} \int g^{\ast} \hat{A} f \:\mathrm{d}\tau + c \int f^{\ast} \hat{A} g \:\mathrm{d}\tau + c^{\ast}c \int g^{\ast} \hat{A} g \:\mathrm{d}\tau  \\
-            & =\int f \left(\hat{A}f\right)^{\ast} \mathrm{d}\tau + c \int g \left(\hat{A}f\right)^{\ast} \mathrm{d}\tau + c^{\ast} \int f \left(\hat{A}g\right)^{\ast} \mathrm{d}\tau + cc^{\ast}\int g \left(\hat{A}g\right)^{\ast} \mathrm{d}\tau
+            \int f^{\ast} \hat{A} f \:\dd \tau + & c^{\ast} \int g^{\ast} \hat{A} f \:\dd \tau + c \int f^{\ast} \hat{A} g \:\dd \tau + c^{\ast}c \int g^{\ast} \hat{A} g \:\dd \tau  \\
+            & =\int f \left(\hat{A}f\right)^{\ast} \dd \tau + c \int g \left(\hat{A}f\right)^{\ast} \dd \tau + c^{\ast} \int f \left(\hat{A}g\right)^{\ast} \dd \tau + cc^{\ast}\int g \left(\hat{A}g\right)^{\ast} \dd \tau
         \end{aligned}
     \end{equation*}
     根据 (\ref{eq:7.6})，最后一个等式两边的首项相等；同样，两边的尾项也相等。因此，
     \begin{equation}
-        c^{\ast} \int g^{\ast} \hat{A} f \:\mathrm{d}\tau + c \int f^{\ast} \hat{A} g \:\mathrm{d}\tau = c \int g \left(\hat{A}f\right)^{\ast} \mathrm{d}\tau + c^{\ast} \int f \left(\hat{A}g\right)^{\ast} \mathrm{d}\tau
+        c^{\ast} \int g^{\ast} \hat{A} f \:\dd \tau + c \int f^{\ast} \hat{A} g \:\dd \tau = c \int g \left(\hat{A}f\right)^{\ast} \dd \tau + c^{\ast} \int f \left(\hat{A}g\right)^{\ast} \dd \tau
         \label{eq:7.8}
     \end{equation}
     在(\ref{eq:7.8})中令$c=1$，我们有
     \begin{equation}
-        \int g^{\ast} \hat{A} f \:\mathrm{d}\tau + \int f^{\ast} \hat{A} g \:\mathrm{d}\tau = \int g \left(\hat{A}f\right)^{\ast} \mathrm{d}\tau + \int f \left(\hat{A}g\right)^{\ast} \mathrm{d}\tau
+        \int g^{\ast} \hat{A} f \:\dd \tau + \int f^{\ast} \hat{A} g \:\dd \tau = \int g \left(\hat{A}f\right)^{\ast} \dd \tau + \int f \left(\hat{A}g\right)^{\ast} \dd \tau
         \label{eq:7.9}
     \end{equation}
-    在(\ref{eq:7.8})中令$c = \mathrm{i}$，两边同除以$\mathrm{i}$，我们有
+    在(\ref{eq:7.8})中令$c = \ii $，两边同除以$\ii $，我们有
     \begin{equation}
-        - \int g^{\ast} \hat{A} f \:\mathrm{d}\tau + \int f^{\ast} \hat{A} g \:\mathrm{d}\tau = \int g \left(\hat{A}f\right)^{\ast} \mathrm{d}\tau - \int f \left(\hat{A}g\right)^{\ast} \mathrm{d}\tau
+        - \int g^{\ast} \hat{A} f \:\dd \tau + \int f^{\ast} \hat{A} g \:\dd \tau = \int g \left(\hat{A}f\right)^{\ast} \dd \tau - \int f \left(\hat{A}g\right)^{\ast} \dd \tau
         \label{eq:7.10}
     \end{equation}
     将(\ref{eq:7.9})和(\ref{eq:7.10})相加，我们得到了(\ref{eq:7.7})。结论得到了证明。
@@ -108,7 +108,7 @@
     因此，\textit{厄米算符$\hat{A}$定义为满足如下条件的线性算符：}
     \begin{equation}
         \boxed{
-            \int f^{\ast}_m \hat{A} f_n \:\mathrm{d}\tau = \int f_n \left(\hat{A} f_m\right)^{\ast} \mathrm{d}\tau
+            \int f^{\ast}_m \hat{A} f_n \:\dd \tau = \int f_n \left(\hat{A} f_m\right)^{\ast} \dd \tau
         }
         \label{eq:7.11}
     \end{equation}
@@ -139,36 +139,36 @@
 
     首先，来考虑单粒子一维势能算符。式(\ref{eq:7.11})的右侧为
     \begin{equation}
-        \int_{-\infty}^{\infty} f_n\left(x\right)\left[V\left(x\right)f_m\left(x\right)\right]^{\ast} \mathrm{d}x
+        \intinf  f_n\left(x\right)\left[V\left(x\right)f_m\left(x\right)\right]^{\ast} \dd x
         \label{eq:7.15}
     \end{equation}
     由于势能是实函数，我们有$V^{\ast} = V$。此外，式(\ref{eq:7.15})中因子的顺序无关紧要。因此，
     \begin{equation*}
-        \int_{-\infty}^{\infty} f_n\left(Vf_m\right)^{\ast} \mathrm{d}x = \int_{-\infty}^{\infty} f_n V^{\ast} f^{\ast}_m \mathrm{d}x = \int_{-\infty}^{\infty} f_m^{\ast} V f_n \mathrm{d}x
+        \intinf  f_n\left(Vf_m\right)^{\ast} \dd x = \intinf  f_n V^{\ast} f^{\ast}_m \dd x = \intinf  f_m^{\ast} V f_n \dd x
     \end{equation*}
     这就证明了$V$是厄米的。
 
-    再考虑动量在$x$方向分量的算符$\hat{p}_x = -\mathrm{i}\hbar \: \mathrm{d}/\mathrm{d}x$[式(\ref{eq:3.23})]。对于这个算符，式(\ref{eq:7.11})的左侧为
+    再考虑动量在$x$方向分量的算符$\hat{p}_x = -\ii \hbar \: \dd /\dd x$[式(\ref{eq:3.23})]。对于这个算符，式(\ref{eq:7.11})的左侧为
     \begin{equation*}
-        -\mathrm{i}\hbar \int_{-\infty}^{\infty} f_m^{\ast}\left(x\right)\frac{\mathrm{d}f_n\left(x\right)}{\mathrm{d}x} \mathrm{d}x
+        -\ii \hbar \intinf  f_m^{\ast}\left(x\right)\frac{\dd f_n\left(x\right)}{\dd x} \dd x
     \end{equation*}
     现在我们使用分部积分法：
     \begin{equation}
-        \int_{a}^{b}u\left(x\right)\frac{\mathrm{d}v\left(x\right)}{\mathrm{d}x}\mathrm{d}x = \left. u\left(x\right)v\left(x\right)\right|_{a}^{b} - \int_{a}^{b}v\left(x\right)\frac{\mathrm{d}u\left(x\right)}{\mathrm{d}x}\mathrm{d}x
+        \int_{a}^{b}u\left(x\right)\frac{\dd v\left(x\right)}{\dd x}\dd x = \left. u\left(x\right)v\left(x\right)\right|_{a}^{b} - \int_{a}^{b}v\left(x\right)\frac{\dd u\left(x\right)}{\dd x}\dd x
         \label{eq:7.16}
     \end{equation}
     令
     \begin{equation*}
-        u\left(x\right) \equiv -\mathrm{i}\hbar f_m^{\ast}\left(x\right), \quad v\left(x\right) \equiv f_n\left(x\right)
+        u\left(x\right) \equiv -\ii \hbar f_m^{\ast}\left(x\right), \quad v\left(x\right) \equiv f_n\left(x\right)
     \end{equation*}
     那么
     \begin{equation}
-        -\mathrm{i}\hbar f_m^{\ast}\frac{\mathrm{d}f_n}{\mathrm{d}x}\mathrm{d}x = \left. -\mathrm{i}\hbar f_m^{\ast}f_n\right|_{-\infty}^{\infty} + \mathrm{i}\hbar \int_{-\infty}^{\infty} f_n\left(x\right)\frac{\mathrm{d}f_m^{\ast}\left(x\right)}{\mathrm{d}x}\mathrm{d}x
+        -\ii \hbar f_m^{\ast}\frac{\dd f_n}{\dd x}\dd x = \left. -\ii \hbar f_m^{\ast}f_n\right|_{-\infty}^{\infty} + \ii \hbar \intinf  f_n\left(x\right)\frac{\dd f_m^{\ast}\left(x\right)}{\dd x}\dd x
         \label{eq:7.17}
     \end{equation}
     由于$f_m$和$f_n$是品优函数，因此在无穷远处它们的值为（如果它们在无穷远处不为零，则不符合平方可积的要求）。于是，(\ref{eq:7.17})变为
     \begin{equation*}
-        \int_{-\infty}^{\infty} f_m^{\ast}\left(-\mathrm{i}\hbar \frac{\mathrm{d}f_n}{\mathrm{d}x}\right)\mathrm{d}x = \int_{-\infty}^{\infty} f_n\left(-\mathrm{i}\hbar \frac{\mathrm{d}f_m}{\mathrm{d}x}\right)^{\ast}\mathrm{d}x
+        \intinf  f_m^{\ast}\left(-\ii \hbar \frac{\dd f_n}{\dd x}\right)\dd x = \intinf  f_n\left(-\ii \hbar \frac{\dd f_m}{\dd x}\right)^{\ast}\dd x
     \end{equation*}
     与(\ref{eq:7.11})一致，证明了$\hat{p}_x$是厄米的。证明动能算符是厄米的留给读者自行考虑。可以证明，两个厄米算符的和也是厄米的。因此，哈密顿算符$\hat{H} = \hat{T} + \hat{V}$也是厄米的。
 
@@ -180,21 +180,21 @@
 
     我们现在知道$\hat{A}$是厄米算符。将这个条件转换为方程，对于所有品优函数$f_m$和$f_n$，我们有[式(\ref{eq:7.11})]
     \begin{equation}
-        \int f^{\ast}_m \hat{A} f_n \:\mathrm{d}\tau = \int f_n \left(\hat{A} f_m\right)^{\ast} \mathrm{d}\tau
+        \int f^{\ast}_m \hat{A} f_n \:\dd \tau = \int f_n \left(\hat{A} f_m\right)^{\ast} \dd \tau
         \label{eq:7.18}
     \end{equation}
     我们希望证明$\hat{A}$的每个本征值都是实数。将其转换为方程，我们希望证明$a_i = a_i^{\ast}$，其中本征值$a_i$满足$\hat{A}g_i = a_i g_i$，其中$g_i$是$\hat{A}$的本征函数。
 
     为了将本征值$a_i$引入式(\ref{eq:7.18})，我们将(\ref{eq:7.18})写成一个特例，其中$f_m = g_i$和$f_n = g_i$：
     \begin{equation*}
-        \int g_i^{\ast} \hat{A} g_i \:\mathrm{d}\tau = \int g_i \left(\hat{A} g_i\right)^{\ast} \mathrm{d}\tau
+        \int g_i^{\ast} \hat{A} g_i \:\dd \tau = \int g_i \left(\hat{A} g_i\right)^{\ast} \dd \tau
     \end{equation*}
     使用$\hat{A} g_i = a_i g_i$，我们有
     \begin{equation*}
-        a_i \int g_i^{\ast} g_i \:\mathrm{d}\tau = \int g_i \left(a_i g_i\right)^{\ast} \mathrm{d}\tau = a_i^{\ast} \int g_i g_i^{\ast} \:\mathrm{d}\tau
+        a_i \int g_i^{\ast} g_i \:\dd \tau = \int g_i \left(a_i g_i\right)^{\ast} \dd \tau = a_i^{\ast} \int g_i g_i^{\ast} \:\dd \tau
     \end{equation*}
     \begin{equation}
-        \left(a_i - a_i^{\ast}\right) \int \left|g_i\right|^2 \:\mathrm{d}\tau = 0
+        \left(a_i - a_i^{\ast}\right) \int \left|g_i\right|^2 \:\dd \tau = 0
         \label{eq:7.19}
     \end{equation}
     由于对$\left|g_i\right|^2$的积分永远不会为负，因此 (\ref{eq:7.19}) 中积分为零的唯一可能情况是 $g_i$ 在所有坐标值下都为零。然而，基于物理原因，我们总是拒绝将 $g_i=0$ 作为本征函数。因此，式(\ref{eq:7.19})中的积分不能为零。那么只有$\left(a_i - a_i^{\ast}\right) = 0$，即$a_i = a_i^{\ast}$。得证。
@@ -207,10 +207,10 @@
 
     为了帮助读者熟悉狄拉克符号，我们将使用狄拉克符号重新证明定理1。在式(\ref{eq:7.13})中，令$m=i$以及$n=i$，我们得到了$\left\langle i \middle| \hat{A} \middle| i \right\rangle = \left\langle i \middle| \hat{A} \middle| i \right\rangle^{\ast}$。选择下标为$i$的函数作为$\hat{A}$的本征函数，使用本征方程$\hat{A} g_i = a_i g_i$，我们有$\left\langle i \middle| a_i \middle| i \right\rangle = \left\langle i \middle| a_i \middle| i \right\rangle^{\ast}$。因此，$a_i \left\langle i \middle| i \right\rangle = a_i^{\ast} \left\langle i \middle| i \right\rangle^{\ast} = a_i^{\ast}\left\langle i \middle| i \right\rangle$，则$\left(a_i - a_i^{\ast}\right)\left\langle i \middle| i \right\rangle = 0$。所以$a_i = a_i^{\ast}$，其中我们用到了(\ref{eq:7.4})中$m=n$。
 
-    我们已经证明：两个不同的箱中粒子能量本征函数$\psi_i$和$\psi_j$是正交的，也就是说对$i \neq j$，有$\int_{-\infty}^{\infty}\psi_i^{\ast}\psi_j \mathrm{d}x = 0$[式(\ref{eq:2.26 definition of orthogonal wave functions})]。若两个坐标相同的函数$f_1$和$f_2$满足下式。则它们是\textbf{正交的}（orthogonal）：
+    我们已经证明：两个不同的箱中粒子能量本征函数$\psi_i$和$\psi_j$是正交的，也就是说对$i \neq j$，有$\intinf \psi_i^{\ast}\psi_j \dd x = 0$[式(\ref{eq:2.26 definition of orthogonal wave functions})]。若两个坐标相同的函数$f_1$和$f_2$满足下式。则它们是\textbf{正交的}（orthogonal）：
     \begin{equation}
         \boxed{
-            \int f_1^{\ast} f_2 \:\mathrm{d}\tau = 0
+            \int f_1^{\ast} f_2 \:\dd \tau = 0
         }
         \label{eq:7.20}
     \end{equation}
@@ -221,7 +221,7 @@
     \end{equation}
     其中$F$和$G$是厄米算符$\hat{B}$的两个线性无关的本征函数，我们希望证明
     \begin{equation*}
-        \int F^{\ast} G \:\mathrm{d}\tau \equiv \left\langle F \middle| G \right\rangle = 0
+        \int F^{\ast} G \:\dd \tau \equiv \left\langle F \middle| G \right\rangle = 0
     \end{equation*}
     我们从 (\ref{eq:7.12}) 开始，它表达了 $\hat{B}$ 的厄米性质：
     \begin{equation*}
@@ -257,21 +257,21 @@
     \end{equation*}
     其中常数 $c$ 的选择是为了确保正交性。我们希望
     \begin{equation*}
-        \int g_1^{\ast} g_2 \:\mathrm{d}\tau = 0
+        \int g_1^{\ast} g_2 \:\dd \tau = 0
     \end{equation*}
     \begin{equation*}
-        \int F^{\ast} \left(G + cF\right) \:\mathrm{d}\tau = \int F^{\ast} G \:\mathrm{d}\tau + c \int F^{\ast} F \:\mathrm{d}\tau = 0
+        \int F^{\ast} \left(G + cF\right) \:\dd \tau = \int F^{\ast} G \:\dd \tau + c \int F^{\ast} F \:\dd \tau = 0
     \end{equation*}
     因此，我们选择
     \begin{equation}
-        c = -\int F^{\ast} G \:\mathrm{d}\tau \Big/ \int F^{\ast} F \:\mathrm{d}\tau
+        c = -\int F^{\ast} G \:\dd \tau \Big/ \int F^{\ast} F \:\dd \tau
         \label{eq:7.23}
     \end{equation}
     我们有两个与简并本征值相对应的正交本征函数 $g_1$ 和 $g_2$。这个过程[称为\textbf{施密特正交化或格拉姆-施密特正交化}（Schmidt orthogonalization or Gram-Schmidt orthogonalization）]可以推广到$n$重简并的情况，从而得到与简并本征值相对应的$n$个线性无关的正交本征函数。
 
     因此，虽然不能保证简并本征值的本征函数是正交的，但如果我们愿意，总是可以通过施密特（或其他）正交化方法来选择它们是正交的。事实上，除非另有说明，我们将始终假定本征函数是正交的：
     \begin{equation}
-        \int g_i^{\ast} g_k \:\mathrm{d}\tau = 0, \quad i \neq k
+        \int g_i^{\ast} g_k \:\dd \tau = 0, \quad i \neq k
         \label{eq:7.24}
     \end{equation}
     其中$g_i$和$g_k$是厄米算符的独立本征函数。我们证明了：
@@ -283,21 +283,21 @@
 
     本征函数通常可以乘以一个常数来归一化，除非另有说明，我们将假定所有本征函数都归一化了：
     \begin{equation}
-        \int g_i^{\ast} g_i \:\mathrm{d}\tau = 1
+        \int g_i^{\ast} g_i \:\dd \tau = 1
         \label{eq:7.25}
     \end{equation}
     例外情况是本征值形成一个连续体，而不是一组离散的值。在这种情况下，本征函数不满足平方可积性。例子有动量本征函数、自由粒子能量本征函数和氢原子连续能量本征函数。
 
     使用Kronecker三角，定义为$\delta_{jk} \equiv 1$当$j=k$时，$\delta_{jk} \equiv 0$当$j \neq k$[式(\ref{eq:2.28 definition of kronecker delta})]，我们可以将(\ref{eq:7.24})和(\ref{eq:7.25})组合成一个方程：
     \begin{equation}
-        \int g_i^{\ast}g_k \: \mathrm{d}\tau = \left\langle i \middle| k \right\rangle = \delta_{ik}
+        \int g_i^{\ast}g_k \: \dd \tau = \left\langle i \middle| k \right\rangle = \delta_{ik}
         \label{eq:7.26}
     \end{equation}
     其中$g_i$和$g_k$是某厄米算符的本征函数。
 
     例如，考虑球谐函数。我们希望证明
     \begin{equation}
-        \int_{0}^{2\pi}\int_{0}^{\pi}\left[Y_l^m\left(\theta,\phi\right)\right]^{\ast}Y_{l'}^{m'}\left(\theta,\phi\right)\sin\theta \:\mathrm{d}\theta \:\mathrm{d}\phi = \delta_{l,l'}\delta_{m,m'}
+        \int_{0}^{2\pi}\int_{0}^{\pi}\left[Y_l^m\left(\theta,\phi\right)\right]^{\ast}Y_{l'}^{m'}\left(\theta,\phi\right)\sin\theta \:\dd \theta \:\dd \phi = \delta_{l,l'}\delta_{m,m'}
         \label{eq:7.27}
     \end{equation}
     其中 $\theta$ 因子来自球面坐标中的体积元素，(\ref{eq:5.78}) 。球谐函数是厄米算符$\hat{L}^2$的本征函数[式(\ref{eq:5.104})]。由于属于不同本征值的厄米算符的本征函数是正交的，我们得出：除非$l = l'$，否则(\ref{eq:7.27})中的积分为零。同样地，由于$Y_l^m$系列函数是$\hat{L}_z$的本征函数[式(\ref{eq:5.105})]，因此除非$m = m'$，否则(\ref{eq:7.27})中的积分为零。此外，$Y_l^m$中的乘常数[问题5.34的式(5.147)]可以选择使得球谐函数得到归一化[式(\ref{eq:6.117})]。因此，(\ref{eq:7.27})成立。
@@ -341,11 +341,11 @@
     \end{equation}
     现在我们将该方程从$0$到$l$进行积分。假设将积分和无限求和互换是成立的，我们可以得出
     \begin{equation*}
-        \int_{0}^{l} \psi_m^{\ast} f\left(x\right) \: \mathrm{d}x = \sum_{n=1}^{\infty} a_n \int_{0}^{l} \psi_m^{\ast} \psi_n \: \mathrm{d}x = \sum_{n=1}^{\infty} a_n \left(\frac{2}{l}\right) \int_{0}^{l} \sin\left(\frac{n\pi x}{l}\right) \sin\left(\frac{m\pi x}{l}\right) \: \mathrm{d}x
+        \int_{0}^{l} \psi_m^{\ast} f\left(x\right) \: \dd x = \sum_{n=1}^{\infty} a_n \int_{0}^{l} \psi_m^{\ast} \psi_n \: \dd x = \sum_{n=1}^{\infty} a_n \left(\frac{2}{l}\right) \int_{0}^{l} \sin\left(\frac{n\pi x}{l}\right) \sin\left(\frac{m\pi x}{l}\right) \: \dd x
     \end{equation*}
     我们已经证明了箱中粒子波函数的正交性[式(\ref{eq:2.27 orthogonal with kronecker delta})]。因此，最后一个方程变为
     \begin{equation}
-        \int_{0}^{l} \psi_m^{\ast} f\left(x\right) \: \mathrm{d}x = \sum_{n=1}^{\infty} a_n \delta_{mn}
+        \int_{0}^{l} \psi_m^{\ast} f\left(x\right) \: \dd x = \sum_{n=1}^{\infty} a_n \delta_{mn}
         \label{eq:7.31}
     \end{equation}
     (\ref{eq:7.31}) 中的求和方式经常出现。将其展开，我们得到
@@ -361,7 +361,7 @@
     \end{equation}
     因此，除了$n=m$的项以外，$\delta_{mn}$都为零，那么只有一项是保留的，其他项都消失，式(\ref{eq:7.31})变为
     \begin{equation}
-        a_m = \int_{0}^{l} \psi_m^{\ast} f\left(x\right) \: \mathrm{d}x
+        a_m = \int_{0}^{l} \psi_m^{\ast} f\left(x\right) \: \dd x
         \label{eq:7.33}
     \end{equation}
     这正是希望的系数表达式。
@@ -374,10 +374,10 @@
 
     在(\ref{eq:7.33})中将$m$替换为$n$并带入到(\ref{eq:7.29})中，我们得到
     \begin{equation}
-        f\left(x\right) = \sum_{n=1}^{\infty} \left[\int_{0}^{l} \psi_n^{\ast} f\left(x\right) \: \mathrm{d}x\right] \psi_n\left(x\right)
+        f\left(x\right) = \sum_{n=1}^{\infty} \left[\int_{0}^{l} \psi_n^{\ast} f\left(x\right) \: \dd x\right] \psi_n\left(x\right)
         \label{eq:7.34}
     \end{equation}
-    这是任意函数 $f\left(x\right)$ 作为箱中粒子波函数 $\psi_n$ 的线性组合的展开所需的表达式。注意：定积分$\int_{0}^{l} \psi_n^{\ast} $\\$f\left(x\right) \: \mathrm{d}x$ 是一个数，而不是一个关于$x$的函数。
+    这是任意函数 $f\left(x\right)$ 作为箱中粒子波函数 $\psi_n$ 的线性组合的展开所需的表达式。注意：定积分$\int_{0}^{l} \psi_n^{\ast} $\\$f\left(x\right) \: \dd x$ 是一个数，而不是一个关于$x$的函数。
 
     我们现在使用(\ref{eq:7.29})来代表一个特定的函数，图(\ref{fig:7.1})所示的函数由下式定义：
     \begin{equation}
@@ -390,8 +390,8 @@
     为了找到展开系数$a_n$，我们将(\ref{eq:7.35})和(\ref{eq:7.28})代入(\ref{eq:7.33})中：
     \begin{equation*}
         \begin{aligned}
-            a_n &= \int_{0}^{l} \psi_n^{\ast} f\left(x\right) \: \mathrm{d}x = \left(\frac{2}{l}\right)^{1/2} \int_{0}^{l} \sin\left(\frac{n\pi x}{l}\right) f\left(x\right) \: \mathrm{d}x \\
-            a_n &= \left(\frac{2}{l}\right)^{1/2} \int_{0}^{l/2} x\sin\left(\frac{n\pi x}{l}\right) \: \mathrm{d}x + \left(\frac{2}{l}\right)^{1/2} \int_{l/2}^{l} \left(l-x\right)\sin\left(\frac{n\pi x}{l}\right) \: \mathrm{d}x
+            a_n &= \int_{0}^{l} \psi_n^{\ast} f\left(x\right) \: \dd x = \left(\frac{2}{l}\right)^{1/2} \int_{0}^{l} \sin\left(\frac{n\pi x}{l}\right) f\left(x\right) \: \dd x \\
+            a_n &= \left(\frac{2}{l}\right)^{1/2} \int_{0}^{l/2} x\sin\left(\frac{n\pi x}{l}\right) \: \dd x + \left(\frac{2}{l}\right)^{1/2} \int_{l/2}^{l} \left(l-x\right)\sin\left(\frac{n\pi x}{l}\right) \: \dd x
         \end{aligned}
     \end{equation*}
     使用附录中的积分A.1，我们得到
@@ -449,21 +449,21 @@
 
     谐振子波函数由厄米多项式$H_v$乘以一个指数因子给出[问题4.21c的式(4.86)]。根据展开公设，任何品优函数 $f\left(x\right)$ 都可以展开为谐振子能量本征函数的线性组合：
     \begin{equation*}
-        f\left(x\right) = \sum_{n=0}^{\infty}a_n\left(2^nn!\right)^{-1/2}\left(\alpha/\pi\right)^{1/4}H_n\left(\alpha^{1/2}x\right)\mathrm{e}^{-\alpha x^2/2}
+        f\left(x\right) = \sum_{n=0}^{\infty}a_n\left(2^nn!\right)^{-1/2}\left(\alpha/\pi\right)^{1/4}H_n\left(\alpha^{1/2}x\right)\ee ^{-\alpha x^2/2}
     \end{equation*}
 
     使用氢原子束缚态波函数来展开任意函数 $f\left(r,\theta,\phi\right)$如何？答案是这些函数并\textit{不}构成一个完备集，我们无法用它们来展开 $f$。要有一个完备集，我们必须使用特定厄米算符的\textit{所有}本征函数。除了氢原子哈密顿的束缚态本征函数外，我们还有与电离态相对应的连续态本征函数。如果将连续本征函数与束缚态本征函数一起包含在内，那么我们就得到了一个完备集。（对于箱中粒子和谐振子来说，连续函数不存在。）等式 (\ref{eq:7.39}) 意味着对连续本征函数（如果有的话）进行积分。因此，若$\psi_{nlm}\left(r,\theta,\phi\right)$是氢原子束缚态函数，$\psi_{Elm}\left(r,\theta,\phi\right)$是连续本征函数，则式(\ref{eq:7.39})变为
     \begin{equation*}
-        f\left(r,\theta,\phi\right) = \sum_{n=1}^{\infty}\sum_{l=0}^{n-1}\sum_{m=-l}^{l}a_{nlm}\psi_{nlm}\left(r,\theta,\phi\right) + \sum_{l=0}^{\infty}\sum_{m=-l}^{l}\int_{0}^{\infty} a_{lm}\left(E\right) \psi_{Elm}\left(r,\theta,\phi\right) \:\mathrm{d}E
+        f\left(r,\theta,\phi\right) = \sum_{n=1}^{\infty}\sum_{l=0}^{n-1}\sum_{m=-l}^{l}a_{nlm}\psi_{nlm}\left(r,\theta,\phi\right) + \sum_{l=0}^{\infty}\sum_{m=-l}^{l}\int_{0}^{\infty} a_{lm}\left(E\right) \psi_{Elm}\left(r,\theta,\phi\right) \:\dd E
     \end{equation*}
 
     另一个例子：考虑算符$\hat{p}_x$的本征函数[式(\ref{eq:3.36})]：
     \begin{equation*}
-        g_k = \mathrm{e}^{\mathrm{i}kx/\hbar}, \quad -\infty < k < \infty
+        g_k = \ee ^{\ii kx/\hbar}, \quad -\infty < k < \infty
     \end{equation*}
     这里的本征值都是连续的，任意函数 $f$ 的本征函数展开式（\ref{eq:7.39}）变为
     \begin{equation*}
-        f\left(x\right) = \int_{-\infty}^{\infty} a\left(k\right) \mathrm{e}^{\mathrm{i}kx/\hbar} \:\mathrm{d}k
+        f\left(x\right) = \intinf  a\left(k\right) \ee ^{\ii kx/\hbar} \:\dd k
     \end{equation*}
     具有良好数学基础的读者可能会发现，这个积分几乎就是 $a\left(k\right)$ 的Fourier变换。
 
@@ -472,15 +472,15 @@
         g_k^{\ast} f = \sum_{i} a_i g_k^{\ast} g_i
     \end{equation*}
     \begin{equation*}
-        \int g_k^{\ast} f \:\mathrm{d}\tau = \sum_{i} a_i \int g_k^{\ast} g_i \:\mathrm{d}\tau = \sum_{i} a_i \delta_{ik} = a_k
+        \int g_k^{\ast} f \:\dd \tau = \sum_{i} a_i \int g_k^{\ast} g_i \:\dd \tau = \sum_{i} a_i \delta_{ik} = a_k
     \end{equation*}
     \begin{equation}
-        a_k = \int g_k^{\ast} f \:\mathrm{d}\tau
+        a_k = \int g_k^{\ast} f \:\dd \tau
         \label{eq:7.40}
     \end{equation}
-    其中我们用到了厄米算符本征函数之间的正交性：$\int g_k^{\ast} g_i \:\mathrm{d}\tau = \delta_{ik}$ [式 (\ref{eq:7.26}) ]。得出（\ref{eq:7.40}）的过程会经常用到，值得记住。将(\ref{eq:7.40})中的$a_i$带入$f = \sum_{i}a_ig_i$中，我们得到
+    其中我们用到了厄米算符本征函数之间的正交性：$\int g_k^{\ast} g_i \:\dd \tau = \delta_{ik}$ [式 (\ref{eq:7.26}) ]。得出（\ref{eq:7.40}）的过程会经常用到，值得记住。将(\ref{eq:7.40})中的$a_i$带入$f = \sum_{i}a_ig_i$中，我们得到
     \begin{equation}
-        f = \sum_{i}\left[\int g_i^{\ast}f \:\mathrm{d}\tau\right]g_i = \sum_{i}\left\langle g_i \middle| f \right\rangle g_i
+        f = \sum_{i}\left[\int g_i^{\ast}f \:\dd \tau\right]g_i = \sum_{i}\left\langle g_i \middle| f \right\rangle g_i
         \label{eq:7.41}
     \end{equation}
 
@@ -495,9 +495,9 @@
         将$F$用箱中粒子能量本征函数$\psi_n = \left(2/l\right)^{1/2}\sin\left(n\pi x/l\right), \: 0 \leq x \leq l$展开。
         \\
         
-        注意到$F\left(0\right) = 0$以及$F\left(l\right) = 0$，因此满足与$\psi_n$相同的边界条件。我们可以使用$\psi_n$来展开$F$。展开式为$F = \sum_{n=1}^{\infty} a_n \psi_n$，其中系数$a_n = \int\psi_n^{\ast} F \:\mathrm{d}x$[式(\ref{eq:7.40})和(\ref{eq:7.39})]。因此，
+        注意到$F\left(0\right) = 0$以及$F\left(l\right) = 0$，因此满足与$\psi_n$相同的边界条件。我们可以使用$\psi_n$来展开$F$。展开式为$F = \sum_{n=1}^{\infty} a_n \psi_n$，其中系数$a_n = \int\psi_n^{\ast} F \:\dd x$[式(\ref{eq:7.40})和(\ref{eq:7.39})]。因此，
         \begin{equation*}
-            a_n = \int \psi_{n}^{\ast}F \:\mathrm{d}\tau = \left(\frac{2}{l}\right)^{1/2} \int_{0}^{l} \left(\sin\frac{n\pi x}{l}\right) x\left(l-x\right) \:\mathrm{d}x = \frac{2^{3/2}l^{5/2}}{n^3\pi^3}\left[1-\left(-1\right)^n\right]
+            a_n = \int \psi_{n}^{\ast}F \:\dd \tau = \left(\frac{2}{l}\right)^{1/2} \int_{0}^{l} \left(\sin\frac{n\pi x}{l}\right) x\left(l-x\right) \:\dd x = \frac{2^{3/2}l^{5/2}}{n^3\pi^3}\left[1-\left(-1\right)^n\right]
         \end{equation*}
         其中积分计算的具体细节留作习题（问题7.18）。展开式$F = \sum_{n=1}^{\infty} a_n \psi_n$为
         \begin{equation*}
@@ -523,7 +523,7 @@
         }
     \end{center}
 
-    因此，在 $F$ 的展开式中，我们只包括那些与 $F$ 具有相同本征值的本征函数。根据 $a_k = \int g_k^{\ast} f \:\mathrm{d}\tau$[公式 (\ref{eq:7.40}) ] 即可得出定理 3 的证明；若$F$和$g_i$对应于同一厄米算符$\hat{A}$的不同本征值，那它们是正交的[式(\ref{eq:7.22})]，则$a_k$消失。
+    因此，在 $F$ 的展开式中，我们只包括那些与 $F$ 具有相同本征值的本征函数。根据 $a_k = \int g_k^{\ast} f \:\dd \tau$[公式 (\ref{eq:7.40}) ] 即可得出定理 3 的证明；若$F$和$g_i$对应于同一厄米算符$\hat{A}$的不同本征值，那它们是正交的[式(\ref{eq:7.22})]，则$a_k$消失。
 
     我们偶尔会使用一种符号（称为 \textbf{ket} 符号），在这种符号中，函数 $f$ 用以下符号表示$\left| f \right\rangle$。这个符号似乎没有任何意义，但在量子力学的高级公式中，它具有特殊的意义。在ket符号中，式(\ref{eq:7.41})可以写成
     \begin{equation}
@@ -590,7 +590,7 @@
         \hat{A}\hat{B} = \hat{B}\hat{A}\:(?)
         \label{eq:7.46}
     \end{equation}
-    错误出现在从(\ref{eq:7.45})导出(\ref{eq:7.46})的过程中。$\hat{A}\hat{B}$和$\hat{B}\hat{A}$对单个函数$g$的作用结果是无法得出$\hat{A}\hat{B} = \hat{B}\hat{A}$的。（例如，当$\mathrm{d}/\mathrm{d}x$和$\mathrm{d}^2/\mathrm{d}x^2$作用于函数$\mathrm{e}^x$时，结果是相同的，但这并不意味着$\mathrm{d}/\mathrm{d}x$和$\mathrm{d}^2/\mathrm{d}x^2$是相等的。）这两个算符在作用于每个品优函数时必须得到相同的结果，我们才能得出它们相等的结论。因此，尽管$\hat{A}$和$\hat{B}$不可对易，但可能存在一个或更多的共同本征函数。然而，我们不可能有两个非对易算符的共同\textit{完整}本征函数集，正如我们在本节前面所证明的那样。
+    错误出现在从(\ref{eq:7.45})导出(\ref{eq:7.46})的过程中。$\hat{A}\hat{B}$和$\hat{B}\hat{A}$对单个函数$g$的作用结果是无法得出$\hat{A}\hat{B} = \hat{B}\hat{A}$的。（例如，当$\dd /\dd x$和$\dd ^2/\dd x^2$作用于函数$\ee ^x$时，结果是相同的，但这并不意味着$\dd /\dd x$和$\dd ^2/\dd x^2$是相等的。）这两个算符在作用于每个品优函数时必须得到相同的结果，我们才能得出它们相等的结论。因此，尽管$\hat{A}$和$\hat{B}$不可对易，但可能存在一个或更多的共同本征函数。然而，我们不可能有两个非对易算符的共同\textit{完整}本征函数集，正如我们在本节前面所证明的那样。
 
     我们已经证明了：若两个算符$\hat{A}$和$\hat{B}$的本征函数完备集是相同的，那么这两个算符可对易。现在我们证明：
     \begin{center}
@@ -628,7 +628,7 @@
 
     因此，当$\hat{A}$和$\hat{B}$可对易时，我们可以为它们\textit{选择}一组共同的本征函数完备集。例如，考虑一个氢原子，我们已经证明了算符$\hat{L}_z$和$\hat{H}$是可对易的。如果我们愿意，我们可以将$\hat{B}$的本征函数中的$\phi$因子写成$\sin m\phi$和$\cos m\phi$的形式(第\ref{sec:6.6 The Bound-State Hydrogen-Atom Wave Functions}节)。如果这样做，除了 $m=0$ 的情况以外，我们就不会得到 $\hat{L}_z$ 的本征函数了。然而，根据\ref{sec:3.6 Degeneracy}节的定理，以下线性组合
     \begin{equation*}
-        R\left(r\right)S\left(\theta\right)\left(\cos m\phi+\mathrm{i}\sin m\phi\right) = RS\mathrm{e}^{\mathrm{i}m\phi}, \quad m = -l,\ldots,l
+        R\left(r\right)S\left(\theta\right)\left(\cos m\phi+\ii \sin m\phi\right) = RS\ee ^{\ii m\phi}, \quad m = -l,\ldots,l
     \end{equation*}
     给出的$\hat{L}_z$的本征函数仍然是$\hat{H}$的本征函数。
 
@@ -681,7 +681,7 @@
         }
         \label{eq:7.52}
     \end{equation}
-    宇称算符将每个直角坐标替换为其负数。例如：$\hat{\Pi}\left(x^2 - z\mathrm{e}^{ay}\right) = x^2 + z\mathrm{e}^{-ay}$。
+    宇称算符将每个直角坐标替换为其负数。例如：$\hat{\Pi}\left(x^2 - z\ee ^{ay}\right) = x^2 + z\ee ^{-ay}$。
 
     与其他任意量子力学算符一样，我们对宇称算符的本征函数$g_i$和本征值$c_i$很感兴趣：
     \begin{equation}
@@ -790,21 +790,21 @@
 
     对于简并的情况，我们在波函数中有一个选择元素，因为与简并能级相对应的函数的任意线性组合是 $\hat{H}$ 的本征函数。对于简并能级，通过适当的线性组合，我们可以选择具有确定奇偶性的波函数，但并不要求它们必须具有确定的奇偶性。
 
-    宇称有助于积分的计算。我们已经证明了当$f\left(x\right)$为奇函数时有$\int_{-\infty}^{\infty}f\left(x\right)\:\mathrm{d}x = 0$。让我们将这一结果推广到 $3n$ 维情况。$3n$ 个变量的\textbf{奇函数}（odd function）满足
+    宇称有助于积分的计算。我们已经证明了当$f\left(x\right)$为奇函数时有$\intinf f\left(x\right)\:\dd x = 0$。让我们将这一结果推广到 $3n$ 维情况。$3n$ 个变量的\textbf{奇函数}（odd function）满足
     \begin{equation}
         g\left(-x_1,-y_1,-z_1,\ldots,-x_n,-y_n,-z_n\right) = -g\left(x_1,y_1,z_1,\ldots,x_n,y_n,z_n\right)
         \label{eq:7.63}
     \end{equation}
     若$g$是$3n$个变量的奇函数，则
     \begin{equation}
-        \int_{-\infty}^{\infty}\cdots\int_{-\infty}^{\infty}g\left(x_1,\ldots,z_n\right)\:\mathrm{d}x_1\ldots\mathrm{d}z_n = 0
+        \intinf \cdots\intinf g\left(x_1,\ldots,z_n\right)\:\dd x_1\ldots\dd z_n = 0
         \label{eq:7.64}
     \end{equation}
     其中的积分是对 $3n$ 个坐标的积分。这个等式成立的原因为：$\left(x_1,y_1,z_1,\ldots,x_n,y_n,z_n\right)$处$g$值对积分的贡献被$\left(-x_1,-y_1,-z_1,\ldots,-x_n,-y_n,-z_n\right)$处的$g$值抵消了。当积分是部分（但不一定是全部）变量的奇函数时，等式 (\ref{eq:7.64}) 也成立。参见问题 7.30 。
 
 \section{测量和态叠加}
 \label{sec:7.6 Measurement and the Superposition of States}
-    量子力学可被视为一种计算测量各种可能结果概率的方法。例如，如果我们知道态函数$\Psi\left(x,t\right)$，那么在时刻$t$时测量粒子的位置位于$x$到$x+\mathrm{d}x$的无穷小区间内的概率为$\left|\Psi\left(x,t\right)\right|^2\mathrm{d}x$。现在，我们考虑对一般性质 $B$ 进行测量。我们的目的是找出如何使用 $\Psi$ 来计算 $B$ 的测量结果中每种可能结果的概率。本节的结果告诉我们状态函数 $\Psi$ 中包含哪些信息，是量子力学的核心所在。
+    量子力学可被视为一种计算测量各种可能结果概率的方法。例如，如果我们知道态函数$\Psi\left(x,t\right)$，那么在时刻$t$时测量粒子的位置位于$x$到$x+\dd x$的无穷小区间内的概率为$\left|\Psi\left(x,t\right)\right|^2\dd x$。现在，我们考虑对一般性质 $B$ 进行测量。我们的目的是找出如何使用 $\Psi$ 来计算 $B$ 的测量结果中每种可能结果的概率。本节的结果告诉我们状态函数 $\Psi$ 中包含哪些信息，是量子力学的核心所在。
 
     我们处理一个$n$粒子系统，使用$q$来表示$3n$个坐标。我们推测，算符 $\hat{B}$ 的本征值 $b_i$ 是对属性 $B$ 进行测量的唯一可能结果。使用$g_i$来表示$\hat{B}$的本征函数，我们有
     \begin{equation}
@@ -821,12 +821,12 @@
 
     由于$\left|\Psi\right|^2$表示概率密度，我们要求
     \begin{equation}
-        \int\Psi^{\ast}\Psi \:\mathrm{d}\tau = 1
+        \int\Psi^{\ast}\Psi \:\dd \tau = 1
         \label{eq:7.67}
     \end{equation}
     将(\ref{eq:7.66})代入归一化条件，并使用式(\ref{eq:1.33 linear properties of complex conjugate })和(\ref{eq:1.32 properties of complex conjugate})，我们得到
     \begin{equation}
-        1 = \int \sum_{i}c_i^{\ast}g_i^{\ast}\sum_ic_ig_i\:\mathrm{d}\tau = \int\sum_{i}c_i^{\ast}g_i^{\ast}\sum_kc_kg_k \:\mathrm{d}\tau = \int\sum_{i}\sum_{k}c_i^{\ast}c_k g_i^{\ast}g_k\:\mathrm{d}\tau
+        1 = \int \sum_{i}c_i^{\ast}g_i^{\ast}\sum_ic_ig_i\:\dd \tau = \int\sum_{i}c_i^{\ast}g_i^{\ast}\sum_kc_kg_k \:\dd \tau = \int\sum_{i}\sum_{k}c_i^{\ast}c_k g_i^{\ast}g_k\:\dd \tau
         \label{eq:7.68}
     \end{equation}
 
@@ -846,7 +846,7 @@
 
     假定交换 (\ref{eq:7.68}) 中的无限求和与积分是成立的，我们得到
     \begin{equation*}
-        \sum_{i}\sum_{k}c_i^{\ast}c_k\int g_i^{\ast}g_k\:\mathrm{d}\tau = 1
+        \sum_{i}\sum_{k}c_i^{\ast}c_k\int g_i^{\ast}g_k\:\dd \tau = 1
     \end{equation*}
     由于$\hat{B}$是厄米算符，它的本征函数之间应该是正交的[式(\ref{eq:7.26})]；因此
     \begin{equation*}
@@ -860,15 +860,15 @@
 
     回顾假设（第 \ref{sec:3.7 Average Values} 节），如果 $\Psi$ 是系统的归一化状态函数，那么属性 $B$ 的平均值为
     \begin{equation*}
-        \left\langle B \right\rangle = \int \Psi^{\ast}\left(q,t\right)\hat{B}\Psi\left(q,t\right)\:\mathrm{d}\tau
+        \left\langle B \right\rangle = \int \Psi^{\ast}\left(q,t\right)\hat{B}\Psi\left(q,t\right)\:\dd \tau
     \end{equation*}
     将展开式(\ref{eq:7.66})代入上式，我们得到
     \begin{equation*}
-        \left\langle B \right\rangle = \int\sum_{i}c_i^{\ast}g_i^{\ast}\hat{B}\sum_{k}c_kg_k\:\mathrm{d}\tau = \sum_{i}\sum_{k}c_i^{\ast}c_k\int g_i^{\ast}\hat{B}g_k\:\mathrm{d}\tau
+        \left\langle B \right\rangle = \int\sum_{i}c_i^{\ast}g_i^{\ast}\hat{B}\sum_{k}c_kg_k\:\dd \tau = \sum_{i}\sum_{k}c_i^{\ast}c_k\int g_i^{\ast}\hat{B}g_k\:\dd \tau
     \end{equation*}
     其中我们用到了算符$\hat{B}$的线性性质。使用$\hat{B}g_k = b_kg_k$[式(\ref{eq:7.65})]，我们有
     \begin{equation*}
-        \left\langle B \right\rangle = \sum_{i}\sum_{k}c_i^{\ast}c_kb_k\int g_i^{\ast}g_k\:\mathrm{d}\tau = \sum_{i}\sum_{k}c_i^{\ast}c_kb_k\delta_{ik}
+        \left\langle B \right\rangle = \sum_{i}\sum_{k}c_i^{\ast}c_kb_k\int g_i^{\ast}g_k\:\dd \tau = \sum_{i}\sum_{k}c_i^{\ast}c_kb_k\delta_{ik}
     \end{equation*}
     \begin{equation}
         \left\langle B \right\rangle = \sum_{i}\left|c_i\right|^2b_i
@@ -895,16 +895,16 @@
 
     为了得到概率$\left|c_i\right|^2$，我们如何计算出展开系数$c_i$？我们将$g_j^{\ast}$与$\Psi = \sum_{i}c_i g_i$相乘，对全空间进行积分并使用厄米算符$\hat{B}$本征函数的正交性：
     \begin{equation*}
-        \int g_j^{\ast}\Psi \: \mathrm{d}\tau = \sum_ic_i\int g_j^{\ast} g_i \: \mathrm{d}\tau = \sum_i c_i\delta_{ij}
+        \int g_j^{\ast}\Psi \: \dd \tau = \sum_ic_i\int g_j^{\ast} g_i \: \dd \tau = \sum_i c_i\delta_{ij}
     \end{equation*}
     \begin{equation}
-        c_j = \int g_j^{\ast}\Psi \: \mathrm{d}\tau = \left\langle g_j \middle| \Psi \right\rangle
+        c_j = \int g_j^{\ast}\Psi \: \dd \tau = \left\langle g_j \middle| \Psi \right\rangle
         \label{eq:7.72}
     \end{equation}
 
     在对性质$B$的测量中，发现非简并本征值$b_j$的概率为
     \begin{equation}
-        \left|c_j\right|^2 = \left|\int g_j^{\ast}\Psi \: \mathrm{d}\tau\right|^2 = \left|\left\langle g_j \middle| \Psi \right\rangle\right|^2
+        \left|c_j\right|^2 = \left|\int g_j^{\ast}\Psi \: \dd \tau\right|^2 = \left|\left\langle g_j \middle| \Psi \right\rangle\right|^2
         \label{eq:7.73}
     \end{equation}
     其中$\hat{B}g_j = b_jg_j$。量$\left\langle g_j \middle| \Psi \right\rangle$称为\textbf{概率幅}（probability amplitude）。
@@ -920,7 +920,7 @@
         }
     \end{center}
 
-    如果归一化函数 $g_j$ 和 $\Psi$ 非常相似，并且在空间的每个区域都有相似的大小，那么积分 $\left\langle g_j \middle| \Psi \right\rangle = \int g_j^{\ast}\Psi\:\mathrm{d}\tau$ 的绝对值就会很大。若$g_j$和$\Psi$不相似，那么在$g_i$很大而$\Psi$很小的区域中（反之亦然），乘积$g_j^{\ast}\Psi$就会很小，那么积分$\int g_j^{\ast}\Psi\:\mathrm{d}\tau$的绝对值也会很小，即找到$b_j$的概率$\left\langle g_j \middle| \Psi \right\rangle$也会很小。
+    如果归一化函数 $g_j$ 和 $\Psi$ 非常相似，并且在空间的每个区域都有相似的大小，那么积分 $\left\langle g_j \middle| \Psi \right\rangle = \int g_j^{\ast}\Psi\:\dd \tau$ 的绝对值就会很大。若$g_j$和$\Psi$不相似，那么在$g_i$很大而$\Psi$很小的区域中（反之亦然），乘积$g_j^{\ast}\Psi$就会很小，那么积分$\int g_j^{\ast}\Psi\:\dd \tau$的绝对值也会很小，即找到$b_j$的概率$\left\langle g_j \middle| \Psi \right\rangle$也会很小。
 
     \begin{examplebox}
         \textbf{例题：}假设我们对氢原子核外电子的$L_z$分量进行测量，开始测量时系统的状态为$2p_x$。给出测量的可能结果，并给出每种结果的概率。使用这些概率计算$2p_x$状态的$\left\langle L_z \right\rangle$。
@@ -976,12 +976,12 @@
 
     若性质$B$的本征值可以连续变化（例如：位置，第\ref{sec:7.7 Position Eigenfunctions}节），则对$\Psi$展开式的求和(\ref{eq:7.66})变为对$b$所有可能值的积分：
     \begin{equation}
-        \Psi = \int c_bg_b\left(q\right)\:\mathrm{d}b
+        \Psi = \int c_bg_b\left(q\right)\:\dd b
         \label{eq:7.75}
     \end{equation}
-    $\left| \left\langle g_b\left(q\right) \middle| \Psi \right\rangle \right|^2$依然是概率密度，也就是说，在位于$b$到$b+\mathrm{d}b$的无穷小区间内测量属性$B$时，得到结果$b$的概率为
+    $\left| \left\langle g_b\left(q\right) \middle| \Psi \right\rangle \right|^2$依然是概率密度，也就是说，在位于$b$到$b+\dd b$的无穷小区间内测量属性$B$时，得到结果$b$的概率为
     \begin{equation}
-        \left| \left\langle g_b\left(q\right) \middle| \Psi\left(q,t\right) \right\rangle \right|^2\:\mathrm{d}b
+        \left| \left\langle g_b\left(q\right) \middle| \Psi\left(q,t\right) \right\rangle \right|^2\:\dd b
         \label{eq:7.76}
     \end{equation}
 
@@ -1029,7 +1029,7 @@
 
     接下来，我们再定义\textbf{狄拉克$\delta$函数}（Dirac $\delta$ function）$\delta\left(x\right)$为海维赛德阶梯函数的导数：
     \begin{equation}
-        \delta\left(x\right) \equiv \frac{\mathrm{d}H\left(x\right)}{\mathrm{d}x}
+        \delta\left(x\right) \equiv \frac{\dd H\left(x\right)}{\dd x}
         \label{eq:7.82}
     \end{equation}
     根据(\ref{eq:7.81})和(\ref{eq:7.82})，我们立即得出（另见图\ref{fig:7.4}）：
@@ -1057,7 +1057,7 @@
         \label{eq:7.87}
     \end{equation}
     \begin{equation}
-        \delta\left(x-a\right) = \mathrm{d}H\left(x-a\right)/\mathrm{d}x
+        \delta\left(x-a\right) = \dd H\left(x-a\right)/\dd x
         \label{eq:7.88}
     \end{equation}
     \begin{equation}
@@ -1067,40 +1067,40 @@
 
     现在，考虑如下的积分：
     \begin{equation*}
-        \int_{-\infty}^{\infty}f\left(x\right)\delta\left(x-a\right)\:\mathrm{d}x
+        \intinf f\left(x\right)\delta\left(x-a\right)\:\dd x
     \end{equation*}
     我们使用分部积分法计算：
     \begin{equation*}
-        \int u \mathrm{d}v = uv - \int v \mathrm{d}u
+        \int u \dd v = uv - \int v \dd u
     \end{equation*}
     \begin{equation*}
-        u = f\left(x\right), \quad \mathrm{d}v = \delta\left(x-a\right)\:\mathrm{d}x
+        u = f\left(x\right), \quad \dd v = \delta\left(x-a\right)\:\dd x
     \end{equation*}
     使用(\ref{eq:7.88})，我们有
     \begin{equation*}
-        \mathrm{d}u = f'\left(x\right)\:\mathrm{d}x, \quad v = H\left(x-a\right)
+        \dd u = f'\left(x\right)\:\dd x, \quad v = H\left(x-a\right)
     \end{equation*}
     \begin{equation*}
-        \int_{-\infty}^{\infty}f\left(x\right)\delta\left(x-a\right)\:\mathrm{d}x = f\left(x\right)H\left(x-a\right)\bigg|_{-\infty}^{\infty} - \int_{-\infty}^{\infty}H\left(x-a\right)f'\left(x\right)\:\mathrm{d}x
+        \intinf f\left(x\right)\delta\left(x-a\right)\:\dd x = f\left(x\right)H\left(x-a\right)\bigg|_{-\infty}^{\infty} - \intinf H\left(x-a\right)f'\left(x\right)\:\dd x
     \end{equation*}
     \begin{equation}
-        \int_{-\infty}^{\infty}f\left(x\right)\delta\left(x-a\right)\:\mathrm{d}x = f\left(\infty\right) - \int_{-\infty}^{\infty}H\left(x-a\right)f'\left(x\right)\:\mathrm{d}x
+        \intinf f\left(x\right)\delta\left(x-a\right)\:\dd x = f\left(\infty\right) - \intinf H\left(x-a\right)f'\left(x\right)\:\dd x
         \label{eq:7.90}
     \end{equation}
     其中，我们用到了(\ref{eq:7.85})和(\ref{eq:7.90})。由于$H\left(x-a\right)$在$x < a$时为零，(\ref{eq:7.90})变为
     \begin{equation*}
         \begin{aligned}
-            \int_{-\infty}^{\infty}f\left(x\right)\delta\left(x-a\right)\:\mathrm{d}x & = f\left(\infty\right) - \int_{-\infty}^{a}H\left(x-a\right)f'\left(x\right)\:\mathrm{d}x \\
-            & = \left.f\left(\infty\right) - \int_{-\infty}^{a}f'\left(x\right)\:\mathrm{d}x =  f\left(\infty\right) - f\left(x\right) \right|_{a}^{\infty}
+            \intinf f\left(x\right)\delta\left(x-a\right)\:\dd x & = f\left(\infty\right) - \int_{-\infty}^{a}H\left(x-a\right)f'\left(x\right)\:\dd x \\
+            & = \left.f\left(\infty\right) - \int_{-\infty}^{a}f'\left(x\right)\:\dd x =  f\left(\infty\right) - f\left(x\right) \right|_{a}^{\infty}
         \end{aligned}
     \end{equation*}
     \begin{equation}
-        \int_{-\infty}^{\infty}f\left(x\right)\delta\left(x-a\right)\:\mathrm{d}x = f\left(a\right)
+        \intinf f\left(x\right)\delta\left(x-a\right)\:\dd x = f\left(a\right)
         \label{eq:7.91}
     \end{equation}
     将(\ref{eq:7.91})与方程$\sum_{k}c_k\delta_{ik} = c_i$比较，我们可以看到，狄拉克$\delta$函数在积分中所起的作用与Kronecker三角在求和中所起的作用相同。(\ref{eq:7.91})的一个特例为$f\left(x\right) = 1$：
     \begin{equation*}
-        \int_{-\infty}^{\infty}\delta\left(x-a\right)\:\mathrm{d}x = 1
+        \intinf \delta\left(x-a\right)\:\dd x = 1
     \end{equation*}
 
     狄拉克$\delta$函数的性质 (\ref{eq:7.89}) 与位置本征函数 $g_a\left(x\right)$ 的性质 (\ref{eq:7.79}) 和 (\ref{eq:7.80}) 一致。因此，我们暂定
@@ -1108,14 +1108,14 @@
         g_a\left(x\right) = \delta\left(x-a\right)
         \label{eq:7.92}
     \end{equation}
-    为了证明(\ref{eq:7.92})，我们现在需要证明其符合玻恩假设，即在$a$到$a+\mathrm{d}a$的无穷小区间内观测到$x$值的概率为$\left|\Psi\left(a,t\right)\right|^2\:\mathrm{d}a$。根据(\ref{eq:7.76})，这个概率由下式给出：
+    为了证明(\ref{eq:7.92})，我们现在需要证明其符合玻恩假设，即在$a$到$a+\dd a$的无穷小区间内观测到$x$值的概率为$\left|\Psi\left(a,t\right)\right|^2\:\dd a$。根据(\ref{eq:7.76})，这个概率由下式给出：
     \begin{equation}
-        \left|\left\langle g_a\left(x\right) \middle| \Psi\left(x,t\right)\right\rangle\right|^2 \: \mathrm{d}a = \left|\int_{-\infty}^{\infty} g_a^{\ast}\left(x-\right)\Psi\left(x,t\right)\:\mathrm{d}x\right|^2 \: \mathrm{d}a
+        \left|\left\langle g_a\left(x\right) \middle| \Psi\left(x,t\right)\right\rangle\right|^2 \: \dd a = \left|\intinf  g_a^{\ast}\left(x-\right)\Psi\left(x,t\right)\:\dd x\right|^2 \: \dd a
         \label{eq:7.93}
     \end{equation}
     先使用(\ref{eq:7.92})后使用(\ref{eq:7.91})，我们将(\ref{eq:7.93})变为
     \begin{equation*}
-        \left|\int_{-\infty}^{\infty} \delta\left(x-a\right)\Psi\left(x,t\right)\:\mathrm{d}x\right|^2 \: \mathrm{d}a = \left|\Psi\left(a,t\right)\right|^2 \: \mathrm{d}a
+        \left|\intinf  \delta\left(x-a\right)\Psi\left(x,t\right)\:\dd x\right|^2 \: \dd a = \left|\Psi\left(a,t\right)\right|^2 \: \dd a
     \end{equation*}
     得证。
 
@@ -1153,7 +1153,7 @@
     \begin{center}
         \fbox{
             \parbox{\dimexpr\textwidth-3\fboxsep-3\fboxrule}{
-            \textbf{假设2：}每个物理可观测属性都对应一个线性厄米算符。要找到这个算符，可以用笛卡尔坐标和相应的线动量分量写出可观测特性的经典力学表达式，然后用算符 $x \cdot$ 替换每个坐标 $x$，用算符 $-\mathrm{i}\hbar\ \partial/\partial x$ 替换每个动量分量 $p_x$.
+            \textbf{假设2：}每个物理可观测属性都对应一个线性厄米算符。要找到这个算符，可以用笛卡尔坐标和相应的线动量分量写出可观测特性的经典力学表达式，然后用算符 $x \cdot$ 替换每个坐标 $x$，用算符 $-\ii \hbar\ \partial/\partial x$ 替换每个动量分量 $p_x$.
         }
     }
     \end{center}
@@ -1194,7 +1194,7 @@
             \textbf{假设5：}若$\Psi\left(q,t\right)$表示$t$时刻系统的已归一化状态函数，那么$t$时刻物理可观测量$B$的平均值为
             \begin{equation}
                 \boxed{
-                    \left\langle B \right\rangle = \int \Psi^{\ast}\hat{B}\Psi\:\mathrm{d}\tau
+                    \left\langle B \right\rangle = \int \Psi^{\ast}\hat{B}\Psi\:\dd \tau
                 }
                 \label{eq:7.96}
             \end{equation}
@@ -1204,7 +1204,7 @@
 
     量子力学平均值的定义见第 \ref{sec:3.7 Average Values} 节，不应与经典力学中使用的时间平均值相混淆。
 
-    根据假设4和5，我们已经在第\ref{sec:7.6 Measurement and the Superposition of States}节中得出了在对$B$的测量中观测到非简并本征值$b_i$的概率为$P\left(b_i\right) = \left|\int g_i^{\ast}\Psi \: \mathrm{d}\tau\right|^2 = \left|\left\langle g_i \middle| \Psi \right\rangle\right|^2$，其中$\hat{B}g_i = b_ig_i$。如果$\Psi$恰好是$\hat{B}$的本征函数直译，也就是说$\Psi = g_k$，那么$P\left(b_i\right)$变为$P\left(b_i\right) = \left|\int g_i^{\ast}g_k\:\mathrm{d}\tau\right|^2 = \left|\delta_{ik}\right|^2 = \delta_{ik}$，其中用到了厄米算符$\hat{B}$的本征函数之间互相正交的性质。当$\Psi = g_k$时，我们一定会得到$b_k$的测量结果。
+    根据假设4和5，我们已经在第\ref{sec:7.6 Measurement and the Superposition of States}节中得出了在对$B$的测量中观测到非简并本征值$b_i$的概率为$P\left(b_i\right) = \left|\int g_i^{\ast}\Psi \: \dd \tau\right|^2 = \left|\left\langle g_i \middle| \Psi \right\rangle\right|^2$，其中$\hat{B}g_i = b_ig_i$。如果$\Psi$恰好是$\hat{B}$的本征函数直译，也就是说$\Psi = g_k$，那么$P\left(b_i\right)$变为$P\left(b_i\right) = \left|\int g_i^{\ast}g_k\:\dd \tau\right|^2 = \left|\delta_{ik}\right|^2 = \delta_{ik}$，其中用到了厄米算符$\hat{B}$的本征函数之间互相正交的性质。当$\Psi = g_k$时，我们一定会得到$b_k$的测量结果。
 
     \begin{center}
         \fbox{
@@ -1212,7 +1212,7 @@
             \textbf{假设6：}未受干扰的量子力学系统状态的时间发展由含时薛定谔方程给出
             \begin{equation}
                 \boxed{
-                    -\frac{\hbar}{\mathrm{i}}\frac{\partial\Psi}{\partial t} = \hat{H}\Psi
+                    -\frac{\hbar}{\ii }\frac{\partial\Psi}{\partial t} = \hat{H}\Psi
                 }
                 \label{eq:7.97}
             \end{equation}
@@ -1230,33 +1230,33 @@
     \end{equation}
     含时薛定谔方程变为
     \begin{equation*}
-            -\frac{\hbar}{\mathrm{i}}\frac{\partial\Psi}{\partial t} = E\Psi
+            -\frac{\hbar}{\ii }\frac{\partial\Psi}{\partial t} = E\Psi
     \end{equation*}
-    积分得到$\Psi = A\mathrm{e}^{-\mathrm{i}Et/\hbar}$，其中$A$是积分“常量”，与时间无关。函数$\Psi$与坐标和时间都相关，所以$A$是坐标的函数，我们将其命名为$\psi\left(q\right)$。因此，对于具有确定能量的状态，有
+    积分得到$\Psi = A\ee ^{-\ii Et/\hbar}$，其中$A$是积分“常量”，与时间无关。函数$\Psi$与坐标和时间都相关，所以$A$是坐标的函数，我们将其命名为$\psi\left(q\right)$。因此，对于具有确定能量的状态，有
     \begin{equation}
-        \Psi\left(q,t\right) = \mathrm{e}^{-\mathrm{i}Et/\hbar}\psi\left(q\right)
+        \Psi\left(q,t\right) = \ee ^{-\ii Et/\hbar}\psi\left(q\right)
         \label{eq:7.99}
     \end{equation}
     函数$\psi\left(q\right)$满足定态薛定谔方程
     \begin{equation*}
         \hat{H}\psi\left(q\right) = E\psi\left(q\right)
     \end{equation*}
-    由(\ref{eq:7.98})和(\ref{eq:7.99})可得上式。因子$\mathrm{e}^{-\mathrm{i}Et/\hbar}$只简单表明波函数$\Psi\left(q,t\right)$的相位随时间的变化，没有直接的物理意义。因此我们通常将$\psi\left(q\right)$视为“波函数”。哈密顿算符在量子力学中扮演着独特的角色，因为它出现在基本动力学方程——含时薛定谔方程中。$\hat{H}$的本征态（也成为定态）有特殊的性质，就是概率密度$\left|\Psi\right|^2$不随时间变化。
+    由(\ref{eq:7.98})和(\ref{eq:7.99})可得上式。因子$\ee ^{-\ii Et/\hbar}$只简单表明波函数$\Psi\left(q,t\right)$的相位随时间的变化，没有直接的物理意义。因此我们通常将$\psi\left(q\right)$视为“波函数”。哈密顿算符在量子力学中扮演着独特的角色，因为它出现在基本动力学方程——含时薛定谔方程中。$\hat{H}$的本征态（也成为定态）有特殊的性质，就是概率密度$\left|\Psi\right|^2$不随时间变化。
 
-    含时薛定谔方程(\ref{eq:7.97})为$\left(\mathrm{i}\hbar \partial /\partial t - \hat{H}\right)\Psi = 0$。由于算符$\mathrm{i}\hbar \partial /\partial t - \hat{H}$是线性算符，那么含时薛定谔方程(\ref{eq:7.97})的解的任意线性组合也是(\ref{eq:7.97})的解。例如，若$\hat{H}$与时间无关，那么有定态解$\Psi_n = \mathrm{e}^{-\mathrm{i}E_nt/\hbar}\psi_n\left(q\right)$[式(\ref{eq:7.99})]。任意线性组合
+    含时薛定谔方程(\ref{eq:7.97})为$\left(\ii \hbar \partial /\partial t - \hat{H}\right)\Psi = 0$。由于算符$\ii \hbar \partial /\partial t - \hat{H}$是线性算符，那么含时薛定谔方程(\ref{eq:7.97})的解的任意线性组合也是(\ref{eq:7.97})的解。例如，若$\hat{H}$与时间无关，那么有定态解$\Psi_n = \ee ^{-\ii E_nt/\hbar}\psi_n\left(q\right)$[式(\ref{eq:7.99})]。任意线性组合
     \begin{equation}
-        \Psi = \sum_{n}c_n\Psi_n = \sum_{n}c_n\mathrm{e}^{-\mathrm{i}E_nt/\hbar}\psi_n\left(q\right)
+        \Psi = \sum_{n}c_n\Psi_n = \sum_{n}c_n\ee ^{-\ii E_nt/\hbar}\psi_n\left(q\right)
         \label{eq:7.100}
     \end{equation}
-    （其中$c_n$是与时间无关的常数）也是含时薛定谔方程的解，尽管它不是$\hat{H}$的本征函数。由于本征函数$\Psi_n$可以是复函数，若$\hat{H}$与时间无关，那么任何态函数都可以写成(\ref{eq:7.100})的形式。（另见第\ref{sec:9.8 Time-dependent Perturbation Theory}节。）状态函数 (\ref{eq:7.100}) 表示一种没有确定能量的状态。相反地，当我们测量能量时，得到能量值为$E_n$的概率为$\left|c_n\mathrm{e}^{-\mathrm{i}E_nt/\hbar}\right|^2 = \left|c_n\right|^2$。
+    （其中$c_n$是与时间无关的常数）也是含时薛定谔方程的解，尽管它不是$\hat{H}$的本征函数。由于本征函数$\Psi_n$可以是复函数，若$\hat{H}$与时间无关，那么任何态函数都可以写成(\ref{eq:7.100})的形式。（另见第\ref{sec:9.8 Time-dependent Perturbation Theory}节。）状态函数 (\ref{eq:7.100}) 表示一种没有确定能量的状态。相反地，当我们测量能量时，得到能量值为$E_n$的概率为$\left|c_n\ee ^{-\ii E_nt/\hbar}\right|^2 = \left|c_n\right|^2$。
 
-    为了求出(\ref{eq:7.100})中的系数$c_n$，我们将(\ref{eq:7.100})在$t_0$时刻的表达式写成$\Psi\left(t_0\right) = \sum_{n}c_n\mathrm{e}^{-\mathrm{i}E_nt_0/\hbar}$\\$\psi_n\left(q\right)$。将其与$\psi_j^{\ast}\left(q\right)$相乘并对全空间进行积分，得到
+    为了求出(\ref{eq:7.100})中的系数$c_n$，我们将(\ref{eq:7.100})在$t_0$时刻的表达式写成$\Psi\left(t_0\right) = \sum_{n}c_n\ee ^{-\ii E_nt_0/\hbar}$\\$\psi_n\left(q\right)$。将其与$\psi_j^{\ast}\left(q\right)$相乘并对全空间进行积分，得到
     \begin{equation*}
-        \left\langle \psi_j\left(q\right) \middle| \Psi\left(q,t_0\right) \right\rangle = \sum_{n}c_n\mathrm{e}^{-\mathrm{i}E_nt_0/\hbar}\left\langle \psi_j \middle| \psi_n \right\rangle = \sum_{n}c_n\mathrm{e}^{-\mathrm{i}E_nt_0/\hbar}\delta_{jn} = c_j\mathrm{e}^{-\mathrm{i}E_jt_0/\hbar}
+        \left\langle \psi_j\left(q\right) \middle| \Psi\left(q,t_0\right) \right\rangle = \sum_{n}c_n\ee ^{-\ii E_nt_0/\hbar}\left\langle \psi_j \middle| \psi_n \right\rangle = \sum_{n}c_n\ee ^{-\ii E_nt_0/\hbar}\delta_{jn} = c_j\ee ^{-\ii E_jt_0/\hbar}
     \end{equation*}
-    则$c_n = \left\langle \psi_j \middle| \Psi\left(q,t_0\right) \right\rangle \mathrm{e}^{\mathrm{i}E_jt_0/\hbar}$。则(\ref{eq:7.100})变为
+    则$c_n = \left\langle \psi_j \middle| \Psi\left(q,t_0\right) \right\rangle \ee ^{\ii E_jt_0/\hbar}$。则(\ref{eq:7.100})变为
     \begin{equation}
-        \Psi\left(q,t\right) = \sum_{n}\left\langle \psi_j \left(q\right) \middle| \Psi\left(q,t_0\right) \right\rangle \mathrm{e}^{-\mathrm{i}E_j\left(t-t_0\right)/\hbar}\psi_j\left(q\right), \quad \text{若}\hat{H}\text{与时间无关}
+        \Psi\left(q,t\right) = \sum_{n}\left\langle \psi_j \left(q\right) \middle| \Psi\left(q,t_0\right) \right\rangle \ee ^{-\ii E_j\left(t-t_0\right)/\hbar}\psi_j\left(q\right), \quad \text{若}\hat{H}\text{与时间无关}
         \label{eq:7.101}
     \end{equation}
     其中$\hat{H}\psi_j = E_j\psi_j$，$\psi_j$被选择为正交的。方程 (\ref{eq:7.101}) 告诉我们如何从初始时间 $t_0$ 时的 $\Psi$ 求出时间 $t$ 时的 $\Psi$，当 $\hat{H}$ 与 $t$ 无关时，它是含时薛定谔方程的通解。[方程(\ref{eq:7.101})也可以直接从含时薛定谔方程导出，见问题7.46。]
@@ -1268,8 +1268,8 @@
         (a)由于$\hat{H}$与时间无关，则在未来的任意时刻，$\Psi$的形式由(\ref{eq:7.100})给出，其中$c_1=2^{-1/2}$，$c_2=2^{-1/2}$，其他的$c$值全为零。因此，
         \begin{equation*}
             \begin{aligned}
-                \Psi &= \frac{1}{\sqrt{2}}\mathrm{e}^{-\mathrm{i}E_1t/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{\pi x}{l}\right) + \frac{1}{\sqrt{2}}\mathrm{e}^{-\mathrm{i}E_2t/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{2\pi x}{l}\right) \\
-                & = \frac{1}{\sqrt{2}}\mathrm{e}^{-\mathrm{i}E_1t/\hbar}\psi_1 + \frac{1}{\sqrt{2}}\mathrm{e}^{-\mathrm{i}E_2t/\hbar}\psi_2
+                \Psi &= \frac{1}{\sqrt{2}}\ee ^{-\ii E_1t/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{\pi x}{l}\right) + \frac{1}{\sqrt{2}}\ee ^{-\ii E_2t/\hbar}\left(\frac{2}{l}\right)^{1/2}\sin\left(\frac{2\pi x}{l}\right) \\
+                & = \frac{1}{\sqrt{2}}\ee ^{-\ii E_1t/\hbar}\psi_1 + \frac{1}{\sqrt{2}}\ee ^{-\ii E_2t/\hbar}\psi_2
             \end{aligned}
         \end{equation*}
         因此，我们有概率密度（见问题7.47）
@@ -1292,7 +1292,7 @@
 
     是什么决定了系统处于 (\ref{eq:7.99}) 这样的定态还是 (\ref{eq:7.100}) 这样的非定态？答案是系统的历史决定了它现在的状态。例如，如果我们将一个处于定态的系统暴露在辐射下，根据含时薛定谔方程，辐射会导致其状态转变为非定态；见第 \ref{sec:9.8 Time-dependent Perturbation Theory} 节。
 
-    你可能会对玻恩假设的列表中没有 $\left|\Psi\left(x,t\right)\right|^2\:\mathrm{d}x$ 是在 $x$ 和 $x+\mathrm{d}x$ 之间找到粒子的概率感到奇怪。它是假设 5 的结果，我们现在就来说明这一点。方程(\ref{eq:3.81})为$\left\langle B \right\rangle = \sum_{b}P_bb$，其中$P_b$是测量具有离散值的属性$B$时观测到本征值$b$的概率。连续变量$x$对应的方程为$\left\langle x \right\rangle = \int_{-\infty}^{\infty}P\left(x\right)x\:\mathrm{d}x$，其中$P\left(x\right)$是测量连续变量$x$的概率密度。根据假设5，我们有$\left\langle x \right\rangle= \int_{-\infty}^{\infty}\Psi^{\ast}\hat{x}\Psi\:\mathrm{d}x = \int_{-\infty}^{\infty}\left|\Psi\right|^2x\:\mathrm{d}x$。将两个关于$\left\langle x \right\rangle$的表达式相比较，我们得到$\left|\Psi\right|^2$就是概率密度$P\left(x\right)$。
+    你可能会对玻恩假设的列表中没有 $\left|\Psi\left(x,t\right)\right|^2\:\dd x$ 是在 $x$ 和 $x+\dd x$ 之间找到粒子的概率感到奇怪。它是假设 5 的结果，我们现在就来说明这一点。方程(\ref{eq:3.81})为$\left\langle B \right\rangle = \sum_{b}P_bb$，其中$P_b$是测量具有离散值的属性$B$时观测到本征值$b$的概率。连续变量$x$对应的方程为$\left\langle x \right\rangle = \intinf P\left(x\right)x\:\dd x$，其中$P\left(x\right)$是测量连续变量$x$的概率密度。根据假设5，我们有$\left\langle x \right\rangle= \intinf \Psi^{\ast}\hat{x}\Psi\:\dd x = \intinf \left|\Psi\right|^2x\:\dd x$。将两个关于$\left\langle x \right\rangle$的表达式相比较，我们得到$\left|\Psi\right|^2$就是概率密度$P\left(x\right)$。
 
     第 \ref{chap:10} 章给出了涉及自旋和自旋统计定理的两个量子力学假设。
 
@@ -1302,7 +1302,7 @@
 
     考虑一个例子。假设在$t$时刻，我们测量粒子的位置。假设$\Psi\left(x,t_-\right)$是粒子测量前一瞬间的状态函数（图\ref{fig:7.6}a）。我们进一步假设，测量的结果是发现粒子位于以下空间的无限小区域内
     \begin{equation}
-        a < x < a + \mathrm{d}a
+        a < x < a + \dd a
         \label{eq:7.104}
     \end{equation}
     我们现在想问：测量后一瞬间粒子的状态函数$\Psi\left(x,t_+\right)$是什么？为了回答这个问题，假设我们在时间 $t_+$ 时对位置进行第二次测量。由于 $t_+$ 与第一次测量的时间 $t$ 相差无穷小，我们仍然必须发现粒子被限制在 (\ref{eq:7.104}) 区域内。如果粒子在无限小的时间内移动了有限的距离，它就会有无限大的速度，这是不可接受的。由于$\left|\Psi\left(x,t_+\right)\right|^2$表示找到连续变量$x$的概率密度，因此我们可以得出在(\ref{eq:7.104})区域外，$\left|\Psi\left(x,t_+\right)\right|^2=0$，其图象一定如图\ref{fig:7.6}b所示。因此，在 $t$ 时刻进行的位置测量将 $Psi$ 从一个遍布整个空间的函数坍缩为一个集中在 (\ref{eq:7.104}) 区域的函数。从$\Psi\left(x,t_-\right)$ 到 $\Psi\left(x,t_+\right)$ 的变化是一种概率变化。
@@ -1325,7 +1325,7 @@
 
     量子力学与心灵的关系一直是人们猜测的主题。Wigner认为：当测量结果进入观察者的意识时，就会发生波函数的坍缩，因此 “具有意识的存在物在量子力学中的作用一定不同于无生命的测量装置”。他认为，有意识的生命很可能遵守与无生命物体不同的自然法则，并建议科学家寻找意识作用于物质的异常效应。[E. P. Wigner, “Remarks on the Mind–Body Question,” in \textit{The Scientist Speculates}, I. J. Good, ed., Capricorn, 1965, p. 284; \textit{Proc. Amer. Phil. Soc.}, \textbf{113}, 95 (1969); \textit{Found. Phys.}, \textbf{1}, 35 (1970).]
 
-    1952 年，戴维·玻姆（David Bohm）（根据德布罗意在 1927 年提出的建议，即波函数可以作为引导粒子运动的先导波）设计了一种非局部确定性隐变量理论，该理论预言了与量子力学相同的实验结果[D. Bohm, \textit{Phys. Rev.}, \textbf{85}, 166, 180 (1952)]。在玻姆的理论中，粒子在任何一瞬间都有一个确定的位置和动量（尽管这些量是无法观测到的），而且粒子的运动轨迹是确定的。粒子还拥有一个波函数 $\Psi$，其时间变化服从含时薛定谔方程。在玻姆的理论中，波函数是决定粒子运动的真实物理实体。如果我们给定一个粒子在某一特定位置、某一特定波函数、某一特定时间 $t$，那么玻姆理论假定了一个特定的方程，可以让我们根据粒子的波函数和位置计算出粒子在该时间的速度；知道了 $t$ 时的位置和速度，我们就可以求出时间 $t+\mathrm{d}t$ 时的位置，并可以利用含时薛定谔方程求出 $t+\mathrm{d}t$ 时的波函数，然后根据 $t+\mathrm{d}t$ 时的位置和波函数计算出 $t+\mathrm{d}t$ 时的速度，以此类推。因此，可以根据初始位置和波函数（假设我们知道势能）计算出路径。原来，在玻姆的理论中，粒子的位置服从类似牛顿第二定律的方程$m \mathrm{d}^2x/\mathrm{d}t^2 = -\partial V /\partial x$[式(\ref{eq:1.8 Newton's second law})以及(\ref{eq:1.12 Potential energy in classical mechanics})]，只是把势能$V$换作$V+Q$，其中$Q$是量子势，是由波函数以某种方式计算得出的。在玻姆理论中，波函数并没有发生坍缩。相反，系统与测量仪器的相互作用遵循了玻姆理论的方程，但这种相互作用导致系统在测量后以波函数坍缩时的方式演变。
+    1952 年，戴维·玻姆（David Bohm）（根据德布罗意在 1927 年提出的建议，即波函数可以作为引导粒子运动的先导波）设计了一种非局部确定性隐变量理论，该理论预言了与量子力学相同的实验结果[D. Bohm, \textit{Phys. Rev.}, \textbf{85}, 166, 180 (1952)]。在玻姆的理论中，粒子在任何一瞬间都有一个确定的位置和动量（尽管这些量是无法观测到的），而且粒子的运动轨迹是确定的。粒子还拥有一个波函数 $\Psi$，其时间变化服从含时薛定谔方程。在玻姆的理论中，波函数是决定粒子运动的真实物理实体。如果我们给定一个粒子在某一特定位置、某一特定波函数、某一特定时间 $t$，那么玻姆理论假定了一个特定的方程，可以让我们根据粒子的波函数和位置计算出粒子在该时间的速度；知道了 $t$ 时的位置和速度，我们就可以求出时间 $t+\dd t$ 时的位置，并可以利用含时薛定谔方程求出 $t+\dd t$ 时的波函数，然后根据 $t+\dd t$ 时的位置和波函数计算出 $t+\dd t$ 时的速度，以此类推。因此，可以根据初始位置和波函数（假设我们知道势能）计算出路径。原来，在玻姆的理论中，粒子的位置服从类似牛顿第二定律的方程$m \dd ^2x/\dd t^2 = -\partial V /\partial x$[式(\ref{eq:1.8 Newton's second law})以及(\ref{eq:1.12 Potential energy in classical mechanics})]，只是把势能$V$换作$V+Q$，其中$Q$是量子势，是由波函数以某种方式计算得出的。在玻姆理论中，波函数并没有发生坍缩。相反，系统与测量仪器的相互作用遵循了玻姆理论的方程，但这种相互作用导致系统在测量后以波函数坍缩时的方式演变。
 
     多年来，博姆的研究在很大程度上被忽视了，但人们对他的理论的兴趣与日俱增。有关博姆理论的更多信息，参见\textit{Whitaker}, Chapter 7 ; D. Bohm and B.J. Hiley, \textit{The Undivided Universe}, Routledge, 1992; D. Z Albert, \textit{Scientific American}, May 1994, p. 58; S. Goldstein, “Bohmian Mechanics,” \url{plato.stanford.edu/entries/qm-bohm}; \url{en.wikipedia.org/wiki/De_Broglie-Bohm_theory}。丽贝卡·戈德斯坦（Rebecca Goldstein）的小说《光的特性》（Properties of Light，Houghton Mifflin 出版社，2000 年）中的一个主要人物部分是以大卫·博姆（David Bohm）为原型创作的。
 
@@ -1422,9 +1422,9 @@
 
 \subsection*{矩阵和量子力学}
 
-    在\ref{sec:7.1 Notation}节中，积分$\int f_m^{\ast}\hat{A}f_n \: \mathrm{d}\tau$称为$\hat{A}$的一个矩阵元。现在，我们通过证明此类积分遵守矩阵代数规则来证明这一名称的合理性。
+    在\ref{sec:7.1 Notation}节中，积分$\int f_m^{\ast}\hat{A}f_n \: \dd \tau$称为$\hat{A}$的一个矩阵元。现在，我们通过证明此类积分遵守矩阵代数规则来证明这一名称的合理性。
 
-    令函数$f_1, f_2, \ldots, f_n$是一个完全且正交的函数集，令$\left\{f_i\right\}$表示这个完备集。则数字$A_{mn} \equiv \left\langle f_m \middle| \hat{A} f_n \right\rangle \equiv \int f_m^{\ast}\hat{A}f_n \: \mathrm{d}\tau$称为\textbf{以$\left\{f_i\right\}$为基的线性算符$\hat{A}$的矩阵元}（matrix element of the linear operator $\hat{A}$ in the basis $\left\{f_i\right\}$）。方阵
+    令函数$f_1, f_2, \ldots, f_n$是一个完全且正交的函数集，令$\left\{f_i\right\}$表示这个完备集。则数字$A_{mn} \equiv \left\langle f_m \middle| \hat{A} f_n \right\rangle \equiv \int f_m^{\ast}\hat{A}f_n \: \dd \tau$称为\textbf{以$\left\{f_i\right\}$为基的线性算符$\hat{A}$的矩阵元}（matrix element of the linear operator $\hat{A}$ in the basis $\left\{f_i\right\}$）。方阵
     \begin{equation}
         \mathbf{A} = \begin{pmatrix}
             A_{11} & A_{12} & \ldots \\
@@ -1443,8 +1443,8 @@
     考虑矩阵元积分的加和。假设$\hat{C} = \hat{A} + \hat{B}$。一个典型的以$\left\{f_i\right\}$为基的$\hat{C}$矩阵元为
     \begin{equation*}
         \begin{aligned}
-            C_{mn} &= \left\langle f_m \middle| \hat{C} \middle| f_n \right\rangle = \left\langle f_m \middle| \hat{A} + \hat{B} \middle| f_n \right\rangle = \int f_m^{\ast}\left(\hat{A} + \hat{B}\right)f_n \: \mathrm{d}\tau \\
-            &= f_m^{\ast}\hat{A}f_n\:\mathrm{d}\tau + \int f_m^{\ast}\hat{B}f_n \: \mathrm{d}\tau = A_{mn} + B_{mn}
+            C_{mn} &= \left\langle f_m \middle| \hat{C} \middle| f_n \right\rangle = \left\langle f_m \middle| \hat{A} + \hat{B} \middle| f_n \right\rangle = \int f_m^{\ast}\left(\hat{A} + \hat{B}\right)f_n \: \dd \tau \\
+            &= f_m^{\ast}\hat{A}f_n\:\dd \tau + \int f_m^{\ast}\hat{B}f_n \: \dd \tau = A_{mn} + B_{mn}
         \end{aligned}
     \end{equation*}
     因此，若$\hat{C} = \hat{A} + \hat{B}$，则$C_{mn} = A_{mn} + B_{mn}$，这是(\ref{eq:7.105})的矩阵加和形式。因此，若$\hat{C} = \hat{A} + \hat{B}$，则$\mathbf{C} = \mathbf{A} + \mathbf{B}$，其中$\mathbf{A}$、$\mathbf{B}$和$\mathbf{C}$是算符的$\hat{A}$、$\hat{B}$和$\hat{C}$的矩阵表示。
@@ -1453,7 +1453,7 @@
 
     最后，假设$\hat{R} = \hat{S}\hat{T}$，我们有
     \begin{equation}
-        R_{mn} = \int f_m^{\ast}\hat{R}f_n \: \mathrm{d}\tau = \int f_m^{\ast}\hat{S}\hat{T}f_n \: \mathrm{d}\tau
+        R_{mn} = \int f_m^{\ast}\hat{R}f_n \: \dd \tau = \int f_m^{\ast}\hat{S}\hat{T}f_n \: \dd \tau
         \label{eq:7.109}
     \end{equation}
 
@@ -1463,7 +1463,7 @@
     \end{equation*}
     则$R_{mn}$变为
     \begin{equation}
-        R_{mn} = \int f_m^{\ast}\hat{S}\sum_{i}T_{in}f_i \: \mathrm{d}\tau = \sum_{i}\int f_m^{\ast}\hat{S}f_i \: \mathrm{d}\tau T_{in} = \sum_{i}S_{mi}T_{in}
+        R_{mn} = \int f_m^{\ast}\hat{S}\sum_{i}T_{in}f_i \: \dd \tau = \sum_{i}\int f_m^{\ast}\hat{S}f_i \: \dd \tau T_{in} = \sum_{i}S_{mi}T_{in}
         \label{eq:7.110}
     \end{equation}
 

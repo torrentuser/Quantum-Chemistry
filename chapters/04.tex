@@ -11,7 +11,7 @@
         y^{\prime\prime}\left(x\right) + c^2 y\left(x\right) = 0
         \label{eq:4.1}
     \end{equation}
-    其中$c^2>0$。当然，这个微分方程有常系数，但我们可以用幂级数法求解。让我们先用特征方程$s^2+c^2=0$来求解这个方程。特征方程的根是$s=\pm \mathrm{i}c$。回忆第 2.2 节中的工作[公式 (\ref{eq:2.10 schrödinger equation for particle between 0 and l}) 和 (\ref{eq:4.1}) 是相同的]，当特征方程的根是纯虚数时，我们会得到三角函数形式的通解：
+    其中$c^2>0$。当然，这个微分方程有常系数，但我们可以用幂级数法求解。让我们先用特征方程$s^2+c^2=0$来求解这个方程。特征方程的根是$s=\pm \ii c$。回忆第 2.2 节中的工作[公式 (\ref{eq:2.10 schrödinger equation for particle between 0 and l}) 和 (\ref{eq:4.1}) 是相同的]，当特征方程的根是纯虚数时，我们会得到三角函数形式的通解：
     \begin{equation}
         y\left(x\right) = A \cos\: cx + B \sin\: cx
         \label{eq:4.2}
@@ -126,7 +126,7 @@
 
     由牛顿第二定律$F = ma$，我们有
     \begin{equation}
-        - kx = m\frac{\mathrm{d}^2x}{\mathrm{d}t^2}
+        - kx = m\frac{\dd ^2x}{\dd t^2}
         \label{eq:4.21}
     \end{equation}
     其中$t$是时间。若令$c^2 = k/m$，则式(\ref{eq:4.21})与式(\ref{eq:4.1})相同。因此，其解为[将$c = \left(k/m\right)^{1/2}$代入式(\ref{eq:4.3})]，有
@@ -146,16 +146,16 @@
     现在我们来考虑能量。在三维系统中，势能$V$与力的分量的关系为
     \begin{equation}
         \boxed{
-            F_x = -\frac{\mathrm{d}V}{\mathrm{d}x}, \quad F_y = -\frac{\mathrm{d}V}{\mathrm{d}y}, \quad F_z = -\frac{\mathrm{d}V}{\mathrm{d}z}
+            F_x = -\frac{\dd V}{\dd x}, \quad F_y = -\frac{\dd V}{\dd y}, \quad F_z = -\frac{\dd V}{\dd z}
         }
         \label{eq:4.24}
     \end{equation}
     方程(\ref{eq:4.24}) 是势能的定义。由于这是一个一维系统，我们有[式(\ref{eq:1.12 Potential energy in classical mechanics})]
     \begin{equation}
-        F_x = -\frac{\mathrm{d}V}{\mathrm{d}x} = -kx
+        F_x = -\frac{\dd V}{\dd x} = -kx
         \label{eq:4.25}
     \end{equation}
-    对(\ref{eq:4.25})两边积分，我们得到$V = \int kx \mathrm{d}x = \frac{1}{2}kx^2 + C$，其中$C$是积分常数。势能总是有一个任意的附加常数。我们令$C = 0$，则
+    对(\ref{eq:4.25})两边积分，我们得到$V = \int kx \dd x = \frac{1}{2}kx^2 + C$，其中$C$是积分常数。势能总是有一个任意的附加常数。我们令$C = 0$，则
     \begin{equation}
         \boxed{
             V = \frac{1}{2}kx^2
@@ -169,7 +169,7 @@
     \end{equation}
     势能$V$的图象是一个抛物线。动能$T$可以由式(\ref{eq:4.22})对时间$t$求导得到：
     \begin{equation}
-        T = \frac{1}{2}m\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2
+        T = \frac{1}{2}m\left(\frac{\dd x}{\dd t}\right)^2
         \label{eq:4.28}
     \end{equation}
     将$T$和$V$相加，我们得到了总能量：
@@ -184,7 +184,7 @@
 \subsection*{量子力学的处理}
     由式(\ref{eq:3.27})和(\ref{eq:4.27})，谐振子的哈密顿算符为
     \begin{equation}
-        \hat{H} = -\frac{\hbar^2}{2m}\frac{\mathrm{d}^2}{\mathrm{d}x^2} + 2\pi^2 \nu^2 m x^2 = -\frac{\hbar^2}{2m}\left(\frac{\mathrm{d}^2}{\mathrm{d}x^2} - \alpha^2x^2\right)
+        \hat{H} = -\frac{\hbar^2}{2m}\frac{\dd ^2}{\dd x^2} + 2\pi^2 \nu^2 m x^2 = -\frac{\hbar^2}{2m}\left(\frac{\dd ^2}{\dd x^2} - \alpha^2x^2\right)
         \label{eq:4.30}
     \end{equation}
     其中，为了书写方便，我们定义了$\alpha$为
@@ -194,17 +194,17 @@
     \end{equation}
     乘上$2m/\hbar^2$后，薛定谔方程$\hat{H}\psi = E\psi$变为
     \begin{equation}
-        \frac{\mathrm{d}^2\psi}{\mathrm{d}x^2} + \left(2mE\hbar^{-2}-\alpha^2x^2\right)\psi = 0
+        \frac{\dd ^2\psi}{\dd x^2} + \left(2mE\hbar^{-2}-\alpha^2x^2\right)\psi = 0
         \label{eq:4.32}
     \end{equation}
-    现在我们可以尝试求得 (\ref{eq:4.32}) 的幂级数解。如果我们现在考虑具有式(\ref{eq:4.4})形式的$\psi$幂级数，我们会发现它推出了一个三项递推关系，这比式 (\ref{eq:4.14}) 这样的两项递推关系更难处理。因此，我们修改 (\ref{eq:4.32}) 的形式，以便在尝试幂级数解时能得到两项的递推关系。能实现这一目的的替代方法（见问题 4.22）是$f\left(x\right) \equiv \mathrm{e}^{\alpha x^2/2}\psi\left(x\right)$。因此，
+    现在我们可以尝试求得 (\ref{eq:4.32}) 的幂级数解。如果我们现在考虑具有式(\ref{eq:4.4})形式的$\psi$幂级数，我们会发现它推出了一个三项递推关系，这比式 (\ref{eq:4.14}) 这样的两项递推关系更难处理。因此，我们修改 (\ref{eq:4.32}) 的形式，以便在尝试幂级数解时能得到两项的递推关系。能实现这一目的的替代方法（见问题 4.22）是$f\left(x\right) \equiv \ee ^{\alpha x^2/2}\psi\left(x\right)$。因此，
     \begin{equation}
-        \psi = \mathrm{e}^{-\alpha x^2/2}f\left(x\right)
+        \psi = \ee ^{-\alpha x^2/2}f\left(x\right)
         \label{eq:4.33}
     \end{equation}
     这个方程只是定义了一个新函数$f\left(x\right)$，取代 $\psi\left(x\right)$ 作为未知函数来求解。（我们可以在微分方程中进行任何替换）对式(\ref{eq:4.33})两边求导两次，得到
     \begin{equation}
-        \psi^{\prime\prime} = \mathrm{e}^{-\alpha x^2/2}\left(f0-2\alpha xf^{\prime} - \alpha f + \alpha^2x^2f\right)
+        \psi^{\prime\prime} = \ee ^{-\alpha x^2/2}\left(f0-2\alpha xf^{\prime} - \alpha f + \alpha^2x^2f\right)
         \label{eq:4.34}
     \end{equation}
     将(\ref{eq:4.34})和(\ref{eq:4.33})代入(\ref{eq:4.32})，我们得到
@@ -241,17 +241,17 @@
     \end{equation}
     这正是我们想要的两项递推关系。式(\ref{eq:4.39})与式(\ref{eq:4.14})类似，知道了$c_n$的值，就可以计算出$c_{n+2}$的值。因此，我们有了两个任意常数$c_0$和$c_1$。如果我们令$c_1=0$，那么我们将得到一个只包含 $x$ 的偶数次幂乘以指数因子的幂级数作为解：
     \begin{equation}
-        \psi = \mathrm{e}^{-\alpha x^2/2}f\left(x\right) = \mathrm{e}^{-\alpha x^2/2}\sum_{n=0,2,4,\cdots}^{\infty}c_{n}x^{n} = \mathrm{e}^{-\alpha x^2/2}\sum_{l=0}^{\infty}c_{2l}x^{2l}
+        \psi = \ee ^{-\alpha x^2/2}f\left(x\right) = \ee ^{-\alpha x^2/2}\sum_{n=0,2,4,\cdots}^{\infty}c_{n}x^{n} = \ee ^{-\alpha x^2/2}\sum_{l=0}^{\infty}c_{2l}x^{2l}
         \label{eq:4.40}
     \end{equation}
     如果我们令$c_0=0$，那么我们将得到另一个独立的解：
     \begin{equation}
-        \psi = \mathrm{e}^{-\alpha x^2/2}f\left(x\right) = \mathrm{e}^{-\alpha x^2/2}\sum_{n=1,3,5,\cdots}^{\infty}c_{n}x^{n} = \mathrm{e}^{-\alpha x^2/2}\sum_{l=0}^{\infty}c_{2l+1}x^{2l+1}
+        \psi = \ee ^{-\alpha x^2/2}f\left(x\right) = \ee ^{-\alpha x^2/2}\sum_{n=1,3,5,\cdots}^{\infty}c_{n}x^{n} = \ee ^{-\alpha x^2/2}\sum_{l=0}^{\infty}c_{2l+1}x^{2l+1}
         \label{eq:4.41}
     \end{equation}
     薛定谔方程的通解为上述两个独立解的线性组合：
     \begin{equation}
-        \psi = A\mathrm{e}^{-\alpha x^2/2}\sum_{l=0}^{\infty}c_{2l+1}x^{2l+1} + B\mathrm{e}^{-\alpha x^2/2}\sum_{l=0}^{\infty}c_{2l}x^{2l}
+        \psi = A\ee ^{-\alpha x^2/2}\sum_{l=0}^{\infty}c_{2l+1}x^{2l+1} + B\ee ^{-\alpha x^2/2}\sum_{l=0}^{\infty}c_{2l}x^{2l}
         \label{eq:4.42}
     \end{equation}
     其中 $A$ 和 $B$ 是任意常数。
@@ -265,22 +265,22 @@
         \frac{c_{2l+2}}{c_{2l}} \sim \frac{4\alpha l}{4l^2} = \frac{\alpha}{l} \quad \text{当}l\text{很大时}
         \label{eq:4.43}
     \end{equation}
-    在(\ref{eq:4.39})中令$n=2l+1$，我们发现，当 $l$ 较大时，第一个序列中连续系数的比值也是 $\alpha/l$。 现在考虑函数 $\mathrm{e}^{\alpha x^2}$ 的幂级数展开。（问题 4.3）
+    在(\ref{eq:4.39})中令$n=2l+1$，我们发现，当 $l$ 较大时，第一个序列中连续系数的比值也是 $\alpha/l$。 现在考虑函数 $\ee ^{\alpha x^2}$ 的幂级数展开。（问题 4.3）
     \begin{equation}
-        \mathrm{e}^{z} = \sum_{n=0}^{\infty}\frac{z^n}{n!} = 1 + z + \frac{z^2}{2!} + \cdots
+        \ee ^{z} = \sum_{n=0}^{\infty}\frac{z^n}{n!} = 1 + z + \frac{z^2}{2!} + \cdots
         \label{eq:4.44}
     \end{equation}
     我们有
     \begin{equation*}
-        \mathrm{e}^{\alpha x^2} = 1 + \alpha x^2 + \cdots + \frac{\alpha ^l x^{2l}}{l!} + \frac{\alpha ^{l+1} x^{2l+2}}{(l+1)!} + \cdots
+        \ee ^{\alpha x^2} = 1 + \alpha x^2 + \cdots + \frac{\alpha ^l x^{2l}}{l!} + \frac{\alpha ^{l+1} x^{2l+2}}{(l+1)!} + \cdots
     \end{equation*}
     在该级数中，$x^{2l+2}$和$x^{2l}$的系数比为
     \begin{equation*}
         \frac{\alpha^{l+1}}{\left(l+1\right)!} \div \frac{\alpha^l}{l!} = \frac{\alpha}{l+1} \sim \frac{\alpha}{l} \quad \text{当}l\text{很大时}
     \end{equation*}
-    因此，解 (\ref{eq:4.42}) 中每个无穷级数的连续系数比与$l$很大时的级数$\mathrm{e}^{\alpha x^2}$相同。因此，我们可以得出结论：当$x$很大时，每个级数的行为都与 $\mathrm{e}^{\alpha x^2}$ 相同。[这不是一个严格的证明。H. A. Buchdahl, Am. J. Phys. J. Phys., 42, 47 (1974); see also M. Bowenand J. Coster, Am. J. Phys., 48, 307 (1980)]
+    因此，解 (\ref{eq:4.42}) 中每个无穷级数的连续系数比与$l$很大时的级数$\ee ^{\alpha x^2}$相同。因此，我们可以得出结论：当$x$很大时，每个级数的行为都与 $\ee ^{\alpha x^2}$ 相同。[这不是一个严格的证明。H. A. Buchdahl, Am. J. Phys. J. Phys., 42, 47 (1974); see also M. Bowenand J. Coster, Am. J. Phys., 48, 307 (1980)]
 
-    如果每个级数的行为都与 $\mathrm{e}^{\alpha x^2}$ 相同，那么当 $x$ 很大时，$\psi$ 的行为也将与 $\mathrm{e}^{\alpha x^2}$ 相同。当$x$趋于无穷时，波函数的值将趋于无穷大，就不满足波函数平方可积的要求。如果我们可以将级数在某一项打断，使得级数的后续项为零，那么因子$\mathrm{e}^{\alpha x^2}$就能保证在$x$趋于无穷时，$\psi$的值趋于零。（使用L' Hopital法则，显然当$x \to \infty$时，有$x^p\mathrm{e}^{-\alpha x^2} \to 0$，$p$为任意有限次幂）若想让级数在某一有限项后被打断，则当$n$为某个值时必须有递推公式(\ref{eq:4.39})中$c_n$的系数为零，记$n=v$。这就使得$c_{v+2}$、$c_{v+4}$$\cdots$等全为零。而式(\ref{eq:4.42})中的一个级数将具有有限项。在递推关系 (\ref{eq:4.39}) 中，有一个量的值尚未确定，但可以通过调整，使$c_v$消失。这个量就是能量$E$。在(\ref{eq:4.39}中)令$c_v$的系数为零，对$\alpha$使用式(\ref{eq:4.31})，我们有
+    如果每个级数的行为都与 $\ee ^{\alpha x^2}$ 相同，那么当 $x$ 很大时，$\psi$ 的行为也将与 $\ee ^{\alpha x^2}$ 相同。当$x$趋于无穷时，波函数的值将趋于无穷大，就不满足波函数平方可积的要求。如果我们可以将级数在某一项打断，使得级数的后续项为零，那么因子$\ee ^{\alpha x^2}$就能保证在$x$趋于无穷时，$\psi$的值趋于零。（使用L' Hopital法则，显然当$x \to \infty$时，有$x^p\ee ^{-\alpha x^2} \to 0$，$p$为任意有限次幂）若想让级数在某一有限项后被打断，则当$n$为某个值时必须有递推公式(\ref{eq:4.39})中$c_n$的系数为零，记$n=v$。这就使得$c_{v+2}$、$c_{v+4}$$\cdots$等全为零。而式(\ref{eq:4.42})中的一个级数将具有有限项。在递推关系 (\ref{eq:4.39}) 中，有一个量的值尚未确定，但可以通过调整，使$c_v$消失。这个量就是能量$E$。在(\ref{eq:4.39}中)令$c_v$的系数为零，对$\alpha$使用式(\ref{eq:4.31})，我们有
     \begin{equation*}
         \alpha + 2\alpha v - 2mE\hbar^{-2} = 0
     \end{equation*}
@@ -307,12 +307,12 @@
         \label{eq:4.46}
     \end{equation}
 
-    根据(\ref{eq:4.45})对能量进行量子化，我们已经使其中一个级数在有限项后被打断。为了消除 (\ref{eq:4.42}) 中的另一个无穷级数，我们必须将与之相乘的任意常数设为零。这样，根据 $v$ 是偶数还是奇数，波函数就是只包含 $x$ 的偶次或奇次幂的有限幂级数的 $\mathrm{e}^{-\alpha x^2/2}$ 倍。在该级数中，由于我们选择的能量$E$使得$c_{v+2}$、$c_{v+4}$，$\cdots$全消失，则$x$的最高次幂为$v$。因此，波函数(\ref{eq:4.42})的形式为
+    根据(\ref{eq:4.45})对能量进行量子化，我们已经使其中一个级数在有限项后被打断。为了消除 (\ref{eq:4.42}) 中的另一个无穷级数，我们必须将与之相乘的任意常数设为零。这样，根据 $v$ 是偶数还是奇数，波函数就是只包含 $x$ 的偶次或奇次幂的有限幂级数的 $\ee ^{-\alpha x^2/2}$ 倍。在该级数中，由于我们选择的能量$E$使得$c_{v+2}$、$c_{v+4}$，$\cdots$全消失，则$x$的最高次幂为$v$。因此，波函数(\ref{eq:4.42})的形式为
     \begin{equation}
         \psi_v = 
         \begin{cases}
-            \mathrm{e}^{-\alpha x^2/2}\left(c_0+c_2x^2+ \cdots + c_vx^v\right), & \text{当} v \text{为偶数时} \\
-            \mathrm{e}^{-\alpha x^2/2}\left(c_1x+c_3x^3+ \cdots + c_vx^v\right), & \text{当} v \text{为奇数时}
+            \ee ^{-\alpha x^2/2}\left(c_0+c_2x^2+ \cdots + c_vx^v\right), & \text{当} v \text{为偶数时} \\
+            \ee ^{-\alpha x^2/2}\left(c_1x+c_3x^3+ \cdots + c_vx^v\right), & \text{当} v \text{为奇数时}
         \end{cases}
         \label{eq:4.47}
     \end{equation}
@@ -350,10 +350,10 @@
         }
         \label{eq:4.48}
     \end{equation}
-    则称$f\left(x\right)$为\textbf{偶函数}（even function）。因为$\left(-x\right)^2 = x^2$和$\mathrm{e}^{-b\left(x^2\right)} = \mathrm{e}^{-b\left(-x^2\right)}$，所以$x^2$和$\mathrm{e}^{bx^2}$均是偶函数。偶函数的图象关于$y$轴对称（例如，见图\ref{fig:4.4}a）。因此，对于偶函数，有
+    则称$f\left(x\right)$为\textbf{偶函数}（even function）。因为$\left(-x\right)^2 = x^2$和$\ee ^{-b\left(x^2\right)} = \ee ^{-b\left(-x^2\right)}$，所以$x^2$和$\ee ^{bx^2}$均是偶函数。偶函数的图象关于$y$轴对称（例如，见图\ref{fig:4.4}a）。因此，对于偶函数，有
     \begin{equation}
         \boxed{
-            \int_{-a}^{+a}f\left(x\right)\mathrm{d}x = 2\int_{0}^{a}f\left(x\right)\mathrm{d}x
+            \int_{-a}^{+a}f\left(x\right)\dd x = 2\int_{0}^{a}f\left(x\right)\dd x
         }
         \label{eq:4.49}
     \end{equation}
@@ -364,10 +364,10 @@
         }
         \label{eq:4.50}
     \end{equation}
-    则称$g\left(x\right)$为\textbf{奇函数}（odd function）。例如$x$、$1/x$和$x^3\mathrm{e}^{x^2}$。在式(\ref{eq:4.50})中，令$x=0$，若$g\left(0\right)$存在且为单值，则$g\left(0\right) = 0$。奇函数的图形大致如图\ref{fig:4.4} b 所示。由于 $y$ 轴一侧的正贡献会被另一侧相应的负贡献抵消，我们可以得出：对于奇函数，有
+    则称$g\left(x\right)$为\textbf{奇函数}（odd function）。例如$x$、$1/x$和$x^3\ee ^{x^2}$。在式(\ref{eq:4.50})中，令$x=0$，若$g\left(0\right)$存在且为单值，则$g\left(0\right) = 0$。奇函数的图形大致如图\ref{fig:4.4} b 所示。由于 $y$ 轴一侧的正贡献会被另一侧相应的负贡献抵消，我们可以得出：对于奇函数，有
     \begin{equation}
         \boxed{
-            \int_{-a}^{+a}g\left(x\right)\mathrm{d}x = 0
+            \int_{-a}^{+a}g\left(x\right)\dd x = 0
         }
         \label{eq:4.51}
     \end{equation}
@@ -387,39 +387,39 @@
     很容易证明，两个偶函数或两个奇函数的乘积是偶函数，而一个偶函数和一个奇函数的乘积是奇函数。
     
 \subsection*{谐振子波函数}
-    式(\ref{eq:4.47})中的指数部分$\mathrm{e}^{-\alpha x^2/2}$是偶函数。若$v$是偶数，则多项式因子只包含$x$的偶次幂，使得$\psi_v$是偶函数。若$v$是奇数，则多项式因子只包含$x$的奇次幂，使得$\psi_v$是一个奇函数和一个偶函数的乘积，为奇函数。每一个谐振子状态方程$\psi$都是一个奇函数或偶函数，取决于$v$的奇偶性。在第\ref{sec:7.5 Parity}节中，我们将看到：当势能函数$V$是偶函数时，非简并能级的波函数一定是奇函数或偶函数。
+    式(\ref{eq:4.47})中的指数部分$\ee ^{-\alpha x^2/2}$是偶函数。若$v$是偶数，则多项式因子只包含$x$的偶次幂，使得$\psi_v$是偶函数。若$v$是奇数，则多项式因子只包含$x$的奇次幂，使得$\psi_v$是一个奇函数和一个偶函数的乘积，为奇函数。每一个谐振子状态方程$\psi$都是一个奇函数或偶函数，取决于$v$的奇偶性。在第\ref{sec:7.5 Parity}节中，我们将看到：当势能函数$V$是偶函数时，非简并能级的波函数一定是奇函数或偶函数。
 
     现在，我们找到了最低三个能级波函数的显式。对于$v=0$的基态，式(\ref{eq:4.47})给出
     \begin{equation}
-        \psi_0 = c_0\mathrm{e}^{-\alpha x^2/2}
+        \psi_0 = c_0\ee ^{-\alpha x^2/2}
         \label{eq:4.52}
     \end{equation}
     其中$\psi$的下标表示量子数$v$。通过归一化，我们可以求出$c_0$：
     \begin{equation*}
-        1 = \int_{-\infty}^{\infty}\left|c_0\right|\mathrm{e}^{-\alpha x^2}\mathrm{d}x = 2\left|c_0\right|^2\int_{0}^{\infty}\mathrm{e}^{-\alpha x^2}\mathrm{d}x
+        1 = \intinf \left|c_0\right|\ee ^{-\alpha x^2}\dd x = 2\left|c_0\right|^2\int_{0}^{\infty}\ee ^{-\alpha x^2}\dd x
     \end{equation*}
     其中，我们用到了式(\ref{eq:4.49})。使用附录中的积分(A.9)，我们有$\left|c_0\right| = \left(\alpha/\pi\right)^{1/4}$。因此，如果我们选择令归一化常数的相位为零，则基态波函数为
     \begin{equation}
-        \psi_0 = \left(\alpha / \pi\right)^{1/4}\mathrm{e}^{-\alpha x^2 /2}
+        \psi_0 = \left(\alpha / \pi\right)^{1/4}\ee ^{-\alpha x^2 /2}
         \label{eq:4.53}
     \end{equation}
     波函数 (\ref{eq:4.53}) 是一个高斯函数（图\ref{fig:4.4}a）。
 
     对于状态$v=1$，式(\ref{eq:4.47})给出
     \begin{equation}
-        \psi_1 = c_1x\mathrm{e}^{-\alpha x^2 / 2}
+        \psi_1 = c_1x\ee ^{-\alpha x^2 / 2}
         \label{eq:4.54}
     \end{equation}
     使用(A.10)进行归一化，我们有
     \begin{equation}
-        \psi_1 = \left(4\alpha^3 / \pi\right)^{1/4}x\mathrm{e}^{-\alpha x^2 / 2}
+        \psi_1 = \left(4\alpha^3 / \pi\right)^{1/4}x\ee ^{-\alpha x^2 / 2}
         \label{eq:4.55}
     \end{equation}
     图\ref{fig:4.4}b显示了$\psi_1$的图象。
 
     对于状态$v=2$，式(\ref{eq:4.47})给出
     \begin{equation*}
-        \psi_2 = \left(c_0 + c_2x^2\right)\mathrm{e}^{-\alpha x^2 / 2}
+        \psi_2 = \left(c_0 + c_2x^2\right)\ee ^{-\alpha x^2 / 2}
     \end{equation*}
     将$v=2$代入(\ref{eq:4.46})，我们有
     \begin{equation*}
@@ -427,12 +427,12 @@
     \end{equation*}
     因此，
     \begin{equation}
-        \psi_2 = c_0\left(1-2\alpha x^2\right)\mathrm{e}^{-\alpha x^2 / 2}
+        \psi_2 = c_0\left(1-2\alpha x^2\right)\ee ^{-\alpha x^2 / 2}
         \label{eq:4.56}
     \end{equation}
     使用归一化解出$c_0$，我们有（问题4.10）
     \begin{equation}
-        \psi_2 = \left(4\alpha^3 / \pi\right)^{1/4}\left(2\alpha x^2 - 1\right)\mathrm{e}^{-\alpha x^2 / 2}
+        \psi_2 = \left(4\alpha^3 / \pi\right)^{1/4}\left(2\alpha x^2 - 1\right)\ee ^{-\alpha x^2 / 2}
         \label{eq:4.57}
     \end{equation}
     注意：$\psi_2$中的$c_0$和$\psi_0$中的$c_0$是不同的。
@@ -459,7 +459,7 @@
 
     从图 (\ref{fig:4.4}) 中可以看出：\textit{$\psi$ 在经典允许区域中振荡，而在经典禁止区域则以指数形式下降到零。}我们之前在矩形势阱中看到过粒子的这种行为（第 \ref{sec:2.4 Particle in a Rectangular Potential Well} 节）。
 
-    图 (\ref{fig:4.4}) 显示，当谐振子的能量逐渐升高时，$\psi$ 和 $\left|\psi\right|^2$ 的最大值往往离原点越来越远。由于离原点越远，势能$V = \frac{1}{2}kx^2$越大，平均势能$\langle V \rangle = \int_{-\infty}^{\infty}\left|\psi\right|^2V\mathrm{d}x$也会随着量子数的增加而增大。平均动能由$\langle T \rangle = -\left(\hbar^2/2m\right)\int_{-\infty}^{\infty}\psi^{\ast}\psi^{\prime\prime}\mathrm{d}x$给出。应用分部积分（问题7.7b），有$\langle T \rangle = \left(\hbar^2/2m\right)\int_{-\infty}^{\infty}\left|\mathrm{d}\psi/\mathrm{d}x\right|^2\mathrm{d}x$。量子数越大的状态中节点的数量越多，$\psi$ 的变化速度就越快，因此随着量子数的增加，$\langle T \rangle$也会增加。
+    图 (\ref{fig:4.4}) 显示，当谐振子的能量逐渐升高时，$\psi$ 和 $\left|\psi\right|^2$ 的最大值往往离原点越来越远。由于离原点越远，势能$V = \frac{1}{2}kx^2$越大，平均势能$\langle V \rangle = \intinf \left|\psi\right|^2V\dd x$也会随着量子数的增加而增大。平均动能由$\langle T \rangle = -\left(\hbar^2/2m\right)\intinf \psi^{\ast}\psi^{\prime\prime}\dd x$给出。应用分部积分（问题7.7b），有$\langle T \rangle = \left(\hbar^2/2m\right)\intinf \left|\dd \psi/\dd x\right|^2\dd x$。量子数越大的状态中节点的数量越多，$\psi$ 的变化速度就越快，因此随着量子数的增加，$\langle T \rangle$也会增加。
 
     经典谐振子最有可能出现在运动转折点附近的区域，即振子运动速度最慢、$V$ 值较大的区域。相反，对于量子谐振子的基态，最有可能出现的区域是原点附近的区域。对于高振动量子数，人们会发现的外峰值大于原点附近的峰值，最可能的区域变成了经典转折点附近的区域，此时 $V$ 很大（见问题 4.18 ）。这是对应原理（第 \ref{sec:2.2 Particle in a One-Dimensional Box} 节）的一个例子。
 
@@ -487,7 +487,7 @@
         \label{fig:4.6}
     \end{figure}
 
-    谐振子的力常数$k$在式(\ref{eq:4.26})中可以由$k = \mathrm{d}^2V /\mathrm{d}x^2$计算得到，在$R=R_e$处，谐振子曲线与$U(R)$曲线的下半部分几乎重合，所以分子的力常数$k = \left.\mathrm{d}^2U/\mathrm{d}R^2\right|_{R=R_e}$。（另见问题4.28）。\textit{核质量的差异对电子能量曲线 $U(R)$ 几乎没有影响，因此同一分子但由不同同位素取代的种类具有基本相同的力常数 $k$。}
+    谐振子的力常数$k$在式(\ref{eq:4.26})中可以由$k = \dd ^2V /\dd x^2$计算得到，在$R=R_e$处，谐振子曲线与$U(R)$曲线的下半部分几乎重合，所以分子的力常数$k = \left.\dd ^2U/\dd R^2\right|_{R=R_e}$。（另见问题4.28）。\textit{核质量的差异对电子能量曲线 $U(R)$ 几乎没有影响，因此同一分子但由不同同位素取代的种类具有基本相同的力常数 $k$。}
 
     因此，我们预计二原子分子振动能级 $E_{vib}$ 的一个合理近似是谐振子振动能级；由式(\ref{eq:4.45})和式(\ref{eq:4.23})，有
     \begin{equation}
@@ -498,7 +498,7 @@
     \end{equation}
     \begin{equation}
         \boxed{
-            \nu_e = \frac{1}{2\pi}\left(\frac{k}{\mu}\right)^{1/2}, \quad \mu = \frac{m_1m_2}{m_1+m_2}, \quad k = \left.\frac{\mathrm{d}^2U}{\mathrm{d}R^2}\right|_{R=R_e}
+            \nu_e = \frac{1}{2\pi}\left(\frac{k}{\mu}\right)^{1/2}, \quad \mu = \frac{m_1m_2}{m_1+m_2}, \quad k = \left.\frac{\dd ^2U}{\dd R^2}\right|_{R=R_e}
         }
         \label{eq:4.59}
     \end{equation}
@@ -526,13 +526,13 @@
     热平衡系统中分子两个能级的布居数由\textbf{玻尔兹曼分布律}（Boltzmann distribution law）给出（见物理化学教材）：
     \begin{equation}
         \boxed{
-            \frac{N_i}{N_j} = \frac{g_i}{g_j} \mathrm{e}^{-(E_i-E_j)/kT}
+            \frac{N_i}{N_j} = \frac{g_i}{g_j} \ee ^{-(E_i-E_j)/kT}
         }
         \label{eq:4.63}
     \end{equation}
     其中能级$i$和$j$的能量分别为$E_i$和$E_j$，$g_i$和$g_j$是对应能级的简并度，$k$是玻尔兹曼常数，$T$是热力学温度。对于非简并能级，有$g_i=1$。
 
-    $\nu = \left(1/2\pi\right)\left(k/\mu\right)^{1/2}$的数量级使得在室温下，对于轻分子（例如$\mathrm{H}_2$、$\mathrm{HCl}$、$\mathrm{CO}$），只有$v=0$的振动能级是被显著占据的。对于重分子（例如$\mathrm{I}_2$），在室温下有一个或多个激发态振动能级被显著占据。
+    $\nu = \left(1/2\pi\right)\left(k/\mu\right)^{1/2}$的数量级使得在室温下，对于轻分子（例如$\mathrm{H}_2$、$\mathrm{HCl}$、$\mathrm{CO}$），只有$v=0$的振动能级是被显著占据的。对于重分子（例如$\ii _2$），在室温下有一个或多个激发态振动能级被显著占据。
 
     极性双原子分子的振动吸收光谱包含$v= 0 \to 1$吸收带，很弱的泛频吸收带（$v = 0\to 2, 0 \to 3, \cdots$），以及若$v>0$的能级也被显著占据，也有\textit{热带}（hot bands），例如$v = 1 \to 2$、$v = 1 \to 3$等。与特定振动跃迁相对应的每个波段都由几条紧密相连的线组成。每一条这样的线都对应于与振动状态变化同时发生的不同的转动状态变化。每一条线都是振动-转动跃迁的结果。
 
@@ -674,34 +674,34 @@
         \label{eq:4.77}
     \end{equation}
 
-    由于$\left|\psi\left(x\right)\right|^2\mathrm{d}x$是概率，概率是没有量纲的，归一化后的$\psi\left(x\right)$一定具有$\text{长度}^{-1/2}$的量纲。因此，我们可以定义一个没有量纲的约化波函数$\psi_r$。由式(\ref{eq:4.71})，$B$具有长度的量纲，则$B^{-1/2}$具有$\text{长度}^{-1/2}$的量纲。因此，
+    由于$\left|\psi\left(x\right)\right|^2\dd x$是概率，概率是没有量纲的，归一化后的$\psi\left(x\right)$一定具有$\text{长度}^{-1/2}$的量纲。因此，我们可以定义一个没有量纲的约化波函数$\psi_r$。由式(\ref{eq:4.71})，$B$具有长度的量纲，则$B^{-1/2}$具有$\text{长度}^{-1/2}$的量纲。因此，
     \begin{equation}
         \psi_r = \psi / B^{-1/2}
         \label{eq:4.78}
     \end{equation}
-    $\psi_r$ 满足 $\int_{-\infty}^{\infty} \left|\psi_r\right|^2\mathrm{d}x_r = 1$；这是由式(\ref{eq:4.76})、 (\ref{eq:4.78}) 和$\int_{-\infty}^{\infty} \left|\psi\right|^2\mathrm{d}x = 1$得出的。
+    $\psi_r$ 满足 $\intinf \left|\psi_r\right|^2\dd x_r = 1$；这是由式(\ref{eq:4.76})、 (\ref{eq:4.78}) 和$\intinf \left|\psi\right|^2\dd x = 1$得出的。
 
     我们现在使用无量纲变量$E_r$、$x_r$和$\psi_r$来重写薛定谔方程。有
     \begin{equation*}
-        \frac{\mathrm{d}^2\psi}{\mathrm{d}x^2} = \frac{\mathrm{d}^2}{\mathrm{d}x^2}B^{-1/2}\psi_r = B^{-1/2}\frac{\mathrm{d}}{\mathrm{d}x}\frac{\mathrm{d}\psi_r}{\mathrm{d}x} = B^{-1/2}\frac{\mathrm{d}}{\mathrm{d}x}\frac{\mathrm{d}\psi_r}{\mathrm{d}x_r}\frac{\mathrm{d}x_r}{\mathrm{d}x} = B^{-1/2}\frac{\mathrm{d}\left(\mathrm{d}\psi_r/\mathrm{d}x_r\right)}{\mathrm{d}x_r}\frac{\mathrm{d}x_r}{\mathrm{d}x}\frac{\mathrm{d}x_r}{\mathrm{d}x}
+        \frac{\dd ^2\psi}{\dd x^2} = \frac{\dd ^2}{\dd x^2}B^{-1/2}\psi_r = B^{-1/2}\frac{\dd }{\dd x}\frac{\dd \psi_r}{\dd x} = B^{-1/2}\frac{\dd }{\dd x}\frac{\dd \psi_r}{\dd x_r}\frac{\dd x_r}{\dd x} = B^{-1/2}\frac{\dd \left(\dd \psi_r/\dd x_r\right)}{\dd x_r}\frac{\dd x_r}{\dd x}\frac{\dd x_r}{\dd x}
     \end{equation*}
     \begin{equation}
-        \frac{\mathrm{d}^2\psi}{\mathrm{d}x^2} = B^{-5/2}\frac{\mathrm{d}^2\psi_r}{\mathrm{d}x_r^2}
+        \frac{\dd ^2\psi}{\dd x^2} = B^{-5/2}\frac{\dd ^2\psi_r}{\dd x_r^2}
         \label{eq:4.79}
     \end{equation}
-    其中，我们用到了$\mathrm{d}x_r/\mathrm{d}x = B^{-1/2}$。将(\ref{eq:4.68})、(\ref{eq:4.77})和(\ref{eq:4.79})代入薛定谔方程$-\left(\hbar^2/m\right)\left(\mathrm{d}^2\psi/\mathrm{d}x^2\right) $\\$+ V\psi = E\psi$，得到
+    其中，我们用到了$\dd x_r/\dd x = B^{-1/2}$。将(\ref{eq:4.68})、(\ref{eq:4.77})和(\ref{eq:4.79})代入薛定谔方程$-\left(\hbar^2/m\right)\left(\dd ^2\psi/\dd x^2\right) $\\$+ V\psi = E\psi$，得到
     \begin{equation*}
-        -\frac{\hbar^2}{m}B^{-5/2}\frac{\mathrm{d}^2\psi_r}{\mathrm{d}x_r^2} + AV_rB^{-1/2}\psi_r = AE_rB^{-1/2}\psi_r
+        -\frac{\hbar^2}{m}B^{-5/2}\frac{\dd ^2\psi_r}{\dd x_r^2} + AV_rB^{-1/2}\psi_r = AE_rB^{-1/2}\psi_r
     \end{equation*}
     \begin{equation}
-        -\frac{\hbar^2}{2m}\frac{1}{AB^2}\frac{\mathrm{d}^2\psi_r}{\mathrm{d}x_r^2} + V_r\psi_r = E_r\psi_r
+        -\frac{\hbar^2}{2m}\frac{1}{AB^2}\frac{\dd ^2\psi_r}{\dd x_r^2} + V_r\psi_r = E_r\psi_r
         \label{eq:4.80}
     \end{equation}
     根据式(\ref{eq:4.73})和(\ref{eq:4.74})，有$AB^2 = \hbar^2/m$，所以对于谐振子，有$\hbar^2/mAB^2 = 1$。
 
     更一般地说，让 $V$ 包含一个非无量纲参数 $c$。例如，我们有$V = cx^4$或$V = cx^2\left(1+0.05m^{1/2}\right.$\\$\left.c^{1/2}\hbar^{-1}x^2\right)$（注意 $m^{1/2}c^{1/2}\hbar^{-1}x^2$ 是无量纲的，因为 1 是无量纲的，所以它必须是无量纲的）。式(\ref{eq:4.80})中的$AB$一定可以写成$\hbar^rm^sc^t$的形式，其中$r$、$s$和$t$是待定的指数。由于(\ref{eq:4.80})中的$V_r\psi_r$是无量纲的，因此第一项也是无量纲的。那么$\hbar^2/mAB^2$是无量纲的，$AB^2$与$\hbar^2/m$具有相同的量纲。所以$r=2$，$s=1$，$t=0$。因此，$AB^2 = \hbar^2/m$，带入(\ref{eq:4.80})，有无量纲的薛定谔方程
     \begin{equation}
-        \frac{\mathrm{d}^2\psi}{\mathrm{d}x_r^2} = \left(2V_r-2E_r\right)\psi_r
+        \frac{\dd ^2\psi}{\dd x_r^2} = \left(2V_r-2E_r\right)\psi_r
         \label{eq:4.81}
     \end{equation}
     \begin{equation}

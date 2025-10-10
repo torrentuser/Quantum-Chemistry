@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  10 OCT 2025 13:34
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.26)  10 OCT 2025 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2060,7 +2060,7 @@ Package rerunfilecheck Info: File `"Quantum Chemistry".out' has not changed.
 Here is how much of TeX's memory you used:
  41740 strings out of 474773
  940261 string characters out of 5757723
- 2169839 words of memory out of 5000000
+ 2170839 words of memory out of 5000000
  63110 multiletter control sequences out of 15000+600000
  576125 words of font info for 183 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
