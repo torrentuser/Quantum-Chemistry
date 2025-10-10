@@ -1,11 +1,40 @@
 % ===== CHAPTER 15 =====
 \chapter{分子的电子结构}
 \label{chap:15}
-\section{从头计算、密度泛函、半经验和分子力学方法}
+\section{从头算、密度泛函、半经验和分子力学方法}
 \label{sec:15.1 Ab Initio, Density-Functional, Semiempirical and Molecular-Mechanics Methods}
+
+    多原子分子的电子波函数取决于若干参数——键长、键角以及单键周围的二面角（这些角度决定了分子的构象）。对多原子分子进行完整的理论处理，需计算这些参数各取值范围内的电子波函数。随后通过求解使电子能（含核间斥力）达到最小值的参数值，即可获得平衡键长、键角及二面角。
+
+    计算分子性质的四种主要方法是：从头算方法、半经验方法、密度泛函方法和分子力学方法。
+
+    \textbf{半经验}（Semiempirical）分子量子力学法采用比准确分子哈密顿算符稍简单的哈密顿算符，且使用的参数与实验值或从头算法的结果相匹配。半经验方法的优点是计算速度快，缺点是结果的准确性不如从头算法。一个例子是休克尔(Hückel)分子轨道法处理共轭多环芳烃（第\ref{sec:17.2 The Hückel MO Method}节），该方法使用单电子哈密顿算符，选择成键积分为可变参数而非理论计算量。相反地，\textbf{从头算}（ab initio）【或\textbf{第一性原理}（first-principles）】方法使用准确哈密顿算符，且不使用除了基本物理常量以外的任何实验数据。哈特里-福克自洽场计算寻找能使积分$\int \Phi^* \hat{H} \Phi \:\mathrm{d}\tau$最小的单电子函数的反对称乘积$\Phi$，其中$\hat{H}$是真实哈密顿算符，这就是一个从头算的例子。（Ab initio来自于拉丁文“从头开始“——from the beginning，表明该计算基于基础原理。）术语\textit{ab initio}不应与“$100\%$准确”相混淆。一个从头算的自洽场分子轨道计算使用如下近似：将$\psi$表示为单电子自旋轨道的反对称乘积，且使用有限的（因此不完备）基函数集。
+
+    \textbf{密度泛函法}（density-functional method）（第\ref{sec:16.5 Density-Functional Theory}节）不寻求计算分子波函数，而计算分子的电子概率密度$\rho$，从而从$\rho$中计算得到分子的电子能量。
+
+    \textbf{分子力学法}（molecular-mechanics method）（第\ref{sec:17.5 The Molecular-Mechanics Method}节）不是一种量子力学法，也不使用分子哈密顿算符或波函数。相反，它将分子视为由化学键连接的原子集合体，并通过键弯曲、伸展、扭转等力常数及其他参数来描述分子能量。本章探讨多原子分子电子结构计算的一般原理，并讨论哈特里-福克计算方法。如第\ref{sec:11.3 Electron Correlation}节所述，哈特里-福克方法未考虑电子相关效应。从头算和密度泛函法考虑了电子相关效应，将在第\ref{chap:16}章讨论。第\ref{chap:17}章主要讨论半经验方法和分子力学方法。
+
+    量子化学文献数据库（\url{qcldb2.ims.ac.jp}）是一个免费的分子从头算和密度泛函计算参考文献数据库。
+
+    美国国家标准与技术研究院的计算化学比较与基准数据库（\textbf{CCCBDB}，网址：\url{cccbdb.nist.gov}）系统整理了1420种分子采用不同基组（参见第\ref{sec:15.4 Basis Functions}节）进行从头算、密度泛函及半经验计算的结果，并收录了表列物种的气相实验数据。列出的计算性质包括能量、几何构型、偶极矩、极化率、谐振振动频率、惯性矩、内旋转能垒、气相热力学性质及原子电荷（第\ref{sec:15.7 The Molecular Electrostatic Potential, Molecular Surfaces, and Atomic Charges}节）。Spartan程序（第\ref{sec:15.14 Ab Initio Quantum Chemistry Programs}节）可访问针对少量基组的140000种分子从头算与密度泛函计算结果数据库（具体访问范围取决于用户持有的许可证类型）。
 
 \section{多原子分子的分子光谱项}
 \label{sec:15.2 Electronic Terms of Polyatomic Molecules}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{自洽场方法、分子轨道理论求解多原子分子}
 \label{sec:15.3 The SCF MO Treatment of Polyatomic Molecules}
@@ -40,10 +69,10 @@
 \section{热力学定律}
 \label{sec:15.13 Thermodynamic Properties}
 
-\section{从头计算方法的量子化学程序}
+\section{从头算方法的量子化学程序}
 \label{sec:15.14 Ab Initio Quantum Chemistry Programs}
 
-\section{进行从头计算}
+\section{进行从头算}
 \label{sec:15.15 Performing Ab Initio Calculations}
 
 \section{快速Hartree-Fock计算方法}

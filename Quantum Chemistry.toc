@@ -121,7 +121,7 @@
 \contentsline {section}{\numberline {14.6}赫尔曼-费恩曼定理}{332}{section.14.6}%
 \contentsline {section}{\numberline {14.7}静电定理}{334}{section.14.7}%
 \contentsline {chapter}{\numberline {15}分子的电子结构}{339}{chapter.15}%
-\contentsline {section}{\numberline {15.1}从头计算、密度泛函、半经验和分子力学方法}{340}{section.15.1}%
+\contentsline {section}{\numberline {15.1}从头算、密度泛函、半经验和分子力学方法}{339}{section.15.1}%
 \contentsline {section}{\numberline {15.2}多原子分子的分子光谱项}{340}{section.15.2}%
 \contentsline {section}{\numberline {15.3}自洽场方法、分子轨道理论求解多原子分子}{340}{section.15.3}%
 \contentsline {section}{\numberline {15.4}基函数}{340}{section.15.4}%
@@ -134,8 +134,8 @@
 \contentsline {section}{\numberline {15.11}构象搜寻}{340}{section.15.11}%
 \contentsline {section}{\numberline {15.12}分子振动频率}{340}{section.15.12}%
 \contentsline {section}{\numberline {15.13}热力学定律}{340}{section.15.13}%
-\contentsline {section}{\numberline {15.14}从头计算方法的量子化学程序}{340}{section.15.14}%
-\contentsline {section}{\numberline {15.15}进行从头计算}{340}{section.15.15}%
+\contentsline {section}{\numberline {15.14}从头算方法的量子化学程序}{340}{section.15.14}%
+\contentsline {section}{\numberline {15.15}进行从头算}{340}{section.15.15}%
 \contentsline {section}{\numberline {15.16}快速Hartree-Fock计算方法}{340}{section.15.16}%
 \contentsline {section}{\numberline {15.17}溶剂效应}{340}{section.15.17}%
 \contentsline {chapter}{\numberline {16}电子关联方法}{341}{chapter.16}%
